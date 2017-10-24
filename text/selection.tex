@@ -1,0 +1,34 @@
+\chapter{Event selection} 
+\label{ch:selection}
+
+\minitoc
+
+In this chapter the procedure used to reconstruct and select candidate $\Bp \to \Dsp \phi $ and $\Bp \to \Dsp \Kp \Km$ decays is described. 
+
+
+\section{Online selection}
+
+The online event selection is performed by a trigger, which consists of a hardware stage, based on information from the calorimeter and muon
+systems, followed by a software stage, which applies a full event reconstruction.
+
+
+At the hardware trigger stage, events are required to have a muon with high \pt or a hadron, photon or electron with high transverse energy in the calorimeters. For hadrons, the transverse energy threshold is 3.5\gev. 
+Two different algorithms are used in the software trigger to select candidates for this analysis.
+The first one uses a multivariate algorithm~\cite{BBDT} to identify the presence of a secondary vertex that has two, three or four tracks and is displaced from any PV. At least one of these charged particles must have a transverse momentum $\pt > 1.7\gevc$ and be inconsistent with originating from a PV. 
+The second algorithm selects $\phiz$ candidates decaying to two charged kaons. Each kaon must have a transverse momentum $\pt > 0.8\gevc$ and be inconsistent with originating from a PV. The invariant mass of the kaon pair must be within $20\mevcc$ of the known \phiz mass~\cite{PDG2016}.
+
+
+\section{Offline selection}
+\subsection{Particle identification requirements}
+Loose requirements are made on particle identification (PID) variables to reduce the contribution from other types of hadrons and background from other \bquark-hadron decays with misidentified hadrons. 
+For the signal, the overall efficiency of the PID requirements varies from 80\% to 90\%, depending on the \Dsp mode.
+\subsection{Charmless and single-charm backgrounds}
+
+Background from decays of \Bp mesons to the same final state that did not proceed via a \Dsp meson (referred to as charmless decays) are suppressed by applying a requirement on the significance of the \Bp meson and \Dsp meson vertex separation, $\chi^{2}_{FD}$. 
+The residual yields of charmless decays are estimated by fitting the \Bp yields in the sidebands of the \Dsp meson ($25\mevcc < |m(h^{+}h'^{-}\pip) - m(\Dsp)| < 50\mevcc $, where $m(h^{+}h'^{-}\pip)$ is the \Dsp candidate mass and $h,h'=K,\pi$). This background estimation is performed separately for the $\Bp \to \Dsp \phiz$ and $\Bp \to \Dsp \Kp \Km$ searches. For the $\Bp \to \Dsp \Dzb$ normalisation channel, a two-dimensional optimisation is performed to calculate the contribution from decays without a \Dsp meson, \Dzb meson or both. The optimal selection requirements are chosen such that the maximal signal efficiency is achieved for a residual charmless contribution of 2\% of the normalisation yield.
+
+\subsection{Background vetoes}
+\subsection{Multivariate analysis}
+
+
+

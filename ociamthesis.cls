@@ -12,6 +12,7 @@
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
 \ProcessOptions\relax
 \LoadClass[a4paper]{report}
+%\LoadClass[openright,12pt]{report}
 % As an alternative to the above could use next line for twosided output
 %\LoadClass[a4paper,twoside,openright]{report}
 
