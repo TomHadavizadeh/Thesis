@@ -3,32 +3,128 @@
 
 \minitoc
 
-In this chapter the procedure used to reconstruct and select candidate $\Bp \to \Dsp \phi $ and $\Bp \to \Dsp \Kp \Km$ decays is described. 
+In this chapter the procedure developed to reconstruct and select \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} candidates is described. 
 
+
+\section{Dataset}
+
+Data taken with the \lhcb experiment in Run 1 (2011 and 2012) and part of Run 2 (2015 and 2016) is used in this analysis. The total integrated luminosity obtained for each year of data taking is listed in Table~\ref{tab:lumi}, along with the corresponding centre-of-mass energies.  
+
+\begin{table}[t]
+ \caption{
+   The integrated luminosities obtained during the different data taking periods used in this analysis and the corresponding centre-of-mass energies ($\sqrt{s}$).}
+\begin{center}\begin{tabular}{ccc}
+   \hline
+   Year                    & Integrated luminosity (\invfb)  & $\sqrt{s}$ (\tev) \\ 
+   \hline
+   2011                    & 1.0  &  7 \\
+   2012                    & 2.0  &  8 \\
+   2015                    & 0.3  & 13 \\
+   2016                    & 1.5  & 13 \\
+   \hline
+ \end{tabular}\end{center}
+\label{tab:lumi}
+\end{table}
 
 \section{Online selection}
 
-The online event selection is performed by a trigger, which consists of a hardware stage, based on information from the calorimeter and muon
-systems, followed by a software stage, which applies a full event reconstruction.
+The online event selection is performed by the \lhcb trigger, which consists of a hardware stage, based on information from the calorimeter and muon
+systems, followed by a software stage, which reconstructs the full event.
+Reconstructed objects are classified into categories when considering their relationship to the various triggers that fired in a given event. 
+\begin{itemize}
+\item If the interaction caused by a reconstructed object was sufficient to have fired a given trigger then this object is said to be \texttt{TOS} (Triggered on Signal) with respect to that trigger. As such, if the hits that this object caused were removed from the events the trigger would no longer fire. 
+\item Conversely, if the object did not cause the trigger to have fired, the object is \texttt{TIS} (Triggered Independently of Signal) with respect to the trigger. In this case, removal of any hits from the object would not affect the trigger decision. 
+\item A third category is possible, \texttt{TOB} (Triggered on Both), where both the signal object and another object are required to reach the threshold to fire a trigger. In this situation neither are sufficient to individually fire the trigger, but removing either one of them would prevent the trigger firing. Events in this category are not considered in this analysis.
+\end{itemize}
 
+At the hardware trigger stage, the selected candidates are required to be \texttt{TOS} with respect to the hadronic trigger \texttt{L0Hadron}. This ensures the selected candidates were retained due to corresponding deposits in the hadronic calorimeter. Alternatively, candidates are selected if they are \texttt{TIS} with respect to the global hardware trigger \texttt{L0Global}. This allows candidates that have been retained due another highly energetic decay in the same event to contribute. This could be the decay of hadron resulting from the other \bquark quark in a \bquark\bquarkbar pair production. Any of the hardware trigger subsystems can contribute to the \texttt{L0Global} decision.
 
-At the hardware trigger stage, events are required to have a muon with high \pt or a hadron, photon or electron with high transverse energy in the calorimeters. For hadrons, the transverse energy threshold is 3.5\gev. 
-Two different algorithms are used in the software trigger to select candidates for this analysis.
+\begin{itemize}
+\item Include approximate TIS TOS fractions
+\end{itemize}
+
+%At the hardware trigger stage, events are required to have a muon with high \pt or a hadron, photon or electron with high transverse energy in the calorimeters. For hadrons, the transverse energy threshold is 3.5\gev. 
+
+The software trigger stage is split into two parts, \hltone and \hlttwo.
+The first stage \hltone requires that the the selected candidates are associated with well reconstructed tracks.
+
+At the second software stage, \hlttwo, two different algorithms are used to select candidates for this analysis.
 The first one uses a multivariate algorithm~\cite{BBDT} to identify the presence of a secondary vertex that has two, three or four tracks and is displaced from any PV. At least one of these charged particles must have a transverse momentum $\pt > 1.7\gevc$ and be inconsistent with originating from a PV. 
 The second algorithm selects $\phiz$ candidates decaying to two charged kaons. Each kaon must have a transverse momentum $\pt > 0.8\gevc$ and be inconsistent with originating from a PV. The invariant mass of the kaon pair must be within $20\mevcc$ of the known \phiz mass~\cite{PDG2016}.
 
+\begin{itemize}
+\item Add something about TIS TOS?
+\item fractions of events added by each category
+\item \ie tistos fractions 
+\end{itemize}
+
 
 \section{Offline selection}
-\subsection{Particle identification requirements}
-Loose requirements are made on particle identification (PID) variables to reduce the contribution from other types of hadrons and background from other \bquark-hadron decays with misidentified hadrons. 
-For the signal, the overall efficiency of the PID requirements varies from 80\% to 90\%, depending on the \Dsp mode.
-\subsection{Charmless and single-charm backgrounds}
 
+Events passing any trigger requirement are saved to tape for processing offline. These large offline data samples are habitually processed in a procedure know within \lhcb as Stripping. This centrally managed processing builds candidates from tracks and calorimeter objects in each event according to a set of predefined Stripping Lines. Each line builds a specific candidate decay, applying a relatively loose set of preselection requirements, including kinematic, geometric and invariant mass selections. 
+The searches for \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays employ the use of two different stripping lines, named \texttt{StrippingB2DPhiD2HHHPIDBeauty2CharmLine} and \texttt{StrippingB2DKKD2HHHCFPIDBeauty2CharmLine} respectively. These differ only in the invariant mass window applied to the $\Kp\Km$ pair used to reconstruct the $\phi$ meson, and in the number of \Dsp decay modes included: the \decay{\Bp}{\Dsp\Kp\Km} line only reconstructs the Cabibbo Favoured (CF) \decay{\Dsp}{\Kp\Km\pip} decay. 
+
+\subsection{Stripping selection}
+
+The selection requirements imposed on candidate \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays in their respective Stripping Lines is detailed in Table 
+
+\begin{table}[t]
+ \caption{Selection requirements applied to candidate \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays in the stripping lines \texttt{StrippingB2DPhiD2HHHPIDBeauty2CharmLine} and \texttt{StrippingB2DKKD2HHHCFPIDBeauty2CharmLine}.}
+\begin{center}\begin{tabular}{ccc}
+   \hline
+   Particle                    & Quantity  & Requirement         \\ 
+   \hline
+   \Bp                         & Transverse Momentum  &  $\pt > 4000 \gevc$  \\  
+   \hline
+ \end{tabular}\end{center}
+\label{tab:lumi}
+\end{table}
+
+
+
+
+\subsection{Particle identification requirements}
+Particle identification variables help to determine the species of tracks passing though the \lhcb detector. Using information from the RICH sub-detectors, the likelihood of different mass hypotheses are compared to the pion hypothesis. Loose requirements are made on the kaon hypothesis PID variable to reduce the contribution from other types of hadrons and background from other \bquark-hadron decays with misidentified hadrons. For the signal decays, the overall efficiency of the PID requirements varies from 80\% to 90\%, depending on the \Dsp mode.
+
+
+\subsection{Charmless and single-charm backgrounds}
 Background from decays of \Bp mesons to the same final state that did not proceed via a \Dsp meson (referred to as charmless decays) are suppressed by applying a requirement on the significance of the \Bp meson and \Dsp meson vertex separation, $\chi^{2}_{FD}$. 
-The residual yields of charmless decays are estimated by fitting the \Bp yields in the sidebands of the \Dsp meson ($25\mevcc < |m(h^{+}h'^{-}\pip) - m(\Dsp)| < 50\mevcc $, where $m(h^{+}h'^{-}\pip)$ is the \Dsp candidate mass and $h,h'=K,\pi$). This background estimation is performed separately for the $\Bp \to \Dsp \phiz$ and $\Bp \to \Dsp \Kp \Km$ searches. For the $\Bp \to \Dsp \Dzb$ normalisation channel, a two-dimensional optimisation is performed to calculate the contribution from decays without a \Dsp meson, \Dzb meson or both. The optimal selection requirements are chosen such that the maximal signal efficiency is achieved for a residual charmless contribution of 2\% of the normalisation yield.
+The residual yields of charmless decays are estimated by fitting the \Bp yields in the sidebands of the \Dsp meson ($25\mevcc < |m(h^{+}h'^{-}\pip) - m(\Dsp)| < 50\mevcc $, where $m(h^{+}h'^{-}\pip)$ is the \Dsp candidate mass and $h,h'=K,\pi$). This background estimation is performed separately for the $\Bp \to \Dsp \phiz$ and \decay{\Bp}{\Dsp\Kp\Km} searches. For the $\Bp \to \Dsp \Dzb$ normalisation channel, a two-dimensional optimisation is performed to calculate the contribution from decays without a \Dsp meson, \Dzb meson or both. The optimal selection requirements are chosen such that the maximal signal efficiency is achieved for a residual charmless contribution of 2\% of the normalisation yield.
+
+\begin{itemize}
+\item Include plots of selected cuts
+\end{itemize}
 
 \subsection{Background vetoes}
+
+\begin{itemize}
+\item Include Descriptions
+\item Include plots of each applied
+\end{itemize}
+
 \subsection{Multivariate analysis}
 
+Multivariate Analyses (MVAs) are used to help discriminate between genuine \Dsp and \phiz meson decays and random combinations of particles. 
+These MVAs are trained using large samples of candidates from \B mesons decays in data with similar topologies. 
+This training can benefit from an expanded set of variables that are not perfectly represented in simulation, including tracking and PID information in addition to kinematic and geometric information. The distributions of the input variables are shown in Fig... The \phiz and \Dsp MVAs use samples of \decay{\Bs}{\jpsi\phiz} and \decay{\Bsb}{\Dsp\pim} decays, respectively. These are selected using dedicated Stripping Lines designed to select decays. To ensure these samples are representative of the target decays, a preselection is applied to the data. This comprises of similar trigger, background veto and PID requirements applied to the signal modes.
+The $\phi$ an $\Dsp$ invariant mass distributions are fitted separately for each year 
+
+ where the background is statistically subtracted using the \sPlot method~\cite{Pivk:2004ty}. The training uses the \phiz or \Dsp sidebands as a background sample.
+\begin{itemize}
+\item Include plots example samples
+\item Include training variable distributions
+\item Comparison to alternative? 
+\end{itemize}
+
+A total of eight MVAs are trained to target the decays \decay{\phi}{\Kp\Km}, \decay{\Dsp}{\Kp\Km\pip}, \decay{\Dsp}{\Kp\pim\pip} and \decay{\Dsp}{\pip\pim\pip}, separately in the Run 1 (2011 and 2012) and Run 2 (2015 and 2016) data. 
+%A preselection including the trigger, vetoes and PID requirements previously discussed is applied to the training samples, ensuring they are representative of the target signal decays. 
+
+The samples are split into two random but reproducible subsamples. One is used to train the corresponding MVA, the other to test its response. 
+The MVA method used in this analysis is a gradient Boosted Decision Tree (BDTG)~\cite{Breiman}. The selection criteria for each of the BDTG classifiers are determined by optimising the Punzi figure of merit, $\epsilon_{s}/ (\frac{a}{2} + \sqrt{N_{\text{BKG}}})$~\cite{Punzi:2003bu}, with $a=5$, where $\epsilon_{s}$ is the signal efficiency and $N_{\text{BKG}}$ is the number of background candidates determined from fits to data, calculated in the signal region.
+\begin{itemize}
+\item Include plots of optimisation
+\end{itemize}
+
+The efficiencies of the MVAs are obtained from the testing samples of \decay{\Bs}{\jpsi\phiz} and \decay{\Bs}{\Dsp\pim} decays. Additionally, a sample of \decay{\Bp}{\Dz\pip} decays is used to calculate the efficiency of $\Dzb \to \Kp \Km$ decays in the normalisation channel. The efficiency calculation takes into account the kinematic differences between the training and signal samples, as well as any possible correlations between the \Dsp and \phiz kinematics, by using input from simulation samples. In the search for \decay{\Bp}{\Dsp\Kp\Km} decays, calibration samples are used to correct for the imperfect modelling of the PID in simulation. These corrected simulations are then used to obtain the variations in the MVA efficiencies as a function of the phase-space position, in particular of the $m(\Kp\Km)$ invariant mass.
 
 
