@@ -7,10 +7,6 @@ In this chapter the methodology used to search for \decay{\Bp}{\Dsp\Kp\Km} decay
 The branching fraction $\BF(\decay{\Bp}{\Dsp\Kp\Km})$ is determined by measuring the ratio of \decay{\Bp}{\Dsp\Kp\Km} and \decay{\Bp}{\Dsp\Dzb} yields. 
 This is corrected by the ratio of efficiencies for the two modes and multiplied by the externally measured branching fractions for \decay{\Bp}{\Dsp\Dzb} and \decay{\Dzb}{\Kp\Km} decays.
 
-%\BF(\decay{\Bp}{\Dsp\Kp\Km}) = \frac{N(\decay{\Bp}{\Dsp\Kp\Km})}{N(\decay{\Bp}{\Dsp\Dzb})} \times  \frac{\epsilon(\decay{\Bp}{\Dsp\Dzb})}{\epsilon(\decay{\Bp}{\Dsp\Kp\Km})} \times \BF(\decay{\Bp}{\Dsp\Dzb}) \times \BF(\decay{\Dzb}{\Kp\Km}) 
-%\BF(\decay{\Bp}{\Dsp\Kp\Km}) = \frac{N_{\Dsp\Kp\Km}}{N_{\Dsp\Dzb}} \times  \frac{\epsilon_{\Dsp\Dzb}}{\epsilon_{\Dsp\Kp\Km}}\\ 
-
-
 \begin{multline}
 \BF(\decay{\Bp}{\Dsp\Kp\Km}) = \frac{N(\decay{\Bp}{\Dsp\Kp\Km})}{N(\decay{\Bp}{\Dsp\Dzb})} \times  \frac{\epsilon(\decay{\Bp}{\Dsp\Dzb})}{\epsilon(\decay{\Bp}{\Dsp\Kp\Km})}\\ 
 \times \BF(\decay{\Bp}{\Dsp\Dzb}) \times \BF(\decay{\Dzb}{\Kp\Km}) 
@@ -134,6 +130,7 @@ Decay                           & Branching fraction \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
 The excited charm mesons \Dstarzb and \Dss (be more specific) are vector ($J^{P} = 1^{-}$) mesons. The partially reconstructed invariant mass of the \Dsp and \Dzb mesons can vary depending on the spin of the missed particle.
+analytical PDFs are used to account for the spin of the missed particle. These were developed by considering the 
 
 {\color{Red}
 \begin{itemize}
@@ -154,17 +151,39 @@ The excited charm mesons \Dstarzb and \Dss (be more specific) are vector ($J^{P}
 \subsection{Combinatorial  background}
 \label{sec:B2DsKK_combcomps}
 
-The dominant source of background under the signal peak is due to combinations of unrelated tracks. This combinatorial background is modelled using a exponential function with a single degree of freedom controlling the effective slope of the shape. This slope is shared between the normalisation and signal channels, and between different \Dsp decay modes. This adds stability to the fit.
+The dominant source of background under the signal peak is due to combinations of unrelated tracks. This combinatorial background is modelled using an exponential function with a single degree of freedom controlling the effective slope of the shape. 
+
+{\color{Red}
+\begin{itemize}
+\item check what happens to the slopes
+\end{itemize}
+}
+This slope is shared between the normalisation and signal channels, and between different \Dsp decay modes. This adds stability to the fit.
 
 
 \section{Fit strategy}
 \label{sec:B2DsKK_fitstrategy}
+
+{\color{Red}
+\begin{itemize}
+\item Single fit to signal and normalisation
+\item $m(\Kp\Km)$ range that goes into fit
+\item 
+\end{itemize}
+}
 
 
 
 \subsection{Fit validation}
 \label{sec:B2DsKK_fitvalidation}
 
+{\color{Red}
+\begin{itemize}
+\item Toys for signal and normalisation
+\item why it doesnt matter that norm yield have wrong pulls
+\item 
+\end{itemize}
+}
 
 \section{Efficiency corrections}
 \label{sec:B2DsKK_effcorrection}
