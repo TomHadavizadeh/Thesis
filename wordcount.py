@@ -1,7 +1,7 @@
 import subprocess, json, os, shutil, pytz
 commits = set(subprocess.check_output(['git', 'rev-list', '--all']).split())
 
-nameroot = 'wordcount'
+nameroot = 'wordcount_tom'
 txtname= nameroot + '.txt'
 dbname = nameroot + '.json'
 #temp = os.environ['TMPDIR']
