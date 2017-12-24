@@ -4,11 +4,15 @@
 \minitoc
 
 In this chapter the procedure developed to reconstruct and select \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} candidates is described. 
+In both cases the branching fractions are measured relative to the normalisation channel \decay{\Bp}{\Dsp\Dzb}.
+The corresponding selection for the normalisation channel \decay{\Bp}{\Dsp\Dzb} is also described.  
 
 
 \section{Dataset}
 
-Data taken with the \lhcb experiment in Run 1 (2011 and 2012) and part of Run 2 (2015 and 2016) is used in this analysis. The total integrated luminosity obtained for each year of data taking is listed in Table~\ref{tab:lumi}, along with the corresponding centre-of-mass energies.  
+The search for \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays are both performed using data taken 
+
+Data taken with the \lhcb experiment in Run 1 (2011 and 2012) and part of Run 2 (2015 and 2016) are used in this analysis. The total integrated luminosity obtained for each year of data taking is listed in Table~\ref{tab:lumi}, along with the corresponding centre-of-mass energies.  
 
 \begin{table}[t]
  \caption{
@@ -25,6 +29,7 @@ Data taken with the \lhcb experiment in Run 1 (2011 and 2012) and part of Run 2 
  \end{tabular}\end{center}
 \label{tab:lumi}
 \end{table}
+
 
 \section{Online selection}
 
@@ -53,12 +58,11 @@ The first stage \hltone requires that the the selected candidates are associated
 At the second software stage, \hlttwo, two different algorithms are used to select candidates for this analysis.
 The first one uses a multivariate algorithm~\cite{BBDT} to identify the presence of a secondary vertex that has two, three or four tracks and is displaced from any PV. At least one of these charged particles must have a transverse momentum $\pt > 1.7\gevc$ and be inconsistent with originating from a PV. 
 The second algorithm selects $\phiz$ candidates decaying to two charged kaons. Each kaon must have a transverse momentum $\pt > 0.8\gevc$ and be inconsistent with originating from a PV. The invariant mass of the kaon pair must be within $20\mevcc$ of the known \phiz mass~\cite{PDG2016}.
+The inclusive \phiz line is used to maximise the selection efficiencies 
 
 {\color{Red}
 \begin{itemize}
-\item Add something about TIS TOS?
 \item fractions of events added by each category
-\item \ie tistos fractions 
 \end{itemize}
 }
 
@@ -66,10 +70,15 @@ The second algorithm selects $\phiz$ candidates decaying to two charged kaons. E
 
 Events passing any trigger requirement are saved to tape for processing offline. These large offline data samples are habitually processed in a procedure know within \lhcb as Stripping. This centrally managed processing builds candidates from tracks and calorimeter objects in each event according to a set of predefined Stripping Lines. Each line builds a specific candidate decay, applying a relatively loose set of preselection requirements, including kinematic, geometric and invariant mass selections. 
 
+{\color{Red}
+\begin{itemize}
+\item Give much more detail on how candidates are constructed
+\end{itemize}
+}
 
-\subsection{Stripping selection}
+\subsection{Selection requirements}
 
-The searches for \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays employ the use of two different stripping lines as detailed in Table~\ref{tab:strippinglines}. These differ only in the invariant mass window applied to the $\Kp\Km$ pair used to reconstruct the $\phi$ meson, and in the number of \Dsp decay modes included: the \decay{\Bp}{\Dsp\Kp\Km} line only reconstructs the Cabibbo Favoured (CF) \decay{\Dsp}{\Kp\Km\pip} decay. 
+The searches for \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays employ the use of two different stripping lines as detailed in Table~\ref{tab:strippinglines}. These differ only in the invariant mass window applied to the $\Kp\Km$ pair used to reconstruct the $\phi$ meson, and in the number of \Dsp decay modes included: the \decay{\Bp}{\Dsp\Kp\Km} line only reconstructs the Cabibbo Favoured (CF) \decay{\Dsp}{\Kp\Km\pip} decay. The Stripping line used to select the normalisation channel \decay{\Bp}{\Dsp\Dzb} is also included in Table~\ref{tab:strippinglines}. This has slightly different requirements allowing the \Dzb meson decay vertex to be be displaced from the \Bp meson decay vertex.
 
 
 \begin{table}[t]
