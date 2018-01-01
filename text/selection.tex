@@ -68,22 +68,27 @@ The inclusive \phiz line is used to maximise the selection efficiencies
 
 \section{Offline selection}
 
-Events passing any trigger requirement are saved to tape for processing offline. The stages of this offline reconstruction are detailed in this section.
-
-% {\color{Red}
-% \begin{itemize}
-% \item Give much more detail on how candidates are constructed
-% \end{itemize}
-% }
+Events passing any trigger requirement are saved to tape for processing offline. The stages of the offline reconstruction are detailed in this section.
 
 \subsection{Selection requirements}
 
+The large offline data samples passing the online trigger selection are habitually processed in a procedure know within \lhcb as \emph{Stripping}. This centrally managed processing builds candidates from tracks and neutral calorimeter objects in each event according to a set of predefined \emph{Stripping Lines}. Each line builds a specific candidate decay, applying a loose set of preselection requirements, including kinematic, geometric and invariant mass selections. 
 
- The large offline data samples passing the online trigger selection are habitually processed in a procedure know within \lhcb as \emph{Stripping}. This centrally managed processing builds candidates from tracks and neutral calorimeter objects in each event according to a set of predefined \emph{Stripping Lines}. Each line builds a specific candidate decay, applying a loose set of preselection requirements, including kinematic, geometric and invariant mass selections. 
+The candidate \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays are built using a very similar set of requirements due to the similar topologies of these decays. The normalisation channel, \decay{\Bp}{\Dsp\Dzb} is built similarly, however the difference in lifetime between the \Dzb and \phiz mesons necessitates a slightly different topology. 
+{\color{Green}
+\begin{itemize}
+\item Schematic of the decay topology
+\end{itemize}
+}
+As the final states are fully hadronic the candidates are built from the combination of five tracks. Only \emph{long} tracks (those with hits in the \velo and tracking stations) are used to build these mesons. To ensure these are well reconstructed, the track $\chi^{2}$ per degree of freedom is required to be below $4.0$. Additionally, they are required to have a total momentum $\ptot > 1000 \mevc$ and the projection of the momentum on to the plane transverse to the beam direction is required to be $\pt > 100 \mevc$.
+Due to the relatively longlife time of the \Bp and \D mesons, the decay products originate from a vertex that is displaced from the proton-proton collision vertex. Therefore it is possible that the trajectory that the decay products followed didn't pass through the collision position. A requirement is placed on the significance of the impact parameter between the track and the proton-proton collison vertex of $\chi^{2}_{\text{IP}} > 4$ to ensure all of the tracks used are inconsistent with originating at the primary interaction.    
+Loose requirements are placed on Particle Identification variables to ensure the tracks are of the required species. These are further tightened as detailed in Section~\ref{sec:pidrequirements}. Incorrect track candidates created by combining unrelated 
 
-The candidate \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays are built using a very similar set of requirements due to the similar topologies of these decays. The normalisation channel, \decay{\Bp}{\Dsp\Dzb} is built similarly, however the difference in lifetime between the \Dzb and \phiz mesons necessitates a slightly different topology.
-The fully hadronic final state means that candidates are built from the combination of five tracks. Only \emph{long} tracks (those with hits in the \velo and tracking stations) are used to build these mesons. To ensure these are well reconstructed, the track $\chi^{2}$ per degree of freedom is required to be below $4.0$. Additionally they are required to have a total momentum $\ptot > 1000 \mevc$ and the projection of the momentum on the plane transverse to the beam direction is required to be $\pt > 100 \mevc$.
-
+{\color{Green}
+\begin{itemize}
+\item Schematic of impact parameter
+\end{itemize}
+}
 
 {\color{Red}
 \begin{itemize}
@@ -453,6 +458,7 @@ Particles      & Quantity                       & Requirement                   
 
 
 \subsection{Particle identification requirements}
+\label{sec:pidrequirements}
 Particle identification variables help to determine the species of tracks passing though the \lhcb detector. Using information from the RICH sub-detectors, the likelihood of different mass hypotheses are compared to the pion hypothesis. Loose requirements are made on the kaon hypothesis PID variable to reduce the contribution from other types of hadrons and background from other \bquark-hadron decays with misidentified hadrons. 
 %For the signal decays, the overall efficiency of the PID requirements varies from 80\% to 90\%, depending on the \Dsp mode.
 
@@ -699,6 +705,8 @@ The $\phi$ and $\Dsp$ invariant mass distributions are fitted separately for eac
 \begin{itemize}
 \item Include plots example samples
 \item Include training variable distributions
+\item Variable ranks
+\item Discussion of overtraining and crosschecks
 \item Comparison to alternative? 
 \end{itemize}
 }
