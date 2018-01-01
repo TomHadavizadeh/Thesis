@@ -68,17 +68,37 @@ The inclusive \phiz line is used to maximise the selection efficiencies
 
 \section{Offline selection}
 
-Events passing any trigger requirement are saved to tape for processing offline. These large offline data samples are habitually processed in a procedure know within \lhcb as Stripping. This centrally managed processing builds candidates from tracks and calorimeter objects in each event according to a set of predefined Stripping Lines. Each line builds a specific candidate decay, applying a relatively loose set of preselection requirements, including kinematic, geometric and invariant mass selections. 
+Events passing any trigger requirement are saved to tape for processing offline. The stages of this offline reconstruction are detailed in this section.
 
-{\color{Red}
-\begin{itemize}
-\item Give much more detail on how candidates are constructed
-\end{itemize}
-}
+% {\color{Red}
+% \begin{itemize}
+% \item Give much more detail on how candidates are constructed
+% \end{itemize}
+% }
 
 \subsection{Selection requirements}
 
-The searches for \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays employ the use of two different stripping lines as detailed in Table~\ref{tab:strippinglines}. These differ only in the invariant mass window applied to the $\Kp\Km$ pair used to reconstruct the $\phi$ meson, and in the number of \Dsp decay modes included: the \decay{\Bp}{\Dsp\Kp\Km} line only reconstructs the Cabibbo Favoured (CF) \decay{\Dsp}{\Kp\Km\pip} decay. The Stripping line used to select the normalisation channel \decay{\Bp}{\Dsp\Dzb} is also included in Table~\ref{tab:strippinglines}. This has slightly different requirements allowing the \Dzb meson decay vertex to be be displaced from the \Bp meson decay vertex.
+
+ The large offline data samples passing the online trigger selection are habitually processed in a procedure know within \lhcb as \emph{Stripping}. This centrally managed processing builds candidates from tracks and neutral calorimeter objects in each event according to a set of predefined \emph{Stripping Lines}. Each line builds a specific candidate decay, applying a loose set of preselection requirements, including kinematic, geometric and invariant mass selections. 
+
+The candidate \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays are built using a very similar set of requirements due to the similar topologies of these decays. The normalisation channel, \decay{\Bp}{\Dsp\Dzb} is built similarly, however the difference in lifetime between the \Dzb and \phiz mesons necessitates a slightly different topology.
+The fully hadronic final state means that candidates are built from the combination of five tracks. Only \emph{long} tracks (those with hits in the \velo and tracking stations) are used to build these mesons. To ensure these are well reconstructed, the track $\chi^{2}$ per degree of freedom is required to be below $4.0$. Additionally they are required to have a total momentum $\ptot > 1000 \mevc$ and the projection of the momentum on the plane transverse to the beam direction is required to be $\pt > 100 \mevc$.
+
+
+{\color{Red}
+\begin{itemize}
+\item Track selection
+\item \Dsp and \phiz construction 
+\item \Bp construction 
+\item diagram of topologies
+\item 
+\end{itemize}
+}
+
+
+
+
+The searches for \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays employ the use of two different \emph{Stripping Lines} as detailed in Table~\ref{tab:strippinglines}. These differ only in the invariant mass window applied to the $\Kp\Km$ pair used to reconstruct the $\phi$ meson, and in the number of \Dsp decay modes included: the \decay{\Bp}{\Dsp\Kp\Km} line only reconstructs the Cabibbo Favoured (CF) \decay{\Dsp}{\Kp\Km\pip} decay. The \emph{Stripping Line} used to select the normalisation channel \decay{\Bp}{\Dsp\Dzb} is also included in Table~\ref{tab:strippinglines}. This has slightly different requirements allowing the \Dzb meson decay vertex to be be displaced from the \Bp meson decay vertex.
 
 
 \begin{table}[t]
@@ -99,7 +119,7 @@ Mode & Stripping line \\
 \end{table}
 
 
-The selection requirements imposed on candidate \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays in their respective Stripping Lines is detailed in Table~\ref{tab:strippinglinecuts}. 
+The selection requirements imposed on candidate \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays in their respective \emph{Stripping Lines} is detailed in Table~\ref{tab:strippinglinecuts}. 
 
 \begin{table}[h]
 \caption{Selection requirements for \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} candidates.}
@@ -697,6 +717,7 @@ The MVA method used in this analysis is a gradient Boosted Decision Tree (BDTG)~
 
 The efficiencies of the MVAs are obtained from the testing samples of \decay{\Bs}{\jpsi\phiz} and \decay{\Bs}{\Dsp\pim} decays. Additionally, a sample of \decay{\Bp}{\Dz\pip} decays is used to calculate the efficiency of $\Dzb \to \Kp \Km$ decays in the normalisation channel. The efficiency calculation takes into account the kinematic differences between the training and signal samples, as well as any possible correlations between the \Dsp and \phiz kinematics, by using input from simulation samples. In the search for \decay{\Bp}{\Dsp\Kp\Km} decays, calibration samples are used to correct for the imperfect modelling of the PID in simulation. These corrected simulations are then used to obtain the variations in the MVA efficiencies as a function of the phase-space position, in particular of the $m(\Kp\Km)$ invariant mass.
 
+\section{Multiple candidates}
 \section{Invariant mass distributions}
 
 {\color{Red}
