@@ -154,16 +154,34 @@ Analytical PDFs are used to account for the spin of the missed particle. These w
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+
+
+
+\subsubsection{Backgrounds to the signal channel}
+
+The signal channel receives contributions at low invariant mass from a number of different decays. 
+All modes considered involve a \Bs or \Bz meson decay in which one or more soft decay products have not been reconstructed.
+
+\begin{description}
+\item \decay{\Bsb}{\Dsp\Km\Kstarz}: this decay can form a background to the \decay{\Bp}{\Dsp\Kp\Km} signal when a soft pion from the \decay{\Kstarz}{\Kp\pim} decay is not reconstructed. The PDF for this background is determined from a sample of fully reconstructed simulated events that have been processed using the same procedure as the signal decays. The PDF is created using a kernel estimation technique~\cite{Cranmer:2000du} implemented in the \texttt{RooKeysPDF} class within \texttt{RooFit}. The resulting PDF is shown in Fig.~\ref{fig:B2DsKK_part_reco_backgrounds}.
+\item \decay{\Bsb}{\Dssp\Km\Kstarz}: Similarly this decay can form a background at low invariant mass when a soft neutral particle is not reconstructed in the \decay{\Dssp}{\Dsp X} decay in addition to the pion from the \Kstarz. This PDF is also determined using the \texttt{RooKeysPDF} class and shown in Fig.~\ref{fig:B2DsKK_part_reco_backgrounds}.
+\item \decay{\Bsb}{\Dsp\Dsm}: decays of this 
+\item \decay{\Bzb}{\Dsp\Dm}: decays of this
+\item \decay{\Bsb}{\Dssp\Dsm}: decays of this 
+
+\end{description}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
     \centering
     \begin{subfigure}[t]{0.49\textwidth}
         \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Bs2Dsa1_4800_5900_Shape.pdf}
-        \caption{\decay{\Bsb}{\Dsp} }
+        \caption{\decay{\Bsb}{\Dsp\Km\Kstarz} }
     \end{subfigure}
     \begin{subfigure}[t]{0.49\textwidth}
         \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Bs2DsstKKst_4800_5900_Shape.pdf}
-        \caption{\decay{\Bsb}{\Dsp\Kstar\Kp} }
+        \caption{\decay{\Bsb}{\Dssp\Km\Kstarz}}
     \end{subfigure}
     \begin{subfigure}[t]{0.49\textwidth}
         \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Bs2DsDs_4800_5900_Shape.pdf}
@@ -174,15 +192,9 @@ Analytical PDFs are used to account for the spin of the missed particle. These w
         \caption{\decay{\Bsb}{\Dssp\Dsm} }
     \end{subfigure}
     \caption{Partially reconstructed mass shapes}
-    \label{fig:B2DsKK_signal_fits}   
+    \label{fig:B2DsKK_part_reco_backgrounds}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-\subsubsection{Backgrounds to the signal channel}
-
-The signal channel receives contributions at low invariant mass from decays of 
 
 {\color{Red}
 \begin{itemize}
@@ -205,12 +217,13 @@ The dominant source of background under the signal peak is due to combinations o
 
 \section{Fit strategy}
 \label{sec:B2DsKK_fitstrategy}
+The search for $\decay{\Bp}{\Dsp\Kp\Km}$ involves two independent maximum likelihood fits for the signal and normalisation channels. The $\decay{\Bp}{\Dsp\Kp\Km}$ yield is corrected on a per-candidate basis to account for the phase-space dependence of the signal efficiencies in this three-body decay. 
+
 
 {\color{Red}
 \begin{itemize}
-\item Single fit to signal and normalisation
+\item How yield is corrected, introduce sWeights
 \item $m(\Kp\Km)$ range that goes into fit
-\item 
 \end{itemize}
 }
 
@@ -222,13 +235,14 @@ The dominant source of background under the signal peak is due to combinations o
 {\color{Red}
 \begin{itemize}
 \item Toys for signal and normalisation
-\item why it doesnt matter that norm yield have wrong pulls
+\item why it doesn't matter that norm yield have wrong pulls
 \item 
 \end{itemize}
 }
 
 \section{Normalisation and signal fits}
 
+The results of the two fits to signal and normalisation candidates are shown in Figs.~\ref{fig:fit_B2DsD0} and \ref{fig:fit_B2DsKK}. The total fit model is overlaid upon the data distributions. Additionally the contributions from each different component in the model is included as detailed in the legends.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
@@ -254,7 +268,7 @@ The dominant source of background under the signal peak is due to combinations o
 
 {\color{Red}
 \begin{itemize}
-\item plots of eff accross dalitz plot
+\item plots of eff across dalitz plot
 \item studies of BDT eff ratio 
 \end{itemize}
 }

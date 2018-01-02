@@ -3,3 +3,4 @@
 2017.12.24 17:20:00 b2dskk 1090 b2dsphi 226 detector 12 introduction 9 originality 137 selection 3805 theory 15 bonus -1769 total 3525
 2018.01.01 17:21:29 b2dskk 1430 b2dsphi 546 detector 33 introduction 9 originality 137 selection 4138 theory 52 bonus -1791 total 4554
 2018.01.02 15:59:05 b2dskk 1446 b2dsphi 825 detector 33 introduction 9 originality 137 selection 4138 theory 52 bonus -1751 total 4889
+2018.01.02 17:11:01 appendix_fitcategories 142 b2dskk 1689 b2dsphi 974 detector 33 introduction 9 originality 137 selection 4138 theory 52 bonus -1408 total 5766
