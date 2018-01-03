@@ -164,10 +164,17 @@ All modes considered involve a \Bs or \Bz meson decay in which one or more soft 
 
 \begin{description}
 \item \decay{\Bsb}{\Dsp\Km\Kstarz}: this decay can form a background to the \decay{\Bp}{\Dsp\Kp\Km} signal when a soft pion from the \decay{\Kstarz}{\Kp\pim} decay is not reconstructed. The PDF for this background is determined from a sample of fully reconstructed simulated events that have been processed using the same procedure as the signal decays. The PDF is created using a kernel estimation technique~\cite{Cranmer:2000du} implemented in the \texttt{RooKeysPDF} class within \texttt{RooFit}. The resulting PDF is shown in Fig.~\ref{fig:B2DsKK_part_reco_backgrounds}.
-\item \decay{\Bsb}{\Dssp\Km\Kstarz}: Similarly this decay can form a background at low invariant mass when a soft neutral particle is not reconstructed in the \decay{\Dssp}{\Dsp X} decay in addition to the pion from the \Kstarz. This PDF is also determined using the \texttt{RooKeysPDF} class and shown in Fig.~\ref{fig:B2DsKK_part_reco_backgrounds}.
-\item \decay{\Bsb}{\Dsp\Dsm}: decays of this 
-\item \decay{\Bzb}{\Dsp\Dm}: decays of this
-\item \decay{\Bsb}{\Dssp\Dsm}: decays of this 
+\item \decay{\Bsb}{\Dssp\Km\Kstarz}: similarly this decay can form a background at low invariant mass when a soft neutral particle is not reconstructed in the \decay{\Dssp}{\Dsp X} decay in addition to the pion from the \Kstarz. This PDF is also determined using the \texttt{RooKeysPDF} class and shown in Fig.~\ref{fig:B2DsKK_part_reco_backgrounds}.
+
+\item \decay{\Bsb}{\Dsp\Dsm}: this decay can form a background to the signal when a pion is missed from either of the \Dsp decays. This requires both \Dsp mesons to decay to the \decay{\Dsp}{\Kp\Km\pip} final state. 
+%Due to the large phase space of \decay{\Dsp}{\Kp\Km\pip} decays, the pion is not as soft as in the previous background modes. 
+%Therefore this background only becomes significant at smaller invariant masses as shown in Fig.~\ref{fig:B2DsKK_part_reco_backgrounds}. 
+Therefore this background becomes significant at smaller invariant masses as shown in Fig.~\ref{fig:B2DsKK_part_reco_backgrounds}. 
+This PDF is similarly determined by creating a kernel estimation of fully-reconstructed simulated events passing the signal selection.  
+
+\item \decay{\Bzb}{\Dsp\Dm}: this decay can form a background when both the \Dsp and \Dm mesons decay to the \Kpm\Kmp\pipm final state. Due to the similar topology to the \decay{\Bsb}{\Dsp\Dsm} decay, the same PDF determined from simulated events is used, however it is shifted down in mass by 40\mevcc to account for the difference in kinematics.
+
+\item \decay{\Bsb}{\Dssp\Dsm}: similarly this decay can cause a background when both a soft neutral particle is missed from the \decay{\Dssp}{\Dsp X} decay as well as a pion from either of the \Dsp mesons. As such this only has a small contribution within the fit range as shown in Fig.~\ref{fig:B2DsKK_part_reco_backgrounds}. 
 
 \end{description}
 
@@ -198,26 +205,18 @@ All modes considered involve a \Bs or \Bz meson decay in which one or more soft 
 
 {\color{Red}
 \begin{itemize}
-\item plots of part reco shapes
+\item mention something about a1
 \end{itemize}
 }
 
 \subsection{Combinatorial  background}
 \label{sec:B2DsKK_combcomps}
 
-The dominant source of background under the signal peak is due to combinations of unrelated tracks. This combinatorial background is modelled using an exponential function with a single degree of freedom controlling the effective slope of the function. 
-
-{\color{Red}
-\begin{itemize}
-\item check what happens to the slopes
-\end{itemize}
-}
-%This slope is shared between the normalisation and signal channels, and between different \Dsp decay modes. This adds stability to the fit.
-
+The dominant source of background under the signal peak is due to combinations of unrelated tracks. This combinatorial background is modelled using an exponential function with a single degree of freedom controlling the effective slope of the function. The separate fits to the signal and normalisation modes have the freedom to have different combinatorial slopes, motivated by the difference in background levels for the two decays.
 
 \section{Fit strategy}
 \label{sec:B2DsKK_fitstrategy}
-The search for $\decay{\Bp}{\Dsp\Kp\Km}$ involves two independent maximum likelihood fits for the signal and normalisation channels. The $\decay{\Bp}{\Dsp\Kp\Km}$ yield is corrected on a per-candidate basis to account for the phase-space dependence of the signal efficiencies in this three-body decay. 
+The search for $\decay{\Bp}{\Dsp\Kp\Km}$ involves two independent maximum likelihood fits for the signal and normalisation channels. The raw $\decay{\Bp}{\Dsp\Kp\Km}$ yield is then corrected on a per-candidate basis to account for the phase-space dependence of the signal efficiencies in this three-body decay. This is implemented using the \sPlot technique~\cite{Pivk:2004ty} to extract a background subtracted kinematic distributions in which the relative selection efficiencies are parametrised.  
 
 
 {\color{Red}
@@ -268,6 +267,7 @@ The results of the two fits to signal and normalisation candidates are shown in 
 
 {\color{Red}
 \begin{itemize}
+\item explain what a dalitz plot is
 \item plots of eff across dalitz plot
 \item studies of BDT eff ratio 
 \end{itemize}
@@ -278,21 +278,62 @@ The results of the two fits to signal and normalisation candidates are shown in 
 \label{sec:B2DsKK_systuncertainy}
 
 
+A number of sources of systematic uncertainty are considered when determining the branching fraction for \decay{\Bp}{\Dsp\Kp\Km} decays.
+{\color{Blue}
+\begin{description}
+\item \textbf{Signal PDF shapes} The PDF shapes for signal and normalisation channel use values that are fixed from fits to MC. To understand the effect on the measured branching fraction, these values are randomly varied within their statistical uncertainties obtained from the MC fits. The resulting spread in the measured branching fraction is taken as the systematic uncertainty. Varing the fixed values for the tail parameters, n and $\alpha$, and the ratio and fraction of the two DCB widths together results in a change in the branching fraction of $0.036\times 10^{-6}$.
+
+\item \textbf{Background PDF shapes} In the signal mode the partially reconstructed shapes are taken directly from fully reconstructed MC that is then smeared and allowed to have an arbitrary offset to account for any MC/data differences. To determine the effect of these choices on the branching fraction the smearing is varied. Additionally a number of choices are made about the partially reconstructed backgrounds in the normalisation mode, namely the kinematic limits of the \texttt{RooHornsDini} and \texttt{RooHillDini}, and the branching fractions of $\D^{*} \to \D \gamma $ and $\D^{*} \to \D \pi^{0} $ decays. All of these assumptions are varied simultaneously by their relevant uncertainties and result in a change of $0.015\times10^{-6}$ in the branching fraction.
+
+\item \textbf{Charmless Contribution} The expected charmless contribution is only a significant fraction of the measured yield for the normalisation mode, expected to be around 0.7\%. We assign this as the systematic uncertainty arising from the charmless contamination as this ratio would directly propagate to the branching fraction.
+
+\item \textbf{BDT Efficiency Ratio} All of the sources of systematic uncertainty associated with the BDT efficiency ratio still apply here, particularly as the data trained efficiencies are still used to find the ratio in Run 2. 
+
+An additional systematic is assigned to account for the use Run 1 Dalitz plot dependences on the BDT and PID ratios. We assume the shapes of the Dalitz plot dependences are the same for Run 1 and Run 2, but adjust the overall scale to match the efficiencies determined previously. However by looking at the differences between the efficiencies for $\B \to \Ds \Dz$ and $\B \to \Ds \phi$ in Table~\ref{tab:BDT}, one sees that the differences get larger in Run 2, implying the shape may indeed get steeper. As a very conservative estimate we take the largest difference between $\B \to \Ds \Dz$ and $\B \to \Ds \phi$ in Run 2 and subtract the smallest difference in Run 1. This gives a difference of 4.4\% which we assign as the systematic uncertainty. This is likely to be an overestimate of the effect on the final branching fraction as most of the signal events are found in a small area of the phase space, leading to smaller variations in efficiency. This systematic can be removed if support for Run 2 in \texttt{Meerkat}/\texttt{PIDCorr} becomes available before publishing.
+
+
+\item \textbf{PID Efficiency Ratio} We assume the same systematic uncertainty for the ratio of PID efficiencies as previously discussed: 2\%. 
+
+\item \textbf{Veto Efficiency Ratio} We assume the same systematic uncertainty for the ratio of PID efficiencies as previously discussed: 1.4\%. 
+
+
+\item \textbf{MC Statistics} We use a larger sample of $\B \to \Ds K K$ MC than previously but the size of the normalisation mode MC sample has not increased, therefore we maintain the 2\% systematic for MC statistics.
+
+\end{description}
+}
+%\subsection{Total Systematic Uncertainty}
+
+\begin{table*}[!ht]
+\begin{center}
+\caption{Contributions to the total systematic uncertainty of the \decay{\Bp}{\Dsp\Kp\Km} branching fraction measurement. }
+\label{table:B2DsKK_systematics}
+\begin{tabular}{  l   c   c }
+
+\hline
+\multirow{ 2}{*}{\textbf{Source of Uncertainty} }&\multicolumn{2}{ c }{ Systematic Uncertainty}           \\
+                                                 &\textbf{Relative} & \textbf{Absolute ($\times 10^{-6}$)}\\
+\hline 
+BDT Relative Efficiency                     & 6.2\% & $0.44$\\
+Using Run 1 shapes as Run 2                 & 4.4\% & $0.31$\\
+MC statistics                               & 2.0\% & $0.14$\\
+PID Relative Efficiency                     & 2.0\% & $0.14$\\
+Veto Relative Efficiency                    & 1.4\% & $0.10$\\
+Charmless Contribution                      & 0.7\% & $0.05$\\
+Signal PDF parametrisation                  &-      & $0.036$  \\
+Background PDF parametrisation              &-      & $0.015$  \\
+\hline
+Total                                       &       & $0.59$\\
+\hline
+Normalisation                               &       & $0.70$\\
+\hline
+\end{tabular}
+\end{center}
+\end{table*}  
+
 \section{Results}
 \label{sec:B2DsKK_results}
 
-
-
-{\color{Red}
-\begin{itemize}
-\item Copy most of results section from paper
-\item equations
-\item include sWeighted, eff corrected plots
-\item include dalitz plot
-\end{itemize}
-}
-
-{\color{Blue}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 The fit to $\decay{\Bp}{\Dsp\Kp\Km}$ candidates finds a total yield of $N(\decay{\Bp}{\Dsp\Kp\Km}) = 443 \pm 29 $ candidates. 
 This constitutes the first observation of this decay mode.
 The branching fraction is calculated as
@@ -304,11 +345,52 @@ The branching fraction is calculated as
 \begin{equation}
 N_{\text{corr}}(\decay{\Bp}{\Dsp\Kp\Km}) =  \sum\limits_{i} \frac{W_{i}}{\epsilon^{\text{ratio}}_{i}},
 \end{equation}
-\noindent where $W_{i}$ is the per-candidate weight, as determined by the \sPlot technique for candidate $i$; and $\epsilon^{\text{ratio}}_{i}$ represents the relative efficiency of the signal and normalisation modes $\epsilon_{i}(\decay{\Bp}{\Dsp\Kp\Km})/\epsilon(\decay{\Bp}{\Dsp\Dzb})$ in the relevant bin of the $\decay{\Bp}{\Dsp\Kp\Km}$ Dalitz plot. The corrected yield ratio can be expressed as the ratio of signal and normalisation branching fractions using Eq.~\ref{eq:DsKKBranchingfraction}. The value is measured to be 
+\noindent where $W_{i}$ is the per-candidate weight, as determined by the \sPlot technique for candidate $i$; and $\epsilon^{\text{ratio}}_{i}$ represents the relative efficiency of the signal and normalisation modes $\epsilon_{i}(\decay{\Bp}{\Dsp\Kp\Km})/\epsilon(\decay{\Bp}{\Dsp\Dzb})$ in the relevant bin of the $\decay{\Bp}{\Dsp\Kp\Km}$ Dalitz plot. 
+
+
+%The uncertainty of the corrected signal yield is calculated following the same procedure as outlined in the \decay{\Bp}{\Dp\Kp\pim} search analysis note~\cite{Wallace:2010891} and summarised here. 
+
+The uncertainty on the corrected yield, $N_{\text{corr}}(\decay{\Bp}{\Dsp\Kp\Km})$, is in principle given by
+
+\begin{equation}
+\sigma(N_{\text{corr}}) =  \sqrt{\sum\limits_{i} \left(\frac{W_{i}}{\epsilon^{\text{ratio}}_{i}} \right)^{2}}.
+\end{equation}
+However, the fit used to determine the \sWeights only allows the yields to float, as opposed to the nominal fit that has additional floating parameters including the signal position and width. This means that this estimate of the corrected yield uncertainty could neglect the uncertainty due to the shape parameters: \ie the uncertainty calculated from the weights, $\sigma_{\text{yields only}}(N) = \sqrt{\sum{W_{i}^{2}}}$, can be less than the uncertainty returned by the nominal fit, $\sigma_{\text{fit}}(N)$.
+
+To correctly account for this possibility, the uncertainty from the shape parameters is separated from the the total uncertainty: $\sigma_{\text{shape}}(N) = \sqrt{\sigma_{\text{fit}}(N)^{2}-\sigma_{\text{yields only}}(N)^{2}}$.
+This extra uncertainty is then scaled by the corrected yield to give the total uncertainty
+
+
+\begin{equation}
+\sigma_{\text{corr}}(N_{\text{corr}}) =  \sqrt{  \sigma(N_{\text{corr}})^{2} +  \left( \frac{N_{\text{corr}}}{N} \sigma_{shape}(N) \right)^{2}}.
+\end{equation}
+For the nominal fit the uncertainties are summarised in Table~\ref{table:DsKK_fit_errors}.
+
+\begin{table*}[!ht]
+\begin{center}
+\caption{The various uncertainties as detailed in Section~\ref{sec:B2DsKK_results} and their values in the nominal fit.}
+\label{table:DsKK_fit_errors}
+\begin{tabular}{  c | c   }
+\hline
+Uncertainty                             &  Value \\
+\hline 
+$\sigma(N_{\text{corr}})$               & 13.0\\
+$\sigma_{\text{fit}}(N)$                & 29.4\\
+$\sigma_{\text{yields only}}(N)$        & 25.4\\
+$\sigma_{\text{shape}}(N)$              & 14.7 \\ 
+\hline
+$\sigma_{\text{corr}}(N_{\text{corr}})$ & 14.9 \\ 
+\hline
+\end{tabular}
+\end{center}
+\end{table*}
+
+The corrected yield ratio can be expressed as the ratio of signal and normalisation branching fractions using Eq.~\ref{eq:DsKKBranchingfraction}. The value is measured to be 
 \begin{equation*}
 \frac{ N_{\text{corr}}(\decay{\Bp}{\Dsp\Kp\Km}) }{ N(\decay{\Bp}{\Dsp\Dzb}) } = \frac{\mathcal{B}(\decay{\Bp}{\Dsp\Kp\Km})}{\mathcal{B}(\decay{\Bp}{\Dsp\Dzb})\mathcal{B}(\decay{\Dzb}{\Kp\Km})}  = 0.197 \pm 0.015 \pm 0.017, 
 \end{equation*}
 where the first uncertainty is statistical, and the second is systematic.
+
 The branching fraction for $\decay{\Bp}{\Dsp\Kp\Km}$ decays is determined to be 
 
 \begin{equation*}
@@ -316,8 +398,7 @@ The branching fraction for $\decay{\Bp}{\Dsp\Kp\Km}$ decays is determined to be
 \end{equation*}
 where the first uncertainty is statistical, the second is systematic and the third from the branching fractions of $\decay{\Dzb}{\Kp\Km}$ and of the normalisation mode $\decay{\Bp}{\Dsp\Dzb}$. 
 The values used for the branching fractions are $\mathcal{B}(\decay{\Dz}{\Kp\Km}) = (4.01 \pm 0.07)\times10^{-3}$ and $\mathcal{B}(\decay{\Bp}{\Dsp\Dzb}) = (9.0 \pm 0.9)\times10^{-3}$~\cite{PDG2016}. 
-The two-body projections $m(D_{s}^{+}K^{-})$ and $m(K^{+}K^{-})$ are obtained for the signal component using the \sPlot technique, shown in Fig.~\ref{fig:B2DsKK_twobodyprojections}. No significant peak is observed in the \phiz region of the $m(\Kp\Km)$ plot; rather a broad distribution of candidates is found in the region up to $m(\Kp\Km) \simeq 1900 \mevcc$. 
-}
+The two-body projections $m(D_{s}^{+}K^{-})$ and $m(K^{+}K^{-})$ are obtained for the signal component using the \sPlot technique, shown in Fig.~\ref{fig:B2DsKK_twobodyprojections}. No significant peak is observed in the \phiz region of the $m(\Kp\Km)$ plot; rather a broad distribution of candidates is found in the region up to $m(\Kp\Km) \simeq 1900 \mevcc$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
