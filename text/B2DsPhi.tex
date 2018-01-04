@@ -88,21 +88,99 @@ $\sigma_{1}(\Dsp\phi) / \sigma_{1}(\Dsp\Dzb)$ & 1.27 $\pm$ 0.02 & 1.31 $\pm$ 0.0
 \subsection{Partially reconstructed backgrounds}
 \label{sec:B2DsPhi_partrecocomps}
 
+\subsubsection{Backgrounds to the normalisation channel}
+{\color{Blue}
+The modes $\B^+ \to \Dsp D^{*0}$ and $\B^+ \to \Dsp^{*} D^{0}$ can both contribute partially reconstructed backgrounds to the $\Bu \to \Dsp \Dzb$ normalisation mode.
+Each decay requires two different shapes to model it accurately, due to the two possible decay modes of the excited $D$ meson resonance.
+The $\B^+ \to \Dsp D^{*0}$ decay with $D^{*0} \to D^0 \pi^0$ (branching fraction of 62\%) is modelled with a \texttt{RooHORNSdini} shape.
+The $\B^+ \to \Dsp D^{*0}$ decay with $D^{*0} \to D^0 \gamma$ (branching fraction of 38\%) is modelled with a \texttt{RooHILLdini} shape.
+These two shapes are then summed together according to the ratio of $D^{*0}$ branching fractions, taking into account also the percentage of each decay that is cut away by 
+the lower bound on the $\Dsp \Dzb$ mass in the fit.
+The $\B^+ \to \Dsp^{*} D^{0}$ decay with $\Dsp^{*} \to \Dsp \pi^0$ (branching fraction of 6\%) is modelled with a \texttt{RooHORNSdini} shape.
+The $\B^+ \to \Dsp^{*} D^{0}$ decay with $\Dsp^{*} \to \Dsp \gamma$ (branching fraction of 94\%) is modelled with a \texttt{RooHILLdini} shape.
+These two shapes are then summed together in the same way as the two $\B^+ \to \Dsp D^{*0}$ shapes.
+The four shapes for $\B^+ \to \Dsp D^{*0}$ and $\B^+ \to \Dsp^{*} D^{0}$ are shown in Fig.~\ref{fig:B2DsPhi_DsD0_partreco}.
+The parameters of these shapes are fixed in the fit to data, except for two. Firstly a global shift parameter (allowing for the fact that the fitted mean $B^+$ mass may differ from the nominal mass used in the simulation) is left free, but is common to all the partially reconstructed background shapes. Secondly a parameter that allows the relative heights of the two peaks in the double peaked structures to differ is left floating. This is also common to all partially reconstructed shapes. This allows for any selection dependence that might affect the two peaks differently.
+The experimental resolution for these shapes is taken to be the effective resolution of the signal double Crystal Ball shape (\ie the average of the two Crystal Ball 
+widths, weighted with their relative normalisation). These parameters are summarised in Table~\ref{tab:DDstar_paramters}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[h]
+\centering
+\caption{Paramter values used in the analytical shapes for the $\B^+ \to \Dsp D^{*0}$, $\B^+ \to \Dsp^{*} D^{0}$ and $\B^+ \to \Dsp^{*} \phi$ PDFs. The parameters R and f are set to one as only a single resolution Gaussian is used.} 
+\label{tab:DDstar_paramters} 
+\begin{tabular}{ c l c l }
+\hline
+Parameter & Description & State & Source \\
+\hline
+$a$         & Lower kinematic endpoint     & Constant & Kinematics                  \\
+$b$         & Upper kinematic endpoint     & Constant & Kinematics                  \\ 
+$\sigma$    & Width of the peaks           & Fixed    & Set to effective            \\ 
+            &                              &          & signal resolution           \\  
+$R$         & Relative width of two        & Constant & Value set to 1.0            \\
+            & resolution Gaussians         &          & (single resolution Gaussian)\\  
+$f$         & Fractional amounts of main   & Constant & Value set to 1.0            \\
+            & resolution Gaussian          &          &(single resolution Gaussian) \\ 
+$\xi$       & Relative height of two peaks & Floating & Shared between all shapes   \\
+$\delta$    & Uniform mass offset          & Floating & Shared between all shapes   \\
+\hline
+\end{tabular}
+ 
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
     \centering
-    \includegraphics[width=0.60\textwidth]{figs/B2DsPhi/DsD0_part_reco_Shapes.pdf}
-    \caption{Partially reconstructed \Dsp\Dzb shapes.}
+    \includegraphics[width=0.80\textwidth]{figs/B2DsPhi/DsD0_part_reco_Shapes.pdf}
+    \caption{Partially reconstructed $\Dsp\Dzb$ shapes.}
     \label{fig:B2DsPhi_DsD0_partreco}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+$\B^+ \to \Dsp^{*} D^{*0}$
+
+
+A shape has been added to the fit model to account for $\B^+ \to \Dsp^{*} D^{*0}$ events where two soft neutral particles have missed, one from each excited $D$ meson decay. In principle this shape should be created from eight individual contribution shapes as either $D$ meson can miss a $\gamma$ or $\pi^{0}$ and there are two distinguishable helicity combinations for either. We approximate this shape by a single \texttt{RooHILLdini} shape, with a similar set of parameters as listed in Table~\ref{tab:DDstar_paramters}. The kinematic endpoints are estimated by combining the effect of missing a $\pi^{0}$ and a $\gamma$, the dominant shape given the branching fractions of $D^{*0} \to D^{0} [\pi^{0}/\gamma]$ and $D_{s}^{*} \to D_{s} [\pi^{0}/\gamma]$. These endpoints and the choice of shape are varied and the effect on the measured branching fraction included as a systematic uncertainty. 
+
+}
+
+{\color{Red}
+\begin{itemize}
+\item make plot of $\B^+ \to \Dsp^{*} D^{*0}$
+\end{itemize}
+}
+
+\subsubsection{Backgrounds to the signal channel}
+{\color{Blue}
+
+
+\begin{description}
+\item The $\B^+ \to \Dsp^{*} \phi$ decay contributes a partially reconstructed background to the $\Bu \to \Dsp \phi$ signal mode.
+Since this decay has a vector-vector final state, the helicity state of the decay products is not fixed, and is unknown as this mode has not yet been observed.
+The $\B^+ \to \Dsp^{*} \phi$ decay with $\Dsp^{*} \to \Dsp \pi^0$ and helicity configuration 010 (101) is modelled with a \texttt{RooHORNSdini} (\texttt{RooHILLdini}) shape.
+The $\B^+ \to \Dsp^{*} \phi$ decay with $\Dsp^{*} \to \Dsp \gamma$ and helicity configuration 010 (101) is modelled with a \texttt{RooHILLdini} (\texttt{RooLITTLEHORNSdini}) shape.
+The shapes for the different $\Dsp^{*}$ decays are summed as for the $\B^+ \to \Dsp^{*} D^{0}$ case above, while the relative weighting of each helicity configuration is taken 
+to be 50\%, in the absence of knowledge of these decays. Additionally, the distribution of each shape in the helicity angle described in Section~\ref{subsec:Hel} is approximated to be $\cos^2(\theta)$ for the longitudinally polarized shapes (010) and $\sin^2(\theta)$ for the transversely (101). The fraction in each bin for 010 or 101 is taken from the appropriate integrals of these assumed distributions. 
+The four shapes for $\B^+ \to \Dsp^{*} \phi$ are shown in Fig.~\ref{fig:B2DsPhi_DsPhi_partreco}.
+The parameters of these shapes are treated in exactly the same way as those for the $\B^+ \to \Dsp D^{*0}$ and $\B^+ \to \Dsp^{*} D^{0}$ shapes: the parameters are fixed in the fit to data, except for the global shift parameter and the relative double peak heights, and the experimental resolution is taken from the signal double Crystal Ball shape.
+
+\item \decay{\Bsb}{\Dsp\Km\Kstarz}: 
+\item \decay{\Bsb}{\Dssp\Km\Kstarz}: Fig.~\ref{fig:B2DsPhi_signal_fits}.
+\item \decay{\Bsb}{\Dsp\Dsm}: 
+\item \decay{\Bzb}{\Dsp\Dm}: 
+\item \decay{\Bsb}{\Dssp\Dsm}: 
+\end{description}
+}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
     \centering
-    \includegraphics[width=0.60\textwidth]{figs/B2DsPhi/DsPhi_part_reco_Shapes.pdf}
-    \caption{Partially reconstructed \Dsp\phiz shapes.}
+    \includegraphics[width=0.80\textwidth]{figs/B2DsPhi/DsPhi_part_reco_Shapes.pdf}
+    \caption{Partially reconstructed $\Dsp\phiz$ shapes.}
     \label{fig:B2DsPhi_DsPhi_partreco}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

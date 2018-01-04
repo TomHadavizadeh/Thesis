@@ -101,7 +101,7 @@ for sec in sections:
 #definitions 77 pmssm 2410 appendix 25 multijets 15 introduction 30 sparticles 173 summary 4 detector 3 acknowledgements 10 glossary 174 preface 82 theory 2 sct 4 bonus
 #b2dskk 1090 b2dsphi 226 detector 12 introduction 9 originality 137 selection 3805 theory 15 bonus -1769 total 3525
 #orderednames = ('preface', 'glossary', 'introduction', 'theory', 'detector', 'pmssm', 'multijets', 'summary', 'appendix')
-orderednames = ('introduction', 'theory', 'detector', 'selection', 'b2dskk', 'b2dsphi')
+orderednames = ('introduction', 'theory', 'detector', 'selection', 'b2dskk', 'b2dsphi','appendix_fitcategories')
 orderedarrays = (arrays[sec] for sec in orderednames)
 
 # MAKE SURE THAT ORDEREDNAMES CORRESPONDS TO EVERYTHING IT SHOULD DO (ot just add everything else to 'other')
@@ -134,8 +134,8 @@ ax.xaxis.set_major_locator(months)
 ax.xaxis.set_major_formatter(monthsFmt)
 # ax.xaxis.set_minor_locator(months)
 
-datemin = datetime.date(2017,10,1)
-datemax = datetime.date(2018,6,1)
+datemin = datetime.date(2017,12,1)
+datemax = datetime.date(2018,3,1)
 
 ax.set_xlim(datemin, datemax)
 
