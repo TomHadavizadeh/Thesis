@@ -21,6 +21,8 @@ In this chapter the methodology used to search for \decay{\Bp}{\Dsp\phiz} decays
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \begin{table}[h]
 \centering
+\caption{Fixed values obtained in fits to MC used in the model for the signal pdf.} 
+\label{tab:mc_fits}
 \begin{tabular}{ c c c c }
 \hline
 \multirow{2}{*}{Parameter}                   & \multicolumn{3}{c} {Value} \\
@@ -46,10 +48,7 @@ $n$                         & 1 $\pm$ 0          & 1 $\pm$ 0          & 1 $\pm$ 
 \hline 
 $\sigma_{1}(\Dsp\phi) / \sigma_{1}(\Dsp\Dzb)$ & 1.27 $\pm$ 0.02 & 1.31 $\pm$ 0.02 & 1.26 $\pm$ 0.02 \\
 \hline
-
-\end{tabular}
-\caption{Fixed values obtained in fits to MC used in the model for the signal pdf.} 
-\label{tab:mc_fits}  
+\end{tabular}  
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
@@ -126,7 +125,6 @@ $\xi$       & Relative height of two peaks & Floating & Shared between all shape
 $\delta$    & Uniform mass offset          & Floating & Shared between all shapes   \\
 \hline
 \end{tabular}
- 
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -303,6 +301,10 @@ As the $\decay{\Bp}{\Dsp\phiz}$ decay involves the decay of a pseudoscalar parti
 \label{sec:B2DsPhi_effcorrections}
 
 
+\begin{itemize}
+\item Generator Level Efficiencies
+\end{itemize}
+
 {\color{Red}
 \begin{itemize}
 \item Assume pseudo two body decay, therefore simple ratio  
@@ -343,15 +345,15 @@ N(\decay{\Bp}{\Dsp\phiz}) = R \times N(\decay{\Bp}{\Dsp\Dzb}) \times \frac{\epsi
 
 The simultaneous fit measures a single value of $R$ for all \Dsp decay mode categories. From an ensemble of pseudoexperiments, $R$ is distributed normally. It can be written as the ratio of signal and normalisation branching fractions using Eq.~{\ref{eq:branching_fraction_calc}. The value is determined to be 
 
-\begin{equation*}
+\begin{equation}
 R = \frac{\mathcal{B}(\decay{\Bp}{\Dsp\phiz})}{\mathcal{B}(\decay{\Bp}{\Dsp\Dzb})}\times \frac{\mathcal{B}(\decay{\phi}{\Kp\Km})}{\mathcal{B}(\decay{\Dzb}{\Kp\Km})} =(1.6^{+2.2}_{-1.9}\pm 1.1) \times 10^{-3}, 
-\end{equation*}
+\end{equation}
 where the first uncertainty is statistical and the second systematic. This corresponds to a branching fraction for $\decay{\Bp}{\Dsp\phiz}$ decays of
 
-\begin{equation*}
+\begin{equation}
 \mathcal{B}(\decay{\Bp}{\Dsp\phiz}) = (1.2^{+1.6}_{-1.4} \pm 0.8  \pm 0.1)\times 10^{-7},
 \label{eq:branching_fraction}
-\end{equation*}
+\end{equation}
 where the first uncertainty is statistical, the second systematic, and the third results from the uncertainty on the branching fractions $\mathcal{B}(\decay{\Bp}{\Dsp\Dzb})$, $\mathcal{B}(\decay{\phi}{\Kp\Km})$ and $\mathcal{B}(\decay{\Dzb}{\Kp\Km})$. Considering only the statistical uncertainty, the significance of the $\decay{\Bp}{\Dsp\phiz}$ signal is 0.8 standard deviations ($\sigma$). 
 
 
@@ -388,3 +390,4 @@ where the first uncertainty is statistical, the second systematic, and the third
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\subsection{Comparison to 2011?}

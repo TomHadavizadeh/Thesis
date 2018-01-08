@@ -464,6 +464,12 @@ Particles      & Quantity                       & Requirement                   
 Particle identification variables help to determine the species of tracks passing though the \lhcb detector. Using information from the RICH sub-detectors, the likelihood of different mass hypotheses are compared to the pion hypothesis. Loose requirements are made on the kaon hypothesis PID variable to reduce the contribution from other types of hadrons and background from other \bquark-hadron decays with misidentified hadrons. 
 %For the signal decays, the overall efficiency of the PID requirements varies from 80\% to 90\%, depending on the \Dsp mode.
 
+{\color{Red}
+\begin{itemize}
+\item Include actual cuts
+\item description of what DLLs mean
+\end{itemize}
+}
 
 \subsection{Charmless and single-charm backgrounds}
 
@@ -611,9 +617,10 @@ Decay Mode & 1  & 2 & 3 & 4 & 5 \\
 \decay{\Bp}{(\decay{\Dsp}{\pip\pim\pip})\phiz}     & \pip   & \pim   & \pip  & \Kp  & \Km \\
 \decay{\Bp}{(\decay{\Dsp}{\Kp\pim\pip})\phiz}      & \Kp    & \pim   & \pip  & \Kp  & \Km \\
 \hline
-
+\decay{\Bp}{(\decay{\Dsp}{\Kp\Km\pip})\Kp\Km}      & \Kp    & \Km    & \pip  & \Kp  & \Km \\
+\hline
 \end{tabular}
-\caption{Particle labels used when studying invariant mass vetoes.}
+\caption{Particle labels used when studying invariant mass vetoes for \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} candidates.}
 \label{table:vetolabels}
 \end{center}
 \end{table*}
@@ -640,6 +647,13 @@ The following vetos are applied to remove these incorrectly reconstructed decays
 \item $|m(\text{245})- m(\Dsp)| > 25\mevcc$ and $|m(\text{245})- m(\Dp)| > 25\mevcc$
 \item $|m(\text{345})- m(\Dsp)| > 25\mevcc$ and $|m(\text{345})- m(\Dp)| > 25\mevcc$
 \end{itemize}
+{\color{Red}
+\item For the mode \decay{\Bp}{(\decay{\Dsp}{\Kp\Km\pip})\Kp\Km}
+\begin{itemize}
+\item $|m(\text{1245})- m(\Bs)| > 50\mevcc$
+\item $|m(\text{345})- m(\Dsp)| > 25\mevcc$ and $|m(\text{345})- m(\Dp)| > 25\mevcc$
+\end{itemize}
+}
 \end{itemize}
 
 
@@ -709,6 +723,7 @@ The $\phi$ and $\Dsp$ invariant mass distributions are fitted separately for eac
 \begin{itemize}
 \item Include plots example samples
 \item Include training variable distributions
+\item Include description of what each variable means \eg ProbNN vars
 \item Variable ranks
 \item Discussion of overtraining and crosschecks
 \item Comparison to alternative? 
@@ -730,6 +745,26 @@ The MVA method used in this analysis is a gradient Boosted Decision Tree (BDTG)~
 The efficiencies of the MVAs are obtained from the testing samples of \decay{\Bs}{\jpsi\phiz} and \decay{\Bs}{\Dsp\pim} decays. Additionally, a sample of \decay{\Bp}{\Dz\pip} decays is used to calculate the efficiency of $\Dzb \to \Kp \Km$ decays in the normalisation channel. The efficiency calculation takes into account the kinematic differences between the training and signal samples, as well as any possible correlations between the \Dsp and \phiz kinematics, by using input from simulation samples. In the search for \decay{\Bp}{\Dsp\Kp\Km} decays, calibration samples are used to correct for the imperfect modelling of the PID in simulation. These corrected simulations are then used to obtain the variations in the MVA efficiencies as a function of the phase-space position, in particular of the $m(\Kp\Km)$ invariant mass.
 
 \section{Multiple candidates}
+
+
+
+{\color{Red}
+\begin{itemize}
+\item Rates for signal and normalisation
+\item justification of choice
+\end{itemize}
+}
+
+\section{Refitting the decay chain}
+{\color{Red}
+\begin{itemize}
+\item details of DTF
+\item DTF for helicity angle
+\item DTF for dalitz plot
+\end{itemize}
+}
+
+
 \section{Invariant mass distributions}
 
 {\color{Red}

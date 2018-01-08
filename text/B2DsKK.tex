@@ -60,6 +60,8 @@ The tail parameters $n$ and $\alpha$ are highly correlated, therefore the value 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \begin{table}[h]
 \centering
+\caption{Fixed values obtained in fits to simulations used in the model for the signal and normalisation PDFs.} 
+\label{tab:B2DsKK_signal_mc_fits} 
 \begin{tabular}{ c c }
 \hline
 Parameter                   & Value \\
@@ -79,9 +81,7 @@ $f_\sigma$                  & 0.66 $\pm$ 0.12    \\
 $\alpha$                    & 2.67 $\pm$ 0.12    \\
 $n$                         & 1 $\pm$ 0          \\
 \hline
-\end{tabular}
-\caption{Fixed values obtained in fits to simulations used in the model for the signal and normalisation PDFs.} 
-\label{tab:B2DsKK_signal_mc_fits}  
+\end{tabular} 
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
@@ -113,6 +113,8 @@ The low invariant mass region of the \Dsp\Dzb spectrum is populated by decays of
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \begin{table}[h]
 \centering
+\caption{Branching fractions for excited charm mesons \cite{PDG2016}. } 
+\label{tab:dstar_BFs}
 \begin{tabular}{ l c }
 
 \hline
@@ -124,9 +126,7 @@ Decay                           & Branching fraction \\
 \decay{\Dssp}{\Dsp\piz}           &   $(5.8\pm0.7)\%$ \\
 \hline
 
-\end{tabular}
-\caption{Branching fractions for excited charm mesons \cite{PDG2016}. } 
-\label{tab:dstar_BFs}  
+\end{tabular}  
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
@@ -303,7 +303,7 @@ An additional systematic is assigned to account for the use Run 1 Dalitz plot de
 }
 %\subsection{Total Systematic Uncertainty}
 
-\begin{table*}[!ht]
+\begin{table}[!ht]
 \begin{center}
 \caption{Contributions to the total systematic uncertainty of the \decay{\Bp}{\Dsp\Kp\Km} branching fraction measurement. }
 \label{table:B2DsKK_systematics}
@@ -328,7 +328,7 @@ Normalisation                               &       & $0.70$\\
 \hline
 \end{tabular}
 \end{center}
-\end{table*}  
+\end{table}  
 
 \section{Results}
 \label{sec:B2DsKK_results}
@@ -366,7 +366,7 @@ This extra uncertainty is then scaled by the corrected yield to give the total u
 \end{equation}
 For the nominal fit the uncertainties are summarised in Table~\ref{table:DsKK_fit_errors}.
 
-\begin{table*}[!ht]
+\begin{table}[!ht]
 \begin{center}
 \caption{The various uncertainties as detailed in Section~\ref{sec:B2DsKK_results} and their values in the nominal fit.}
 \label{table:DsKK_fit_errors}
@@ -383,19 +383,19 @@ $\sigma_{\text{corr}}(N_{\text{corr}})$ & 14.9 \\
 \hline
 \end{tabular}
 \end{center}
-\end{table*}
+\end{table}
 
 The corrected yield ratio can be expressed as the ratio of signal and normalisation branching fractions using Eq.~\ref{eq:DsKKBranchingfraction}. The value is measured to be 
-\begin{equation*}
+\begin{equation}
 \frac{ N_{\text{corr}}(\decay{\Bp}{\Dsp\Kp\Km}) }{ N(\decay{\Bp}{\Dsp\Dzb}) } = \frac{\mathcal{B}(\decay{\Bp}{\Dsp\Kp\Km})}{\mathcal{B}(\decay{\Bp}{\Dsp\Dzb})\mathcal{B}(\decay{\Dzb}{\Kp\Km})}  = 0.197 \pm 0.015 \pm 0.017, 
-\end{equation*}
+\end{equation}
 where the first uncertainty is statistical, and the second is systematic.
 
 The branching fraction for $\decay{\Bp}{\Dsp\Kp\Km}$ decays is determined to be 
 
-\begin{equation*}
+\begin{equation}
 \mathcal{B}(\decay{\Bp}{\Dsp\Kp\Km}) = (7.1 \pm 0.5 \pm 0.6 \pm 0.7) \times 10^{-6},
-\end{equation*}
+\end{equation}
 where the first uncertainty is statistical, the second is systematic and the third from the branching fractions of $\decay{\Dzb}{\Kp\Km}$ and of the normalisation mode $\decay{\Bp}{\Dsp\Dzb}$. 
 The values used for the branching fractions are $\mathcal{B}(\decay{\Dz}{\Kp\Km}) = (4.01 \pm 0.07)\times10^{-3}$ and $\mathcal{B}(\decay{\Bp}{\Dsp\Dzb}) = (9.0 \pm 0.9)\times10^{-3}$~\cite{PDG2016}. 
 The two-body projections $m(D_{s}^{+}K^{-})$ and $m(K^{+}K^{-})$ are obtained for the signal component using the \sPlot technique, shown in Fig.~\ref{fig:B2DsKK_twobodyprojections}. No significant peak is observed in the \phiz region of the $m(\Kp\Km)$ plot; rather a broad distribution of candidates is found in the region up to $m(\Kp\Km) \simeq 1900 \mevcc$.
@@ -428,5 +428,11 @@ The two-body projections $m(D_{s}^{+}K^{-})$ and $m(K^{+}K^{-})$ are obtained fo
     \label{fig:B2DsKK_twobodyprojections}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+{\color{Red}
+\begin{itemize}
+\item remove grid from DsKp plot 
+\end{itemize}
+}
 
 \section{Discussion}
