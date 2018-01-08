@@ -712,29 +712,58 @@ In the search for \decay{\Bp}{\Dsp\Kp\Km} decays, the phase space
 
 \subsection{Multivariate analysis}
 
-Multivariate Analyses (MVAs) are used to help discriminate between genuine \Dsp and \phiz meson decays and random combinations of particles. 
-These MVAs are trained using large samples of candidates from \B mesons decays in data with similar topologies. 
-This training can benefit from an expanded set of variables that are not perfectly represented in simulation, including tracking and PID information in addition to kinematic and geometric information. The distributions of the input variables are shown in Fig... The \phiz and \Dsp MVAs use samples of \decay{\Bs}{\jpsi\phiz} and \decay{\Bsb}{\Dsp\pim} decays, respectively. These are selected using dedicated Stripping Lines designed to select decays. To ensure these samples are representative of the target decays, a preselection is applied to the data. This comprises of similar trigger, background veto and PID requirements applied to the signal modes.
-The $\phi$ and $\Dsp$ invariant mass distributions are fitted separately for each year. 
+Multivariate Analyses (MVAs) are used to help discriminate between genuine \Dsp and \phiz meson decays and combinations of unrelated particles. 
+These MVAs are trained using large samples of candidates from other \B mesons decays in data with similar topologies. 
+This data-driven approach can benefit from an expanded set of variables that are not perfectly represented in simulation, including track quality and particle identification information, in addition to the kinematic and geometric properties.
+The sample of \Dsp mesons is obtained from the decay \decay{\Bsb}{\Dsp\pim}. Similarly, the sample of \phiz mesons is obtained from 
+\decay{\Bs}{\jpsi\phiz} decays. Large, pure samples are reconstructed using similar requirements to those applied in the selection of signal \Dsp and \phiz mesons. The 
 
- where the background is statistically subtracted using the \sPlot method~\cite{Pivk:2004ty}. The training uses the \phiz or \Dsp sidebands as a background sample.
+%% Describe fits, sWeights and signal/background samples
+
+
+-The $\phi$ and $\Dsp$ invariant mass distributions are fitted separately for each year. 
+-where the background is statistically subtracted using the \sPlot method~\cite{Pivk:2004ty}. The training uses the \phiz or \Dsp sidebands as a background sample.
+
+%% Discussion of input variables
+The MVA method is trained using a large set of variables chosen to help discriminate between the signals of interest and combinations of unrelated tracks.
+
+
+-These are selected using dedicated Stripping Lines designed to select decays. To ensure these samples are representative of the target decays, a preselection is applied to the data. This comprises of similar trigger, background veto and PID requirements applied to the signal modes.
+
+
+%% Discussion of MVA technicalities 
+The MVA method chosen in this analysis is a gradient Boosted Decision Tree (BDTG)~\cite{Breiman}. This is implemented using the \emph{TMVA} package as part of the \emph{ROOT} framework. 
+%% CHECK This method was compared to a BDT and bagged-BDT 
+
+
+A total of eight MVAs are trained to target the decays \decay{\phi}{\Kp\Km}, \decay{\Dsp}{\Kp\Km\pip}, \decay{\Dsp}{\Kp\pim\pip} and \decay{\Dsp}{\pip\pim\pip}, separately in the Run 1 (2011 and 2012) and Run 2 (2015 and 2016) data.
+
+The samples are split into two random but reproducible subsamples. One is used to train the corresponding MVA, the other to test its response. 
+
+%% Optimisation 
+
 
 {\color{Red}
 \begin{itemize}
 \item Include plots example samples
 \item Include training variable distributions
+\item comparision of different MVA methods
+\item explicit BDTG configuration
 \item Include description of what each variable means \eg ProbNN vars
 \item Variable ranks
 \item Discussion of overtraining and crosschecks
 \item Comparison to alternative? 
 \end{itemize}
 }
-
-A total of eight MVAs are trained to target the decays \decay{\phi}{\Kp\Km}, \decay{\Dsp}{\Kp\Km\pip}, \decay{\Dsp}{\Kp\pim\pip} and \decay{\Dsp}{\pip\pim\pip}, separately in the Run 1 (2011 and 2012) and Run 2 (2015 and 2016) data. 
+ 
 %A preselection including the trigger, vetoes and PID requirements previously discussed is applied to the training samples, ensuring they are representative of the target signal decays. 
 
-The samples are split into two random but reproducible subsamples. One is used to train the corresponding MVA, the other to test its response. 
-The MVA method used in this analysis is a gradient Boosted Decision Tree (BDTG)~\cite{Breiman}. The selection criteria for each of the BDTG classifiers are determined by optimising the Punzi figure of merit, $\epsilon_{s}/ (\frac{a}{2} + \sqrt{N_{\text{BKG}}})$~\cite{Punzi:2003bu}, with $a=5$, where $\epsilon_{s}$ is the signal efficiency and $N_{\text{BKG}}$ is the number of background candidates determined from fits to data, calculated in the signal region.
+
+The MVA method used in this analysis is a gradient Boosted Decision Tree (BDTG)~\cite{Breiman}. The selection criteria for each of the BDTG classifiers are determined by optimising the Punzi figure of merit~\cite{Punzi:2003bu}, 
+\begin{equation}
+\frac{\epsilon_{s}}{(\frac{a}{2} + \sqrt{N_{\text{BKG}}})}
+\end{equation}
+with $a=5$, where $\epsilon_{s}$ is the signal efficiency and $N_{\text{BKG}}$ is the number of background candidates determined from fits to data, calculated in the signal region.
 
 {\color{Red}
 \begin{itemize}
@@ -742,7 +771,18 @@ The MVA method used in this analysis is a gradient Boosted Decision Tree (BDTG)~
 \end{itemize}
 }
 
+%% Description of efficiency 
+
+
 The efficiencies of the MVAs are obtained from the testing samples of \decay{\Bs}{\jpsi\phiz} and \decay{\Bs}{\Dsp\pim} decays. Additionally, a sample of \decay{\Bp}{\Dz\pip} decays is used to calculate the efficiency of $\Dzb \to \Kp \Km$ decays in the normalisation channel. The efficiency calculation takes into account the kinematic differences between the training and signal samples, as well as any possible correlations between the \Dsp and \phiz kinematics, by using input from simulation samples. In the search for \decay{\Bp}{\Dsp\Kp\Km} decays, calibration samples are used to correct for the imperfect modelling of the PID in simulation. These corrected simulations are then used to obtain the variations in the MVA efficiencies as a function of the phase-space position, in particular of the $m(\Kp\Km)$ invariant mass.
+
+{\color{Red}
+\begin{itemize}
+\item Equation for eff determination
+\item Crosschecks for eff
+\item 
+\end{itemize}
+}
 
 \section{Multiple candidates}
 
