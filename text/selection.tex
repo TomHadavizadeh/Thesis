@@ -76,59 +76,45 @@ Events passing any trigger requirement are saved to tape for processing offline.
 
 The large offline data samples passing the online trigger selection are habitually processed in a procedure know within \lhcb as \emph{Stripping}. This centrally managed processing builds candidates from tracks and neutral calorimeter objects in each event according to a set of predefined \emph{Stripping Lines}. Each line builds a specific candidate decay, applying a loose set of preselection requirements, including kinematic, geometric and invariant mass selections. 
 
-The candidate \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays are built using a very similar set of requirements due to the similar topologies of these decays. The normalisation channel, \decay{\Bp}{\Dsp\Dzb} is built similarly, however the difference in lifetime between the \Dzb and \phiz mesons necessitates a slightly different topology. 
-{\color{Green}
-\begin{itemize}
-\item Schematic of the decay topology
-\end{itemize}
-}
+The candidate \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays are built using almost identical set of requirements due to the similar topologies of these decays. The \phiz meson has a lifetime of $(1.55\pm0.01)\times10^{-22}\sec$~\cite{PDG2016}, therefore the kaon decay products effectively originate at the \Bp decay vertex as with \decay{\Bp}{\Dsp\Kp\Km} decays.  The normalisation channel, \decay{\Bp}{\Dsp\Dzb} is built similarly, however the difference in lifetime between the \Dzb and \phiz mesons necessitates a slightly different topology. The \Dzb meson has a lifetime of $(4.101\pm0.015)\times10^{-13}\sec$, allowing the meson to travel away from the \Bp decay vertex. Schematics of the signal and normalisation decay topologies are shown in Fig.~\ref{fig:topo}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
     \centering
     \begin{subfigure}[t]{0.4\textwidth}
         \includegraphics[width=1.0\textwidth]{figs/Selection/B2DsKK_topology.pdf}
-        \caption{Signal topology}
+        \caption{Signal decays}
     \end{subfigure}%
     \begin{subfigure}[t]{0.4\textwidth}
         \includegraphics[width=1.0\textwidth]{figs/Selection/B2DsD0_topology.pdf}
-        \caption{Normalisation topology}
+        \caption{Normalisation decays}
     \end{subfigure}\\
-    \caption{Topologies}
+    \caption{Schematics of the signal and normalisation decay topologies. The collision of the two protons (blue) results in the primary collision vertex (PV). Many promptly produced tracks (red) originate at the PV. In both cases, the long-lived \Bp meson decay vertex is displaced from the PV. The long-lived charm mesons are also displaced from the \Bp meson decay vertex.}
     \label{fig:topo}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 As the final states are fully hadronic the candidates are built from the combination of five tracks. Only \emph{long} tracks (those with hits in the \velo and tracking stations) are used to build these mesons. To ensure these are well reconstructed, the track $\chi^{2}$ per degree of freedom is required to be below $4.0$. Additionally, they are required to have a total momentum $\ptot > 1000 \mevc$ and the projection of the momentum on to the plane transverse to the beam direction is required to be $\pt > 100 \mevc$.
-Due to the relatively longlife time of the \Bp and \D mesons, the decay products originate from a vertex that is displaced from the proton-proton collision vertex. Therefore it is possible that the trajectory that the decay products followed didn't pass through the collision position. A requirement is placed on the significance of the impact parameter between the track and the proton-proton collison vertex of $\chi^{2}_{\text{IP}} > 4$ to ensure all of the tracks used are inconsistent with originating at the primary interaction.    
-Loose requirements are placed on Particle Identification variables to ensure the tracks are of the required species. These are further tightened as detailed in Section~\ref{sec:pidrequirements}. Incorrect track candidates created by combining unrelated \velo and tracking station stumps are suppressed by requiring the ghost track probability $P_{\text{Ghost}} < 0.4$. 
-
-
-
-{\color{Green}
-\begin{itemize}
-\item Schematic of impact parameter
-\end{itemize}
-}
-
-
+Due to the relatively long lifetime of the \Bp and \D mesons, the decay products originate from a vertex that is displaced from the proton-proton collision vertex. Therefore it is possible that the trajectory that the decay products followed didn't pass through the collision position as shown in Fig.~\ref{fig:impact_parameter}. A requirement is placed on the significance of the impact parameter between the track and the proton-proton collision vertex of $\chi^{2}_{\text{IP}} > 4$ to ensure all of the tracks used are inconsistent with originating at the primary interaction.  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
     \centering
     \includegraphics[width=0.4\textwidth]{figs/Selection/Impact_parameter.pdf}
     \caption{Impact parameter}
-    \label{fig:topo}   
+    \label{fig:impact_parameter}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+Loose requirements are placed on \emph{Particle Identification} variables to ensure the tracks are of the required species. These are further tightened as detailed in Section~\ref{sec:pidrequirements}. Incorrect track candidates created by combining unrelated \velo and tracking station stumps are suppressed by requiring the ghost track probability $P_{\text{Ghost}}$ to be less than $0.4$. 
+
+%%%%%% Ds/ D0 and phi construction
+
+
 {\color{Red}
 \begin{itemize}
-\item Track selection
 \item \Dsp and \phiz construction 
-\item \Bp construction 
-\item diagram of topologies
-\item 
+\item \Bp construction
 \end{itemize}
 }
 
@@ -159,25 +145,35 @@ Mode & Stripping line \\
 The selection requirements imposed on candidate \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays in their respective \emph{Stripping Lines} is detailed in Table~\ref{tab:strippinglinecuts}. The definitions of the relevant quantities are as follows:
 \begin{description}
 \item \textbf{Mass:} Invariant mass of the indicated particles. 
-\item \textbf{Momentum:} 
-\item \textbf{Transverse momentum:} 
+\item \textbf{Momentum:} The momentum, \ptot, of the particle or combination of particles.
+\item \textbf{Transverse momentum:} The projection of the total momentum \ptot on the plane perpendicular to the proton beam axis.
 
-\item \textbf{Lifetime:} 
+\item \textbf{Lifetime:} The time taken for the candidate to travel from its origin vertex to its decay vertex.
 
-\item \textbf{Products \pt scalar sum:} The sum of the magnitude of the decay products transverse momentum.
-\item \textbf{Vertex quality:}
+\item \textbf{Products \pt scalar sum:} The sum of the magnitudes of the transverse momentum for each of the decay products, $\sum{|\pt|}$.
+\item \textbf{Vertex quality:} The minimised value of $\chi^{2}/N_{\text{DOF}}$ as determined in the fit to the vertex location.
 
-\item \textbf{Impact parameter:} 
-\item \textbf{Impact parameter significance:}
+\item \textbf{Track quality:} The minimised value of $\chi^{2}/N_{\text{DOF}}$ as determined in the fit track hits.
 
-\item \textbf{Flight distance significance:} 
+\item \textbf{Impact parameter:} The shortest distance between a given track and the primary vertex location, as shown in Fig.~\ref{fig:impact_parameter}. 
+\item \textbf{Impact parameter significance:} The difference of a given vertex's $\chi^{2}/N_{\text{DOF}}$ with and without a specific track included in the fitting procedure.
 
-\item \textbf{Distance of closest approach:} 
+\item \textbf{Flight distance significance:} A measure of the
+
+\item \textbf{Distance of closest approach:} The shortest distance between two tracks.
 \item \textbf{Ghost track probability:} 
-\item \textbf{Direction angle:}
+\item \textbf{Direction angle:} The angle between the particles momentum vector and the vector connecting the primary vertex and decay vertex.
 
-\item \textbf{Particle identification:} 
+\item \textbf{Particle identification:}  
 \end{description}
+
+{\color{Green}
+\begin{itemize}
+\item Schematic of DIRA
+\end{itemize}
+}
+
+
 
 \begin{table}[h]
 \caption{Selection requirements for \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} candidates.}
@@ -188,7 +184,7 @@ Particles      & Quantity                       & Requirement                   
 \hline
 \Bp            & Mass                           &  $4750 < m(\Dsp\phiz) < 7000\mevcc$    \\  
 %               & Transverse Momentum            &  $\pt > 4000 \gevc$               \\  
-               & Products \pt scalar sum        &  $\sum{\pt} > 5000 \mevc$         \\  
+               & Products \pt scalar sum        &  $\sum{|\pt|} > 5000 \mevc$         \\  
                & Vertex quality                 &  $\chi^{2}/N_{\text{DOF}} < 10$   \\  
                & Lifetime                       &  $\tau_{\Bp} > 0.2\ps$            \\  
                & Impact parameter significance  &  $\chi^{2}_{\text{IP}} < 25$      \\  
@@ -203,7 +199,7 @@ Particles      & Quantity                       & Requirement                   
                & Transverse momentum            &  $\pt > 500 \mevc$                \\
                &                                &                                   \\  
 \Dsp           & Mass                           &  $1770 < m(h^{+}h^{-}h^{+}) < 2068\mevcc$            \\  
-               & Products \pt scalar sum        &  $\sum{\pt} > 1800 \mevc$         \\ 
+               & Products \pt scalar sum        &  $\sum{|\pt|} > 1800 \mevc$         \\ 
                & Distance of closest approach   &  $\text{DOCA}(h^{+},h^{-}) < 0.5\mm$     \\  
                & Distance of closest approach   &  $\text{DOCA}(h^{+},h^{+}) < 0.5\mm$     \\  
                & Direction angle                &  $\cos{\theta}>0$                 \\  
@@ -365,7 +361,7 @@ Both modes are selected using this line to reduce systematic uncertainty in the 
 Particles      & Quantity                       & Requirement                       \\ 
 \hline
 \Bp            & Mass                           &  $4750 < m(\Dsp\Dzb) < 7000\mevcc$    \\ 
-               & Products \pt scalar sum        &  $\sum{\pt} > 5000 \mevc$         \\  
+               & Products \pt scalar sum        &  $\sum{|\pt|} > 5000 \mevc$         \\  
                & Vertex quality                 &  $\chi^{2}/N_{\text{DOF}} < 10$   \\  
                & Lifetime                       &  $\tau_{\Bp} > 0.2\ps$            \\  
                & Impact parameter significance  &  $\chi^{2}_{\text{IP}} < 25$      \\  
@@ -380,7 +376,7 @@ Particles      & Quantity                       & Requirement                   
                & Transverse momentum            &  $\pt > 500 \mevc$                \\
                &                                &                                   \\  
 \Dsp           & Mass                           &  $1770 < m(h^{+}h^{-}h^{+}) < 2068\mevcc$            \\  
-               & Products \pt scalar sum        &  $\sum{\pt} > 1800 \mevc$         \\ 
+               & Products \pt scalar sum        &  $\sum{|\pt|} > 1800 \mevc$         \\ 
                & Distance of closest approach   &  $\text{DOCA}(h^{+},h^{-}) < 0.5\mm$     \\  
                & Distance of closest approach   &  $\text{DOCA}(h^{+},h^{+}) < 0.5\mm$     \\  
                & Direction angle                &  $\cos{\theta}>0$                 \\  
