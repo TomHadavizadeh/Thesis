@@ -10,9 +10,11 @@ The corresponding selection for the normalisation channel \decay{\Bp}{\Dsp\Dzb} 
 
 \section{Dataset}
 
-The search for \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays are both performed using data taken 
+The search for \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays are performed using the same data sample collected by the \lhcb experiment.
+This data sample includes the entire Run I sample and the first two years of the Run II data collection period.
+The total integrated luminosity obtained for each year is listed in Table~\ref{tab:lumi}, along with the corresponding centre-of-mass energies. 
 
-Data taken with the \lhcb experiment in Run 1 (2011 and 2012) and part of Run 2 (2015 and 2016) are used in this analysis. The total integrated luminosity obtained for each year of data taking is listed in Table~\ref{tab:lumi}, along with the corresponding centre-of-mass energies.  
+%Data taken with the \lhcb experiment in Run 1 (2011 and 2012) and part of Run 2 (2015 and 2016) are used in this analysis. The total integrated luminosity obtained for each year of data taking is listed in Table~\ref{tab:lumi}, along with the corresponding centre-of-mass energies.  
 
 \begin{table}[t]
  \caption{
@@ -80,6 +82,24 @@ The candidate \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays are buil
 \item Schematic of the decay topology
 \end{itemize}
 }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+    \centering
+    \begin{subfigure}[t]{0.4\textwidth}
+        \includegraphics[width=1.0\textwidth]{figs/Selection/B2DsKK_topology.pdf}
+        \caption{Signal topology}
+    \end{subfigure}%
+    \begin{subfigure}[t]{0.4\textwidth}
+        \includegraphics[width=1.0\textwidth]{figs/Selection/B2DsD0_topology.pdf}
+        \caption{Normalisation topology}
+    \end{subfigure}\\
+    \caption{Topologies}
+    \label{fig:topo}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 As the final states are fully hadronic the candidates are built from the combination of five tracks. Only \emph{long} tracks (those with hits in the \velo and tracking stations) are used to build these mesons. To ensure these are well reconstructed, the track $\chi^{2}$ per degree of freedom is required to be below $4.0$. Additionally, they are required to have a total momentum $\ptot > 1000 \mevc$ and the projection of the momentum on to the plane transverse to the beam direction is required to be $\pt > 100 \mevc$.
 Due to the relatively longlife time of the \Bp and \D mesons, the decay products originate from a vertex that is displaced from the proton-proton collision vertex. Therefore it is possible that the trajectory that the decay products followed didn't pass through the collision position. A requirement is placed on the significance of the impact parameter between the track and the proton-proton collison vertex of $\chi^{2}_{\text{IP}} > 4$ to ensure all of the tracks used are inconsistent with originating at the primary interaction.    
 Loose requirements are placed on Particle Identification variables to ensure the tracks are of the required species. These are further tightened as detailed in Section~\ref{sec:pidrequirements}. Incorrect track candidates created by combining unrelated \velo and tracking station stumps are suppressed by requiring the ghost track probability $P_{\text{Ghost}} < 0.4$. 
@@ -91,6 +111,16 @@ Loose requirements are placed on Particle Identification variables to ensure the
 \item Schematic of impact parameter
 \end{itemize}
 }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.4\textwidth]{figs/Selection/Impact_parameter.pdf}
+    \caption{Impact parameter}
+    \label{fig:topo}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 {\color{Red}
 \begin{itemize}
@@ -126,7 +156,28 @@ Mode & Stripping line \\
 \end{table}
 
 
-The selection requirements imposed on candidate \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays in their respective \emph{Stripping Lines} is detailed in Table~\ref{tab:strippinglinecuts}. 
+The selection requirements imposed on candidate \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays in their respective \emph{Stripping Lines} is detailed in Table~\ref{tab:strippinglinecuts}. The definitions of the relevant quantities are as follows:
+\begin{description}
+\item \textbf{Mass:} Invariant mass of the indicated particles. 
+\item \textbf{Momentum:} 
+\item \textbf{Transverse momentum:} 
+
+\item \textbf{Lifetime:} 
+
+\item \textbf{Products \pt scalar sum:} The sum of the magnitude of the decay products transverse momentum.
+\item \textbf{Vertex quality:}
+
+\item \textbf{Impact parameter:} 
+\item \textbf{Impact parameter significance:}
+
+\item \textbf{Flight distance significance:} 
+
+\item \textbf{Distance of closest approach:} 
+\item \textbf{Ghost track probability:} 
+\item \textbf{Direction angle:}
+
+\item \textbf{Particle identification:} 
+\end{description}
 
 \begin{table}[h]
 \caption{Selection requirements for \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} candidates.}
@@ -300,10 +351,10 @@ Particles      & Quantity                       & Requirement                   
 
 
 Two slightly different strategies are used for the normalisation channel selection in the search for \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} events.
-In the former, the dedicated \decay{\Bp}{\Dsp\Dzb} stripping line listed in Table~\ref{tab:strippinglines} is used to reconstruct the normalisation channel decays.
-The Stripping Line selection for this line is listed in Table~\ref{tab:strippinglinecuts_norm}.
+In the former, the dedicated \decay{\Bp}{\Dsp\Dzb} \emph{Stripping Line} listed in Table~\ref{tab:strippinglines} is used to reconstruct the normalisation channel decays.
+The \emph{Stripping Line} selection for this line is listed in Table~\ref{tab:strippinglinecuts_norm}.
 
-The Stripping Line used in the search for \decay{\Bp}{\Dsp\Kp\Km} decays covers the full $m(\Kp\Km)$ phasespace. This includes the \Dzb mass such that this line reconstructs both the signal and normalisation channels simultaneously. 
+The \emph{Stripping Line} used in the search for \decay{\Bp}{\Dsp\Kp\Km} decays covers the full $m(\Kp\Km)$ phasespace. This includes the \Dzb mass such that this line reconstructs both the signal and normalisation channels simultaneously. 
 Both modes are selected using this line to reduce systematic uncertainty in the ratio of selection efficiencies.
 
 \begin{table}[h]
@@ -715,21 +766,43 @@ In the search for \decay{\Bp}{\Dsp\Kp\Km} decays, the phase space
 Multivariate Analyses (MVAs) are used to help discriminate between genuine \Dsp and \phiz meson decays and combinations of unrelated particles. 
 These MVAs are trained using large samples of candidates from other \B mesons decays in data with similar topologies. 
 This data-driven approach can benefit from an expanded set of variables that are not perfectly represented in simulation, including track quality and particle identification information, in addition to the kinematic and geometric properties.
-The sample of \Dsp mesons is obtained from the decay \decay{\Bsb}{\Dsp\pim}. Similarly, the sample of \phiz mesons is obtained from 
-\decay{\Bs}{\jpsi\phiz} decays. Large, pure samples are reconstructed using similar requirements to those applied in the selection of signal \Dsp and \phiz mesons. The 
+The sample of \Dsp mesons is obtained from the relatively abundant \decay{\Bsb}{\Dsp\pim} decay. Similarly, the sample of \phiz mesons is obtained from \decay{\Bs}{\jpsi\phiz} decays. Large, high purity samples are reconstructed using similar requirements to those applied in the selection of signal \Dsp and \phiz mesons.
+A sample is selected for each of the \Dsp and \phiz meson decays uses in this analysis, as listed in Table~\ref{tab:mva_modes}. 
+These samples are used to select each of the 
+
+\begin{table}[t]
+ \caption{MVA modes}
+\begin{center}\begin{tabular}{lll}
+   \hline
+   Sample                    & Mode                       & Use \\ 
+   \hline
+   \decay{\Bsb}{\Dsp\pim}    & \decay{\Dsp}{\Kp\Km\pip}   & Training, Efficiency \\
+   \decay{\Bsb}{\Dsp\pim}    & \decay{\Dsp}{\Kp\pim\pip}  & Training, Efficiency \\
+   \decay{\Bsb}{\Dsp\pim}    & \decay{\Dsp}{\pip\pim\pip} & Training, Efficiency \\
+   \decay{\Bs}{\jpsi\phiz}   & \decay{\phiz}{\Kp\Km}      & Training, Efficiency \\
+   \hline
+   \decay{\Bp}{\Dzb\pip}     & \decay{\Dzb}{\Kp\Km}       & Efficiency          \\
+   \hline
+ \end{tabular}\end{center}
+\label{tab:mva_modes}
+\end{table}
+
 
 %% Describe fits, sWeights and signal/background samples
+The train variable distributions for the \Dsp and \phiz meson samples are isolated by background subtracting the \decay{\Bs}{\jpsi\phiz} and \decay{\Bsb}{\Dsp\pim} decays using the \sPlot technique~\cite{Pivk:2004ty}. Unbinned maximum likelihood fits are performed to the \Dsp and \phiz invariant mass distribution in order to determine the yield of \Dsp and \phiz candidates respectively. These fits are performed separately for each year of data taking, and for each of the targeted decays. 
 
-
+{\color{Blue}
 -The $\phi$ and $\Dsp$ invariant mass distributions are fitted separately for each year. 
--where the background is statistically subtracted using the \sPlot method~\cite{Pivk:2004ty}. The training uses the \phiz or \Dsp sidebands as a background sample.
+- The training uses the \phiz or \Dsp sidebands as a background sample.
+}
 
 %% Discussion of input variables
 The MVA method is trained using a large set of variables chosen to help discriminate between the signals of interest and combinations of unrelated tracks.
 
+{\color{Blue}
 
 -These are selected using dedicated Stripping Lines designed to select decays. To ensure these samples are representative of the target decays, a preselection is applied to the data. This comprises of similar trigger, background veto and PID requirements applied to the signal modes.
-
+}
 
 %% Discussion of MVA technicalities 
 The MVA method chosen in this analysis is a gradient Boosted Decision Tree (BDTG)~\cite{Breiman}. This is implemented using the \emph{TMVA} package as part of the \emph{ROOT} framework. 
@@ -759,7 +832,7 @@ The samples are split into two random but reproducible subsamples. One is used t
 %A preselection including the trigger, vetoes and PID requirements previously discussed is applied to the training samples, ensuring they are representative of the target signal decays. 
 
 
-The MVA method used in this analysis is a gradient Boosted Decision Tree (BDTG)~\cite{Breiman}. The selection criteria for each of the BDTG classifiers are determined by optimising the Punzi figure of merit~\cite{Punzi:2003bu}, 
+The selection criteria for each of the BDTG classifiers are determined by optimising the Punzi figure of merit~\cite{Punzi:2003bu}, 
 \begin{equation}
 \frac{\epsilon_{s}}{(\frac{a}{2} + \sqrt{N_{\text{BKG}}})}
 \end{equation}
