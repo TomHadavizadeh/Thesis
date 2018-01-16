@@ -10,26 +10,25 @@ The corresponding selection for the normalisation channel \decay{\Bp}{\Dsp\Dzb} 
 
 \section{Dataset}
 
-The search for \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays are performed using the same data sample collected by the \lhcb experiment.
-This data sample includes the entire Run I sample and the first two years of the Run II data collection period.
+{\color{Red} The search for \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays are performed using a data sample collected by the \lhcb experiment.
+This data sample includes the entire Run I sample and the first two years of the Run II data collection period.}
 The total integrated luminosity obtained for each year is listed in Table~\ref{tab:lumi}, along with the corresponding centre-of-mass energies. 
 
-%Data taken with the \lhcb experiment in Run 1 (2011 and 2012) and part of Run 2 (2015 and 2016) are used in this analysis. The total integrated luminosity obtained for each year of data taking is listed in Table~\ref{tab:lumi}, along with the corresponding centre-of-mass energies.  
-
 \begin{table}[t]
- \caption{
-   The integrated luminosities obtained during the different data taking periods used in this analysis and the corresponding centre-of-mass energies ($\sqrt{s}$).}
-\begin{center}\begin{tabular}{ccc}
-   \hline
-   Year                    & Integrated luminosity (\invfb)  & $\sqrt{s}$ (\tev) \\ 
-   \hline
-   2011                    & 1.0  &  7 \\
-   2012                    & 2.0  &  8 \\
-   2015                    & 0.3  & 13 \\
-   2016                    & 1.5  & 13 \\
-   \hline
- \end{tabular}\end{center}
-\label{tab:lumi}
+   \begin{center}
+      \begin{tabular}{ccc}
+         \hline
+         Year                    & Integrated luminosity (\invfb)  & $\sqrt{s}$ (\tev) \\ 
+         \hline
+         2011                    & 1.0  &  7 \\
+         2012                    & 2.0  &  8 \\
+         2015                    & 0.3  & 13 \\
+         2016                    & 1.5  & 13 \\
+         \hline
+      \end{tabular}
+   \end{center}
+   \caption{The integrated luminosities obtained during the different data taking periods used in this analysis and the corresponding centre-of-mass energies ($\sqrt{s}$).}
+   \label{tab:lumi}
 \end{table}
 
 
@@ -37,15 +36,53 @@ The total integrated luminosity obtained for each year is listed in Table~\ref{t
 
 The online event selection is performed by the \lhcb trigger, which consists of a hardware stage, based on information from the calorimeter and muon
 systems, followed by a software stage, which reconstructs the full event.
-Reconstructed objects are classified into categories when considering their relationship to the various triggers that fired in a given event. 
+
+ 
+
+
+{\color{Red}
 \begin{itemize}
-\item If the interaction caused by a reconstructed object was sufficient to have fired a given trigger then this object is said to be \texttt{TOS} (Triggered on Signal) with respect to that trigger. As such, if the hits that this object caused were removed from the events the trigger would no longer fire. 
-\item Conversely, if the object did not cause the trigger to have fired, the object is \texttt{TIS} (Triggered Independently of Signal) with respect to the trigger. In this case, removal of any hits from the object would not affect the trigger decision. 
-\item A third category is possible, \texttt{TOB} (Triggered on Both), where both the signal object and another object are required to reach the threshold to fire a trigger. In this situation neither are sufficient to individually fire the trigger, but removing either one of them would prevent the trigger firing. Events in this category are not considered in this analysis.
+\item More relevant information on the trigger rather than jumping straight into TIS/TOS
 \end{itemize}
+}
+Trigger decisions are made on globally for a given event; either the event is saved or it's discarded. However, more detailed information about the specific interaction that initiated the trigger can be used to help isolate events containing signal candidates. At both hardware and software level there are a number of different contributions that can lead to an event being retained. In hardware this is broadly separated according to the sub-detector that contained the triggering deposit. Deposits in the muon chambers or hadronic calorimeter would fire \texttt{L0Muon} or \texttt{L0Hadron} respectively. Electromagnetic calorimeter deposits could result in \texttt{L0Electron} or \texttt{L0Photon} firing. The \decay{\Bp}{\Dsp\Kp\Km} and \decay{\Bp}{\Dsp}{\phiz} decays are both reconstructed in fully hadronic final states, therefore events retained as a result of the \texttt{L0Electron}, \texttt{L0Photon} or \texttt{L0Muon} trigger firing are unlikely to have been caused by the signal decays. 
 
-At the hardware trigger stage, the selected candidates are required to be \texttt{TOS} with respect to the hadronic trigger \texttt{L0Hadron}. This ensures the selected candidates were retained due to corresponding deposits in the hadronic calorimeter. Alternatively, candidates are selected if they are \texttt{TIS} with respect to the global hardware trigger \texttt{L0Global}. This allows candidates that have been retained due another highly energetic decay in the same event to contribute. This could be the decay of hadron resulting from the other \bquark quark in a \bquark\bquarkbar pair production. Any of the hardware trigger subsystems can contribute to the \texttt{L0Global} decision.
+In addition to specifying which triggers fired, it is possible to use more granular information about the particular hits initiating the trigger to improve the selection of signal candidates. The tracks constituting the reconstructed candidate are matched to the deposits in each sub-detector. The fraction of hits required to match in order for the trigger decision to be associated to that object vary depending on the subdetector in question, as listed in Table~\ref{tab:tosfrac}.
+\begin{table}[t]
+   \begin{center}
+      \begin{tabular}{cc}
+         \hline
+         Subdetector    &  Fraction of matching hits \\
+         \hline 
+         \hcal          & 1\%    \\ 
+         \ecal          & 1\%    \\ 
+         Muon           & 0.01\% \\ 
+         \ttracker      & 0\%    \\ 
+         \intr and \ot  & 70\%   \\ 
+         \velo          & 70\%   \\ 
+         \hline
+      \end{tabular}
+   \end{center}
+   \caption{The fraction of matching hits required for a reconstructed object to be associated to a subdetector deposit.}
+   \label{tab:tosfrac}
+   %% From: https://gitlab.cern.ch/lhcb/Phys/blob/83e7320119561a4e4996e51a96601f65f1ff5cfe/Phys/TisTosTobbing/src/lib/TisTos.cpp
+   %% https://gitlab.cern.ch/lhcb/Phys/blob/2016-patches/Phys/TisTosTobbing/src/lib/TisTos.cpp
+\end{table}
+Reconstructed objects are classified into categories when considering their relationship to the various triggers that fired in a given event. 
+\begin{description}
+\item \textbf{Triggered on Signal:} if the deposited matched to a reconstructed object was sufficient to have fired a given trigger then this object is said to be \emph{Triggered on Signal} (\texttt{TOS}) with respect to that trigger. As such, if the hits that this object caused were removed from the events the trigger would no longer fire. 
+\item \textbf{Triggered Independently of Signal:} conversely, if the object itself was not sufficient to cause the trigger to have fired and it instead fired due to other interactions in the event, the object is \emph{Triggered Independently of Signal} (\texttt{TIS}) with respect to the trigger. In this case, removal of hits matched to the object would not affect the trigger decision. 
+\item \textbf{Triggered on Both:} a third category is possible, \emph{Triggered on Both} (\texttt{TOB}), where both the signal object and another object are required to reach the threshold to fire a trigger. In this situation neither are sufficient to individually fire the trigger, but removing either one of them would prevent the trigger firing. Events in this category are not considered in this analysis.
+\end{description}
 
+
+At the hardware trigger stage, the selected candidates are required to be \texttt{TOS} with respect to the hadronic trigger \texttt{L0Hadron}. This ensures the selected candidates were retained due to corresponding deposits in the hadronic calorimeter. Alternatively, candidates are selected if they are \texttt{TIS} with respect to the global hardware trigger \texttt{L0Global}. Any of the hardware trigger subsystems can contribute to the \texttt{L0Global} decision. This allows candidates that have been retained due another highly energetic decay in the same event to contribute. This could be the decay of hadron resulting from the other \bquark quark in a \bquark\bquarkbar pair production. 
+
+{\color{Green}
+\begin{itemize}
+\item Include schematic of TIS TOS deposits
+\end{itemize}
+}
 {\color{Red}
 \begin{itemize}
 \item Include approximate TIS TOS fractions
