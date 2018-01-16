@@ -10,7 +10,7 @@ The corresponding selection for the normalisation channel \decay{\Bp}{\Dsp\Dzb} 
 
 \section{Dataset}
 
-{\color{Red} The search for \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays are performed using a data sample collected by the \lhcb experiment.
+{\color{Red} The searches for \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays are performed using a data sample collected by the \lhcb experiment.
 This data sample includes the entire Run I sample and the first two years of the Run II data collection period.}
 The total integrated luminosity obtained for each year is listed in Table~\ref{tab:lumi}, along with the corresponding centre-of-mass energies. 
 
@@ -36,18 +36,14 @@ The total integrated luminosity obtained for each year is listed in Table~\ref{t
 
 The online event selection is performed by the \lhcb trigger, which consists of a hardware stage, based on information from the calorimeter and muon
 systems, followed by a software stage, which reconstructs the full event.
+% {\color{Red}
+% \begin{itemize}
+% \item More relevant information on the trigger rather than jumping straight into TIS/TOS
+% \end{itemize}
+% }
+Trigger decisions are made globally for a given event; either the event is saved or it's discarded. However, for events that are retained more detailed information about the specific interaction that initiated the trigger can be used to help isolate events containing signal candidates. At both hardware and software level there are a number of different triggers that can lead to an event being retained. In hardware this is broadly separated according to the sub-detector that contained the triggering deposit. Deposits in the muon chambers or hadronic calorimeter would fire \texttt{L0Muon} or \texttt{L0Hadron} respectively. Electromagnetic calorimeter deposits could result in \texttt{L0Electron} or \texttt{L0Photon} firing. The \decay{\Bp}{\Dsp\Kp\Km} and \decay{\Bp}{\Dsp}{\phiz} decays are both reconstructed in fully hadronic final states, therefore events retained as a result of the \texttt{L0Electron}, \texttt{L0Photon} or \texttt{L0Muon} trigger firing are unlikely to have been caused by the signal decays. 
 
- 
-
-
-{\color{Red}
-\begin{itemize}
-\item More relevant information on the trigger rather than jumping straight into TIS/TOS
-\end{itemize}
-}
-Trigger decisions are made on globally for a given event; either the event is saved or it's discarded. However, more detailed information about the specific interaction that initiated the trigger can be used to help isolate events containing signal candidates. At both hardware and software level there are a number of different contributions that can lead to an event being retained. In hardware this is broadly separated according to the sub-detector that contained the triggering deposit. Deposits in the muon chambers or hadronic calorimeter would fire \texttt{L0Muon} or \texttt{L0Hadron} respectively. Electromagnetic calorimeter deposits could result in \texttt{L0Electron} or \texttt{L0Photon} firing. The \decay{\Bp}{\Dsp\Kp\Km} and \decay{\Bp}{\Dsp}{\phiz} decays are both reconstructed in fully hadronic final states, therefore events retained as a result of the \texttt{L0Electron}, \texttt{L0Photon} or \texttt{L0Muon} trigger firing are unlikely to have been caused by the signal decays. 
-
-In addition to specifying which triggers fired, it is possible to use more granular information about the particular hits initiating the trigger to improve the selection of signal candidates. The tracks constituting the reconstructed candidate are matched to the deposits in each sub-detector. The fraction of hits required to match in order for the trigger decision to be associated to that object vary depending on the subdetector in question, as listed in Table~\ref{tab:tosfrac}.
+In addition to specifying which triggers fired, it is possible to use more granular information about the specific hits initiating the trigger to improve the selection of signal candidates. The tracks constituting the reconstructed candidate are matched to the deposits in each sub-detector. The fraction of hits required to match in order for the trigger decision to be associated to that object vary depending on the subdetector in question, as listed in Table~\ref{tab:tosfrac}.
 \begin{table}[t]
    \begin{center}
       \begin{tabular}{cc}
@@ -71,18 +67,37 @@ In addition to specifying which triggers fired, it is possible to use more granu
 Reconstructed objects are classified into categories when considering their relationship to the various triggers that fired in a given event. 
 \begin{description}
 \item \textbf{Triggered on Signal:} if the deposited matched to a reconstructed object was sufficient to have fired a given trigger then this object is said to be \emph{Triggered on Signal} (\texttt{TOS}) with respect to that trigger. As such, if the hits that this object caused were removed from the events the trigger would no longer fire. 
-\item \textbf{Triggered Independently of Signal:} conversely, if the object itself was not sufficient to cause the trigger to have fired and it instead fired due to other interactions in the event, the object is \emph{Triggered Independently of Signal} (\texttt{TIS}) with respect to the trigger. In this case, removal of hits matched to the object would not affect the trigger decision. 
+\item \textbf{Triggered Independently of Signal:} conversely, if the specific trigger fired solely due to other interactions within the same event the object is \emph{Triggered Independently of Signal} (\texttt{TIS}) with respect to that trigger. In this case, removal of hits matched to the object would not affect the trigger decision. It is possible for a candidate to be both \texttt{TIS} and \texttt{TOS}.
 \item \textbf{Triggered on Both:} a third category is possible, \emph{Triggered on Both} (\texttt{TOB}), where both the signal object and another object are required to reach the threshold to fire a trigger. In this situation neither are sufficient to individually fire the trigger, but removing either one of them would prevent the trigger firing. Events in this category are not considered in this analysis.
 \end{description}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+    \centering
+    \begin{subfigure}[t]{0.4\textwidth}
+        \includegraphics[width=1.0\textwidth]{figs/Selection/Tos.pdf}
+        \caption{\texttt{TOS}}
+    \end{subfigure}%
+    \begin{subfigure}[t]{0.4\textwidth}
+        \includegraphics[width=1.0\textwidth]{figs/Selection/Tos.pdf}
+        \caption{\texttt{TIS}}
+    \end{subfigure}\\
+    \begin{subfigure}[t]{0.4\textwidth}
+        \includegraphics[width=1.0\textwidth]{figs/Selection/Tob.pdf}
+        \caption{\texttt{TOB}}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.4\textwidth}
+        \includegraphics[width=1.0\textwidth]{figs/Selection/TisTos.pdf}
+        \caption{\texttt{TOS} and \texttt{TIS}}
+    \end{subfigure}\\
+    \caption{Simple schematics of the different trigger matching possibilities, illustrated with one signal track and one other non-signal track. Cells with a deposit above the trigger threshold are shown in red. }
+    \label{fig:tistostobbing}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 At the hardware trigger stage, the selected candidates are required to be \texttt{TOS} with respect to the hadronic trigger \texttt{L0Hadron}. This ensures the selected candidates were retained due to corresponding deposits in the hadronic calorimeter. Alternatively, candidates are selected if they are \texttt{TIS} with respect to the global hardware trigger \texttt{L0Global}. Any of the hardware trigger subsystems can contribute to the \texttt{L0Global} decision. This allows candidates that have been retained due another highly energetic decay in the same event to contribute. This could be the decay of hadron resulting from the other \bquark quark in a \bquark\bquarkbar pair production. 
 
-{\color{Green}
-\begin{itemize}
-\item Include schematic of TIS TOS deposits
-\end{itemize}
-}
 {\color{Red}
 \begin{itemize}
 \item Include approximate TIS TOS fractions
@@ -107,7 +122,7 @@ The first stage, \hltone, requires that the selected candidates are associated w
 At the second software stage, \hlttwo, two different algorithms are used to select candidates for this analysis.
 The first one uses a multivariate algorithm~\cite{BBDT} to identify the presence of a secondary vertex that has two, three or four tracks and is displaced from any PV. At least one of these charged particles must have a transverse momentum $\pt > 1.7\gevc$ and be inconsistent with originating from a PV. 
 The second algorithm selects $\phiz$ candidates decaying to two charged kaons. Each kaon must have a transverse momentum $\pt > 0.8\gevc$ and be inconsistent with originating from a PV. The invariant mass of the kaon pair must be within $20\mevcc$ of the known \phiz mass~\cite{PDG2016}.
-The inclusive \phiz line is used to maximise the selection efficiencies as \phiz mesons can contribute directly to \decay{\Bp}{\Dsp\phiz} decays, as well as the large fractions of \decay{\Dsp}{\phiz\pip} decays that contribute to the \decay{\Dsp}{\Kp\Km\pip} final state.
+The inclusive \phiz line is used to maximise the selection efficiencies as \phiz mesons can contribute directly to \decay{\Bp}{\Dsp\phiz} decays, as well as via the large fractions of \decay{\Dsp}{\phiz\pip} decays that contribute to the \decay{\Dsp}{\Kp\Km\pip} final state.
 
 {\color{Red}
 \begin{itemize}
@@ -141,8 +156,58 @@ The candidate \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays are buil
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+The candidate \decay{\Bp}{\Dsp\Kp\Km} and \decay{\Bp}{\Dsp\phiz} signal decays and \decay{\Bp}{\Dsp\Dzb} normalisation decay are reconstructed in fully hadronic final states. Both the \Dzb and phiz mesons are reconstructed from pairs of oppositely charged kaons. The branching fraction are $\BF(\decay{\Dzb}{\Kp\Km})= (3.97 \pm 0.07)\times 10^{-3}$ and $\BF(\decay{\phiz}{\Kp\Km})= (48.9 \pm 0.5)\%$ respectively~\cite{PDG2016}. Although the two-body hadronic decay \decay{\Dz}{\Km\pip} has a larger branching fraction than mode chosen for the normalisation channel, $\BF(\decay{\Dz}{\Km\pip})= (3.89 \pm 0.04)\%$, having the same final state helps to reduced systematic uncertainties in the ratio of selection efficiencies. By using the same final state, many differences in how pions and kaons interact with the detector can be neglected as they would affect the signal and normalisation channel in the same way.
+The \Dsp mesons used in the search for \decay{\Bp}{\Dsp\Kp\Km} decays are reconstructed using the \decay{\Dsp}{\Kp\Km\pip} decay. The search for \decay{\Bp}{\Dsp\phiz} additionally includes the \decay{\Dsp}{\pip\pim\pip} and \decay{\Dsp}{\Kp\pim\pip} decays to increase the reach of the search. The branching fractions for these decays are listed in Table~\ref{tab:dsbranchingfractions}. In each instance the normalisation channel is reconstructed using the same \Dsp decay mode as the signal.  
 
-As the final states are fully hadronic the candidates are built from the combination of five tracks. Only \emph{long} tracks (those with hits in the \velo and tracking stations) are used to build these mesons. To ensure these are well reconstructed, the track $\chi^{2}$ per degree of freedom is required to be below $4.0$. Additionally, they are required to have a total momentum $\ptot > 1000 \mevc$ and the projection of the momentum on to the plane transverse to the beam direction is required to be $\pt > 100 \mevc$.
+
+\begin{table}[t]
+   \begin{center}
+      \begin{tabular}{lc}
+         \hline
+         Decay                         &  Branching fraction \\
+         \hline 
+         \decay{\Dsp}{\Kp\Km\pip}      & $5.45 \pm 0.17 \%$ \\
+         \decay{\Dsp}{\pip\pim\pip}    & $1.09 \pm 0.05 \%$ \\
+         \decay{\Dsp}{\Kp\pim\pip}     & $0.66 \pm 0.04 \%$ \\
+         \hline
+      \end{tabular}
+   \end{center}
+   \caption{The branching fractions for the different \Dsp decay modes used to reconstruct the signal and normalisation modes.}
+   \label{tab:dsbranchingfractions}
+\end{table}
+
+%The searches for \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays employ the use of two different \emph{Stripping Lines} as detailed in Table~\ref{tab:strippinglines}. These differ only in the invariant mass window applied to the $\Kp\Km$ pair used to reconstruct the $\phi$ meson, and in the number of \Dsp decay modes included: the \decay{\Bp}{\Dsp\Kp\Km} line only reconstructs the Cabibbo Favoured (CF) \decay{\Dsp}{\Kp\Km\pip} decay. The \emph{Stripping Line} used to select the normalisation channel \decay{\Bp}{\Dsp\Dzb} is also included in Table~\ref{tab:strippinglines}. This has slightly different requirements allowing the \Dzb meson decay vertex to be be displaced from the \Bp meson decay vertex.
+
+
+The selection of candidates makes requirements on many different distinguishing characteristics. The definitions of the relevant quantities are as follows:  
+\begin{description}
+\item \textbf{Mass, $m(X)$:} the invariant mass of the indicated particle or combination of particles. 
+\item \textbf{Momentum, \ptot:} the momentum, \ptot, of the particle or combination of particles.
+\item \textbf{Transverse momentum, \pt:} The projection of the total momentum, \ptot, on the plane perpendicular to the proton beam axis.
+\item \textbf{Lifetime, $\tau$:} the time taken for the candidate to travel from its production vertex to its decay vertex.
+\item \textbf{Products \pt scalar sum, $\sum{|\pt|}$:} the sum of the magnitudes of the transverse momentum for each of the decay products.
+\item \textbf{Vertex quality, $\chi^{2}/N_{\text{DOF}}$:} the minimised value of $\chi^{2}/N_{\text{DOF}}$ as determined in the fit to the vertex location.
+\item \textbf{Track quality, $\chi^{2}/N_{\text{DOF}}$:} the minimised value of $\chi^{2}/N_{\text{DOF}}$ as determined in the fit track hits.
+\item \textbf{Impact parameter, $\text{IP}$:} The shortest distance between a given track and the primary vertex location, as shown in Fig.~\ref{fig:impact_parameter}. 
+\item \textbf{Impact parameter significance, $\chi^{2}_{\text{IP}}$:} The difference of a given vertex's $\chi^{2}/N_{\text{DOF}}$ with and without a specific track included in the fitting procedure.
+\item \textbf{Flight distance significance, $\chi^{2}_{\text{FD}}$:} A measure of how significant the flight distance of a combination of particle is. Defined as the $\chi^{2}$ associated with the difference in position of the two vertices, $\vec{\mathbf{d}} = \vec{\mathbf{v}}_2 - \vec{\mathbf{v}}_1$, where $\vec{\mathbf{v}}_1$ and $\vec{\mathbf{v}}_1$ are positions of the first and the second vertices. 
+
+
+\item \textbf{Distance of closest approach, $\text{DOCA}(h,h')$:} The shortest distance between two tracks.
+\item \textbf{Ghost track probability, $P_{\text{Ghost}}$:} 
+\item \textbf{Direction angle:} The angle between the particles momentum vector and the vector connecting the primary vertex and decay vertex.
+
+\item \textbf{Particle identification, $\text{PIDK}$:}  
+\end{description}
+
+{\color{Green}
+\begin{itemize}
+\item Schematic of DIRA
+\end{itemize}
+}
+
+
+As the final states are fully hadronic the candidates are built from the combination of five tracks. Only \emph{long} tracks (those with hits in the \velo and tracking stations) are used to build these mesons. To ensure these are well reconstructed, the track $\chi^{2}/N_{\text{DOF}}$ is required to be below $4.0$. Additionally, they are required to have a total momentum $\ptot > 1000 \mevc$ and the transverse momentum is required to be $\pt > 100 \mevc$.
 Due to the relatively long lifetime of the \Bp and \D mesons, the decay products originate from a vertex that is displaced from the proton-proton collision vertex. Therefore it is possible that the trajectory that the decay products followed didn't pass through the collision position as shown in Fig.~\ref{fig:impact_parameter}. A requirement is placed on the significance of the impact parameter between the track and the proton-proton collision vertex of $\chi^{2}_{\text{IP}} > 4$ to ensure all of the tracks used are inconsistent with originating at the primary interaction.  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
@@ -166,9 +231,7 @@ Loose requirements are placed on \emph{Particle Identification} variables to ens
 }
 
 
-
-
-The searches for \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays employ the use of two different \emph{Stripping Lines} as detailed in Table~\ref{tab:strippinglines}. These differ only in the invariant mass window applied to the $\Kp\Km$ pair used to reconstruct the $\phi$ meson, and in the number of \Dsp decay modes included: the \decay{\Bp}{\Dsp\Kp\Km} line only reconstructs the Cabibbo Favoured (CF) \decay{\Dsp}{\Kp\Km\pip} decay. The \emph{Stripping Line} used to select the normalisation channel \decay{\Bp}{\Dsp\Dzb} is also included in Table~\ref{tab:strippinglines}. This has slightly different requirements allowing the \Dzb meson decay vertex to be be displaced from the \Bp meson decay vertex.
+The selection requirements imposed on candidate \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays in their respective \emph{Stripping Lines} is detailed in Table~\ref{tab:strippinglinecuts}. 
 
 
 \begin{table}[t]
@@ -189,42 +252,6 @@ Mode & Stripping line \\
 \end{table}
 
 
-The selection requirements imposed on candidate \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays in their respective \emph{Stripping Lines} is detailed in Table~\ref{tab:strippinglinecuts}. The definitions of the relevant quantities are as follows:
-\begin{description}
-\item \textbf{Mass, $m(X)$:} the invariant mass of the indicated particle or combination of particles. 
-\item \textbf{Momentum, \ptot:} the momentum, \ptot, of the particle or combination of particles.
-\item \textbf{Transverse momentum, \pt:} The projection of the total momentum, \ptot, on the plane perpendicular to the proton beam axis.
-
-\item \textbf{Lifetime, $\tau$:} the time taken for the candidate to travel from its production vertex to its decay vertex.
-
-\item \textbf{Products \pt scalar sum, $\sum{|\pt|}$:} the sum of the magnitudes of the transverse momentum for each of the decay products.
-\item \textbf{Vertex quality, $\chi^{2}/N_{\text{DOF}}$:} the minimised value of $\chi^{2}/N_{\text{DOF}}$ as determined in the fit to the vertex location.
-
-\item \textbf{Track quality, $\chi^{2}/N_{\text{DOF}}$:} the minimised value of $\chi^{2}/N_{\text{DOF}}$ as determined in the fit track hits.
-
-\item \textbf{Impact parameter, $\text{IP}$:} The shortest distance between a given track and the primary vertex location, as shown in Fig.~\ref{fig:impact_parameter}. 
-\item \textbf{Impact parameter significance, $\chi^{2}_{\text{IP}}$:} The difference of a given vertex's $\chi^{2}/N_{\text{DOF}}$ with and without a specific track included in the fitting procedure.
-
-\item \textbf{Flight distance significance, $\chi^{2}_{\text{FD}}$:} A measure of how significant the flight distance of a combination of particle is. Defined as the increase in the  
-   % *  @param chi2     (output) the chi2-value for the impact parameter. 
-   % *                  It is defined as the increase of the chi2 of the PV 
-   % *                  vertex fit when one adds the track into the vertex.
-   % *                  It behaves almost like (IP/IP_error)^2    
-$ \vec{\mathbf{d}} = \vec{\mathbf{v}}_2 - \vec{\mathbf{v}}_1,$ where  $\vec{\mathbf{v}}_1$ and $\vec{\mathbf{v}}_1$ are positions of the first and the second vertices. 
-
-
-\item \textbf{Distance of closest approach, $\text{DOCA}(h,h')$:} The shortest distance between two tracks.
-\item \textbf{Ghost track probability, $P_{\text{Ghost}}$:} 
-\item \textbf{Direction angle:} The angle between the particles momentum vector and the vector connecting the primary vertex and decay vertex.
-
-\item \textbf{Particle identification, $\text{PIDK}$:}  
-\end{description}
-
-{\color{Green}
-\begin{itemize}
-\item Schematic of DIRA
-\end{itemize}
-}
 
 
 

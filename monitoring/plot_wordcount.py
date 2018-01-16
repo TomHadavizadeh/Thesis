@@ -135,7 +135,7 @@ ax.xaxis.set_major_formatter(monthsFmt)
 # ax.xaxis.set_minor_locator(months)
 
 datemin = datetime.date(2017,12,1)
-datemax = datetime.date(2018,3,1)
+datemax = datetime.date(2018,4,1)
 
 ax.set_xlim(datemin, datemax)
 
@@ -163,7 +163,7 @@ fig.savefig(infilename.replace('.txt','.pdf'), bbox_inches='tight')
 ax.xaxis.set_major_locator(weeks)
 ax.xaxis.set_major_formatter(daysFmt)
 datemin = datetime.date(2017,11,22)
-datemax = datetime.date(2018,3,31)
+datemax = datetime.date(2018,5,31)
 ax.set_xlim(datemin, datemax)
 #fig.savefig(infilename.replace('.txt','_Dec.pdf'), bbox_inches='tight')
 
