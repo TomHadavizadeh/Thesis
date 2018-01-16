@@ -222,9 +222,47 @@ Loose requirements are placed on \emph{Particle Identification} variables to ens
 
 %%%%%% Ds/ D0 and phi construction
 
+The tracks passing these requirements are combined in pairs or threes to form the \Dsp and \phiz or \Dzb meson candidates.  
+
+To create the \phiz candidates (or \Kp\Km pair), all combinations of two tracks are considered. The two tracks are assigned the mass hypothesis of kaons. Only pairs which pass within $0.5\mm$ of one another at their closest point are retained. A number of requirements are imposed to ensure the pair are consistent with coming from a \phiz meson originating from a \Bp meson decay. The vertex is required to be of good quality, the scalar sum of the transverse momentums must be greater than $1000\mevc$ and the flight distance significance is required to be $\chi^{2}_{\text{FD} } > 16$. Additionally the direction angle is required to be $\cos{\theta}>0$, preventing the vertex being backward of the PV even though the momentum is in the forward direction. In the search for \decay{\Bp}{\Dsp\phiz} mesons, the invariant mass of the two kaons is required to be within $150\mevcc$ of the known \phiz meson mass.  
+
+The \Dzb candidates are selecting using a similar parameters, however the exact values of the cuts are changed to reflect the differences in properties of the \phiz and \Dzb mesons.
+
+
+% & Products \pt scalar sum        &  $\sum{|\pt|} > 1000 \mevc$         \\  
+% & Direction angle                &  $\cos{\theta}>0$                 \\  
+% & Vertex quality                 &  $\chi^{2}/N_{\text{DOF}} < 16$   \\   
+% & Flight distance significance   &  $\chi^{2}_{\text{FD} }  > 16$    \\
+
+
+% \Dzb           & Mass                           &  $1765 < m(h^{+}h^{-}h^{+}) < 1965\mevcc$\\  
+%                & Products \pt scalar sum        &  $\sum{|\pt|} > 1800 \mevc$         \\  
+%                & Distance of closest approach   &  $\text{DOCA}(\Kp,\Km) < 0.5\mm$  \\  
+%                & Direction angle                &  $\cos{\theta}>0$                 \\  
+%                & Vertex quality                 &  $\chi^{2}/N_{\text{DOF}} < 10$   \\   
+%                & Flight distance significance   &  $\chi^{2}_{\text{FD} }  > 36$    \\ 
+
+The \Dsp mesons for the signal and normalisation modes are created using 
+
+
+% \Dsp           & Mass                           &  $1770 < m(h^{+}h^{-}h^{+}) < 2068\mevcc$            \\  
+%                & Products \pt scalar sum        &  $\sum{|\pt|} > 1800 \mevc$         \\ 
+%                & Distance of closest approach   &  $\text{DOCA}(h^{+},h^{-}) < 0.5\mm$     \\  
+%                & Distance of closest approach   &  $\text{DOCA}(h^{+},h^{+}) < 0.5\mm$     \\  
+%                & Direction angle                &  $\cos{\theta}>0$                 \\  
+%                & Vertex quality                 &  $\chi^{2}/N_{\text{DOF}} < 10$   \\   
+%                & Flight distance significance   &  $\chi^{2}_{\text{FD} }  > 36$    \\ 
+
+
+%% B meson construction
+
+The \Bp meson candidates are constructed by creating all possible combinations of all \Dsp and \phiz or \Dzb mesons in each event.
+Requirements are placed on these many candidates to select just those consistent with \Bp mesons.
+
 
 {\color{Red}
 \begin{itemize}
+\item something about how combineparticles works?
 \item \Dsp and \phiz construction 
 \item \Bp construction
 \end{itemize}
@@ -287,7 +325,8 @@ Particles      & Quantity                       & Requirement                   
                & Flight distance significance   &  $\chi^{2}_{\text{FD} }  > 36$    \\   
 %               &                                &                                   \\  
 \hline
-\phiz          & Mass (only for \decay{\Bp}{\Dsp\phiz})&  $|m(\Kp\Km)-m_{\phiz}| < 150\mevcc$\\  
+\phiz          & Mass (only for \decay{\Bp}{\Dsp\phiz})&  $|m(\Kp\Km)-m_{\phiz}| < 150\mevcc$\\ 
+               & Products \pt scalar sum        &  $\sum{|\pt|} > 1000 \mevc$         \\  
                & Distance of closest approach   &  $\text{DOCA}(\Kp,\Km) < 0.5\mm$  \\  
                & Direction angle                &  $\cos{\theta}>0$                 \\  
                & Vertex quality                 &  $\chi^{2}/N_{\text{DOF}} < 16$   \\   
@@ -461,6 +500,7 @@ Particles      & Quantity                       & Requirement                   
 %               &                                &                                   \\  
 \hline
 \Dzb           & Mass                           &  $1765 < m(h^{+}h^{-}h^{+}) < 1965\mevcc$\\  
+               & Products \pt scalar sum        &  $\sum{|\pt|} > 1800 \mevc$         \\  
                & Distance of closest approach   &  $\text{DOCA}(\Kp,\Km) < 0.5\mm$  \\  
                & Direction angle                &  $\cos{\theta}>0$                 \\  
                & Vertex quality                 &  $\chi^{2}/N_{\text{DOF}} < 10$   \\   
