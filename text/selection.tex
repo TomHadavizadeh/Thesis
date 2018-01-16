@@ -92,12 +92,22 @@ At the hardware trigger stage, the selected candidates are required to be \textt
 %At the hardware trigger stage, events are required to have a muon with high \pt or a hadron, photon or electron with high transverse energy in the calorimeters. For hadrons, the transverse energy threshold is 3.5\gev. 
 
 The software trigger stage is split into two parts, \hltone and \hlttwo.
-The first stage \hltone requires that the the selected candidates are associated with well reconstructed tracks.
+The first stage, \hltone, requires that the selected candidates are associated with at least one well reconstructed track. This track must be significantly displaced from the primary interaction and has a large transverse momentum. In Run II, this trigger was reimplementing using a multivariate analysis trained to select a well reconstructed, high transverse momentum track that was significantly displaced from the primary interaction. An additional trigger was also included to select pairs of high transverse momentum tracks that form a vertex that is displaced from the primary interaction. The signal candidate is required to be \texttt{TOS} with respect to these trigger lines such that one of the candidate tracks passes this requirement.   
+
+{\color{Red}
+\begin{itemize}
+\item Include more details on HltTrackAllL0? 
+\item Trigger 2011 paper and Run 2 algorithms
+\item add citations
+\end{itemize}
+}
+
+
 
 At the second software stage, \hlttwo, two different algorithms are used to select candidates for this analysis.
 The first one uses a multivariate algorithm~\cite{BBDT} to identify the presence of a secondary vertex that has two, three or four tracks and is displaced from any PV. At least one of these charged particles must have a transverse momentum $\pt > 1.7\gevc$ and be inconsistent with originating from a PV. 
 The second algorithm selects $\phiz$ candidates decaying to two charged kaons. Each kaon must have a transverse momentum $\pt > 0.8\gevc$ and be inconsistent with originating from a PV. The invariant mass of the kaon pair must be within $20\mevcc$ of the known \phiz mass~\cite{PDG2016}.
-The inclusive \phiz line is used to maximise the selection efficiencies 
+The inclusive \phiz line is used to maximise the selection efficiencies as \phiz mesons can contribute directly to \decay{\Bp}{\Dsp\phiz} decays, as well as the large fractions of \decay{\Dsp}{\phiz\pip} decays that contribute to the \decay{\Dsp}{\Kp\Km\pip} final state.
 
 {\color{Red}
 \begin{itemize}
@@ -113,7 +123,7 @@ Events passing any trigger requirement are saved to tape for processing offline.
 
 The large offline data samples passing the online trigger selection are habitually processed in a procedure know within \lhcb as \emph{Stripping}. This centrally managed processing builds candidates from tracks and neutral calorimeter objects in each event according to a set of predefined \emph{Stripping Lines}. Each line builds a specific candidate decay, applying a loose set of preselection requirements, including kinematic, geometric and invariant mass selections. 
 
-The candidate \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays are built using almost identical set of requirements due to the similar topologies of these decays. The \phiz meson has a lifetime of $(1.55\pm0.01)\times10^{-22}\sec$~\cite{PDG2016}, therefore the kaon decay products effectively originate at the \Bp decay vertex as with \decay{\Bp}{\Dsp\Kp\Km} decays.  The normalisation channel, \decay{\Bp}{\Dsp\Dzb} is built similarly, however the difference in lifetime between the \Dzb and \phiz mesons necessitates a slightly different topology. The \Dzb meson has a lifetime of $(4.101\pm0.015)\times10^{-13}\sec$, allowing the meson to travel away from the \Bp decay vertex. Schematics of the signal and normalisation decay topologies are shown in Fig.~\ref{fig:topo}.
+The candidate \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays are built using almost identical set of requirements due to the similar topologies of these decays. The \phiz meson has a lifetime of $(1.55\pm0.01)\times10^{-22}\sec$~\cite{PDG2016}, therefore the kaon decay products effectively originate at the \Bp decay vertex in a similar way to \decay{\Bp}{\Dsp\Kp\Km} decays.  The normalisation channel, \decay{\Bp}{\Dsp\Dzb} is built similarly, however the difference in lifetime between the \Dzb and \phiz mesons necessitates a slightly different topology. The \Dzb meson has a lifetime of $(4.101\pm0.015)\times10^{-13}\sec$, allowing the meson to travel away from the \Bp decay vertex. Schematics of the signal and normalisation decay topologies are shown in Fig.~\ref{fig:topo}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
@@ -143,7 +153,7 @@ Due to the relatively long lifetime of the \Bp and \D mesons, the decay products
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Loose requirements are placed on \emph{Particle Identification} variables to ensure the tracks are of the required species. These are further tightened as detailed in Section~\ref{sec:pidrequirements}. Incorrect track candidates created by combining unrelated \velo and tracking station stumps are suppressed by requiring the ghost track probability $P_{\text{Ghost}}$ to be less than $0.4$. 
+Loose requirements are placed on \emph{Particle Identification} variables to ensure the tracks are of the required species. These are further tightened as detailed in Section~\ref{sec:pidrequirements}. Incorrect track candidates created by combining unrelated \velo and tracking station stumps are suppressed by requiring the ghost track probability, $P_{\text{Ghost}}$, to be less than $0.4$. 
 
 %%%%%% Ds/ D0 and phi construction
 
@@ -162,7 +172,6 @@ The searches for \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays emplo
 
 
 \begin{table}[t]
-\caption{Stripping lines used in this analysis.}
 \begin{center}
 \begin{tabular}{l l}
 
@@ -175,33 +184,40 @@ Mode & Stripping line \\
 \hline
 \end{tabular}
 \end{center}
+\caption{\emph{Stripping Lines} used in this analysis.}
 \label{tab:strippinglines}
 \end{table}
 
 
 The selection requirements imposed on candidate \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays in their respective \emph{Stripping Lines} is detailed in Table~\ref{tab:strippinglinecuts}. The definitions of the relevant quantities are as follows:
 \begin{description}
-\item \textbf{Mass:} Invariant mass of the indicated particles. 
-\item \textbf{Momentum:} The momentum, \ptot, of the particle or combination of particles.
-\item \textbf{Transverse momentum:} The projection of the total momentum \ptot on the plane perpendicular to the proton beam axis.
+\item \textbf{Mass, $m(X)$:} the invariant mass of the indicated particle or combination of particles. 
+\item \textbf{Momentum, \ptot:} the momentum, \ptot, of the particle or combination of particles.
+\item \textbf{Transverse momentum, \pt:} The projection of the total momentum, \ptot, on the plane perpendicular to the proton beam axis.
 
-\item \textbf{Lifetime:} The time taken for the candidate to travel from its origin vertex to its decay vertex.
+\item \textbf{Lifetime, $\tau$:} the time taken for the candidate to travel from its production vertex to its decay vertex.
 
-\item \textbf{Products \pt scalar sum:} The sum of the magnitudes of the transverse momentum for each of the decay products, $\sum{|\pt|}$.
-\item \textbf{Vertex quality:} The minimised value of $\chi^{2}/N_{\text{DOF}}$ as determined in the fit to the vertex location.
+\item \textbf{Products \pt scalar sum, $\sum{|\pt|}$:} the sum of the magnitudes of the transverse momentum for each of the decay products.
+\item \textbf{Vertex quality, $\chi^{2}/N_{\text{DOF}}$:} the minimised value of $\chi^{2}/N_{\text{DOF}}$ as determined in the fit to the vertex location.
 
-\item \textbf{Track quality:} The minimised value of $\chi^{2}/N_{\text{DOF}}$ as determined in the fit track hits.
+\item \textbf{Track quality, $\chi^{2}/N_{\text{DOF}}$:} the minimised value of $\chi^{2}/N_{\text{DOF}}$ as determined in the fit track hits.
 
-\item \textbf{Impact parameter:} The shortest distance between a given track and the primary vertex location, as shown in Fig.~\ref{fig:impact_parameter}. 
-\item \textbf{Impact parameter significance:} The difference of a given vertex's $\chi^{2}/N_{\text{DOF}}$ with and without a specific track included in the fitting procedure.
+\item \textbf{Impact parameter, $\text{IP}$:} The shortest distance between a given track and the primary vertex location, as shown in Fig.~\ref{fig:impact_parameter}. 
+\item \textbf{Impact parameter significance, $\chi^{2}_{\text{IP}}$:} The difference of a given vertex's $\chi^{2}/N_{\text{DOF}}$ with and without a specific track included in the fitting procedure.
 
-\item \textbf{Flight distance significance:} A measure of the
+\item \textbf{Flight distance significance, $\chi^{2}_{\text{FD}}$:} A measure of how significant the flight distance of a combination of particle is. Defined as the increase in the  
+   % *  @param chi2     (output) the chi2-value for the impact parameter. 
+   % *                  It is defined as the increase of the chi2 of the PV 
+   % *                  vertex fit when one adds the track into the vertex.
+   % *                  It behaves almost like (IP/IP_error)^2    
+$ \vec{\mathbf{d}} = \vec{\mathbf{v}}_2 - \vec{\mathbf{v}}_1,$ where  $\vec{\mathbf{v}}_1$ and $\vec{\mathbf{v}}_1$ are positions of the first and the second vertices. 
 
-\item \textbf{Distance of closest approach:} The shortest distance between two tracks.
-\item \textbf{Ghost track probability:} 
+
+\item \textbf{Distance of closest approach, $\text{DOCA}(h,h')$:} The shortest distance between two tracks.
+\item \textbf{Ghost track probability, $P_{\text{Ghost}}$:} 
 \item \textbf{Direction angle:} The angle between the particles momentum vector and the vector connecting the primary vertex and decay vertex.
 
-\item \textbf{Particle identification:}  
+\item \textbf{Particle identification, $\text{PIDK}$:}  
 \end{description}
 
 {\color{Green}
@@ -213,7 +229,6 @@ The selection requirements imposed on candidate \decay{\Bp}{\Dsp\phiz} and \deca
 
 
 \begin{table}[h]
-\caption{Selection requirements for \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} candidates.}
 \begin{center}
 \begin{tabular}{ l l l}
 \hline
@@ -234,7 +249,8 @@ Particles      & Quantity                       & Requirement                   
                & \textit{$>$1 decay products with:}   &                                   \\
                & Momentum                       &  $\ptot > 5000 \mevc$             \\  
                & Transverse momentum            &  $\pt > 500 \mevc$                \\
-               &                                &                                   \\  
+%               &                                &                                   \\
+\hline  
 \Dsp           & Mass                           &  $1770 < m(h^{+}h^{-}h^{+}) < 2068\mevcc$            \\  
                & Products \pt scalar sum        &  $\sum{|\pt|} > 1800 \mevc$         \\ 
                & Distance of closest approach   &  $\text{DOCA}(h^{+},h^{-}) < 0.5\mm$     \\  
@@ -242,29 +258,25 @@ Particles      & Quantity                       & Requirement                   
                & Direction angle                &  $\cos{\theta}>0$                 \\  
                & Vertex quality                 &  $\chi^{2}/N_{\text{DOF}} < 10$   \\   
                & Flight distance significance   &  $\chi^{2}_{\text{FD} }  > 36$    \\   
-               &                                &                                   \\  
+%               &                                &                                   \\  
+\hline
 \phiz          & Mass (only for \decay{\Bp}{\Dsp\phiz})&  $|m(\Kp\Km)-m_{\phiz}| < 150\mevcc$\\  
                & Distance of closest approach   &  $\text{DOCA}(\Kp,\Km) < 0.5\mm$  \\  
                & Direction angle                &  $\cos{\theta}>0$                 \\  
                & Vertex quality                 &  $\chi^{2}/N_{\text{DOF}} < 16$   \\   
                & Flight distance significance   &  $\chi^{2}_{\text{FD} }  > 16$    \\   
-               &                                &                                   \\  
+%               &                                &                                   \\  
+\hline
 \Kp (\pip)     & Track quality                  &  $\chi^{2}/N_{\text{DOF}}<4.0$    \\  
                & Transverse momentum            &  $\pt > 100 \mevc$                \\  
                & Momentum                       &  $\ptot > 1000 \mevc$             \\  
                & Impact parameter significance  &  $\chi^{2}_{\text{IP}} > 4$       \\  
                & Ghost track probability        &  $P_{\text{Ghost}} < 0.4$         \\
-               & Particle identification        &  $\text{PIDK}<20$ ($\text{PIDK}>-10$)                 \\
-%                &                                &                                   \\  
-% \Kp            & Particle identification        &  $\text{PIDK}<20$                 \\
-%                &                                &                                   \\  
-% \pip           & Particle identification        &  $\text{PIDK}>-10$                \\  
-
-
-
+               & Particle identification        &  $\text{PIDK}<20$ ($\text{PIDK}>-10$)\\  
 \hline
 \end{tabular}
 \end{center}
+\caption{Selection requirements for \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} candidates.}
 \label{tab:strippinglinecuts}
 \end{table}
 
@@ -391,7 +403,6 @@ The \emph{Stripping Line} used in the search for \decay{\Bp}{\Dsp\Kp\Km} decays 
 Both modes are selected using this line to reduce systematic uncertainty in the ratio of selection efficiencies.
 
 \begin{table}[h]
-\caption{Selection requirements for \decay{\Bp}{\Dsp\Dzb} candidates.}
 \begin{center}
 \begin{tabular}{ l l l}
 \hline
@@ -411,7 +422,8 @@ Particles      & Quantity                       & Requirement                   
                & \textit{$>$1 decay products with:}   &                                   \\
                & Momentum                       &  $\ptot > 5000 \mevc$             \\  
                & Transverse momentum            &  $\pt > 500 \mevc$                \\
-               &                                &                                   \\  
+%               &                                &                                   \\  
+\hline
 \Dsp           & Mass                           &  $1770 < m(h^{+}h^{-}h^{+}) < 2068\mevcc$            \\  
                & Products \pt scalar sum        &  $\sum{|\pt|} > 1800 \mevc$         \\ 
                & Distance of closest approach   &  $\text{DOCA}(h^{+},h^{-}) < 0.5\mm$     \\  
@@ -419,31 +431,26 @@ Particles      & Quantity                       & Requirement                   
                & Direction angle                &  $\cos{\theta}>0$                 \\  
                & Vertex quality                 &  $\chi^{2}/N_{\text{DOF}} < 10$   \\   
                & Flight distance significance   &  $\chi^{2}_{\text{FD} }  > 36$    \\   
-               &                                &                                   \\  
+%               &                                &                                   \\  
+\hline
 \Dzb           & Mass                           &  $1765 < m(h^{+}h^{-}h^{+}) < 1965\mevcc$\\  
                & Distance of closest approach   &  $\text{DOCA}(\Kp,\Km) < 0.5\mm$  \\  
                & Direction angle                &  $\cos{\theta}>0$                 \\  
                & Vertex quality                 &  $\chi^{2}/N_{\text{DOF}} < 10$   \\   
                & Flight distance significance   &  $\chi^{2}_{\text{FD} }  > 36$    \\   
-               &                                &                                   \\  
+%               &                                &                                   \\  
+\hline
 \Kp (\pip)     & Track quality                  &  $\chi^{2}/N_{\text{DOF}}<4.0$    \\  
                & Transverse momentum            &  $\pt > 100 \mevc$                \\  
                & Momentum                       &  $\ptot > 1000 \mevc$             \\  
                & Impact parameter significance  &  $\chi^{2}_{\text{IP}} > 4$       \\  
                & Ghost track probability        &  $P_{\text{Ghost}} < 0.4$         \\
                & Particle identification        &  $\text{PIDK}<20$ ($\text{PIDK}>-10$)                 \\
-%                &                                &                                   \\  
-% \Kp            & Particle identification        &  $\text{PIDK}<20$                 \\
-%                &                                &                                   \\  
-% \pip           & Particle identification        &  $\text{PIDK}>-10$                \\  
-
-
-
-
-
 \hline
 \end{tabular}
 \end{center}
+\caption{Selection requirements for \decay{\Bp}{\Dsp\Dzb} candidates.}
+
 \label{tab:strippinglinecuts_norm}
 \end{table}
 
