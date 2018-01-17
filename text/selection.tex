@@ -1111,11 +1111,12 @@ The yields of candidates in each of the subsamples are tabulated in Table~\ref{t
 The MVA method is trained using a large set of variables chosen to help discriminate between the signals of interest and combinations of unrelated tracks. These variables include the properties of the \Kpm or \pipm decay products as well as those of the \phiz or \Dsp candidate itself. Many of the quantities are the same as those previously defined in Section.~\ref{sec:selectionrequirements}. The additional parameters relate to the track quality and particle identification information and are defined as follows:
 
 \begin{description}
-\item \textbf{Track matching quality, $\chi^{2}_{\text{TRKMATCH}}$}: 
-\item \textbf{Velo track quality, $\chi^{2}_{\text{TRKVELO}}$}:
-\item \textbf{Kaon, proton, pion and ghost probabilities}: 
+\item \textbf{Track matching quality, $\chi^{2}_{\text{TRKMATCH}}$}: {\color{red} chi2 from matching velo stubs to trackers stubs?}
+\item \textbf{Velo track quality, $\chi^{2}_{\text{TRKVELO}}$}: {\color{red} chi2 of fit to just hits in the velo?}
+\item \textbf{Kaon, proton, pion and ghost probabilities, ProbNNx}: these variables are an alternative form of \emph{Particle Identification} variables in addition to those already discussed in Section~\ref{sec:pidrequirements}. Each ProbNNx variable acts as the probability for the reconstructed track to be of the species x. These variables are the responses of Artificial Neural Networks trained to differentiate between the various particle types using a large number of inputs from different subdetectors. The trainings use simulated samples of signal and background decays and have been retuned between Run~I and Run~II to reflect the difference in the detector configuration. Four of the available ProbNNx tuning are used in this analysis. Three of these identify kaons, protons and pions. The last aims to identify ghost tracks, similar to the $P_{\text{Ghost}}$ variable already discussed. 
 \end{description}
 
+The variables used in the \phiz meson MVA are listed in Table~\ref{tab:mvavars_phi}. Some of the variables are input into the MVA training algorithm as their logarithm, rather than the variable directly. These variables tend to be rapidly increasing in at certain values, so using the logarithm aids visualisation. A total of 24 variables are used in this MVA. 
 
 \begin{table}[h]
    \begin{center}
@@ -1146,6 +1147,10 @@ The MVA method is trained using a large set of variables chosen to help discrimi
    \label{tab:mvavars_phi}
 \end{table}
  
+The variables used in the \Dsp MVA are listed in Table~\ref{tab:mvavars_ds}. These are largely very similar to those used for the \phiz meson MVA, however it also includes the \Dsp meson's flight distance significance as, unlike the \phiz meson, the \Dsp meson decays displaced from its production vertex. A total of 35 variables are used in these MVAs.
+
+
+
 \begin{table}[h]
    \begin{center}
       \begin{tabular}{ l l l}
@@ -1177,69 +1182,83 @@ The MVA method is trained using a large set of variables chosen to help discrimi
 \end{table}
 
 
-
-%% Variables 
-% --- BDTG                     :    1 : Phi_K0_MC15TuneV1_ProbNNk     : 6.001e-02
-% --- BDTG                     :    2 : log10_Phi_IPCHI2_OWNPV        : 6.001e-02
-% --- BDTG                     :    3 : log10_Phi_K1_IPCHI2_OWNPV     : 5.997e-02
-% --- BDTG                     :    4 : log10_Phi_ENDVERTEX_CHI2      : 5.827e-02
-% --- BDTG                     :    5 : Phi_K1_MC15TuneV1_ProbNNpi    : 5.826e-02
-% --- BDTG                     :    6 : log10_Phi_K0_IPCHI2_OWNPV     : 5.761e-02
-% --- BDTG                     :    7 : Phi_K0_MC15TuneV1_ProbNNghost : 5.427e-02
-% --- BDTG                     :    8 : Phi_K1_MC15TuneV1_ProbNNk     : 5.404e-02
-% --- BDTG                     :    9 : Phi_K0_TRACK_CHI2NDOF         : 5.359e-02
-% --- BDTG                     :   10 : Phi_K1_TRACK_CHI2NDOF         : 5.201e-02
-% --- BDTG                     :   11 : Phi_K0_MC15TuneV1_ProbNNpi    : 5.162e-02
-% --- BDTG                     :   12 : Phi_K1_MC15TuneV1_ProbNNghost : 4.985e-02
-% --- BDTG                     :   13 : Phi_K0_MC15TuneV1_ProbNNp     : 4.486e-02
-% --- BDTG                     :   14 : Phi_K1_MC15TuneV1_ProbNNp     : 4.410e-02
-% --- BDTG                     :   15 : Phi_K0_TRACK_MatchCHI2        : 4.291e-02
-% --- BDTG                     :   16 : Phi_K1_TRACK_MatchCHI2        : 3.977e-02
-% --- BDTG                     :   17 : Phi_K1_PT                     : 3.437e-02
-% --- BDTG                     :   18 : Phi_K0_PT                     : 3.012e-02
-% --- BDTG                     :   19 : Phi_PT                        : 2.400e-02
-% --- BDTG                     :   20 : Phi_P                         : 1.792e-02
-% --- BDTG                     :   21 : Phi_K1_PZ                     : 1.397e-02
-% --- BDTG                     :   22 : Phi_K1_P                      : 1.387e-02
-% --- BDTG                     :   23 : Phi_K0_PZ                     : 1.245e-02
-% --- BDTG                     :   24 : Phi_K0_P                      : 1.218e-02
+When training the MVA methods, the variables are ranked according to their discrimination power.
 
 
-% --- BDTG                     :    1 : D_K0_MC15TuneV1_ProbNNk     : 7.639e-02
-% --- BDTG                     :    2 : D_K1_MC15TuneV1_ProbNNk     : 6.043e-02
-% --- BDTG                     :    3 : log10_D_K0_IPCHI2_OWNPV     : 5.469e-02
-% --- BDTG                     :    4 : log10_D_P_IPCHI2_OWNPV      : 4.984e-02
-% --- BDTG                     :    5 : D_K0_P                      : 4.348e-02
-% --- BDTG                     :    6 : log10_D_IPCHI2_OWNPV        : 4.100e-02
-% --- BDTG                     :    7 : D_P_PT                      : 3.953e-02
-% --- BDTG                     :    8 : D_K0_PT                     : 3.937e-02
-% --- BDTG                     :    9 : D_P_MC15TuneV1_ProbNNpi     : 3.881e-02
-% --- BDTG                     :   10 : log10_D_FDCHI2_OWNPV        : 3.788e-02
-% --- BDTG                     :   11 : log10_D_K1_IPCHI2_OWNPV     : 3.735e-02
-% --- BDTG                     :   12 : log10_D_ENDVERTEX_CHI2      : 3.016e-02
-% --- BDTG                     :   13 : D_K1_P                      : 2.770e-02
-% --- BDTG                     :   14 : D_K0_MC15TuneV1_ProbNNp     : 2.758e-02
-% --- BDTG                     :   15 : D_K1_MC15TuneV1_ProbNNp     : 2.692e-02
-% --- BDTG                     :   16 : D_P_MC15TuneV1_ProbNNghost  : 2.623e-02
-% --- BDTG                     :   17 : D_K0_MC15TuneV1_ProbNNghost : 2.593e-02
-% --- BDTG                     :   18 : D_PT                        : 2.543e-02
-% --- BDTG                     :   19 : D_K0_MC15TuneV1_ProbNNpi    : 2.525e-02
-% --- BDTG                     :   20 : D_K1_PT                     : 2.355e-02
-% --- BDTG                     :   21 : D_P                         : 2.327e-02
-% --- BDTG                     :   22 : D_K1_MC15TuneV1_ProbNNpi    : 2.226e-02
-% --- BDTG                     :   23 : D_P_P                       : 2.083e-02
-% --- BDTG                     :   24 : D_P_MC15TuneV1_ProbNNp      : 1.849e-02
-% --- BDTG                     :   25 : D_P_MC15TuneV1_ProbNNk      : 1.793e-02
-% --- BDTG                     :   26 : D_K1_MC15TuneV1_ProbNNghost : 1.607e-02
-% --- BDTG                     :   27 : D_P_BDT_TRACK_VeloCHI2NDOF  : 1.589e-02
-% --- BDTG                     :   28 : D_K1_TRACK_CHI2NDOF         : 1.588e-02
-% --- BDTG                     :   29 : D_P_TRACK_MatchCHI2         : 1.548e-02
-% --- BDTG                     :   30 : D_K0_TRACK_CHI2NDOF         : 1.522e-02
-% --- BDTG                     :   31 : D_K1_TRACK_MatchCHI2        : 1.442e-02
-% --- BDTG                     :   32 : D_P_TRACK_CHI2NDOF          : 1.433e-02
-% --- BDTG                     :   33 : D_K0_BDT_TRACK_VeloCHI2NDOF : 1.184e-02
-% --- BDTG                     :   34 : D_K0_TRACK_MatchCHI2        : 1.176e-02
-% --- BDTG                     :   35 : D_K1_BDT_TRACK_VeloCHI2NDOF : 8.818e-03
+\begin{table}[h]
+   \begin{center}
+      \begin{tabular}{ l l c}
+
+         \hline 
+         Rank & Variable                           & Variable importance   \\
+         \hline
+          1 & \Kp ProbNNk                          & $6.001\times 10^{-2}$ \\
+          2 & \phiz $\log(\chi^{2}_{\text{IP}})$   & $6.001\times 10^{-2}$ \\
+          3 & \Km $\log(\chi^{2}_{\text{IP}})$     & $5.997\times 10^{-2}$ \\
+          4 & \phiz $\log(\chi^{2}_{\text{VTX}})$  & $5.827\times 10^{-2}$ \\
+          5 & \Km ProbNNpi                         & $5.826\times 10^{-2}$ \\
+          6 & \Kp $\log(\chi^{2}_{\text{IP}})$     & $5.761\times 10^{-2}$ \\
+          7 & \Kp ProbNNghost                      & $5.427\times 10^{-2}$ \\
+          8 & \Km ProbNNk                          & $5.404\times 10^{-2}$ \\
+          9 & \Kp $\chi^{2}_{\text{TRK}})$         & $5.359\times 10^{-2}$ \\
+         10 & \Km $\chi^{2}_{\text{TRK}})$         & $5.201\times 10^{-2}$ \\
+         11 & \Kp ProbNNpi                         & $5.162\times 10^{-2}$ \\
+         12 & \Km ProbNNghost                      & $4.985\times 10^{-2}$ \\
+         13 & \Kp ProbNNp                          & $4.486\times 10^{-2}$ \\
+         14 & \Km ProbNNp                          & $4.410\times 10^{-2}$ \\
+         15 & \Kp $\chi^{2}_{\text{TRKMATCH}}$     & $4.291\times 10^{-2}$ \\
+         16 & \Km $\chi^{2}_{\text{TRKMATCH}}$     & $3.977\times 10^{-2}$ \\
+         17 & \Km \pt                              & $3.437\times 10^{-2}$ \\
+         18 & \Kp \pt                              & $3.012\times 10^{-2}$ \\
+         19 & \phiz PT                             & $2.400\times 10^{-2}$ \\
+         20 & \phiz P                              & $1.792\times 10^{-2}$ \\
+         21 & \Km \pz                              & $1.397\times 10^{-2}$ \\
+         22 & \Km \ptot                            & $1.387\times 10^{-2}$ \\
+         23 & \Kp \pz                              & $1.245\times 10^{-2}$ \\
+         24 & \Kp \ptot                            & $1.218\times 10^{-2}$ \\
+         \hline
+      \end{tabular}
+   \end{center}
+   \caption{Ranking of variables used to train the \phiz MVA.}
+   \label{tab:mvarank_ds}
+\end{table}
+
+
+% --- BDTG                     :    1 : \Kp MC15TuneV1_ProbNNk     : 7.639e-02
+% --- BDTG                     :    2 : \Km MC15TuneV1_ProbNNk     : 6.043e-02
+% --- BDTG                     :    3 : \Kp $\log(\chi^{2}_{\text{IP}})$     : 5.469e-02
+% --- BDTG                     :    4 : \pip $\log(\chi^{2}_{\text{IP}})$      : 4.984e-02
+% --- BDTG                     :    5 : \Kp P                      : 4.348e-02
+% --- BDTG                     :    6 : \Dsp $\log(\chi^{2}_{\text{IP}})$        : 4.100e-02
+% --- BDTG                     :    7 : \pip PT                      : 3.953e-02
+% --- BDTG                     :    8 : \Kp PT                     : 3.937e-02
+% --- BDTG                     :    9 : \pip MC15TuneV1_ProbNNpi     : 3.881e-02
+% --- BDTG                     :   10 : \Dsp $\log(\chi^{2}_{\text{FD}})$        : 3.788e-02
+% --- BDTG                     :   11 : \Km $\log(\chi^{2}_{\text{IP}})$     : 3.735e-02
+% --- BDTG                     :   12 : \Dsp $\log(ENDVERTEX_CHI2)$      : 3.016e-02
+% --- BDTG                     :   13 : \Km P                      : 2.770e-02
+% --- BDTG                     :   14 : \Kp MC15TuneV1_ProbNNp     : 2.758e-02
+% --- BDTG                     :   15 : \Km MC15TuneV1_ProbNNp     : 2.692e-02
+% --- BDTG                     :   16 : \pip MC15TuneV1_ProbNNghost  : 2.623e-02
+% --- BDTG                     :   17 : \Kp MC15TuneV1_ProbNNghost : 2.593e-02
+% --- BDTG                     :   18 : \Dsp PT                        : 2.543e-02
+% --- BDTG                     :   19 : \Kp MC15TuneV1_ProbNNpi    : 2.525e-02
+% --- BDTG                     :   20 : \Km PT                     : 2.355e-02
+% --- BDTG                     :   21 : \Dsp P                         : 2.327e-02
+% --- BDTG                     :   22 : \Km MC15TuneV1_ProbNNpi    : 2.226e-02
+% --- BDTG                     :   23 : \pip P                       : 2.083e-02
+% --- BDTG                     :   24 : \pip MC15TuneV1_ProbNNp      : 1.849e-02
+% --- BDTG                     :   25 : \pip MC15TuneV1_ProbNNk      : 1.793e-02
+% --- BDTG                     :   26 : \Km MC15TuneV1_ProbNNghost : 1.607e-02
+% --- BDTG                     :   27 : \pip BDT_TRACK_VeloCHI2NDOF  : 1.589e-02
+% --- BDTG                     :   28 : \Km TRACK_CHI2NDOF         : 1.588e-02
+% --- BDTG                     :   29 : \pip TRACK_MatchCHI2         : 1.548e-02
+% --- BDTG                     :   30 : \Kp TRACK_CHI2NDOF         : 1.522e-02
+% --- BDTG                     :   31 : \Km TRACK_MatchCHI2        : 1.442e-02
+% --- BDTG                     :   32 : \pip TRACK_CHI2NDOF          : 1.433e-02
+% --- BDTG                     :   33 : \Kp BDT_TRACK_VeloCHI2NDOF : 1.184e-02
+% --- BDTG                     :   34 : \Kp TRACK_MatchCHI2        : 1.176e-02
+% --- BDTG                     :   35 : \Km BDT_TRACK_VeloCHI2NDOF : 8.818e-03
 
 {\color{Red}
 \begin{itemize}
