@@ -135,6 +135,7 @@ The inclusive \phiz line is used to maximise the selection efficiencies as \phiz
 Events passing any trigger requirement are saved to tape for processing offline. The stages of the offline reconstruction are detailed in this section.
 
 \subsection{Selection requirements}
+\label{sec:selectionrequirements}
 
 The large offline data samples passing the online trigger selection are habitually processed in a procedure know within \lhcb as \emph{Stripping}. This centrally managed processing builds candidates from tracks and neutral calorimeter objects in each event according to a set of predefined \emph{Stripping Lines}. Each line builds a specific candidate decay, applying a loose set of preselection requirements, including kinematic, geometric and invariant mass selections. 
 
@@ -186,8 +187,8 @@ The selection of candidates makes requirements on many different distinguishing 
 \item \textbf{Transverse momentum, \pt:} The projection of the total momentum, \ptot, on the plane perpendicular to the proton beam axis.
 \item \textbf{Lifetime, $\tau$:} the time taken for the candidate to travel from its production vertex to its decay vertex.
 \item \textbf{Products \pt scalar sum, $\sum{|\pt|}$:} the sum of the magnitudes of the transverse momentum for each of the decay products.
-\item \textbf{Vertex quality, $\chi^{2}/N_{\text{DOF}}$:} the minimised value of $\chi^{2}/N_{\text{DOF}}$ as determined in the fit to the vertex location.
-\item \textbf{Track quality, $\chi^{2}/N_{\text{DOF}}$:} the minimised value of $\chi^{2}/N_{\text{DOF}}$ as determined in the fit track hits.
+\item \textbf{Vertex quality, $\chi^{2}_{\text{VTX}}$:} the minimised value of $\chi^{2}/N_{\text{DOF}}$ as determined in the fit to the vertex location.
+\item \textbf{Track quality, $\chi^{2}_{\text{TRK}}$:} the minimised value of $\chi^{2}/N_{\text{DOF}}$ as determined in the fit track hits.
 \item \textbf{Impact parameter, $\text{IP}$:} The shortest distance between a given track and a vertex location, as shown in Fig.~\ref{fig:impact_parameter}. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -962,7 +963,7 @@ These MVAs are trained using large samples of candidates from other \B mesons de
 This data-driven approach can benefit from an expanded set of variables that are not perfectly represented in simulation, including track quality and particle identification information, in addition to the widely used kinematic and geometric properties.
 The sample of \Dsp mesons is obtained from the relatively abundant \decay{\Bsb}{\Dsp\pim} decay. Similarly, the sample of \phiz mesons is obtained from \decay{\Bs}{\jpsi\phiz} decays. Large, high purity samples are reconstructed using similar requirements to those applied in the selection of signal \Dsp and \phiz mesons.
 A sample is selected for each of the \Dsp and \phiz meson decays uses in this analysis, as listed in Table~\ref{tab:mva_modes}. 
-Training separate selections for the different \Dsp modes allows the use of particle identification variables that separate kaons and pions to be fully exploited.
+The training of separate MVAs for the different \Dsp modes allows the use of particle identification variables that separate kaons and pions to be fully exploited.
 The MVA for \decay{\phiz}{\Kp\Km} decays is used to select both \phiz and \Dzb mesons. For the normalisation mode this may be suboptimal, however it ensures the selection of the signal and normalisation channels are almost identical such that the systematic uncertainty in the ratio of efficiencies is minimised.
 The samples of \decay{\Bsb}{\Dsp\pim} and \decay{\Bs}{\jpsi\phiz} decays are randomly split into two subsamples. The first is used to train the MVAs and the second is used to determine the efficiency of the selection. To prevent the difference between \phiz and \Dzb decays from affecting the ratio of efficiencies, the normalisation channel MVA efficiency is instead determined from a dedicated sample of \decay{\Dzb}{\Kp\Km} decays as detailed in Table.~\ref{tab:mva_modes}.
 
@@ -983,24 +984,39 @@ The samples of \decay{\Bsb}{\Dsp\pim} and \decay{\Bs}{\jpsi\phiz} decays are ran
 \label{tab:mva_modes}
 \end{table}
 
+\subsubsection{Preselection}
+
+%% Discussion of preselection
+{\color{Blue}
+
+-These are selected using dedicated Stripping Lines designed to select decays. To ensure these samples are representative of the target decays, a preselection is applied to the data. This comprises of similar trigger, background veto and PID requirements applied to the signal modes.
+}
+
+\subsubsection{Background subtraction}
 
 %% Describe fits, sWeights and signal/background samples
-In order to use the \decay{\Bs}{\jpsi\phiz} and \decay{\Bsb}{\Dsp\pim} samples to train MVAs, background subtracted distributions must be obtained for the variables used to discriminate the signal from backgrounds. This is achieved by using the \sPlot technique~\cite{Pivk:2004ty}. Unbinned maximum likelihood fits are performed to the \Dsp and \phiz invariant mass distribution in order to determine the yield of \Dsp and \phiz candidates respectively. The \sPlot method then assigns weights for each species in the fit model, namely signal and background. These are assigned to each event in the data set and are only dependent on the value of the fitted variable, in this case \phiz or \Dsp mass. When plotting other, uncorrelated variables with these weights the contribution from each component in the fit can be extracted. 
+In order to use the \decay{\Bs}{\jpsi\phiz} and \decay{\Bsb}{\Dsp\pim} samples to train MVAs, background subtracted distributions must be obtained for the variables used to discriminate the signal from backgrounds. This is achieved by using the \sPlot technique~\cite{Pivk:2004ty}. Unbinned maximum likelihood fits are performed to the \Dsp and \phiz invariant mass distribution in order to determine the yield of \Dsp and \phiz candidates respectively. The \sPlot method then assigns weights for each species in the fit model, namely signal and background. These are assigned to each event in the data set and are only dependent on the value of the fitted variable, in this case \phiz or \Dsp mass. When plotting other, uncorrelated variables and weighting each event accordingly, the contribution from each component in the fit can be extracted. 
 
 %% Fit model
 For both \decay{\Bs}{\jpsi\phiz} and \decay{\Bsb}{\Dsp\pim} decays, simple fit models are found to be sufficient when performing the \sPlot technique. For each mode the signal components are modelled with a single Gaussian probability density function
 \begin{equation}
 f(m|\mu,\sigma) = \frac{1}{\sqrt{2\pi\sigma^{2}}} \times e^{-\frac{(m-\mu)^{2}}{2\sigma^{2}}}, 
 \end{equation}
-where $\mu$ and $\sigma$ are the mean and width of the Gaussian distribution and $m$ is the observable \phiz or \Dzb invariant mass. The parameters $\mu$ and $\sigma$ are allows to vary freely.
+where $\mu$ and $\sigma$ are the mean and width of the Gaussian distribution and $m$ is the observable invariant mass. The parameters $\mu$ and $\sigma$ are allowed to vary freely.
+The background contributions to the \decay{\phiz}{\Kp\Km} decays are modelled using a Chebychev polynomial with two degrees of freedom
+\begin{equation}
+f(m|a,b) = a\times(2m^{2}-1) + b\times m + 1,
+\end{equation}
+where $a$ and $b$ are parameters that can vary freely and $m$ is the observable invariant mass. 
+The \phiz meson mass is close to the threshold for \Kp\Km pair production so this parametrisation has sufficient freedom to successfully  model the increasing background shape.
+The background contribution to all three \Dsp decays are modelled using exponetial functions with a single degree of freedom controlling the effective slope
+\begin{equation}
+f(m|c) = e^{m\times c},
+\end{equation}
+where $c$ is a freely varying parameter and $m$ is the observable invariant mass.
+The fits to the \phiz and \Dsp meson masses in the \decay{\Bs}{\jpsi\phiz} and \decay{\Bsb}{\Dsp\pim} samples are performed separately for each year of data taking and polarity of the \lhcb dipole magnet. These distributions are shown in Fig.~\ref{fig:mvatrainingsamples} for each of the \phiz and \Dsp decay modes.
+The yields of candidates in each of the subsamples are tabulated in Table~\ref{table:mva_training_yields}, along with the totals for each mode. 
 
-The background contributions are 
-
-
-
-
-
-These fits are performed separately for each year of data taking, and for each of the targeted decays. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
@@ -1008,26 +1024,52 @@ These fits are performed separately for each year of data taking, and for each o
    \begin{subfigure}[t]{0.4\textwidth}
       \centering
       \includegraphics[width=1.0\textwidth]{figs/Selection/Fit_Data_Bs2JpsiPhi_Jpsi2MuMu_Phi2KK_2016_MagDown.pdf}
-      \caption{\decay{\Bs}{\jpsi\phiz} 2016 MagDown}
+      \caption{\decay{\phiz}{\Kp\Km} MagDown}
    \end{subfigure}
    \begin{subfigure}[t]{0.4\textwidth}
       \centering
       \includegraphics[width=1.0\textwidth]{figs/Selection/Fit_Data_Bs2JpsiPhi_Jpsi2MuMu_Phi2KK_2016_MagUp.pdf}
-      \caption{\decay{\Bs}{\jpsi\phiz} 2016 MagUp}
+      \caption{\decay{\phiz}{\Kp\Km} MagUp}
+   \end{subfigure}\\
+   \begin{subfigure}[t]{0.4\textwidth}
+      \centering
+      \includegraphics[width=1.0\textwidth]{figs/Selection/Fit_Data_Bs02DsPi_Ds2KKPi_2016_MagDown_PreSel.pdf}
+      \caption{\decay{\Dsp}{\Kp\Km\pip} MagDown}
    \end{subfigure}
-   \caption{Unbinned maximum likelihood fit to \decay{\Bs}{\jpsi\phiz} candidates.}
+   \begin{subfigure}[t]{0.4\textwidth}
+      \centering
+      \includegraphics[width=1.0\textwidth]{figs/Selection/Fit_Data_Bs02DsPi_Ds2KKPi_2016_MagUp_PreSel.pdf}
+      \caption{\decay{\Dsp}{\Kp\Km\pip} MagUp}
+   \end{subfigure}
+   \begin{subfigure}[t]{0.4\textwidth}
+      \centering
+      \includegraphics[width=1.0\textwidth]{figs/Selection/Fit_Data_Bs02DsPi_Ds2PiPiPi_2016_MagDown_PreSel.pdf}
+      \caption{\decay{\Dsp}{\pip\pim\pip} MagDown}
+   \end{subfigure}
+   \begin{subfigure}[t]{0.4\textwidth}
+      \centering
+      \includegraphics[width=1.0\textwidth]{figs/Selection/Fit_Data_Bs02DsPi_Ds2PiPiPi_2016_MagUp_PreSel.pdf}
+      \caption{\decay{\Dsp}{\pip\pim\pip} MagUp}
+   \end{subfigure}
+   \begin{subfigure}[t]{0.4\textwidth}
+      \centering
+      \includegraphics[width=1.0\textwidth]{figs/Selection/Fit_Data_Bs02DsPi_Ds2KPiPi_2016_MagDown_PreSel.pdf}
+      \caption{\decay{\Dsp}{\Kp\pim\pip} MagDown}
+   \end{subfigure}
+   \begin{subfigure}[t]{0.4\textwidth}
+      \centering
+      \includegraphics[width=1.0\textwidth]{figs/Selection/Fit_Data_Bs02DsPi_Ds2KPiPi_2016_MagUp_PreSel.pdf}
+      \caption{\decay{\Dsp}{\Kp\pim\pip} MagUp}
+   \end{subfigure}
+   \caption{Unbinned maximum likelihood fit to \decay{\Bs}{\jpsi\phiz} (top) and \decay{\Bsb}{\Dsp\pim} (bottom three rows) candidates. These distributions correspond to just the 2016 data samples.}
    \label{fig:mvatrainingsamples}   
 \end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-{\color{red}
-\begin{itemize}
-\item Describe fit model for sWeight fits
-\end{itemize}
-}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{table}[!h]
    \begin{center}
-      \begin{tabular}{llll}
+      \begin{tabular}{llcc}
          \hline
          Mode                       & Year   & MagDown            & MagUp           \\ 
          \hline                                                
@@ -1060,50 +1102,180 @@ These fits are performed separately for each year of data taking, and for each o
       \label{table:mva_training_yields}
    \end{center}
 \end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\subsubsection{Input variables}
 
-
-
-{\color{Blue}
--The $\phi$ and $\Dsp$ invariant mass distributions are fitted separately for each year. 
-- The training uses the \phiz or \Dsp sidebands as a background sample.
-}
 
 %% Discussion of input variables
-The MVA method is trained using a large set of variables chosen to help discriminate between the signals of interest and combinations of unrelated tracks.
+The MVA method is trained using a large set of variables chosen to help discriminate between the signals of interest and combinations of unrelated tracks. These variables include the properties of the \Kpm or \pipm decay products as well as those of the \phiz or \Dsp candidate itself. Many of the quantities are the same as those previously defined in Section.~\ref{sec:selectionrequirements}. The additional parameters relate to the track quality and particle identification information and are defined as follows:
 
-{\color{Blue}
+\begin{description}
+\item \textbf{Track matching quality, $\chi^{2}_{\text{TRKMATCH}}$}: 
+\item \textbf{Velo track quality, $\chi^{2}_{\text{TRKVELO}}$}:
+\item \textbf{Kaon, proton, pion and ghost probabilities}: 
+\end{description}
 
--These are selected using dedicated Stripping Lines designed to select decays. To ensure these samples are representative of the target decays, a preselection is applied to the data. This comprises of similar trigger, background veto and PID requirements applied to the signal modes.
+
+\begin{table}[h]
+   \begin{center}
+      \begin{tabular}{ l l l}
+
+         \hline
+         Particle       & Description                    & Quantity                          \\    
+         \hline
+         \phiz          & Momentum                       &  \ptot                            \\  
+                        & Transverse Momentum            &  \pt                              \\  
+                        & Vertex quality                 &  $\log(\chi^{2}_{\text{VXT}})$    \\  
+                        & Impact parameter significance  &  $\log(\chi^{2}_{\text{IP}})$     \\    
+         \hline
+         \Kpm           & Momentum                       &  \ptot                            \\  
+                        & Transverse momentum            &  \pt                              \\ 
+                        & Longitudinal momentum          &  \pz                              \\
+                        & Impact parameter significance  &  $\log(\chi^{2}_{\text{IP}})$     \\    
+                        & Track quality                  &  $\chi^{2}_{\text{TRK}}$          \\    
+                        & Track matching quality         &  $\chi^{2}_{\text{TRKMATCH}}$     \\    
+                        & Kaon probability               &  ProbNNk                          \\    
+                        & Proton probability             &  ProbNNp                          \\    
+                        & Pion probability               &  ProbNNpi                         \\    
+                        & Ghost probability              &  ProbNNghost                      \\    
+         \hline
+      \end{tabular}
+   \end{center}
+   \caption{Discriminating variables used to train the \phiz MVA.}
+   \label{tab:mvavars_phi}
+\end{table}
+ 
+\begin{table}[h]
+   \begin{center}
+      \begin{tabular}{ l l l}
+
+         \hline
+         Particle       & Description                    & Quantity                          \\    
+         \hline
+         \Dsp           & Momentum                       &  \ptot                            \\  
+                        & Transverse Momentum            &  \pt                              \\  
+                        & Vertex quality                 &  $\log(\chi^{2}_{\text{VXT}})$    \\  
+                        & Impact parameter significance  &  $\log(\chi^{2}_{\text{IP}})$     \\    
+                        & Flight distance significance   &  $\log(\chi^{2}_{\text{FD}})$     \\    
+         \hline
+         \Kpm, \pipm    & Momentum                       &  \ptot                            \\  
+                        & Transverse momentum            &  \pt                              \\
+                        & Impact parameter significance  &  $\log(\chi^{2}_{\text{IP}})$     \\    
+                        & Track quality                  &  $\chi^{2}_{\text{TRK}}$          \\    
+                        & Velo track quality             &  $\chi^{2}_{\text{TRKVELO}}$      \\    
+                        & Track matching quality         &  $\chi^{2}_{\text{TRKMATCH}}$     \\    
+                        & Kaon probability               &  ProbNNk                          \\    
+                        & Proton probability             &  ProbNNp                          \\    
+                        & Pion probability               &  ProbNNpi                         \\    
+                        & Ghost probability              &  ProbNNghost                      \\    
+         \hline
+      \end{tabular}
+   \end{center}
+   \caption{Discriminating variables used to train the \Dsp MVAs.}
+   \label{tab:mvavars_ds}
+\end{table}
+
+
+
+%% Variables 
+% --- BDTG                     :    1 : Phi_K0_MC15TuneV1_ProbNNk     : 6.001e-02
+% --- BDTG                     :    2 : log10_Phi_IPCHI2_OWNPV        : 6.001e-02
+% --- BDTG                     :    3 : log10_Phi_K1_IPCHI2_OWNPV     : 5.997e-02
+% --- BDTG                     :    4 : log10_Phi_ENDVERTEX_CHI2      : 5.827e-02
+% --- BDTG                     :    5 : Phi_K1_MC15TuneV1_ProbNNpi    : 5.826e-02
+% --- BDTG                     :    6 : log10_Phi_K0_IPCHI2_OWNPV     : 5.761e-02
+% --- BDTG                     :    7 : Phi_K0_MC15TuneV1_ProbNNghost : 5.427e-02
+% --- BDTG                     :    8 : Phi_K1_MC15TuneV1_ProbNNk     : 5.404e-02
+% --- BDTG                     :    9 : Phi_K0_TRACK_CHI2NDOF         : 5.359e-02
+% --- BDTG                     :   10 : Phi_K1_TRACK_CHI2NDOF         : 5.201e-02
+% --- BDTG                     :   11 : Phi_K0_MC15TuneV1_ProbNNpi    : 5.162e-02
+% --- BDTG                     :   12 : Phi_K1_MC15TuneV1_ProbNNghost : 4.985e-02
+% --- BDTG                     :   13 : Phi_K0_MC15TuneV1_ProbNNp     : 4.486e-02
+% --- BDTG                     :   14 : Phi_K1_MC15TuneV1_ProbNNp     : 4.410e-02
+% --- BDTG                     :   15 : Phi_K0_TRACK_MatchCHI2        : 4.291e-02
+% --- BDTG                     :   16 : Phi_K1_TRACK_MatchCHI2        : 3.977e-02
+% --- BDTG                     :   17 : Phi_K1_PT                     : 3.437e-02
+% --- BDTG                     :   18 : Phi_K0_PT                     : 3.012e-02
+% --- BDTG                     :   19 : Phi_PT                        : 2.400e-02
+% --- BDTG                     :   20 : Phi_P                         : 1.792e-02
+% --- BDTG                     :   21 : Phi_K1_PZ                     : 1.397e-02
+% --- BDTG                     :   22 : Phi_K1_P                      : 1.387e-02
+% --- BDTG                     :   23 : Phi_K0_PZ                     : 1.245e-02
+% --- BDTG                     :   24 : Phi_K0_P                      : 1.218e-02
+
+
+% --- BDTG                     :    1 : D_K0_MC15TuneV1_ProbNNk     : 7.639e-02
+% --- BDTG                     :    2 : D_K1_MC15TuneV1_ProbNNk     : 6.043e-02
+% --- BDTG                     :    3 : log10_D_K0_IPCHI2_OWNPV     : 5.469e-02
+% --- BDTG                     :    4 : log10_D_P_IPCHI2_OWNPV      : 4.984e-02
+% --- BDTG                     :    5 : D_K0_P                      : 4.348e-02
+% --- BDTG                     :    6 : log10_D_IPCHI2_OWNPV        : 4.100e-02
+% --- BDTG                     :    7 : D_P_PT                      : 3.953e-02
+% --- BDTG                     :    8 : D_K0_PT                     : 3.937e-02
+% --- BDTG                     :    9 : D_P_MC15TuneV1_ProbNNpi     : 3.881e-02
+% --- BDTG                     :   10 : log10_D_FDCHI2_OWNPV        : 3.788e-02
+% --- BDTG                     :   11 : log10_D_K1_IPCHI2_OWNPV     : 3.735e-02
+% --- BDTG                     :   12 : log10_D_ENDVERTEX_CHI2      : 3.016e-02
+% --- BDTG                     :   13 : D_K1_P                      : 2.770e-02
+% --- BDTG                     :   14 : D_K0_MC15TuneV1_ProbNNp     : 2.758e-02
+% --- BDTG                     :   15 : D_K1_MC15TuneV1_ProbNNp     : 2.692e-02
+% --- BDTG                     :   16 : D_P_MC15TuneV1_ProbNNghost  : 2.623e-02
+% --- BDTG                     :   17 : D_K0_MC15TuneV1_ProbNNghost : 2.593e-02
+% --- BDTG                     :   18 : D_PT                        : 2.543e-02
+% --- BDTG                     :   19 : D_K0_MC15TuneV1_ProbNNpi    : 2.525e-02
+% --- BDTG                     :   20 : D_K1_PT                     : 2.355e-02
+% --- BDTG                     :   21 : D_P                         : 2.327e-02
+% --- BDTG                     :   22 : D_K1_MC15TuneV1_ProbNNpi    : 2.226e-02
+% --- BDTG                     :   23 : D_P_P                       : 2.083e-02
+% --- BDTG                     :   24 : D_P_MC15TuneV1_ProbNNp      : 1.849e-02
+% --- BDTG                     :   25 : D_P_MC15TuneV1_ProbNNk      : 1.793e-02
+% --- BDTG                     :   26 : D_K1_MC15TuneV1_ProbNNghost : 1.607e-02
+% --- BDTG                     :   27 : D_P_BDT_TRACK_VeloCHI2NDOF  : 1.589e-02
+% --- BDTG                     :   28 : D_K1_TRACK_CHI2NDOF         : 1.588e-02
+% --- BDTG                     :   29 : D_P_TRACK_MatchCHI2         : 1.548e-02
+% --- BDTG                     :   30 : D_K0_TRACK_CHI2NDOF         : 1.522e-02
+% --- BDTG                     :   31 : D_K1_TRACK_MatchCHI2        : 1.442e-02
+% --- BDTG                     :   32 : D_P_TRACK_CHI2NDOF          : 1.433e-02
+% --- BDTG                     :   33 : D_K0_BDT_TRACK_VeloCHI2NDOF : 1.184e-02
+% --- BDTG                     :   34 : D_K0_TRACK_MatchCHI2        : 1.176e-02
+% --- BDTG                     :   35 : D_K1_BDT_TRACK_VeloCHI2NDOF : 8.818e-03
+
+{\color{Red}
+\begin{itemize}
+\item Include training variable distributions
+\item Variable ranks
+\end{itemize}
 }
+
+
+\subsubsection{MVA method}
 
 %% Discussion of MVA technicalities 
 The MVA method chosen in this analysis is a gradient Boosted Decision Tree (BDTG)~\cite{Breiman}. This is implemented using the \emph{TMVA} package as part of the \emph{ROOT} framework. 
 %% CHECK This method was compared to a BDT and bagged-BDT 
 
 
-A total of eight MVAs are trained to target the decays \decay{\phi}{\Kp\Km}, \decay{\Dsp}{\Kp\Km\pip}, \decay{\Dsp}{\Kp\pim\pip} and \decay{\Dsp}{\pip\pim\pip}, separately in the Run 1 (2011 and 2012) and Run 2 (2015 and 2016) data.
-
-The samples are split into two random but reproducible subsamples. One is used to train the corresponding MVA, the other to test its response. 
-
-%% Optimisation 
+{\color{Blue} 
+- The training uses the \phiz or \Dsp sidebands as a background sample.
+}
 
 
 {\color{Red}
 \begin{itemize}
-\item Include plots example samples
-\item Include training variable distributions
-\item comparision of different MVA methods
+\item comparison of different MVA methods
 \item explicit BDTG configuration
-\item Include description of what each variable means \eg ProbNN vars
-\item Variable ranks
 \item Discussion of overtraining and crosschecks
 \item Comparison to alternative? 
 \end{itemize}
 }
- 
-%A preselection including the trigger, vetoes and PID requirements previously discussed is applied to the training samples, ensuring they are representative of the target signal decays. 
 
+%% Phi BDTG 
+% factory->BookMethod( TMVA::Types::kBDT, "BDTG",
+%                            "!H:!V:NTrees=1000:MinNodeSize=2.5%:BoostType=Grad:Shrinkage=0.10:UseBaggedBoost:BaggedSampleFraction=0.5:nCuts=20:MaxDepth=2" );
+
+
+\subsubsection{MVA optimisation}
 
 The selection criteria for each of the BDTG classifiers are determined by optimising the Punzi figure of merit~\cite{Punzi:2003bu}, 
 \begin{equation}
@@ -1117,7 +1289,7 @@ with $a=5$, where $\epsilon_{s}$ is the signal efficiency and $N_{\text{BKG}}$ i
 \end{itemize}
 }
 
-%% Description of efficiency 
+\subsubsection{MVA efficiency}
 
 
 The efficiencies of the MVAs are obtained from the testing samples of \decay{\Bs}{\jpsi\phiz} and \decay{\Bs}{\Dsp\pim} decays. Additionally, a sample of \decay{\Bp}{\Dz\pip} decays is used to calculate the efficiency of $\Dzb \to \Kp \Km$ decays in the normalisation channel. The efficiency calculation takes into account the kinematic differences between the training and signal samples, as well as any possible correlations between the \Dsp and \phiz kinematics, by using input from simulation samples. In the search for \decay{\Bp}{\Dsp\Kp\Km} decays, calibration samples are used to correct for the imperfect modelling of the PID in simulation. These corrected simulations are then used to obtain the variations in the MVA efficiencies as a function of the phase-space position, in particular of the $m(\Kp\Km)$ invariant mass.
@@ -1126,7 +1298,6 @@ The efficiencies of the MVAs are obtained from the testing samples of \decay{\Bs
 \begin{itemize}
 \item Equation for eff determination
 \item Crosschecks for eff
-\item 
 \end{itemize}
 }
 
