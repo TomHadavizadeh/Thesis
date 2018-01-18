@@ -332,8 +332,9 @@ Particles      & Quantity                       & Requirement                   
 \hline  
 \Dsp           & Mass                           &  $1770 < m(h^{+}h^{-}h^{+}) < 2068\mevcc$            \\  
                & Products \pt scalar sum        &  $\sum{|\pt|} > 1800 \mevc$         \\ 
-               & Distance of closest approach   &  $\text{DOCA}(h^{+},h^{-}) < 0.5\mm$     \\  
-               & Distance of closest approach   &  $\text{DOCA}(h^{+},h^{+}) < 0.5\mm$     \\  
+               & Distance of closest approach   &  $\text{DOCA}(h^{+},h^{-}) < 0.5\mm$     \\
+               & Distance of closest approach   &  $\text{DOCA}(h^{-},h'^{+}) < 0.5\mm$     \\    
+               & Distance of closest approach   &  $\text{DOCA}(h^{+},h'^{+}) < 0.5\mm$     \\  
                & Direction angle                &  $\cos{\theta}>0$                 \\  
                & Vertex quality                 &  $\chi^{2}/N_{\text{DOF}} < 10$   \\   
                & Flight distance significance   &  $\chi^{2}_{\text{FD} }  > 36$    \\   
@@ -347,12 +348,12 @@ Particles      & Quantity                       & Requirement                   
                & Flight distance significance   &  $\chi^{2}_{\text{FD} }  > 16$    \\   
 %               &                                &                                   \\  
 \hline
-\Kp (\pip)     & Track quality                  &  $\chi^{2}/N_{\text{DOF}}<4.0$    \\  
+\Kpm (\pipm)   & Track quality                  &  $\chi^{2}/N_{\text{DOF}}<4.0$    \\  
                & Transverse momentum            &  $\pt > 100 \mevc$                \\  
                & Momentum                       &  $\ptot > 1000 \mevc$             \\  
                & Impact parameter significance  &  $\chi^{2}_{\text{IP}} > 4$       \\  
                & Ghost track probability        &  $P_{\text{Ghost}} < 0.4$         \\
-               & Particle identification        &  $\text{PIDK}<20$ ($\text{PIDK}>-10$)\\  
+               & Particle identification        &  $\text{PIDK}>-10$ ($\text{PIDK}<20$)\\  
 \hline
 \end{tabular}
 \end{center}
@@ -506,8 +507,9 @@ Particles      & Quantity                       & Requirement                   
 \hline
 \Dsp           & Mass                           &  $1770 < m(h^{+}h^{-}h^{+}) < 2068\mevcc$            \\  
                & Products \pt scalar sum        &  $\sum{|\pt|} > 1800 \mevc$         \\ 
-               & Distance of closest approach   &  $\text{DOCA}(h^{+},h^{-}) < 0.5\mm$     \\  
-               & Distance of closest approach   &  $\text{DOCA}(h^{+},h^{+}) < 0.5\mm$     \\  
+               & Distance of closest approach   &  $\text{DOCA}(h^{+},h^{-}) < 0.5\mm$     \\
+               & Distance of closest approach   &  $\text{DOCA}(h^{-},h'^{+}) < 0.5\mm$     \\    
+               & Distance of closest approach   &  $\text{DOCA}(h^{+},h'^{+}) < 0.5\mm$     \\   
                & Direction angle                &  $\cos{\theta}>0$                 \\  
                & Vertex quality                 &  $\chi^{2}/N_{\text{DOF}} < 10$   \\   
                & Flight distance significance   &  $\chi^{2}_{\text{FD} }  > 36$    \\   
@@ -521,12 +523,12 @@ Particles      & Quantity                       & Requirement                   
                & Flight distance significance   &  $\chi^{2}_{\text{FD} }  > 36$    \\   
 %               &                                &                                   \\  
 \hline
-\Kp (\pip)     & Track quality                  &  $\chi^{2}/N_{\text{DOF}}<4.0$    \\  
+\Kpm (\pipm)   & Track quality                  &  $\chi^{2}/N_{\text{DOF}}<4.0$    \\  
                & Transverse momentum            &  $\pt > 100 \mevc$                \\  
                & Momentum                       &  $\ptot > 1000 \mevc$             \\  
                & Impact parameter significance  &  $\chi^{2}_{\text{IP}} > 4$       \\  
                & Ghost track probability        &  $P_{\text{Ghost}} < 0.4$         \\
-               & Particle identification        &  $\text{PIDK}<20$ ($\text{PIDK}>-10$)                 \\
+               & Particle identification        &  $\text{PIDK}>-10$ ($\text{PIDK}<20$)\\
 \hline
 \end{tabular}
 \end{center}
@@ -967,9 +969,13 @@ The training of separate MVAs for the different \Dsp modes allows the use of par
 The MVA for \decay{\phiz}{\Kp\Km} decays is used to select both \phiz and \Dzb mesons. For the normalisation mode this may be suboptimal, however it ensures the selection of the signal and normalisation channels are almost identical such that the systematic uncertainty in the ratio of efficiencies is minimised.
 The samples of \decay{\Bsb}{\Dsp\pim} and \decay{\Bs}{\jpsi\phiz} decays are randomly split into two subsamples. The first is used to train the MVAs and the second is used to determine the efficiency of the selection. To prevent the difference between \phiz and \Dzb decays from affecting the ratio of efficiencies, the normalisation channel MVA efficiency is instead determined from a dedicated sample of \decay{\Dzb}{\Kp\Km} decays as detailed in Table.~\ref{tab:mva_modes}.
 
+{\color{red}
+The \decay{\phiz}{\Kp\Km} MVA is also used to select the \Kp\Km pair in \decay{\Bp}{\Dsp\Kp\Km} decays. Due to the similar topologies of \decay{\Bp}{\Dsp\Kp\Km} \decay{\Bp}{\Dsp\phiz} decays, the \Kp\Km pair share lots of similarities to their \decay{\phiz}{\Kp\Km} counterparts. One obvious difference is the invariant mass of the pair, as the \decay{\Bp}{\Dsp\Kp\Km} decays includes a much larger phase space. In training the MVA this could lead to the selection being non-{}optimal for \decay{\Bp}{\Dsp\Kp\Km} decays with high $m(\Kp\Km)$. However, when determining the efficiency of the selection using these same \decay{\Bs}{\jpsi\phi} decays these differences could lead to bias. Studies are performed to assess the dependence of efficiency on $m(\Kp\Km)$ and an alternative method of determining the efficiency is used for \decay{\Bp}{\Dsp\Kp\Km} decays, as detailed in Section~\ref{sec:B2DsKK_effcorrection}.
+}
+
 \begin{table}[t]
- \caption{MVA modes}
-\begin{center}\begin{tabular}{lll}
+\begin{center}
+\begin{tabular}{lll}
    \hline
    Sample                    & Mode                       & Use \\ 
    \hline
@@ -980,17 +986,69 @@ The samples of \decay{\Bsb}{\Dsp\pim} and \decay{\Bs}{\jpsi\phiz} decays are ran
    \hline
    \decay{\Bp}{\Dzb\pip}     & \decay{\Dzb}{\Kp\Km}       & Efficiency          \\
    \hline
- \end{tabular}\end{center}
+\end{tabular}
+\end{center}
+\caption{The decay modes used to train and determine the efficiency of the various MVAs used in this analysis.}
 \label{tab:mva_modes}
 \end{table}
 
 \subsubsection{Preselection}
 
-%% Discussion of preselection
-{\color{Blue}
+Before the samples of \Dsp and \phiz mesons are used to train the MVAs, precautions are taken to ensure the samples are representative of the \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} signal decays. The \decay{\Bsb}{\Dsp\pim} and \decay{\Bs}{\jpsi\phiz} decays are selected using a similar procedure to the signal modes. Firstly, \emph{Stripping Lines} reconstruct the candidates. The \decay{\Bsb}{\Dsp\pim} decays are built using the same software module as the signal and normalisation channel. Therefore, the selection requirements for \Dsp candidates in \decay{\Bsb}{\Dsp\pim} decays are identical to those listed for the signal in Tables~\ref{tab:strippinglinecuts} and~\ref{tab:strippinglinecuts_norm}.
+The \decay{\Bs}{\jpsi\phiz} decays are reconstructed using \decay{\jpsi}{\mup\mun} decays, therefore they are built using a different software module as the final state is not fully hadronic. As such there are some differences in the selection requirements for the \phiz mesons from the two sources. In general the selection requirements for the control channel are looser as the presence of the muons allows an efficient triggering without the need to make tight selections on the \Kp\Km pair. A direct comparison of the relevant quantities are listed in Table~\ref{tab:strippingrequirments_phi}.
 
--These are selected using dedicated Stripping Lines designed to select decays. To ensure these samples are representative of the target decays, a preselection is applied to the data. This comprises of similar trigger, background veto and PID requirements applied to the signal modes.
-}
+% Phi_P > 7000 && 
+% Phi_FDCHI2_OWNPV >15 && 
+% Phi_K0_P > 2000 && 
+% Phi_K1_P > 2000 && 
+% Phi_K0_IPCHI2_OWNPV > 4 && 
+% Phi_K1_IPCHI2_OWNPV > 4 &&
+% Phi_DIRA_OWNPV>0 && 
+% Phi_ENDVERTEX_CHI2<16 && 
+% Phi_K0_TRACK_GhostProb<0.4&& 
+% Phi_K1_TRACK_GhostProb<0.4 && 
+% (Phi_K0_PT+Phi_K1_PT)>1000)
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{ l l l l }
+\hline
+Particle       & Quantity                       &  Signal                              & Control                                 \\  
+\hline
+\phiz          & Mass minimum                   &  $870\mevcc$                         & $980\mevcc$ \\ 
+               & Mass maximum                   &  $1170\mevcc$                        & $1050\mevcc$ \\ 
+               & Transverse Momentum            &  -                                   & $\pt > 500 \mevc$                       \\  
+               & Products \pt scalar sum        &  $\sum{|\pt|} > 1000 \mevc$          &  -                                      \\  
+               & $\text{DOCA}(\Kp,\Km)$         &  $ < 0.5\mm$     &  -                                      \\  
+               & Direction angle                &  $\cos{\theta}>0$                    &  -                                      \\  
+               & Vertex quality                 &  $\chi^{2}/N_{\text{DOF}} < 16$      & $\chi^{2}/N_{\text{DOF}} < 25$          \\   
+               & Flight distance significance   &  $\chi^{2}_{\text{FD} }  > 16$       &  -                                      \\ 
+\hline
+\Kpm           & Track quality                  &  $\chi^{2}/N_{\text{DOF}}<4.0$       &  $\chi^{2}/N_{\text{DOF}}<5.0$          \\  
+               & Transverse momentum            &  $\pt > 100 \mevc$                   &  -                                      \\  
+               & Momentum                       &  $\ptot > 1000 \mevc$                &  -                                      \\  
+               & Impact parameter significance  &  $\chi^{2}_{\text{IP}} > 4$          &  -                                      \\  
+               & Ghost track probability        &  $P_{\text{Ghost}} < 0.4$            &  -                                      \\
+               & Particle identification        &  $\text{PIDK}>-10$                   & $\text{PIDK}>0$                         \\ 
+\hline
+\end{tabular}
+\end{center}
+\caption{The \emph{Stripping Line} requirements for \decay{\phiz}{\Kp\Km} candidates in the signal and control channel selection. All requirements are looser for the control channel with the exception of the particle identification and \phiz \pt requirements.}
+\label{tab:strippingrequirments_phi}
+\end{table}
+
+The difference in the two selections could be potentially biasing when calculating the efficiency of the MVA, therefore the requirements are tightened on the half of the \decay{\Bs}{\jpsi\phiz} sample used to calculate the efficiency. The looser set of requirements are still used when training the MVA methods to maximise the sample sizes to help prevent overtraining. As detailed in Section~\ref{sec:mvamethod}, when training MVA the \phiz meson invariant mass sidebands in the \decay{\Bs}{\jpsi\phiz} sample are used as the background sample. It was found that using the tighter set of requirements led to a negligible amount of background candidates, resulting in overtraining. 
+
+
+The second step of preselection aims to apply the same sequence of requirements to the modes used to train the MVAs as are applied to the signal and normalisation before the MVAs are applied. These are made up of the same trigger, background veto and PID requirements.
+For \Dsp candidates from \decay{\Bsb}{\Dsp\pim} decays, the \Bsb meson is required to either be \texttt{TOS} with respect to the \texttt{L0Hadron} trigger or \texttt{TIS} with respect to \texttt{L0Global} as with the signal. The \Bsb candidates are then required to be \texttt{TOS} with respect to the same \hltone and \hlttwo triggers as used with the signal modes.
+
+For the \decay{\Bs}{\jpsi\phiz} candidates, a large fraction are triggered due to the muons from the \jpsi decay. To ensure the sample is reflective of the signal decays the \Bs meson is required to be \texttt{TOS} with respect to the \texttt{L0Hadron} trigger or \texttt{TIS} with respect to \texttt{L0Global}. This effectively excludes events that have been selected solely due to the muons firing \texttt{L0Muon}. This consequently results in a large decrease in the available statistics.
+
+As shown in Table~\ref{tab:strippingrequirments_phi}, the MVA training mode has tighter particle identification requirements than the signal mode. Particle identification plays a crucial role in the efficacy of the MVA methods, therefore the signal PID requirements for the \phiz meson decay products are tightened accordingly as discussed in Section~\ref{sec:pidrequirements}.
+
+Finally, the same misidentified \D and \Lc hadron vetoes as detailed in Section~\ref{sec:pidvetos} are applied to the \decay{\Bsb}{\Dsp\pim} sample. These help to ensure the samples of \Dsp candidates are free from contamination.
+
 
 \subsubsection{Background subtraction}
 
@@ -1187,10 +1245,10 @@ When training the MVA methods, the variables are ranked according to their discr
 
 \begin{table}[h]
    \begin{center}
-      \begin{tabular}{ l l c}
+      \begin{tabular}{ c l c}
 
          \hline 
-         Rank & Variable                           & Variable importance   \\
+         Rank & Variable                           & Importance   \\
          \hline
           1 & \Kp ProbNNk                          & $6.001\times 10^{-2}$ \\
           2 & \phiz $\log(\chi^{2}_{\text{IP}})$   & $6.001\times 10^{-2}$ \\
@@ -1269,7 +1327,7 @@ When training the MVA methods, the variables are ranked according to their discr
 
 
 \subsubsection{MVA method}
-
+\label{sec:mvamethod}
 %% Discussion of MVA technicalities 
 The MVA method chosen in this analysis is a gradient Boosted Decision Tree (BDTG)~\cite{Breiman}. This is implemented using the \emph{TMVA} package as part of the \emph{ROOT} framework. 
 %% CHECK This method was compared to a BDT and bagged-BDT 
