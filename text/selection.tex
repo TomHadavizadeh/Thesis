@@ -912,16 +912,16 @@ The following vetos are applied to remove these incorrectly reconstructed decays
       \caption{\decay{\Bp}{(\decay{\Dsp}{\Kp\pim\pip})\phiz}}
    \end{subfigure}
 
-   \caption{Invariant mass distributions for subsets of decay products. The green region show the regions removed by the vetoes listed in Sec~\ref{sec:kinematicvetos}.}
+   \caption{Invariant mass distributions for subsets of decay products in data (black) and simulation (red). The green region show the regions removed by the vetoes listed in Sec~\ref{sec:kinematicvetos}.}
    \label{fig:invariantmassvetoes}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-In the search for \decay{\Bp}{\Dsp\Kp\Km} decays the increased size of the $m(\Kp\Km)$ phase space means more of the combinations of final state particles are susceptible to sharp peaking structure from incorrectly reconstructed backgrounds.
+In the search for \decay{\Bp}{\Dsp\Kp\Km} decays the increased size of the $m(\Kp\Km)$ phase space means more of the combinations of final state particles are susceptible to sharp peaking structure from incorrectly reconstructed backgrounds. Those spectra found to have significant peaking structures are additionally vetoed, as shown in Fig.~\ref{fig:invariantmassvetoes_DsKK}.
 
 \begin{itemize}
-\item For the mode \decay{\Bp}{(\decay{\Dsp}{\Kp\Km\pip})\Kp\Km}
+\item Vetoes for the mode \decay{\Bp}{(\decay{\Dsp}{\Kp\Km\pip})\Kp\Km}:
 \begin{itemize}
 \item $|m(\text{1245})- m(\Bs)| > 50\mevcc$
 \item $|m(\text{345})- m(\Dsp)| > 25\mevcc$ and $|m(\text{345})- m(\Dp)| > 25\mevcc$
@@ -930,16 +930,29 @@ In the search for \decay{\Bp}{\Dsp\Kp\Km} decays the increased size of the $m(\K
 \end{itemize}
 \end{itemize}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+   \centering
+   \begin{subfigure}[t]{1.0\textwidth}
+      \centering
+      \begin{subfigure}[t]{0.32\textwidth}
+         \includegraphics[width=1.0\textwidth]{figs/Selection/Veto_Comparison_B2DsKK_Ds2KKPi_m1245.pdf}
+      \end{subfigure}\\
+      \begin{subfigure}[t]{0.32\textwidth}
+         \includegraphics[width=1.0\textwidth]{figs/Selection/Veto_Comparison_B2DsKK_Ds2KKPi_m345.pdf}
+      \end{subfigure}
+      \begin{subfigure}[t]{0.32\textwidth}
+         \includegraphics[width=1.0\textwidth]{figs/Selection/Veto_Comparison_B2DsKK_Ds2KKPi_m135.pdf}
+      \end{subfigure}
+      \begin{subfigure}[t]{0.32\textwidth}
+         \includegraphics[width=1.0\textwidth]{figs/Selection/Veto_Comparison_B2DsKK_Ds2KKPi_m234.pdf}
+      \end{subfigure}
+   \end{subfigure}
 
-% if(fabs(m1245- Bs0_PDG)<50)  passVetos = false;
-% if(fabs(m345 - Ds_PDG )<25)  passVetos = false;
-% if(fabs(m345 - D_PDG  )<25)  passVetos = false;
-
-% if(fabs(m135 - Ds_PDG) <25)  passVetos = false;
-% if(fabs(m234 - Ds_PDG) <25)  passVetos = false;
-
-
-
+   \caption{Invariant mass distributions for subsets of decay products for \decay{\Bp}{(\decay{\Dsp}{\Kp\Km\pip})\Kp\Km} decays in data (black) and simulation (red). The green region show the regions removed by the vetoes listed in Sec~\ref{sec:kinematicvetos}.}
+   \label{fig:invariantmassvetoes_DsKK}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 {\color{Red}
 \begin{itemize}
 \item Make plots of DsKK vetoes
@@ -1240,83 +1253,147 @@ The variables used in the \Dsp MVA are listed in Table~\ref{tab:mvavars_ds}. The
 \end{table}
 
 
-When training the MVA methods, the variables are ranked according to their discrimination power.
+When training the MVA methods, the variables are ranked according to their discrimination power. Examples of these ranking are shown for the Run~II \decay{\phiz}{\Kp\Km} MVA and Run~II \decay{\Dsp}{\Kp\Km\pip} MVA in Table~\ref{tab:mvarank_dsandphi}. It can be seen that for both the \Dsp and \phiz meson MVAs that the kaon particle identification variable and various $\log(\chi^{2}_{\text{IP}})$ variables are the mode discriminating.
 
+
+% \begin{table}[h]
+%    \begin{center}
+%       \begin{tabular}{ c l c}
+
+%          \hline 
+%          Rank & Variable                           & Importance   \\
+%          \hline
+%           1 & \Kp ProbNNk                          & $6.001\times 10^{-2}$ \\
+%           2 & \phiz $\log(\chi^{2}_{\text{IP}})$   & $6.001\times 10^{-2}$ \\
+%           3 & \Km $\log(\chi^{2}_{\text{IP}})$     & $5.997\times 10^{-2}$ \\
+%           4 & \phiz $\log(\chi^{2}_{\text{VTX}})$  & $5.827\times 10^{-2}$ \\
+%           5 & \Km ProbNNpi                         & $5.826\times 10^{-2}$ \\
+%           6 & \Kp $\log(\chi^{2}_{\text{IP}})$     & $5.761\times 10^{-2}$ \\
+%           7 & \Kp ProbNNghost                      & $5.427\times 10^{-2}$ \\
+%           8 & \Km ProbNNk                          & $5.404\times 10^{-2}$ \\
+%           9 & \Kp $\chi^{2}_{\text{TRK}}$          & $5.359\times 10^{-2}$ \\
+%          10 & \Km $\chi^{2}_{\text{TRK}}$          & $5.201\times 10^{-2}$ \\
+%          11 & \Kp ProbNNpi                         & $5.162\times 10^{-2}$ \\
+%          12 & \Km ProbNNghost                      & $4.985\times 10^{-2}$ \\
+%          13 & \Kp ProbNNp                          & $4.486\times 10^{-2}$ \\
+%          14 & \Km ProbNNp                          & $4.410\times 10^{-2}$ \\
+%          15 & \Kp $\chi^{2}_{\text{TRKMATCH}}$     & $4.291\times 10^{-2}$ \\
+%          16 & \Km $\chi^{2}_{\text{TRKMATCH}}$     & $3.977\times 10^{-2}$ \\
+%          17 & \Km \pt                              & $3.437\times 10^{-2}$ \\
+%          18 & \Kp \pt                              & $3.012\times 10^{-2}$ \\
+%          19 & \phiz PT                             & $2.400\times 10^{-2}$ \\
+%          20 & \phiz P                              & $1.792\times 10^{-2}$ \\
+%          21 & \Km \pz                              & $1.397\times 10^{-2}$ \\
+%          22 & \Km \ptot                            & $1.387\times 10^{-2}$ \\
+%          23 & \Kp \pz                              & $1.245\times 10^{-2}$ \\
+%          24 & \Kp \ptot                            & $1.218\times 10^{-2}$ \\
+%          \hline
+%       \end{tabular}
+%    \end{center}
+%    \caption{Ranking of variables used to train the \decay{\phiz}{\Kp\Km} Run~II MVA.}
+%    \label{tab:mvarank_ds}
+% \end{table}
+
+% \begin{table}[h]
+%    \begin{center}
+%       \begin{tabular}{ c l c}
+
+%          \hline 
+%          Rank & Variable                         & Importance           \\
+%          \hline
+%           1 & \Kp ProbNNk                        & $7.639\times10^{-2}$ \\
+%           2 & \Km ProbNNk                        & $6.043\times10^{-2}$ \\
+%           3 & \Kp $\log(\chi^{2}_{\text{IP}})$   & $5.469\times10^{-2}$ \\
+%           4 & \pip $\log(\chi^{2}_{\text{IP}})$  & $4.984\times10^{-2}$ \\
+%           5 & \Kp \ptot                          & $4.348\times10^{-2}$ \\
+%           6 & \Dsp $\log(\chi^{2}_{\text{IP}})$  & $4.100\times10^{-2}$ \\
+%           7 & \pip \pt                           & $3.953\times10^{-2}$ \\
+%           8 & \Kp \pt                            & $3.937\times10^{-2}$ \\
+%           9 & \pip ProbNNpi                      & $3.881\times10^{-2}$ \\
+%          10 & \Dsp $\log(\chi^{2}_{\text{FD}})$  & $3.788\times10^{-2}$ \\
+%          11 & \Km $\log(\chi^{2}_{\text{IP}})$   & $3.735\times10^{-2}$ \\
+%          12 & \Dsp $\log(\chi^{2}_{\text{VTX}})$ & $3.016\times10^{-2}$ \\
+%          13 & \Km \ptot                          & $2.770\times10^{-2}$ \\
+%          14 & \Kp ProbNNp                        & $2.758\times10^{-2}$ \\
+%          15 & \Km ProbNNp                        & $2.692\times10^{-2}$ \\
+%          16 & \pip ProbNNghost                   & $2.623\times10^{-2}$ \\
+%          17 & \Kp ProbNNghost                    & $2.593\times10^{-2}$ \\
+%          18 & \Dsp \pt                           & $2.543\times10^{-2}$ \\
+%          19 & \Kp ProbNNpi                       & $2.525\times10^{-2}$ \\
+%          20 & \Km \pt                            & $2.355\times10^{-2}$ \\
+%          21 & \Dsp \ptot                         & $2.327\times10^{-2}$ \\
+%          22 & \Km ProbNNpi                       & $2.226\times10^{-2}$ \\
+%          23 & \pip \ptot                         & $2.083\times10^{-2}$ \\
+%          24 & \pip ProbNNp                       & $1.849\times10^{-2}$ \\
+%          25 & \pip ProbNNk                       & $1.793\times10^{-2}$ \\
+%          26 & \Km ProbNNghost                    & $1.607\times10^{-2}$ \\
+%          27 & \pip $\chi^{2}_{\text{TRKVELO}}$   & $1.589\times10^{-2}$ \\
+%          28 & \Km $\chi^{2}_{\text{TRK}}$        & $1.588\times10^{-2}$ \\
+%          29 & \pip $\chi^{2}_{\text{TRKMATCH}}$  & $1.548\times10^{-2}$ \\
+%          30 & \Kp $\chi^{2}_{\text{TRK}}$        & $1.522\times10^{-2}$ \\
+%          31 & \Km $\chi^{2}_{\text{TRKMATCH}}$   & $1.442\times10^{-2}$ \\
+%          32 & \pip $\chi^{2}_{\text{TRK}}$       & $1.433\times10^{-2}$ \\
+%          33 & \Kp $\chi^{2}_{\text{TRKVELO}}$    & $1.184\times10^{-2}$ \\
+%          34 & \Kp $\chi^{2}_{\text{TRKMATCH}}$   & $1.176\times10^{-2}$ \\
+%          35 & \Km $\chi^{2}_{\text{TRKVELO}}$    & $8.818\times10^{-3}$ \\
+%          \hline
+%       \end{tabular}
+%    \end{center}
+%    \caption{Ranking of variables used to train the \decay{\Dsp}{\Kp\Km\pip} Run~II MVA.}
+%    \label{tab:mvarank_ds}
+% \end{table}
 
 \begin{table}[h]
-   \begin{center}
-      \begin{tabular}{ c l c}
+\begin{center}
+\begin{tabular}{ c l c | c l c}
 
-         \hline 
-         Rank & Variable                           & Importance   \\
-         \hline
-          1 & \Kp ProbNNk                          & $6.001\times 10^{-2}$ \\
-          2 & \phiz $\log(\chi^{2}_{\text{IP}})$   & $6.001\times 10^{-2}$ \\
-          3 & \Km $\log(\chi^{2}_{\text{IP}})$     & $5.997\times 10^{-2}$ \\
-          4 & \phiz $\log(\chi^{2}_{\text{VTX}})$  & $5.827\times 10^{-2}$ \\
-          5 & \Km ProbNNpi                         & $5.826\times 10^{-2}$ \\
-          6 & \Kp $\log(\chi^{2}_{\text{IP}})$     & $5.761\times 10^{-2}$ \\
-          7 & \Kp ProbNNghost                      & $5.427\times 10^{-2}$ \\
-          8 & \Km ProbNNk                          & $5.404\times 10^{-2}$ \\
-          9 & \Kp $\chi^{2}_{\text{TRK}})$         & $5.359\times 10^{-2}$ \\
-         10 & \Km $\chi^{2}_{\text{TRK}})$         & $5.201\times 10^{-2}$ \\
-         11 & \Kp ProbNNpi                         & $5.162\times 10^{-2}$ \\
-         12 & \Km ProbNNghost                      & $4.985\times 10^{-2}$ \\
-         13 & \Kp ProbNNp                          & $4.486\times 10^{-2}$ \\
-         14 & \Km ProbNNp                          & $4.410\times 10^{-2}$ \\
-         15 & \Kp $\chi^{2}_{\text{TRKMATCH}}$     & $4.291\times 10^{-2}$ \\
-         16 & \Km $\chi^{2}_{\text{TRKMATCH}}$     & $3.977\times 10^{-2}$ \\
-         17 & \Km \pt                              & $3.437\times 10^{-2}$ \\
-         18 & \Kp \pt                              & $3.012\times 10^{-2}$ \\
-         19 & \phiz PT                             & $2.400\times 10^{-2}$ \\
-         20 & \phiz P                              & $1.792\times 10^{-2}$ \\
-         21 & \Km \pz                              & $1.397\times 10^{-2}$ \\
-         22 & \Km \ptot                            & $1.387\times 10^{-2}$ \\
-         23 & \Kp \pz                              & $1.245\times 10^{-2}$ \\
-         24 & \Kp \ptot                            & $1.218\times 10^{-2}$ \\
-         \hline
-      \end{tabular}
-   \end{center}
-   \caption{Ranking of variables used to train the \phiz MVA.}
-   \label{tab:mvarank_ds}
+\hline 
+
+\multicolumn{3}{c|}{\decay{\Dsp}{\Kp\Km\pip}}                   & \multicolumn{3}{c}{\decay{\phiz}{\Kp\Km}}                        \\
+Rank & Variable                         & Importance           & Rank & Variable                           & Importance           \\
+\hline
+ 1 & \Kp ProbNNk                        & $7.639\times10^{-2}$ &  1 & \Kp ProbNNk                          & $6.001\times 10^{-2}$\\
+ 2 & \Km ProbNNk                        & $6.043\times10^{-2}$ &  2 & \phiz $\log(\chi^{2}_{\text{IP}})$   & $6.001\times 10^{-2}$\\
+ 3 & \Kp $\log(\chi^{2}_{\text{IP}})$   & $5.469\times10^{-2}$ &  3 & \Km $\log(\chi^{2}_{\text{IP}})$     & $5.997\times 10^{-2}$\\
+ 4 & \pip $\log(\chi^{2}_{\text{IP}})$  & $4.984\times10^{-2}$ &  4 & \phiz $\log(\chi^{2}_{\text{VTX}})$  & $5.827\times 10^{-2}$\\
+ 5 & \Kp \ptot                          & $4.348\times10^{-2}$ &  5 & \Km ProbNNpi                         & $5.826\times 10^{-2}$\\
+ 6 & \Dsp $\log(\chi^{2}_{\text{IP}})$  & $4.100\times10^{-2}$ &  6 & \Kp $\log(\chi^{2}_{\text{IP}})$     & $5.761\times 10^{-2}$\\
+ 7 & \pip \pt                           & $3.953\times10^{-2}$ &  7 & \Kp ProbNNghost                      & $5.427\times 10^{-2}$\\
+ 8 & \Kp \pt                            & $3.937\times10^{-2}$ &  8 & \Km ProbNNk                          & $5.404\times 10^{-2}$\\
+ 9 & \pip ProbNNpi                      & $3.881\times10^{-2}$ &  9 & \Kp $\chi^{2}_{\text{TRK}}$          & $5.359\times 10^{-2}$\\
+10 & \Dsp $\log(\chi^{2}_{\text{FD}})$  & $3.788\times10^{-2}$ & 10 & \Km $\chi^{2}_{\text{TRK}}$          & $5.201\times 10^{-2}$\\
+11 & \Km $\log(\chi^{2}_{\text{IP}})$   & $3.735\times10^{-2}$ & 11 & \Kp ProbNNpi                         & $5.162\times 10^{-2}$\\
+12 & \Dsp $\log(\chi^{2}_{\text{VTX}})$ & $3.016\times10^{-2}$ & 12 & \Km ProbNNghost                      & $4.985\times 10^{-2}$\\
+13 & \Km \ptot                          & $2.770\times10^{-2}$ & 13 & \Kp ProbNNp                          & $4.486\times 10^{-2}$\\
+14 & \Kp ProbNNp                        & $2.758\times10^{-2}$ & 14 & \Km ProbNNp                          & $4.410\times 10^{-2}$\\
+15 & \Km ProbNNp                        & $2.692\times10^{-2}$ & 15 & \Kp $\chi^{2}_{\text{TRKMATCH}}$     & $4.291\times 10^{-2}$\\
+16 & \pip ProbNNghost                   & $2.623\times10^{-2}$ & 16 & \Km $\chi^{2}_{\text{TRKMATCH}}$     & $3.977\times 10^{-2}$\\
+17 & \Kp ProbNNghost                    & $2.593\times10^{-2}$ & 17 & \Km \pt                              & $3.437\times 10^{-2}$\\
+18 & \Dsp \pt                           & $2.543\times10^{-2}$ & 18 & \Kp \pt                              & $3.012\times 10^{-2}$\\
+19 & \Kp ProbNNpi                       & $2.525\times10^{-2}$ & 19 & \phiz PT                             & $2.400\times 10^{-2}$\\
+20 & \Km \pt                            & $2.355\times10^{-2}$ & 20 & \phiz P                              & $1.792\times 10^{-2}$\\
+21 & \Dsp \ptot                         & $2.327\times10^{-2}$ & 21 & \Km \pz                              & $1.397\times 10^{-2}$\\
+22 & \Km ProbNNpi                       & $2.226\times10^{-2}$ & 22 & \Km \ptot                            & $1.387\times 10^{-2}$\\
+23 & \pip \ptot                         & $2.083\times10^{-2}$ & 23 & \Kp \pz                              & $1.245\times 10^{-2}$\\
+24 & \pip ProbNNp                       & $1.849\times10^{-2}$ & 24 & \Kp \ptot                            & $1.218\times 10^{-2}$\\
+25 & \pip ProbNNk                       & $1.793\times10^{-2}$ \\
+26 & \Km ProbNNghost                    & $1.607\times10^{-2}$ \\
+27 & \pip $\chi^{2}_{\text{TRKVELO}}$   & $1.589\times10^{-2}$ \\
+28 & \Km $\chi^{2}_{\text{TRK}}$        & $1.588\times10^{-2}$ \\
+29 & \pip $\chi^{2}_{\text{TRKMATCH}}$  & $1.548\times10^{-2}$ \\
+30 & \Kp $\chi^{2}_{\text{TRK}}$        & $1.522\times10^{-2}$ \\
+31 & \Km $\chi^{2}_{\text{TRKMATCH}}$   & $1.442\times10^{-2}$ \\
+32 & \pip $\chi^{2}_{\text{TRK}}$       & $1.433\times10^{-2}$ \\
+33 & \Kp $\chi^{2}_{\text{TRKVELO}}$    & $1.184\times10^{-2}$ \\
+34 & \Kp $\chi^{2}_{\text{TRKMATCH}}$   & $1.176\times10^{-2}$ \\
+35 & \Km $\chi^{2}_{\text{TRKVELO}}$    & $8.818\times10^{-3}$ \\
+\hline
+\end{tabular}
+\end{center}
+\caption{Ranking of variables used to train the \decay{\Dsp}{\Kp\Km\pip} and \decay{\phiz}{\Kp\Km} Run~II MVAs.}
+\label{tab:mvarank_dsandphi}
 \end{table}
 
-
-% --- BDTG                     :    1 : \Kp MC15TuneV1_ProbNNk     : 7.639e-02
-% --- BDTG                     :    2 : \Km MC15TuneV1_ProbNNk     : 6.043e-02
-% --- BDTG                     :    3 : \Kp $\log(\chi^{2}_{\text{IP}})$     : 5.469e-02
-% --- BDTG                     :    4 : \pip $\log(\chi^{2}_{\text{IP}})$      : 4.984e-02
-% --- BDTG                     :    5 : \Kp P                      : 4.348e-02
-% --- BDTG                     :    6 : \Dsp $\log(\chi^{2}_{\text{IP}})$        : 4.100e-02
-% --- BDTG                     :    7 : \pip PT                      : 3.953e-02
-% --- BDTG                     :    8 : \Kp PT                     : 3.937e-02
-% --- BDTG                     :    9 : \pip MC15TuneV1_ProbNNpi     : 3.881e-02
-% --- BDTG                     :   10 : \Dsp $\log(\chi^{2}_{\text{FD}})$        : 3.788e-02
-% --- BDTG                     :   11 : \Km $\log(\chi^{2}_{\text{IP}})$     : 3.735e-02
-% --- BDTG                     :   12 : \Dsp $\log(ENDVERTEX_CHI2)$      : 3.016e-02
-% --- BDTG                     :   13 : \Km P                      : 2.770e-02
-% --- BDTG                     :   14 : \Kp MC15TuneV1_ProbNNp     : 2.758e-02
-% --- BDTG                     :   15 : \Km MC15TuneV1_ProbNNp     : 2.692e-02
-% --- BDTG                     :   16 : \pip MC15TuneV1_ProbNNghost  : 2.623e-02
-% --- BDTG                     :   17 : \Kp MC15TuneV1_ProbNNghost : 2.593e-02
-% --- BDTG                     :   18 : \Dsp PT                        : 2.543e-02
-% --- BDTG                     :   19 : \Kp MC15TuneV1_ProbNNpi    : 2.525e-02
-% --- BDTG                     :   20 : \Km PT                     : 2.355e-02
-% --- BDTG                     :   21 : \Dsp P                         : 2.327e-02
-% --- BDTG                     :   22 : \Km MC15TuneV1_ProbNNpi    : 2.226e-02
-% --- BDTG                     :   23 : \pip P                       : 2.083e-02
-% --- BDTG                     :   24 : \pip MC15TuneV1_ProbNNp      : 1.849e-02
-% --- BDTG                     :   25 : \pip MC15TuneV1_ProbNNk      : 1.793e-02
-% --- BDTG                     :   26 : \Km MC15TuneV1_ProbNNghost : 1.607e-02
-% --- BDTG                     :   27 : \pip BDT_TRACK_VeloCHI2NDOF  : 1.589e-02
-% --- BDTG                     :   28 : \Km TRACK_CHI2NDOF         : 1.588e-02
-% --- BDTG                     :   29 : \pip TRACK_MatchCHI2         : 1.548e-02
-% --- BDTG                     :   30 : \Kp TRACK_CHI2NDOF         : 1.522e-02
-% --- BDTG                     :   31 : \Km TRACK_MatchCHI2        : 1.442e-02
-% --- BDTG                     :   32 : \pip TRACK_CHI2NDOF          : 1.433e-02
-% --- BDTG                     :   33 : \Kp BDT_TRACK_VeloCHI2NDOF : 1.184e-02
-% --- BDTG                     :   34 : \Kp TRACK_MatchCHI2        : 1.176e-02
-% --- BDTG                     :   35 : \Km BDT_TRACK_VeloCHI2NDOF : 8.818e-03
 
 {\color{Red}
 \begin{itemize}
