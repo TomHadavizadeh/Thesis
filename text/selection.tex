@@ -747,7 +747,6 @@ The invariant mass of the \Dsp meson is recalculated, swapping the mass hypothes
 The particle identification requirements are tightened within a mass window around the \Dp or \Lc mass, effectively removing this crossfeed. For the mode \decay{\Dsp}{\Kp\Km\pip}, the vetoes are not applied to candidates for which $m|(\Km\Kp)-m_{\phiz}| < 10\mevcc$ as there are a high purity of \decay{\Dsp}{\Kp\Km\pip} decays in this region.
 
 The specific vetoes included in this selection are listed in Table~\ref{table:pidvetos}. 
-
 \begin{table*}[!ht]
 \begin{center}
 \begin{tabular}{ l l l }
@@ -756,9 +755,10 @@ Decay Mode & Misidentified decay\\
 \hline
 \decay{\Dsp}{{\color{Red}\Kp}\Km\pip}   & \decay{\Dp}{{\color{Red}\pip}\Km\pip}    \\
                            & \decay{\Lc}{{\color{Red}\Pp}\Km\pip}     \\
-                           &                             \\
+%                           &                             \\
+\hline
 \decay{\Dsp}{{\color{Red}\Kp}\pim\pip}  & \decay{\Dp}{{\color{Red}\pip}\pim\pip}   \\
-                           &                             \\
+%                           &                             \\
 
 \hline
 \end{tabular}
@@ -766,8 +766,6 @@ Decay Mode & Misidentified decay\\
 \label{table:pidvetos}
 \end{center}
 \end{table*}
-
-
 The invariant mass distributions for each the misidentified \decay{\Dsp}{\Kp\Km\pip} decays are shown with and without the MVA requirements in Figs.~\ref{fig:PIDVetos_Ds2KKPi_D_Veto} and \ref{fig:PIDVetos_Ds2KKPi_Lc_Veto} for both the signal \decay{\Bp}{\Dsp\phiz} and normalisation \decay{\Bp}{\Dsp\Dzb} decays.
 
 
@@ -819,13 +817,6 @@ The invariant mass distributions for each the misidentified \decay{\Dsp}{\Kp\Km\
     \label{fig:PIDVetos_Ds2KKPi_Lc_Veto}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-{\color{Red}
-\begin{itemize}
-\item Include Descriptions
-\item Include plots of each applied
-\end{itemize}
-}
 
 \subsection{Invariant mass vetoes}
 \label{sec:kinematicvetos}
@@ -953,23 +944,39 @@ In the search for \decay{\Bp}{\Dsp\Kp\Km} decays the increased size of the $m(\K
    \label{fig:invariantmassvetoes_DsKK}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-{\color{Red}
-\begin{itemize}
-\item Make plots of DsKK vetoes
-\end{itemize}
-}
+
 
 \subsection{Normalisation mode veto}
 \label{sec:normvetos}
 
-In the search for \decay{\Bp}{\Dsp\Kp\Km} decays, the phase space 
+In the search for \decay{\Bp}{\Dsp\Kp\Km} decays, the entire $m(\Kp\Km)$ phasespace is used. This ranges from the \Kp\Km mass threshold at around $990\mevcc$ to the kinematic limit at $m(\Bp) - m(\Dsp) = 3300\mevcc$. This range is wide enough to include the mass of the \Dzb meson, $m(\Dz) = 1864 \mevcc$. Consequently, when inspecting the $m(\Kp\Km)$ spectrum for selected signal candidates there is an excess of events at the \Dz mass. It is necessary to remove these from the signal samples as, unsurprisingly, they result in a peak at the \Bp mass in the $m(\Dsp\Kp\Km)$ spectrum and lead to an incorrect signal yield. As described in Section~\ref{sec:selectionrequirements}, these removed events are used as the normalisation channel for the measurement of \decay{\Bp}{\Dsp\Kp\Km} decays. 
+The region affected by the veto $|m(\Kp\Km) - m(\Dzb)| < 25 \mevcc$ is shown in Fig.~\ref{fig:normalisationveto_KK}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+   \centering
+   \begin{subfigure}[t]{0.49\textwidth}
+      \centering
+      \includegraphics[width=1.0\textwidth]{figs/Selection/D0Veto_Comparison_B2DsKK_Ds2KKPi_Phi_M.pdf}
+      \caption{\decay{\Dzb}{\Kp\Km} }
+      \label{fig:normalisationveto_KK}
+   \end{subfigure}
+   \begin{subfigure}[t]{0.49\textwidth}
+      \centering
+      \includegraphics[width=1.0\textwidth]{figs/Selection/D0Veto_Comparison_B2DsKK_Ds2KKPi_Phi_KPi_M.pdf}
+      \caption{\decay{\Dzb}{\Kp\pim} }
+      \label{fig:normalisationveto_KPi}
+   \end{subfigure}
+   \caption{Normalisation channel vetoes.}
+   \label{fig:normalisationveto}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-{\color{Red}
-\begin{itemize}
-\item Also veto for \Km\pip misID
-\end{itemize}
-}
+In addition to the correctly reconstructed normalisation channel, the presence of the incorrectly reconstructed \decay{\Bp}{\Dsp(\decay{\Dzb}{\Kp\pim})} decay is observable in Fig.~\ref{fig:normalisationveto_KK}. This appears as smeared out peak to the right of the \Dzb peak. Although the probability of the \pim meson being misidentified as a \Km meson is low, the branching fraction for \decay{\Dzb}{\Kp\pim} is larger, leading to the observed excess. It is possible, and necessary, to remove this contribution. The \Kp\Km candidates are reconstructed again, swapping the mass hypothesis of the \Km to \pim. The distribution of candidates in the vicinity of the \Dzb mass is shown in Fig.~\ref{fig:normalisationveto_KPi}. A distinct peak is observed at the \Dzb mass. This contribution is removed by the requirement $|m(\Kp\pim) - m(\Dzb)| < 25 \mevcc$. The effect of this requirement on the $m(\Kp\Km)$ spectrum is shown by the red line in Fig.~\ref{fig:normalisationveto_KK}, which represents the sample with this veto applied. This structure is effectively removed. 
+
+Another structure appears to be present to the left of the \Dzb peak in Fig.~\ref{fig:normalisationveto_KK}. This is likely to be due to \decay{\Dzb}{\Kp\Km X} decays in which one or more particles have not been reconstructed. This partially reconstructed background would not peak at the \Bp mass in the $m(\Dsp\Kp\Km)$ spectrum due to the missing particles, therefore no attempt is made to remove this contribution.
+
 
 \subsection{Multivariate analysis}
 
@@ -1046,7 +1053,7 @@ Particle       & Quantity                       &  Signal                       
 \hline
 \end{tabular}
 \end{center}
-\caption{The \emph{Stripping Line} requirements for \decay{\phiz}{\Kp\Km} candidates in the signal and control channel selection. All requirements are looser for the control channel with the exception of the particle identification and \phiz \pt requirements.}
+\caption{The \emph{Stripping Line} requirements for \decay{\phiz}{\Kp\Km} candidates in the signal and MVA training (control) mode selection. All requirements are looser for the control channel with the exception of the particle identification requirements.}
 \label{tab:strippingrequirments_phi}
 \end{table}
 
