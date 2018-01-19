@@ -1812,7 +1812,7 @@ The \decay{\phiz}{\Kp\Km} MVA is also used to select the \Kp\Km pair in \decay{\
 
 {\color{Red}
 \begin{itemize}
-\item Crosschecks for eff
+\item Crosschecks for eff?
 \end{itemize}
 }
 
@@ -1871,7 +1871,7 @@ The optimal values are selected separately for each of the modes and tabulated i
 \begin{tabular}{ l l  c  c  }
 
 \hline
-Run      & \Dsp decay mode               & \Dsp requirement & \phiz/\Dzb requirement \\ 
+Period   & \Dsp decay mode               & \Dsp requirement & \phiz/\Dzb requirement \\ 
 \hline
 Run I    & \decay{\Dsp}{\Kp\Km\pip}      & 0.5 & 0.8 \\
          & \decay{\Dsp}{\pip\pim\pip}    & 0.3 & 0.8 \\
@@ -1889,12 +1889,96 @@ Run II   & \decay{\Dsp}{\Kp\Km\pip}      & 0.5 & 0.8 \\
 
 \subsection{Impact parameter requirements}
 
+The data-driven MVAs target the selection of \phiz and \Dsp candidates, removing a significant background contribution. However it is possible to further purify the candidates by making requirements on the \Bp candidates formed from the combination of the two. This helps to remove possible backgrounds coming from the incorrect combination of two unrelated mesons. Requirements are places on the impact parameter significance $\chi^{2}_{\text{IP}}$ to help ensure that the different components of the decay chain have a topology consistent with those desired.
+
+The \Bp meson candidate is required to be consistent with originating at the PV by requiring $\chi^2_{\text{IP}} < 10$. This helps to remove background as unrelated combinations of \Dsp and \phiz mesons will not necessarily point back towards the PV.
+Additionally, the opposite requirement is made of the \Dsp meson, $\chi^2_{\text{IP}} > 10$. It is possible for \Dsp mesons to be produced promptly at the PV rather than in a \Bp meson decay and this requirement helps to remove those candidates.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+   \centering
+   \begin{subfigure}[t]{0.32\textwidth}
+      \centering
+      \includegraphics[width=1.0\textwidth]{figs/Selection/Data_MC_Comparison_Var_1_B2DsPhi_Ds2KKPi.pdf}
+      \caption{\decay{\Dsp}{\Kp\Km\pip}}
+   \end{subfigure}
+   \begin{subfigure}[t]{0.32\textwidth}
+      \centering
+      \includegraphics[width=1.0\textwidth]{figs/Selection/Data_MC_Comparison_Var_1_B2DsPhi_Ds2PiPiPi.pdf}
+      \caption{\decay{\Dsp}{\pip\pim\pip}}
+   \end{subfigure}
+   \begin{subfigure}[t]{0.32\textwidth}
+      \centering
+      \includegraphics[width=1.0\textwidth]{figs/Selection/Data_MC_Comparison_Var_1_B2DsPhi_Ds2KPiPi.pdf}
+      \caption{\decay{\Dsp}{\Kp\pim\pip}}
+   \end{subfigure}\\
+   \begin{subfigure}[t]{0.32\textwidth}
+      \centering
+      \includegraphics[width=1.0\textwidth]{figs/Selection/Data_MC_Comparison_Var_2_B2DsPhi_Ds2KKPi.pdf}
+      \caption{\decay{\Dsp}{\Kp\Km\pip}}
+   \end{subfigure}
+   \begin{subfigure}[t]{0.32\textwidth}
+      \centering
+      \includegraphics[width=1.0\textwidth]{figs/Selection/Data_MC_Comparison_Var_2_B2DsPhi_Ds2PiPiPi.pdf}
+      \caption{\decay{\Dsp}{\pip\pim\pip}}
+   \end{subfigure}
+   \begin{subfigure}[t]{0.32\textwidth}
+      \centering
+      \includegraphics[width=1.0\textwidth]{figs/Selection/Data_MC_Comparison_Var_2_B2DsPhi_Ds2KPiPi.pdf}
+      \caption{\decay{\Dsp}{\Kp\pim\pip}}
+   \end{subfigure}\\
+   \caption{The \Bp and \Dsp meson $\chi^{2}_{\text{IP}}$ distributions for \decay{\Bp}{\Dsp\phiz} candidates in data (black) and simulation (red). Candidates within the range $4900 < m(\Dsp\phiz) < 5900 \mevcc$ are included in these figures.}
+   \label{fig:ipchi2dist_signal}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The distributions for the \Bp and \Dsp meson impact parameter significance is shown in Fig.~\ref{fig:ipchi2dist_signal} for \decay{\Bp}{\Dsp\phiz} candidates. The requirement values are represented by vertical lines. Small peaks can be observed at low \Dsp meson impact parameter significance, corresponding to \Dsp mesons that originated at the PV. 
+As a cross-check, the same distributions are produced for the normalisation channel, \decay{\Bp}{\Dsp\Dzb}. However, instead of including all candidates in a wide $m(\Dsp\phiz)$ mass range, only those within $20\mevcc$ of the \Bp mass are included. As the normalisation sample has a very high purity this effectively isolates these decays in data. This comparison of data and simulation distributions is shown in Fig.~\ref{fig:ipchi2dist_normalisation}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+   \centering
+   \begin{subfigure}[t]{0.32\textwidth}
+      \centering
+      \includegraphics[width=1.0\textwidth]{figs/Selection/Data_MC_Comparison_Var_1_B2DsD0_Ds2KKPi.pdf}
+      \caption{\decay{\Dsp}{\Kp\Km\pip}}
+   \end{subfigure}
+   \begin{subfigure}[t]{0.32\textwidth}
+      \centering
+      \includegraphics[width=1.0\textwidth]{figs/Selection/Data_MC_Comparison_Var_1_B2DsD0_Ds2PiPiPi.pdf}
+      \caption{\decay{\Dsp}{\pip\pim\pip}}
+   \end{subfigure}
+   \begin{subfigure}[t]{0.32\textwidth}
+      \centering
+      \includegraphics[width=1.0\textwidth]{figs/Selection/Data_MC_Comparison_Var_1_B2DsD0_Ds2KPiPi.pdf}
+      \caption{\decay{\Dsp}{\Kp\pim\pip}}
+   \end{subfigure}\\
+   \begin{subfigure}[t]{0.32\textwidth}
+      \centering
+      \includegraphics[width=1.0\textwidth]{figs/Selection/Data_MC_Comparison_Var_2_B2DsD0_Ds2KKPi.pdf}
+      \caption{\decay{\Dsp}{\Kp\Km\pip}}
+   \end{subfigure}
+   \begin{subfigure}[t]{0.32\textwidth}
+      \centering
+      \includegraphics[width=1.0\textwidth]{figs/Selection/Data_MC_Comparison_Var_2_B2DsD0_Ds2PiPiPi.pdf}
+      \caption{\decay{\Dsp}{\pip\pim\pip}}
+   \end{subfigure}
+   \begin{subfigure}[t]{0.32\textwidth}
+      \centering
+      \includegraphics[width=1.0\textwidth]{figs/Selection/Data_MC_Comparison_Var_2_B2DsD0_Ds2KPiPi.pdf}
+      \caption{\decay{\Dsp}{\Kp\pim\pip}}
+   \end{subfigure}\\
+   \caption{The \Bp and \Dsp meson $\chi^{2}_{\text{IP}}$ distributions for \decay{\Bp}{\Dsp\Dzb} candidates in data (black) and simulation (red). Candidates within the range $|m(\Dsp\phiz) - m(\Bp)| < 20 \mevcc$ are included in these figures, effectively isolating the normalisation events in data.}
+   \label{fig:ipchi2dist_normalisation}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 {\color{Red}
 \begin{itemize}
-\item MVA make requirements on \Dsp and \phiz candidates, not combination
-\item possible to tighten \Bp selection further
-\item \Bp MVA not required
-\item IP shows two types of BGs:
 \item norm channel systematic 
 \end{itemize}
 }
