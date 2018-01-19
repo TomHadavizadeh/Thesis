@@ -18,7 +18,7 @@ The corresponding selection for the normalisation channel \decay{\Bp}{\Dsp\Dzb} 
 This data sample includes the entire Run I sample and the first two years of the Run II data collection period.}
 The total integrated luminosity obtained for each year is listed in Table~\ref{tab:lumi}, along with the corresponding centre-of-mass energies. 
 
-\begin{table}[t]
+\begin{table}[h]
    \begin{center}
       \begin{tabular}{ccc}
          \hline
@@ -45,7 +45,7 @@ The samples are generated separately for each of the running periods listed in T
 \begin{itemize}
 \item Probably need more detail?
 \item MC for \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km}
-\item phase space generation
+\item phase-space generation
 \item MC for background components
 \end{itemize}
 }
@@ -62,7 +62,7 @@ systems, followed by a software stage, which reconstructs the full event.
 Trigger decisions are made globally for a given event; either the event is saved or it's discarded. However, for events that are retained more detailed information about the specific interaction that initiated the trigger can be used to help isolate events containing signal candidates. At both hardware and software level there are a number of different triggers that can lead to an event being retained. In hardware this is broadly separated according to the sub-detector that contained the triggering deposit. Deposits in the muon chambers or hadronic calorimeter would fire \texttt{L0Muon} or \texttt{L0Hadron} respectively. Electromagnetic calorimeter deposits could result in \texttt{L0Electron} or \texttt{L0Photon} firing. The \decay{\Bp}{\Dsp\Kp\Km} and \decay{\Bp}{\Dsp}{\phiz} decays are both reconstructed in fully hadronic final states, therefore events retained as a result of the \texttt{L0Electron}, \texttt{L0Photon} or \texttt{L0Muon} trigger firing are unlikely to have been caused by the signal decays. 
 
 In addition to specifying which triggers fired, it is possible to use more granular information about the specific hits initiating the trigger to improve the selection of signal candidates. The tracks constituting the reconstructed candidate are matched to the deposits in each sub-detector. The fraction of hits required to match in order for the trigger decision to be associated to that object vary depending on the subdetector in question, as listed in Table~\ref{tab:tosfrac}.
-\begin{table}[t]
+\begin{table}[h]
    \begin{center}
       \begin{tabular}{cc}
          \hline
@@ -183,7 +183,7 @@ The candidate \decay{\Bp}{\Dsp\Kp\Km} and \decay{\Bp}{\Dsp\phiz} signal decays a
 The \Dsp mesons used in the search for \decay{\Bp}{\Dsp\Kp\Km} decays are reconstructed using the \decay{\Dsp}{\Kp\Km\pip} decay. The search for \decay{\Bp}{\Dsp\phiz} additionally includes the \decay{\Dsp}{\pip\pim\pip} and \decay{\Dsp}{\Kp\pim\pip} decays to increase the reach of the search. The branching fractions for these decays are listed in Table~\ref{tab:dsbranchingfractions}. In each instance the normalisation channel is reconstructed using the same \Dsp decay mode as the signal.  
 
 
-\begin{table}[t]
+\begin{table}[h]
    \begin{center}
       \begin{tabular}{lc}
          \hline
@@ -309,7 +309,7 @@ Requirements are placed on these many candidates to select just those consistent
 The selection requirements imposed on candidate \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays in their respective \emph{Stripping Lines} is detailed in Table~\ref{tab:strippinglinecuts}. 
 
 
-\begin{table}[t]
+\begin{table}[h]
    \begin{center}
       \begin{tabular}{l l}
          \hline
@@ -679,7 +679,7 @@ Particle identification variables help to determine the species of tracks passin
 
 
 
-\begin{table}[t]
+\begin{table}[h]
    \begin{center}
       \begin{tabular}{l l l}
          \hline
@@ -931,7 +931,7 @@ The following vetos are applied to remove these incorrectly reconstructed decays
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-In the search for \decay{\Bp}{\Dsp\Kp\Km} decays the increased size of the $m(\Kp\Km)$ phase space means more of the combinations of final state particles are susceptible to sharp peaking structure from incorrectly reconstructed backgrounds. Those spectra found to have significant peaking structures are additionally vetoed, as shown in Fig.~\ref{fig:invariantmassvetoes_DsKK}.
+In the search for \decay{\Bp}{\Dsp\Kp\Km} decays the increased size of the $m(\Kp\Km)$ phase-space means more of the combinations of final state particles are susceptible to sharp peaking structure from incorrectly reconstructed backgrounds. Those spectra found to have significant peaking structures are additionally vetoed, as shown in Fig.~\ref{fig:invariantmassvetoes_DsKK}.
 
 \begin{itemize}
 \item Vetoes for the mode \decay{\Bp}{(\decay{\Dsp}{\Kp\Km\pip})\Kp\Km}:
@@ -1009,13 +1009,11 @@ The sample of \Dsp mesons is obtained from the relatively abundant \decay{\Bsb}{
 A sample is selected for each of the \Dsp and \phiz meson decays uses in this analysis, as listed in Table~\ref{tab:mva_modes}. 
 The training of separate MVAs for the different \Dsp modes allows the use of particle identification variables that separate kaons and pions to be fully exploited.
 The MVA for \decay{\phiz}{\Kp\Km} decays is used to select both \phiz and \Dzb mesons. For the normalisation mode this may be suboptimal, however it ensures the selection of the signal and normalisation channels are almost identical such that the systematic uncertainty in the ratio of efficiencies is minimised.
-The samples of \decay{\Bsb}{\Dsp\pim} and \decay{\Bs}{\jpsi\phiz} decays are randomly split into two subsamples. The first is used to train the MVAs and the second is used to determine the efficiency of the selection. To prevent the difference between \phiz and \Dzb decays from affecting the ratio of efficiencies, the normalisation channel MVA efficiency is instead determined from a dedicated sample of \decay{\Dzb}{\Kp\Km} decays as detailed in Table.~\ref{tab:mva_modes}.
+The samples of \decay{\Bsb}{\Dsp\pim} and \decay{\Bs}{\jpsi\phiz} decays are randomly split into two subsamples. The first is used to train the MVAs and the second is used to determine the efficiency of the selection. To prevent the difference between \phiz and \Dzb decays from affecting the ratio of efficiencies, the normalisation channel MVA efficiency is instead determined from a dedicated sample of \decay{\Dzb}{\Kp\Km} decays as detailed in Table.~\ref{tab:mva_modes}. The \decay{\phiz}{\Kp\Km} MVA is also used to select the \Kp\Km pair in \decay{\Bp}{\Dsp\Kp\Km} decays.
+A total of eight MVAs are trained, one for each of the \Dsp and \phiz modes, in both Run I and Run II. Changes to the particle identification variables between the two running periods necessitates separate trainings. 
 
-{\color{Red}
-The \decay{\phiz}{\Kp\Km} MVA is also used to select the \Kp\Km pair in \decay{\Bp}{\Dsp\Kp\Km} decays. Due to the similar topologies of \decay{\Bp}{\Dsp\Kp\Km} \decay{\Bp}{\Dsp\phiz} decays, the \Kp\Km pair share lots of similarities to their \decay{\phiz}{\Kp\Km} counterparts. One obvious difference is the invariant mass of the pair, as the \decay{\Bp}{\Dsp\Kp\Km} decays includes a much larger phase space. In training the MVA this could lead to the selection being non-{}optimal for \decay{\Bp}{\Dsp\Kp\Km} decays with high $m(\Kp\Km)$. However, when determining the efficiency of the selection using these same \decay{\Bs}{\jpsi\phi} decays these differences could lead to bias. Studies are performed to assess the dependence of efficiency on $m(\Kp\Km)$ and an alternative method of determining the efficiency is used for \decay{\Bp}{\Dsp\Kp\Km} decays, as detailed in Section~\ref{sec:B2DsKK_effcorrection}.
-}
 
-\begin{table}[t]
+\begin{table}[h]
 \begin{center}
 \begin{tabular}{lll}
    \hline
@@ -1373,12 +1371,13 @@ When training the MVA methods, the variables are ranked according to their discr
 % \end{table}
 
 \begin{table}[h]
-\begin{center}
+\centering
+\scalebox{1.0}{
 \begin{tabular}{ c l c | c l c}
 
 \hline 
 
-\multicolumn{3}{c|}{\decay{\Dsp}{\Kp\Km\pip}}                   & \multicolumn{3}{c}{\decay{\phiz}{\Kp\Km}}                        \\
+%\multicolumn{3}{c|}{\decay{\Dsp}{\Kp\Km\pip}}                   & \multicolumn{3}{c}{\decay{\phiz}{\Kp\Km}}                        \\
 Rank & Variable                         & Importance           & Rank & Variable                           & Importance           \\
 \hline
  1 & \Kp ProbNNk                        & $7.639\times10^{-2}$ &  1 & \Kp ProbNNk                          & $6.001\times 10^{-2}$\\
@@ -1396,30 +1395,30 @@ Rank & Variable                         & Importance           & Rank & Variable
 13 & \Km \ptot                          & $2.770\times10^{-2}$ & 13 & \Kp ProbNNp                          & $4.486\times 10^{-2}$\\
 14 & \Kp ProbNNp                        & $2.758\times10^{-2}$ & 14 & \Km ProbNNp                          & $4.410\times 10^{-2}$\\
 15 & \Km ProbNNp                        & $2.692\times10^{-2}$ & 15 & \Kp $\chi^{2}_{\text{TRKMATCH}}$     & $4.291\times 10^{-2}$\\
-16 & \pip ProbNNghost                   & $2.623\times10^{-2}$ & 16 & \Km $\chi^{2}_{\text{TRKMATCH}}$     & $3.977\times 10^{-2}$\\
-17 & \Kp ProbNNghost                    & $2.593\times10^{-2}$ & 17 & \Km \pt                              & $3.437\times 10^{-2}$\\
-18 & \Dsp \pt                           & $2.543\times10^{-2}$ & 18 & \Kp \pt                              & $3.012\times 10^{-2}$\\
-19 & \Kp ProbNNpi                       & $2.525\times10^{-2}$ & 19 & \phiz PT                             & $2.400\times 10^{-2}$\\
-20 & \Km \pt                            & $2.355\times10^{-2}$ & 20 & \phiz P                              & $1.792\times 10^{-2}$\\
-21 & \Dsp \ptot                         & $2.327\times10^{-2}$ & 21 & \Km \pz                              & $1.397\times 10^{-2}$\\
-22 & \Km ProbNNpi                       & $2.226\times10^{-2}$ & 22 & \Km \ptot                            & $1.387\times 10^{-2}$\\
-23 & \pip \ptot                         & $2.083\times10^{-2}$ & 23 & \Kp \pz                              & $1.245\times 10^{-2}$\\
-24 & \pip ProbNNp                       & $1.849\times10^{-2}$ & 24 & \Kp \ptot                            & $1.218\times 10^{-2}$\\
-25 & \pip ProbNNk                       & $1.793\times10^{-2}$ \\
-26 & \Km ProbNNghost                    & $1.607\times10^{-2}$ \\
-27 & \pip $\chi^{2}_{\text{TRKVELO}}$   & $1.589\times10^{-2}$ \\
-28 & \Km $\chi^{2}_{\text{TRK}}$        & $1.588\times10^{-2}$ \\
-29 & \pip $\chi^{2}_{\text{TRKMATCH}}$  & $1.548\times10^{-2}$ \\
-30 & \Kp $\chi^{2}_{\text{TRK}}$        & $1.522\times10^{-2}$ \\
-31 & \Km $\chi^{2}_{\text{TRKMATCH}}$   & $1.442\times10^{-2}$ \\
-32 & \pip $\chi^{2}_{\text{TRK}}$       & $1.433\times10^{-2}$ \\
-33 & \Kp $\chi^{2}_{\text{TRKVELO}}$    & $1.184\times10^{-2}$ \\
-34 & \Kp $\chi^{2}_{\text{TRKMATCH}}$   & $1.176\times10^{-2}$ \\
-35 & \Km $\chi^{2}_{\text{TRKVELO}}$    & $8.818\times10^{-3}$ \\
+% 16 & \pip ProbNNghost                   & $2.623\times10^{-2}$ & 16 & \Km $\chi^{2}_{\text{TRKMATCH}}$     & $3.977\times 10^{-2}$\\
+% 17 & \Kp ProbNNghost                    & $2.593\times10^{-2}$ & 17 & \Km \pt                              & $3.437\times 10^{-2}$\\
+% 18 & \Dsp \pt                           & $2.543\times10^{-2}$ & 18 & \Kp \pt                              & $3.012\times 10^{-2}$\\
+% 19 & \Kp ProbNNpi                       & $2.525\times10^{-2}$ & 19 & \phiz PT                             & $2.400\times 10^{-2}$\\
+% 20 & \Km \pt                            & $2.355\times10^{-2}$ & 20 & \phiz P                              & $1.792\times 10^{-2}$\\
+% 21 & \Dsp \ptot                         & $2.327\times10^{-2}$ & 21 & \Km \pz                              & $1.397\times 10^{-2}$\\
+% 22 & \Km ProbNNpi                       & $2.226\times10^{-2}$ & 22 & \Km \ptot                            & $1.387\times 10^{-2}$\\
+% 23 & \pip \ptot                         & $2.083\times10^{-2}$ & 23 & \Kp \pz                              & $1.245\times 10^{-2}$\\
+% 24 & \pip ProbNNp                       & $1.849\times10^{-2}$ & 24 & \Kp \ptot                            & $1.218\times 10^{-2}$\\
+% 25 & \pip ProbNNk                       & $1.793\times10^{-2}$ \\
+% 26 & \Km ProbNNghost                    & $1.607\times10^{-2}$ \\
+% 27 & \pip $\chi^{2}_{\text{TRKVELO}}$   & $1.589\times10^{-2}$ \\
+% 28 & \Km $\chi^{2}_{\text{TRK}}$        & $1.588\times10^{-2}$ \\
+% 29 & \pip $\chi^{2}_{\text{TRKMATCH}}$  & $1.548\times10^{-2}$ \\
+% 30 & \Kp $\chi^{2}_{\text{TRK}}$        & $1.522\times10^{-2}$ \\
+% 31 & \Km $\chi^{2}_{\text{TRKMATCH}}$   & $1.442\times10^{-2}$ \\
+% 32 & \pip $\chi^{2}_{\text{TRK}}$       & $1.433\times10^{-2}$ \\
+% 33 & \Kp $\chi^{2}_{\text{TRKVELO}}$    & $1.184\times10^{-2}$ \\
+% 34 & \Kp $\chi^{2}_{\text{TRKMATCH}}$   & $1.176\times10^{-2}$ \\
+% 35 & \Km $\chi^{2}_{\text{TRKVELO}}$    & $8.818\times10^{-3}$ \\
 \hline
 \end{tabular}
-\end{center}
-\caption{Ranking of variables used to train the \decay{\Dsp}{\Kp\Km\pip} and \decay{\phiz}{\Kp\Km} Run~II MVAs.}
+}
+\caption{Ranking of variables for the 15 highest ranked variables used to train the \decay{\Dsp}{\Kp\Km\pip} (left) and \decay{\phiz}{\Kp\Km} (right) Run~II MVAs.}
 \label{tab:mvarank_dsandphi}
 \end{table}
 
@@ -1689,25 +1688,63 @@ A second set of `signal'-like and `background'-like samples are used to blindly 
 
 The `signal' and `background' samples are both taken from the relevant \decay{\Bsb}{\Dsp\pim} or \decay{\Bs}{\jpsi\phiz} decay samples.
 The signal samples include all events within the fit ranges shown in Fig.~\ref{fig:mvatrainingsamples}. Each candidate is weighted with the appropriate Gaussian fit component weight as determined by the \sPlot technique. This weight is passed to the \tmva framework when training the methods.
-The background samples are comprised of the sideband regions of the relevant ranges in Fig.~\ref{fig:mvatrainingsamples}. These ranges are defined by $|m(\Kp\Km)-m(\phiz)| > 10 \mevcc$ and $|m(h^{+}h^{-}h^{+})-m(\Dsp)| > 30\mevcc$ for the \phiz and \Dsp MVAs respectively. The efficacy of three methods are compared and the most effective selected. The three methods are derivatives of Boosted Decision Trees (BDTs)~\cite{Breiman}.
-
-\begin{description}
-\item \textbf{BDT:} 
-\item \textbf{BDTG (Gradient Boosted Decision Tree):}
-\item \textbf{BDTB (bagged Boosted Decision Tree):}
-\end{description}
+The background samples are comprised of the sideband regions of the relevant ranges in Fig.~\ref{fig:mvatrainingsamples}. These ranges are defined by $|m(\Kp\Km)-m(\phiz)| > 10 \mevcc$ and $|m(h^{+}h^{-}h^{+})-m(\Dsp)| > 30\mevcc$ for the \phiz and \Dsp MVAs respectively. 
+The efficacy of three methods are compared and the most effective selected. The three methods are derivatives of Boosted Decision Trees (BDTs)~\cite{Breiman}.
 
 {\color{Red}
 \begin{itemize}
-\item Not sure where the ROC curve comparison is at the mo...
+\item Detail of what BDT is?
 \end{itemize}
 }
+% \begin{description}
+% \item \textbf{BDT: (Adaptive Boost)} 
+% \item \textbf{BDTG (Gradient Boosted Decision Tree):}
+% \item \textbf{BDTB (bagged Boosted Decision Tree):}
+% \end{description}
+
+% {\color{Red}
+% \begin{itemize}
+% \item Not sure where the ROC curve comparison is at the mo...
+% \end{itemize}
+% }
 
 The BDTG method is found to separate the signal and background most effectively and therefore is used in training all MVAs.
- 
+The exact configuration of the BDTG method is listed in Table~\ref{tab:mvaconfiguration}. 
+
+{\color{Red}
+\begin{itemize}
+\item Explain configuration
+\end{itemize}
+}
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{ l l }
+\hline
+Parameter & Value \\
+\hline
+Number of trees         & 1000      \\
+Minimum node size       & 2.5\%     \\
+Boost type              & Gradient  \\ 
+Shrinkage               & 0.10      \\ 
+Bagged Boost            & True      \\ 
+Bagged sample fraction  & 0.5       \\  
+Number of cuts          & 20        \\  
+Maximum depth           & 2         \\  
+\hline
+\end{tabular}
+\end{center}
+\caption{MVA configuration}
+\label{tab:mvaconfiguration}
+\end{table}  
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
    \centering
+   \begin{subfigure}[t]{0.32\textwidth}
+      \centering
+      \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_classifier_Run1.pdf}
+      \caption{Run I \decay{\phiz}{\Kp\Km}}
+   \end{subfigure}
    \begin{subfigure}[t]{0.32\textwidth}
       \centering
       \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_classifier_Run2.pdf}
@@ -1715,37 +1752,69 @@ The BDTG method is found to separate the signal and background most effectively 
    \end{subfigure}\\
    \begin{subfigure}[t]{0.32\textwidth}
       \centering
+      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_classifier_Ds2KKPi_Run1.pdf}
+      \caption{Run I \decay{\Dsp}{\Kp\Km\pip}}
+   \end{subfigure}
+   \begin{subfigure}[t]{0.32\textwidth}
+      \centering
       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_classifier_Ds2KKPi_Run2.pdf}
       \caption{Run II \decay{\Dsp}{\Kp\Km\pip}}
+   \end{subfigure}\\
+   \begin{subfigure}[t]{0.32\textwidth}
+      \centering
+      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_classifier_Ds2PiPiPi_Run1.pdf}
+      \caption{Run I \decay{\Dsp}{\pip\pim\pip}}
    \end{subfigure}
    \begin{subfigure}[t]{0.32\textwidth}
       \centering
       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_classifier_Ds2PiPiPi_Run2.pdf}
       \caption{Run II \decay{\Dsp}{\pip\pim\pip}}
+   \end{subfigure}\\
+   \begin{subfigure}[t]{0.32\textwidth}
+      \centering
+      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_classifier_Ds2KPiPi_Run1.pdf}
+      \caption{Run I \decay{\Dsp}{\Kp\pim\pip}}
    \end{subfigure}
    \begin{subfigure}[t]{0.32\textwidth}
       \centering
       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_classifier_Ds2KPiPi_Run2.pdf}
       \caption{Run II \decay{\Dsp}{\Kp\pim\pip}}
-   \end{subfigure}
-   \caption{Classifier response}
-   \label{fig:mvatrainingvariables_Ds}   
+   \end{subfigure}\\
+   \caption{MVA classifier response for the eight MVAs trained for both signal (blue) and background (red). The training samples are represented by markers and the validation samples by filled histograms.}
+   \label{fig:mvaclassifierresponses}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+The MVA classifier distributions for each of the eight MVAs trained are shown in Fig.~\ref{fig:mvaclassifierresponses}. This figure shows both the signal and background samples, as well as the training and validation subsamples. Each mode shows a good separation between the signal and background samples. For the majority of the distributions the training and testing samples have almost identical shapes, implying response is reproducible and the method has not overtrained. There are noticeable exceptions, however. The signal training and validation samples tend to show different distributions in the regions where the background distributions are maximal. This effect is likely to be a result of the use of weights in the MVA training. Ideally, the MVA classifier should remain positive across the whole range. The negative values implies that in that range the MVA classifier is correlated to the parameter used to generate the weights: the \phiz or \Dsp mass. As this only affects the range of MVA classifier values that are dominantly `background'-like, it likely this discrepancy is due specifically to presence of weighted background events in the signal sample passed to \tmva.
+This effect is further studied to determine if it results in any systematic uncertainty in the MVA efficiencies. In all cases the discrepancies are far below the range of values that selection requirements are placed. 
+
+
 {\color{Red}
 \begin{itemize}
-\item comparison of different MVA methods
-\item explicit BDTG configuration
-\item Discussion of overtraining and crosschecks
 \item Comparison to alternative? 
 \end{itemize}
 }
 
-%% Phi BDTG 
-% factory->BookMethod( TMVA::Types::kBDT, "BDTG",
-%                            "!H:!V:NTrees=1000:MinNodeSize=2.5%:BoostType=Grad:Shrinkage=0.10:UseBaggedBoost:BaggedSampleFraction=0.5:nCuts=20:MaxDepth=2" );
+\subsubsection{MVA efficiency}
 
+
+The efficiencies of the MVAs on \Dsp and \phiz meson in the signal decays are obtained from the validation samples of \decay{\Bs}{\jpsi\phiz} and \decay{\Bsb}{\Dsp\pim} decays. Additionally, a sample of \decay{\Bp}{\Dzb\pip} decays is used to calculate the efficiency of \decay{\Dzb}{\Kp\Km} decays in the normalisation channel. The efficiency calculation takes into account the kinematic differences between the training and signal samples, as well as any possible correlations between the \Dsp and \phiz kinematics, by using input from simulation samples. 
+The signal MVA response is extracted from the validation samples in bins of \pt and $\chi^2_{\text{FD}}$. {\color{Red} How many?}. The simulation samples for \decay{\Bp}{\Dsp\phiz} or \decay{\Bp}{\Dsp\Dzb} decays are iterated though in turn, selecting the corresponding MVA response from the appropriate kinematic bins. The per-candidate efficiency is determined by integrating the \Dsp and \phiz MVA responses above the required cut values
+\begin{equation}
+\varepsilon_{\text{event}} = \int\limits_{\text{cut}_{\phiz}}^{1} f(x) dx \times  \int\limits_{\text{cut}_{\Dsp}}^{1} g(y) dy
+\label{eq:mva_eff}
+\end{equation}
+where $f(x)$ and $g(y)$ represent the weighted MVA classifier output for the \phiz and \Dsp MVAs respectively, and $\text{cut}_{\phiz}$ and $\text{cut}_{\Dsp}$ represent the chosen MVA cut value.
+The total efficiency for each mode is given by the sum of the per-candidate efficiencies within the relevant simulation sample.
+
+
+The \decay{\phiz}{\Kp\Km} MVA is also used to select the \Kp\Km pair in \decay{\Bp}{\Dsp\Kp\Km} decays. Due to the similar topologies of \decay{\Bp}{\Dsp\Kp\Km} and \decay{\Bp}{\Dsp\phiz} decays, the \Kp\Km pair share lots of similarities to their \decay{\phiz}{\Kp\Km} counterparts. One obvious difference is the invariant mass of the pair, as the \decay{\Bp}{\Dsp\Kp\Km} decays includes a much larger phase-space. In training the MVA this could lead to the selection being non-optimal for \decay{\Bp}{\Dsp\Kp\Km} decays with high $m(\Kp\Km)$. However, when determining the efficiency of the selection using these same \decay{\Bs}{\jpsi\phi} decays these differences could lead to bias. Instead, calibration samples are used to correct for the imperfect modelling of the particle identification in the \decay{\Bp}{\Dsp\Kp\Km} simulation samples. These corrected simulations are then used to obtain the variations in the MVA efficiencies as a function of the phase-space position, in particular of the $m(\Kp\Km)$ invariant mass as discussed in Section~\ref{sec:B2DsKK_effcorrection}.
+
+{\color{Red}
+\begin{itemize}
+\item Crosschecks for eff
+\end{itemize}
+}
 
 \subsubsection{MVA optimisation}
 
@@ -1753,25 +1822,70 @@ The selection criteria for each of the BDTG classifiers are determined by optimi
 \begin{equation}
 \frac{\epsilon_{s}}{(\frac{a}{2} + \sqrt{N_{\text{BKG}}})}
 \end{equation}
-with $a=5$, where $\epsilon_{s}$ is the signal efficiency and $N_{\text{BKG}}$ is the number of background candidates determined from fits to data, calculated in the signal region.
+with $a=5$, where $\epsilon_{s}$ is the signal efficiency and $N_{\text{BKG}}$ is the number of background candidates determined from fits to data, calculated in the signal region. 
+The signal efficiency is calculated for the relevant mode and MVA requirement values using the data-driven technique previously described. 
+The optimisation is performed in two dimensions, one for each of the \phiz and \Dsp MVAs. This is performed separately for the three different \Dsp decay modes. The results of the optimisation for each \Dsp decay mode and running period are shown in Fig.~\ref{fig:mvaoptmisation}. 
 
-{\color{Red}
-\begin{itemize}
-\item Include plots of optimisation
-\end{itemize}
-}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+   \centering
+   \begin{subfigure}[t]{0.4\textwidth}
+      \centering
+      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds2KKPi_BDTG_punzi_Run1_cont.pdf}
+      \caption{Run I \decay{\Dsp}{\Kp\Km\pip}}
+   \end{subfigure}
+   \begin{subfigure}[t]{0.4\textwidth}
+      \centering
+      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds2KKPi_BDTG_punzi_Run2_cont.pdf}
+      \caption{Run II \decay{\Dsp}{\Kp\Km\pip}}
+   \end{subfigure}\\
+   \begin{subfigure}[t]{0.4\textwidth}
+      \centering
+      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds2PiPiPi_BDTG_punzi_Run1_cont.pdf}
+      \caption{Run I \decay{\Dsp}{\pip\pim\pip}}
+   \end{subfigure}
+   \begin{subfigure}[t]{0.4\textwidth}
+      \centering
+      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds2PiPiPi_BDTG_punzi_Run2_cont.pdf}
+      \caption{Run II \decay{\Dsp}{\pip\pim\pip}}
+   \end{subfigure}\\
+   \begin{subfigure}[t]{0.4\textwidth}
+      \centering
+      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds2KPiPi_BDTG_punzi_Run1_cont.pdf}
+      \caption{Run I \decay{\Dsp}{\Kp\pim\pip}}
+   \end{subfigure}
+   \begin{subfigure}[t]{0.4\textwidth}
+      \centering
+      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds2KPiPi_BDTG_punzi_Run2_cont.pdf}
+      \caption{Run II \decay{\Dsp}{\Kp\pim\pip}}
+   \end{subfigure}\\
+   \caption{MVA optimsation}
+   \label{fig:mvaoptmisation}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsubsection{MVA efficiency}
+The optimal values are selected separately for each of the modes and tabulated in Table~\ref{table:mvarequirementvalues}.
 
+\begin{table}[!h]
+\begin{center}
+\begin{tabular}{ l l  c  c  }
 
-The efficiencies of the MVAs are obtained from the testing samples of \decay{\Bs}{\jpsi\phiz} and \decay{\Bs}{\Dsp\pim} decays. Additionally, a sample of \decay{\Bp}{\Dz\pip} decays is used to calculate the efficiency of $\Dzb \to \Kp \Km$ decays in the normalisation channel. The efficiency calculation takes into account the kinematic differences between the training and signal samples, as well as any possible correlations between the \Dsp and \phiz kinematics, by using input from simulation samples. In the search for \decay{\Bp}{\Dsp\Kp\Km} decays, calibration samples are used to correct for the imperfect modelling of the PID in simulation. These corrected simulations are then used to obtain the variations in the MVA efficiencies as a function of the phase-space position, in particular of the $m(\Kp\Km)$ invariant mass.
-
-{\color{Red}
-\begin{itemize}
-\item Equation for eff determination
-\item Crosschecks for eff
-\end{itemize}
-}
+\hline
+Run      & \Dsp decay mode               & \Dsp requirement & \phiz/\Dzb requirement \\ 
+\hline
+Run I    & \decay{\Dsp}{\Kp\Km\pip}      & 0.5 & 0.8 \\
+         & \decay{\Dsp}{\pip\pim\pip}    & 0.3 & 0.8 \\
+         & \decay{\Dsp}{\Kp\pim\pip}     & 0.2 & 0.8 \\ 
+\hline
+Run II   & \decay{\Dsp}{\Kp\Km\pip}      & 0.5 & 0.8 \\
+         & \decay{\Dsp}{\pip\pim\pip}    & 0.2 & 0.8 \\
+         & \decay{\Dsp}{\Kp\pim\pip}     & 0.2 & 0.8 \\                                      
+\hline
+\end{tabular}
+\caption{Optimised MVA cuts for the different \Dsp decay modes and datasets. }
+\label{table:mvarequirementvalues}
+\end{center}
+\end{table}
 
 \subsection{Impact parameter requirements}
 
