@@ -8,8 +8,12 @@ In both cases the branching fractions are measured relative to the normalisation
 The corresponding selection for the normalisation channel \decay{\Bp}{\Dsp\Dzb} is also described.  
 
 
-\section{Dataset}
+\section{Data samples and Simulations}
 
+
+
+\subsection{Data samples}
+\label{sec:data}
 {\color{Red} The searches for \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays are performed using a data sample collected by the \lhcb experiment.
 This data sample includes the entire Run I sample and the first two years of the Run II data collection period.}
 The total integrated luminosity obtained for each year is listed in Table~\ref{tab:lumi}, along with the corresponding centre-of-mass energies. 
@@ -31,6 +35,20 @@ The total integrated luminosity obtained for each year is listed in Table~\ref{t
    \label{tab:lumi}
 \end{table}
 
+\subsection{Simulated events}
+\label{sec:mc}
+
+Simulated events are used to determine the relative efficiencies of the signal and normalisation channels. 
+The samples are generated separately for each of the running periods listed in Table~\ref{tab:lumi} and for both polarities of the \lhcb dipole magnet. In these simulations, $pp$ collisions are generated using \pythia~\cite{Sjostrand:2007gs,Sjostrand:2006za} with a specific \lhcb configuration~\cite{LHCb-PROC-2010-056}.  Decays of hadronic particles are described by \evtgen~\cite{Lange:2001uf}, in which final-state radiation is generated using \photos~\cite{Golonka:2005pn}. The interaction of the generated particles with the detector, and its response, are implemented using the \geant toolkit~\cite{Allison:2006ve, *Agostinelli:2002hh} as described in Ref.~\cite{LHCb-PROC-2011-006}.
+
+{\color{Red}
+\begin{itemize}
+\item Probably need more detail?
+\item MC for \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km}
+\item phase space generation
+\item MC for background components
+\end{itemize}
+}
 
 \section{Online selection}
 
@@ -261,7 +279,7 @@ The \Dzb candidates are selecting using a similar parameters, however the exact 
 %                & Vertex quality                 &  $\chi^{2}/N_{\text{DOF}} < 10$   \\   
 %                & Flight distance significance   &  $\chi^{2}_{\text{FD} }  > 36$    \\ 
 
-The \Dsp mesons for the signal and normalisation modes are created using combinations of three tracks given the mass hypotheses kaons or pions, depending on the decay mode being constructed. All combinations of three tracks are considered {\color{red} maybe with the exception of ones used in other candidates?}. 
+The \Dsp mesons for the signal and normalisation modes are created using combinations of three tracks given the mass hypotheses kaons or pions, depending on the decay mode being constructed. All combinations of three tracks are considered {\color{Red} maybe with the exception of ones used in other candidates?}. 
 
 
 % \Dsp           & Mass                           &  $1770 < m(h^{+}h^{-}h^{+}) < 2068\mevcc$            \\  
@@ -993,7 +1011,7 @@ The training of separate MVAs for the different \Dsp modes allows the use of par
 The MVA for \decay{\phiz}{\Kp\Km} decays is used to select both \phiz and \Dzb mesons. For the normalisation mode this may be suboptimal, however it ensures the selection of the signal and normalisation channels are almost identical such that the systematic uncertainty in the ratio of efficiencies is minimised.
 The samples of \decay{\Bsb}{\Dsp\pim} and \decay{\Bs}{\jpsi\phiz} decays are randomly split into two subsamples. The first is used to train the MVAs and the second is used to determine the efficiency of the selection. To prevent the difference between \phiz and \Dzb decays from affecting the ratio of efficiencies, the normalisation channel MVA efficiency is instead determined from a dedicated sample of \decay{\Dzb}{\Kp\Km} decays as detailed in Table.~\ref{tab:mva_modes}.
 
-{\color{red}
+{\color{Red}
 The \decay{\phiz}{\Kp\Km} MVA is also used to select the \Kp\Km pair in \decay{\Bp}{\Dsp\Kp\Km} decays. Due to the similar topologies of \decay{\Bp}{\Dsp\Kp\Km} \decay{\Bp}{\Dsp\phiz} decays, the \Kp\Km pair share lots of similarities to their \decay{\phiz}{\Kp\Km} counterparts. One obvious difference is the invariant mass of the pair, as the \decay{\Bp}{\Dsp\Kp\Km} decays includes a much larger phase space. In training the MVA this could lead to the selection being non-{}optimal for \decay{\Bp}{\Dsp\Kp\Km} decays with high $m(\Kp\Km)$. However, when determining the efficiency of the selection using these same \decay{\Bs}{\jpsi\phi} decays these differences could lead to bias. Studies are performed to assess the dependence of efficiency on $m(\Kp\Km)$ and an alternative method of determining the efficiency is used for \decay{\Bp}{\Dsp\Kp\Km} decays, as detailed in Section~\ref{sec:B2DsKK_effcorrection}.
 }
 
@@ -1193,8 +1211,8 @@ The yields of candidates in each of the subsamples are tabulated in Table~\ref{t
 The MVA method is trained using a large set of variables chosen to help discriminate between the signals of interest and combinations of unrelated tracks. These variables include the properties of the \Kpm or \pipm decay products as well as those of the \phiz or \Dsp candidate itself. Many of the quantities are the same as those previously defined in Section.~\ref{sec:selectionrequirements}. The additional parameters relate to the track quality and particle identification information and are defined as follows:
 
 \begin{description}
-\item \textbf{Track matching quality, $\chi^{2}_{\text{TRKMATCH}}$}: {\color{red} chi2 from matching velo stubs to trackers stubs?}
-\item \textbf{Velo track quality, $\chi^{2}_{\text{TRKVELO}}$}: {\color{red} chi2 of fit to just hits in the velo?}
+\item \textbf{Track matching quality, $\chi^{2}_{\text{TRKMATCH}}$}: {\color{Red} chi2 from matching velo stubs to trackers stubs?}
+\item \textbf{Velo track quality, $\chi^{2}_{\text{TRKVELO}}$}: {\color{Red} chi2 of fit to just hits in the velo?}
 \item \textbf{Kaon, proton, pion and ghost probabilities, ProbNNx}: these variables are an alternative form of \emph{Particle Identification} variables in addition to those already discussed in Section~\ref{sec:pidrequirements}. Each ProbNNx variable acts as the probability for the reconstructed track to be of the species x. These variables are the responses of Artificial Neural Networks trained to differentiate between the various particle types using a large number of inputs from different subdetectors. The trainings use simulated samples of signal and background decays and have been retuned between Run~I and Run~II to reflect the difference in the detector configuration. Four of the available ProbNNx tuning are used in this analysis. Three of these identify kaons, protons and pions. The last aims to identify ghost tracks, similar to the $P_{\text{Ghost}}$ variable already discussed. 
 \end{description}
 
@@ -1505,7 +1523,7 @@ Rank & Variable                         & Importance           & Rank & Variable
       \centering
       \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_Phi_K1_TRACK_MatchCHI2.pdf}
    \end{subfigure}
-   \caption{Training distributions in the signal (blue) and background (red) samples for the Run~II \decay{\phiz}{\Kp\Km} MVA.}
+   \caption{Distributions of MVA training variables in the signal (blue) and background (red) samples for the Run~II \decay{\phiz}{\Kp\Km} MVA.}
    \label{fig:mvatrainingvariables_phi}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1655,28 +1673,39 @@ Rank & Variable                         & Importance           & Rank & Variable
       \centering
       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_P_TRACK_MatchCHI2.pdf}
    \end{subfigure}
-   \caption{Training distributions in the signal (blue) and background (red) samples for the Run~II \decay{\Dsp}{\Kp\Km\pip} MVA.}
+   \caption{Distributions of MVA training variables in the signal (blue) and background (red) samples for the Run~II \decay{\Dsp}{\Kp\Km\pip} MVA.}
    \label{fig:mvatrainingvariables_Ds}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-{\color{Red}
-\begin{itemize}
-\item Include training variable distributions
-\end{itemize}
-}
-
 
 \subsubsection{MVA method}
 \label{sec:mvamethod}
-%% Discussion of MVA technicalities 
-The MVA method chosen in this analysis is a gradient Boosted Decision Tree (BDTG)~\cite{Breiman}. This is implemented using the \emph{TMVA} package as part of the \emph{ROOT} framework. 
-%% CHECK This method was compared to a BDT and bagged-BDT 
 
+The MVA training and validation is implemented using the \tmva package as part of the \root framework.
+During training, each method uses samples that have been defined to be `signal' and `background' in order to characterise the differences between the two categories. The multidimensional space defined input variables is effectively condensed onto a single axis given by the classifiers response. Typically, high values of the response correspond to `signal'-like events and low values to `background'-like events. This training produces a \emph{weights file} allowing the response to be calculated for other samples. 
 
-{\color{Blue} 
-- The training uses the \phiz or \Dsp sidebands as a background sample.
+A second set of `signal'-like and `background'-like samples are used to blindly validate the training. The classifier response is compared in the training and validation samples to demonstrate if the expected separation is reproducible. 
+
+The `signal' and `background' samples are both taken from the relevant \decay{\Bsb}{\Dsp\pim} or \decay{\Bs}{\jpsi\phiz} decay samples.
+The signal samples include all events within the fit ranges shown in Fig.~\ref{fig:mvatrainingsamples}. Each candidate is weighted with the appropriate Gaussian fit component weight as determined by the \sPlot technique. This weight is passed to the \tmva framework when training the methods.
+The background samples are comprised of the sideband regions of the relevant ranges in Fig.~\ref{fig:mvatrainingsamples}. These ranges are defined by $|m(\Kp\Km)-m(\phiz)| > 10 \mevcc$ and $|m(h^{+}h^{-}h^{+})-m(\Dsp)| > 30\mevcc$ for the \phiz and \Dsp MVAs respectively. The efficacy of three methods are compared and the most effective selected. The three methods are derivatives of Boosted Decision Trees (BDTs)~\cite{Breiman}.
+
+\begin{description}
+\item \textbf{BDT:} 
+\item \textbf{BDTG (Gradient Boosted Decision Tree):}
+\item \textbf{BDTB (bagged Boosted Decision Tree):}
+\end{description}
+
+{\color{Red}
+\begin{itemize}
+\item Not sure where the ROC curve comparison is at the mo...
+\end{itemize}
 }
+
+The BDTG method is found to separate the signal and background most effectively and therefore is used in training all MVAs.
+ 
+
 
 
 {\color{Red}
@@ -1718,6 +1747,19 @@ The efficiencies of the MVAs are obtained from the testing samples of \decay{\Bs
 \item Crosschecks for eff
 \end{itemize}
 }
+
+\subsection{Impact parameter requirements}
+
+{\color{Red}
+\begin{itemize}
+\item MVA make requirements on \Dsp and \phiz candidates, not combination
+\item possible to tighten \Bp selection further
+\item \Bp MVA not required
+\item IP shows two types of BGs:
+\item norm channel systematic 
+\end{itemize}
+}
+
 
 \section{Multiple candidates}
 
