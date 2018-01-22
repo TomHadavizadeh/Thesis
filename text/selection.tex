@@ -35,7 +35,7 @@ The total integrated luminosity obtained for each year is listed in Table~\ref{t
    \label{tab:lumi}
 \end{table}
 
-\subsection{Simulated events}
+\subsection{Simulation samples}
 \label{sec:mc}
 
 Simulated events are used to determine the relative efficiencies of the signal and normalisation channels. 
@@ -1231,13 +1231,13 @@ The variables used in the \phiz meson MVA are listed in Table~\ref{tab:mvavars_p
          \hline
          \phiz          & Momentum                       &  \ptot                            \\  
                         & Transverse Momentum            &  \pt                              \\  
-                        & Vertex quality                 &  $\log(\chi^{2}_{\text{VXT}})$    \\  
-                        & Impact parameter significance  &  $\log(\chi^{2}_{\text{IP}})$     \\    
+                        & Vertex quality                 &  $\log_{10}(\chi^{2}_{\text{VXT}})$    \\  
+                        & Impact parameter significance  &  $\log_{10}(\chi^{2}_{\text{IP}})$     \\    
          \hline
          \Kpm           & Momentum                       &  \ptot                            \\  
                         & Transverse momentum            &  \pt                              \\ 
                         & Longitudinal momentum          &  \pz                              \\
-                        & Impact parameter significance  &  $\log(\chi^{2}_{\text{IP}})$     \\    
+                        & Impact parameter significance  &  $\log_{10}(\chi^{2}_{\text{IP}})$     \\    
                         & Track quality                  &  $\chi^{2}_{\text{TRK}}$          \\    
                         & Track matching quality         &  $\chi^{2}_{\text{TRKMATCH}}$     \\    
                         & Kaon probability               &  ProbNNk                          \\    
@@ -1264,13 +1264,13 @@ The variables used in the \Dsp MVA are listed in Table~\ref{tab:mvavars_ds}. The
          \hline
          \Dsp           & Momentum                       &  \ptot                            \\  
                         & Transverse Momentum            &  \pt                              \\  
-                        & Vertex quality                 &  $\log(\chi^{2}_{\text{VXT}})$    \\  
-                        & Impact parameter significance  &  $\log(\chi^{2}_{\text{IP}})$     \\    
-                        & Flight distance significance   &  $\log(\chi^{2}_{\text{FD}})$     \\    
+                        & Vertex quality                 &  $\log_{10}(\chi^{2}_{\text{VXT}})$    \\  
+                        & Impact parameter significance  &  $\log_{10}(\chi^{2}_{\text{IP}})$     \\    
+                        & Flight distance significance   &  $\log_{10}(\chi^{2}_{\text{FD}})$     \\    
          \hline
          \Kpm, \pipm    & Momentum                       &  \ptot                            \\  
                         & Transverse momentum            &  \pt                              \\
-                        & Impact parameter significance  &  $\log(\chi^{2}_{\text{IP}})$     \\    
+                        & Impact parameter significance  &  $\log_{10}(\chi^{2}_{\text{IP}})$     \\    
                         & Track quality                  &  $\chi^{2}_{\text{TRK}}$          \\    
                         & Velo track quality             &  $\chi^{2}_{\text{TRKVELO}}$      \\    
                         & Track matching quality         &  $\chi^{2}_{\text{TRKMATCH}}$     \\    
@@ -1286,7 +1286,7 @@ The variables used in the \Dsp MVA are listed in Table~\ref{tab:mvavars_ds}. The
 \end{table}
 
 
-When training the MVA methods, the variables are ranked according to their discrimination power. Examples of these ranking are shown for the Run~II \decay{\phiz}{\Kp\Km} MVA and Run~II \decay{\Dsp}{\Kp\Km\pip} MVA in Table~\ref{tab:mvarank_dsandphi}. It can be seen that for both the \Dsp and \phiz meson MVAs that the kaon particle identification variable and various $\log(\chi^{2}_{\text{IP}})$ variables are the mode discriminating.
+When training the MVA methods, the variables are ranked according to their discrimination power. Examples of these ranking are shown for the Run~II \decay{\phiz}{\Kp\Km} MVA and Run~II \decay{\Dsp}{\Kp\Km\pip} MVA in Table~\ref{tab:mvarank_dsandphi}. It can be seen that for both the \Dsp and \phiz meson MVAs that the kaon particle identification variable and various $\log_{10}(\chi^{2}_{\text{IP}})$ variables are the mode discriminating.
 
 
 % \begin{table}[h]
@@ -1297,11 +1297,11 @@ When training the MVA methods, the variables are ranked according to their discr
 %          Rank & Variable                           & Importance   \\
 %          \hline
 %           1 & \Kp ProbNNk                          & $6.001\times 10^{-2}$ \\
-%           2 & \phiz $\log(\chi^{2}_{\text{IP}})$   & $6.001\times 10^{-2}$ \\
-%           3 & \Km $\log(\chi^{2}_{\text{IP}})$     & $5.997\times 10^{-2}$ \\
-%           4 & \phiz $\log(\chi^{2}_{\text{VTX}})$  & $5.827\times 10^{-2}$ \\
+%           2 & \phiz $\log_{10}(\chi^{2}_{\text{IP}})$   & $6.001\times 10^{-2}$ \\
+%           3 & \Km $\log_{10}(\chi^{2}_{\text{IP}})$     & $5.997\times 10^{-2}$ \\
+%           4 & \phiz $\log_{10}(\chi^{2}_{\text{VTX}})$  & $5.827\times 10^{-2}$ \\
 %           5 & \Km ProbNNpi                         & $5.826\times 10^{-2}$ \\
-%           6 & \Kp $\log(\chi^{2}_{\text{IP}})$     & $5.761\times 10^{-2}$ \\
+%           6 & \Kp $\log_{10}(\chi^{2}_{\text{IP}})$     & $5.761\times 10^{-2}$ \\
 %           7 & \Kp ProbNNghost                      & $5.427\times 10^{-2}$ \\
 %           8 & \Km ProbNNk                          & $5.404\times 10^{-2}$ \\
 %           9 & \Kp $\chi^{2}_{\text{TRK}}$          & $5.359\times 10^{-2}$ \\
@@ -1336,16 +1336,16 @@ When training the MVA methods, the variables are ranked according to their discr
 %          \hline
 %           1 & \Kp ProbNNk                        & $7.639\times10^{-2}$ \\
 %           2 & \Km ProbNNk                        & $6.043\times10^{-2}$ \\
-%           3 & \Kp $\log(\chi^{2}_{\text{IP}})$   & $5.469\times10^{-2}$ \\
-%           4 & \pip $\log(\chi^{2}_{\text{IP}})$  & $4.984\times10^{-2}$ \\
+%           3 & \Kp $\log_{10}(\chi^{2}_{\text{IP}})$   & $5.469\times10^{-2}$ \\
+%           4 & \pip $\log_{10}(\chi^{2}_{\text{IP}})$  & $4.984\times10^{-2}$ \\
 %           5 & \Kp \ptot                          & $4.348\times10^{-2}$ \\
-%           6 & \Dsp $\log(\chi^{2}_{\text{IP}})$  & $4.100\times10^{-2}$ \\
+%           6 & \Dsp $\log_{10}(\chi^{2}_{\text{IP}})$  & $4.100\times10^{-2}$ \\
 %           7 & \pip \pt                           & $3.953\times10^{-2}$ \\
 %           8 & \Kp \pt                            & $3.937\times10^{-2}$ \\
 %           9 & \pip ProbNNpi                      & $3.881\times10^{-2}$ \\
-%          10 & \Dsp $\log(\chi^{2}_{\text{FD}})$  & $3.788\times10^{-2}$ \\
-%          11 & \Km $\log(\chi^{2}_{\text{IP}})$   & $3.735\times10^{-2}$ \\
-%          12 & \Dsp $\log(\chi^{2}_{\text{VTX}})$ & $3.016\times10^{-2}$ \\
+%          10 & \Dsp $\log_{10}(\chi^{2}_{\text{FD}})$  & $3.788\times10^{-2}$ \\
+%          11 & \Km $\log_{10}(\chi^{2}_{\text{IP}})$   & $3.735\times10^{-2}$ \\
+%          12 & \Dsp $\log_{10}(\chi^{2}_{\text{VTX}})$ & $3.016\times10^{-2}$ \\
 %          13 & \Km \ptot                          & $2.770\times10^{-2}$ \\
 %          14 & \Kp ProbNNp                        & $2.758\times10^{-2}$ \\
 %          15 & \Km ProbNNp                        & $2.692\times10^{-2}$ \\
@@ -1387,17 +1387,17 @@ When training the MVA methods, the variables are ranked according to their discr
 Rank & Variable                         & Importance           & Rank & Variable                           & Importance           \\
 \hline
  1 & \Kp ProbNNk                        & $7.639\times10^{-2}$ &  1 & \Kp ProbNNk                          & $6.001\times 10^{-2}$\\
- 2 & \Km ProbNNk                        & $6.043\times10^{-2}$ &  2 & \phiz $\log(\chi^{2}_{\text{IP}})$   & $6.001\times 10^{-2}$\\
- 3 & \Kp $\log(\chi^{2}_{\text{IP}})$   & $5.469\times10^{-2}$ &  3 & \Km $\log(\chi^{2}_{\text{IP}})$     & $5.997\times 10^{-2}$\\
- 4 & \pip $\log(\chi^{2}_{\text{IP}})$  & $4.984\times10^{-2}$ &  4 & \phiz $\log(\chi^{2}_{\text{VTX}})$  & $5.827\times 10^{-2}$\\
+ 2 & \Km ProbNNk                        & $6.043\times10^{-2}$ &  2 & \phiz $\log_{10}(\chi^{2}_{\text{IP}})$   & $6.001\times 10^{-2}$\\
+ 3 & \Kp $\log_{10}(\chi^{2}_{\text{IP}})$   & $5.469\times10^{-2}$ &  3 & \Km $\log_{10}(\chi^{2}_{\text{IP}})$     & $5.997\times 10^{-2}$\\
+ 4 & \pip $\log_{10}(\chi^{2}_{\text{IP}})$  & $4.984\times10^{-2}$ &  4 & \phiz $\log_{10}(\chi^{2}_{\text{VTX}})$  & $5.827\times 10^{-2}$\\
  5 & \Kp \ptot                          & $4.348\times10^{-2}$ &  5 & \Km ProbNNpi                         & $5.826\times 10^{-2}$\\
- 6 & \Dsp $\log(\chi^{2}_{\text{IP}})$  & $4.100\times10^{-2}$ &  6 & \Kp $\log(\chi^{2}_{\text{IP}})$     & $5.761\times 10^{-2}$\\
+ 6 & \Dsp $\log_{10}(\chi^{2}_{\text{IP}})$  & $4.100\times10^{-2}$ &  6 & \Kp $\log_{10}(\chi^{2}_{\text{IP}})$     & $5.761\times 10^{-2}$\\
  7 & \pip \pt                           & $3.953\times10^{-2}$ &  7 & \Kp ProbNNghost                      & $5.427\times 10^{-2}$\\
  8 & \Kp \pt                            & $3.937\times10^{-2}$ &  8 & \Km ProbNNk                          & $5.404\times 10^{-2}$\\
  9 & \pip ProbNNpi                      & $3.881\times10^{-2}$ &  9 & \Kp $\chi^{2}_{\text{TRK}}$          & $5.359\times 10^{-2}$\\
-10 & \Dsp $\log(\chi^{2}_{\text{FD}})$  & $3.788\times10^{-2}$ & 10 & \Km $\chi^{2}_{\text{TRK}}$          & $5.201\times 10^{-2}$\\
-11 & \Km $\log(\chi^{2}_{\text{IP}})$   & $3.735\times10^{-2}$ & 11 & \Kp ProbNNpi                         & $5.162\times 10^{-2}$\\
-12 & \Dsp $\log(\chi^{2}_{\text{VTX}})$ & $3.016\times10^{-2}$ & 12 & \Km ProbNNghost                      & $4.985\times 10^{-2}$\\
+10 & \Dsp $\log_{10}(\chi^{2}_{\text{FD}})$  & $3.788\times10^{-2}$ & 10 & \Km $\chi^{2}_{\text{TRK}}$          & $5.201\times 10^{-2}$\\
+11 & \Km $\log_{10}(\chi^{2}_{\text{IP}})$   & $3.735\times10^{-2}$ & 11 & \Kp ProbNNpi                         & $5.162\times 10^{-2}$\\
+12 & \Dsp $\log_{10}(\chi^{2}_{\text{VTX}})$ & $3.016\times10^{-2}$ & 12 & \Km ProbNNghost                      & $4.985\times 10^{-2}$\\
 13 & \Km \ptot                          & $2.770\times10^{-2}$ & 13 & \Kp ProbNNp                          & $4.486\times 10^{-2}$\\
 14 & \Kp ProbNNp                        & $2.758\times10^{-2}$ & 14 & \Km ProbNNp                          & $4.410\times 10^{-2}$\\
 15 & \Km ProbNNp                        & $2.692\times10^{-2}$ & 15 & \Kp $\chi^{2}_{\text{TRKMATCH}}$     & $4.291\times 10^{-2}$\\
@@ -2032,20 +2032,20 @@ The rates of multiple candidates are sufficiently low that no attempt is made to
 \section{Refitting the decay chain}
 \label{sec:decaytreefitter}
 
-The yields of \Bp meson candidates for the signal and normalisation channels are determined from fits to the \Bp meson invariant mass.
+The yields of \Bp meson candidates for the signal and normalisation channels are determined from fits to the \Bp meson invariant mass, the exact details of which will be in Chapters~\ref{ch:B2DsKK} and \ref{ch:B2DsPhi}. 
 The \emph{raw} \Bp meson invariant mass is calculated in the vertex fits used to constructed the \Bp candidates from combinations of \Dsp and \phiz or \Dzb candidates. The 4-momentum vectors for the decay products trajectories are extrapolated to the vertex location and the invariant mass calculated from the sum of the decay products 4-vectors. The width of the \Bp meson distribution is dominated by the resolution of the \lhcb detector, as the natural width of the meson itself is $~0.4\times 10^{-3}\ev$.
 
-It is possible to reduce the effect of the resolution by adding more constraints in the fit to the decay chain. The mass of the \Dsp meson (and \Dzb meson for the normalisation channel) are constrained to their known values. Additionally, the momentum vector of the \Bp meson is constrained to be parallel to the line between the primary interaction and the \Bp meson decay vertex. With these constraints applied, the whole decay chain is refitted, and the \Bp meson mass recalculated. For genuine signal and normalisation decays the resolution is improved; the smearing effects that might lead the track momentum or position to be mismeasured can be circumvented by including the extra information about indeterminate meson masses, or \Bp direction. 
+It is possible to reduce the effect of the resolution by adding more constraints in the fit to the decay chain. The mass of the \Dsp meson (and \Dzb meson for the normalisation channel) are constrained to their known values. Additionally, the momentum vector of the \Bp meson is constrained to be parallel to the line between the primary interaction and the \Bp meson decay vertex. 
+This is implemented with the Decay Tree Fitter algorithm \cite{Hulsbergen:2005pu}.
+With these constraints applied, the whole decay chain is refitted, and the \Bp meson mass recalculated. For genuine signal and normalisation decays the resolution is improved; the smearing effects that might lead the track momentum or position to be incorrectly measured can be circumvented by including the extra information about indeterminate meson masses, or \Bp flight direction. Background candidates that have different topologies to the constrained decay chain will be randomly shifted up or down in invariant mass, leading to no overall difference in the combinatorial distribution.    
 
-smearing affecting the exact momentum or positions of the tracks can be circumvented. Background candidates that had different topologies to the constrained decay chain will be randomly shifted up or down in invariant mas, leading to no overall difference in the distribution.    
 
+It is possible to calculate all kinematic distributions for the components of the decay chain with these constraints applied, for example the momentum of the decay products. However, these variables are not used when training the MVA methods even though they may result in a greater discrimination between signal and background. The modes used to train the MVA methods have slightly different topologies, therefore the improvements in the resolution achieved in these modes may not be the same as that seen for the signal and normalisation channel. 
 
-
-It is possible to calculate all kinematic distributions for the components of the decay chain with these constraints applied, for example the momentum of the decay products. 
 
 {\color{Red}
 \begin{itemize}
-\item details of DTF
+\item plot of \Bp meson mass with and without constraint?
 \item DTF for helicity angle
 \item DTF for dalitz plot
 \end{itemize}
@@ -2053,12 +2053,153 @@ It is possible to calculate all kinematic distributions for the components of th
 
 
 \section{Invariant mass distributions}
+\label{sec:invarinantmassdistros}
 
-{\color{Red}
-\begin{itemize}
-\item Include plots of \Ds and \Kp\Km mass after selection has been applied 
-\end{itemize}
-}
+
+The \Dsp and \phiz meson invariant mass distributions for signal \decay{\Bp}{\Dsp\phiz} candidates passing the full selection requirements are shown in Fig.~\ref{fig:d_phi_mass_signal}. The same distributions for the normalisation channel \decay{\Bp}{\Dsp\Dzb} are shown in Fig.~\ref{fig:d_phi_mass_normlaisation}. The purity of the \decay{\Dsp}{\pip\pim\pip} and \decay{\Dsp}{\Kp\pim\pip} decays are significantly lower than the \decay{\Dsp}{\Kp\Km\pip} mode as a result of the smaller branching fractions for these modes. 
+
+Requirements are placed in the invariant masses of the \Dsp, \phiz and \Dzb candidates to isolate the signal decays. The requirements are listed in Table~\ref{table:masscuts} and represented in Figs.~\ref{fig:d_phi_mass_signal} and~\ref{fig:d_phi_mass_normlaisation} by red vertical lines. The \phiz meson requirement is wider than those for the \Dsp and \Dzb mesons even though the width is clearly narrower. The \decay{\Bp}{\Dsp\phiz} candidates are further split into two categories as detailed in Chapter~\ref{ch:B2DsPhi}, therefore the sidebands either side of the \phiz meson are retained.
+
+\begin{table}[!h]
+\begin{center}
+\begin{tabular}{ c c }
+
+\hline
+Particle          & Requirement                     \\
+\hline
+\Dsp              & $|m(h^{+}h^{-}h^{+})-m(\Dsp)| < 25 \mevcc$ \\
+\Dzb              & $|m(\Kp\Km)-m(\Dzb)| < 25 \mevcc$          \\
+\phiz             & $|m(\Kp\Km)-m(\phiz)| < 40 \mevcc$ \\
+\hline
+\end{tabular}
+\caption{Invariant mass requirements applied to all candidates.}
+\label{table:masscuts}
+\end{center}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+   \centering
+   \begin{subfigure}[t]{1.0\textwidth}
+   \centering
+     \begin{subfigure}[t]{0.35\textwidth}
+        \centering
+        \includegraphics[width=1.0\textwidth]{figs/Selection/Phimass_KKPi_B2DsPhi.pdf}
+     \end{subfigure}
+     \begin{subfigure}[t]{0.35\textwidth}
+        \centering
+        \includegraphics[width=1.0\textwidth]{figs/Selection/Dmass_KKPi_B2DsPhi.pdf}
+     \end{subfigure}
+     \caption{\decay{\Dsp}{\Kp\Km\pip}}
+   \end{subfigure}   
+   \begin{subfigure}[t]{1.0\textwidth}
+   \centering
+     \begin{subfigure}[t]{0.35\textwidth}
+        \centering
+        \includegraphics[width=1.0\textwidth]{figs/Selection/Phimass_PiPiPi_B2DsPhi.pdf}
+     \end{subfigure}
+     \begin{subfigure}[t]{0.35\textwidth}
+        \centering
+        \includegraphics[width=1.0\textwidth]{figs/Selection/Dmass_PiPiPi_B2DsPhi.pdf}
+     \end{subfigure}
+     \caption{\decay{\Dsp}{\pip\pim\pip}}
+   \end{subfigure}   
+   \begin{subfigure}[t]{1.0\textwidth}
+   \centering
+     \begin{subfigure}[t]{0.35\textwidth}
+        \centering
+        \includegraphics[width=1.0\textwidth]{figs/Selection/Phimass_KPiPi_B2DsPhi.pdf}
+     \end{subfigure}
+     \begin{subfigure}[t]{0.35\textwidth}
+        \centering
+        \includegraphics[width=1.0\textwidth]{figs/Selection/Dmass_KPiPi_B2DsPhi.pdf}
+     \end{subfigure}
+     \caption{\decay{\Dsp}{\Kp\pim\pip}}
+   \end{subfigure}
+   \caption{The \Dsp and \phiz invariant mass distributions for signal \decay{\Bp}{\Dsp\phiz} candidates passing the selection requirements. The inner and outer $m(\Kp\Km)$ ranges, as defined in Chapter~\ref{ch:B2DsPhi}, are represented by the blue and red vertical lines respectively.}
+   \label{fig:d_phi_mass_signal}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+   \centering
+   \begin{subfigure}[t]{1.0\textwidth}
+   \centering
+     \begin{subfigure}[t]{0.35\textwidth}
+        \centering
+        \includegraphics[width=1.0\textwidth]{figs/Selection/Phimass_KKPi_B2DsD0.pdf}
+     \end{subfigure}
+     \begin{subfigure}[t]{0.35\textwidth}
+        \centering
+        \includegraphics[width=1.0\textwidth]{figs/Selection/Dmass_KKPi_B2DsD0.pdf}
+     \end{subfigure}
+     \caption{\decay{\Dsp}{\Kp\Km\pip}}
+   \end{subfigure}   
+   \begin{subfigure}[t]{1.0\textwidth}
+   \centering
+     \begin{subfigure}[t]{0.35\textwidth}
+        \centering
+        \includegraphics[width=1.0\textwidth]{figs/Selection/Phimass_PiPiPi_B2DsD0.pdf}
+     \end{subfigure}
+     \begin{subfigure}[t]{0.35\textwidth}
+        \centering
+        \includegraphics[width=1.0\textwidth]{figs/Selection/Dmass_PiPiPi_B2DsD0.pdf}
+     \end{subfigure}
+     \caption{\decay{\Dsp}{\pip\pim\pip}}
+   \end{subfigure}   
+   \begin{subfigure}[t]{1.0\textwidth}
+   \centering
+     \begin{subfigure}[t]{0.35\textwidth}
+        \centering
+        \includegraphics[width=1.0\textwidth]{figs/Selection/Phimass_KPiPi_B2DsD0.pdf}
+     \end{subfigure}
+     \begin{subfigure}[t]{0.35\textwidth}
+        \centering
+        \includegraphics[width=1.0\textwidth]{figs/Selection/Dmass_KPiPi_B2DsD0.pdf}
+     \end{subfigure}
+     \caption{\decay{\Dsp}{\Kp\pim\pip}}
+   \end{subfigure}
+   \caption{The \Dsp and \Dzb invariant mass distributions for normalisation \decay{\Bp}{\Dsp\Dzb} candidates passing the selection requirements.}
+   \label{fig:d_phi_mass_normlaisation}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+The distribution of \Dsp and \Kp\Km invariant masses for \decay{\Bp}{\Dsp\Kp\Km} and the corresponding \decay{\Bp}{\Dsp\Dzb} candidates are shown in Fig.~\ref{fig:d_KK_mass}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+   \centering
+   \begin{subfigure}[t]{1.0\textwidth}
+      \centering
+      \begin{subfigure}[t]{0.40\textwidth}
+         \centering
+         \includegraphics[width=1.0\textwidth]{figs/Selection/Phimass_KKPi_B2DsKK.pdf}
+      \end{subfigure}
+      \begin{subfigure}[t]{0.40\textwidth}
+         \centering
+         \includegraphics[width=1.0\textwidth]{figs/Selection/Dmass_KKPi_B2DsKK.pdf}
+      \end{subfigure}
+         \caption{Signal \decay{\Bp}{\Dsp\Kp\Km} decays}
+   \end{subfigure} 
+   \begin{subfigure}[t]{1.0\textwidth}
+      \centering
+      \begin{subfigure}[t]{0.40\textwidth}
+         \centering
+         \includegraphics[width=1.0\textwidth]{figs/Selection/Phimass_KKPi_B2DsD0.pdf}
+         \caption{\decay{\Dsp}{\Kp\Km\pip}}
+      \end{subfigure}
+      \begin{subfigure}[t]{0.40\textwidth}
+         \centering
+         \includegraphics[width=1.0\textwidth]{figs/Selection/Dmass_KKPi_B2DsD0.pdf}
+      \end{subfigure}
+      \caption{Normalisation \decay{\Bp}{\Dsp\Dzb} decays}
+   \end{subfigure}
+   \caption{The \Dsp and \Kp\Km invariant mass distributions for \decay{\Bp}{\Dsp\Kp\Km} candidates passing the selection requirements.}
+   \label{fig:d_KK_mass}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
