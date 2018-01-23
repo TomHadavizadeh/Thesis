@@ -967,6 +967,11 @@ In the search for \decay{\Bp}{\Dsp\Kp\Km} decays the increased size of the $m(\K
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+{\color{Red}
+\begin{itemize}
+\item Include details of D* to D vetos
+\end{itemize}
+}
 
 \subsection{Normalisation mode veto}
 \label{sec:normvetos}
@@ -1093,7 +1098,18 @@ Finally, the same misidentified \D and \Lc hadron vetoes as detailed in Section~
 \subsubsection{Background subtraction}
 
 %% Describe fits, sWeights and signal/background samples
-In order to use the \decay{\Bs}{\jpsi\phiz} and \decay{\Bsb}{\Dsp\pim} samples to train MVAs, background subtracted distributions must be obtained for the variables used to discriminate the signal from backgrounds. This is achieved by using the \sPlot technique~\cite{Pivk:2004ty}. Unbinned maximum likelihood fits are performed to the \Dsp and \phiz invariant mass distribution in order to determine the yield of \Dsp and \phiz candidates respectively. The \sPlot method then assigns weights for each species in the fit model, namely signal and background. These are assigned to each event in the data set and are only dependent on the value of the fitted variable, in this case \phiz or \Dsp mass. When plotting other, uncorrelated variables and weighting each event accordingly, the contribution from each component in the fit can be extracted. 
+In order to use the \decay{\Bs}{\jpsi\phiz} and \decay{\Bsb}{\Dsp\pim} samples to train MVAs, background subtracted distributions must be obtained for the variables used to discriminate the signal from backgrounds. This is achieved by using the \sPlot technique~\cite{Pivk:2004ty}. Unbinned maximum likelihood fits are performed to the \Dsp and \phiz invariant mass distribution in order to determine the yield of \Dsp and \phiz candidates respectively. 
+
+{\color{Red}
+\begin{itemize}
+\item describe what a fit is
+\item define Likelihood
+\item minimise NLL 
+\end{itemize}
+}
+
+
+The \sPlot method then assigns weights for each species in the fit model, namely signal and background. These are assigned to each event in the data set and are only dependent on the value of the fitted variable, in this case \phiz or \Dsp mass. When plotting other, uncorrelated variables and weighting each event accordingly, the contribution from each component in the fit can be extracted. 
 
 %% Fit model
 For both \decay{\Bs}{\jpsi\phiz} and \decay{\Bsb}{\Dsp\pim} decays, simple fit models are found to be sufficient when performing the \sPlot technique. For each mode the signal components are modelled with a single Gaussian probability density function
