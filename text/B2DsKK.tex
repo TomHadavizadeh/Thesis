@@ -289,6 +289,16 @@ The normalisation channel decay proceeds via a pseudo two-body process, therefor
 \section{Fit validation}
 \label{sec:B2DsKK_fitvalidation}
 
+The fitting framework is validated using large quantities of pseudo-experiments randomly generated using the same fit model. The free parameters are treated using the plug-in method~\cite{plugin}; the generated values of all free parameters are \emph{plugged in} using the fitted values from the fit to data.      
+
+The fitted values and uncertainties are determined for each pseudo-experiment and a corresponding pull determined, defined as
+\begin{equation}
+g_{\text{pull}} = \frac{x_{\text{fit}} - x_{\text{gen}} }{\sigma}
+\end{equation}
+where $x_{\text{gen}}$ and $x_{\text{fit}}$ are the generated and fitted values of the variable, and $\sigma$ is the parameter's uncertainty.
+For an unbiased fit model, the pull of each parameter of interest would be normally distributed with unit width and mean of zero.  
+
+
 {\color{Red}
 \begin{itemize}
 \item Toys for signal and normalisation
