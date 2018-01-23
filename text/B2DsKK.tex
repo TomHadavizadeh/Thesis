@@ -167,7 +167,7 @@ Mode                                           & $a$ (\mevcc)       & $b$ (\mevc
 \begin{equation}
 f(m|a,b,\sigma,\xi, \delta) = \int_{a}^{b} -(\mu-a)(\mu-b)\left( \frac{1-\xi}{b-a}\mu + \frac{b\xi-a}{b-a} \right) e^{-\frac{-(\mu-(m-\delta))^{2}}{2\sigma^{2}}} d\mu.
 \end{equation}
-Again $\sigma$, $\delta$ and $\xi$ control the width, offset and relative heights of two sides of the parabola.
+Again $\sigma$, $\delta$ and $\xi$ control the width, offset and relative heights of two sides of the parabola. The resulting function is a broad single peak shown in Fig.~\ref{fig:B2DsKK_part_reco_backgrounds}.
 
 \end{description}
 
@@ -261,15 +261,28 @@ The dominant source of background under the signal peak is due to combinations o
 
 \section{Fit strategy}
 \label{sec:B2DsKK_fitstrategy}
-The search for $\decay{\Bp}{\Dsp\Kp\Km}$ involves two independent maximum likelihood fits for the signal and normalisation channels. The raw $\decay{\Bp}{\Dsp\Kp\Km}$ yield is then corrected on a per-candidate basis to account for the phase-space dependence of the signal efficiencies in this three-body decay. This is implemented using the \sPlot technique~\cite{Pivk:2004ty} to extract a background subtracted kinematic distributions in which the relative selection efficiencies are parametrised.  
+The search for $\decay{\Bp}{\Dsp\Kp\Km}$ involves two independent unbinned extended maximum likelihood fits for the signal and normalisation channels. 
+The entire $m(\Kp\Km)$ phase space in included in the search for the signal decays, including the range in the vicinity of the \phiz meson mass used later in Chapter~\ref{ch:B2DsPhi}.
+The extended likelihood function for the two fits is constructed in a similar manner to those already detailed in Sec.~\ref{sec:MVAbackgroundsubtraction}. However, as more components are included there are more contributions included in the likelihood function
+\begin{equation}
+-\log\mathcal{L}(n_{0}...n_{j},\vec{p}) = -\sum_{i}^{N} \log \left( \sum_{j} n_{j} f_{j}(m=m_{i},\vec{p}) \right) + \sum_{j}n_{j},
+\end{equation}
+where the index $j$ represents each component of the model with yield $n_{j}$ and PDF $f_{j}$. The constant $\log{N!}$ term has been ignored. Separate likelihood functions are created for the signal and normalisation fits.
 
 
-{\color{Red}
-\begin{itemize}
-\item How yield is corrected, introduce sWeights
-\item $m(\Kp\Km)$ range that goes into fit
-\end{itemize}
-}
+
+The raw $\decay{\Bp}{\Dsp\Kp\Km}$ yield is corrected on a per-candidate basis to account for the phase-space dependence of the signal efficiencies in this three-body decay. This is implemented using the \sPlot technique~\cite{Pivk:2004ty} to determine a signal weight $W_{\text{s},i}$ for each event $i$ in the fitted data set. The weights for each component are constructed such that they sum to the fitted value of that components yield
+\begin{equation}
+n_{s} = \sum_{i}^{N} W_{\text{s},i}.
+\end{equation}
+The efficiencies for the \decay{\Bp}{\Dsp\Kp\Km} signal decays are determined as a function of the kinematic properties of the decay. The weight for each entry $i$ in the data set is corrected with the appropriate efficiency for its given kinematics
+\begin{equation}
+n_{s,\text{corr}} = \sum_{i}^{N} \frac{W_{\text{s},i}}{\epsilon_{i}}.
+\end{equation}
+The propagation of the uncertainty in this corrected yields is described in Sec.~\ref{sec:B2DsKK_results}.
+
+The normalisation channel decay proceeds via a pseudo two-body process, therefore no kinematic dependent efficiency correction is required.  
+
 
 
 

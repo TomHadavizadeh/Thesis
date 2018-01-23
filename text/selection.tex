@@ -1096,20 +1096,40 @@ Finally, the same misidentified \D and \Lc hadron vetoes as detailed in Section~
 
 
 \subsubsection{Background subtraction}
-
+\label{sec:MVAbackgroundsubtraction}
 %% Describe fits, sWeights and signal/background samples
-In order to use the \decay{\Bs}{\jpsi\phiz} and \decay{\Bsb}{\Dsp\pim} samples to train MVAs, background subtracted distributions must be obtained for the variables used to discriminate the signal from backgrounds. This is achieved by using the \sPlot technique~\cite{Pivk:2004ty}. Unbinned maximum likelihood fits are performed to the \Dsp and \phiz invariant mass distribution in order to determine the yield of \Dsp and \phiz candidates respectively. 
+In order to use the \decay{\Bs}{\jpsi\phiz} and \decay{\Bsb}{\Dsp\pim} samples to train MVAs, background subtracted distributions must be obtained for the variables used to discriminate the signal from backgrounds.  Firstly, unbinned extended maximum likelihood fits are performed to the \Dsp and \phiz invariant mass distribution in order to determine the yield of \Dsp and \phiz candidates respectively. 
+Maximum likelihood fits determine the values of the signal and background yields for which the given data set was most likely. The likelihood, $\mathcal{L}$, is constructed from the probability density functions (PDFs) for the fit model, $F(m,\vec{p})$, for each entry $i$ in the data set. The PDF for each entry is evaluated at the corresponding value of the invariant mass, $m = m_{i}$, such that $\mathcal{L}$ is just a function of the PDF parameters, $\vec{p}$,
+\begin{equation}
+\mathcal{L}(\vec{p}) = \prod_{i}^{N} F(m=m_{i},\vec{p}).
+\end{equation}
 
-{\color{Red}
-\begin{itemize}
-\item describe what a fit is
-\item define Likelihood
-\item minimise NLL 
-\end{itemize}
-}
+The maximum value of $\mathcal{L}(\vec{p})$ is achieved for the set of PDF parameters for which the data was most likely. 
+It is computationally beneficial to instead compute the negative log-likelihood (NLL) rather than the likelihood directly, as addition is less intensive than multiplication. The NLL,
+\begin{equation}
+-\log\mathcal{L}(\vec{p}) = -\sum_{i}^{N} \log F(m=m_{i},\vec{p}),
+\end{equation}
+is then minimised with respect to the PDF parameters.
 
+This likelihood can be \emph{extended} to allow the total yield attributed to the PDF to be determined as a parameter as well. This is nessesary to determine the yields of both signal and background contributions ($n_{\text{S}}$ and $n_{\text{B}}$).
+The likelihood is multiplied by the Poisson probability density for measuring $n = n_{\text{S}} + n_{\text{B}}$ events, 
+\begin{equation}
+\mathcal{L}(n,\vec{p}) = \frac{n^{N}e^{-n}}{N!}\prod_{i}^{N} F(m=m_{i},\vec{p}) = \frac{e^{-n}}{N!}\prod_{i}^{N} n F(m=m_{i},\vec{p}).
+\end{equation}
 
-The \sPlot method then assigns weights for each species in the fit model, namely signal and background. These are assigned to each event in the data set and are only dependent on the value of the fitted variable, in this case \phiz or \Dsp mass. When plotting other, uncorrelated variables and weighting each event accordingly, the contribution from each component in the fit can be extracted. 
+The extended NLL becomes 
+\begin{equation}
+-\log\mathcal{L}(n,\vec{p}) = -\sum_{i}^{N} \log n F(m=m_{i},\vec{p}) + n + \log N!.
+\end{equation}
+The $\log N!$ term can be ignored as it is a constant.
+The fit model is constructed from signal and background contributions 
+\begin{equation}
+n F(m| n_{\text{S}},n_{\text{B}},\vec{p'},\vec{p''}) = n_{\text{S}} f(m|\vec{p'}) + n_{\text{B}} g(m|\vec{p''}),
+\end{equation}
+where $n_{\text{S}}$ and $n_{\text{B}}$ are the signal and background yields, $f$ and $g$ are the PDFs for the signal and background respectively, and $\vec{p'}$ and $\vec{p''}$ represent the parameters controlling the PDF shapes. The 
+
+After the extended maximum likelihood fits have been performed and the yields established, the subtraction of candidates attributed to the background component is performed using the \sPlot technique~\cite{Pivk:2004ty}.
+The \sPlot method assigns weights for each species in the fit model, namely signal and background. These are assigned to each event in the data set and are only dependent on the value of the fitted variable, in this case \phiz or \Dsp mass. When plotting other, uncorrelated variables and weighting each event accordingly, the contribution from each component in the fit can be extracted. 
 
 %% Fit model
 For both \decay{\Bs}{\jpsi\phiz} and \decay{\Bsb}{\Dsp\pim} decays, simple fit models are found to be sufficient when performing the \sPlot technique. For each mode the signal components are modelled with a single Gaussian probability density function
@@ -1119,13 +1139,13 @@ f(m|\mu,\sigma) = \frac{1}{\sqrt{2\pi\sigma^{2}}} \times e^{-\frac{(m-\mu)^{2}}{
 where $\mu$ and $\sigma$ are the mean and width of the Gaussian distribution and $m$ is the observable invariant mass. The parameters $\mu$ and $\sigma$ are allowed to vary freely.
 The background contributions to the \decay{\phiz}{\Kp\Km} decays are modelled using a Chebychev polynomial with two degrees of freedom
 \begin{equation}
-f(m|a,b) = a\times(2m^{2}-1) + b\times m + 1,
+g(m|a,b) = a\times(2m^{2}-1) + b\times m + 1,
 \end{equation}
 where $a$ and $b$ are parameters that can vary freely and $m$ is the observable invariant mass. 
 The \phiz meson mass is close to the threshold for \Kp\Km pair production so this parametrisation has sufficient freedom to successfully  model the increasing background shape.
 The background contribution to all three \Dsp decays are modelled using exponetial functions with a single degree of freedom controlling the effective slope
 \begin{equation}
-f(m|c) = e^{m\times c},
+g(m|c) = e^{m\times c},
 \end{equation}
 where $c$ is a freely varying parameter and $m$ is the observable invariant mass.
 The fits to the \phiz and \Dsp meson masses in the \decay{\Bs}{\jpsi\phiz} and \decay{\Bsb}{\Dsp\pim} samples are performed separately for each year of data taking and polarity of the \lhcb dipole magnet. These distributions are shown in Fig.~\ref{fig:mvatrainingsamples} for each of the \phiz and \Dsp decay modes.
