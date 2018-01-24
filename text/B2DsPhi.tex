@@ -4,12 +4,74 @@
 \minitoc
 
 In this chapter the methodology used to search for \decay{\Bp}{\Dsp\phiz} decays is described.
+The branching fraction $\BF(\decay{\Bp}{\Dsp\phiz})$ is constructed by measuring the yield of \decay{\Bp}{\Dsp\phiz} decays relative to the normalisation channel \decay{\Bp}{\Dsp\Dzb}. This ratio is corrected by the ratio of selection efficiencies for the two modes. 
+The branching fraction $\BF(\decay{\Bp}{\Dsp\phiz})$ is then determined by multiplying this corrected ratio by externally measured values for the branching fractions $\BF(\decay{\Bp}{\Dsp\Dzb})$ and $\BF(\decay{\Dzb}{\Kp\Km})$, and dividing by $\BF(\decay{\phiz}{\Kp\Km})$. 
+
 
 {\color{Red}
 \begin{itemize}
-\item Details of blinding procedure for historic context
+\item Details of blinding procedure for historic context?
 \end{itemize}
 }
+
+
+\section{Fit strategy}
+\label{sec:B2DsPhi_fitstrategy}
+The strategy used to search for \decay{\Bp}{\Dsp\phiz} is more complicated than the method used to search for \decay{\Bp}{\Dsp\Kp\Km} decays as outlined in Chapter~\ref{ch:B2DsKK}. This is necessary to allow various different signal and background components to be distinguished. In particular, the majority of \decay{\Bp}{\Dsp\Kp\Km} decays now act as a background as those not proceeding via the \phiz resonance must be distinguished from \decay{\Bp}{\Dsp\phiz} decays. 
+The ratio of \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Dzb} yields is determined using a simultaneous unbinned maximum likelihood fit in a number of different categories. Three sets of categories are used, separating the candidates according to \Dsp meson decay mode, invariant mass of \Kp\Km pair $m(\Kp\Km)$ and the cosine of an angle $\cos\theta_{K}$. The details and definitions of these categories are listed in Sec~\ref{sec:B2DsPhi_fit_cats}. 
+The total extended NLL for this fit is created from the sum of each NLL in each of the categories
+\begin{equation}
+-\log\mathcal{L}(n_{0}...n_{j},\vec{p}) = \sum_{\alpha} \sum_{\beta} \sum_{\gamma} \left(-\log\mathcal{L^{\alpha,\beta,\gamma}}(n_{0}^{\alpha,\beta,\gamma}...n_{j}^{\alpha,\beta,\gamma},\vec{p}) \right)
+\end{equation} 
+where $\alpha$, $\beta$ and $\gamma$ represent indexes over the \Dsp mode, $m(\Kp\Km)$ and $\cos\theta_{K}$ categories.
+ 
+The NLL for each category is defined as before
+\begin{equation}
+-\log\mathcal{L^{\alpha,\beta,\gamma}}(n_{0}^{\alpha,\beta,\gamma}...n_{j}^{\alpha,\beta,\gamma},\vec{p}) = -\sum_{i}^{N^{\alpha,\beta,\gamma}} \log \left( \sum_{j} n_{j}^{\alpha,\beta,\gamma} f_{j}^{\alpha,\beta,\gamma}(m=m_{i},\vec{p}) \right) + \sum_{j}n_{j}^{\alpha,\beta,\gamma}.
+\end{equation} 
+As before, $j$ represents the index over each contribution to the fit model, and $i$ represents each of $N^{\alpha,\beta,\gamma}$ entries in the data set for category $\alpha,\beta,\gamma$. 
+The composite extended NLL is minimised with respect to the parameters $\vec{p}$ to find the values for which the data is most likely.
+
+
+\subsection{Simultaneous categories}
+\label{sec:B2DsPhi_fit_cats}
+
+The data sample is split into categories primarily to aid the differentiation of different signal and background components that contribute in similar invariant mass ranges.
+
+\begin{enumerate}
+\item \textbf{\Dsp meson decay mode: }
+\item \textbf{Invariant mass of \Kp\Km pair $m(\Kp\Km)$:} 
+\item \textbf{Helicity angle $\cos\theta_{K}$:} 
+\end{enumerate}
+
+{\color{Red}
+\begin{itemize}
+\item \Dsp decay mode categories
+\item $m(\Kp\Km)$ invariant mass categories 
+\item helicity angle categories 
+\item MC plots of each
+\end{itemize}
+}
+The $\decay{\Bp}{\Dsp\phiz}$ signal and normalisation channels are fitted simultaneously in separate categories, as are the three \Dsp decay modes, with the $\decay{\Dsp}{\Kp\Km\pip}$ mode split further into $\decay{\Dsp}{\phi \pip}$ and non-\phiz submodes. This exploits the high purity of the $\decay{\Dsp}{\phi \pip}$ decay.
+
+
+As the $\decay{\Bp}{\Dsp\phiz}$ decay involves the decay of a pseudoscalar particle to a pseudoscalar and vector particle, the \phiz vector meson ($J^{P} = 1^{-}$) must be produced longitudinally polarised. For a longitudinally polarised \phiz meson decaying to $\Kp\Km$, the distribution of the angle $\theta_{K}$, defined as the angle that the kaon meson forms with the \B momentum in the \phiz rest frame, is proportional to $\cos^{2}{\theta_{K}}$. The distribution of $\cos{\theta_{K}}$ for $\decay{\Bp}{\Dsp\phiz}$ as determined from simulated events is shown in Fig ?.
+
+
+\subsection{\decay{\Bp}{\Dsp \Kp \Km} model assumptions}
+\label{sec:B2DsPhi_B2DsKKModel}
+
+{\color{Red}
+\begin{itemize}
+\item Studies with Laura++
+\item distributions of a number of models
+\item refer to \Dsp\Kp\Km plot
+\item final fraction
+\end{itemize}
+}
+
+
+
 
 \section{Fit components}
 \label{sec:B2DsPhi_fitcomponents}
@@ -88,45 +150,63 @@ $\sigma_{1}(\Dsp\phi) / \sigma_{1}(\Dsp\Dzb)$ & 1.27 $\pm$ 0.02 & 1.31 $\pm$ 0.0
 \label{sec:B2DsPhi_partrecocomps}
 
 \subsubsection{Backgrounds to the normalisation channel}
-{\color{Blue}
-The modes $\B^+ \to \Dsp D^{*0}$ and $\B^+ \to \Dsp^{*} D^{0}$ can both contribute partially reconstructed backgrounds to the $\Bu \to \Dsp \Dzb$ normalisation mode.
-Each decay requires two different shapes to model it accurately, due to the two possible decay modes of the excited $D$ meson resonance.
-The $\B^+ \to \Dsp D^{*0}$ decay with $D^{*0} \to D^0 \pi^0$ (branching fraction of 62\%) is modelled with a \texttt{RooHORNSdini} shape.
-The $\B^+ \to \Dsp D^{*0}$ decay with $D^{*0} \to D^0 \gamma$ (branching fraction of 38\%) is modelled with a \texttt{RooHILLdini} shape.
-These two shapes are then summed together according to the ratio of $D^{*0}$ branching fractions, taking into account also the percentage of each decay that is cut away by 
-the lower bound on the $\Dsp \Dzb$ mass in the fit.
-The $\B^+ \to \Dsp^{*} D^{0}$ decay with $\Dsp^{*} \to \Dsp \pi^0$ (branching fraction of 6\%) is modelled with a \texttt{RooHORNSdini} shape.
-The $\B^+ \to \Dsp^{*} D^{0}$ decay with $\Dsp^{*} \to \Dsp \gamma$ (branching fraction of 94\%) is modelled with a \texttt{RooHILLdini} shape.
-These two shapes are then summed together in the same way as the two $\B^+ \to \Dsp D^{*0}$ shapes.
-The four shapes for $\B^+ \to \Dsp D^{*0}$ and $\B^+ \to \Dsp^{*} D^{0}$ are shown in Fig.~\ref{fig:B2DsPhi_DsD0_partreco}.
-The parameters of these shapes are fixed in the fit to data, except for two. Firstly a global shift parameter (allowing for the fact that the fitted mean $B^+$ mass may differ from the nominal mass used in the simulation) is left free, but is common to all the partially reconstructed background shapes. Secondly a parameter that allows the relative heights of the two peaks in the double peaked structures to differ is left floating. This is also common to all partially reconstructed shapes. This allows for any selection dependence that might affect the two peaks differently.
-The experimental resolution for these shapes is taken to be the effective resolution of the signal double Crystal Ball shape (\ie the average of the two Crystal Ball 
-widths, weighted with their relative normalisation). These parameters are summarised in Table~\ref{tab:DDstar_paramters}.
+
+The modes \decay{\Bp}{\Dsp\Dstarzb} and \decay{\Bp}{\Dssp\Dzb} can both contribute partially reconstructed backgrounds to the \decay{\Bp}{\Dsp\Dzb} normalisation mode. These are parametrised using the same probability density functions as in the search for \decay{\Bp}{\Ds\Kp\Km} decays, detailed in Sec.~\ref{sec:B2DsKK_norm_partreco}.
+
+\begin{description}
+\item \textbf{\decay{\Bp}{(\decay{\Dssp}{\Dsp[\piz]})\Dzb} and \decay{\Bp}{\Dsp(\decay{\Dstarzb}{\Dzb[\piz]})}:} these components are modelled by a parabola convolved with a resolution Gaussian. The parabola has a minimum in the centre and doesn't extend beyond endpoint $a$ and $b$
+\begin{equation}
+f(m|a,b,\sigma,\xi, \delta) = \int_{a}^{b}\left(\mu-\frac{a+b}{2}\right)^{2} \left( \frac{1-\xi}{b-a}\mu + \frac{b\xi-a}{b-a} \right) e^{-\frac{-(\mu-(m-\delta))^{2}}{2\sigma^{2}}} d\mu.
+\end{equation}
+These components are shown by the black lines in in Fig.~\ref{fig:B2DsPhi_DsD0_partreco}.
+
+\item \textbf{\decay{\Bp}{(\decay{\Dssp}{\Dsp[\Pgamma]})\Dzb} and \decay{\Bp}{\Dsp(\decay{\Dstarzb}{\Dzb[\Pgamma]})}:} these components are modelled by a parabola convolved with a resolution Gaussian. The parabola has a maximum in the centre and doesn't extend beyond endpoints $a$ and $b$
+\begin{equation}
+f(m|a,b,\sigma,\xi, \delta) = \int_{a}^{b} -(\mu-a)(\mu-b)\left( \frac{1-\xi}{b-a}\mu + \frac{b\xi-a}{b-a} \right) e^{-\frac{-(\mu-(m-\delta))^{2}}{2\sigma^{2}}} d\mu.
+\end{equation}
+These components are shown by the blue lines in Fig.~\ref{fig:B2DsPhi_DsD0_partreco}.
+
+\item \textbf{\decay{\Bp}{\Dssp\Dstarzb}:} A shape has been added to the fit model to account for $\B^+ \to \Dsp^{*} D^{*0}$ events where two soft neutral particles have missed, one from each excited $D$ meson decay. In principle this shape should be created from eight individual contribution shapes as either $D$ meson can miss a $\gamma$ or $\pi^{0}$ and there are two distinguishable helicity combinations for either. We approximate this shape by a single \texttt{RooHILLdini} shape, with a similar set of parameters as listed in Table~\ref{tab:DDstar_paramters}. The kinematic endpoints are estimated by combining the effect of missing a $\pi^{0}$ and a $\gamma$, the dominant shape given the branching fractions of $D^{*0} \to D^{0} [\pi^{0}/\gamma]$ and $D_{s}^{*} \to D_{s} [\pi^{0}/\gamma]$. These endpoints and the choice of shape are varied and the effect on the measured branching fraction included as a systematic uncertainty. 
+
+\end{description}
+
+% Each decay requires two different shapes to model it accurately, due to the two possible decay modes of the excited $D$ meson resonance.
+% The $\B^+ \to \Dsp D^{*0}$ decay with $D^{*0} \to D^0 \pi^0$ (branching fraction of 62\%) is modelled with a \texttt{RooHORNSdini} shape.
+% The $\B^+ \to \Dsp D^{*0}$ decay with $D^{*0} \to D^0 \gamma$ (branching fraction of 38\%) is modelled with a \texttt{RooHILLdini} shape.
+% These two shapes are then summed together according to the ratio of $D^{*0}$ branching fractions, taking into account also the percentage of each decay that is cut away by 
+% the lower bound on the $\Dsp \Dzb$ mass in the fit.
+% The $\B^+ \to \Dsp^{*} D^{0}$ decay with $\Dsp^{*} \to \Dsp \pi^0$ (branching fraction of 6\%) is modelled with a \texttt{RooHORNSdini} shape.
+% The $\B^+ \to \Dsp^{*} D^{0}$ decay with $\Dsp^{*} \to \Dsp \gamma$ (branching fraction of 94\%) is modelled with a \texttt{RooHILLdini} shape.
+% These two shapes are then summed together in the same way as the two $\B^+ \to \Dsp D^{*0}$ shapes.
+% The four shapes for $\B^+ \to \Dsp D^{*0}$ and $\B^+ \to \Dsp^{*} D^{0}$ are shown in Fig.~\ref{fig:B2DsPhi_DsD0_partreco}.
+% The parameters of these shapes are fixed in the fit to data, except for two. Firstly a global shift parameter (allowing for the fact that the fitted mean $B^+$ mass may differ from the nominal mass used in the simulation) is left free, but is common to all the partially reconstructed background shapes. Secondly a parameter that allows the relative heights of the two peaks in the double peaked structures to differ is left floating. This is also common to all partially reconstructed shapes. This allows for any selection dependence that might affect the two peaks differently.
+% The experimental resolution for these shapes is taken to be the effective resolution of the signal double Crystal Ball shape (\ie the average of the two Crystal Ball 
+% widths, weighted with their relative normalisation). These parameters are summarised in Table~\ref{tab:DDstar_paramters}.
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{table}[h]
-\centering
-\caption{Paramter values used in the analytical shapes for the $\B^+ \to \Dsp D^{*0}$, $\B^+ \to \Dsp^{*} D^{0}$ and $\B^+ \to \Dsp^{*} \phi$ PDFs. The parameters R and f are set to one as only a single resolution Gaussian is used.} 
-\label{tab:DDstar_paramters} 
-\begin{tabular}{ c l c l }
-\hline
-Parameter & Description & State & Source \\
-\hline
-$a$         & Lower kinematic endpoint     & Constant & Kinematics                  \\
-$b$         & Upper kinematic endpoint     & Constant & Kinematics                  \\ 
-$\sigma$    & Width of the peaks           & Fixed    & Set to effective            \\ 
-            &                              &          & signal resolution           \\  
-$R$         & Relative width of two        & Constant & Value set to 1.0            \\
-            & resolution Gaussians         &          & (single resolution Gaussian)\\  
-$f$         & Fractional amounts of main   & Constant & Value set to 1.0            \\
-            & resolution Gaussian          &          &(single resolution Gaussian) \\ 
-$\xi$       & Relative height of two peaks & Floating & Shared between all shapes   \\
-$\delta$    & Uniform mass offset          & Floating & Shared between all shapes   \\
-\hline
-\end{tabular}
-\end{table}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{table}[h]
+% \centering
+% \caption{Paramter values used in the analytical shapes for the $\B^+ \to \Dsp D^{*0}$, $\B^+ \to \Dsp^{*} D^{0}$ and $\B^+ \to \Dsp^{*} \phi$ PDFs. The parameters R and f are set to one as only a single resolution Gaussian is used.} 
+% \label{tab:DDstar_paramters} 
+% \begin{tabular}{ c l c l }
+% \hline
+% Parameter & Description & State & Source \\
+% \hline
+% $a$         & Lower kinematic endpoint     & Constant & Kinematics                  \\
+% $b$         & Upper kinematic endpoint     & Constant & Kinematics                  \\ 
+% $\sigma$    & Width of the peaks           & Fixed    & Set to effective            \\ 
+%             &                              &          & signal resolution           \\  
+% $R$         & Relative width of two        & Constant & Value set to 1.0            \\
+%             & resolution Gaussians         &          & (single resolution Gaussian)\\  
+% $f$         & Fractional amounts of main   & Constant & Value set to 1.0            \\
+%             & resolution Gaussian          &          &(single resolution Gaussian) \\ 
+% $\xi$       & Relative height of two peaks & Floating & Shared between all shapes   \\
+% $\delta$    & Uniform mass offset          & Floating & Shared between all shapes   \\
+% \hline
+% \end{tabular}
+% \end{table}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -138,12 +218,7 @@ $\delta$    & Uniform mass offset          & Floating & Shared between all shape
     \label{fig:B2DsPhi_DsD0_partreco}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-$\B^+ \to \Dsp^{*} D^{*0}$
 
-
-A shape has been added to the fit model to account for $\B^+ \to \Dsp^{*} D^{*0}$ events where two soft neutral particles have missed, one from each excited $D$ meson decay. In principle this shape should be created from eight individual contribution shapes as either $D$ meson can miss a $\gamma$ or $\pi^{0}$ and there are two distinguishable helicity combinations for either. We approximate this shape by a single \texttt{RooHILLdini} shape, with a similar set of parameters as listed in Table~\ref{tab:DDstar_paramters}. The kinematic endpoints are estimated by combining the effect of missing a $\pi^{0}$ and a $\gamma$, the dominant shape given the branching fractions of $D^{*0} \to D^{0} [\pi^{0}/\gamma]$ and $D_{s}^{*} \to D_{s} [\pi^{0}/\gamma]$. These endpoints and the choice of shape are varied and the effect on the measured branching fraction included as a systematic uncertainty. 
-
-}
 
 {\color{Red}
 \begin{itemize}
@@ -219,43 +294,8 @@ The parameters of these shapes are treated in exactly the same way as those for 
 
 
 
-\section{Fit strategy}
-\label{sec:B2DsPhi_fitstrategy}
 
-The yield of \decay{\Bp}{\Dsp\phiz} candidates are determined using a simultaneous unbinned maximum likelihood fit in a number of different categories.
-These categories are designed to help separate the different contributions such that the relative contributions can be distinguished.
-The candidates are treated as quasi-two-body decays in which all signal candidates are corrected with the same efficiency. 
-
-
-
-\subsection{Simultaneous categories}
-\label{sec:B2DsPhi_fitstrategy}
-
-{\color{Red}
-\begin{itemize}
-\item \Dsp decay mode categories
-\item $m(\Kp\Km)$ invariant mass categories 
-\item helicity angle categories 
-\item MC plots of each
-\end{itemize}
-}
-The $\decay{\Bp}{\Dsp\phiz}$ signal and normalisation channels are fitted simultaneously in separate categories, as are the three \Dsp decay modes, with the $\decay{\Dsp}{\Kp\Km\pip}$ mode split further into $\decay{\Dsp}{\phi \pip}$ and non-\phiz submodes. This exploits the high purity of the $\decay{\Dsp}{\phi \pip}$ decay.
-
-
-As the $\decay{\Bp}{\Dsp\phiz}$ decay involves the decay of a pseudoscalar particle to a pseudoscalar and vector particle, the \phiz vector meson ($J^{P} = 1^{-}$) must be produced longitudinally polarised. For a longitudinally polarised \phiz meson decaying to $\Kp\Km$, the distribution of the angle $\theta_{K}$, defined as the angle that the kaon meson forms with the \B momentum in the \phiz rest frame, is proportional to $\cos^{2}{\theta_{K}}$. The distribution of $\cos{\theta_{K}}$ for $\decay{\Bp}{\Dsp\phiz}$ as determined from simulated events is shown in Fig ?.
-
-
-\subsection{\decay{\Bp}{\Dsp \Kp \Km} model assumptions}
-\label{sec:B2DsPhi_B2DsKKModel}
-
-{\color{Red}
-\begin{itemize}
-\item Studies with Laura++
-\item distributions of a number of models
-\item refer to \Dsp\Kp\Km plot
-\item final fraction
-\end{itemize}
-}
+\section{Free and constrained parameters}
 
 \section{Fit validation}
 \label{sec:B2DsPhi_fitstrategy}
