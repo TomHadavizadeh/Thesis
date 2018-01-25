@@ -268,17 +268,25 @@ The yields of \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Dzb} decays are extrac
 \subsection{Signal and normalisation decays}
 \label{sec:B2DsPhi_signalcomps}
 
-The invariant mass distributions of \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Dzb} decays are parametrised using the same DCB function as in the search for \decay{\Bp}{\Dsp\Kp\Km} decays detailed in Sec.~\ref{sec:B2DsKK_sigcomps};
+The invariant mass distributions of \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Dzb} decays are parametrised using the same DCB function as in the search for \decay{\Bp}{\Dsp\Kp\Km} decays (Sec.~\ref{sec:B2DsKK_sigcomps}):
+\begin{equation}
+\text{DCB}(m|\mu,\sigma_1,\sigma_2,n,\alpha) = f_\sigma \times \text{CB}(m|\mu,\sigma_1,n,\alpha) + (1-f_\sigma) \times \text{CB}(m|\mu,\sigma_2,n,\alpha),
+\label{eq:DoubleBD}
+\end{equation}
+where the CB function is defined as follows
 \begin{equation}
 \text{CB}(m|\mu,\sigma,n,\alpha) = \left \{
   \begin{aligned}
-    &e^{-\frac{1}{2} \left(\frac{m-\mu}{\sigma}\right)^2}, && \text{if}\ \left(\frac{m-\mu}{\sigma}\right) < -|\alpha|\\
-    &\frac{\left(\frac{n}{|\alpha|}\right)^n\times e ^{-\frac{1}{2}|\alpha|^2} }{\left(\frac{n}{|\alpha|}-|\alpha| - \frac{m-\mu}{\sigma}\right)^n}, && \text{otherwise}
+    &e^{-\frac{1}{2} \left(\frac{m-\mu}{\sigma}\right)^2} && \text{if}\ \left(\frac{m-\mu}{\sigma}\right) < -|\alpha|\\
+    &\frac{\left(\frac{n}{|\alpha|}\right)^n\times e ^{-\frac{1}{2}|\alpha|^2} }{\left(\frac{n}{|\alpha|}-|\alpha| - \frac{m-\mu}{\sigma}\right)^n} && \text{otherwise.}
   \end{aligned} \right.
 \end{equation}
-where $\mu$, $\sigma$, $n$ and $\alpha$ are adjustable parameters and $m$ is the \B meson invariant mass observable.
+Again, $\mu$, $\sigma$, $n$, $\alpha$ and $f_{\sigma}$ are adjustable parameters and $m$ is the \B meson invariant mass observable.
+The tail parameter $\alpha$ is fixed to values determined from maximum likelihood fits to simulated candidates for the signal and normalisation decays. The parameter $n$ is fixed to unity in the fits to both simulation and data to increase the stability of the tails.     
+The two CB function are allowed have different widths, $\sigma_{1}$ and $\sigma_{2}$, but the ratio $\sigma_{1}/\sigma_{2}$ is fixed from the fits to simulations, as is $f_{\sigma}$ that determines the fractional contribution of the narrower CB function ($\sigma_{1}<\sigma_{2}$). The values determined for each of these fixed parameters are tabulated in Table~\ref{tab:DsPhi_mc_fits}, along with the uncertainty obtained from the fits.
 
-The two CB functions 
+An extra constraint is added to the signal and normalisation DCB functions with respect to the configuration used in the search for \decay{\Bp}{\Dsp\Kp\Km} decays. As the number of signal candidates is likely to be small, the relative width of the narrower signal and normalisation CB functions, $\sigma_{1}(\Dsp\phi) / \sigma_{1}(\Dsp\Dzb)$, is also fixed to values obtained from the fits to simulations.All fixed parameters are determined separately for the different \Dsp decay modes, and the results of the fits to simulated decays are shown in Fig.~\ref{fig:B2DsPhi_signal_fits}.     
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \begin{table}[h]
@@ -310,66 +318,64 @@ The two CB functions
       \hline
    \end{tabular}
    \caption{Fixed values obtained in fits to MC used in the model for the signal pdf.} 
-   \label{tab:mc_fits}  
+   \label{tab:DsPhi_mc_fits}  
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
-    \centering
-    \begin{subfigure}[t]{1.0\textwidth}
-        \includegraphics[width=0.48\textwidth]{figs/B2DsPhi/Plot_Signal_Fit_All_B2PhiDs_Ds2KKPi.pdf}
-        \includegraphics[width=0.48\textwidth]{figs/B2DsPhi/Plot_Signal_Fit_All_B2D0Ds_Ds2KKPi.pdf}
-        \caption{\decay{\Dsp}{\Kp\Km\pip}}
-    \end{subfigure}\\
-    \begin{subfigure}[t]{1.0\textwidth}
-        \includegraphics[width=0.48\textwidth]{figs/B2DsPhi/Plot_Signal_Fit_All_B2PhiDs_Ds2KPiPi.pdf}
-        \includegraphics[width=0.48\textwidth]{figs/B2DsPhi/Plot_Signal_Fit_All_B2D0Ds_Ds2KPiPi.pdf}
-        \caption{\decay{\Dsp}{\Kp\pim\pip}}
-    \end{subfigure}\\
-    \begin{subfigure}[t]{1.0\textwidth}
-        \includegraphics[width=0.48\textwidth]{figs/B2DsPhi/Plot_Signal_Fit_All_B2PhiDs_Ds2PiPiPi.pdf}
-        \includegraphics[width=0.48\textwidth]{figs/B2DsPhi/Plot_Signal_Fit_All_B2D0Ds_Ds2PiPiPi.pdf}
-        \caption{\decay{\Dsp}{\pip\pim\pip}}
-    \end{subfigure}\\
-    \caption{Invariant mass fits to signal (left) and normalisation (right) channel simulation samples.}
-    \label{fig:B2DsPhi_signal_fits}   
+   \centering
+   \begin{subfigure}[t]{1.0\textwidth}
+      \centering
+      \includegraphics[width=0.40\textwidth]{figs/B2DsPhi/Plot_Signal_Fit_All_B2PhiDs_Ds2KKPi.pdf}
+      \includegraphics[width=0.40\textwidth]{figs/B2DsPhi/Plot_Signal_Fit_All_B2D0Ds_Ds2KKPi.pdf}
+   \caption{\decay{\Dsp}{\Kp\Km\pip}}
+   \end{subfigure}\\
+   \begin{subfigure}[t]{1.0\textwidth}
+      \centering
+      \includegraphics[width=0.40\textwidth]{figs/B2DsPhi/Plot_Signal_Fit_All_B2PhiDs_Ds2PiPiPi.pdf}
+      \includegraphics[width=0.40\textwidth]{figs/B2DsPhi/Plot_Signal_Fit_All_B2D0Ds_Ds2PiPiPi.pdf}
+      \caption{\decay{\Dsp}{\pip\pim\pip}}
+   \end{subfigure}\\
+   \begin{subfigure}[t]{1.0\textwidth}
+      \centering
+      \includegraphics[width=0.40\textwidth]{figs/B2DsPhi/Plot_Signal_Fit_All_B2PhiDs_Ds2KPiPi.pdf}
+      \includegraphics[width=0.40\textwidth]{figs/B2DsPhi/Plot_Signal_Fit_All_B2D0Ds_Ds2KPiPi.pdf}
+      \caption{\decay{\Dsp}{\Kp\pim\pip}}
+   \end{subfigure}\\
+   \caption{Invariant mass fits to simulated signal (left) and normalisation (right) decays. The results of maximum likelihood fits using the signal PDFs are over laid, with the total function in black and the two contributing CB shapes in red and blue.}
+   \label{fig:B2DsPhi_signal_fits}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-{\color{Red}
-\begin{itemize}
-\item plots of signal shapes
-\end{itemize}
-}
-
 
 
 \subsection{Partially reconstructed backgrounds}
 \label{sec:B2DsPhi_partrecocomps}
 
+The accurate parametrisation of partially reconstructed backgrounds is particularly important in the search for \decay{\Bp}{\Dsp\phiz} decays as many different processes are found to contribute to the low invariant mass range of the $m(\Dsp\phiz)$ spectrum. These processes involve decays of \Bs, \Bz or \Bp mesons in which the five final state tracks reconstructed in the search for \decay{\Bp}{\Dsp\phiz} decays are only a subset of the background modes final state. 
+Typically, processes in which a low momentum pion or photon has not been reconstructed are found closest in mass to the signal decays. Decays of \Bs mesons are particularly dominate as the \Bs meson has a larger mass than the \Bp meson.   
+
+
 \subsubsection{Backgrounds to the normalisation channel}
 
-The modes \decay{\Bp}{\Dsp\Dstarzb} and \decay{\Bp}{\Dssp\Dzb} can both contribute partially reconstructed backgrounds to the \decay{\Bp}{\Dsp\Dzb} normalisation mode. These are parametrised using the same probability density functions as in the search for \decay{\Bp}{\Ds\Kp\Km} decays, detailed in Sec.~\ref{sec:B2DsKK_norm_partreco}. As the invariant mass fit range is wider than in the fit to \decay{\Bp}{\Dsp\Kp\Km} candidates, an extra shape is included for partially reconstructed \decay{\Bp}{\Dssp\Dstarzb} decays at lower invariant masses.
+The modes \decay{\Bp}{\Dsp\Dstarzb} and \decay{\Bp}{\Dssp\Dzb} can both contribute as partially reconstructed backgrounds to the \decay{\Bp}{\Dsp\Dzb} normalisation mode. These are parametrised using the same PDFs as in the search for \decay{\Bp}{\Ds\Kp\Km} decays, detailed in Sec.~\ref{sec:B2DsKK_norm_partreco}. As the invariant mass fit range is wider than in the fit to \decay{\Bp}{\Dsp\Kp\Km} candidates, an extra contribution is included to account for partially reconstructed \decay{\Bp}{\Dssp\Dstarzb} decays at lower invariant masses.
 
 \begin{description}
 \item \textbf{\decay{\Bp}{(\decay{\Dssp}{\Dsp[\piz]})\Dzb} and \decay{\Bp}{\Dsp(\decay{\Dstarzb}{\Dzb[\piz]})}:} these components are modelled by a parabola convolved with a resolution Gaussian. The parabola has a minimum in the centre and doesn't extend beyond endpoint $a$ and $b$
 \begin{equation}
 f(m|a,b,\sigma,\xi, \delta) = \int_{a}^{b}\left(\mu-\frac{a+b}{2}\right)^{2} \left( \frac{1-\xi}{b-a}\mu + \frac{b\xi-a}{b-a} \right) e^{-\frac{-(\mu-(m-\delta))^{2}}{2\sigma^{2}}} d\mu.
+\label{eq:DsPhi_RooHorns}
 \end{equation}
 These components are shown by the black lines in Fig.~\ref{fig:B2DsPhi_DsD0_partreco}.
 
 \item \textbf{\decay{\Bp}{(\decay{\Dssp}{\Dsp[\Pgamma]})\Dzb} and \decay{\Bp}{\Dsp(\decay{\Dstarzb}{\Dzb[\Pgamma]})}:} these components are modelled by a parabola convolved with a resolution Gaussian. The parabola has a maximum in the centre and doesn't extend beyond endpoints $a$ and $b$
 \begin{equation}
 f(m|a,b,\sigma,\xi, \delta) = \int_{a}^{b} -(\mu-a)(\mu-b)\left( \frac{1-\xi}{b-a}\mu + \frac{b\xi-a}{b-a} \right) e^{-\frac{-(\mu-(m-\delta))^{2}}{2\sigma^{2}}} d\mu.
+\label{eq:DsPhi_RooHills}
 \end{equation}
 These components are shown by the blue lines in Fig.~\ref{fig:B2DsPhi_DsD0_partreco}.
-
-\item \textbf{\decay{\Bp}{\Dssp\Dstarzb}:} {\color{Blue} A shape has been added to the fit model to account for $\B^+ \to \Dsp^{*} D^{*0}$ events where two soft neutral particles have missed, one from each excited $D$ meson decay. In principle this shape should be created from eight individual contribution shapes as either $D$ meson can miss a $\gamma$ or $\pi^{0}$ and there are two distinguishable helicity combinations for either. We approximate this shape by a single \texttt{RooHILLdini} shape, with a similar set of parameters as listed in Table~\ref{tab:DDstar_paramters}. The kinematic endpoints are estimated by combining the effect of missing a $\pi^{0}$ and a $\gamma$, the dominant shape given the branching fractions of $D^{*0} \to D^{0} [\pi^{0}/\gamma]$ and $D_{s}^{*} \to D_{s} [\pi^{0}/\gamma]$. These endpoints and the choice of shape are varied and the effect on the measured branching fraction included as a systematic uncertainty. }
-
 \end{description}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
@@ -381,33 +387,59 @@ These components are shown by the blue lines in Fig.~\ref{fig:B2DsPhi_DsD0_partr
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-{\color{Red}
-\begin{itemize}
-\item make plot of $\B^+ \to \Dsp^{*} D^{*0}$
-\end{itemize}
-}
+\begin{description}
+
+\item \textbf{\decay{\Bp}{\Dssp\Dstarzb}:} the lower invariant mass range used in this search necessitates including a PDF for \decay{\Bp}{\Dssp\Dstarzb} decays in which two soft particles have been missed, one from each of the excited \D meson decays. It is possible for either a \piz or \Pgamma to be not reconstructed in the decays of both excited \D mesons. Additionally, as this process involves a psecudo-scalar meson decaying to two vector mesons, there should be two distinguishable helicity combinations for each process. This leads to a total of eight PDFs necessary to fully parametrise this contribution. Instead, however, this component is parametrised using a single function of the form given in Eq.~\ref{eq:DsPhi_RooHills}. The endpoints $a$ and $b$ are estimated by combining the effects of missing two neutral particles. The resulting distribution is shown in Fig.~\ref{fig:B2DsPhi_DsstarDstar0_partreco}.
+The choice of PDF for this component is found to have negligible effect on the determination of the $\BF(\decay{\Bp}{\Dsp\phiz})$ branching fraction as detailed in Sec~\ref{sec:B2DsPhi_systuncertainy}.
+
+\end{description}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.80\textwidth]{figs/B2DsPhi/DsstarDstar0_part_reco_Shapes.pdf}
+    \caption{Partially reconstructed $\Dsp\Dzb$ shapes.}
+    \label{fig:B2DsPhi_DsstarDstar0_partreco}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 
 \subsubsection{Backgrounds to the signal channel}
-{\color{Blue}
+
+%The signal channel invariant mass distribution receives contributions from the partially reconstructed modes considered in the search for \decay{\Bp}{\Dsp\Kp\Km} decays. The PDFs determined are 
+
 
 
 \begin{description}
-\item The $\B^+ \to \Dsp^{*} \phi$ decay contributes a partially reconstructed background to the $\Bu \to \Dsp \phi$ signal mode.
-Since this decay has a vector-vector final state, the helicity state of the decay products is not fixed, and is unknown as this mode has not yet been observed.
-The $\B^+ \to \Dsp^{*} \phi$ decay with $\Dsp^{*} \to \Dsp \pi^0$ and helicity configuration 010 (101) is modelled with a \texttt{RooHORNSdini} (\texttt{RooHILLdini}) shape.
-The $\B^+ \to \Dsp^{*} \phi$ decay with $\Dsp^{*} \to \Dsp \gamma$ and helicity configuration 010 (101) is modelled with a \texttt{RooHILLdini} (\texttt{RooLITTLEHORNSdini}) shape.
-The shapes for the different $\Dsp^{*}$ decays are summed as for the $\B^+ \to \Dsp^{*} D^{0}$ case above, while the relative weighting of each helicity configuration is taken 
-to be 50\%, in the absence of knowledge of these decays. Additionally, the distribution of each shape in the helicity angle described in Section~\ref{subsec:Hel} is approximated to be $\cos^2(\theta)$ for the longitudinally polarized shapes (010) and $\sin^2(\theta)$ for the transversely (101). The fraction in each bin for 010 or 101 is taken from the appropriate integrals of these assumed distributions. 
-The four shapes for $\B^+ \to \Dsp^{*} \phi$ are shown in Fig.~\ref{fig:B2DsPhi_DsPhi_partreco}.
-The parameters of these shapes are treated in exactly the same way as those for the $\B^+ \to \Dsp D^{*0}$ and $\B^+ \to \Dsp^{*} D^{0}$ shapes: the parameters are fixed in the fit to data, except for the global shift parameter and the relative double peak heights, and the experimental resolution is taken from the signal double Crystal Ball shape.
+\item \textbf{\decay{\Bp}{(\decay{\Dssp}{\Dsp[\Pgamma]})\phiz} and \decay{\Bp}{(\decay{\Dssp}{\Dsp[\piz]})\phiz}:} the decays of \Bp mesons to an excited \Dsp meson and a \phiz meson could contribute to the $m(\Dsp\phiz)$ spectrum at low invariant masses when either a \piz or \Pgamma is missed from the excited meson decay. The resulting invariant mass distribution depends on the mass and spin of the non-reconstructed particle, as well as the helicity state of the \Dssp meson. This background involves the decay of a pseudo-scalar meson to two vector mesons, hence, as a result of angular momentum conservation, there are three helicity states of the \Dssp meson to consider. These are labelled \emph{001}, \emph{010} and \emph{100}. The two transversely polarised states, 100 and 001, have identical invariant mass distributions and are therefore referred collectively as \emph{101}. This leads to a total of four contributions to consider for \decay{\Bp}{\Dssp\phiz} decays. These can be parametrised by parabolas convolved with resolution Gaussians in a similar way to the partially reconstructed backgrounds to the normalisation channel.
+These each share the same functional form
+\begin{equation}
+f(m|a,b,\sigma,\xi, \delta) = \int_{a}^{b} g(\mu,a,b) \left( \frac{1-\xi}{b-a}\mu + \frac{b\xi-a}{b-a} \right) e^{-\frac{-(\mu-(m-\delta))^{2}}{2\sigma^{2}}} d\mu.
+\label{eq:DsPhi_DsstarPhi_shapes}
+\end{equation}
+where $g(\mu,a,b)$ represents the parabola for each of the four shapes. The parabolas used for each contribution are listed in Table~\ref{tab:DsPhi_DsstarPhi_parabolas} and the resulting invariant mass distributions are shown in Fig.\ref{eq:DsPhi_DsstarPhi_shapes}.
 
-\item \decay{\Bsb}{\Dsp\Km\Kstarz}: 
-\item \decay{\Bsb}{\Dssp\Km\Kstarz}: Fig.~\ref{fig:B2DsPhi_signal_fits}.
-\item \decay{\Bsb}{\Dsp\Dsm}: 
-\item \decay{\Bzb}{\Dsp\Dm}: 
-\item \decay{\Bsb}{\Dssp\Dsm}: 
+This decay is unobserved, therefore the relative contribution to this decay in nature from the \emph{101} and \emph{010} helicty states is not known. The total PDF for this contribution is made by weighting the \piz and \Pgamma contributions by their corresponding branching fractions, and by assuming that the \emph{101} and \emph{010} helicty states contribute with equally magnitudes. This assumption is varied and included as a source of systematic uncertainty in the $\BF(\decay{\Bp}{\Dsp\phiz})$ determination.
 \end{description}
-}
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\begin{table}[h]
+   \centering
+   \begin{tabular}{ c c c c c }
+      \hline
+      Missed particle   & Helicity  & $g(\mu,a,b)$                                      & $a$ (\mevcc) & $b$ (\mevcc)  \\
+      \hline
+      \piz              & 010       & $\left(\mu - \frac{a+b}{2}\right)^{2}$            & 5026.8       & 5124.8         \\
+      \piz              & 101       & $-(\mu - a)(\mu-b)$                               & 5026.8       & 5124.8         \\
+      \Pgamma           & 010       & $-(\mu - a)(\mu-b)$                               & 4936.4       & 5220.6         \\
+      \Pgamma           & 101       & $(\mu - \frac{a+b}{2})^{2} +(\frac{a+b}{2})^{2} $ & 4936.4       & 5220.6         \\
+      \hline
+   \end{tabular}
+   \caption{Parabolas.} 
+   \label{tab:DsPhi_DsstarPhi_parabolas}  
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -418,6 +450,25 @@ The parameters of these shapes are treated in exactly the same way as those for 
     \label{fig:B2DsPhi_DsPhi_partreco}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+{\color{Blue}
+
+
+\begin{description}
+\item The $\B^+ \to \Dsp^{*} \phi$ decay contributes a partially reconstructed background to the $\Bu \to \Dsp \phi$ signal mode.
+Since this decay has a vector-vector final state, the helicity state of the decay products is not fixed, and is unknown as this mode has not yet been observed.
+
+ Additionally, the distribution of each shape in the helicity angle described in Section~\ref{subsec:Hel} is approximated to be $\cos^2(\theta)$ for the longitudinally polarized shapes (010) and $\sin^2(\theta)$ for the transversely (101). The fraction in each bin for 010 or 101 is taken from the appropriate integrals of these assumed distributions. 
+
+\item \decay{\Bsb}{\Dsp\Km\Kstarz}: 
+\item \decay{\Bsb}{\Dssp\Km\Kstarz}:
+\item \decay{\Bsb}{\Dsp\Dsm}: 
+\item \decay{\Bzb}{\Dsp\Dm}: 
+\item \decay{\Bsb}{\Dssp\Dsm}: 
+\end{description}
+}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
