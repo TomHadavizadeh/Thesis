@@ -353,16 +353,18 @@ An extra constraint is added to the signal and normalisation DCB functions with 
 \subsection{Partially reconstructed backgrounds}
 \label{sec:B2DsPhi_partrecocomps}
 
-The accurate parametrisation of partially reconstructed backgrounds is particularly important in the search for \decay{\Bp}{\Dsp\phiz} decays as many different processes are found to contribute to the low invariant mass range of the $m(\Dsp\phiz)$ spectrum. These processes involve decays of \Bs, \Bz or \Bp mesons in which the five final state tracks reconstructed in the search for \decay{\Bp}{\Dsp\phiz} decays are only a subset of the background modes final state. 
-Typically, processes in which a low momentum pion or photon has not been reconstructed are found closest in mass to the signal decays. Decays of \Bs mesons are particularly dominate as the \Bs meson has a larger mass than the \Bp meson.   
+The accurate parametrisation of partially reconstructed backgrounds is particularly important in the search for \decay{\Bp}{\Dsp\phiz} decays as many different processes contribute to the low invariant mass range of the $m(\Dsp\phiz)$ spectrum. These processes involve decays of \Bs, \Bz or \Bp mesons in which the five final state tracks reconstructed in the search for \decay{\Bp}{\Dsp\phiz} decays are only a subset of the background modes final state. 
+Typically, processes in which a low momentum pion or photon has not been reconstructed are found closest in mass to the signal decays. Decays of \Bs mesons are particularly dominant as the \Bs meson has a larger mass than the \Bp meson.   
 
 
 \subsubsection{Backgrounds to the normalisation channel}
 
-The modes \decay{\Bp}{\Dsp\Dstarzb} and \decay{\Bp}{\Dssp\Dzb} can both contribute as partially reconstructed backgrounds to the \decay{\Bp}{\Dsp\Dzb} normalisation mode. These are parametrised using the same PDFs as in the search for \decay{\Bp}{\Ds\Kp\Km} decays, detailed in Sec.~\ref{sec:B2DsKK_norm_partreco}. As the invariant mass fit range is wider than in the fit to \decay{\Bp}{\Dsp\Kp\Km} candidates, an extra contribution is included to account for partially reconstructed \decay{\Bp}{\Dssp\Dstarzb} decays at lower invariant masses.
+The modes \decay{\Bp}{\Dsp\Dstarzb} and \decay{\Bp}{\Dssp\Dzb} can both contribute as partially reconstructed backgrounds to the \decay{\Bp}{\Dsp\Dzb} normalisation mode. These are parametrised using the same PDFs as in the search for \decay{\Bp}{\Ds\Kp\Km} decays, detailed in Sec.~\ref{sec:B2DsKK_norm_partreco}. 
+
+The invariant mass fit range is wider than in the fit to \decay{\Bp}{\Dsp\Kp\Km} candidates, therefore an extra contribution is included in the fit model to account for partially reconstructed \decay{\Bp}{\Dssp\Dstarzb} decays at lower invariant masses.
 
 \begin{description}
-\item \textbf{\decay{\Bp}{(\decay{\Dssp}{\Dsp[\piz]})\Dzb} and \decay{\Bp}{\Dsp(\decay{\Dstarzb}{\Dzb[\piz]})}:} these components are modelled by a parabola convolved with a resolution Gaussian. The parabola has a minimum in the centre and doesn't extend beyond endpoint $a$ and $b$
+\item \textbf{\decay{\Bp}{(\decay{\Dssp}{\Dsp[\piz]})\Dzb} and \decay{\Bp}{\Dsp(\decay{\Dstarzb}{\Dzb[\piz]})}:} these components are modelled by a parabola convolved with a resolution Gaussian. The parabola has a minimum in the centre and doesn't extend beyond endpoints $a$ and $b$
 \begin{equation}
 f(m|a,b,\sigma,\xi, \delta) = \int_{a}^{b}\left(\mu-\frac{a+b}{2}\right)^{2} \left( \frac{1-\xi}{b-a}\mu + \frac{b\xi-a}{b-a} \right) e^{-\frac{-(\mu-(m-\delta))^{2}}{2\sigma^{2}}} d\mu.
 \label{eq:DsPhi_RooHorns}
@@ -453,21 +455,20 @@ This decay is unobserved, therefore the relative contribution to this decay in n
 
 
 {\color{Blue}
-
-
-\begin{description}
-\item The $\B^+ \to \Dsp^{*} \phi$ decay contributes a partially reconstructed background to the $\Bu \to \Dsp \phi$ signal mode.
+The $\B^+ \to \Dsp^{*} \phi$ decay contributes a partially reconstructed background to the $\Bu \to \Dsp \phi$ signal mode.
 Since this decay has a vector-vector final state, the helicity state of the decay products is not fixed, and is unknown as this mode has not yet been observed.
 
- Additionally, the distribution of each shape in the helicity angle described in Section~\ref{subsec:Hel} is approximated to be $\cos^2(\theta)$ for the longitudinally polarized shapes (010) and $\sin^2(\theta)$ for the transversely (101). The fraction in each bin for 010 or 101 is taken from the appropriate integrals of these assumed distributions. 
-
-\item \decay{\Bsb}{\Dsp\Km\Kstarz}: 
-\item \decay{\Bsb}{\Dssp\Km\Kstarz}:
-\item \decay{\Bsb}{\Dsp\Dsm}: 
-\item \decay{\Bzb}{\Dsp\Dm}: 
-\item \decay{\Bsb}{\Dssp\Dsm}: 
-\end{description}
+Additionally, the distribution of each shape in the helicity angle described in Section~\ref{subsec:Hel} is approximated to be $\cos^2(\theta)$ for the longitudinally polarized shapes (010) and $\sin^2(\theta)$ for the transversely (101). The fraction in each bin for 010 or 101 is taken from the appropriate integrals of these assumed distributions. 
 }
+
+\begin{description}
+\item \textbf{\decay{\Bsb}{\Dsp\Km\Kstarz}:} 
+\item \textbf{\decay{\Bsb}{\Dssp\Km\Kstarz}:}
+\item \textbf{\decay{\Bsb}{\Dsp\Dsm}:} 
+\item \textbf{\decay{\Bzb}{\Dsp\Dm}:} 
+\item \textbf{\decay{\Bsb}{\Dssp\Dsm}:} 
+\end{description}
+
 
 
 
@@ -495,15 +496,16 @@ Since this decay has a vector-vector final state, the helicity state of the deca
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-{\color{Red}
-\begin{itemize}
-\item plots of partreco shapes
-\end{itemize}
-}
 
 \subsection{Combinatorial  backgrounds}
 \label{sec:B2DsPhi_combcomps}
 
+Combinations of unrelated tracks form a background to the signal decays and extend across the entire fitted \Bp meson mass range. 
+This component is parametrised with an decaying exponential function 
+\begin{equation}
+f(m|c) = e^{-m\times c},
+\end{equation}
+where the slope is controlled by the parameter $c$ and $m$ is the observable \Bp meson invariant mass. 
 
 
 
