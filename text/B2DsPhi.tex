@@ -165,6 +165,7 @@ The $a_{0}^{0}(980)$ resonance is a light unflavoured $J^{P} = 0^{+}$ state with
 %%%%%%%%%%%%%
 
 \subsubsection{The $f_{0}^{0}(1370)$ resonance}
+
 %%%%%%%%%%%%%
 \begin{figure}[!h]
    \centering   
@@ -454,14 +455,14 @@ The $a_{0}^{0}(980)$ resonance is a light unflavoured $J^{P} = 0^{+}$ state with
 
 \subsubsection{Backgrounds to the normalisation channel}
 
-The modes \decay{\Bp}{\Dsp\Dstarzb} and \decay{\Bp}{\Dssp\Dzb} can both contribute partially reconstructed backgrounds to the \decay{\Bp}{\Dsp\Dzb} normalisation mode. These are parametrised using the same probability density functions as in the search for \decay{\Bp}{\Ds\Kp\Km} decays, detailed in Sec.~\ref{sec:B2DsKK_norm_partreco}.
+The modes \decay{\Bp}{\Dsp\Dstarzb} and \decay{\Bp}{\Dssp\Dzb} can both contribute partially reconstructed backgrounds to the \decay{\Bp}{\Dsp\Dzb} normalisation mode. These are parametrised using the same probability density functions as in the search for \decay{\Bp}{\Ds\Kp\Km} decays, detailed in Sec.~\ref{sec:B2DsKK_norm_partreco}. As the invariant mass fit range is wider than in the fit to \decay{\Bp}{\Dsp\Kp\Km} candidates, an extra shape is included for partially reconstructed \decay{\Bp}{\Dssp\Dstarzb} decays at lower invariant masses.
 
 \begin{description}
 \item \textbf{\decay{\Bp}{(\decay{\Dssp}{\Dsp[\piz]})\Dzb} and \decay{\Bp}{\Dsp(\decay{\Dstarzb}{\Dzb[\piz]})}:} these components are modelled by a parabola convolved with a resolution Gaussian. The parabola has a minimum in the centre and doesn't extend beyond endpoint $a$ and $b$
 \begin{equation}
 f(m|a,b,\sigma,\xi, \delta) = \int_{a}^{b}\left(\mu-\frac{a+b}{2}\right)^{2} \left( \frac{1-\xi}{b-a}\mu + \frac{b\xi-a}{b-a} \right) e^{-\frac{-(\mu-(m-\delta))^{2}}{2\sigma^{2}}} d\mu.
 \end{equation}
-These components are shown by the black lines in in Fig.~\ref{fig:B2DsPhi_DsD0_partreco}.
+These components are shown by the black lines in Fig.~\ref{fig:B2DsPhi_DsD0_partreco}.
 
 \item \textbf{\decay{\Bp}{(\decay{\Dssp}{\Dsp[\Pgamma]})\Dzb} and \decay{\Bp}{\Dsp(\decay{\Dstarzb}{\Dzb[\Pgamma]})}:} these components are modelled by a parabola convolved with a resolution Gaussian. The parabola has a maximum in the centre and doesn't extend beyond endpoints $a$ and $b$
 \begin{equation}
@@ -469,48 +470,9 @@ f(m|a,b,\sigma,\xi, \delta) = \int_{a}^{b} -(\mu-a)(\mu-b)\left( \frac{1-\xi}{b-
 \end{equation}
 These components are shown by the blue lines in Fig.~\ref{fig:B2DsPhi_DsD0_partreco}.
 
-\item \textbf{\decay{\Bp}{\Dssp\Dstarzb}:} A shape has been added to the fit model to account for $\B^+ \to \Dsp^{*} D^{*0}$ events where two soft neutral particles have missed, one from each excited $D$ meson decay. In principle this shape should be created from eight individual contribution shapes as either $D$ meson can miss a $\gamma$ or $\pi^{0}$ and there are two distinguishable helicity combinations for either. We approximate this shape by a single \texttt{RooHILLdini} shape, with a similar set of parameters as listed in Table~\ref{tab:DDstar_paramters}. The kinematic endpoints are estimated by combining the effect of missing a $\pi^{0}$ and a $\gamma$, the dominant shape given the branching fractions of $D^{*0} \to D^{0} [\pi^{0}/\gamma]$ and $D_{s}^{*} \to D_{s} [\pi^{0}/\gamma]$. These endpoints and the choice of shape are varied and the effect on the measured branching fraction included as a systematic uncertainty. 
+\item \textbf{\decay{\Bp}{\Dssp\Dstarzb}:} {\color{Blue} A shape has been added to the fit model to account for $\B^+ \to \Dsp^{*} D^{*0}$ events where two soft neutral particles have missed, one from each excited $D$ meson decay. In principle this shape should be created from eight individual contribution shapes as either $D$ meson can miss a $\gamma$ or $\pi^{0}$ and there are two distinguishable helicity combinations for either. We approximate this shape by a single \texttt{RooHILLdini} shape, with a similar set of parameters as listed in Table~\ref{tab:DDstar_paramters}. The kinematic endpoints are estimated by combining the effect of missing a $\pi^{0}$ and a $\gamma$, the dominant shape given the branching fractions of $D^{*0} \to D^{0} [\pi^{0}/\gamma]$ and $D_{s}^{*} \to D_{s} [\pi^{0}/\gamma]$. These endpoints and the choice of shape are varied and the effect on the measured branching fraction included as a systematic uncertainty. }
 
 \end{description}
-
-% Each decay requires two different shapes to model it accurately, due to the two possible decay modes of the excited $D$ meson resonance.
-% The $\B^+ \to \Dsp D^{*0}$ decay with $D^{*0} \to D^0 \pi^0$ (branching fraction of 62\%) is modelled with a \texttt{RooHORNSdini} shape.
-% The $\B^+ \to \Dsp D^{*0}$ decay with $D^{*0} \to D^0 \gamma$ (branching fraction of 38\%) is modelled with a \texttt{RooHILLdini} shape.
-% These two shapes are then summed together according to the ratio of $D^{*0}$ branching fractions, taking into account also the percentage of each decay that is cut away by 
-% the lower bound on the $\Dsp \Dzb$ mass in the fit.
-% The $\B^+ \to \Dsp^{*} D^{0}$ decay with $\Dsp^{*} \to \Dsp \pi^0$ (branching fraction of 6\%) is modelled with a \texttt{RooHORNSdini} shape.
-% The $\B^+ \to \Dsp^{*} D^{0}$ decay with $\Dsp^{*} \to \Dsp \gamma$ (branching fraction of 94\%) is modelled with a \texttt{RooHILLdini} shape.
-% These two shapes are then summed together in the same way as the two $\B^+ \to \Dsp D^{*0}$ shapes.
-% The four shapes for $\B^+ \to \Dsp D^{*0}$ and $\B^+ \to \Dsp^{*} D^{0}$ are shown in Fig.~\ref{fig:B2DsPhi_DsD0_partreco}.
-% The parameters of these shapes are fixed in the fit to data, except for two. Firstly a global shift parameter (allowing for the fact that the fitted mean $B^+$ mass may differ from the nominal mass used in the simulation) is left free, but is common to all the partially reconstructed background shapes. Secondly a parameter that allows the relative heights of the two peaks in the double peaked structures to differ is left floating. This is also common to all partially reconstructed shapes. This allows for any selection dependence that might affect the two peaks differently.
-% The experimental resolution for these shapes is taken to be the effective resolution of the signal double Crystal Ball shape (\ie the average of the two Crystal Ball 
-% widths, weighted with their relative normalisation). These parameters are summarised in Table~\ref{tab:DDstar_paramters}.
-
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \begin{table}[h]
-% \centering
-% \caption{Paramter values used in the analytical shapes for the $\B^+ \to \Dsp D^{*0}$, $\B^+ \to \Dsp^{*} D^{0}$ and $\B^+ \to \Dsp^{*} \phi$ PDFs. The parameters R and f are set to one as only a single resolution Gaussian is used.} 
-% \label{tab:DDstar_paramters} 
-% \begin{tabular}{ c l c l }
-% \hline
-% Parameter & Description & State & Source \\
-% \hline
-% $a$         & Lower kinematic endpoint     & Constant & Kinematics                  \\
-% $b$         & Upper kinematic endpoint     & Constant & Kinematics                  \\ 
-% $\sigma$    & Width of the peaks           & Fixed    & Set to effective            \\ 
-%             &                              &          & signal resolution           \\  
-% $R$         & Relative width of two        & Constant & Value set to 1.0            \\
-%             & resolution Gaussians         &          & (single resolution Gaussian)\\  
-% $f$         & Fractional amounts of main   & Constant & Value set to 1.0            \\
-%             & resolution Gaussian          &          &(single resolution Gaussian) \\ 
-% $\xi$       & Relative height of two peaks & Floating & Shared between all shapes   \\
-% $\delta$    & Uniform mass offset          & Floating & Shared between all shapes   \\
-% \hline
-% \end{tabular}
-% \end{table}
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
