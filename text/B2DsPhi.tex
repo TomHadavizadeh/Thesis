@@ -17,8 +17,8 @@ The branching fraction $\BF(\decay{\Bp}{\Dsp\phiz})$ is then determined by multi
 
 \section{Fit strategy}
 \label{sec:B2DsPhi_fitstrategy}
-The strategy used to search for \decay{\Bp}{\Dsp\phiz} is more complicated than the method used to search for \decay{\Bp}{\Dsp\Kp\Km} decays as outlined in Chapter~\ref{ch:B2DsKK}. This is necessary to allow various different signal and background components to be distinguished. In particular, the majority of \decay{\Bp}{\Dsp\Kp\Km} decays now act as a background as those not proceeding via the \phiz resonance must be distinguished from \decay{\Bp}{\Dsp\phiz} decays. 
-The ratio of \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Dzb} yields is determined using a simultaneous unbinned maximum likelihood fit in a number of different categories. Three sets of categories are used, separating the candidates according to \Dsp meson decay mode, invariant mass of \Kp\Km pair $m(\Kp\Km)$ and the cosine of an angle $\cos\theta_{K}$. The details and definitions of these categories are listed in Sec~\ref{sec:B2DsPhi_fit_cats}. 
+The strategy used to search for \decay{\Bp}{\Dsp\phiz} is more complicated than the method used to search for \decay{\Bp}{\Dsp\Kp\Km} decays as outlined in Chapter~\ref{ch:B2DsKK}. This is necessary to allow various different signal and background components to be distinguished. In particular, the majority of \decay{\Bp}{\Dsp\Kp\Km} decays now act as a background; those not proceeding via the \phiz resonance must be distinguished from \decay{\Bp}{\Dsp\phiz} decays. 
+The ratio of \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Dzb} yields is determined using a simultaneous unbinned maximum likelihood fit in a number of different categories. Three sets of categories are used, separating the candidates according to \Dsp meson decay mode, invariant mass of \Kp\Km pair, $m(\Kp\Km)$, and the cosine of an angle $\cos\theta_{K}$. The details and definitions of these categories are listed in Sec~\ref{sec:B2DsPhi_fit_cats}. 
 The total extended NLL for this fit is created from the sum of each NLL in each of the categories
 \begin{equation}
 -\log\mathcal{L}(n_{0}...n_{j},\vec{p}) = \sum_{\alpha} \sum_{\beta} \sum_{\gamma} \left(-\log\mathcal{L^{\alpha,\beta,\gamma}}(n_{0}^{\alpha,\beta,\gamma}...n_{j}^{\alpha,\beta,\gamma},\vec{p}) \right)
@@ -58,7 +58,7 @@ Three distinct ranges of $m(\Kp\Km)$ invariant mass are used to split the candid
         \centering
         \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/MC_Distributions_angle_B2DsPhi.pdf}
     \end{subfigure}
-    \caption{Simulation}
+    \caption{The distributions of $m(\Kp\Km)$ (left) and $\cos\theta_{K}$ (right) in simulated \decay{\Bp}{\Dsp\phiz} decays. The vertical blue dashed lines represent the boundaries between categories defined in Sec.~\ref{sec:B2DsPhi_fit_cats}. The vertical red lines represent the mass window applied to candidates; those outside the red lines are not included in the data set.}
     \label{fig:B2DsPhi_hel_mass_MC}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -75,7 +75,7 @@ The $\decay{\Bp}{\Dsp\phiz}$ decay involves the decay of a pseudoscalar particle
 \begin{figure}[!h]
     \centering
     \includegraphics[width=0.48\textwidth]{figs/B2DsPhi/helicityangle.pdf}
-    \caption{Helicity angle}
+    \caption{The angle $\theta_{K}$ (referred to as the helicity angle) is defined to be the angle that the kaon mesons forms with the \Bp meson momentum in the \phiz rest frame.}
     \label{fig:B2DsPhi_helicity_angle}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -103,136 +103,232 @@ This helicity angle is constructed using the momentum of the decay products calc
 \label{sec:B2DsPhi_B2DsKKModel}
 The search for \decay{\Bp}{\Dsp\phiz} decays includes a component for \decay{\Bp}{\Dsp\Kp\Km} decays that didn't proceed via a \phiz meson. This is necessary as the search documented in Chapter~\ref{ch:B2DsKK} determined there is a non-zero contribution from these decays in the range of $m(\Kp\Km)$ invariant mass considered here (Fig~\ref{fig:B2DsKK_twobodyprojections}). To avoid overestimating \decay{\Bp}{\Dsp\phiz} signal yield, separate components are included in the fit model for the \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays. Although the invariant mass distributions of these contributions are identical, they can still be disentangled by exploiting the different fractions of these decays expected in each of the helicity angle and $m(\Kp\Km)$ categories. 
 The fractions for the \decay{\Bp}{\Dsp\phiz} signal decays as listed in Table~\ref{tab:signal_ratios} show the decays are concentrated in the \emph{inner \phiz mass category} with $|\cos{\theta_{K}} |> 0.4$. 
-To determine similar fractions for \decay{\Bp}{\Dsp\Kp\Km} decays a package called is used to generate a number of simulation samples for different intermediate resonance models.
+To determine similar fractions for \decay{\Bp}{\Dsp\Kp\Km} decays the \laurapp package {\color{Red}(cite)} is used to generate a number of simulation samples for different intermediate resonance models.
+
+Only resonances in the \Kp\Km system are considered as no significant structure is observed in the $m(\Dsp\Km)$ distribution in Fig.~\ref{fig:B2DsKK_twobodyprojections}.  
+The generated samples are described in the following sections.
+
+\subsubsection{The $\phi(1020)$ resonance} 
+Decays proceeding via a $\phiz(1020)$ are produced as a crosscheck. As the simulations generated with \laurapp have not been reconstructed with the full \lhcb detector model, this sample is compared to the existing full simulation samples. The differences in between the fraction of the decays in the different $m(\Kp\Km)$ and $\cos\theta_{K}$ categories in the two samples are taken as a proxy for the potential level of bias introduced by using these generator level samples instead of full simulation. The distribution of these simulated decays in $m(\Kp\Km)$ and $\cos\theta_{K}$ are shown in Fig.~\ref{fig:DsKK_model_phi1020}. This figure also include the Dalitz plot distribution of the decays parametrised with the variables $m^{2}(\Dsp\Km)$ and $m^{2}(\Kp\Km)$.
+This resonance is generated with a Relativistic Breit-Wigner line shape~\cite{RelBWPhysRev.49.519}.
+%%%%%%%%%%%%%
+\begin{figure}[!h]
+   \centering   
+   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/phi_phi_mass.pdf}
+   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/phi_Helicity.pdf}
+   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/phi_Dalitz_plot.pdf}
+   \caption{The distribution of $m(\Kp\Km)$ (left), Dalitz plot (middle) and the helicity angle $\cos\theta_{K}$ for generated for the $\phiz(1020)$ resonance.} 
+   \label{fig:DsKK_model_phi1020}   
+\end{figure}
+%%%%%%%%%%%%%
+
+\subsubsection{Non-resonant decays}
+
+In addition to \Kp\Km resonances, a non-resonant model is considered. This model is defined to have a uniform amplitude across the allowed phase-space. The distribution in $m(\Kp\Km)$ of \decay{\Bp}{\Dsp\Kp\Km} decays in Fig.~\ref{fig:B2DsKK_twobodyprojections} is not consistent with this model as there are no candidates above $m(\Kp\Km) \sim 1900\mevcc$. However, this component is included in this study for comparative purposes. The distributions of decays generated with this flat model are shown in Fig.~\ref{fig:DsKK_model_NR}. 
+
+%%%%%%%%%%%%%
+\begin{figure}[!h]
+   \centering   
+   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/NR_phi_mass.pdf}
+   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/NR_Helicity.pdf}
+   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/NR_Dalitz_plot.pdf}
+   \caption{The distribution of $m(\Kp\Km)$ (left), Dalitz plot (middle) and the helicity angle $\cos\theta_{K}$ for generated for non-resonant decays.} 
+   \label{fig:DsKK_model_NR}   
+\end{figure}
+%%%%%%%%%%%%%
+
+\subsubsection{The $f_{0}^{0}(980)$ resonance}
+
+The $f_{0}^{0}(980)$ resonance is a light unflavoured $J^{P} = 0^{+}$ state with mass $990\pm20\mevcc$ and width $10-100\mevcc$~\cite{PDG2016}. It has been observed to decay to $\Kp\Km$ making it a suitable resonance to consider. Although it's mass is at the lower end of the range considered here, it's significant width allows it to contribute at higher invariant masses. This component is modelled with the Flatt\'{e} line shape~\cite{FLATTE1976224} and the relevant distributions shown in Fig.~\ref{fig:DsKK_model_f0980}.
+%%%%%%%%%%%%%
+\begin{figure}[!h]
+   \centering   
+   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f0_phi_mass.pdf}
+   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f0_Helicity.pdf}
+   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f0_Dalitz_plot.pdf}
+   \caption{The distribution of $m(\Kp\Km)$ (left), Dalitz plot (middle) and the helicity angle $\cos\theta_{K}$ for generated for the $f_{0}^{0}(980)$ resonance.} 
+   \label{fig:DsKK_model_f0980}   
+\end{figure}
+%%%%%%%%%%%%%
+
+\subsubsection{The $a_{0}^{0}(980)$ resonance}
+The $a_{0}^{0}(980)$ resonance is a light unflavoured $J^{P} = 0^{+}$ state with mass $980\pm20\mevcc$ and width $50-100\mevcc$ and has been observed to decay to $\PK\Kb$ final states~\cite{PDG2016}. This resonance is also modelled with the Flatt\'{e} line shape and the relevant distributions are shown in Fig~\ref{fig:DsKK_model_a0980}.
+%%%%%%%%%%%%%
+\begin{figure}[!h]
+   \centering   
+   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/a0_phi_mass.pdf}
+   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/a0_Helicity.pdf}
+   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/a0_Dalitz_plot.pdf}
+   \caption{The distribution of $m(\Kp\Km)$ (left), Dalitz plot (middle) and the helicity angle $\cos\theta_{K}$ for generated for the $a_{0}^{0}(980)$ resonance.} 
+   \label{fig:DsKK_model_a0980}   
+\end{figure}
+%%%%%%%%%%%%%
+
+\subsubsection{The $f_{0}^{0}(1370)$ resonance}
+%%%%%%%%%%%%%
+\begin{figure}[!h]
+   \centering   
+   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f0_1370_phi_mass.pdf}
+   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f0_1370_Helicity.pdf}
+   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f0_1370_Dalitz_plot.pdf}
+   \caption{The distribution of $m(\Kp\Km)$ (left), Dalitz plot (middle) and the helicity angle $\cos\theta_{K}$ for generated for the $f_{0}^{0}(1370)$ resonance.} 
+   \label{fig:DsKK_model_f01370}   
+\end{figure}
+%%%%%%%%%%%%%
+
+\subsubsection{The $f_{2}^{0}(1270)$ resonance}
+%%%%%%%%%%%%%
+\begin{figure}[!h]
+   \centering   
+   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f2_phi_mass.pdf}
+   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f2_Helicity.pdf}
+   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f2_Dalitz_plot.pdf}
+   \caption{The distribution of $m(\Kp\Km)$ (left), Dalitz plot (middle) and the helicity angle $\cos\theta_{K}$ for generated for the $f_{2}^{0}(1270)$ resonance.} 
+   \label{fig:DsKK_model_f21270}   
+\end{figure}
+%%%%%%%%%%%%%
+
+
+\subsubsection{The $a_{2}^{0}(1320)$ resonance}
+%%%%%%%%%%%%%
+\begin{figure}[!h]
+   \centering   
+   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/a2_1320_phi_mass.pdf}
+   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/a2_1320_Helicity.pdf}
+   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/a2_1320_Dalitz_plot.pdf}
+   \caption{The distribution of $m(\Kp\Km)$ (left), Dalitz plot (middle) and the helicity angle $\cos\theta_{K}$ for generated for the $a_{2}^{0}(1320)$ resonance.} 
+   \label{fig:DsKK_model_a21320}   
+\end{figure}
+%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 % Resonance models 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-\begin{figure}[!ht]
-    \centering
+% \begin{figure}[!ht]
+%     \centering
         
-    %%% Row 1 %%%
-    \begin{subfigure}[t]{0.32\textwidth}    
-        \centering 
-        \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/phi_phi_mass.pdf}
-    \end{subfigure}
-    \begin{subfigure}[t]{0.32\textwidth}    
-        \centering 
-        \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/phi_Dalitz_plot.pdf}
-        \caption{$\phi(1020)$}
-    \end{subfigure}
-    \begin{subfigure}[t]{0.32\textwidth}    
-        \centering 
-        \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/phi_Helicity.pdf}
-    \end{subfigure}\\
+%     %%% Row 1 %%%
+%     \begin{subfigure}[t]{0.32\textwidth}    
+%         \centering 
+%         \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/phi_phi_mass.pdf}
+%     \end{subfigure}
+%     \begin{subfigure}[t]{0.32\textwidth}    
+%         \centering 
+%         \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/phi_Dalitz_plot.pdf}
+%         \caption{$\phi(1020)$}
+%     \end{subfigure}
+%     \begin{subfigure}[t]{0.32\textwidth}    
+%         \centering 
+%         \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/phi_Helicity.pdf}
+%     \end{subfigure}\\
 
-    %%% Row 2 %%%
-    \begin{subfigure}[t]{0.32\textwidth}    
-        \centering 
-        \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/NR_phi_mass.pdf}
-    \end{subfigure}
-    \begin{subfigure}[t]{0.32\textwidth}    
-        \centering 
-        \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/NR_Dalitz_plot.pdf}
-        \caption{Non-resonant}
-    \end{subfigure}
-    \begin{subfigure}[t]{0.32\textwidth}    
-        \centering 
-        \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/NR_Helicity.pdf}
-    \end{subfigure}\\
+%     %%% Row 2 %%%
+%     \begin{subfigure}[t]{0.32\textwidth}    
+%         \centering 
+%         \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/NR_phi_mass.pdf}
+%     \end{subfigure}
+%     \begin{subfigure}[t]{0.32\textwidth}    
+%         \centering 
+%         \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/NR_Dalitz_plot.pdf}
+%         \caption{Non-resonant}
+%     \end{subfigure}
+%     \begin{subfigure}[t]{0.32\textwidth}    
+%         \centering 
+%         \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/NR_Helicity.pdf}
+%     \end{subfigure}\\
 
-    %%% Row 3 %%%
-    \begin{subfigure}[t]{0.32\textwidth}    
-        \centering 
-        \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/f0_phi_mass.pdf}
-    \end{subfigure}
-    \begin{subfigure}[t]{0.32\textwidth}    
-        \centering 
-        \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/f0_Dalitz_plot.pdf}
-        \caption{$f_{0}^{0}(980)$}
-    \end{subfigure}
-    \begin{subfigure}[t]{0.32\textwidth}    
-        \centering 
-        \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/f0_Helicity.pdf}
-    \end{subfigure}\\
+%     %%% Row 3 %%%
+%     \begin{subfigure}[t]{0.32\textwidth}    
+%         \centering 
+%         \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/f0_phi_mass.pdf}
+%     \end{subfigure}
+%     \begin{subfigure}[t]{0.32\textwidth}    
+%         \centering 
+%         \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/f0_Dalitz_plot.pdf}
+%         \caption{$f_{0}^{0}(980)$}
+%     \end{subfigure}
+%     \begin{subfigure}[t]{0.32\textwidth}    
+%         \centering 
+%         \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/f0_Helicity.pdf}
+%     \end{subfigure}\\
      
-    %%% Row 4 %%%
-    \begin{subfigure}[t]{0.32\textwidth}    
-        \centering 
-        \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/a0_phi_mass.pdf}
-    \end{subfigure}
-    \begin{subfigure}[t]{0.32\textwidth}    
-        \centering 
-        \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/a0_Dalitz_plot.pdf}
-        \caption{$a_{0}^{0}(980)$}
-    \end{subfigure}
-    \begin{subfigure}[t]{0.32\textwidth}    
-        \centering 
-        \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/a0_Helicity.pdf}
-    \end{subfigure}\\ 
+%     %%% Row 4 %%%
+%     \begin{subfigure}[t]{0.32\textwidth}    
+%         \centering 
+%         \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/a0_phi_mass.pdf}
+%     \end{subfigure}
+%     \begin{subfigure}[t]{0.32\textwidth}    
+%         \centering 
+%         \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/a0_Dalitz_plot.pdf}
+%         \caption{$a_{0}^{0}(980)$}
+%     \end{subfigure}
+%     \begin{subfigure}[t]{0.32\textwidth}    
+%         \centering 
+%         \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/a0_Helicity.pdf}
+%     \end{subfigure}\\ 
 
-    \caption{The distribution of $m(\Kp\Km)$ (left), Dalitz plot (middle) and the helicity angle $\cos\theta_{K}$ for different resonances.} 
-    \label{fig:models_one}   
-\end{figure}
+%     \caption{The distribution of $m(\Kp\Km)$ (left), Dalitz plot (middle) and the helicity angle $\cos\theta_{K}$ for different resonances.} 
+%     \label{fig:models_one}   
+% \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 % Resonance models 2
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-\begin{figure}[!ht]
-    \centering
+% \begin{figure}[!ht]
+%     \centering
 
-    %%% Row 1 %%%
-    \begin{subfigure}[t]{0.32\textwidth}    
-        \centering 
-        \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/f0_1370_phi_mass.pdf}
-    \end{subfigure}
-    \begin{subfigure}[t]{0.32\textwidth}    
-        \centering 
-        \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/f0_1370_Dalitz_plot.pdf}
-        \caption{$f_{0}^{0}(1370)$}  
-    \end{subfigure}
-    \begin{subfigure}[t]{0.32\textwidth}    
-        \centering 
-        \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/f0_1370_Helicity.pdf}
-    \end{subfigure}\\
+%     %%% Row 1 %%%
+%     \begin{subfigure}[t]{0.32\textwidth}    
+%         \centering 
+%         \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/f0_1370_phi_mass.pdf}
+%     \end{subfigure}
+%     \begin{subfigure}[t]{0.32\textwidth}    
+%         \centering 
+%         \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/f0_1370_Dalitz_plot.pdf}
+%         \caption{$f_{0}^{0}(1370)$}  
+%     \end{subfigure}
+%     \begin{subfigure}[t]{0.32\textwidth}    
+%         \centering 
+%         \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/f0_1370_Helicity.pdf}
+%     \end{subfigure}\\
 
-    %%% Row 2 %%%
-    \begin{subfigure}[t]{0.32\textwidth}    
-        \centering 
-        \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/f2_phi_mass.pdf}
-    \end{subfigure}
-    \begin{subfigure}[t]{0.32\textwidth}    
-        \centering 
-        \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/f2_Dalitz_plot.pdf}
-        \caption{$f_{2}^{0}(1270)$}
-    \end{subfigure}
-    \begin{subfigure}[t]{0.32\textwidth}    
-        \centering 
-        \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/f2_Helicity.pdf}
-    \end{subfigure}\\
+%     %%% Row 2 %%%
+%     \begin{subfigure}[t]{0.32\textwidth}    
+%         \centering 
+%         \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/f2_phi_mass.pdf}
+%     \end{subfigure}
+%     \begin{subfigure}[t]{0.32\textwidth}    
+%         \centering 
+%         \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/f2_Dalitz_plot.pdf}
+%         \caption{$f_{2}^{0}(1270)$}
+%     \end{subfigure}
+%     \begin{subfigure}[t]{0.32\textwidth}    
+%         \centering 
+%         \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/f2_Helicity.pdf}
+%     \end{subfigure}\\
    
-    %%% Row 3 %%%
-    \begin{subfigure}[t]{0.32\textwidth}    
-        \centering 
-        \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/a2_1320_phi_mass.pdf}
-    \end{subfigure}
-    \begin{subfigure}[t]{0.32\textwidth}    
-        \centering 
-        \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/a2_1320_Dalitz_plot.pdf}
-        \caption{$a_{2}^{0}(1320)$}
-    \end{subfigure}
-    \begin{subfigure}[t]{0.32\textwidth}    
-        \centering 
-        \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/a2_1320_Helicity.pdf}
-    \end{subfigure}\\
+%     %%% Row 3 %%%
+%     \begin{subfigure}[t]{0.32\textwidth}    
+%         \centering 
+%         \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/a2_1320_phi_mass.pdf}
+%     \end{subfigure}
+%     \begin{subfigure}[t]{0.32\textwidth}    
+%         \centering 
+%         \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/a2_1320_Dalitz_plot.pdf}
+%         \caption{$a_{2}^{0}(1320)$}
+%     \end{subfigure}
+%     \begin{subfigure}[t]{0.32\textwidth}    
+%         \centering 
+%         \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/a2_1320_Helicity.pdf}
+%     \end{subfigure}\\
 
 
 
-    \caption{The distribution of $m(\Kp\Km)$ (left), Dalitz plot (middle) and the helicity angle $\cos\theta_{K}$ for different resonances.} 
-    \label{fig:model_two}   
-\end{figure}
+%     \caption{The distribution of $m(\Kp\Km)$ (left), Dalitz plot (middle) and the helicity angle $\cos\theta_{K}$ for different resonances.} 
+%     \label{fig:model_two}   
+% \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -271,7 +367,6 @@ To determine similar fractions for \decay{\Bp}{\Dsp\Kp\Km} decays a package call
 
 {\color{Red}
 \begin{itemize}
-\item Studies with Laura++
 \item distributions of a number of models
 \item refer to \Dsp\Kp\Km plot
 \item final fraction
