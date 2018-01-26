@@ -414,7 +414,7 @@ The choice of PDF for this component is found to have negligible effect on the d
 
 
 \begin{description}
-\item \textbf{\decay{\Bp}{(\decay{\Dssp}{\Dsp[\Pgamma]})\phiz} and \decay{\Bp}{(\decay{\Dssp}{\Dsp[\piz]})\phiz}:} the decays of \Bp mesons to an excited \Dsp meson and a \phiz meson could contribute to the $m(\Dsp\phiz)$ spectrum at low invariant masses when either a \piz or \Pgamma is missed from the excited meson decay. The resulting invariant mass distribution depends on the mass and spin of the non-reconstructed particle, as well as the helicity state of the \Dssp meson. This background involves the decay of a pseudo-scalar meson to two vector mesons, hence, as a result of angular momentum conservation, there are three helicity states of the \Dssp meson to consider. These are labelled \emph{001}, \emph{010} and \emph{100}. The two transversely polarised states, 100 and 001, have identical invariant mass distributions and are therefore referred collectively as \emph{101}. This leads to a total of four contributions to consider for \decay{\Bp}{\Dssp\phiz} decays. These can be parametrised by parabolas convolved with resolution Gaussians in a similar way to the partially reconstructed backgrounds to the normalisation channel.
+\item \textbf{\decay{\Bp}{(\decay{\Dssp}{\Dsp[\Pgamma]})\phiz} and \decay{\Bp}{(\decay{\Dssp}{\Dsp[\piz]})\phiz}:} the decays of \Bp mesons to an excited \Dsp meson and a \phiz meson could contribute to the $m(\Dsp\phiz)$ spectrum at low invariant masses when either a \piz or \Pgamma is missed from the excited meson decay. The resulting invariant mass distribution depends on the mass and spin of the non-reconstructed particle, as well as the helicity state of the \Dssp meson. This background involves the decay of a pseudo-scalar meson to two vector mesons, hence, as a result of angular momentum conservation, there are three helicity states of the \Dssp meson to consider. These are labelled \emph{001}, \emph{010} and \emph{100}. The two transversely polarised states, \emph{100} and \emph{001}, have identical invariant mass distributions and are therefore referred collectively as \emph{101}. This leads to a total of four contributions to consider for \decay{\Bp}{\Dssp\phiz} decays. These can be parametrised by parabolas convolved with resolution Gaussians in a similar way to the partially reconstructed backgrounds to the normalisation channel.
 These each share the same functional form
 \begin{equation}
 f(m|a,b,\sigma,\xi, \delta) = \int_{a}^{b} g(\mu,a,b) \left( \frac{1-\xi}{b-a}\mu + \frac{b\xi-a}{b-a} \right) e^{-\frac{-(\mu-(m-\delta))^{2}}{2\sigma^{2}}} d\mu.
@@ -499,15 +499,19 @@ Additionally, the distribution of each shape in the helicity angle described in 
 \label{sec:B2DsPhi_combcomps}
 
 Combinations of unrelated tracks form a background to the signal decays and extend across the entire fitted \Bp meson mass range. 
-This component is parametrised with an decaying exponential function 
+This component is parametrised with a decaying exponential function 
 \begin{equation}
 f(m|c) = e^{-m\times c},
 \end{equation}
 where the parameter $c$ controls the slope and $m$ is the observable \Bp meson invariant mass. 
-The combinatorial background is the dominant background below the signal events 
+The combinatorial background is the dominant background under the signal decays, therefore it is important to accurately extrapolate distribution from the high and low mass ranges to the signal range. 
 
+The yields of combinatorial background is allowed to vary freely in each of the separate simultaneous fit categories. To improve the stability of the fit, the single slope parameter, $c$, is shared between all of the categories. In categories with lower statistics, for example the \decay{\Dsp}{\Kp\pim\pip} decay mode, it would be possible for the partially reconstructed backgrounds to be incorrectly assigned to the combinatorial component. This can happen if the exponential slope for that mode gets to large, causing it to `kick up' at low invariant masses. This may bias the signal yield in this mode. Fixing the slope parameter to be the same between the different \Dsp modes and between the signal and normalisation channel allows the lower statistics modes to benefit from those with higher statistics.
 
 \section{Free and constrained parameters}
+
+The fit to \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Dzb} decays contains a total of X free parameters. 
+
 
 \section{Fit validation}
 \label{sec:B2DsPhi_fitstrategy}
