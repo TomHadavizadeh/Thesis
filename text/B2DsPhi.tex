@@ -464,23 +464,15 @@ Additionally, the distribution of each shape in the helicity angle described in 
 }
 
 \begin{description}
-\item \textbf{\decay{\Bsb}{\Dsp\Km\Kstarz}:} this decay can form a background to \decay{\Bp}{\Dsp\phiz} decays when the soft pion from the \decay{\Kstarz}{\Kp\pim} decay is not reconstructed. The lower bound of the fit range is wide enough that a significant fraction of these decays are retained in the fitted data set. A PDF for this component is determined by reconstructing simulated \decay{\Bsb}{\Dsp\Km\Kstarz} decays through the identical reconstruction and selection steps as the signal. The \roofit class \texttt{RooKeysPDF} is used to create a kernel estimation of the partially reconstructed \Bp mass distribution for the candidates passing the selection. This is shown in Fig.~\ref{fig:B2DsPhi_part_reco_shapes}.
+\item \textbf{\decay{\Bsb}{\Dsp\Km\Kstarz}:} this decay can form a background to \decay{\Bp}{\Dsp\phiz} decays when the soft pion from the \decay{\Kstarz}{\Kp\pim} decay is not reconstructed. The lower bound of the fit range is wide enough that a significant fraction of these decays are retained in the fitted data set. A PDF for this component is determined by reconstructing simulated \decay{\Bsb}{\Dsp\Km\Kstarz} decays through the identical reconstruction and selection steps as the signal. The \roofit class \texttt{RooKeysPDF} is used to create a kernel estimation of the partially reconstructed \Bp mass distribution for the candidates passing the selection. This is shown in Fig.~\ref{fig:B2DsPhi_part_reco_shapes}. The fraction of these decays expected in each of the four $m(\Kp\Km)$ and $\cos\theta_{K}$ categories is determined from the simulations samples.
 
-\item \textbf{\decay{\Bsb}{\Dssp\Km\Kstarz}:}
-\item \textbf{\decay{\Bsb}{\Dsp\Dsm}:} 
-\item \textbf{\decay{\Bzb}{\Dsp\Dm}:} 
-\item \textbf{\decay{\Bsb}{\Dssp\Dsm}:} 
+\item \textbf{\decay{\Bsb}{\Dssp\Km\Kstarz}:} this decay similarly forms a background to the signal mode when both a low momentum neutral particle (\piz or \Pgamma) is not reconstructed in the decay of the \Dssp meson, in addition to the low momentum pion from the \Kstarz decay.
+
+\item \textbf{\decay{\Bsb}{\Dsp\Dsm}, \decay{\Bzb}{\Dsp\Dm} and \decay{\Bsb}{\Dssp\Dsm}:} the decays of neutral \B mesons to two charged \D mesons can form a background to the signal decay if a low momentum pion is not reconstructed in one of the charm meson decays. In the case of \decay{\Bsb}{\Dssp\Dsm} decays an additional neutral particle is not reconstructed in the decay of the \Dssp meson.
+The PDFs for these decays are determined from simulated decays that have been processed with the same reconstruction and selection steps as the signal. For \decay{\Bsb}{\Dsp\Dsm} and \decay{\Bsb}{\Dssp\Dsm} decays, the PDF is creating using a kernel estimation using the \roofit \texttt{RooKeysPDF} implementation. Due to the similarities between \decay{\Bsb}{\Dsp\Dsm} and \decay{\Bzb}{\Dsp\Dm} decays, the PDF for the latter is created by using the kernel estimation for \decay{\Bsb}{\Dsp\Dsm} and shifting the shape down in mass by 40\mevcc to account for the kinematic differences. 
+
+The branching fractions for these three decays are measured to be $\BF(\decay{\Bzb}{\Dsp\Dm}) = (7.2 \pm 0.8 ) \times 10^{-3}$, $\BF(\decay{\Bsb}{\Dsp\Dsm}) = (4.4 \pm 0.5 ) \times 10^{-3}$ and $\BF(\decay{\Bsb}{\Dssp\Dsm}) = (1.37 \pm 0.16 ) \%$. Therefore the relative contributions for these three processes are fixed using these branching fractions, estimates of the relative efficiencies for each mode and the production fraction of \Bsb mesons relative to \Bzb mesons, $f_{s}/f_{d}$. This helps to add stability to the fit.   
 \end{description}
-
-
-{
-\color{Red}
-\begin{itemize}
-\item All shapes from kernal estimations are convolved with a Gaussian 
-\item the mean of the gaussian is $\delta$
-\item width is increased to account for resolution differences
-\end{itemize}
-}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -488,11 +480,11 @@ Additionally, the distribution of each shape in the helicity angle described in 
     \centering
     \begin{subfigure}[t]{0.49\textwidth}
         \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/Bs2Dsa1_4600_5900_Shape.pdf}
-        \caption{\decay{\Bsb}{\Dsp} }
+        \caption{\decay{\Bsb}{\Dsp\Km\Kstarz} }
     \end{subfigure}
     \begin{subfigure}[t]{0.49\textwidth}
         \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/Bs2DsstKKst_4600_5900_Shape.pdf}
-        \caption{\decay{\Bsb}{\Dsp\Kstar\Kp} }
+        \caption{\decay{\Bsb}{\Dsp\Km\Kstarz} }
     \end{subfigure}
     \begin{subfigure}[t]{0.49\textwidth}
         \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/Bs2DsDs_4600_5900_Shape.pdf}
@@ -502,10 +494,13 @@ Additionally, the distribution of each shape in the helicity angle described in 
         \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/Bs2DsstDs_4600_5900_Shape.pdf}
         \caption{\decay{\Bsb}{\Dssp\Dsm} }
     \end{subfigure}
-    \caption{Partially reconstructed mass shapes}
+    \caption{Partially reconstructed mass PDFs determined from samples of simulations decays processed with the same reconstruction and selection as the signal decays. The \Bp meson mass is indicated by a vertical red line. The are below 4900\mevcc is not included in the fit range, but included for reference. The PDF colours follow the same convention used in the final fit plots shown in Fig.~\ref{fig:B2DsPhi_Signal_Fit}.}
     \label{fig:B2DsPhi_part_reco_shapes}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+To account for difference between the simulation and data samples all PDFs determined using the kernel estimation method are convolved with an additional Gaussian. The mean position of this Gaussian is given by $\delta$, the same offset used for the analytically described partially decays. The width of the Gaussian is increased to account for the difference in resolution between simulation and data. 
 
 
 \subsection{Combinatorial  backgrounds}
@@ -524,14 +519,14 @@ The yields of combinatorial background is allowed to vary freely in each of the 
 \section{Free and constrained parameters}
 
 The fit to \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Dzb} decays contains a total of 54 free parameters. 
-These are broadly divided in to four different categories as detailed here.
+These are broadly divided into four different categories detailed here.
 
 %These are listed in Tab.~\ref{tab:B2DsPhi_free_variables}. 
 
 \subsection{Parameter of interest}
 
-The parameter of interest (POI) is the branching fraction for \decay{\Bp}{\Dsp\phiz} decays. This is determined directly in fit to the signal and normalisation decays. The same single branching fraction is used for all of the \Dsp decays modes.
-The yield of signal events is calculated using the equation 
+The parameter of interest (POI) is the branching fraction for \decay{\Bp}{\Dsp\phiz} decays. This is determined directly in the fit to the signal and normalisation decays. The same single branching fraction is used for all of the \Dsp decays modes.
+The yield of signal candidates is calculated using the equation 
 \begin{equation}
 N(\decay{\Bp}{\Dsp\phiz}) = k_{\Dsp} \times \BF(\decay{\Bp}{\Dsp\phiz}) \times N(\decay{\Bp}{\Dsp\Dzb}),
 \end{equation}
@@ -557,8 +552,8 @@ As detailed in Sec~\ref{sec:B2DsPhi_fitcomponents}, the fit included seven param
 
 The fit model contains a total of 36 free parameters that are yields.
 \begin{itemize}
-\item The total yield of normalisation decays in each \Dsp decay mode is left floating in the fit. This variable is the sum of the yields in the two helicity categories, $|\cos\theta_{K}| < 0.4$ and $|\cos\theta_{K}| > 0.4$. This results in four free parameters.
-\item The yield of some partially reconstructed decays in the normalisation channel is left floating for each \Dsp decay mode independently. This yield is defined to be $N(\decay{\Bp}{\Dsp\Dstarzb})+ N(\decay{\Bp}{\Dssp\Dzb})$. The yield of the doubly excited \decay{\Bp}{\Dssp\Dzb} is not included in this total. This results in four free parameters.
+\item The total yield of normalisation decays in each \Dsp decay mode is left floating in the fit. These variables are the sum of the yields in the two helicity categories, $|\cos\theta_{K}| < 0.4$ and $|\cos\theta_{K}| > 0.4$. This results in four free parameters.
+\item The yield of certain partially reconstructed decays in the normalisation channel is left floating for each \Dsp decay mode independently. This yield is defined to be $N(\decay{\Bp}{\Dsp\Dstarzb})+ N(\decay{\Bp}{\Dssp\Dzb})$. The yield of the doubly excited \decay{\Bp}{\Dssp\Dzb} is not included in this total. This results in four free parameters.
 \item The yield of some partially reconstructed decays in the signal mode is left free in the fit. This is defined to be $N(\Dssp\phiz) + N(\Dsp\Km\Kstarz) + N(\Dssp\Km\Kstarz)$. This leads to four free parameters. 
 \item All yields of combinatorial backgrounds are left free in the fit. This results in 24 free parameters.
 \end{itemize}
@@ -629,20 +624,20 @@ This parameter is included as a cross check. The normalisation decays have a fla
 \hline
 Type & Variable  \\
 \hline
-POI                  & Branching fraction ($\times10^{-7}$)                                          \\
+POI                  & Branching fraction $\BF(\decay{\Bp}{\Dsp\phiz})$                              \\
 \hline 
 Shape                & Combinatorial slope                                                           \\ 
-                     & Mean B mass (\mevcc)                                                          \\  
+                     & Mean \Bp mass (\mevcc)                                                        \\  
                      & Relative heights double peaked part reco shapes                               \\  
                      & $\sigma_{1}$ for \decay{\Dsp}{\Kp\Km\pip}  (\mevcc)                           \\  
                      & $\sigma_{1}$ for \decay{\Dsp}{\Kp\pim\pip} (\mevcc)                           \\  
                      & $\sigma_{1}$ for \decay{\Dsp}{\phiz\pip}  (\mevcc)                            \\  
                      & $\sigma_{1}$ for \decay{\Dsp}{\pip\pim\pip}  (\mevcc)                         \\  
 \hline  
-Yields               & Total Normalisation Yield \Dsp\Dzb \decay{\Dsp}{\Kp\Km\pip}                   \\  
-                     & Total Normalisation Yield \Dsp\Dzb \decay{\Dsp}{\Kp\pim\pip}                  \\  
-                     & Total Normalisation Yield \Dsp\Dzb \decay{\Dsp}{\phiz\pip}                    \\  
-                     & Total Normalisation Yield \Dsp\Dzb \decay{\Dsp}{\pip\pim\pip}                 \\
+Yields               & Total Normalisation Yield in \decay{\Dsp}{\Kp\Km\pip}                   \\  
+                     & Total Normalisation Yield in \decay{\Dsp}{\Kp\pim\pip}                  \\  
+                     & Total Normalisation Yield in \decay{\Dsp}{\phiz\pip}                    \\  
+                     & Total Normalisation Yield in \decay{\Dsp}{\pip\pim\pip}                 \\
                      & Yield of (\Dssp\Dzb + \Dsp\Dstarzb) in \decay{\Dsp}{\Kp\Km\pip}               \\  
                      & Yield of (\Dssp\Dzb + \Dsp\Dstarzb) in \decay{\Dsp}{\Kp\pim\pip}              \\  
                      & Yield of (\Dssp\Dzb + \Dsp\Dstarzb) in \decay{\Dsp}{\phiz\pip}                \\  
@@ -713,6 +708,7 @@ Fractions            & Ratio of \Dsp\Kp\Km candidates to \Dsp\Dzb               
         \includegraphics[width=1.0\textwidth]{figs/Appendix_FitCategories/canvas_DsD0_merged_both_summed_splitHel_splitKKPi_s21_s21r1_s24_s26.pdf}
     \end{subfigure}
     \caption{Invariant mass fits to \decay{\Bp}{\Dsp\Dzb} candidates}
+    \label{fig:B2DsPhi_Norm_Fit}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -727,6 +723,7 @@ Fractions            & Ratio of \Dsp\Kp\Km candidates to \Dsp\Dzb               
         \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/Fig4b.eps}
     \end{subfigure}
     \caption{Invariant mass fits to \decay{\Bp}{\Dsp\phiz} candidates}
+    \label{fig:B2DsPhi_Signal_Fit}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -735,24 +732,34 @@ Fractions            & Ratio of \Dsp\Kp\Km candidates to \Dsp\Dzb               
 \section{Efficiency corrections}
 \label{sec:B2DsPhi_effcorrections}
 
+The branching fraction for \decay{\Bp}{\Dsp\phiz} decays is determined by correcting the yields for the signal and normalisation channels by their respective efficiencies. In determining the efficiencies both the \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Dzb} decays are assumed to be pseudo-two-body decays in which variations as a function of phase-space are negligible. This means the relative efficiency can be calculated as a simple ratio for each \Dsp decay mode, simplifying the correction considerably.    
 
-\begin{itemize}
-\item Generator Level Efficiencies
-\item Trigger Efficiencies
-\item Mass Window
-\item Cross-feed vetos
-\item IP chi2 cuts
-\item Charmless Cut
-\item MVA Efficiencies
-\item PID Efficiencies
-\item Total Efficiency
-\end{itemize}
+The efficiencies for each stage of selection are either determined from the appropriate simulation samples for the signal and normalisation decays, or from special calibration data samples for efficiencies involving particle identification requirements. 
 
-{\color{Red}
-\begin{itemize}
-\item Assume pseudo two body decay, therefore simple ratio  
-\end{itemize}
-}
+
+\subsection{Efficiencies from simulation}
+
+\subsubsection{Acceptance efficiency}
+\subsubsection{Reconstruction efficiency}
+\subsubsection{Trigger efficiency}
+\subsubsection{Mass windows efficiency}
+\subsubsection{Veto efficiency}
+\subsubsection{Impact parameter significance efficiency}
+\subsubsection{Charmless requirement efficiency}
+
+
+\subsection{Efficiencies from data}
+
+\subsubsection{PID efficiency}
+\subsubsection{MVA efficiency}
+
+
+\subsection{Total efficiencies}
+
+
+
+
+
 
 \section{Systematic uncertainties}
 \label{sec:B2DsPhi_systuncertainy}
