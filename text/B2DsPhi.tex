@@ -540,10 +540,11 @@ The yield $N(\decay{\Bp}{\Dsp\phiz})$ is the total signal yield in all four $m(\
 
 
 \subsection{Shape parameters}
-As detailed in Sec~\ref{sec:B2DsPhi_fitcomponents}, the fit included seven parameters governing the shapes of various PDFs.
+As detailed in Sec~\ref{sec:B2DsPhi_fitcomponents}, the fit included eight parameters governing the shapes of various PDFs.
 \begin{itemize}
 \item The combinatorial background PDF is controlled by a single slope parameter $c$ for all categories.
 \item The mean \Bp mass for the signal and normalisation mode is free to vary in the fit. The same value is used for all \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Dzb} PDFs.
+\item {\color{Red}Offset $\delta$}
 \item The relative heights of the two peaks in partially reconstructed \decay{\Bp}{\Dssp\phiz}, \decay{\Bp}{\Dssp\Dzb} and \decay{\Bp}{\Dsp\Dstarzb} decays, $\xi$, is allowed to vary. The same value is used for all modes.
 \item The smaller CB width parameter, $\sigma_{1}$, is allowed to vary for each of the \Dsp decay modes, leading to four more free parameters. 
 \end{itemize}
@@ -620,84 +621,185 @@ This parameter is included as a cross check. The normalisation decays have a fla
 
 
 
-\begin{longtable}{ l l }
-\hline
-Type & Variable  \\
-\hline
-POI                  & Branching fraction $\BF(\decay{\Bp}{\Dsp\phiz})$                              \\
-\hline 
-Shape                & Combinatorial slope                                                           \\ 
-                     & Mean \Bp mass (\mevcc)                                                        \\  
-                     & Relative heights double peaked part reco shapes                               \\  
-                     & $\sigma_{1}$ for \decay{\Dsp}{\Kp\Km\pip}  (\mevcc)                           \\  
-                     & $\sigma_{1}$ for \decay{\Dsp}{\Kp\pim\pip} (\mevcc)                           \\  
-                     & $\sigma_{1}$ for \decay{\Dsp}{\phiz\pip}  (\mevcc)                            \\  
-                     & $\sigma_{1}$ for \decay{\Dsp}{\pip\pim\pip}  (\mevcc)                         \\  
-\hline  
-Yields               & Total Normalisation Yield in \decay{\Dsp}{\Kp\Km\pip}                   \\  
-                     & Total Normalisation Yield in \decay{\Dsp}{\Kp\pim\pip}                  \\  
-                     & Total Normalisation Yield in \decay{\Dsp}{\phiz\pip}                    \\  
-                     & Total Normalisation Yield in \decay{\Dsp}{\pip\pim\pip}                 \\
-                     & Yield of (\Dssp\Dzb + \Dsp\Dstarzb) in \decay{\Dsp}{\Kp\Km\pip}               \\  
-                     & Yield of (\Dssp\Dzb + \Dsp\Dstarzb) in \decay{\Dsp}{\Kp\pim\pip}              \\  
-                     & Yield of (\Dssp\Dzb + \Dsp\Dstarzb) in \decay{\Dsp}{\phiz\pip}                \\  
-                     & Yield of (\Dssp\Dzb + \Dsp\Dstarzb) in \decay{\Dsp}{\pip\pim\pip}             \\  
-                     & Yield of ($\Dssp\phiz$ + $D_{s}^{(*)+}\Km\Kstarz$) in \decay{\Dsp}{\Kp\Km\pip}       \\  
-                     & Yield of ($\Dssp\phiz$ + $D_{s}^{(*)+}\Km\Kstarz$) in \decay{\Dsp}{\Kp\pim\pip}      \\  
-                     & Yield of ($\Dssp\phiz$ + $D_{s}^{(*)+}\Km\Kstarz$) in \decay{\Dsp}{\phiz\pip}        \\  
-                     & Yield of ($\Dssp\phiz$ + $D_{s}^{(*)+}\Km\Kstarz$) in \decay{\Dsp}{\Kp\pim\pip}      \\
+% \begin{longtable}{ l l }
+% \hline
+% Type & Variable  \\
+% \hline
+% POI                  & Branching fraction $\BF(\decay{\Bp}{\Dsp\phiz})$                              \\
+% \hline 
+% Shape                & Combinatorial slope $c$                                                           \\ 
+%                      & Mean \Bp mass (\mevcc)                                                        \\  
+%                      & Mass offset $\delta$ (\mevcc)                         \\  
+%                      & Relative heights $\xi$                               \\
+%                      & $\sigma_{1}$ for \decay{\Dsp}{\Kp\Km\pip}  (\mevcc)                           \\  
+%                      & $\sigma_{1}$ for \decay{\Dsp}{\Kp\pim\pip} (\mevcc)                           \\  
+%                      & $\sigma_{1}$ for \decay{\Dsp}{\phiz\pip}  (\mevcc)                            \\  
+%                      & $\sigma_{1}$ for \decay{\Dsp}{\pip\pim\pip}  (\mevcc)                         \\  
+% \hline  
+% Yields               & $N(\decay{\Bp}{(\decay{\Dsp}{\Kp\Km\pip}  )\Dzb})$                 \\  
+%                      & $N(\decay{\Bp}{(\decay{\Dsp}{\Kp\pim\pip} )\Dzb})$                 \\  
+%                      & $N(\decay{\Bp}{(\decay{\Dsp}{\phiz\pip}   )\Dzb})$                 \\  
+%                      & $N(\decay{\Bp}{(\decay{\Dsp}{\pip\pim\pip})\Dzb})$                 \\
+%                      & $N(\Dssp\Dzb + \Dsp\Dstarzb)$ in \decay{\Dsp}{\Kp\Km\pip}               \\  
+%                      & $N(\Dssp\Dzb + \Dsp\Dstarzb)$ in \decay{\Dsp}{\Kp\pim\pip}              \\  
+%                      & $N(\Dssp\Dzb + \Dsp\Dstarzb)$ in \decay{\Dsp}{\phiz\pip}                \\  
+%                      & $N(\Dssp\Dzb + \Dsp\Dstarzb)$ in \decay{\Dsp}{\pip\pim\pip}             \\  
+%                      & $N(\Dssp\phiz + D_{s}^{(*)+}\Km\Kstarz)$ in \decay{\Dsp}{\Kp\Km\pip}       \\  
+%                      & $N(\Dssp\phiz + D_{s}^{(*)+}\Km\Kstarz)$ in \decay{\Dsp}{\Kp\pim\pip}      \\  
+%                      & $N(\Dssp\phiz + D_{s}^{(*)+}\Km\Kstarz)$ in \decay{\Dsp}{\phiz\pip}        \\  
+%                      & $N(\Dssp\phiz + D_{s}^{(*)+}\Km\Kstarz)$ in \decay{\Dsp}{\Kp\pim\pip}      \\
 
-                     & Comb. Yield \Dsp\Dzb \decay{\Dsp}{\Kp\Km\pip} in 1st helicity bin             \\  
-                     & Comb. Yield \Dsp\Dzb \decay{\Dsp}{\Kp\Km\pip} in 2nd helicity bin             \\  
-                     & Comb. Yield \Dsp\Dzb \decay{\Dsp}{\Kp\pim\pip} in 1st helicity bin            \\  
-                     & Comb. Yield \Dsp\Dzb \decay{\Dsp}{\Kp\pim\pip} in 2nd helicity bin            \\  
-                     & Comb. Yield \Dsp\Dzb \decay{\Dsp}{\phiz\pip} in 1st helicity bin              \\  
-                     & Comb. Yield \Dsp\Dzb \decay{\Dsp}{\phiz\pip} in 2nd helicity bin              \\  
-                     & Comb. Yield \Dsp\Dzb \decay{\Dsp}{\pip\pim\pip} in 1st helicity bin           \\  
-                     & Comb. Yield \Dsp\Dzb \decay{\Dsp}{\pip\pim\pip} in 2nd helicity bin           \\    
-                     & Comb. Yield $\Dsp\phiz$ \decay{\Dsp}{\Kp\Km\pip} in 1st helicity bin            \\  
-                     & Comb. Yield $\Dsp\phiz$ \decay{\Dsp}{\Kp\Km\pip} in 2nd helicity bin            \\  
-                     & Comb. Yield $\Dsp\phiz$ \decay{\Dsp}{\Kp\pim\pip} in 1st helicity bin           \\  
-                     & Comb. Yield $\Dsp\phiz$ \decay{\Dsp}{\Kp\pim\pip} in 2nd helicity bin           \\  
-                     & Comb. Yield $\Dsp\phiz$ \decay{\Dsp}{\phiz\pip} in 1st helicity bin             \\  
-                     & Comb. Yield $\Dsp\phiz$ \decay{\Dsp}{\phiz\pip} in 2nd helicity bin             \\  
-                     & Comb. Yield $\Dsp\phiz$ \decay{\Dsp}{\pip\pim\pip} in 1st helicity bin          \\  
-                     & Comb. Yield $\Dsp\phiz$ \decay{\Dsp}{\pip\pim\pip} in 2nd helicity bin          \\
-                     & Comb. Yield $\Dsp\phiz$ sideband \decay{\Dsp}{\Kp\Km\pip} in 1st helicity bin   \\  
-                     & Comb. Yield $\Dsp\phiz$ sideband \decay{\Dsp}{\Kp\Km\pip} in 2nd helicity bin   \\  
-                     & Comb. Yield $\Dsp\phiz$ sideband \decay{\Dsp}{\Kp\pim\pip} in 1st helicity bin  \\  
-                     & Comb. Yield $\Dsp\phiz$ sideband \decay{\Dsp}{\Kp\pim\pip} in 2nd helicity bin  \\  
-                     & Comb. Yield $\Dsp\phiz$ sideband \decay{\Dsp}{\phiz\pip} in 1st helicity bin    \\  
-                     & Comb. Yield $\Dsp\phiz$ sideband \decay{\Dsp}{\phiz\pip} in 2nd helicity bin    \\  
-                     & Comb. Yield $\Dsp\phiz$ sideband \decay{\Dsp}{\pip\pim\pip} in 1st helicity bin \\  
-                     & Comb. Yield $\Dsp\phiz$ sideband \decay{\Dsp}{\pip\pim\pip} in 2nd helicity bin \\ 
-\hline 
-Fractions            & Ratio of \Dsp\Kp\Km candidates to \Dsp\Dzb                                        \\  
-                     & Fraction of \Dsp\Km\Kstarz in (\Dssp\Km\Kstarz+\Dsp\Km\Kstarz)                    \\ 
-                     & Fraction of $\Dssp\phiz$ in ($D_{s}^{(*)+}\Km\Kstarz$ + $\Dssp\phiz$)                   \\  
-                     & Ratio of $\Dsp D_{(s)}^{(*)-}$ backgrounds to ($\Dssp\phiz$ + $D_{s}^{(*)+}\Km\Kstarz$)           \\  
+%                      & $N_{\text{comb}}((\decay{\Dsp}{\Kp\Km\pip})\Dzb)$  in H1             \\  
+%                      & $N_{\text{comb}}(\Dsp\Dzb)$ \decay{\Dsp}{\Kp\Km\pip} in H2             \\  
+%                      & $N_{\text{comb}}(\Dsp\Dzb)$ \decay{\Dsp}{\Kp\pim\pip} in H1            \\  
+%                      & $N_{\text{comb}}(\Dsp\Dzb)$ \decay{\Dsp}{\Kp\pim\pip} in H2            \\  
+%                      & $N_{\text{comb}}(\Dsp\Dzb)$ \decay{\Dsp}{\phiz\pip} in H1              \\  
+%                      & $N_{\text{comb}}(\Dsp\Dzb)$ \decay{\Dsp}{\phiz\pip} in H2              \\  
+%                      & $N_{\text{comb}}(\Dsp\Dzb)$ \decay{\Dsp}{\pip\pim\pip} in H1           \\  
+%                      & $N_{\text{comb}}(\Dsp\Dzb)$ \decay{\Dsp}{\pip\pim\pip} in H2           \\    
+%                      & $N_{\text{comb}}(\Dsp\phiz)$ \decay{\Dsp}{\Kp\Km\pip} in H1            \\  
+%                      & $N_{\text{comb}}(\Dsp\phiz)$ \decay{\Dsp}{\Kp\Km\pip} in H2            \\  
+%                      & $N_{\text{comb}}(\Dsp\phiz)$ \decay{\Dsp}{\Kp\pim\pip} in H1           \\  
+%                      & $N_{\text{comb}}(\Dsp\phiz)$ \decay{\Dsp}{\Kp\pim\pip} in H2           \\  
+%                      & $N_{\text{comb}}(\Dsp\phiz)$ \decay{\Dsp}{\phiz\pip} in H1             \\  
+%                      & $N_{\text{comb}}(\Dsp\phiz)$ \decay{\Dsp}{\phiz\pip} in H2             \\  
+%                      & $N_{\text{comb}}(\Dsp\phiz)$ \decay{\Dsp}{\pip\pim\pip} in H1          \\  
+%                      & $N_{\text{comb}}(\Dsp\phiz)$ \decay{\Dsp}{\pip\pim\pip} in H2          \\
+%                      & $N_{\text{comb}}(\Dsp\phiz)$ \phiz-sideband \decay{\Dsp}{\Kp\Km\pip} in H1   \\  
+%                      & $N_{\text{comb}}(\Dsp\phiz)$ \phiz-sideband \decay{\Dsp}{\Kp\Km\pip} in H2   \\  
+%                      & $N_{\text{comb}}(\Dsp\phiz)$ \phiz-sideband \decay{\Dsp}{\Kp\pim\pip} in H1  \\  
+%                      & $N_{\text{comb}}(\Dsp\phiz)$ \phiz-sideband \decay{\Dsp}{\Kp\pim\pip} in H2  \\  
+%                      & $N_{\text{comb}}(\Dsp\phiz)$ \phiz-sideband \decay{\Dsp}{\phiz\pip} in H1    \\  
+%                      & $N_{\text{comb}}(\Dsp\phiz)$ \phiz-sideband \decay{\Dsp}{\phiz\pip} in H2    \\  
+%                      & $N_{\text{comb}}(\Dsp\phiz)$ \phiz-sideband \decay{\Dsp}{\pip\pim\pip} in H1 \\  
+%                      & $N_{\text{comb}}(\Dsp\phiz)$ \phiz-sideband \decay{\Dsp}{\pip\pim\pip} in H2 \\ 
+% \hline 
+% Fractions            & Ratio of \Dsp\Kp\Km to \Dsp\Dzb                                        \\  
+%                      & Fraction of \Dsp\Km\Kstarz in (\Dssp\Km\Kstarz+\Dsp\Km\Kstarz)                    \\ 
+%                      & Fraction of $\Dssp\phiz$ in ($D_{s}^{(*)+}\Km\Kstarz$ + $\Dssp\phiz$)                   \\  
+%                      & Ratio of $\Dsp D_{(s)}^{(*)-}$ to ($\Dssp\phiz$ + $D_{s}^{(*)+}\Km\Kstarz$)           \\  
 
-                     & Fraction of \Dssp\Dzb in (\Dssp\Dzb+\Dsp\Dstarzb) in 1st helicity bin         \\  
-                     & Fraction of \Dssp\Dzb in (\Dssp\Dzb+\Dsp\Dstarzb) in 2nd helicity bin         \\ 
-                     & Fraction of normalisation part reco in 1st helicity bin                       \\  
-                     & Fraction of normalisation peak in 1st helicity bin                            \\ 
-                     & Ratio of \Dssp\Dstarzb to (\Dssp\Dzb + \Dsp\Dstarzb)                          \\ 
-\hline
-\caption{The fit result with final values of all floating variables used in the fit model. } 
-\label{tab:B2DsPhi_free_variables} 
-\end{longtable}
+%                      & Fraction of \Dssp\Dzb in (\Dssp\Dzb+\Dsp\Dstarzb) in H1         \\  
+%                      & Fraction of \Dssp\Dzb in (\Dssp\Dzb+\Dsp\Dstarzb) in H2         \\ 
+%                      & Fraction of normalisation part reco in H1                       \\  
+%                      & Fraction of normalisation peak in H1                            \\ 
+%                      & Ratio of \Dssp\Dstarzb to (\Dssp\Dzb + \Dsp\Dstarzb)                          \\ 
+% \hline
+% \caption{The fit result with final values of all floating variables used in the fit model. Here H1 and H2 represent the $|\cos\theta_{K}|>0.4$ and $|\cos\theta_{K}|<0.4$ categories respectively.} 
+% \label{tab:B2DsPhi_free_variables} 
+% \end{longtable}
 
 \section{Fit validation}
 \label{sec:B2DsPhi_fitstrategy}
 
-{\color{Red}
-\begin{itemize}
-\item Toy distributions
-\end{itemize}
-}
+The simultaneous fitting framework is validated by generating pseudo-experiments (also referred to as \emph{toys}). The total fit model PDF is randomly sampled to create a simulation sample with the same number of candidates as the nominal fit. These are then fitted using the same fit model, determining the best estimate and uncertainty of each parameter. The parameter values used to generate the pseudo-experiments are chosen to be the final parameter values as determined in a fit to data. This is known as the plug-in method~\cite{plugin}.
+The fitted value and associated error is used to determine the pull of each parameter of interest. As the errors are determined asymmetrically using \minos the is defined conditionally to incorporate the appropriate error 
+\begin{equation}
+  g_{\text{pull}} = \left \{
+  \begin{aligned}
+    &\frac{x_{\text{gen}} - x_{\text{fit}} }{\sigma_{+}}, && \text{if}\ x_{\text{fit}} < x_{\text{gen}}\\
+    &\frac{x_{\text{fit}} - x_{\text{gen}} }{\sigma_{-}}, && \text{otherwise},
+  \end{aligned} \right.
+\end{equation} 
+where $x_{\text{fit}}$ and $x_{\text{gen}}$ are the fitted and generated values of the variable, and $\sigma_{+}$ and $\sigma_{-}$ are the high and low asymmetric errors.
+
+The distributions of the values, errors and pulls for the yields of the normalisation decay in each of the \Dsp decays are shown in Fig.~\ref{fig:B2DsPhi_Pulls_normalisation}. The mean and widths are determined using simple fits to the pull distributions. The results and PDFs for these fits are overlaid on the distributions. The normalisation yield means and widths are found to be within $2\sigma$ of zero and one respectively.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+   \centering
+   \begin{subfigure}[t]{1.0\textwidth}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Value_yield_peak_DsD0_Ds2PhiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Error_yield_peak_DsD0_Ds2PhiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Pull_yield_peak_DsD0_Ds2PhiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+      \caption{\decay{\Dsp}{\phiz\pip}}
+   \end{subfigure}\\
+   \begin{subfigure}[t]{1.0\textwidth}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Value_yield_peak_DsD0_Ds2KKPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Error_yield_peak_DsD0_Ds2KKPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Pull_yield_peak_DsD0_Ds2KKPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+      \caption{\decay{\Dsp}{\Kp\Km\pip}}
+   \end{subfigure}\\
+   \begin{subfigure}[t]{1.0\textwidth}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Value_yield_peak_DsD0_Ds2PiPiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Error_yield_peak_DsD0_Ds2PiPiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Pull_yield_peak_DsD0_Ds2PiPiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+      \caption{\decay{\Dsp}{\pip\pim\pip}}
+   \end{subfigure}\\
+   \begin{subfigure}[t]{1.0\textwidth}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Value_yield_peak_DsD0_Ds2KPiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Error_yield_peak_DsD0_Ds2KPiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Pull_yield_peak_DsD0_Ds2KPiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+      \caption{\decay{\Dsp}{\Kp\pim\pip}}
+   \end{subfigure}
+
+   \caption{Pulls normalisation}
+   \label{fig:B2DsPhi_Pulls_normalisation}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Similarly, the distributions of the signal yield, error and pull for each of the different \Dsp decay modes are shown in Fig.~\ref{fig:B2DsPhi_Pulls_signal}. The pull means and widths are all within $2\sigma$ of zero and one respectively.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+   \centering
+   \begin{subfigure}[t]{1.0\textwidth}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Value_yield_peak_total_DsPhi_Ds2PhiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Error_yield_peak_total_DsPhi_Ds2PhiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Pull_yield_peak_total_DsPhi_Ds2PhiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+      \caption{\decay{\Dsp}{\phiz\pip}}
+   \end{subfigure}\\
+   \begin{subfigure}[t]{1.0\textwidth}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Value_yield_peak_total_DsPhi_Ds2KKPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Error_yield_peak_total_DsPhi_Ds2KKPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Pull_yield_peak_total_DsPhi_Ds2KKPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+      \caption{\decay{\Dsp}{\Kp\Km\pip}}
+   \end{subfigure}\\
+   \begin{subfigure}[t]{1.0\textwidth}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Value_yield_peak_total_DsPhi_Ds2PiPiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Error_yield_peak_total_DsPhi_Ds2PiPiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Pull_yield_peak_total_DsPhi_Ds2PiPiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+      \caption{\decay{\Dsp}{\pip\pim\pip}}
+   \end{subfigure}\\
+   \begin{subfigure}[t]{1.0\textwidth}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Value_yield_peak_total_DsPhi_Ds2KPiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Error_yield_peak_total_DsPhi_Ds2KPiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Pull_yield_peak_total_DsPhi_Ds2KPiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+      \caption{\decay{\Dsp}{\Kp\pim\pip}}
+   \end{subfigure}
+
+   \caption{Pulls signal}
+   \label{fig:B2DsPhi_Pulls_signal}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+These distributions were generated using pseudo-experiments in which the yields for each \Dsp mode were free variables rather than being determined using a single free branching fraction parameter.
+
+The model is also studied using a single branching fraction $\BF(\decay{\Bp}{\Dsp\phiz})$ that determines the yields in each signal mode. This parameter is calculated directly in the fit so it can be assessed for any possible bias. The distribution of the measured values, uncertainties and pulls are shown in Fig.~\ref{fig:B2DsPhi_Pulls_signal}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+   \centering
+   \begin{subfigure}[t]{1.0\textwidth}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Error_Branching_fraction.pdf}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Error_Branching_fraction.pdf}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Pull_Branching_fraction.pdf}
+   \end{subfigure}
+   \caption{Pulls branching fraction}
+   \label{fig:B2DsPhi_Pulls_signal}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The pull mean and width are both within $2\sigma$ of zero and one respectively. 
+As no significant biases are observed in the pulls of any of the yields or branching fraction no corrections are applied to the values determined fit.
+
 
 \section{Normalisation and signal fits}
 
+The result of the simultaneous fit to the signal and normalisation decays is shown in Figs.~\ref{fig:B2DsPhi_Norm_Fit} and \ref{fig:B2DsPhi_Signal_Fit}. These figures show the distribution of candidates passing all selection requirements along with the total PDF model resulting from the minimisation of the log-likelihood. The four \Dsp decay mode categories have been merged into a single distribution.
 
 
 
@@ -711,6 +813,9 @@ Fractions            & Ratio of \Dsp\Kp\Km candidates to \Dsp\Dzb               
     \label{fig:B2DsPhi_Norm_Fit}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The high purity of the normalisation mode reconstruction can be seen in Fig.~\ref{fig:B2DsPhi_Norm_Fit}, as the contribution from the combinatorial background shape is very small. Additionally, the double-peaked structure of the partially reconstructed \decay{\Bp}{\Dssp\Dzb} and \decay{\Bp}{\Dsp\Dstarzb} decays is clearly visible. 
+%The decays are split into two $\cos\theta_{K}$ categories, 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -727,6 +832,79 @@ Fractions            & Ratio of \Dsp\Kp\Km candidates to \Dsp\Dzb               
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+The fit to the signal mode is shown in Fig.~\ref{fig:B2DsPhi_Signal_Fit}. This figure includes the \decay{\Bp}{\Dsp\phiz} candidates in both the $|m(\Kp\Km)| < 10\mevcc$ (\phiz-region) and $10< |m(\Kp\Km)| < 40\mevcc$ (\phiz-sideband) categories. These are further split into the two $\cos\theta_{K}$ categories in an analogous way to the normalisation decays.
+
+
+
+The final values of the parameters as determined by the fit are tabulated in Tab.~\ref{tab:B2DsPhi_free_variables}, including the branching fraction $\BF(\decay{\Bp}{\Dsp\phiz})$. This parameter includes a correction to account for the efficiencies of the signal and normalisation modes as discussed in Sec.~\ref{sec:B2DsPhi_effcorrections}. 
+
+\begin{longtable}{ l l c }
+\hline
+Type       & Parameter                                                                    & Fit result\\
+\hline
+POI        & Branching fraction $\BF(\decay{\Bp}{\Dsp\phiz}) (\times 10^{-7})$            &   $1.17^{+ 1.56}_{-1.37} $\\
+\hline
+Shape      & Combinatorial slope $c$                                                      &   $(-3.3^{+0.4}_{-0.4})\times10^{-3}$\\
+           & Mean \Bp mass (\mevcc)                                                       &   $5279.10^{+0.17}_{-0.17} $\\
+           & Mass offset $\delta$ (\mevcc)                                                &   $-1.975^{+0.362}_{-0.362} $\\
+           & Relative heights $\xi$                                                       &   $0.68^{+0.05}_{-0.05} $\\
+           & $\sigma_{1}$ for \decay{\Dsp}{\Kp\Km\pip}  (\mevcc)                          &   $7.61^{+0.18}_{-0.18} $\\
+           & $\sigma_{1}$ for \decay{\Dsp}{\Kp\pim\pip} (\mevcc)                          &   $8.77^{+0.59}_{-0.55} $\\
+           & $\sigma_{1}$ for \decay{\Dsp}{\phiz\pip}  (\mevcc)                           &   $7.53^{+0.22}_{-0.21} $\\
+           & $\sigma_{1}$ for \decay{\Dsp}{\pip\pim\pip}  (\mevcc)                        &   $8.30^{+0.36}_{-0.34} $\\
+\hline
+Yields     & $N(\decay{\Bp}{(\decay{\Dsp}{\Kp\Km\pip}  )\Dzb})$                           &   $1324^{+37}_{-36} $\\
+           & $N(\decay{\Bp}{(\decay{\Dsp}{\Kp\pim\pip} )\Dzb})$                           &   $182^{+14}_{-13} $\\
+           & $N(\decay{\Bp}{(\decay{\Dsp}{\phiz\pip}   )\Dzb})$                           &   $801^{+29}_{-28} $\\
+           & $N(\decay{\Bp}{(\decay{\Dsp}{\pip\pim\pip})\Dzb})$                           &   $369^{+20}_{-19} $\\
+           & $N(\Dssp\Dzb + \Dsp\Dstarzb)$ in \decay{\Dsp}{\Kp\Km\pip}                    &   $2827^{+52}_{-51} $\\
+           & $N(\Dssp\Dzb + \Dsp\Dstarzb)$ in \decay{\Dsp}{\Kp\pim\pip}                   &   $394^{+20}_{-20} $\\
+           & $N(\Dssp\Dzb + \Dsp\Dstarzb)$ in \decay{\Dsp}{\phiz\pip}                     &   $1733^{+38}_{-37} $\\
+           & $N(\Dssp\Dzb + \Dsp\Dstarzb)$ in \decay{\Dsp}{\pip\pim\pip}                  &   $804^{+25}_{-25} $\\
+           & $N(\Dssp\phiz + D_{s}^{(*)+}\Km\Kstarz)$ in \decay{\Dsp}{\Kp\Km\pip}         &   $139^{+19}_{-20} $\\
+           & $N(\Dssp\phiz + D_{s}^{(*)+}\Km\Kstarz)$ in \decay{\Dsp}{\Kp\pim\pip}        &   $7^{+4}_{-4} $\\
+           & $N(\Dssp\phiz + D_{s}^{(*)+}\Km\Kstarz)$ in \decay{\Dsp}{\phiz\pip}          &   $67^{+10}_{-10} $\\
+           & $N(\Dssp\phiz + D_{s}^{(*)+}\Km\Kstarz)$ in \decay{\Dsp}{\Kp\pim\pip}        &   $25^{+7}_{-6} $\\
+
+           & $N_{\text{comb}}(\Dsp\Dzb)$ \decay{\Dsp}{\Kp\Km\pip} in H1                   &   $112^{+30}_{-25} $\\
+           & $N_{\text{comb}}(\Dsp\Dzb)$ \decay{\Dsp}{\Kp\Km\pip} in H2                   &   $50^{+17}_{-14} $\\
+           & $N_{\text{comb}}(\Dsp\Dzb)$ \decay{\Dsp}{\Kp\pim\pip} in H1                  &   $71^{+20}_{-17} $\\
+           & $N_{\text{comb}}(\Dsp\Dzb)$ \decay{\Dsp}{\Kp\pim\pip} in H2                  &   $41^{+12}_{-10} $\\
+           & $N_{\text{comb}}(\Dsp\Dzb)$ \decay{\Dsp}{\phiz\pip} in H1                    &   $31^{+14}_{-11} $\\
+           & $N_{\text{comb}}(\Dsp\Dzb)$ \decay{\Dsp}{\phiz\pip} in H2                    &   $12^{+9}_{-6} $\\
+           & $N_{\text{comb}}(\Dsp\Dzb)$ \decay{\Dsp}{\pip\pim\pip} in H1                 &   $41^{+14}_{-11} $\\
+           & $N_{\text{comb}}(\Dsp\Dzb)$ \decay{\Dsp}{\pip\pim\pip} in H2                 &   $35^{+14}_{-11} $\\
+           & $N_{\text{comb}}(\Dsp\phiz)$ \decay{\Dsp}{\Kp\Km\pip} in H1                  &   $107^{+23}_{-20} $\\
+           & $N_{\text{comb}}(\Dsp\phiz)$ \decay{\Dsp}{\Kp\Km\pip} in H2                  &   $52^{+12}_{-11} $\\
+           & $N_{\text{comb}}(\Dsp\phiz)$ \decay{\Dsp}{\Kp\pim\pip} in H1                 &   $19^{+7}_{-6} $\\
+           & $N_{\text{comb}}(\Dsp\phiz)$ \decay{\Dsp}{\Kp\pim\pip} in H2                 &   $18^{+5}_{-4} $\\
+           & $N_{\text{comb}}(\Dsp\phiz)$ \decay{\Dsp}{\phiz\pip} in H1                   &   $38^{+14}_{-12} $\\
+           & $N_{\text{comb}}(\Dsp\phiz)$ \decay{\Dsp}{\phiz\pip} in H2                   &   $27^{+8}_{-7} $\\
+           & $N_{\text{comb}}(\Dsp\phiz)$ \decay{\Dsp}{\pip\pim\pip} in H1                &   $42^{+10}_{-9} $\\
+           & $N_{\text{comb}}(\Dsp\phiz)$ \decay{\Dsp}{\pip\pim\pip} in H2                &   $25^{+7}_{-6} $\\
+           & $N_{\text{comb}}(\Dsp\phiz)$ \phiz-sideband \decay{\Dsp}{\Kp\Km\pip} in H1   &   $33^{+13}_{-10} $\\
+           & $N_{\text{comb}}(\Dsp\phiz)$ \phiz-sideband \decay{\Dsp}{\Kp\Km\pip} in H2   &   $26^{+11}_{-9} $\\
+           & $N_{\text{comb}}(\Dsp\phiz)$ \phiz-sideband \decay{\Dsp}{\Kp\pim\pip} in H1  &   $18^{+7}_{-6} $\\
+           & $N_{\text{comb}}(\Dsp\phiz)$ \phiz-sideband \decay{\Dsp}{\Kp\pim\pip} in H2  &   $14^{+5}_{-5} $\\
+           & $N_{\text{comb}}(\Dsp\phiz)$ \phiz-sideband \decay{\Dsp}{\phiz\pip} in H1    &   $5^{+6}_{-4} $\\
+           & $N_{\text{comb}}(\Dsp\phiz)$ \phiz-sideband \decay{\Dsp}{\phiz\pip} in H2    &   $12^{+8}_{-7} $\\
+           & $N_{\text{comb}}(\Dsp\phiz)$ \phiz-sideband \decay{\Dsp}{\pip\pim\pip} in H1 &   $16^{+8}_{-6} $\\
+           & $N_{\text{comb}}(\Dsp\phiz)$ \phiz-sideband \decay{\Dsp}{\pip\pim\pip} in H2 &   $14^{+8}_{-8} $\\
+\hline
+Fractions  & Ratio of \Dsp\Kp\Km to \Dsp\Dzb                                              &   $0.024^{+0.004}_{-0.004} $\\
+           & Fraction of \Dsp\Km\Kstarz in (\Dssp\Km\Kstarz+\Dsp\Km\Kstarz)               &   $0.664^{+0.046}_{-0.044} $\\
+           & Fraction of $\Dssp\phiz$ in ($D_{s}^{(*)+}\Km\Kstarz$ + $\Dssp\phiz$)        &   $0.172^{+0.103}_{-0.135} $\\
+           & Ratio of $\Dsp D_{(s)}^{(*)-}$ to ($\Dssp\phiz$ + $D_{s}^{(*)+}\Km\Kstarz$)  &   $0.567^{+0.129}_{-0.107} $\\
+           & Fraction of \Dssp\Dzb in (\Dssp\Dzb+\Dsp\Dstarzb) in H1                      &   $0.302^{+0.031}_{-0.031} $\\
+           & Fraction of \Dssp\Dzb in (\Dssp\Dzb+\Dsp\Dstarzb) in H2                      &   $0.342^{+0.037}_{-0.037} $\\
+           & Fraction of normalisation part reco in H1                                    &   $0.593^{+0.005}_{-0.005} $\\
+           & Fraction of normalisation peak in H1                                         &   $0.592^{+0.010}_{-0.010} $\\
+           & Ratio of \Dssp\Dstarzb to (\Dssp\Dzb + \Dsp\Dstarzb)                         &   $0.607^{+0.016}_{-0.015} $\\
+\hline
+\caption{The fit result with final values of all floating variables used in the fit model. Here H1 and H2 represent the $|\cos\theta_{K}|>0.4$ and $|\cos\theta_{K}|<0.4$ categories respectively.} 
+\label{tab:B2DsPhi_free_variables} 
+\end{longtable}
+
 
 
 \section{Efficiency corrections}
@@ -734,12 +912,12 @@ Fractions            & Ratio of \Dsp\Kp\Km candidates to \Dsp\Dzb               
 
 The branching fraction for \decay{\Bp}{\Dsp\phiz} decays is determined by correcting the yields for the signal and normalisation channels by their respective efficiencies. In determining the efficiencies both the \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Dzb} decays are assumed to be pseudo-two-body decays in which variations as a function of phase-space are negligible. This means the relative efficiency can be calculated as a simple ratio for each \Dsp decay mode, simplifying the correction considerably.    
 
-The efficiencies for each stage of selection are either determined from the appropriate simulation samples for the signal and normalisation decays, or from special calibration data samples for efficiencies involving particle identification requirements. 
+The efficiencies for each stage of selection are either determined from the appropriate simulation samples for the signal and normalisation decays, or from dedicated calibration data samples for efficiencies involving particle identification requirements. 
 
 
 \subsection{Efficiencies from simulation}
 
-The efficiencies for each step of selection are listed separately for the different \Dsp decay modes in Tables~\ref{tab:B2DsPhi_eff_KKPi},~\ref{tab:B2DsPhi_eff_KPiPi} and~\ref{tab:B2DsPhi_eff_PiPiPi}. These steps are closely related to the stages previously described in Chapter~\ref{ch:selection}, however more specific details of what is included in each step is described here. The efficiencies are calculated separately for the different years of data taking, however here they are combined, weighting according to the relative contributions to the total data set. 
+The efficiencies for each step of selection are listed separately for the different \Dsp decay modes in Tables~\ref{tab:B2DsPhi_eff_KKPi},~\ref{tab:B2DsPhi_eff_KPiPi} and~\ref{tab:B2DsPhi_eff_PiPiPi}. These steps are closely related to the stages previously described in Chapter~\ref{ch:selection}, however more specific details of what is included in each step is described here. The efficiencies are calculated separately for the different years of data taking, however they are combined here, weighting according to the relative contributions to the total data set. 
 
 \begin{table}[h]
 \centering
@@ -817,13 +995,13 @@ The errors are statistical.}
 
 \item \textbf{Acceptance:} this efficiency accounts for how likely it is for all five final state tracks to end up within the \lhcb detectors acceptance. 
 
-\item \textbf{Reconstruction:} this efficiency determines the fraction of decays in which all tracks are well reconstructed and combined into the correct candidate. The candidate must pass all requirements outlined in the \emph{Stripping Line} for the specific decay. The reconstruction selections used for both the signal and normalisation decays explicitly require that the event in which the candidate was found had fired the trigger. Therefore this efficiency includes some, but not all, of the trigger efficiency.
+\item \textbf{Reconstruction:} this efficiency determines the fraction of decays in which all tracks are well reconstructed and combined into a suitable candidate. The candidate must pass all requirements outlined in the \emph{Stripping Line} for the specific decay. The reconstruction selections used for both the signal and normalisation decays explicitly require that the event in which the candidate was found had fired the trigger. Therefore this efficiency includes some, but not all, of the trigger efficiency.
 
 \item \textbf{Trigger:} this efficiency effectively accounts for the likelihood that the candidate passed at least one of the requirements in Sec.~\ref{sec:selection_trigger}, given a trigger fired in that event. These efficiencies are typically very high. 
 
 \item \textbf{Mass windows:} this represents the efficiency for the candidates to be within the invariant mass windows for the \Dsp and \phiz or \Dzb mesons.
 
-\item \textbf{Vetoes:} the efficiency of the kinematic vetoes described in Sec.\ref{sec:kinematicvetos} is included in this quantity. The efficiencies for the misidentified \D and \Lc hadrons are assumed to be the signal and normalisation channel and therefore not included in this efficiency. The misidentified hadron vetoes only target the \Dsp meson, present in both the signal and normalisation decays. The systematic uncertainty that this assumption produces is discussed in Sec.\ref{sec:B2DsPhi_systuncertainy}.
+\item \textbf{Vetoes:} the efficiency of the kinematic vetoes described in Sec.\ref{sec:kinematicvetos} is included in this quantity. The misidentified \D and \Lc hadron vetoes target the \Dsp meson, present in both the signal and normalisation decays. The relative efficiency is assumed to be one for these specific vetoes therefore not included in this efficiency. The systematic uncertainty resulting from this assumption is discussed in Sec.\ref{sec:B2DsPhi_systuncertainy}.
 
 \item \textbf{$\chi^{2}_{\text{IP}}$:} the efficiency of the $\chi^{2}_{\text{IP}}$ requirements for the \Bp and \Dsp candidates as detailed in Sec.\ref{sec:selection_IPCHI2} are included in this quantity. These are only applied to the signal mode therefore the normalisation mode is 100\% efficient.
 
@@ -893,69 +1071,76 @@ where the first uncertainty is statistical and the second systematic. This corre
 \end{equation}
 where the first uncertainty is statistical, the second systematic, and the third results from the uncertainty on the branching fractions $\mathcal{B}(\decay{\Bp}{\Dsp\Dzb})$, $\mathcal{B}(\decay{\phi}{\Kp\Km})$ and $\mathcal{B}(\decay{\Dzb}{\Kp\Km})$. Considering only the statistical uncertainty, the significance of the $\decay{\Bp}{\Dsp\phiz}$ signal is 0.8 standard deviations ($\sigma$). 
 
-\begin{longtable}{ l c l l l }
+% \begin{longtable}{ l c l l l }
 
-\hline
-Variable & Value & Symmetric Error & Asym High Error & Asym Low Error \\
-\hline
-Branching fraction ($\times10^{-7}$)                                                   & 1.167896 & $\pm$ 1.46377 & +1.55907 & -1.37454 \\ 
-Ratio of $\Dsp\Kp\Km$ events to \Dsp\Dzb                                            & 0.024300 & $\pm$ 0.00393762 & +0.00410813 & -0.00377363 \\ 
-Fraction of \Dssp\phiz in ($D_{s}^{(*)+}\Km\Kstarz$ + \Dssp\phiz               & 0.172064 & $\pm$ 0.114987 & +0.103363 & -0.134602 \\ 
-Fraction of \Dssp\Dzb in (\Dssp\Dzb+\Dsp\Dstarzb) in 1st helicity bin   & 0.302051 & $\pm$ 0.0310714 & +0.0310957 & -0.031094 \\ 
-Fraction of \Dssp\Dzb in (\Dssp\Dzb+\Dsp\Dstarzb) in 2nd helicity bin   & 0.341720 & $\pm$ 0.0368215 & +0.0368709 & -0.0368397 \\ 
-Ratio of $\Dsp D_{(s)}^{(*)-}$ backgrounds to (\Dssp\phiz + $D_{s}^{(*)+}\Km\Kstarz$)             & 0.566997 & $\pm$ 0.116779 & +0.128702 & -0.107254 \\ 
-Ratio of \Dssp\Dstarzb to (\Dssp\Dzb + \Dsp\Dstarzb)                       & 0.607422 & $\pm$ 0.015478 & +0.015621 & -0.0153371 \\ 
-Fraction of \Dsp\Km\Kstarz in (\Dssp\Km\Kstarz+\Dsp\Km\Kstarz)                      & 0.663944 & $\pm$ 0.0448223 & +0.0456886 & -0.0442098 \\ 
-Combinatorial slope                                                                    & -0.003252 & $\pm$ 0.000358216 & +0.000367427 & -0.000350085 \\ 
-Relative heights double peaked part reco shapes                                        & 0.677350 & $\pm$ 0.0471341 & +0.0484954 & -0.0458997 \\ 
-Mean B mass (\mevcc)                                                                   & 5279.098855 & $\pm$ 0.170556 & +0.170808 & -0.170369 \\ 
-Part reco background mass offset (\mevcc)                                              & -1.974542 & $\pm$ 0.362046 & +0.362474 & -0.361924 \\ 
-Yield of (\Dssp\Dzb + \Dsp\Dstarzb) in \decay{\Dsp}{\Kp\Km\pip}                       & 2826.588740 & $\pm$ 51.6335 & +51.8687 & -51.3992 \\ 
-Yield of (\Dssp\Dzb + \Dsp\Dstarzb) in \decay{\Dsp}{\Kp\pim\pip}                     & 393.858122 & $\pm$ 20.1566 & +20.097 & -20.2593 \\ 
-Yield of (\Dssp\Dzb + \Dsp\Dstarzb) in \decay{\Dsp}{\phiz\pip}                     & 1733.095037 & $\pm$ 37.289 & +37.5279 & -37.0488 \\ 
-Yield of (\Dssp\Dzb + \Dsp\Dstarzb) in \decay{\Dsp}{\pip\pim\pip}                   & 804.306880 & $\pm$ 25.2939 & +25.4726 & -25.1359 \\ 
-Yield of (\Dssp\phiz + $D_{s}^{(*)+}\Km\Kstarz$) in \decay{\Dsp}{\Kp\Km\pip}                & 138.730029 & $\pm$ 19.6982 & +19.4737 & -19.8388 \\ 
-Yield of (\Dssp\phiz + $D_{s}^{(*)+}\Km\Kstarz$) in \decay{\Dsp}{\Kp\pim\pip}              & 7.096855 & $\pm$ 3.82436 & +3.87374 & -3.83642 \\ 
-Yield of (\Dssp\phiz + $D_{s}^{(*)+}\Km\Kstarz$) in \decay{\Dsp}{\phiz\pip}              & 66.502638 & $\pm$ 10.404 & +10.3984 & -10.365 \\ 
-Yield of (\Dssp\phiz + $D_{s}^{(*)+}\Km\Kstarz$) in \decay{\Dsp}{\Kp\pim\pip}              & 25.313567 & $\pm$ 6.60665 & +6.79583 & -6.41836 \\ 
-$\sigma_{1}$ for \decay{\Dsp}{\Kp\Km\pip}  (\mevcc)                                           & 7.609946 & $\pm$ 0.178543 & +0.181767 & -0.175577 \\ 
-$\sigma_{1}$ for \decay{\Dsp}{\Kp\pim\pip} (\mevcc)                                          & 8.771606 & $\pm$ 0.572254 & +0.590186 & -0.554842 \\ 
-$\sigma_{1}$ for \decay{\Dsp}{\phiz\pip}  (\mevcc)                                         & 7.530819 & $\pm$ 0.214442 & +0.21795 & -0.210645 \\ 
-$\sigma_{1}$ for \decay{\Dsp}{\pip\pim\pip}  (\mevcc)                                       & 8.302242 & $\pm$ 0.350017 & +0.357601 & -0.343146 \\ 
-Fraction of normalisation part reco in 1st helicity bin                                & 0.593190 & $\pm$ 0.00536575 & +0.00535569 & -0.00537737 \\ 
-Fraction of normalisation peak in 1st helicity bin                                     & 0.592172 & $\pm$ 0.00958993 & +0.00956661 & -0.00961301 \\ 
-Comb. Yield \Dsp\Dzb \decay{\Dsp}{\Kp\Km\pip} in 1st helicity bin                         & 112.211981 & $\pm$ 27.2415 & +29.7171 & -24.9196 \\ 
-Comb. Yield \Dsp\Dzb \decay{\Dsp}{\Kp\Km\pip} in 2nd helicity bin                         & 49.508665 & $\pm$ 15.2288 & +16.9114 & -13.6667 \\ 
-Comb. Yield \Dsp\Dzb \decay{\Dsp}{\Kp\pim\pip} in 1st helicity bin                       & 71.321464 & $\pm$ 18.8308 & +20.2632 & -17.361 \\ 
-Comb. Yield \Dsp\Dzb \decay{\Dsp}{\Kp\pim\pip} in 2nd helicity bin                       & 41.214155 & $\pm$ 11.3661 & +12.3029 & -10.4384 \\ 
-Comb. Yield \Dsp\Dzb \decay{\Dsp}{\phiz\pip} in 1st helicity bin                       & 30.879073 & $\pm$ 12.64 & +14.4586 & -10.9626 \\ 
-Comb. Yield \Dsp\Dzb \decay{\Dsp}{\phiz\pip} in 2nd helicity bin                       & 12.473772 & $\pm$ 7.22957 & +8.71538 & -5.89777 \\ 
-Comb. Yield \Dsp\Dzb \decay{\Dsp}{\pip\pim\pip} in 1st helicity bin                     & 40.594538 & $\pm$ 12.758 & +14.1196 & -11.4669 \\ 
-Comb. Yield \Dsp\Dzb \decay{\Dsp}{\pip\pim\pip} in 2nd helicity bin                     & 35.178755 & $\pm$ 12.6623 & +14.1291 & -11.2485 \\ 
-Comb. Yield $\Dsp\phiz$ sideband \decay{\Dsp}{\Kp\Km\pip} in 1st helicity bin                 & 32.907869 & $\pm$ 11.7119 & +13.1098 & -10.3814 \\ 
-Comb. Yield $\Dsp\phiz$ sideband \decay{\Dsp}{\Kp\Km\pip} in 2nd helicity bin                 & 25.920288 & $\pm$ 9.59106 & +10.5388 & -8.60011 \\ 
-Comb. Yield $\Dsp\phiz$ sideband \decay{\Dsp}{\Kp\pim\pip} in 1st helicity bin               & 17.808815 & $\pm$ 6.31184 & +6.84453 & -5.77765 \\ 
-Comb. Yield $\Dsp\phiz$ sideband \decay{\Dsp}{\Kp\pim\pip} in 2nd helicity bin               & 14.345608 & $\pm$ 5.12602 & +5.48675 & -4.77472 \\ 
-Comb. Yield $\Dsp\phiz$ sideband \decay{\Dsp}{\phiz\pip} in 1st helicity bin               & 5.142178 & $\pm$ 4.80805 & +6.07994 & -3.54286 \\ 
-Comb. Yield $\Dsp\phiz$ sideband \decay{\Dsp}{\phiz\pip} in 2nd helicity bin               & 12.029947 & $\pm$ 7.62873 & +8.33685 & -6.68294 \\ 
-Comb. Yield $\Dsp\phiz$ sideband \decay{\Dsp}{\pip\pim\pip} in 1st helicity bin             & 15.895551 & $\pm$ 6.78196 & +7.55101 & -5.99288 \\ 
-Comb. Yield $\Dsp\phiz$ sideband \decay{\Dsp}{\pip\pim\pip} in 2nd helicity bin             & 13.751045 & $\pm$ 7.92647 & +8.15698 & -7.7326 \\ 
-Comb. Yield $\Dsp\phiz$ \decay{\Dsp}{\Kp\Km\pip} in 1st helicity bin                          & 107.300973 & $\pm$ 21.1413 & +22.5271 & -19.7888 \\ 
-Comb. Yield $\Dsp\phiz$ \decay{\Dsp}{\Kp\Km\pip} in 2nd helicity bin                          & 52.307013 & $\pm$ 11.4778 & +11.9854 & -10.9268 \\ 
-Comb. Yield $\Dsp\phiz$ \decay{\Dsp}{\Kp\pim\pip} in 1st helicity bin                        & 18.960719 & $\pm$ 6.694 & +7.19079 & -6.19017 \\ 
-Comb. Yield $\Dsp\phiz$ \decay{\Dsp}{\Kp\pim\pip} in 2nd helicity bin                        & 18.278462 & $\pm$ 4.62916 & +4.97139 & -4.3009 \\ 
-Comb. Yield $\Dsp\phiz$ \decay{\Dsp}{\phiz\pip} in 1st helicity bin                        & 38.331966 & $\pm$ 12.8224 & +13.874 & -11.6781 \\ 
-Comb. Yield $\Dsp\phiz$ \decay{\Dsp}{\phiz\pip} in 2nd helicity bin                        & 27.069960 & $\pm$ 7.84002 & +8.22377 & -7.43095 \\ 
-Comb. Yield $\Dsp\phiz$ \decay{\Dsp}{\pip\pim\pip} in 1st helicity bin                      & 41.873145 & $\pm$ 9.5984 & +10.09 & -9.07919 \\ 
-Comb. Yield $\Dsp\phiz$ \decay{\Dsp}{\pip\pim\pip} in 2nd helicity bin                      & 25.282391 & $\pm$ 6.5594 & +6.88293 & -6.23754 \\ 
-Total Normalisation Yield \Dsp\Dzb \decay{\Dsp}{\Kp\Km\pip}                               & 1324.206680 & $\pm$ 36.6524 & +36.9821 & -36.3255 \\ 
-Total Normalisation Yield \Dsp\Dzb \decay{\Dsp}{\Kp\pim\pip}                             & 182.177509 & $\pm$ 13.7813 & +14.1111 & -13.4562 \\ 
-Total Normalisation Yield \Dsp\Dzb \decay{\Dsp}{\phiz\pip}                             & 800.699712 & $\pm$ 28.2849 & +28.6139 & -27.9589 \\ 
-Total Normalisation Yield \Dsp\Dzb \decay{\Dsp}{\pip\pim\pip}                           & 369.298927 & $\pm$ 19.2848 & +19.6301 & -18.9444 \\
-\hline
-\caption{The fit result with final values of all floating variables used in the fit model. } 
-\label{tab:result} 
-\end{longtable}
+% \hline
+% Variable & Value & Symmetric Error & Asym High Error & Asym Low Error \\
+% \hline
+% Branching fraction ($\times10^{-7}$)                                                   & 1.167896 & $\pm$ 1.46377 & +1.55907 & -1.37454 \\
+% \hline
+% Combinatorial slope                                                                    & -0.003252 & $\pm$ 0.000358216 & +0.000367427 & -0.000350085 \\ 
+% Mean B mass (\mevcc)                                                                   & 5279.098855 & $\pm$ 0.170556 & +0.170808 & -0.170369 \\ 
+% Part reco background mass offset (\mevcc)                                              & -1.974542 & $\pm$ 0.362046 & +0.362474 & -0.361924 \\ 
+% Relative heights double peaked part reco shapes                                        & 0.677350 & $\pm$ 0.0471341 & +0.0484954 & -0.0458997 \\ 
+% $\sigma_{1}$ for \decay{\Dsp}{\Kp\Km\pip}  (\mevcc)                                           & 7.609946 & $\pm$ 0.178543 & +0.181767 & -0.175577 \\ 
+% $\sigma_{1}$ for \decay{\Dsp}{\Kp\pim\pip} (\mevcc)                                          & 8.771606 & $\pm$ 0.572254 & +0.590186 & -0.554842 \\ 
+% $\sigma_{1}$ for \decay{\Dsp}{\phiz\pip}  (\mevcc)                                         & 7.530819 & $\pm$ 0.214442 & +0.21795 & -0.210645 \\ 
+% $\sigma_{1}$ for \decay{\Dsp}{\pip\pim\pip}  (\mevcc)                                       & 8.302242 & $\pm$ 0.350017 & +0.357601 & -0.343146 \\
+% \hline
+% Total Normalisation Yield \Dsp\Dzb \decay{\Dsp}{\Kp\Km\pip}                               & 1324.206680 & $\pm$ 36.6524 & +36.9821 & -36.3255 \\ 
+% Total Normalisation Yield \Dsp\Dzb \decay{\Dsp}{\Kp\pim\pip}                             & 182.177509 & $\pm$ 13.7813 & +14.1111 & -13.4562 \\ 
+% Total Normalisation Yield \Dsp\Dzb \decay{\Dsp}{\phiz\pip}                             & 800.699712 & $\pm$ 28.2849 & +28.6139 & -27.9589 \\ 
+% Total Normalisation Yield \Dsp\Dzb \decay{\Dsp}{\pip\pim\pip}                           & 369.298927 & $\pm$ 19.2848 & +19.6301 & -18.9444 \\
+% Yield of (\Dssp\Dzb + \Dsp\Dstarzb) in \decay{\Dsp}{\Kp\Km\pip}                       & 2826.588740 & $\pm$ 51.6335 & +51.8687 & -51.3992 \\ 
+% Yield of (\Dssp\Dzb + \Dsp\Dstarzb) in \decay{\Dsp}{\Kp\pim\pip}                     & 393.858122 & $\pm$ 20.1566 & +20.097 & -20.2593 \\ 
+% Yield of (\Dssp\Dzb + \Dsp\Dstarzb) in \decay{\Dsp}{\phiz\pip}                     & 1733.095037 & $\pm$ 37.289 & +37.5279 & -37.0488 \\ 
+% Yield of (\Dssp\Dzb + \Dsp\Dstarzb) in \decay{\Dsp}{\pip\pim\pip}                   & 804.306880 & $\pm$ 25.2939 & +25.4726 & -25.1359 \\
+% Yield of (\Dssp\phiz + $D_{s}^{(*)+}\Km\Kstarz$) in \decay{\Dsp}{\Kp\Km\pip}                & 138.730029 & $\pm$ 19.6982 & +19.4737 & -19.8388 \\ 
+% Yield of (\Dssp\phiz + $D_{s}^{(*)+}\Km\Kstarz$) in \decay{\Dsp}{\Kp\pim\pip}              & 7.096855 & $\pm$ 3.82436 & +3.87374 & -3.83642 \\ 
+% Yield of (\Dssp\phiz + $D_{s}^{(*)+}\Km\Kstarz$) in \decay{\Dsp}{\phiz\pip}              & 66.502638 & $\pm$ 10.404 & +10.3984 & -10.365 \\ 
+% Yield of (\Dssp\phiz + $D_{s}^{(*)+}\Km\Kstarz$) in \decay{\Dsp}{\Kp\pim\pip}              & 25.313567 & $\pm$ 6.60665 & +6.79583 & -6.41836 \\
+
+% Comb. Yield \Dsp\Dzb \decay{\Dsp}{\Kp\Km\pip} in 1st helicity bin                         & 112.211981 & $\pm$ 27.2415 & +29.7171 & -24.9196 \\ 
+% Comb. Yield \Dsp\Dzb \decay{\Dsp}{\Kp\Km\pip} in 2nd helicity bin                         & 49.508665 & $\pm$ 15.2288 & +16.9114 & -13.6667 \\ 
+% Comb. Yield \Dsp\Dzb \decay{\Dsp}{\Kp\pim\pip} in 1st helicity bin                       & 71.321464 & $\pm$ 18.8308 & +20.2632 & -17.361 \\ 
+% Comb. Yield \Dsp\Dzb \decay{\Dsp}{\Kp\pim\pip} in 2nd helicity bin                       & 41.214155 & $\pm$ 11.3661 & +12.3029 & -10.4384 \\ 
+% Comb. Yield \Dsp\Dzb \decay{\Dsp}{\phiz\pip} in 1st helicity bin                       & 30.879073 & $\pm$ 12.64 & +14.4586 & -10.9626 \\ 
+% Comb. Yield \Dsp\Dzb \decay{\Dsp}{\phiz\pip} in 2nd helicity bin                       & 12.473772 & $\pm$ 7.22957 & +8.71538 & -5.89777 \\ 
+% Comb. Yield \Dsp\Dzb \decay{\Dsp}{\pip\pim\pip} in 1st helicity bin                     & 40.594538 & $\pm$ 12.758 & +14.1196 & -11.4669 \\ 
+% Comb. Yield \Dsp\Dzb \decay{\Dsp}{\pip\pim\pip} in 2nd helicity bin                     & 35.178755 & $\pm$ 12.6623 & +14.1291 & -11.2485 \\
+% Comb. Yield $\Dsp\phiz$ \decay{\Dsp}{\Kp\Km\pip} in 1st helicity bin                          & 107.300973 & $\pm$ 21.1413 & +22.5271 & -19.7888 \\ 
+% Comb. Yield $\Dsp\phiz$ \decay{\Dsp}{\Kp\Km\pip} in 2nd helicity bin                          & 52.307013 & $\pm$ 11.4778 & +11.9854 & -10.9268 \\ 
+% Comb. Yield $\Dsp\phiz$ \decay{\Dsp}{\Kp\pim\pip} in 1st helicity bin                        & 18.960719 & $\pm$ 6.694 & +7.19079 & -6.19017 \\ 
+% Comb. Yield $\Dsp\phiz$ \decay{\Dsp}{\Kp\pim\pip} in 2nd helicity bin                        & 18.278462 & $\pm$ 4.62916 & +4.97139 & -4.3009 \\ 
+% Comb. Yield $\Dsp\phiz$ \decay{\Dsp}{\phiz\pip} in 1st helicity bin                        & 38.331966 & $\pm$ 12.8224 & +13.874 & -11.6781 \\ 
+% Comb. Yield $\Dsp\phiz$ \decay{\Dsp}{\phiz\pip} in 2nd helicity bin                        & 27.069960 & $\pm$ 7.84002 & +8.22377 & -7.43095 \\ 
+% Comb. Yield $\Dsp\phiz$ \decay{\Dsp}{\pip\pim\pip} in 1st helicity bin                      & 41.873145 & $\pm$ 9.5984 & +10.09 & -9.07919 \\ 
+% Comb. Yield $\Dsp\phiz$ \decay{\Dsp}{\pip\pim\pip} in 2nd helicity bin                      & 25.282391 & $\pm$ 6.5594 & +6.88293 & -6.23754 \\
+% Comb. Yield $\Dsp\phiz$ sideband \decay{\Dsp}{\Kp\Km\pip} in 1st helicity bin                 & 32.907869 & $\pm$ 11.7119 & +13.1098 & -10.3814 \\ 
+% Comb. Yield $\Dsp\phiz$ sideband \decay{\Dsp}{\Kp\Km\pip} in 2nd helicity bin                 & 25.920288 & $\pm$ 9.59106 & +10.5388 & -8.60011 \\ 
+% Comb. Yield $\Dsp\phiz$ sideband \decay{\Dsp}{\Kp\pim\pip} in 1st helicity bin               & 17.808815 & $\pm$ 6.31184 & +6.84453 & -5.77765 \\ 
+% Comb. Yield $\Dsp\phiz$ sideband \decay{\Dsp}{\Kp\pim\pip} in 2nd helicity bin               & 14.345608 & $\pm$ 5.12602 & +5.48675 & -4.77472 \\ 
+% Comb. Yield $\Dsp\phiz$ sideband \decay{\Dsp}{\phiz\pip} in 1st helicity bin               & 5.142178 & $\pm$ 4.80805 & +6.07994 & -3.54286 \\ 
+% Comb. Yield $\Dsp\phiz$ sideband \decay{\Dsp}{\phiz\pip} in 2nd helicity bin               & 12.029947 & $\pm$ 7.62873 & +8.33685 & -6.68294 \\ 
+% Comb. Yield $\Dsp\phiz$ sideband \decay{\Dsp}{\pip\pim\pip} in 1st helicity bin             & 15.895551 & $\pm$ 6.78196 & +7.55101 & -5.99288 \\ 
+% Comb. Yield $\Dsp\phiz$ sideband \decay{\Dsp}{\pip\pim\pip} in 2nd helicity bin             & 13.751045 & $\pm$ 7.92647 & +8.15698 & -7.7326 \\
+% \hline
+% Ratio of $\Dsp\Kp\Km$ events to \Dsp\Dzb                                            & 0.024300 & $\pm$ 0.00393762 & +0.00410813 & -0.00377363 \\
+% Fraction of \Dsp\Km\Kstarz in (\Dssp\Km\Kstarz+\Dsp\Km\Kstarz)                      & 0.663944 & $\pm$ 0.0448223 & +0.0456886 & -0.0442098 \\ 
+% Fraction of \Dssp\phiz in ($D_{s}^{(*)+}\Km\Kstarz$ + \Dssp\phiz               & 0.172064 & $\pm$ 0.114987 & +0.103363 & -0.134602 \\ 
+% Ratio of $\Dsp D_{(s)}^{(*)-}$ backgrounds to (\Dssp\phiz + $D_{s}^{(*)+}\Km\Kstarz$)             & 0.566997 & $\pm$ 0.116779 & +0.128702 & -0.107254 \\ 
+
+% Fraction of \Dssp\Dzb in (\Dssp\Dzb+\Dsp\Dstarzb) in 1st helicity bin   & 0.302051 & $\pm$ 0.0310714 & +0.0310957 & -0.031094 \\ 
+% Fraction of \Dssp\Dzb in (\Dssp\Dzb+\Dsp\Dstarzb) in 2nd helicity bin   & 0.341720 & $\pm$ 0.0368215 & +0.0368709 & -0.0368397 \\ 
+% Fraction of normalisation part reco in 1st helicity bin                                & 0.593190 & $\pm$ 0.00536575 & +0.00535569 & -0.00537737 \\ 
+% Fraction of normalisation peak in 1st helicity bin                                     & 0.592172 & $\pm$ 0.00958993 & +0.00956661 & -0.00961301 \\ 
+% Ratio of \Dssp\Dstarzb to (\Dssp\Dzb + \Dsp\Dstarzb)                       & 0.607422 & $\pm$ 0.015478 & +0.015621 & -0.0153371 \\ 
+% \hline
+ 
+ 
+% \caption{The fit result with final values of all floating variables used in the fit model. } 
+% \label{tab:result} 
+% \end{longtable}
 
 
 \subsection{Limit setting}
