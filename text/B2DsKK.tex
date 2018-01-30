@@ -62,7 +62,7 @@ Both the signal and normalisation channels are considered within the same \Bp me
 \subsection{Signal and normalisation decays}
 \label{sec:B2DsKK_sigcomps}
 
-The invariant mass distribution of \decay{\Bp}{\Dsp\Dzb} and \decay{\Bp}{\Dsp\Kp\Km} decays are parametrised as the sum of two Crystal Ball (CB) functions.
+The invariant mass distributions of \decay{\Bp}{\Dsp\Dzb} and \decay{\Bp}{\Dsp\Kp\Km} decays are parametrised as the sum of two Crystal Ball (CB) functions.
 The CB function consists of a Gaussian function with a power-law tail and is typically used to parametrise losses due to radiative processes.
 This is defined as
 \begin{equation}
@@ -302,17 +302,37 @@ where $c$ is the single degree of freedom controlling the effective slope of the
 \section{Free and constrained parameters}
 
 
-The fit to signal and normalisatino decays have eleven and nine free parameters respectively. 
+The fit to signal and normalisation decays have eleven and nine free parameters respectively. 
 \subsection{Parameter of interest}
-\subsection{Shape parameters}
-\subsection{Yields}
+\begin{description}
+\item \textbf{Signal:} the parameter of interest in the signal decay is $N({\Bp}{\Dsp\Kp\Km})$, the yield attributed to the signal PDF.
+
+\item \textbf{Normalisation:} the parameter of interest in the signal decay is $N({\Bp}{\Dsp\Dzb})$, the yield attributed to the normalisation PDF.
+
+\end{description}
 
           %         nsig    4.4287e+02    4.4277e+02 +/-  2.94e+01  <none>
+          %         nsig    1.0905e+03    1.0905e+03 +/-  3.42e+01  <none>
 
+\subsection{Shape parameters}
+\begin{description}
+\item \textbf{Signal:}
           % global_shift    2.2538e+00    3.5457e+00 +/-  1.17e+01  <none>
           %       mean_B    5.2789e+03    5.2789e+03 +/-  8.82e-01  <none>
           %        sigma    1.2298e+01    1.2291e+01 +/-  8.77e-01  <none>
           %        slope   -2.8199e-03   -2.8202e-03 +/-  2.79e-04  <none>
+\item \textbf{Normalisation:}
+          %   global_csi    1.2683e-06    5.2233e-08 +/-  2.25e-01  <none>
+          % global_shift   -1.0585e+01   -1.0586e+01 +/-  1.31e+00  <none>
+          %       mean_B    5.2784e+03    5.2784e+03 +/-  4.00e-01  <none>
+          %        slope   -9.4305e-03   -9.4308e-03 +/-  1.13e-03  <none>
+          %        sigma    1.2436e+01    1.2435e+01 +/-  3.23e-01  <none>
+\end{description}
+
+\subsection{Yields}
+\begin{description}
+
+\item \textbf{Signal:} the yields of each background component are left free in the signal fit.
           
           %      nB02DsD    4.6587e+02    4.6621e+02 +/-  1.54e+02  <none>
           %          nBG    1.1139e+03    1.1142e+03 +/-  7.30e+01  <none>
@@ -320,19 +340,14 @@ The fit to signal and normalisatino decays have eleven and nine free parameters 
           %     nBs2Dsa1    1.1153e+03    1.1147e+03 +/-  4.61e+02  <none>
           %   nBs2DsstDs    1.1208e-04    6.2385e-02 +/-  3.98e+02  <none>
           % nBs2DsstKKst    2.9756e+02    2.9691e+02 +/-  1.24e+02  <none>
-
-
-          %         nsig    1.0905e+03    1.0905e+03 +/-  3.42e+01  <none>
-
-          %   global_csi    1.2683e-06    5.2233e-08 +/-  2.25e-01  <none>
-          % global_shift   -1.0585e+01   -1.0586e+01 +/-  1.31e+00  <none>
-          %       mean_B    5.2784e+03    5.2784e+03 +/-  4.00e-01  <none>
-          %        slope   -9.4305e-03   -9.4308e-03 +/-  1.13e-03  <none>
-          %        sigma    1.2436e+01    1.2435e+01 +/-  3.23e-01  <none>
+\item \textbf{Normalisation:} the yields of the combinatorial and partially reconstructed backgrounds are left free in the fit to the normalisation channel. This corresponds to three parameters; $N_{\text{comb}}$, $N(\decay{\Bp}{\Dssp\Dzb})$ and $N(\decay{\Bp}{\Dsp\Dstarzb})$. The relatives contributions of the \decay{\Dssp}{\Dsp\piz} and \decay{\Dssp}{\Dsp\Pgamma} decays are fixed to their ratio of branching fractions (similarly for \Dstarzb). A factor is included to account for the fraction of each PDF that is within the fitted \Bp invariant mass range.
+\end{description}
 
           %          nBG    2.4773e+02    2.4769e+02 +/-  5.42e+01  <none>
           %      nDsDst0    3.3055e+02    3.3055e+02 +/-  6.72e+01  <none>
           %      nDsstD0    7.5230e+02    7.5220e+02 +/-  5.48e+01  <none>
+
+
 
 \section{Fit validation}
 \label{sec:B2DsKK_fitvalidation}
