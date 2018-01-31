@@ -464,12 +464,38 @@ Additionally, the distribution of each shape in the helicity angle described in 
 }
 
 \begin{description}
-\item \textbf{\decay{\Bsb}{\Dsp\Km\Kstarz}:} this decay can form a background to \decay{\Bp}{\Dsp\phiz} decays when the soft pion from the \decay{\Kstarz}{\Kp\pim} decay is not reconstructed. The lower bound of the fit range is wide enough that a significant fraction of these decays are retained in the fitted data set. The $\Km\Kstarz$ is modelled as originating from the $a_1(1260)$ resonance. This resonance has a width of $250-600$ MeV~\cite{PDG2016}, allowing it to decay to $\Km\Kstarz$ even though it's pole mass is below the $\Km\Kstarz$ threshold. A PDF for this component is determined by reconstructing simulated \decay{\Bsb}{\Dsp\Km\Kstarz} decays through the identical reconstruction and selection steps as the signal. The \roofit class \texttt{RooKeysPDF} is used to create a kernel estimation of the partially reconstructed \Bp mass distribution for the candidates passing the selection. This is shown in Fig.~\ref{fig:B2DsPhi_part_reco_shapes}. The fraction of these decays expected in each of the four $m(\Kp\Km)$ and $\cos\theta_{K}$ categories is determined from the simulations samples.
+\item \textbf{\decay{\Bsb}{\Dsp\Km\Kstarz}:} this decay can form a background to \decay{\Bp}{\Dsp\phiz} decays when the soft pion from the \decay{\Kstarz}{\Kp\pim} decay is not reconstructed. The lower bound of the fit range is wide enough that a significant fraction of these decays are retained in the fitted data set. The $\Km\Kstarz$ is modelled as originating from the $a_1(1260)$ resonance. This resonance has a width of $250-600$ MeV~\cite{PDG2016}, allowing it to decay to $\Km\Kstarz$ even though it's pole mass is below the $\Km\Kstarz$ threshold. A PDF for this component is determined by reconstructing simulated \decay{\Bsb}{\Dsp\Km\Kstarz} decays through the identical reconstruction and selection steps as the signal. The \roofit class \texttt{RooKeysPDF} is used to create a kernel estimation of the partially reconstructed \Bp mass distribution for the candidates passing the selection. This is shown in Fig.~\ref{fig:B2DsPhi_part_reco_shapes_DsKKstar}. The fraction of these decays expected in each of the four $m(\Kp\Km)$ and $\cos\theta_{K}$ categories is determined from the simulations samples.
+\end{description}
 
-\item \textbf{\decay{\Bsb}{\Dssp\Km\Kstarz}:} this decay similarly forms a background to the signal mode when both a low momentum neutral particle (\piz or \Pgamma) is not reconstructed in the decay of the \Dssp meson, in addition to the low momentum pion from the \Kstarz decay.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+    \centering
+    \begin{subfigure}[t]{0.49\textwidth}
+        \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/Bs2Dsa1_4600_5900_Shape.pdf}
+    \end{subfigure}
+    \caption{Partially reconstructed mass PDFs determined from samples of \decay{\Bsb}{\Dsp\Km\Kstarz} simulations processed with the same reconstruction and selection as the signal decays. The \Bp meson mass is indicated by a vertical red line. The are below 4900\mevcc is not included in the fit range, but included for reference. The PDF colours follow the same convention used in the final fit plots shown in Fig.~\ref{fig:B2DsPhi_Signal_Fit}.}
+    \label{fig:B2DsPhi_part_reco_shapes_DsKKstar}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{description}
+\item \textbf{\decay{\Bsb}{\Dssp\Km\Kstarz}:} this decay similarly forms a background to the signal mode when both a low momentum neutral particle (\piz or \Pgamma) is not reconstructed in the decay of the \Dssp meson, in addition to the low momentum pion from the \Kstarz decay. {\color{Red} Add more words}
+\end{description}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+    \centering
+    \begin{subfigure}[t]{0.49\textwidth}
+        \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/Bs2DsstKKst_4600_5900_Shape.pdf}
+    \end{subfigure}
+    \caption{Partially reconstructed mass PDFs determined from samples of \decay{\Bsb}{\Dssp\Km\Kstarz} simulations processed with the same reconstruction and selection as the signal decays. The \Bp meson mass is indicated by a vertical red line. The are below 4900\mevcc is not included in the fit range, but included for reference. The PDF colours follow the same convention used in the final fit plots shown in Fig.~\ref{fig:B2DsPhi_Signal_Fit}.}
+    \label{fig:B2DsPhi_part_reco_shapes_DsKKstar}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{description}
 \item \textbf{\decay{\Bsb}{\Dsp\Dsm}, \decay{\Bzb}{\Dsp\Dm} and \decay{\Bsb}{\Dssp\Dsm}:} the decays of neutral \B mesons to two charged \D mesons can form a background to the signal decay if a low momentum pion is not reconstructed in one of the charm meson decays. In the case of \decay{\Bsb}{\Dssp\Dsm} decays an additional neutral particle is not reconstructed in the decay of the \Dssp meson.
-The PDFs for these decays are determined from simulated decays that have been processed with the same reconstruction and selection steps as the signal. For \decay{\Bsb}{\Dsp\Dsm} and \decay{\Bsb}{\Dssp\Dsm} decays, the PDF is creating using a kernel estimation using the \roofit \texttt{RooKeysPDF} implementation. Due to the similarities between \decay{\Bsb}{\Dsp\Dsm} and \decay{\Bzb}{\Dsp\Dm} decays, the PDF for the latter is created by using the kernel estimation for \decay{\Bsb}{\Dsp\Dsm} and shifting the shape down in mass by 40\mevcc to account for the kinematic differences. 
+The PDFs for these decays are determined from simulated decays that have been processed with the same reconstruction and selection steps as the signal. For \decay{\Bsb}{\Dsp\Dsm} and \decay{\Bsb}{\Dssp\Dsm} decays, the PDF is creating using a kernel estimation using the \roofit \texttt{RooKeysPDF} implementation, shown in Fig.\ref{fig:B2DsPhi_part_reco_shapes_DsDs}. Due to the similarities between \decay{\Bsb}{\Dsp\Dsm} and \decay{\Bzb}{\Dsp\Dm} decays, the PDF for the latter is created by using the kernel estimation for \decay{\Bsb}{\Dsp\Dsm} and shifting the shape down in mass by 40\mevcc to account for the kinematic differences. 
 
 The branching fractions for these three decays are measured to be $\BF(\decay{\Bzb}{\Dsp\Dm}) = (7.2 \pm 0.8 ) \times 10^{-3}$, $\BF(\decay{\Bsb}{\Dsp\Dsm}) = (4.4 \pm 0.5 ) \times 10^{-3}$ and $\BF(\decay{\Bsb}{\Dssp\Dsm}) = (1.37 \pm 0.16 ) \%$. Therefore the relative contributions for these three processes are fixed using these branching fractions, estimates of the relative efficiencies for each mode and the production fraction of \Bsb mesons relative to \Bzb mesons, $f_{s}/f_{d}$. This helps to add stability to the fit.   
 \end{description}
@@ -479,14 +505,6 @@ The branching fractions for these three decays are measured to be $\BF(\decay{\B
 \begin{figure}[!h]
     \centering
     \begin{subfigure}[t]{0.49\textwidth}
-        \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/Bs2Dsa1_4600_5900_Shape.pdf}
-        \caption{\decay{\Bsb}{\Dsp\Km\Kstarz} }
-    \end{subfigure}
-    \begin{subfigure}[t]{0.49\textwidth}
-        \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/Bs2DsstKKst_4600_5900_Shape.pdf}
-        \caption{\decay{\Bsb}{\Dsp\Km\Kstarz} }
-    \end{subfigure}
-    \begin{subfigure}[t]{0.49\textwidth}
         \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/Bs2DsDs_4600_5900_Shape.pdf}
         \caption{\decay{\Bsb}{\Dsp\Dsm} }
     \end{subfigure}
@@ -494,10 +512,34 @@ The branching fractions for these three decays are measured to be $\BF(\decay{\B
         \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/Bs2DsstDs_4600_5900_Shape.pdf}
         \caption{\decay{\Bsb}{\Dssp\Dsm} }
     \end{subfigure}
-    \caption{Partially reconstructed mass PDFs determined from samples of simulations decays processed with the same reconstruction and selection as the signal decays. The \Bp meson mass is indicated by a vertical red line. The are below 4900\mevcc is not included in the fit range, but included for reference. The PDF colours follow the same convention used in the final fit plots shown in Fig.~\ref{fig:B2DsPhi_Signal_Fit}.}
-    \label{fig:B2DsPhi_part_reco_shapes}   
+    \caption{Partially reconstructed mass PDFs determined from samples of \decay{\Bsb}{\Dsp\Dsm} and \decay{\Bsb}{\Dssp\Dsm} simulations processed with the same reconstruction and selection as the signal decays. The \Bp meson mass is indicated by a vertical red line. The are below 4900\mevcc is not included in the fit range, but included for reference. The PDF colours follow the same convention used in the final fit plots shown in Fig.~\ref{fig:B2DsPhi_Signal_Fit}.}
+    \label{fig:B2DsPhi_part_reco_shapes_DsDs}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{figure}[!h]
+%     \centering
+%     \begin{subfigure}[t]{0.49\textwidth}
+%         \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/Bs2Dsa1_4600_5900_Shape.pdf}
+%         \caption{\decay{\Bsb}{\Dsp\Km\Kstarz} }
+%     \end{subfigure}
+%     \begin{subfigure}[t]{0.49\textwidth}
+%         \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/Bs2DsstKKst_4600_5900_Shape.pdf}
+%         \caption{\decay{\Bsb}{\Dsp\Km\Kstarz} }
+%     \end{subfigure}
+%     \begin{subfigure}[t]{0.49\textwidth}
+%         \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/Bs2DsDs_4600_5900_Shape.pdf}
+%         \caption{\decay{\Bsb}{\Dsp\Dsm} }
+%     \end{subfigure}
+%     \begin{subfigure}[t]{0.49\textwidth}
+%         \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/Bs2DsstDs_4600_5900_Shape.pdf}
+%         \caption{\decay{\Bsb}{\Dssp\Dsm} }
+%     \end{subfigure}
+%     \caption{Partially reconstructed mass PDFs determined from samples of simulations decays processed with the same reconstruction and selection as the signal decays. The \Bp meson mass is indicated by a vertical red line. The are below 4900\mevcc is not included in the fit range, but included for reference. The PDF colours follow the same convention used in the final fit plots shown in Fig.~\ref{fig:B2DsPhi_Signal_Fit}.}
+%     \label{fig:B2DsPhi_part_reco_shapes}   
+% \end{figure}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 To account for difference between the simulation and data samples all PDFs determined using the kernel estimation method are convolved with an additional Gaussian. The mean position of this Gaussian is given by $\delta$, the same offset used for the analytically described partially decays. The width of the Gaussian is increased to account for the difference in resolution between simulation and data. 

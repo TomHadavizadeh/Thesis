@@ -453,26 +453,108 @@ It would be possible to scale the uncertainty in the branching fraction as deter
 
 \section{Normalisation and signal fits}
 
-The results of the two fits to signal and normalisation candidates are shown in Figs.~\ref{fig:fit_B2DsD0} and \ref{fig:fit_B2DsKK}. The total fit model is overlaid upon the data distributions. Additionally the contributions from each different component in the model is included as detailed in the legends.
+The signal and normalisation fits are performed using the model and dataset previously described. The results of the two fits are shown in Figs.~\ref{fig:B2DsKK_fit_B2DsD0} and \ref{fig:B2DsKK_fit_B2DsKK}. These figures shown the distribution of \Bp candidates along with the total model PDF constructed with the values of the free parameters determined in the NLL minimisation process. The contributions from each different component in the model are superimposed, stacked upon one another, and detailed in the legends.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
     \centering
     \includegraphics[width=0.8\textwidth]{figs/B2DsKK/Fit_DsD0.pdf}
     \caption{Invariant mass fit to \decay{\Bp}{\Dsp\Dzb} candidates.}
-    \label{fig:fit_B2DsD0}   
+    \label{fig:B2DsKK_fit_B2DsD0}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The distribution of \decay{\Bp}{\Dsp\Dzb} candidates in Fig.~\ref{fig:B2DsKK_fit_B2DsD0} demonstrates the relatively high purity of the selection. Additionally, there is a good separation between the normalisation peak and the partially reconstructed background. Only the combinatorial background is found to have a contribution at the same invariant mass as the normalisation peak. 
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
     \centering
     \includegraphics[width=0.8\textwidth]{figs/B2DsKK/Fit_DsKK.pdf}
     \caption{Invariant mass fit to \decay{\Bp}{\Dsp\Kp\Km} candidates.}
-    \label{fig:fit_B2DsKK}   
+    \label{fig:B2DsKK_fit_B2DsKK}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+The distribution of \decay{\Bp}{\Dsp\Kp\Km} candidates shown in Fig.~\ref{fig:B2DsKK_fit_B2DsKK} has a significant contribution from the signal decay. The background contribution beneath the signal PDF is larger than was observed for the normalisation channel. Although the dominant PDF below the signal contribution is still the combinatorial background, the separation between the partially reconstructed backgrounds and the signal is smaller. Several of the background PDFs extend underneath the leftmost half of the signal distribution.  
+
+
+The numerical values of the free parameters determined in the fit to the signal and normalisation channels are listed in Tables~\ref{tab:B2DsKK_fit_result_norm} and \ref{tab:B2DsKK_fit_result_signal}.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{ l l c }
+        \hline
+        Type       & Parameter                                 & Fit result                         \\
+        \hline
+        POI         & $N(\decay{\Bp}{\Dsp\Dzb})$               & $1091\pm34$                \\
+
+                  %         nsig    1.0905e+03    1.0905e+03 +/-  3.42e+01  <none>
+        \hline
+        Shape       & Mass shift $\delta$ (\mevcc)              & $-10.6\pm1.3$                 \\
+                    & Relative peak heights $\xi$               & $0.0\pm0.2$                       \\
+                    & Mean \Bp mass $\mu$ (\mevcc)              & $5278.4\pm0.4$                    \\
+                    & Signal width $\sigma_{1}$ (\mevcc)        & $12.4\pm0.3$                      \\
+                    & Combinatorial slope $c$                   & $(-9.4\pm1.1) \times 10^{-3}$     \\
+                  %   global_csi    1.2683e-06    5.2233e-08 +/-  2.25e-01  <none>
+                  % global_shift   -1.0585e+01   -1.0586e+01 +/-  1.31e+00  <none>
+                  %       mean_B    5.2784e+03    5.2784e+03 +/-  4.00e-01  <none>
+                  %        slope   -9.4305e-03   -9.4308e-03 +/-  1.13e-03  <none>
+                  %        sigma    1.2436e+01    1.2435e+01 +/-  3.23e-01  <none>
+        \hline
+        Yields      & $N_{\text{comb}}$                         & $250\pm50$                        \\
+                    & $N(\decay{\Bp}{\Dsp\Dstarzb})$            & $330\pm70$                        \\
+                    & $N(\decay{\Bp}{\Dssp\Dzb})$               & $750\pm50$                        \\
+                  %          nBG    2.4773e+02    2.4769e+02 +/-  5.42e+01  <none>
+                  %      nDsDst0    3.3055e+02    3.3055e+02 +/-  6.72e+01  <none>
+                  %      nDsstD0    7.5230e+02    7.5220e+02 +/-  5.48e+01  <none>
+        \hline
+    \end{tabular}  
+    \caption{Normalisation fit result} 
+    \label{tab:B2DsKK_fit_result_norm}
+\end{table}
+  
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{ l l c }
+
+        \hline
+        Type        & Parameter                                 & Fit result                    \\
+        \hline
+        POI         & $N(\decay{\Bp}{\Dsp\Kp\Km})$              & $442\pm29$                    \\
+                  %         nsig    4.4287e+02    4.4277e+02 +/-  2.94e+01  <none>
+        \hline
+        Shape       & Mass shift $\delta$ (\mevcc)              & $4\pm12$                      \\
+                    & Mean \Bp mass $\mu$ (\mevcc)              & $5278.9\pm0.9$                \\
+                    & Signal width $\sigma_{1}$ (\mevcc)        & $12.3\pm0.9$                  \\
+                    & Combinatorial slope $c$                   & $(-2.8\pm0.3) \times 10^{-3}$ \\
+                  % global_shift    2.2538e+00    3.5457e+00 +/-  1.17e+01  <none>
+                  %       mean_B    5.2789e+03    5.2789e+03 +/-  8.82e-01  <none>
+                  %        sigma    1.2298e+01    1.2291e+01 +/-  8.77e-01  <none>
+                  %        slope   -2.8199e-03   -2.8202e-03 +/-  2.79e-04  <none>
+        \hline
+        Yields      & $N_{\text{comb}}$                         & $1110\pm70$                   \\
+                    & $N(\decay{\Bsb}{\Dsp\Km\Kstarz})$         & $1100\pm500$                  \\
+                    & $N(\decay{\Bsb}{\Dssp\Km\Kstarz})$        & $300\pm120$                   \\
+                    & $N(\decay{\Bs}{\Dsp\Dsm})$                & $200\pm500$                   \\
+                    & $N(\decay{\Bz}{\Dsp\Dm})$                 & $470\pm150$                   \\
+                    & $N(\decay{\Bs}{\Dssp\Dsm})$               & $0\pm400$                     \\
+                  %          nBG    1.1139e+03    1.1142e+03 +/-  7.30e+01  <none>
+                  %     nBs2Dsa1    1.1153e+03    1.1147e+03 +/-  4.61e+02  <none>
+                  % nBs2DsstKKst    2.9756e+02    2.9691e+02 +/-  1.24e+02  <none>
+                  %     nBs2DsDs    2.0262e+02    2.0307e+02 +/-  5.08e+02  <none>
+                  %      nB02DsD    4.6587e+02    4.6621e+02 +/-  1.54e+02  <none>
+                  %   nBs2DsstDs    1.1208e-04    6.2385e-02 +/-  3.98e+02  <none>
+        \hline
+    \end{tabular}  
+    \caption{Signal fit result} 
+    \label{tab:B2DsKK_fit_result_signal}
+\end{table}
+
+
+
+Two of the common parameters between the two modes, namely the mean \Bp mass and width, have consistent values between the two fits. The combinatorial slopes vary between the two, likely because of the different background levels in the two datasets. Similarly the mass shifts vary between the two. 
 
 \section{Efficiency corrections}
 \label{sec:B2DsKK_effcorrection}
@@ -527,10 +609,9 @@ The results of the two fits to signal and normalisation candidates are shown in 
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
 {\color{Red}
 \begin{itemize}
-\item explain what a dalitz plot is
-\item plots of eff across dalitz plot
 \item studies of BDT eff ratio 
 \end{itemize}
 }
