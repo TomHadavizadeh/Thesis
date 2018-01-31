@@ -476,7 +476,7 @@ The distribution of \decay{\Bp}{\Dsp\Dzb} candidates in Fig.~\ref{fig:B2DsKK_fit
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The distribution of \decay{\Bp}{\Dsp\Kp\Km} candidates shown in Fig.~\ref{fig:B2DsKK_fit_B2DsKK} has a significant contribution from the signal decay. The background contribution beneath the signal PDF is larger than was observed for the normalisation channel. Although the dominant PDF below the signal contribution is still the combinatorial background, the separation between the partially reconstructed backgrounds and the signal is smaller. Several of the background PDFs extend underneath the leftmost half of the signal distribution.  
+The distribution of \decay{\Bp}{\Dsp\Kp\Km} candidates shown in Fig.~\ref{fig:B2DsKK_fit_B2DsKK} has a significant contribution from the signal decay. The background contribution under the signal PDF is larger than was observed for the normalisation channel. Although the dominant background below the signal is still the combinatorial background, the contribution from the partially reconstructed backgrounds is also larger; several of the background PDFs extend underneath the leftmost half of the signal distribution.  
 
 
 The numerical values of the free parameters determined in the fit to the signal and normalisation channels are listed in Tables~\ref{tab:B2DsKK_fit_result_norm} and \ref{tab:B2DsKK_fit_result_signal}.
@@ -559,6 +559,29 @@ Two of the common parameters between the two modes, namely the mean \Bp mass and
 \section{Efficiency corrections}
 \label{sec:B2DsKK_effcorrection}
 
+The branching fraction for \decay{\Bp}{\Dsp\Kp\Km} decays is determined by correcting the yields of signal and background decays by their corresponding selection efficiencies. These account for each step of the selection process and ultimately quantifies the extent to which the signal and normalisation channels are affected differently. As described in Sec.~\ref{sec:B2DsKK_fitstrategy} the signal yield is corrected by the efficiency as a function of the candidate's kinematic properties. Therefore the relative signal efficiency is determined as a function of the two-dimensional Dalitz plot coordinates  $m^{2}(\Dsp\Km)$ and $m^{2}(\Kp\Km)$
+\begin{equation}
+\epsilon_{\text{ratio}}(m^{2}(\Dsp\Km),m^{2}(\Kp\Km)) = \frac{\epsilon_{\decay{\Bp}{\Dsp\Kp\Km}}(m^{2}(\Dsp\Km),m^{2}(\Kp\Km))}{\epsilon_{\decay{\Bp}{\Dsp\Dzb}}}.
+\end{equation}
+The normalisation decay efficiency $\epsilon_{\decay{\Bp}{\Dsp\Dzb}}$ is a pseudo-two-body decay and therefore the efficiency has no dependence on the phase space coordinates. The kinematic phase space is split into bins and the efficiencies determined in each. 
+
+
+The efficiencies are all determined from samples of simulated signal and normalisation decays. The PID and MVA efficiencies require additional input from external calibration samples to correct for the imperfect modelling of the PID variables in the simulations.
+
+\subsection{Efficiencies from simulations} 
+
+\begin{description}
+\item \textbf{Acceptance:} 
+\item \textbf{Reconstruction:} 
+\item \textbf{Trigger:} 
+\item \textbf{Vetoes:} 
+\item \textbf{Charmless:} 
+\item \textbf{$\chi^{c}_{\text{IP}}$:} 
+\item \textbf{Mass windows:} 
+\end{description}
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
    \centering
@@ -578,12 +601,6 @@ Two of the common parameters between the two modes, namely the mean \Bp mass and
       \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Relative_Eff_veto_All.pdf}
       \caption{Vetoes}
    \end{subfigure}
-   \caption{Efficiencies}
-   \label{fig:B2DsKK_dalitz_eff_one}
-\end{figure}
-
-\begin{figure}[!h]
-   \centering
    \begin{subfigure}[t]{0.4\textwidth}
       \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Relative_Eff_FDCHI2_All.pdf}
       \caption{Charmless}
@@ -596,6 +613,21 @@ Two of the common parameters between the two modes, namely the mean \Bp mass and
       \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Relative_Eff_mass_All.pdf}
       \caption{Mass windows}
    \end{subfigure}
+   \caption{Efficiencies}
+   \label{fig:B2DsKK_dalitz_eff_one}
+\end{figure}
+
+
+\subsection{Efficiencies requiring calibration samples} 
+
+
+\begin{description}
+\item \textbf{PID:} 
+\item \textbf{MVA:}  
+\end{description}
+
+\begin{figure}[!h]
+   \centering
    \begin{subfigure}[t]{0.4\textwidth}
       \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Relative_Eff_PID_All.pdf}
       \caption{PID}
@@ -813,4 +845,6 @@ The two-body projections $m(D_{s}^{+}K^{-})$ and $m(K^{+}K^{-})$ are obtained fo
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\section{Discussion}
+\section{Discussion and outlook}
+
+{\color{Red} Full Amplitude analysis}
