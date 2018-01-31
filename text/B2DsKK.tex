@@ -21,7 +21,7 @@ The parametrisations used to model the signal and backgrounds components and ext
 
 \section{Fit strategy}
 \label{sec:B2DsKK_fitstrategy}
-The search for $\decay{\Bp}{\Dsp\Kp\Km}$ involves two independent unbinned extended maximum likelihood fits for the signal and normalisation channels implemented with the \roofit package within \root. The extended likelihoods for the two fits are constructed in a similar manner to those already detailed in Sec.~\ref{sec:MVAbackgroundsubtraction}. However, as more components are included there are more contributions included in the likelihood
+The search for $\decay{\Bp}{\Dsp\Kp\Km}$ involves two independent unbinned extended maximum likelihood fits for the signal and normalisation channels implemented with the \roofit package within \root. The extended likelihoods for the two fits are constructed in a similar manner to those already detailed in Sec.~\ref{sec:MVAbackgroundsubtraction}. However, as a larger number of components are included there are correspondingly more contributions included in the likelihood
 \begin{equation}
 -\log\mathcal{L}(n_{0}...n_{j},\vec{p}) = -\sum_{i}^{N} \log \left( \sum_{j} n_{j} f_{j}(m=m_{i},\vec{p}) \right) + \sum_{j}n_{j},
 \end{equation}
@@ -37,6 +37,7 @@ where $n_{\text{sig}}$ is the fitted signal yield and $N$ is the total number of
 The efficiencies for the \decay{\Bp}{\Dsp\Kp\Km} signal decays are determined as a function of the kinematic properties of the decay. The weight for each entry $i$ in the data set is corrected with the appropriate efficiency for its given kinematics
 \begin{equation}
 n_{\text{sig},\text{corr}} = \sum_{i}^{N} \frac{W_{\text{sig},i}}{\epsilon_{i}}.
+\label{eq:B2DsKK_corrected_yield}
 \end{equation}
 The propagation of the uncertainty in this corrected yields is described in Sec.~\ref{sec:B2DsKK_results}.
 
@@ -55,7 +56,7 @@ The normalisation channel decay proceeds via a pseudo two-body process, therefor
 \label{sec:B2DsKK_fitcomps}
 
 In order to extract the yields of \decay{\Bp}{\Dsp\Dzb} and \decay{\Bp}{\Dsp\Kp\Km} decays the invariant mass distributions for the processes contributing within the invariant mass range are parametrised with probability density functions (PDFs).
-Both the signal and normalisation channels are considered within the same \Bp meson invariant mass range 5100--5900\mevcc. This is sufficiently wide to allow the contributions from different background components to be distinguished and accurately extrapolated into the signal region. The entire $m(\Kp\Km)$ phase space in included in the search for the signal decays, including the range in the vicinity of the \phiz meson mass used later in Chapter~\ref{ch:B2DsPhi}. 
+Both the signal and normalisation channels are considered within the same \Bp meson invariant mass range 5100--5900\mevcc. This is sufficiently wide to allow the contributions from different background components to be distinguished and accurately extrapolated into the signal region. The entire $m(\Kp\Km)$ phase space is included in the search for the signal decays, including the range in the vicinity of the \phiz meson used later in Chapter~\ref{ch:B2DsPhi}. 
 
 
 
@@ -134,7 +135,7 @@ $n$                         & 1 $\pm$ 0          \\
 
 Partially reconstructed decays are those in which the five final state particles combined in the signal mode are only a subset of a background mode's final state.
 Decays of \bquark-hadrons can contribute at lower invariant masses below the signal peak when one or more the decay products have not been reconstructed. 
-For decays to contribute within the fitted \Bp invariant mass window, the particle or particles that have not been reconstructed must be fairly low-momentum (soft) such that the invariant mass of the remaining particles is large.
+For decays to contribute within the fitted \Bp invariant mass window, the particle or particles that have not been reconstructed must be fairly low-momentum (soft) such that the invariant mass of the remaining particles is large. Accurate parametrisation of these contributions is vital as many of the distributions extend close to or within the range of the signal distribution. Incorrectly attributing these decays to the signal component could lead to the incorrect branching fraction being measured. 
 
 \subsubsection{Backgrounds to the normalisation channel}
 \label{sec:B2DsKK_norm_partreco}
@@ -163,15 +164,15 @@ Decay                           & Branching fraction \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
 The excited charm mesons \Dstarzb and \Dss {\color{Red}(be more specific)} are vector ($J^{P} = 1^{-}$) mesons. The partially reconstructed invariant mass of the \Dsp and \Dzb mesons, $m(\Dsp\Dzb)$, varies depending on the spin of the missed particle.
-Analytical PDFs are used to account for the spin and mass of the missing particle. These PDFs have been used to describe other partially reconstructed \decay{\B}{\D X} decays~\cite{LHCb-PAPER-2017-021}. 
+Analytical PDFs are used to account for the spin and mass of the missing particle. These PDFs have been used to describe other partially reconstructed \decay{\B}{\D X} decays investigated by the LHCb collaboration~\cite{LHCb-PAPER-2017-021}. 
 
 \begin{description}
-\item \textbf{\decay{\Bp}{(\decay{\Dssp}{\Dsp[\piz]})\Dzb} and \decay{\Bp}{\Dsp(\decay{\Dstarzb}{\Dzb[\piz]})}:} the \piz meson is a pseudo-scalar ($J^{P} = 0^{-}$) particle with a mass $m(\piz) = 134.9766 \pm 0.0006 \mevcc$. The partially reconstructed invariant mass distribution $m(\Dsp\Dzb)$ can be described by a parabola convolved with a Gaussian resolution function. The parabola does not extend beyond endpoints defined by the parameters $a$ and $b$ and has a minimum in the centre 
+\item \textbf{\decay{\Bp}{(\decay{\Dssp}{\Dsp[\piz]})\Dzb} and \decay{\Bp}{\Dsp(\decay{\Dstarzb}{\Dzb[\piz]})}:} the \piz meson is a pseudo-scalar ($J^{P} = 0^{-}$) particle with a mass $m(\piz) = 134.9766 \pm 0.0006 \mevcc$. The partially reconstructed invariant mass distribution $m(\Dsp\Dzb)$ can be described by a parabola convolved with a Gaussian resolution function. The parabola does not extend beyond kinematic endpoints defined by the parameters $a$ and $b$ and has a minimum in the centre 
 \begin{equation}
 f(m|a,b,\sigma,\xi, \delta) = \int_{a}^{b}\left(\mu-\frac{a+b}{2}\right)^{2} \left( \frac{1-\xi}{b-a}\mu + \frac{b\xi-a}{b-a} \right) e^{-\frac{-(\mu-(m-\delta))^{2}}{2\sigma^{2}}} d\mu.
 \end{equation} 
 
-Here $\sigma$ is the width of the resolution Gaussian and $\delta$ allows the function to be offset in invariant mass. The parameter $\xi$ introduces the freedom for the two sides of the parabola to have difference heights, achieved by multiplying the parabola by a line whose slope is depends on $\xi$. The resulting function is a double peaked structure shown in Fig.~\ref{fig:B2DsPhi_DsD0_partreco}.   
+Here, $\sigma$ is the width of the resolution Gaussian and $\delta$ allows the function to be offset in invariant mass. The parameter $\xi$ introduces the freedom for the two sides of the parabola to have difference heights, achieved by multiplying the parabola by a line whose slope is depends on $\xi$. The resulting function is a double peaked structure shown in Fig.~\ref{fig:B2DsPhi_DsD0_partreco}.   
 The parameters $a$ and $b$ are calculated from the kinematics of the \decay{\Bp}{(\decay{\Dssp}{\Dsp\piz})\Dzb} and \decay{\Bp}{\Dsp(\decay{\Dstarzb}{\Dzb\piz})} decays respectively, and are listed in Table~\ref{tab:DsKK_pi0_a_and_b}.
 
 \end{description}
@@ -241,51 +242,91 @@ The signal channel receives contributions at low invariant mass from a number of
 All modes considered involve a \Bs or \Bz meson decay in which one or more soft decay products have not been reconstructed.
 
 \begin{description}
-\item \decay{\Bsb}{\Dsp\Km\Kstarz}: this decay can form a background to the \decay{\Bp}{\Dsp\Kp\Km} signal when a soft pion from the \decay{\Kstarz}{\Kp\pim} decay is not reconstructed. The PDF for this background is determined from a sample of fully reconstructed simulated events that have been processed using the same procedure as the signal decays. The PDF is created using a kernel estimation technique~\cite{Cranmer:2000du} implemented in the \texttt{RooKeysPDF} class within \roofit. The resulting PDF is shown in Fig.~\ref{fig:B2DsKK_part_reco_backgrounds}.
-\item \decay{\Bsb}{\Dssp\Km\Kstarz}: similarly this decay can form a background at low invariant mass when a soft neutral particle is not reconstructed in the \decay{\Dssp}{\Dsp X} decay in addition to the pion from the \Kstarz. This PDF is also determined using the \texttt{RooKeysPDF} class and shown in Fig.~\ref{fig:B2DsKK_part_reco_backgrounds}.
-
-\item \decay{\Bsb}{\Dsp\Dsm}: this decay can form a background to the signal when a pion is missed from either of the \Dsp decays. This requires both \Dsp mesons to decay to the \decay{\Dsp}{\Kp\Km\pip} final state. 
-%Due to the large phase space of \decay{\Dsp}{\Kp\Km\pip} decays, the pion is not as soft as in the previous background modes. 
-%Therefore this background only becomes significant at smaller invariant masses as shown in Fig.~\ref{fig:B2DsKK_part_reco_backgrounds}. 
-Therefore this background becomes significant at smaller invariant masses as shown in Fig.~\ref{fig:B2DsKK_part_reco_backgrounds}. 
-This PDF is similarly determined by creating a kernel estimation of fully-reconstructed simulated events passing the signal selection.  
-
-\item \decay{\Bzb}{\Dsp\Dm}: this decay can form a background when both the \Dsp and \Dm mesons decay to the \Kpm\Kmp\pipm final state. Due to the similar topology to the \decay{\Bsb}{\Dsp\Dsm} decay, the same PDF determined from simulated events is used, however it is shifted down in mass by 40\mevcc to account for the difference in kinematics.
-
-\item \decay{\Bsb}{\Dssp\Dsm}: similarly this decay can cause a background when both a soft neutral particle is missed from the \decay{\Dssp}{\Dsp X} decay as well as a pion from either of the \Dsp mesons. As such this only has a small contribution within the fit range as shown in Fig.~\ref{fig:B2DsKK_part_reco_backgrounds}. 
-
+\item \decay{\Bsb}{\Dsp\Km\Kstarz}: this decay can form a background to the \decay{\Bp}{\Dsp\Kp\Km} signal when a soft pion from the \decay{\Kstarz}{\Kp\pim} decay is not reconstructed. The $\Km\Kstarz$ is modelled as originating from the $a_1(1260)$ resonance. This resonance has a width of $250-600$ MeV~\cite{PDG2016}, allowing it to decay to $\Km\Kstarz$ even though it's pole mass is below the $\Km\Kstarz$ threshold.
+The PDF for this background is determined from a sample of fully reconstructed simulated events that have been processed using the same procedure as the signal decays. The PDF is created using a kernel estimation technique~\cite{Cranmer:2000du} implemented in the \texttt{RooKeysPDF} class within \roofit. The resulting PDF is shown in Fig.~\ref{fig:B2DsKK_part_reco_backgrounds_DsKKstar}.
 \end{description}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
     \centering
-    \begin{subfigure}[t]{0.49\textwidth}
-        \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Bs2Dsa1_4800_5900_Shape.pdf}
-        \caption{\decay{\Bsb}{\Dsp\Km\Kstarz} }
-    \end{subfigure}
-    \begin{subfigure}[t]{0.49\textwidth}
-        \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Bs2DsstKKst_4800_5900_Shape.pdf}
-        \caption{\decay{\Bsb}{\Dssp\Km\Kstarz}}
-    \end{subfigure}
-    \begin{subfigure}[t]{0.49\textwidth}
-        \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Bs2DsDs_4800_5900_Shape.pdf}
-        \caption{\decay{\Bsb}{\Dsp\Dsm} }
-    \end{subfigure}
-    \begin{subfigure}[t]{0.49\textwidth}
-        \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Bs2DsstDs_4800_5900_Shape.pdf}
-        \caption{\decay{\Bsb}{\Dssp\Dsm} }
-    \end{subfigure}
-    \caption{Partially reconstructed mass shapes}
-    \label{fig:B2DsKK_part_reco_backgrounds}   
+    \includegraphics[width=0.49\textwidth]{figs/B2DsKK/Bs2Dsa1_4800_5900_Shape.pdf}
+    \caption{Partially reconstructed \decay{\Bsb}{\Dsp\Km\Kstarz} mass shape.}
+    \label{fig:B2DsKK_part_reco_backgrounds_DsKKstar}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-{\color{Red}
-\begin{itemize}
-\item mention something about a1
-\end{itemize}
-}
+\begin{description}
+\item \decay{\Bsb}{\Dssp\Km\Kstarz}: similarly this decay can form a background at low invariant mass when a soft neutral particle is not reconstructed in the \decay{\Dssp}{\Dsp X} decay in addition to the pion from the \Kstarz. This PDF is also determined using the \texttt{RooKeysPDF} class and shown in Fig.~\ref{fig:B2DsKK_part_reco_backgrounds_DssKKstar}.
+\end{description}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.49\textwidth]{figs/B2DsKK/Bs2DsstKKst_4800_5900_Shape.pdf}
+    \caption{Partially reconstructed \decay{\Bsb}{\Dssp\Km\Kstarz} mass shape.}
+    \label{fig:B2DsKK_part_reco_backgrounds_DssKKstar}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{description}
+\item \decay{\Bsb}{\Dsp\Dsm}: this decay can form a background to the signal when a pion is missed from either of the \Dsp decays. This requires both \Dsp mesons to decay to the \decay{\Dsp}{\Kp\Km\pip} final state. 
+%Due to the large phase space of \decay{\Dsp}{\Kp\Km\pip} decays, the pion is not as soft as in the previous background modes. 
+%Therefore this background only becomes significant at smaller invariant masses as shown in Fig.~\ref{fig:B2DsKK_part_reco_backgrounds}. 
+Therefore this background becomes significant at smaller invariant masses as shown in Fig.~\ref{fig:B2DsKK_part_reco_backgrounds_DsDs}. 
+This PDF is similarly determined by creating a kernel estimation of fully-reconstructed simulated events passing the signal selection.  
+\end{description}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.49\textwidth]{figs/B2DsKK/Bs2DsDs_4800_5900_Shape.pdf}
+    \caption{Partially reconstructed \decay{\Bsb}{\Dsp\Dsm} mass shape.}
+    \label{fig:B2DsKK_part_reco_backgrounds_DsDs}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{description}
+\item \decay{\Bzb}{\Dsp\Dm}: this decay can form a background when both the \Dsp and \Dm mesons decay to the \Kpm\Kmp\pipm final state. Due to the similar topology to the \decay{\Bsb}{\Dsp\Dsm} decay, the same PDF determined from simulated events is used, however it is shifted down in mass by 40\mevcc to account for the difference in kinematics.
+
+\item \decay{\Bsb}{\Dssp\Dsm}: similarly this decay can cause a background when both a soft neutral particle is missed from the \decay{\Dssp}{\Dsp X} decay as well as a pion from either of the \Dsp mesons. As such this only has a small contribution within the fit range as shown in Fig.~\ref{fig:B2DsKK_part_reco_backgrounds_DssDs}. 
+\end{description}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.49\textwidth]{figs/B2DsKK/Bs2DsstDs_4800_5900_Shape.pdf}
+    \caption{Partially reconstructed \decay{\Bsb}{\Dssp\Dsm} mass shape.}
+    \label{fig:B2DsKK_part_reco_backgrounds_DssDs}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+All PDFs determined using kernel estimations from simulated events are convolved with a Gaussian distribution to account for difference between the simulations and data. The mean position of the Gaussian is given by a single free parameter $\delta$, allowing these PDF to move slightly high or lower in mass. The width of the Gaussian is increased to account for the difference in resolution between simulation and data.
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{figure}[!h]
+%     \centering
+%     \begin{subfigure}[t]{0.49\textwidth}
+%         \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Bs2Dsa1_4800_5900_Shape.pdf}
+%         \caption{\decay{\Bsb}{\Dsp\Km\Kstarz} }
+%     \end{subfigure}
+%     \begin{subfigure}[t]{0.49\textwidth}
+%         \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Bs2DsstKKst_4800_5900_Shape.pdf}
+%         \caption{\decay{\Bsb}{\Dssp\Km\Kstarz}}
+%     \end{subfigure}
+%     \begin{subfigure}[t]{0.49\textwidth}
+%         \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Bs2DsDs_4800_5900_Shape.pdf}
+%         \caption{\decay{\Bsb}{\Dsp\Dsm} }
+%     \end{subfigure}
+%     \begin{subfigure}[t]{0.49\textwidth}
+%         \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Bs2DsstDs_4800_5900_Shape.pdf}
+%         \caption{\decay{\Bsb}{\Dssp\Dsm} }
+%     \end{subfigure}
+%     \caption{Partially reconstructed mass shapes}
+%     \label{fig:B2DsKK_part_reco_backgrounds}   
+% \end{figure}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \subsection{Combinatorial  background}
 \label{sec:B2DsKK_combcomps}
@@ -302,12 +343,12 @@ where $c$ is the single degree of freedom controlling the effective slope of the
 \section{Free and constrained parameters}
 
 
-The fit to signal and normalisation decays have eleven and nine free parameters respectively. 
+The fit to signal and normalisation decays have eleven and nine free parameters respectively. These control the yields shapes of the fit components.  
 \subsection{Parameter of interest}
 \begin{description}
-\item \textbf{Signal:} the parameter of interest in the signal decay is $N({\Bp}{\Dsp\Kp\Km})$, the yield attributed to the signal PDF.
+\item \textbf{Signal:} the parameter of interest in the signal decay is $N(\decay{\Bp}{\Dsp\Kp\Km})$, the yield attributed to the signal PDF.
 
-\item \textbf{Normalisation:} the parameter of interest in the signal decay is $N({\Bp}{\Dsp\Dzb})$, the yield attributed to the normalisation PDF.
+\item \textbf{Normalisation:} the parameter of interest in the signal decay is $N(\decay{\Bp}{\Dsp\Dzb})$, the yield attributed to the normalisation PDF. 
 
 \end{description}
 
@@ -316,12 +357,12 @@ The fit to signal and normalisation decays have eleven and nine free parameters 
 
 \subsection{Shape parameters}
 \begin{description}
-\item \textbf{Signal:}
+\item \textbf{Signal:} The signal fit contains four free parameters that determine the shape of various PDFs. This corresponds to the mass offset $\delta$, signal mean value $\mu$, signal width $\sigma_{1}$ and combinatorial slope $c$.
           % global_shift    2.2538e+00    3.5457e+00 +/-  1.17e+01  <none>
           %       mean_B    5.2789e+03    5.2789e+03 +/-  8.82e-01  <none>
           %        sigma    1.2298e+01    1.2291e+01 +/-  8.77e-01  <none>
           %        slope   -2.8199e-03   -2.8202e-03 +/-  2.79e-04  <none>
-\item \textbf{Normalisation:}
+\item \textbf{Normalisation:} The normalisation fit has five free parameters  
           %   global_csi    1.2683e-06    5.2233e-08 +/-  2.25e-01  <none>
           % global_shift   -1.0585e+01   -1.0586e+01 +/-  1.31e+00  <none>
           %       mean_B    5.2784e+03    5.2784e+03 +/-  4.00e-01  <none>
@@ -332,14 +373,14 @@ The fit to signal and normalisation decays have eleven and nine free parameters 
 \subsection{Yields}
 \begin{description}
 
-\item \textbf{Signal:} the yields of each background component are left free in the signal fit.
-          
-          %      nB02DsD    4.6587e+02    4.6621e+02 +/-  1.54e+02  <none>
+\item \textbf{Signal:} the yields of each background component are left free in the signal fit. This corresponds to six free parameters for $N_{\text{comb}}$, $N(\decay{\Bsb}{\Dsp\Km\Kstarz})$, $N(\decay{\Bsb}{\Dssp\Km\Kstarz})$, $N(\decay{\Bs}{\Dsp\Dsm})$, $N(\decay{\Bz}{\Dsp\Dm})$, and $N(\decay{\Bs}{\Dssp\Dsm})$.
+
           %          nBG    1.1139e+03    1.1142e+03 +/-  7.30e+01  <none>
-          %     nBs2DsDs    2.0262e+02    2.0307e+02 +/-  5.08e+02  <none>
           %     nBs2Dsa1    1.1153e+03    1.1147e+03 +/-  4.61e+02  <none>
-          %   nBs2DsstDs    1.1208e-04    6.2385e-02 +/-  3.98e+02  <none>
           % nBs2DsstKKst    2.9756e+02    2.9691e+02 +/-  1.24e+02  <none>
+          %     nBs2DsDs    2.0262e+02    2.0307e+02 +/-  5.08e+02  <none>
+          %      nB02DsD    4.6587e+02    4.6621e+02 +/-  1.54e+02  <none>
+          %   nBs2DsstDs    1.1208e-04    6.2385e-02 +/-  3.98e+02  <none>
 \item \textbf{Normalisation:} the yields of the combinatorial and partially reconstructed backgrounds are left free in the fit to the normalisation channel. This corresponds to three parameters; $N_{\text{comb}}$, $N(\decay{\Bp}{\Dssp\Dzb})$ and $N(\decay{\Bp}{\Dsp\Dstarzb})$. The relatives contributions of the \decay{\Dssp}{\Dsp\piz} and \decay{\Dssp}{\Dsp\Pgamma} decays are fixed to their ratio of branching fractions (similarly for \Dstarzb). A factor is included to account for the fraction of each PDF that is within the fitted \Bp invariant mass range.
 \end{description}
 
@@ -359,7 +400,7 @@ The fitted values and uncertainties are determined for each pseudo-experiment an
 g_{\text{pull}} = \frac{x_{\text{fit}} - x_{\text{gen}} }{\sigma}
 \end{equation}
 where $x_{\text{gen}}$ and $x_{\text{fit}}$ are the generated and fitted values of the variable, and $\sigma$ is the parameter's uncertainty.
-For an unbiased fit model, the pull of each parameter of interest would be normally distributed with unit width and mean of zero.  
+For an ideal unbiased fit model, the pull of each parameter of interest would be normally distributed with unit width and mean of zero.  
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -369,28 +410,46 @@ For an unbiased fit model, the pull of each parameter of interest would be norma
       \includegraphics[width=0.32\textwidth]{figs/B2DsKK/Plots_DsKK_nsig_val.pdf}
       \includegraphics[width=0.32\textwidth]{figs/B2DsKK/Plots_DsKK_nsig_err.pdf}
       \includegraphics[width=0.32\textwidth]{figs/B2DsKK/Plots_DsKK_nsig_pul.pdf}
-      \caption{Signal}
+      \caption{Signal fit}
    \end{subfigure}\\
    \begin{subfigure}[t]{1.0\textwidth}
       \includegraphics[width=0.32\textwidth]{figs/B2DsKK/Plots_DsD0_nsig_val.pdf}
       \includegraphics[width=0.32\textwidth]{figs/B2DsKK/Plots_DsD0_nsig_err.pdf}
       \includegraphics[width=0.32\textwidth]{figs/B2DsKK/Plots_DsD0_nsig_pul.pdf}
-      \caption{Normalisation}
+      \caption{Normalisation fit}
    \end{subfigure}\\
-
-   \caption{Pulls normalisation}
+   \caption{The distribution of the signal and normalisation yields, errors and pulls as determined from pseudo-experiments. The result of fit performed to the pull distributions is overlaid in blue, along with the numerical results in red.}
    \label{fig:B2DsKK_Pulls}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+The distributions of the yields, errors and pulls for the signal and normalisation pseudo-experiments are shown in Fig.~\ref{fig:B2DsKK_Pulls}. A fit is performed for each pull distributions using a Gaussian to determine the mean and width. 
+For the signal yield the mean and with are within $3\sigma$ of zero and one respectively. The normalisation yield shows a significant bias in the width. The bias implies the fit model is overestimating the uncertainty $\sigma$ of the yield.
+If the normalisation yield uncertainty dominates the uncertainty in the branching fraction this could lead to an overestimation of the uncertainty on the final measured branching fraction.
 
-{\color{Red}
-\begin{itemize}
-\item Toys for signal and normalisation
-\item why it doesn't matter that norm yield have wrong pulls
-\item 
-\end{itemize}
-}
+To determine how the normalisation uncertainty propagates to the branching fraction another set of pseudo-experiments are produced.
+This set includes both signal and normalisation decays. To calculated the branching fraction the yield of \decay{\Bp}{\Dsp\Kp\Km} decays is corrected according to the signal efficiency as a function of the kinematics of a given candidate, as detailed previously in Eq.~\ref{eq:B2DsKK_corrected_yield}. The candidates are assumed to have a flat distribution in the two dimensional $m^{2}(\Kp\Km)$ vs. $m^{2}(\Dsp\Km)$ space used to parametrise the efficiency. For each pseudo-experiment the branching fraction and uncertainty are produced. As no branching fraction is explicitly used to generate the pseudo-experiment (rather independent signal and normalisation yields), the pulls are redefined to be measured relative to the mean branching fraction
+\begin{equation}
+g_{\text{pull}} = \frac{x_{\text{fit}} - \bar{x}_{\text{fit}} }{\sigma}
+\end{equation}
+where $x_{\text{fit}}$ is the fitted value of the parameter, $\bar{x}_{\text{fit}}$ is the average of all fitted values and $\sigma$ is the uncertainty. The distribution of the branching fraction, uncertainty and pull are shown in Fig~\ref{fig:B2DsKK_BR_Pulls}. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+   \centering
+   \begin{subfigure}[t]{1.0\textwidth}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsKK/Branching_Fraction_val.pdf}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsKK/Branching_Fraction_err.pdf}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsKK/Branching_Fraction_pul.pdf}
+   \end{subfigure}\\
+   \caption{The distribution of the branching fraction, error and pull as determined from pseudo-experiments. The result of fit performed to the pull distributions is overlaid in blue, along with the numerical results in red.}
+   \label{fig:B2DsKK_BR_Pulls}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The pull in the branching fraction has a much smaller bias in the width than the normalisation pull.
+It would be possible to scale the uncertainty in the branching fraction as determined by the fit to account for the residual bias in the uncertainty. However, this would introduce a source of systematic uncertainty associated to scaling factor so the choice is made to not correct the slightly overestimated uncertainty. 
 
 \section{Normalisation and signal fits}
 
