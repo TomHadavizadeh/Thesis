@@ -654,11 +654,35 @@ The efficiencies are all determined from samples of simulated signal and normali
 
 
 A number of sources of systematic uncertainty are considered when determining the branching fraction for \decay{\Bp}{\Dsp\Kp\Km} decays.
+
+
+\subsection{Relative efficiencies}
+
+
+
+
+\subsection{Signal and normalisation PDFs}
+
+Some parameters in the signal and normalisation PDFs are fixed to values obtained from simulation. These include the tail parameters, relative widths, and fractional amounts of the two CB functions that make up the PDFs. The values obtained from simulation have associated uncertainties arising from the limited simulation sample sizes. The nominal fits are repeated with the fixed parameters modified to values sampled from Gaussian distributions, with a width given by the parameter uncertainties. All parameters are changed simultaneously. The resulting variation of $0.036\times 10^{-6}$ is assigned as the associated systematic uncertainty. 
+
+\subsection{Background PDFs}
+
+In the signal mode the PDFs for the partially reconstructed background modes are taken directly from simulated events using one-dimensional kernel estimations~\cite{Cranmer:2000du}. In the nominal fit, these are smeared to account for the differences in the mass resolution between data and simulation. To account for any systematic uncertainty arising from the choice of resolution difference, the fit is repeated, randomly varying the smearing resolution each time. The resulting variation in the branching fraction is assigned as a systematic uncertainty. 
+
+In the normalisation mode a number of choices are made about the partially reconstructed backgrounds, namely the kinematic limits of the \decay{\Bp}{\Dssp\Dzb} and \decay{\Bp}{\Dsp\Dstarzb}, and the external branching fractions of \decay{\Dssp}{\Dsp[\Pgamma/\piz]},
+ \decay{\Dstarzb}{\Dzb[\Pgamma/\piz]} decays. These assumptions are simultaneously varied within the relevant uncertainties, resulting in a change of $0.015\times10^{-6}$ in the branching fraction.
+
+
+
+
+\subsection{Charmless contribution}
+
+
 {\color{Blue}
 \begin{description}
-\item \textbf{Signal PDF shapes} The PDF shapes for signal and normalisation channel use values that are fixed from fits to MC. To understand the effect on the measured branching fraction, these values are randomly varied within their statistical uncertainties obtained from the MC fits. The resulting spread in the measured branching fraction is taken as the systematic uncertainty. Varing the fixed values for the tail parameters, n and $\alpha$, and the ratio and fraction of the two DCB widths together results in a change in the branching fraction of $0.036\times 10^{-6}$.
+\item \textbf{Signal PDF shapes}
 
-\item \textbf{Background PDF shapes} In the signal mode the partially reconstructed shapes are taken directly from fully reconstructed MC that is then smeared and allowed to have an arbitrary offset to account for any MC/data differences. To determine the effect of these choices on the branching fraction the smearing is varied. Additionally a number of choices are made about the partially reconstructed backgrounds in the normalisation mode, namely the kinematic limits of the \texttt{RooHornsDini} and \texttt{RooHillDini}, and the branching fractions of $\D^{*} \to \D \gamma $ and $\D^{*} \to \D \pi^{0} $ decays. All of these assumptions are varied simultaneously by their relevant uncertainties and result in a change of $0.015\times10^{-6}$ in the branching fraction.
+\item \textbf{Background PDF shapes}
 
 \item \textbf{Charmless Contribution} The expected charmless contribution is only a significant fraction of the measured yield for the normalisation mode, expected to be around 0.7\%. We assign this as the systematic uncertainty arising from the charmless contamination as this ratio would directly propagate to the branching fraction.
 

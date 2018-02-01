@@ -1099,12 +1099,39 @@ The efficiencies for each step of selection are listed separately for the differ
 
 The efficiencies of the particle identification and MVA requirements are both determined using input from dedicated calibration samples as the distributions are known to be poorly represented in simulations. The method used here differs from that already described in Sec.~\ref{sec:B2DsKK_eff_from_calib} as the \decay{\Bp}{\Dsp\phiz} decay can be assumed to be a pseudo-two-body decay in which phase-space dependent efficiencies are not required. 
 
+%%%%%%%
+\begin{table}[h]
+   \centering
+   \begin{tabular}{ l l c c c }
+      \hline
+      Requirement             & \Dsp mode         & $\epsilon(\decay{\Bp}{\Dsp\Dzb})$  & $\epsilon(\decay{\Bp}{\Dsp\phiz})$ & Ratio \\
+      \hline
+      PID                     & $\Kp\Km\pip$      & 88.1 $\pm$ 0.1         & 89.9 $\pm$ 0.0     & 0.980 $\pm$ 0.001  \\
+                              & $\Kp\pim\pip$     & 86.7 $\pm$ 0.2         & 88.8 $\pm$ 0.1     & 0.977 $\pm$ 0.002  \\
+                              & $\pip\pim\pip$    & 85.3 $\pm$ 0.1         & 87.0 $\pm$ 0.0     & 0.980 $\pm$ 0.001  \\
+      \hline
+      MVA                     & $\Kp\Km\pip$      & 53.2 $\pm$ 0.4         & 57.1 $\pm$ 0.4     & 0.932 $\pm$ 0.010  \\
+                              & $\Kp\pim\pip$     & 42.9 $\pm$ 0.4         & 46.0 $\pm$ 0.5     & 0.932 $\pm$ 0.013  \\
+                              & $\pip\pim\pip$    & 46.3 $\pm$ 0.4         & 49.7 $\pm$ 0.4     & 0.933 $\pm$ 0.012  \\
+      \hline
+   \end{tabular}
+   \caption{Efficiencies (in \%) determined from the relevant calibration and validation samples using input from simulation and the ratio $\epsilon(\decay{\Bp}{\Dsp\Dzb})/\epsilon(\decay{\Bp}{\Dsp\phiz})$ for each \Dsp decay mode. The errors are statistical.} 
+   \label{tab:B2DsPhi_eff_from_calib} 
+\end{table}
 
 \subsubsection{PID efficiency}
 
-The efficiency of the particle identification requirements as described in Sec.~\ref{sec:pidrequirements} are determined using a package called \texttt{PIDCalib}. 
+The efficiency of the particle identification requirements as described in Sec.~\ref{sec:pidrequirements} are determined using a package called \texttt{PIDCalib}. This uses calibrations samples for the different particle species to determine the fraction of candidates passing the various PID variable requirements. The samples are background-subtracted to isolate the distributions of the PID variables for the tracks of interest. The calibration samples for both \Kp and \pip mesons are collected from a sample of \decay{\Dstarp}{(\decay{\Dz}{\Kp\pim})\pip} decays, using the decay products of the \Dz decay. 
+
+The PID variable distributions depend on both the kinematics of the track in question and the occupancy of the detector as a whole. 
+These can both affect the characteristics of the hits in the \rich detectors and therefore result in different PID variable distributions. The calibrations samples are binned in three variables; the momentum of the track \ptot, the pseudo-rapidity \Peta, and the number of tracks in an event $n_{\text{Tracks}}$. Input is used from simulation samples to determine the \ptot, \Peta and $n_{\text{Tracks}}$ distributions for the signal decays and weight the calibration samples accordingly. The efficiencies of the PID requirements on the signal and normalisation for the different \Dsp decay modes are listed in Table.~\ref{tab:B2DsPhi_eff_from_calib}.
+
 
 \subsubsection{MVA efficiency}
+
+The efficiency of the MVA requirements is determined using the method outlined in Sec.~\ref{sec:selection_MVA_eff}. The validation samples of \decay{\Bsb}{\Dsp\pim} and \decay{\Bs}{\jpsi\phiz} decays are binned in transverse momentum \pt and flight distance significance $\chi^{2}_{\text{FD}}$. The background-subtracted MVA responses are extracted for each bin. Samples of simulated decays are iterated though, finding the \pt and $\chi^{2}_{\text{FD}}$ values for each candidate and calculating the MVA cut efficiency from the corresponding validation samples. The total efficiency for each candidate is the product of the \Dsp and \phiz MVA selection efficiencies. The total efficiency for the whole sample is then given by the sum of the per-candidate efficiencies as listed in Table.~\ref{tab:B2DsPhi_eff_from_calib}.
+
+
 
 
 \subsection{Total efficiencies}
@@ -1117,6 +1144,17 @@ The efficiency of the particle identification requirements as described in Sec.~
 \section{Systematic uncertainties}
 \label{sec:B2DsPhi_systuncertainy}
 
+The sources of systematic uncertainty are broadly similar to those considered in the search for \decay{\Bp}{\Dsp\Kp\Km} decays. The more complex fit strategy and model requires most of these systematics to be reassessed and additional source included. 
+
+\subsection{Relative efficiencies}
+
+\subsection{Signal and normalisation PDFs}
+
+\subsection{Background PDFs}
+
+\subsection{Charmless contribution}
+
+\subsection{\boldmath{$\decay{\Bp}{\Dsp\Kp\Km}$} model assumption}
 
 
 \section{Results}
@@ -1131,37 +1169,33 @@ The efficiency of the particle identification requirements as described in Sec.~
 The fit to $\decay{\Bp}{\Dsp\phiz}$ candidates finds a total yield of $N(\decay{\Bp}{\Dsp\phiz}) = 5.3 \pm 6.7$, summed across all categories and \Dsp meson decay modes. 
 A yield of $N(\decay{\Bp}{\Dsp\Km\Kp}) = 65 \pm 10 $ is found, consistent with the yield obtained from the full $\decay{\Bp}{\Dsp\Kp\Km}$ measurement. 
 The branching fraction for $ \decay{\Bp}{\Dsp\phiz}$ decays is calculated as
-
 \begin{equation}
-\mathcal{B}(\decay{\Bp}{\Dsp\phiz}) = R \times \frac{\mathcal{B}(\decay{\Dzb}{\Kp\Km})}{\mathcal{B}(\decay{\phi}{\Kp\Km})} \times \mathcal{B}(\decay{\Bp}{\Dsp\Dzb}),
+\BF(\decay{\Bp}{\Dsp\phiz}) = R \times \frac{\BF(\decay{\Dzb}{\Kp\Km})}{\BF(\decay{\phi}{\Kp\Km})} \times \BF(\decay{\Bp}{\Dsp\Dzb}),
 \label{eq:branching_fraction_calc}
 \end{equation}
-where the branching fraction $\mathcal{B}(\decay{\phi}{\Kp\Km})= 0.489 \pm 0.005$ has been used~\cite{PDG2016}. 
+where the branching fraction $\BF(\decay{\phi}{\Kp\Km})= 0.489 \pm 0.005$ has been used~\cite{PDG2016}. 
 
 The free variable $R$ is defined to be the ratio of the signal and normalisation yields, corrected for the selection efficiencies.
 The yield of signal candidates in each \Dsp mode is constructed from $R$ and the normalisation yield for the given \Dsp decay mode, $N(\decay{\Bp}{\Dsp\Dzb})$. The product of these two quantities is corrected by the ratio of selection efficiencies
-
 \begin{equation}
 N(\decay{\Bp}{\Dsp\phiz}) = R \times N(\decay{\Bp}{\Dsp\Dzb}) \times \frac{\epsilon(\decay{\Bp}{\Dsp\phiz})}{\epsilon(\decay{\Bp}{\Dsp\Dzb})}.
 \label{eq:branching_fraction_R}
 \end{equation}
 
 The simultaneous fit measures a single value of $R$ for all \Dsp decay mode categories. From an ensemble of pseudoexperiments, $R$ is distributed normally. It can be written as the ratio of signal and normalisation branching fractions using Eq.~{\ref{eq:branching_fraction_calc}. The value is determined to be 
-
 \begin{equation}
-R = \frac{\mathcal{B}(\decay{\Bp}{\Dsp\phiz})}{\mathcal{B}(\decay{\Bp}{\Dsp\Dzb})}\times \frac{\mathcal{B}(\decay{\phi}{\Kp\Km})}{\mathcal{B}(\decay{\Dzb}{\Kp\Km})} =(1.6^{+2.2}_{-1.9}\pm 1.1) \times 10^{-3}, 
+R = \frac{\BF(\decay{\Bp}{\Dsp\phiz})}{\BF(\decay{\Bp}{\Dsp\Dzb})}\times \frac{\BF(\decay{\phi}{\Kp\Km})}{\BF(\decay{\Dzb}{\Kp\Km})} =(1.6^{+2.2}_{-1.9}\pm 1.1) \times 10^{-3}, 
 \end{equation}
 where the first uncertainty is statistical and the second systematic. This corresponds to a branching fraction for $\decay{\Bp}{\Dsp\phiz}$ decays of
 
 \begin{equation}
-\mathcal{B}(\decay{\Bp}{\Dsp\phiz}) = (1.2^{+1.6}_{-1.4} \pm 0.8  \pm 0.1)\times 10^{-7},
+\BF(\decay{\Bp}{\Dsp\phiz}) = (1.2^{+1.6}_{-1.4} \pm 0.8  \pm 0.1)\times 10^{-7},
 \label{eq:branching_fraction}
 \end{equation}
-where the first uncertainty is statistical, the second systematic, and the third results from the uncertainty on the branching fractions $\mathcal{B}(\decay{\Bp}{\Dsp\Dzb})$, $\mathcal{B}(\decay{\phi}{\Kp\Km})$ and $\mathcal{B}(\decay{\Dzb}{\Kp\Km})$. Considering only the statistical uncertainty, the significance of the $\decay{\Bp}{\Dsp\phiz}$ signal is 0.8 standard deviations ($\sigma$). 
+where the first uncertainty is statistical, the second systematic, and the third results from the uncertainty on the branching fractions $\BF(\decay{\Bp}{\Dsp\Dzb})$, $\BF(\decay{\phi}{\Kp\Km})$ and $\BF(\decay{\Dzb}{\Kp\Km})$. Considering only the statistical uncertainty, the significance of the $\decay{\Bp}{\Dsp\phiz}$ signal is 0.8 standard deviations ($\sigma$). 
 
 
 Th branching fraction for \decay{\Bp}{\Dsp\phiz} decays is also determined separately for the different \Dsp decays modes included in the search. These are found to be
-
 \begin{equation}
   \left .
   \begin{aligned}
@@ -1171,9 +1205,7 @@ Th branching fraction for \decay{\Bp}{\Dsp\phiz} decays is also determined separ
     &\decay{\Dsp}{\Kp\pim\pip}    && : \BF(\decay{\Bp}{\Dsp\phiz}) = &+3.7^{+1.2}_{-7.6}\times 10^{-7},\\
   \end{aligned} \right.
 \end{equation} 
-
 where these results correspond to the following yields for each \Dsp decay mode
-
 \begin{equation}
   \left .
   \begin{aligned}
@@ -1197,6 +1229,81 @@ A visual representation of these measurements are shown in Fig.~\ref{fig:B2DsPhi
 \subsection{Limit setting}
 \label{sec:B2DsPhi_limitsetting}
 
+The measured branching fraction, $\BF(\decay{\Bp}{\Dsp\phiz}) = (1.2^{+1.6}_{-1.4} \pm 0.8  \pm 0.1)\times 10^{-7}$, is not significant enough to constitute evidence or an observation for the \decay{\Bp}{\Dsp\phiz} decay and is consistent with a branching fraction of zero. Whilst this measurement is useful in itself, for example it could provide constraints in combination with other results, it is also useful to set a limit on the branching fraction for a more straightforward comparison with theoretical predictions.
+Three different methods of limit estimation are attempted. These methods make different assumptions are therefore applicable in slightly different situations.
+
+\subsubsection{The $\text{CL}_{\text{S}}$ method}
+
+The first method tried is the $\text{CL}_{\text{S}}$ method, widely used in the high energy physics community. This method tests the p-value of a signal plus background hypothesis, $\text{CL}_{\text{S+B}}$, against a background only hypothesis, $\text{CL}_{\text{B}}$,
+\begin{equation}
+\text{CL}_{\text{S}}  = \frac{\text{CL}_{\text{S}+\text{B}}}{\text{CL}_{\text{B}}}.
+\end{equation}
+The free parameters in the fit other than the POI are considered nuisance parameters.
+This method is implemented using the \roostats package within the \root framework. 
+
+The $\text{CL}_{\text{S}}$ distribution is shown in Fig.~\ref{fig:B2DsPhi_limit_CLS} which included the $1\sigma$ bands in green and $2\sigma$ bands in yellow.
+The 95\% upper limit is determined as the point where the $\text{CL}_{\text{S}}$ value falls below 5\% as illustrated by the red line.
+This corresponds to a 95\% limit of
+\begin{equation}
+\BF(\decay{\Bp}{\Dsp\phiz}) < 4.2 \times 10^{-7}.
+\label{eq:B2DsPhi_upperlimit_CLS}
+\end{equation}
+
+
+{\color{Red}
+\begin{itemize}
+\item Methods 
+\item Freq calc, Hybrid Calc and Aym Calc.
+\item citations
+\end{itemize}
+}
+
+% As no significant yield of $\B \to \Ds \phiz$ events are observed, an upper limit is set on the branching fraction using the CLs method implemented within the \texttt{RooStats} package. This method tests the hypothesis of a signal plus background model against a background only model where the branching fraction is fixed to zero. All other floating variables are considered as nuisance parameters. The p-value distribution is shown in Fig.~\ref{fig:limit} which included the 1$\sigma$ bands in green and 2$\sigma$ bands in yellow. The 95\% upper limit is determined as the point where the CLs p-values fall below 5\% as illustrated by the red line. This results in a upper limit on the branching fraction of:
+
+% \begin{equation}
+% Br(\B \to \Ds \phi) < 4.82 \times 10^{-7} (95\%)
+% \label{eq:upperlimit}
+% \end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+    \centering
+        \includegraphics[width=0.7\textwidth]{figs/B2DsPhi/CLs_Branching_fraction_better.pdf}
+        \caption{$\text{CL}_{\text{S}}$ limit determination.}
+    \label{fig:B2DsPhi_limit_CLS}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{The profile likelihood method}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+    \centering
+        \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/Likelihood_limits.eps}
+        \caption{Bayesian profile likelihood limit determination}
+    \label{fig:B2DsPhi_limit_likelihood}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{The Feldman-Cousins method}
+
+Upper limits at 95\% and 90\% confidence levels (CL) are also determined using the Feldman-Cousins approach~\cite{FeldmanCousins}. An ensemble of pseudo-experiments is generated for different values of the branching fraction $\BF(\decay{\Bp}{\Dsp\phiz})$. These generated pseudo-experiments are then fitted with the nominal fit model to calculate the fitted branching fraction and associated statistical uncertainty, $\sigma_{\text{stat}}$. This method constructs confidence bands based on a likelihood ratio method, calculating the probability of fitting a branching fraction for a given generated branching fraction. This probability is assumed to follow a Gaussian distribution with width $\sigma = \sqrt{\sigma_{\text{stat}}^{2}+\sigma_{\text{syst}}^{2}}$, where $\sigma_{\text{stat}}$ and $\sigma_{\text{syst}}$ are the statistical and systematic uncertainties. The dominant source of systematic uncertainty in this measurement is from the background PDFs. As the size of this uncertainty is not expected to vary as a function of the generated branching fraction, $\sigma_{\text{syst}}$ is assumed to be constant. Nuisance parameters are accounted for using the plug-in method~\cite{plugin}. The generated confidence bands are shown in Fig.~\ref{fig:B2DsPhi_limit_FC}, where the statistical-only 90\% and 95\% confidence level bands are shown, along with the 95\% confidence level band with systematic uncertainty included. 
+This corresponds to a statistical-only 95\% (90\%) confidence level of $\BF(\decay{\Bp}{\Dsp\phiz}) < 4.4 \times 10^{-7}~(3.9 \times 10^{-7})$, and a 95\% (90\%) confidence level including systematic uncertainties of
+\begin{equation}
+\BF(\decay{\Bp}{\Dsp\phiz}) < 4.9 \times 10^{-7}~(4.2 \times 10^{-7}).
+\label{eq:B2DsPhi_upperlimit_FC}
+\end{equation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+    \centering
+        \includegraphics[width=0.8\textwidth]{figs/B2DsPhi/Sensitivity_plot.eps}
+        \caption{Confidence bands produced using the Feldman-Cousins approach. The green and yellow bands represent the statistical-only 90\% and 95\% confidence level bands and the black dotted line represents the 95\% limit including systematic uncertainties. The measured value of the branching fraction is shown by the vertical red line, and the corresponding 95\% confidence levels, with and without systematic uncertainties, are represented by the dotted red lines.}
+    \label{fig:B2DsPhi_limit_FC}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 {\color{Red}
 \begin{itemize}
 \item Document all methods attempted
@@ -1206,23 +1313,5 @@ A visual representation of these measurements are shown in Fig.~\ref{fig:B2DsPhi
 \item Table of comparison 
 \end{itemize}
 }
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[!h]
-    \centering
-        \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/Likelihood_limits.eps}
-        \caption{Bayesian profile likelihood limit determination}
-    \label{fig:limit_likelihood}   
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[!h]
-    \centering
-        \includegraphics[width=0.8\textwidth]{figs/B2DsPhi/Sensitivity_plot.eps}
-        \caption{Feldman-Cousins limit determination}
-    \label{fig:limit_cls}   
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Comparison to 2011?}
