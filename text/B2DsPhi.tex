@@ -1154,7 +1154,7 @@ The sources of systematic uncertainty are broadly similar to those considered in
 
 \subsection{Charmless contribution}
 
-\subsection{\boldmath{$\decay{\Bp}{\Dsp\Kp\Km}$} model assumption}
+\subsection{$\decay{\Bp}{\Dsp\Kp\Km}$ model assumption}
 
 
 \section{Results}
@@ -1241,7 +1241,7 @@ The first method tried is the $\text{CL}_{\text{S}}$ method, widely used in the 
 The free parameters in the fit other than the POI are considered nuisance parameters.
 This method is implemented using the \roostats package within the \root framework. 
 
-The $\text{CL}_{\text{S}}$ distribution is shown in Fig.~\ref{fig:B2DsPhi_limit_CLS} which included the $1\sigma$ bands in green and $2\sigma$ bands in yellow.
+The $\text{CL}_{\text{S}}$ distribution is shown in Fig.~\ref{fig:B2DsPhi_limit_CLS} which includes the $1\sigma$ bands in green and $2\sigma$ bands in yellow.
 The 95\% upper limit is determined as the point where the $\text{CL}_{\text{S}}$ value falls below 5\% as illustrated by the red line.
 This corresponds to a 95\% limit of
 \begin{equation}
@@ -1258,13 +1258,6 @@ This corresponds to a 95\% limit of
 \end{itemize}
 }
 
-% As no significant yield of $\B \to \Ds \phiz$ events are observed, an upper limit is set on the branching fraction using the CLs method implemented within the \texttt{RooStats} package. This method tests the hypothesis of a signal plus background model against a background only model where the branching fraction is fixed to zero. All other floating variables are considered as nuisance parameters. The p-value distribution is shown in Fig.~\ref{fig:limit} which included the 1$\sigma$ bands in green and 2$\sigma$ bands in yellow. The 95\% upper limit is determined as the point where the CLs p-values fall below 5\% as illustrated by the red line. This results in a upper limit on the branching fraction of:
-
-% \begin{equation}
-% Br(\B \to \Ds \phi) < 4.82 \times 10^{-7} (95\%)
-% \label{eq:upperlimit}
-% \end{equation}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
     \centering
@@ -1275,16 +1268,44 @@ This corresponds to a 95\% limit of
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{The profile likelihood method}
+ 
+An upper limit at 95\% confidence limit is determined for the branching fraction $\BF(\decay{\Bp}{\Dsp\phiz})$ using the profile likelihood method. This is calculated by determining the value of the branching fraction $x_{\text{U}}$ that satisfies the equation
+ 
+\begin{equation}
+\frac{\int_{0}^{x_{\text{U}}} \mathcal{L}(x) dx}{\int_{0}^{\infty} \mathcal{L}(x) dx} = 0.95,
+\label{eq:likelihood}
+\end{equation}
+where $\mathcal{L}(x)$ is the profile likelihood as a function of the branching fraction $\BF(\decay{\Bp}{\Dsp\phiz})$.
+This Bayesian method integrates the prior knowledge about the branching fraction, namely that the value must be greater than or equal to zero; the profile likelihood is integrated from zero upwards.  
+The 95\% CL limit determined when considering only statistical uncertainties is
+\begin{equation}
+\BF(\decay{\Bp}{\Dsp\phiz}) < 4.1 \times 10^{-7}.
+\label{eq:stat_upperlimit}
+\end{equation}
+ 
+To account for systematic uncertainty, the likelihood is convolved with a Gaussian distribution with a width given by the systematic uncertainty. The likelihood and difference in the log-likelihood are shown in Fig.~\ref{fig:B2DsPhi_limit_likelihood}, with and without the systematic uncertainty included.
+The limit at 95\% CL including the systematic uncertainty is determined to be
+\begin{equation}
+\BF(\decay{\Bp}{\Dsp\phiz}) < 4.4 \times 10^{-7}.
+\label{eq:upperlimit}
+\end{equation}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
     \centering
-        \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/Likelihood_limits.eps}
-        \caption{Bayesian profile likelihood limit determination}
+        \includegraphics[width=0.9\textwidth]{figs/B2DsPhi/Likelihood_limits.eps}
+         \caption{Bayesian profile likelihood limit determination: the (left) difference in the log-likelihood and (right) the likelihood as a function of the assumed \decay{\Bp}{\Dsp\phiz} branching fraction. The black distributions include only the statistical uncertainty, whilst the blue also include the systematic uncertainty. The shaded regions represent the areas integrated to determine the 95\% CL limits. }
     \label{fig:B2DsPhi_limit_likelihood}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+{\color{Red}
+\begin{itemize}
+\item include assumptions and possible issues
+\item asymmetric likelihood 
+\end{itemize}
+}
 \subsubsection{The Feldman-Cousins method}
 
 Upper limits at 95\% and 90\% confidence levels (CL) are also determined using the Feldman-Cousins approach~\cite{FeldmanCousins}. An ensemble of pseudo-experiments is generated for different values of the branching fraction $\BF(\decay{\Bp}{\Dsp\phiz})$. These generated pseudo-experiments are then fitted with the nominal fit model to calculate the fitted branching fraction and associated statistical uncertainty, $\sigma_{\text{stat}}$. This method constructs confidence bands based on a likelihood ratio method, calculating the probability of fitting a branching fraction for a given generated branching fraction. This probability is assumed to follow a Gaussian distribution with width $\sigma = \sqrt{\sigma_{\text{stat}}^{2}+\sigma_{\text{syst}}^{2}}$, where $\sigma_{\text{stat}}$ and $\sigma_{\text{syst}}$ are the statistical and systematic uncertainties. The dominant source of systematic uncertainty in this measurement is from the background PDFs. As the size of this uncertainty is not expected to vary as a function of the generated branching fraction, $\sigma_{\text{syst}}$ is assumed to be constant. Nuisance parameters are accounted for using the plug-in method~\cite{plugin}. The generated confidence bands are shown in Fig.~\ref{fig:B2DsPhi_limit_FC}, where the statistical-only 90\% and 95\% confidence level bands are shown, along with the 95\% confidence level band with systematic uncertainty included. 
