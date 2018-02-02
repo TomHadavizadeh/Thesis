@@ -362,7 +362,7 @@ The fit to signal and normalisation decays have eleven and nine free parameters 
           %       mean_B    5.2789e+03    5.2789e+03 +/-  8.82e-01  <none>
           %        sigma    1.2298e+01    1.2291e+01 +/-  8.77e-01  <none>
           %        slope   -2.8199e-03   -2.8202e-03 +/-  2.79e-04  <none>
-\item \textbf{Normalisation:} The normalisation fit has five free parameters  
+\item \textbf{Normalisation:} The normalisation fit has five free parameters that control the distributions of the signal and background PDFs. This includes the mean \Bp mass $\mu$, signal width $\sigma_{1}$, the combinational slope $c$, the mass offset $\delta$ and the relative heights of the double peaked partially reconstructed shapes $\xi$.   
           %   global_csi    1.2683e-06    5.2233e-08 +/-  2.25e-01  <none>
           % global_shift   -1.0585e+01   -1.0586e+01 +/-  1.31e+00  <none>
           %       mean_B    5.2784e+03    5.2784e+03 +/-  4.00e-01  <none>
@@ -372,7 +372,6 @@ The fit to signal and normalisation decays have eleven and nine free parameters 
 
 \subsection{Yields}
 \begin{description}
-
 \item \textbf{Signal:} the yields of each background component are left free in the signal fit. This corresponds to six free parameters for $N_{\text{comb}}$, $N(\decay{\Bsb}{\Dsp\Km\Kstarz})$, $N(\decay{\Bsb}{\Dssp\Km\Kstarz})$, $N(\decay{\Bs}{\Dsp\Dsm})$, $N(\decay{\Bz}{\Dsp\Dm})$, and $N(\decay{\Bs}{\Dssp\Dsm})$.
 
           %          nBG    1.1139e+03    1.1142e+03 +/-  7.30e+01  <none>
@@ -559,24 +558,32 @@ Two of the common parameters between the two modes, namely the mean \Bp mass and
 \section{Efficiency corrections}
 \label{sec:B2DsKK_effcorrection}
 
-The branching fraction for \decay{\Bp}{\Dsp\Kp\Km} decays is determined by correcting the yields of signal and background decays by their corresponding selection efficiencies. These account for each step of the selection process and ultimately quantifies the extent to which the signal and normalisation channels are affected differently. As described in Sec.~\ref{sec:B2DsKK_fitstrategy} the signal yield is corrected by the efficiency as a function of the candidate's kinematic properties. Therefore the relative signal efficiency is determined as a function of the two-dimensional Dalitz plot coordinates  $m^{2}(\Dsp\Km)$ and $m^{2}(\Kp\Km)$
+The branching fraction for \decay{\Bp}{\Dsp\Kp\Km} decays is determined by correcting the yields of signal and background decays by their corresponding selection efficiencies. These account for each step of the selection process and ultimately quantifies the extent to which the signal and normalisation channels are affected differently. As described in Sec.~\ref{sec:B2DsKK_fitstrategy} the signal yield is corrected by the efficiency as a function of the candidate's kinematic properties. Therefore the relative signal efficiency is determined as a function of the two-dimensional Dalitz plot coordinates $m^{2}(\Dsp\Km)$ and $m^{2}(\Kp\Km)$
 \begin{equation}
 \epsilon_{\text{ratio}}(m^{2}(\Dsp\Km),m^{2}(\Kp\Km)) = \frac{\epsilon_{\decay{\Bp}{\Dsp\Kp\Km}}(m^{2}(\Dsp\Km),m^{2}(\Kp\Km))}{\epsilon_{\decay{\Bp}{\Dsp\Dzb}}}.
 \end{equation}
 The normalisation decay efficiency $\epsilon_{\decay{\Bp}{\Dsp\Dzb}}$ is a pseudo-two-body decay and therefore the efficiency has no dependence on the phase space coordinates. The kinematic phase space is split into bins and the efficiencies determined in each. 
 
 
-The efficiencies are all determined from samples of simulated signal and normalisation decays. The PID and MVA efficiencies require additional input from external calibration samples to correct for the imperfect modelling of the PID variables in the simulations.
+The efficiencies are all determined using samples of simulated signal and normalisation decays. The PID and MVA efficiencies require additional input from external calibration samples to correct for the imperfect modelling of the PID variables in the simulations.
+
+{\color{Red}
+\begin{itemize}
+\item add total equation for efficiency? 
+\end{itemize}
+}
 
 \subsection{Efficiencies from simulations} 
 
 \begin{description}
-\item \textbf{Acceptance:} 
-\item \textbf{Reconstruction:} 
-\item \textbf{Trigger:} 
-\item \textbf{Vetoes:} 
-\item \textbf{Charmless:} 
-\item \textbf{$\chi^{c}_{\text{IP}}$:} 
+\item \textbf{Acceptance:} this accounts for the likelihood for the five final state tracks to be within the \lhcb detector's acceptance. The charged tracks are required to be in the range $10 < \cos\theta < 400 \mrad$, where $\theta$ is the angle between the beam direction and the track. The relative efficiency is shown as a function of the \decay{\Bp}{\Dsp\Kp\Km} Dalitz plot in Fig.\ref{fig:B2DsKK_releff_acceptance}. The relative efficiency is close to one for most of the phase-space. 
+
+\item \textbf{Reconstruction:} the reconstruction efficiency accounts for the fraction of decays in which all five final state tracks have been correctly reconstructed and combined into a \Bp candidate that passes all selection requirements outlined in the \decay{\Bp}{\Dsp\Kp\Km} \emph{Stripping Line}. The \emph{Stripping Line} reconstruction also explicitly requires that at least one trigger has fired for the event to be reconstructed, therefore this efficiency also account for part of the trigger efficiency. The distribution of the relative reconstruction efficiency between the signal and normalisation mode is shown in Fig.~\ref{fig:B2DsKK_releff_reconstruction}. This is greater than one across the whole phase-space as a result of the choice to reconstruct the \decay{\Bp}{\Dsp\Dzb} normalisation decays using the same selection as the \decay{\Bp}{\Dsp\Kp\Km} signal. The latter requires the \Dsp, \Kp and \Km candidates to form a well reconstructed vertex where the \Bp meson decays. However, for the normalisation channel the \Dzb meson travels away from this vertex, so some of the longer lived \Dzb candidates do not pass the vertex quality requirement. This reduces the efficiency for the normalisation channel relative to the signal.
+
+\item \textbf{Trigger:} the trigger efficiency accounts for the fraction of decays for which the signal candidate meets the \texttt{TIS} and \texttt{TOS} requirements outlined in Sec.~\ref{sec:selection_trigger}, given that the trigger fired in that event. For the signal and normalisation simulation samples it is very likely that the signal candidate was the cause of the trigger if a trigger fired, therefore these are typically around 95\%. The phase-space distribution of the relative efficiency is very uniform and shown in Fig.~\ref{fig:B2DsKK_releff_trigger}.
+\item \textbf{Vetoes:} this efficiency accounts for the fraction of decays passing the kinematic and normalisation vetoes detailed in Sec.~\ref{sec:kinematicvetos} and \ref{sec:normvetos}. The vetoes to remove misidentified \D and \Lc hadrons are only applied to the \Dsp meson and therefore assumed to affect the signal and normalisation mode equally. The systematic uncertainty arising from this choice is discussed in Sections~\ref{sec:B2DsKK_sys_releff}. Although the veto for misidentified normalisation decays proceeding via \decay{\Dzb}{\Kp\pim} decays is included, the veto to remove correctly reconstructed normalisation decays with \decay{\Dzb}{\Kp\Km} is not included. This is because the width of this veto is less that the binning width so it would therefore lead to the wrong efficiency for candidates within in the same bin but not in the window. This doesn't affect the final result, it simply means areas of the efficiency Dalitz plot are populated that will never be sampled. The distribution of the relative efficiency is shown in Fig.~\ref{fig:B2DsKK_releff_vetoes}. A vertical band is clear in the centre as a result of the veto for misidentified normalisation decays with \decay{\Dzb}{\Kp\pim}.
+\item \textbf{Charmless:} this accounts for the fraction of decays failing the requirements on the \D meson flight distance requirements aimed at removing charmless and single-charm backgrounds. The distribution shown in Fig.\ref{fig:B2DsKK_releff_charmless} shows a fairly flat distribution with the exception of some of the edge bins.
+\item \textbf{$\chi^{2}_{\text{IP}}$:} 
 \item \textbf{Mass windows:} 
 \end{description}
 
@@ -588,32 +595,39 @@ The efficiencies are all determined from samples of simulated signal and normali
    \begin{subfigure}[t]{0.4\textwidth}
       \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Relative_Eff_gen_All_Full.pdf}
       \caption{Acceptance}
+      \label{fig:B2DsKK_releff_acceptance}
    \end{subfigure}
    \begin{subfigure}[t]{0.4\textwidth}
       \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Relative_Eff_reco_All.pdf}
       \caption{Reconstruction}
+      \label{fig:B2DsKK_releff_reconstruction}
    \end{subfigure}
    \begin{subfigure}[t]{0.4\textwidth}
       \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Relative_Eff_trig_All.pdf}
       \caption{Trigger}
+      \label{fig:B2DsKK_releff_trigger}
    \end{subfigure}
    \begin{subfigure}[t]{0.4\textwidth}
       \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Relative_Eff_veto_All.pdf}
       \caption{Vetoes}
+      \label{fig:B2DsKK_releff_vetoes}
    \end{subfigure}
    \begin{subfigure}[t]{0.4\textwidth}
       \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Relative_Eff_FDCHI2_All.pdf}
       \caption{Charmless}
+      \label{fig:B2DsKK_releff_charmless}
    \end{subfigure}
    \begin{subfigure}[t]{0.4\textwidth}
       \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Relative_Eff_Bcut_All.pdf}
       \caption{$\chi^{2}_{\text{IP}}$}
+      \label{fig:B2DsKK_releff_ipchi2}
    \end{subfigure}
    \begin{subfigure}[t]{0.4\textwidth}
       \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Relative_Eff_mass_All.pdf}
       \caption{Mass windows}
+      \label{fig:B2DsKK_releff_masswindows}
    \end{subfigure}
-   \caption{Efficiencies}
+   \caption{The relative efficiency $\epsilon_{\text{ratio}}(m^{2}(\Dsp\Km),m^{2}(\Kp\Km))$ as a function of the \decay{\Bp}{\Dsp\Kp\Km} kinematics.}
    \label{fig:B2DsKK_dalitz_eff_one}
 \end{figure}
 
@@ -657,7 +671,7 @@ A number of sources of systematic uncertainty are considered when determining th
 
 
 \subsection{Relative efficiencies}
-
+\label{sec:B2DsKK_sys_releff}
 
 
 
