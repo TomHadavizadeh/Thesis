@@ -580,15 +580,7 @@ The efficiencies are all determined using samples of simulated signal and normal
 
 \item \textbf{Reconstruction:} the reconstruction efficiency accounts for the fraction of decays in which all five final state tracks have been correctly reconstructed and combined into a \Bp candidate that passes all selection requirements outlined in the \decay{\Bp}{\Dsp\Kp\Km} \emph{Stripping Line}. The \emph{Stripping Line} reconstruction also explicitly requires that at least one trigger has fired for the event to be reconstructed, therefore this efficiency also account for part of the trigger efficiency. The distribution of the relative reconstruction efficiency between the signal and normalisation mode is shown in Fig.~\ref{fig:B2DsKK_releff_reconstruction}. This is greater than one across the whole phase-space as a result of the choice to reconstruct the \decay{\Bp}{\Dsp\Dzb} normalisation decays using the same selection as the \decay{\Bp}{\Dsp\Kp\Km} signal. The latter requires the \Dsp, \Kp and \Km candidates to form a well reconstructed vertex where the \Bp meson decays. However, for the normalisation channel the \Dzb meson travels away from this vertex, so some of the longer lived \Dzb candidates do not pass the vertex quality requirement. This reduces the efficiency for the normalisation channel relative to the signal.
 
-\item \textbf{Trigger:} the trigger efficiency accounts for the fraction of decays for which the signal candidate meets the \texttt{TIS} and \texttt{TOS} requirements outlined in Sec.~\ref{sec:selection_trigger}, given that the trigger fired in that event. For the signal and normalisation simulation samples it is very likely that the signal candidate was the cause of the trigger if a trigger fired, therefore these are typically around 95\%. The phase-space distribution of the relative efficiency is very uniform and shown in Fig.~\ref{fig:B2DsKK_releff_trigger}.
-\item \textbf{Vetoes:} this efficiency accounts for the fraction of decays passing the kinematic and normalisation vetoes detailed in Sec.~\ref{sec:kinematicvetos} and \ref{sec:normvetos}. The vetoes to remove misidentified \D and \Lc hadrons are only applied to the \Dsp meson and therefore assumed to affect the signal and normalisation mode equally. The systematic uncertainty arising from this choice is discussed in Sections~\ref{sec:B2DsKK_sys_releff}. Although the veto for misidentified normalisation decays proceeding via \decay{\Dzb}{\Kp\pim} decays is included, the veto to remove correctly reconstructed normalisation decays with \decay{\Dzb}{\Kp\Km} is not included. This is because the width of this veto is less that the binning width so it would therefore lead to the wrong efficiency for candidates within in the same bin but not in the window. This doesn't affect the final result, it simply means areas of the efficiency Dalitz plot are populated that will never be sampled. The distribution of the relative efficiency is shown in Fig.~\ref{fig:B2DsKK_releff_vetoes}. A vertical band is clear in the centre as a result of the veto for misidentified normalisation decays with \decay{\Dzb}{\Kp\pim}.
-\item \textbf{Charmless:} this accounts for the fraction of decays failing the requirements on the \D meson flight distance requirements aimed at removing charmless and single-charm backgrounds. The distribution shown in Fig.\ref{fig:B2DsKK_releff_charmless} shows a fairly flat distribution with the exception of some of the edge bins.
-\item \textbf{$\chi^{2}_{\text{IP}}$:} 
-\item \textbf{Mass windows:} 
 \end{description}
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
    \centering
@@ -602,6 +594,20 @@ The efficiencies are all determined using samples of simulated signal and normal
       \caption{Reconstruction}
       \label{fig:B2DsKK_releff_reconstruction}
    \end{subfigure}
+   \caption{The relative efficiency $\epsilon_{\text{ratio}}(m^{2}(\Dsp\Km),m^{2}(\Kp\Km))$ as a function of the \decay{\Bp}{\Dsp\Kp\Km} kinematics.}
+   \label{fig:B2DsKK_dalitz_eff_one}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{description}
+\item \textbf{Trigger:} the trigger efficiency accounts for the fraction of decays for which the signal candidate meets the \texttt{TIS} and \texttt{TOS} requirements outlined in Sec.~\ref{sec:selection_trigger}, given that the trigger fired in that event. For the signal and normalisation simulation samples it is very likely that the signal candidate was the cause of the trigger if a trigger fired, therefore these are typically around 95\%. The phase-space distribution of the relative efficiency is very uniform and shown in Fig.~\ref{fig:B2DsKK_releff_trigger}.
+\item \textbf{Vetoes:} this efficiency accounts for the fraction of decays passing the kinematic and normalisation vetoes detailed in Sec.~\ref{sec:kinematicvetos} and \ref{sec:normvetos}. The vetoes to remove misidentified \D and \Lc hadrons are only applied to the \Dsp meson and therefore assumed to affect the signal and normalisation mode equally. The systematic uncertainty arising from this choice is discussed in Sections~\ref{sec:B2DsKK_sys_releff}. Although the veto for misidentified normalisation decays proceeding via \decay{\Dzb}{\Kp\pim} decays is included, the veto to remove correctly reconstructed normalisation decays with \decay{\Dzb}{\Kp\Km} is not included. This is because the width of this veto is less that the binning width so it would therefore lead to the wrong efficiency for candidates within in the same bin but not in the window. This doesn't affect the final result, it simply means areas of the efficiency Dalitz plot are populated that will never be sampled. The distribution of the relative efficiency is shown in Fig.~\ref{fig:B2DsKK_releff_vetoes}. A vertical band is clear in the centre as a result of the veto for misidentified normalisation decays with \decay{\Dzb}{\Kp\pim}.
+\end{description}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+   \centering
    \begin{subfigure}[t]{0.4\textwidth}
       \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Relative_Eff_trig_All.pdf}
       \caption{Trigger}
@@ -612,6 +618,20 @@ The efficiencies are all determined using samples of simulated signal and normal
       \caption{Vetoes}
       \label{fig:B2DsKK_releff_vetoes}
    \end{subfigure}
+   \caption{The relative efficiency $\epsilon_{\text{ratio}}(m^{2}(\Dsp\Km),m^{2}(\Kp\Km))$ as a function of the \decay{\Bp}{\Dsp\Kp\Km} kinematics.}
+   \label{fig:B2DsKK_dalitz_eff_one}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{description}
+
+\item \textbf{Charmless:} this accounts for the fraction of decays failing the requirements on the \D meson flight distance requirements aimed at removing charmless and single-charm backgrounds. The distribution shown in Fig.\ref{fig:B2DsKK_releff_charmless} shows a fairly flat distribution with the exception of some of the edge bins.
+\item \textbf{$\chi^{2}_{\text{IP}}$:} this accounts for the fraction of decays that pass the requirements on the \Bp and \Dsp meson impact parameter significance. The relative efficiency is shown in Fig.~\ref{fig:B2DsKK_releff_ipchi2} and shows a strong dependency on phase-space at high $m^{2}(\Kp\Km)$. The lower relative efficiencies at high $m^{2}(\Kp\Km)$ may be because the \Dp meson is produced almost at rest in this region. Therefore these \Dsp mesons are likely to have a lower momentum and may fail the minimum impact parameter significance requirement.
+\end{description}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+   \centering
    \begin{subfigure}[t]{0.4\textwidth}
       \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Relative_Eff_FDCHI2_All.pdf}
       \caption{Charmless}
@@ -622,24 +642,60 @@ The efficiencies are all determined using samples of simulated signal and normal
       \caption{$\chi^{2}_{\text{IP}}$}
       \label{fig:B2DsKK_releff_ipchi2}
    \end{subfigure}
+   \caption{The relative efficiency $\epsilon_{\text{ratio}}(m^{2}(\Dsp\Km),m^{2}(\Kp\Km))$ as a function of the \decay{\Bp}{\Dsp\Kp\Km} kinematics.}
+   \label{fig:B2DsKK_dalitz_eff_two}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{description}
+\item \textbf{Mass windows:} this accounts for the fraction of decays that pass the mass windows around the \Dsp and \Dzb masses. No requirement is placed on the \Kp\Km pair, therefore the relative efficiency shown in Fig.~\ref{fig:B2DsKK_releff_masswindows} is slightly greater than one across the whole phase-space. 
+\end{description}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+   \centering
    \begin{subfigure}[t]{0.4\textwidth}
       \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Relative_Eff_mass_All.pdf}
       \caption{Mass windows}
       \label{fig:B2DsKK_releff_masswindows}
    \end{subfigure}
    \caption{The relative efficiency $\epsilon_{\text{ratio}}(m^{2}(\Dsp\Km),m^{2}(\Kp\Km))$ as a function of the \decay{\Bp}{\Dsp\Kp\Km} kinematics.}
-   \label{fig:B2DsKK_dalitz_eff_one}
+   \label{fig:B2DsKK_dalitz_eff_two}
 \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \subsection{Efficiencies requiring calibration samples} 
 \label{sec:B2DsKK_eff_from_calib}
 
 \begin{description}
-\item \textbf{PID:} 
-\item \textbf{MVA:}  
+\item \textbf{PID:} the efficiency for the particle identification requirements is calculated by correcting the PID variables in simulation using a package called \texttt{PIDCorr} and \texttt{Meerkat} {\color{Red}Cite}. This differs from the method used to determine the PID efficiencies in the search for \decay{\Bp}{\Dsp\phiz} decays as the phase-space variations must be considered.
 \end{description}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+   \centering
+   \begin{subfigure}[t]{0.4\textwidth}
+      \includegraphics[width=1.0\textwidth]{figs/B2DsKK/mKK_eff_2011_Both.pdf}
+      \caption{2011}
+   \end{subfigure}
+   \begin{subfigure}[t]{0.4\textwidth}
+      \includegraphics[width=1.0\textwidth]{figs/B2DsKK/mKK_eff_2012_Both.pdf}
+      \caption{2012}
+   \end{subfigure}
+   \caption{PID efficiency variation as a function $m(\Kp\Km)$.}
+   \label{fig:B2DsKK_PID_eff}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{description}
+ \item \textbf{MVA:}  
+\end{description}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
    \centering
    \begin{subfigure}[t]{0.4\textwidth}
@@ -651,7 +707,7 @@ The efficiencies are all determined using samples of simulated signal and normal
       \caption{MVA}
    \end{subfigure}
    \caption{Efficiencies}
-   \label{fig:B2DsKK_dalitz_eff_two}
+   \label{fig:B2DsKK_dalitz_eff_three}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
