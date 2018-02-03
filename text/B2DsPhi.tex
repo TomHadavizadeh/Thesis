@@ -1120,14 +1120,16 @@ The efficiencies of the particle identification and MVA requirements are both de
 \end{table}
 
 \subsubsection{PID efficiency}
+\label{sec:B2DsPhi_eff_PID}
 
-The efficiency of the particle identification requirements as described in Sec.~\ref{sec:pidrequirements} are determined using a package called \texttt{PIDCalib}. This uses calibrations samples for the different particle species to determine the fraction of candidates passing the various PID variable requirements. The samples are background-subtracted to isolate the distributions of the PID variables for the tracks of interest. The calibration samples for both \Kp and \pip mesons are collected from a sample of \decay{\Dstarp}{(\decay{\Dz}{\Kp\pim})\pip} decays, using the decay products of the \Dz decay. 
+The efficiency of the particle identification requirements as described in Sec.~\ref{sec:pidrequirements} are determined using a package called \pidcalib~\cite{PIDCalib}. This uses calibrations samples for the different particle species to determine the fraction of candidates passing the various PID variable requirements. The samples are background-subtracted to isolate the distributions of the PID variables for the tracks of interest. The calibration samples for both \Kp and \pip mesons are collected from a sample of \decay{\Dstarp}{(\decay{\Dz}{\Kp\pim})\pip} decays, using the decay products of the \Dz decay. 
 
 The PID variable distributions depend on both the kinematics of the track in question and the occupancy of the detector as a whole. 
 These can both affect the characteristics of the hits in the \rich detectors and therefore result in different PID variable distributions. The calibrations samples are binned in three variables; the momentum of the track \ptot, the pseudo-rapidity \Peta, and the number of tracks in an event $n_{\text{Tracks}}$. Input is used from simulation samples to determine the \ptot, \Peta and $n_{\text{Tracks}}$ distributions for the signal decays and weight the calibration samples accordingly. The efficiencies of the PID requirements on the signal and normalisation for the different \Dsp decay modes are listed in Table.~\ref{tab:B2DsPhi_eff_from_calib}.
 
 
 \subsubsection{MVA efficiency}
+\label{sec:B2DsPhi_eff_MVA}
 
 The efficiency of the MVA requirements is determined using the method outlined in Sec.~\ref{sec:selection_MVA_eff}. The validation samples of \decay{\Bsb}{\Dsp\pim} and \decay{\Bs}{\jpsi\phiz} decays are binned in transverse momentum \pt and flight distance significance $\chi^{2}_{\text{FD}}$. The background-subtracted MVA responses are extracted for each bin. Samples of simulated decays are iterated though, finding the \pt and $\chi^{2}_{\text{FD}}$ values for each candidate and calculating the MVA cut efficiency from the corresponding validation samples. The total efficiency for each candidate is the product of the \Dsp and \phiz MVA selection efficiencies. The total efficiency for the whole sample is then given by the sum of the per-candidate efficiencies as listed in Table.~\ref{tab:B2DsPhi_eff_from_calib}.
 

@@ -670,9 +670,35 @@ The efficiencies are all determined using samples of simulated signal and normal
 \subsection{Efficiencies requiring calibration samples} 
 \label{sec:B2DsKK_eff_from_calib}
 
-\begin{description}
-\item \textbf{PID:} the efficiency for the particle identification requirements is calculated by correcting the PID variables in simulation using a package called \texttt{PIDCorr} and \texttt{Meerkat} {\color{Red}Cite}. This differs from the method used to determine the PID efficiencies in the search for \decay{\Bp}{\Dsp\phiz} decays as the phase-space variations must be considered.
-\end{description}
+\subsubsection{PID efficiency}
+The efficiencies for the particle identification requirements are calculated by correcting the PID variables in simulation using a package called \pidcalib~\cite{PIDCalib}. This uses calibrations samples for the different particle species to determine the distribution of the PID variables in data. The calibration samples are background-subtracted to isolate the distributions of the PID variables for the tracks of interest. The calibration samples for both \Kp and \pip mesons are collected from samples of \decay{\Dstarp}{(\decay{\Dz}{\Kp\pim})\pip} decays, using the decay products of the \Dz decay. Additionally, samples of protons are collected from \decay{\PLambda}{\proton\pim} decays. The PID variable distributions depend on both the kinematics of the track in question and the occupancy of the detector as a whole. These can both affect the characteristics of the hits in the \rich sub-detectors and therefore result in different PID variable distributions. The calibrations samples are characterised using three variables; the transverse momentum of the track \pt, the pseudo-rapidity \Peta, and the number of tracks in an event $n_{\text{Tracks}}$. 
+The calibration PID variables are parametrised using an unbinned approach, unlike in the search for \decay{\Bp}{\Dsp\phiz} where a binned approach is used (Sec.~\ref{sec:B2DsPhi_eff_PID}). This unbinned approach creates four dimensional PDFs (PID,\Peta,\pt,$n_{\text{Tracks}}$) from the calibration samples using a kernel density estimation implemented with the \meerkat package~\cite{Meerkat}. Similar four dimensional PDFs are created for simulation samples of the calibration modes. These two PDFs are used to calculate the transformation needed for each species as a function of (PID,\Peta,\pt,$n_{\text{Tracks}}$) to correct the distribution in simulation. 
+This transformation preserves the correlations between the different PID variables and between the PID and kinematic properties. 
+This correction is applied to both the DLL PID variables and ProbNNx variables used in the MVA selection. 
+The phase-space distribution of the relative PID efficiency between the signal and normalisation channel is shown in Fig.~\ref{fig:B2DsKK_releff_PID}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+   \centering
+   \begin{subfigure}[t]{0.4\textwidth}
+      \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Relative_Eff_PID_All.pdf}
+      \caption{PID}
+      \label{fig:B2DsKK_releff_PID}
+   \end{subfigure}
+   \begin{subfigure}[t]{0.4\textwidth}
+      \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Relative_Eff_BDT_All.pdf}
+      \caption{MVA}
+      \label{fig:B2DsKK_releff_MVA}
+   \end{subfigure}
+   \caption{Efficiencies}
+   \label{fig:B2DsKK_dalitz_eff_three}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsubsection{MVA efficiency}
+
+The MVA efficiency is determined from samples for signal and normalisation simulations in which the PID distributions have been corrected as described previously. This is different to the approach used in the search for \decay{\Bp}{\Dsp\phiz} decays (Sec.~\ref{sec:B2DsPhi_eff_MVA}) and is required to account for the variation in the efficiency across the phase-space. The corrected ProbNNx PID variables are used to determine the \Dsp and \phiz MVA classifiers and the efficiency of the MVA requirements determined in different positions in the Dalitz plot as shown in Fig.\ref{fig:B2DsKK_releff_MVA}. There is a strong dependence on the position, with decays at low $m^{2}(\Kp\Km)$ values having a larger relative efficiency than those at higher values. This is likely to be because the MVA methods were trained using a sample of \decay{\phiz}{\Kp\Km} decays, so the selection favourably selects candidates with an invariant mass near the \phiz meson mass. A cross check is performed to compare the MVA efficiencies determined directly using the classifier produced with the corrected PID variables and the method described in Sec.~\ref{sec:selection_MVA_eff} that uses the MVA training samples to calculate the efficiency. The values of the efficiency determined for each mode are compared in Fig.~\ref{fig:B2DsKK_PID_eff_crosscheck} as a function of the $m(\Kp\Km)$ mass. The MVA training modes only exist for two discreet values; $m(\Kp\Km)=m(\phiz)$ and $m(\Kp\Km)=m(\Dzb)$ represented by the red points. These are compared to the \decay{\Bp}{\Dsp\Kp\Km} and \decay{\Bp}{\Ds\Dzb} efficiencies from the corrected simulations in black and blue respectively. A good agreement is found.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
@@ -685,39 +711,10 @@ The efficiencies are all determined using samples of simulated signal and normal
       \includegraphics[width=1.0\textwidth]{figs/B2DsKK/mKK_eff_2012_Both.pdf}
       \caption{2012}
    \end{subfigure}
-   \caption{PID efficiency variation as a function $m(\Kp\Km)$.}
-   \label{fig:B2DsKK_PID_eff}
+   \caption{The PID efficiency variation as a function $m(\Kp\Km)$ as determined from the MVA training modes (red) and the \decay{\Bp}{\Dsp\Kp\Km} and \decay{\Bp}{\Ds\Dzb} simulation samples (black and blue respectively). A good agreement is found between the red and black point at $m(\Kp\Km)=m(\phiz)$, and the red and blue point at $m(\Kp\Km)=m(\Dzb)$.}
+   \label{fig:B2DsKK_PID_eff_crosscheck}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-\begin{description}
- \item \textbf{MVA:}  
-\end{description}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[!h]
-   \centering
-   \begin{subfigure}[t]{0.4\textwidth}
-      \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Relative_Eff_PID_All.pdf}
-      \caption{PID}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.4\textwidth}
-      \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Relative_Eff_BDT_All.pdf}
-      \caption{MVA}
-   \end{subfigure}
-   \caption{Efficiencies}
-   \label{fig:B2DsKK_dalitz_eff_three}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-{\color{Red}
-\begin{itemize}
-\item studies of BDT eff ratio 
-\end{itemize}
-}
-
 
 \section{Systematic uncertainties}
 \label{sec:B2DsKK_systuncertainy}
