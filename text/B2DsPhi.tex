@@ -955,6 +955,7 @@ Fractions  & Ratio of \Dsp\Kp\Km to \Dsp\Dzb                                    
 The branching fraction for \decay{\Bp}{\Dsp\phiz} decays is determined by correcting the yields for the signal and normalisation channels by their respective efficiencies. In determining the efficiencies both the \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Dzb} decays are assumed to be pseudo-two-body decays in which variations as a function of phase-space are negligible. This means the relative efficiency can be calculated as a simple ratio for each \Dsp decay mode, simplifying the correction considerably.    
 
 The efficiencies for each stage of selection are either determined from the appropriate simulation samples for the signal and normalisation decays, or from dedicated calibration data samples for the efficiencies involving particle identification requirements. 
+Each set of efficiencies are determined with respect to the previous one, such that the total efficiency is given by the product of each of them.
 
 
 \subsection{Efficiencies from simulation}
@@ -1054,7 +1055,7 @@ The efficiencies for each step of selection are listed separately for the differ
                               & $\Kp\pim\pip$     & 94.9 $\pm$ 0.2         & 94.1 $\pm$ 0.2     & 1.008 $\pm$ 0.003  \\
                               & $\pip\pim\pip$    & 93.7 $\pm$ 0.2         & 92.4 $\pm$ 0.2     & 1.015 $\pm$ 0.004  \\
       \hline
-      Vetos                   & $\Kp\Km\pip$      & 99.9 $\pm$ 0.0         & 95.2 $\pm$ 0.2     & 1.049 $\pm$ 0.002  \\
+      Vetoes                  & $\Kp\Km\pip$      & 99.9 $\pm$ 0.0         & 95.2 $\pm$ 0.2     & 1.049 $\pm$ 0.002  \\
                               & $\Kp\pim\pip$     & 99.9 $\pm$ 0.0         & 92.4 $\pm$ 0.3     & 1.080 $\pm$ 0.004  \\
                               & $\pip\pim\pip$    & 99.9 $\pm$ 0.0         & 90.3 $\pm$ 0.3     & 1.105 $\pm$ 0.004  \\
       \hline
@@ -1122,23 +1123,44 @@ The efficiencies of the particle identification and MVA requirements are both de
 \subsubsection{PID efficiency}
 \label{sec:B2DsPhi_eff_PID}
 
-The efficiency of the particle identification requirements as described in Sec.~\ref{sec:pidrequirements} are determined using a package called \pidcalib~\cite{PIDCalib}. This uses calibrations samples for the different particle species to determine the fraction of candidates passing the various PID variable requirements. The samples are background-subtracted to isolate the distributions of the PID variables for the tracks of interest. The calibration samples for both \Kp and \pip mesons are collected from a sample of \decay{\Dstarp}{(\decay{\Dz}{\Kp\pim})\pip} decays, using the decay products of the \Dz decay. 
+The efficiency of the particle identification requirements described in Sec.~\ref{sec:pidrequirements} are determined using a package called \pidcalib~\cite{PIDCalib}. This uses calibrations samples for the different particle species to determine the fraction of candidates passing the various PID variable requirements. The samples are background-subtracted to isolate the distributions of the PID variables for the tracks of interest. The calibration samples for both \Kp and \pip mesons are collected from a sample of \decay{\Dstarp}{(\decay{\Dz}{\Kp\pim})\pip} decays, using the decay products of the \Dz decay. 
 
-The PID variable distributions depend on both the kinematics of the track in question and the occupancy of the detector as a whole. 
-These can both affect the characteristics of the hits in the \rich detectors and therefore result in different PID variable distributions. The calibrations samples are binned in three variables; the momentum of the track \ptot, the pseudo-rapidity \Peta, and the number of tracks in an event $n_{\text{Tracks}}$. Input is used from simulation samples to determine the \ptot, \Peta and $n_{\text{Tracks}}$ distributions for the signal decays and weight the calibration samples accordingly. The efficiencies of the PID requirements on the signal and normalisation for the different \Dsp decay modes are listed in Table.~\ref{tab:B2DsPhi_eff_from_calib}.
+Unlike in the search for \decay{\Bp}{\Dsp\Kp\Km} decays, the PID variable distributions of the calibration samples are parametrised using a binned approach, with three characterising variables; the momentum \ptot, pseudo-rapidity \Peta, and total number of tracks $n_{\text{Track}}$. Input from the signal and normalisation simulation samples is used to determine per-candidate efficiencies. The characteristics (\ptot,\Peta,$n_{\text{Track}}$) of each simulated decay is used to find the corresponding calibration PID variable distribution. The per-candidate efficiency is calculated by integrating this distribution above the PID requirement. The total efficiency is given by the average of the per-candidate efficiencies. The efficiencies of the PID requirements on the signal and normalisation for the different \Dsp decay modes are listed in Table~\ref{tab:B2DsPhi_eff_from_calib}.
 
 
 \subsubsection{MVA efficiency}
 \label{sec:B2DsPhi_eff_MVA}
 
-The efficiency of the MVA requirements is determined using the method outlined in Sec.~\ref{sec:selection_MVA_eff}. The validation samples of \decay{\Bsb}{\Dsp\pim} and \decay{\Bs}{\jpsi\phiz} decays are binned in transverse momentum \pt and flight distance significance $\chi^{2}_{\text{FD}}$. The background-subtracted MVA responses are extracted for each bin. Samples of simulated decays are iterated though, finding the \pt and $\chi^{2}_{\text{FD}}$ values for each candidate and calculating the MVA cut efficiency from the corresponding validation samples. The total efficiency for each candidate is the product of the \Dsp and \phiz MVA selection efficiencies. The total efficiency for the whole sample is then given by the sum of the per-candidate efficiencies as listed in Table.~\ref{tab:B2DsPhi_eff_from_calib}.
+The efficiency of the MVA requirements is determined using the method outlined in Sec.~\ref{sec:selection_MVA_eff}. The validation samples of \decay{\Bsb}{\Dsp\pim} and \decay{\Bs}{\jpsi\phiz} decays are binned in transverse momentum \pt and flight distance significance $\chi^{2}_{\text{FD}}$. The background-subtracted MVA responses are extracted for each bin. Samples of simulated decays are iterated though, finding the \pt and $\chi^{2}_{\text{FD}}$ values for each candidate and calculating the MVA cut efficiency from the corresponding validation samples. The total efficiency for each candidate is the product of the \Dsp and \phiz MVA selection efficiencies. The total efficiency for the whole sample is then given by the sum of the per-candidate efficiencies as listed in Table~\ref{tab:B2DsPhi_eff_from_calib}.
 
 
 
 
 \subsection{Total efficiencies}
 
+The total relative efficiency between the signal and normalisation decays is determined as the product of each contributing relative  efficiency
+\begin{multline}
+\epsilon^\text{Tot.} = \epsilon^{\text{Accp.}} \times \epsilon^{\text{Reco.}|\text{Accp.}} \times \epsilon^{\text{Trig.}|\text{Reco.}}\times \epsilon^{\text{Mass.}|\text{Trig.}}\times \epsilon^{\text{Veto.}|\text{Mass.}}\times \epsilon^{\text{FD}|\text{Veto.}}\\
+\times \epsilon^{\text{IP}|\text{FD}} \times \epsilon^{\text{PID}|\text{IP}} \times \epsilon^{\text{MVA}|\text{PID}},
+\label{eq:B2DsPhi_eff_eq}
+\end{multline}
+where each relative efficiency $x$ is determined with respect to the previous selection step $y$ as $\epsilon^{x|y}$.
+The total relative efficiencies are listed for each \Dp decay mode in Table~\ref{tab:B2DsPhi_eff_total}. These values are used as an input in the simultaneous fit to the signal and normalisation modes to correct the yields ratios for each \Dsp decay mode category. 
 
+\begin{table}[h]
+   \centering
+      \begin{tabular}{ l c }
+      \hline
+      \Dsp decay mode      & Ratio \\
+      \hline
+      $\Kp\Km\pip$         &   0.757 $\pm$ 0.014 \\ 
+      $\Kp\pim\pip$        &   1.144 $\pm$ 0.027 \\ 
+      $\pip\pim\pip$       &   0.907 $\pm$ 0.019 \\ 
+      \hline
+   \end{tabular}
+   \caption{The total relative efficiency $\epsilon(\decay{\Bp}{\Dsp\Dzb})/\epsilon(\decay{\Bp}{\Dsp\phiz})$ determined for each \Dsp decay mode. The errors are statistical.} 
+   \label{tab:B2DsPhi_eff_total} 
+\end{table} 
 
 
 
