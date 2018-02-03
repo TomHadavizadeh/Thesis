@@ -696,6 +696,7 @@ The phase-space distribution of the relative PID efficiency between the signal a
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+
 \subsubsection{MVA efficiency}
 
 The MVA efficiency is determined from samples for signal and normalisation simulations in which the PID distributions have been corrected as described previously. This is different to the approach used in the search for \decay{\Bp}{\Dsp\phiz} decays (Sec.~\ref{sec:B2DsPhi_eff_MVA}) and is required to account for the variation in the efficiency across the phase-space. The corrected ProbNNx PID variables are used to determine the \Dsp and \phiz MVA classifiers and the efficiency of the MVA requirements determined in different positions in the Dalitz plot as shown in Fig.\ref{fig:B2DsKK_releff_MVA}. There is a strong dependence on the position, with decays at low $m^{2}(\Kp\Km)$ values having a larger relative efficiency than those at higher values. This is likely to be because the MVA methods were trained using a sample of \decay{\phiz}{\Kp\Km} decays, so the selection favourably selects candidates with an invariant mass near the \phiz meson mass. A cross check is performed to compare the MVA efficiencies determined directly using the classifier produced with the corrected PID variables and the method described in Sec.~\ref{sec:selection_MVA_eff} that uses the MVA training samples to calculate the efficiency. The values of the efficiency determined for each mode are compared in Fig.~\ref{fig:B2DsKK_PID_eff_crosscheck} as a function of the $m(\Kp\Km)$ mass. The MVA training modes only exist for two discreet values; $m(\Kp\Km)=m(\phiz)$ and $m(\Kp\Km)=m(\Dzb)$ represented by the red points. These are compared to the \decay{\Bp}{\Dsp\Kp\Km} and \decay{\Bp}{\Ds\Dzb} efficiencies from the corrected simulations in black and blue respectively. A good agreement is found.
@@ -716,6 +717,37 @@ The MVA efficiency is determined from samples for signal and normalisation simul
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\subsection{Total efficiency}
+The total relative efficiency between the signal and normalisation decays is calculated from the products of each contributing efficiency
+\begin{multline}
+\epsilon^\text{Tot.} = \epsilon^{\text{Accp.}} \times \epsilon^{\text{Reco.}|\text{Accp.}} \times \epsilon^{\text{Trig.}|\text{Reco.}}\times \epsilon^{\text{Mass.}|\text{Trig.}}\times \epsilon^{\text{Veto.}|\text{Mass.}}\times \epsilon^{\text{FD}|\text{Veto.}}\\
+\times \epsilon^{\text{IP}|\text{FD}} \times \epsilon^{\text{PID}|\text{IP}} \times \epsilon^{\text{MVA}|\text{PID}},
+\label{eq:B2DsPhi_eff_eq}
+\end{multline}
+where each relative efficiency $x$ is defined relative to the previous selection step $y$ as $\epsilon^{x|y}$. This is similarly determined as a function of the two-dimensional $m^{2}(\Dsp\Km)$ vs. $m^{2}(\Kp\Km)$ space and shown in Fig.~\ref{fig:B2DsKK_eff_total_hist}. This two dimensional histogram has a rather coarse binning and is susceptible to variations from statistical fluctuation.  
+
+This could lead to biases when correcting the weights of signal candidates, especially if the candidates are concentrated within a one or a few bins. To reduce this the two dimensional histogram is made into a smoothly varying distribution by using a cubic spline interpolation as shown in Fig.~\ref{fig:B2DsKK_eff_total_spline}. The final distribution used to correct the yields of signal decays is the weighted sum of the splines for each year of data taking.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+   \centering
+   \begin{subfigure}[t]{0.4\textwidth}
+      \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Full_Eff_Hist_All.pdf}
+      \caption{Total efficiency}
+      \label{fig:B2DsKK_eff_total_hist}
+   \end{subfigure}
+   \begin{subfigure}[t]{0.4\textwidth}
+      \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Full_Eff_Spline_All_withLimit.pdf}
+      \caption{Spline interpolation}
+      \label{fig:B2DsKK_eff_total_spline}
+   \end{subfigure}
+   \caption{The total relative efficiency between the signal and normalisation mode as a function of the two-dimensional $m^{2}(\Dsp\Km)$ vs. $m^{2}(\Kp\Km)$ (right) and a cubic spline interpolation of the same distribution.}
+   \label{fig:B2DsKK_total_eff}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 \section{Systematic uncertainties}
 \label{sec:B2DsKK_systuncertainy}
 
@@ -723,9 +755,21 @@ The MVA efficiency is determined from samples for signal and normalisation simul
 A number of sources of systematic uncertainty are considered when determining the branching fraction for \decay{\Bp}{\Dsp\Kp\Km} decays.
 
 
+
 \subsection{Relative efficiencies}
 \label{sec:B2DsKK_sys_releff}
 
+The yields of signal and normalisation decays are corrected by the ratio of selection efficiencies. The limitations and assumptions surrounding this ratio contribute to the systematic uncertainty.
+
+\begin{description}
+\item \textbf{Simulation statistics:} the relative efficiencies used to correct the signal and normalisation yields in this analysis are determined from samples of simulated decays. These are of a limited size, therefore the relative efficiencies have an associated statistical uncertainty. 
+
+\item \textbf{Particle identification:} the efficiencies for the particle identification requirements are determined from calibration samples using the \pidcalib package. The procedure used to determine the efficiencies from these samples contains sources of systematic uncertainty, for example the choice of binning scheme used to match the calibration samples to the signal decays and the background-subtraction procedure used to isolate the distributions. The presence of the same particle species in the signal and normalisation mode helps to reduce this affect in the ratio of efficiencies to some extent, but not completely. A relatively conservative estimate of the systematic uncertainty of 0.5\% per track is assigned to account any residual differences. {\color{Red} This estimate is derived from similar analyses?}
+
+\item \textbf{Veto efficiency:} the efficiency of the misidentified \D and \Lc hadron veto applied to the \Dsp meson is assumed to be the same for the signal and normalisation channel. However, slight differences in the kinematics of the \Dsp mesons in each case might lead to this approximation not being valid when the particle identification requirements are tightened on the ambiguous track. 
+
+\item \textbf{MVA efficiency:}
+\end{description}
 
 
 \subsection{Signal and normalisation PDFs}
