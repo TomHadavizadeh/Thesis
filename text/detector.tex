@@ -149,8 +149,18 @@ The first sub-detector to make measurements of the particles produced in proton-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
     \centering
-    \includegraphics[width=0.4\textwidth]{figs/Detector/velo_r_phi_sensor.pdf}
+    \begin{subfigure}[t]{0.4\textwidth}
+        \centering        
+        \includegraphics[width=1.0\textwidth]{figs/Detector/velo_r_phi_sensor.pdf}
+        \caption{Sensor}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.8\textwidth}
+        \centering
+        \includegraphics[width=1.0\textwidth]{figs/Detector/velo_sensor_layout.pdf}
+        \caption{Layout}
+    \end{subfigure}
     \caption{Schematic of an $r$- and $\phi$-sensor in the \velo sub-detector from Ref.~\cite{LHCb-DP-2014-001}.}
+
     \label{fig:Dec_velo_sensor_Schematic}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -170,19 +180,107 @@ The first sub-detector to make measurements of the particles produced in proton-
 
 
 \subsection{Silicon Tracker}
+\subsubsection{TT}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figs/Detector/tt_layout.pdf}
+    \caption{Schematic of the \ttracker sub-detector from Ref.~\cite{Alves:2008zz}.}
+    \label{fig:Dec_tt_layout}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Inner Tracker}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figs/Detector/it_layout.pdf}
+    \caption{Schematic of the \intr sub-detector from Ref.~\cite{Alves:2008zz}.}
+    \label{fig:Dec_it_layout}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \subsection{Outer Tracker}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figs/Detector/ot_layout.pdf}
+    \caption{Schematic of the \ot sub-detector from Ref.~\cite{LHCb-DP-2013-003}.}
+    \label{fig:Dec_lhcb_layout}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \subsection{Ring imaging Cherenkov detectors}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+    \centering
+    \begin{subfigure}[t]{0.4\textwidth}
+        \centering        
+        \includegraphics[width=1.0\textwidth]{figs/Detector/richone_layout.pdf}
+        \caption{\richone}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.4\textwidth}
+        \centering
+        \includegraphics[width=1.0\textwidth]{figs/Detector/richtwo_layout.pdf}
+        \caption{\richtwo}
+    \end{subfigure}
+    \caption{Schematic the \richone and \richtwo sub-detectors from Ref.~\cite{Alves:2008zz}.}
+
+    \label{fig:Dec_rich_layout}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \subsubsection{\richone}
 \subsubsection{\richtwo}
+
+
+
 \subsection{Calorimeters}
 \subsubsection{Pre-shower detector}
 \subsubsection{Electronic Calorimeter}
 \subsubsection{Hadron calorimeter}
 \subsection{Muon system}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.4\textwidth]{figs/Detector/muon_layout.pdf}
+    \caption{Schematic of the Muon sub-detector from Ref.~\cite{Alves:2008zz}.}
+    \label{fig:Dec_lhcb_layout}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \subsection{Trigger}
 \subsubsection{\lone}
 \subsubsection{\hltone}
 \subsubsection{\hlttwo}
 
+\subsection{Reconstruction}
+\subsubsection{Track Reconstruction}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+    \centering
+    \begin{subfigure}[t]{0.4\textwidth}
+        \centering
+        \includegraphics[width=1.0\textwidth]{figs/Detector/reco_track_types.pdf}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.4\textwidth}
+        \centering
+        \includegraphics[width=1.0\textwidth]{figs/Detector/reco_track_reco.pdf}
+    \end{subfigure}
+    \caption{Diagram of the different track reconstruction types (left) and an illustration of the reconstructed tracks in a typical event from Ref.~\cite{LHCb-DP-2014-002}.}
+    \label{fig:Dec_reco_tracks}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{VELO resolution and luminosity determination}
