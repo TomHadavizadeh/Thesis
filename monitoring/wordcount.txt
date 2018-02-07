@@ -26,3 +26,4 @@
 2018.01.29 10:31:09 appendix_fitcategories 153 b2dskk 3775 b2dsphi 6954 detector 33 introduction 16 originality 137 selection 13294 theory 72 bonus -4970 total 19464
 2018.02.01 16:33:45 appendix_fitcategories 154 b2dskk 5417 b2dsphi 10713 detector 33 introduction 16 originality 137 selection 13307 theory 83 bonus -6100 total 23760
 2018.02.06 16:28:26 appendix_fitcategories 154 b2dskk 7252 b2dsphi 10886 detector 1267 introduction 16 originality 137 selection 13307 theory 83 bonus -5726 total 27376
+2018.02.07 14:44:46 appendix_fitcategories 154 b2dskk 7252 b2dsphi 10886 detector 2259 introduction 16 originality 137 selection 13307 theory 83 bonus -4724 total 29370
