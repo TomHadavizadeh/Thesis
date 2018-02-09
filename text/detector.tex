@@ -255,7 +255,7 @@ The detector modules consist of either one or two silicon sensors and a readout 
 \subsection{Outer Tracker}
 
 In contrast to the the silicon-based sub-detectors already described, the Outer Tracker (\ot) is a straw tube tracker filled with a gaseous mixture of argon, carbon dioxide and oxygen. The 4.9\mm diameter straws are 2.4\m in length and arranged in double layers as shown in Fig.~\ref{fig:Dec_ot_schematic}. As with the \intr, the \ot is split into three stations. Each of these stations similarly has four layers arranged at angles to one another $(0\degrees,-5\degrees,+5\degrees,0\degrees)$. The arrangement of the stations and layers are also shown in Fig.~\ref{fig:Dec_ot_schematic}. The inner region occupied by the \intr is visible.
- 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
     \centering
@@ -264,8 +264,40 @@ In contrast to the the silicon-based sub-detectors already described, the Outer 
     \label{fig:Dec_ot_schematic}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+The straws comprising the tracker are composed of an inner wire surrounded by a conducting foil, with a potential difference maintained between the two. When a charged particle passes through the straw the gas becomes ionised. The electrons and gas ions are attracted to the cathode foil and anode wire, resulting in a flow of current. In the \ot the inner wire is made of 25\mum thick gold plated tungsten and maintained at a voltage of +1550\,V. The surrounding foil is made up of three layers; a 40\mum thick layer of conducting carbon-doped polyimide film; a 12.5\mum layer of insulating polyimide; and 12.5\mum of aluminium. 
+
+The double layers of straw tubes as shown in Fig.~\ref{fig:Dec_ot_schematic} make up a module. Vertically, the modules are split in two, with staggered gaps between the two individual layers to avoid uninstrumented regions. Each of the modules are read out from the outermost end. 
+The readout boards contain a number of circuits to process the signals and provide the potential difference to the straw wires.
+The analogue signals pass through an amplification circuit before being are processed and cleaned. These then pass into a digitiser creating a digital value of the drift-time.   
 
 
+{\color{Red}
+\begin{itemize}
+\item principle or straw trackers
+\item readout chain
+\item performance
+\end{itemize}
+}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+    \centering
+    \begin{subfigure}[t]{0.4\textwidth}
+        \centering
+        \includegraphics[width=1.0\textwidth]{figs/Detector/ot_drifttime.pdf}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.4\textwidth}
+        \centering
+        \includegraphics[width=1.0\textwidth]{figs/Detector/ot_residuals.pdf}
+    \end{subfigure}
+    \caption{Drift time and residuals of hits in \ot, from Ref.~\cite{LHCb-DP-2013-003}.}
+    \label{fig:Dec_magnet}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Ring imaging Cherenkov detectors}
 
