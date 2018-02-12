@@ -77,6 +77,26 @@ The \lhcb collaboration is made up of around 800 scientists from 72 different in
 
 The \lhcb detector 
 
+\begin{table}[h]
+   \begin{center}
+      \begin{tabular}{cccccc}
+         \hline
+         Condition                              & 2011     & 2012     & 2015  & 2016    & Nominal \\ 
+         \hline
+         $\sqrt{s}$ (\tev)                      & 7       & 8         & 13    & 13      & 14        \\ 
+         Peak luminosity ($\cm^{-2} \sec^{-1}$) & $3.5 \times 10^{33}$       & $7.6 \times 10^{33}$         & 13    & 13      & $1.2 \times 10^{34}$        \\ 
+         Bunches                                & 1380    & 1380      & 2240    & 13      & 2808        \\ 
+         Average $N_{\text{collisions}}$, $\mu$  & 1.7     & 1.7       & 1.1   & 1.1      & -        \\ 
+         \hline
+         Integrated luminosity (\invfb)         & 1.0     & 2.0       & 0.3   & 1.5     & -        \\ 
+
+         \hline
+      \end{tabular}
+   \end{center}
+   \caption{Beam conditions in the different datasets used in this thesis.}
+   \label{tab:lumi}
+\end{table}
+
 
 {\color{Red}
 \begin{itemize}
@@ -370,7 +390,13 @@ The analogue signals pass through an amplification circuit before being are proc
 
 \subsection{Ring imaging Cherenkov detectors}
 
-The ring imaging Cherenkov detectors (\rich) provide essential information about the particle identification of tracks, allowing different species to be distinguished. This means that kaons and protons can be distinguished from the abundant pions tracks in a typical event. Two \rich sub-detectors are present, each optimised for particles with different momentums. The first, \richone, is located between the \velo and \ttracker, before the particles have passed through the magnetic field. This provides discrimination primarily for low momentum tracks between 1--60\gevc. A second sub-detector, \richtwo, is located between the \intr and \ot tracking stations and calorimeters, after the particles have travelled through the magnetic field. This caters for the higher momentum particles in the range 15--100\gevc. 
+The ring imaging Cherenkov detectors (\rich) provide essential information about the particle identification of tracks, allowing different species to be distinguished. 
+This allows kaons and protons to be distinguished from one another and the abundant pions tracks in a typical event. Two \rich sub-detectors are present, each optimised for particles with different momentums. The first, \richone, is located between the \velo and \ttracker, before the particles have passed through the magnetic field. This provides discrimination primarily for low momentum tracks between 1--60\gevc. A second sub-detector, \richtwo, is located between the \intr and \ot tracking stations and calorimeters, after the particles have travelled through the magnetic field. This caters for the higher momentum particles in the range 15--100\gevc. 
+
+The \rich detectors help to determine the species of the particles passing though it by capturing Cherenkov radiation emitted by the particle as it traverses a transparent medium referred to as a radiator. Cherenkov radiation is produced by particles travelling above the phase velocity of light in that specific medium. The radiation propagates at constant angle $\theta$ to the particles direction, determined by the speed of the particle $\beta = v/c$ and refractive index of the material $n$ as follows
+\begin{equation}
+\cos{\theta} = \frac{1}{\beta n}.
+\end{equation}
 
 
 {\color{Red}
@@ -381,6 +407,38 @@ The ring imaging Cherenkov detectors (\rich) provide essential information about
 \item pattern recognition 
 \end{itemize}
 }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figs/Detector/rich_speices.pdf}
+    \caption{The Cherenkov angle for different species of particles as a function of momentum, from Ref.~\cite{LHCb-DP-2012-003}.}
+    \label{fig:Dec_rich_species}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+    \centering
+    \begin{subfigure}[t]{0.4\textwidth}
+        \centering        
+        \includegraphics[width=1.0\textwidth]{figs/Detector/rich_k_pi_2012.pdf}
+        \caption{2012}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.4\textwidth}
+        \centering
+        \includegraphics[width=1.0\textwidth]{figs/Detector/rich_k_pi_2016.pdf}
+        \caption{2016}
+    \end{subfigure}
+    \caption{The \rich detector performance for kaon and pion separation, from Ref.~\cite{LHCb-DP-2012-003}.}
+    \label{fig:Dec_rich_k_pi}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
@@ -395,11 +453,14 @@ The ring imaging Cherenkov detectors (\rich) provide essential information about
         \includegraphics[width=1.0\textwidth]{figs/Detector/richtwo_layout.pdf}
         \caption{\richtwo}
     \end{subfigure}
-    \caption{Schematic the \richone and \richtwo sub-detectors from Ref.~\cite{Alves:2008zz}.}
+    \caption{Schematic the \richone and \richtwo sub-detectors, from Ref.~\cite{Alves:2008zz}.}
 
     \label{fig:Dec_rich_layout}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 
 \subsubsection{\richone}
 
