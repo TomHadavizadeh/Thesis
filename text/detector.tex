@@ -485,16 +485,34 @@ The \rich detectors help to determine the species of the particles passing thoug
 The calorimetry system is made of four components that work together to serve a number of purposes. 
 Primarily, the detectors measure energy deposited by particles, vital for neutral pions or photons that don't interact with the tracking stations. Additionally, the calorimeters provide fast measurements of the energy deposited by interacting particles, suitable for use in the trigger. Finally, the four components work together to improve the discrimination of different particle species, in particular between electrons and hadrons. 
 
+
+
 All of the calorimeter components work on the same basic principle; the particles pass through a transparent materials producing a flash of light, known as scintillation light. This light is collected and measured; the quantity determines the energy deposited by the particle.  
 
 
-The first layer of the calorimeter system is the scintillator pad detector (\spd). This provides information about whether the incident particles are neutral or charged. After this comes the pre-shower detector (\presh). This indicates the electromagnetic nature of the of the particle. For charged particles this separates electrons and charged hadrons; for neutral particle it helps separate photons from neutral hadrons. Next comes the electromagnetic calorimeter (\ecal) tasked with measuring the energy of electromagneticly interacting particles, including electrons and photons. Finally the hadronic calorimeter (\hcal) is last. This determines the energy deposited by hadrons, including pions, kaons, protons and neutrons. 
 
-\subsubsection{Scintillator pad detector}
-The \spd is constructed of 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figs/Detector/calo_layout.pdf}
+    \caption{A diagram illustrating how the calorimeter system aids particle identification, from Ref.~\cite{1742-6596-293-1-012059}.}
+    \label{fig:Dec_calo_layout}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsubsection{Pre-shower detector}
+
+The first layer of the calorimeter system is the scintillator pad detector (\spd), as shown in Fig.~\ref{fig:Dec_calo_layout}. This provides information about whether the incident particles are neutral or charged. After this comes the pre-shower detector (\presh). This indicates the electromagnetic nature of the of the particle. For charged particles this separates electrons and charged hadrons; for neutral particle it helps separate photons from neutral hadrons. Next comes the electromagnetic calorimeter (\ecal) tasked with measuring the energy of electromagneticly interacting particles, including electrons and photons. Finally, the hadronic calorimeter (\hcal) determines the energy deposited by hadrons, including pions, kaons, protons and neutrons. 
+
+\subsubsection{Scintillator pad detector and Pre-shower detector}
+
+The \spd and \presh are almost identical scintillating pads detectors constructed from a mix of polystyrene and wavelength-shifting dopants. The pads are coated in light-proof paper and contain loops of wavelength-shifting fibres to collect the scintillation light. The pads are segmented into cells, matching the granularity of the \ecal detector.
+The fibres are connected to long clear fibres connected to photo-multiplier tubes (PMT) outside the detectors acceptance. Between the \spd and \presh detectors is a 15\mm thick layer of lead. This layer initiates electrons and photons to interact electromagnetically, depositing some of their energy in the \presh scintillating pads.    
+
+
 \subsubsection{Electronic Calorimeter}
+
+
+The \ecal is made of 66 layers of alternating lead and scintillator, with a total depth of 42\cm. This thickness corresponds to 25 radiation lengths. The layout of the layers are shown in Fig.~\ref{fig:Dec_ecal_layout}. Scintillating light is captured and transported by wavelength-shifting wires that pass through the entire structure. The light is measured by PMTs positioned at the end of the structure. The cells of the \ecal are segmented differently depending on the proximity to the beam-pipe, as shown in Fig.~\ref{fig:Dec_ecal_layout}. The cells are split into inner, middle and outer regions with sizes $4\times 4\cm$, $6\times 6\cm$ and $12\times 12\cm$ respectively. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
@@ -512,7 +530,11 @@ The \spd is constructed of
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
 \subsubsection{Hadronic calorimeter}
+
+The \hcal is a 500 tonne detector constructed from iron plates and scintillating tiles. Unlike the \ecal, these are arranged parallel to the beam-pipe as shown in Fig.~\ref{fig:Dec_hcal_layout}. The cells vary in size in the different regions of the detector; the inner regions correspond to $13 \times 13 \cm$ cells and the outer to $26\times26\cm$. The widths of the iron tiles are chosen to be one radiation length (1\cm), and the lengths are one hadron interaction length. The scintillation light is collected by wavelength-shifting fibres that are read out by PMTs located at the rear of each cell.    
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
@@ -526,7 +548,7 @@ The \spd is constructed of
         \includegraphics[width=1.0\textwidth]{figs/Detector/hcal_layout.pdf}
     \end{subfigure}
     \caption{A diagram of one of the \hcal modules (left) and the layout of one quarter of the \hcal modules (right), from Ref.~\cite{Alves:2008zz}.}
-    \label{fig:Dec_ecal_layout}   
+    \label{fig:Dec_hcal_layout}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
