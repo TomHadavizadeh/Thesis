@@ -390,23 +390,18 @@ The analogue signals pass through an amplification circuit before being are proc
 
 \subsection{Ring imaging Cherenkov detectors}
 
-The ring imaging Cherenkov detectors (\rich) provide essential information about the particle identification of tracks, allowing different species to be distinguished. 
-This allows kaons and protons to be distinguished from one another and the abundant pions tracks in a typical event. Two \rich sub-detectors are present, each optimised for particles with different momentums. The first, \richone, is located between the \velo and \ttracker, before the particles have passed through the magnetic field. This provides discrimination primarily for low momentum tracks between 1--60\gevc. A second sub-detector, \richtwo, is located between the \intr and \ot tracking stations and calorimeters, after the particles have travelled through the magnetic field. This caters for the higher momentum particles in the range 15--100\gevc. 
+The ring imaging Cherenkov detectors (\rich) provide essential information about the particle identification of tracks, allowing different hadronic species to be distinguished.
+This allows kaons and protons to be distinguished from one another and the abundant pions tracks in a typical event. It can also help differentiate leptonic tracks in combination with the calorimeters and muon systems. 
+
+Two \rich sub-detectors are present, each optimised for particles with different momentums. The first, \richone, is located between the \velo and \ttracker, before the particles have passed through the magnetic field. This provides discrimination primarily for low momentum tracks between 1--60\gevc. A second sub-detector, \richtwo, is located between the \intr and \ot tracking stations and calorimeters, after the particles have travelled through the magnetic field. This caters for the higher momentum particles in the range 15--100\gevc. 
 
 The \rich detectors help to determine the species of the particles passing though it by capturing Cherenkov radiation emitted by the particle as it traverses a transparent medium referred to as a radiator. Cherenkov radiation is produced by particles travelling above the phase velocity of light in that specific medium. The radiation propagates at constant angle $\theta$ to the particles direction, determined by the speed of the particle $\beta = v/c$ and refractive index of the material $n$ as follows
 \begin{equation}
 \cos{\theta} = \frac{1}{\beta n}.
 \end{equation}
+This light is collected by mirrors and focussed onto light sensors. 
 
-
-{\color{Red}
-\begin{itemize}
-\item rich principle 
-\item mirrors
-\item HPDs
-\item pattern recognition 
-\end{itemize}
-}
+Although the particles produced in the collisions are all highly energetic and travelling close to the speed of light, the differences in the masses mean the species travel at slightly difference velocities. This then results in a different Cherenkov angle. In combination with the momentum measurement from the magnet spectrometer, different mass hypotheses can be compared. The Cherekov angles for different particle species as a function of momentum are shown in Fig.~\ref{fig:Dec_rich_species}. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -417,6 +412,16 @@ The \rich detectors help to determine the species of the particles passing thoug
     \label{fig:Dec_rich_species}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+{\color{Red}
+\begin{itemize}
+\item mirrors
+\item HPDs
+\item pattern recognition 
+\end{itemize}
+}
 
 
 
@@ -440,39 +445,60 @@ The \rich detectors help to determine the species of the particles passing thoug
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[!h]
-    \centering
-    \begin{subfigure}[t]{0.4\textwidth}
-        \centering        
-        \includegraphics[width=1.0\textwidth]{figs/Detector/richone_layout.pdf}
-        \caption{\richone}
-    \end{subfigure}
-    \begin{subfigure}[t]{0.4\textwidth}
-        \centering
-        \includegraphics[width=1.0\textwidth]{figs/Detector/richtwo_layout.pdf}
-        \caption{\richtwo}
-    \end{subfigure}
-    \caption{Schematic the \richone and \richtwo sub-detectors, from Ref.~\cite{Alves:2008zz}.}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{figure}[!h]
+%     \centering
+%     \begin{subfigure}[t]{0.4\textwidth}
+%         \centering        
+%         \includegraphics[width=1.0\textwidth]{figs/Detector/richone_layout.pdf}
+%         \caption{\richone}
+%     \end{subfigure}
+%     \begin{subfigure}[t]{0.4\textwidth}
+%         \centering
+%         \includegraphics[width=1.0\textwidth]{figs/Detector/richtwo_layout.pdf}
+%         \caption{\richtwo}
+%     \end{subfigure}
+%     \caption{Schematic the \richone and \richtwo sub-detectors, from Ref.~\cite{Alves:2008zz}.}
 
-    \label{fig:Dec_rich_layout}   
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     \label{fig:Dec_rich_layout}   
+% \end{figure}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
 
 \subsubsection{\richone}
+The \richone sub-detector was designed to aid particle identification for lower momentum tracks in the range 1--60\gevc using two radiators: aerogel and decafluorobutane ($\text{C}_{4}\text{F}_{10}$). These materials have refractive indices of $n = 1.030$ and $n = 1.0014$ respectively for $\lambda = 400\nm$ light. A diagram of the \richone detector as seen from the side is shown in Fig.~\ref{fig:Dec_richone_layout}. To minimise the amount of material that the particles pass through, the \richone detector is attached directly onto the \velo exit window.  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+    \centering        
+    \includegraphics[width=0.4\textwidth]{figs/Detector/richone_layout.pdf}
+    \caption{Schematic the \richone sub-detectors viewed from the side, from Ref.~\cite{Alves:2008zz}.}
+    \label{fig:Dec_richone_layout}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 {\color{Red}
 \begin{itemize}
-\item radiator and refractive indices 
 \item talk about aero gel being removed
 \item find some references 
 \end{itemize}
 }
 
 \subsubsection{\richtwo}
+
+The \richtwo detector is designed to provide particle identification information for higher momentum tracks in the range 15--100\gevc using a single gas radiator tetrafluoromethane ($\text{C}\text{F}_{4}$). The refractive index for this material is $n=1.0005$ for $\lambda = 400\nm$ light.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+    \centering        
+    \includegraphics[width=0.4\textwidth]{figs/Detector/richtwo_layout.pdf}
+    \caption{Schematic the \richtwo sub-detector viewed from above, from Ref.~\cite{Alves:2008zz}.}
+    \label{fig:Dec_richtwo_layout}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 {\color{Red}
 \begin{itemize}
