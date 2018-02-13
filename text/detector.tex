@@ -140,7 +140,7 @@ Running along the centre of the detector is the \lhcb beampipe. The primary role
 \subsection{Magnet}
 
 The \lhcb detector contains a warm dipole magnet that bends the trajectories of charges particles, allowing measurements of the particles' momentum. The magnet has two saddle-shaped coils inside a square yoke that generate an integrated magnetic field of 4 Tm.  
-The magnetic field is aligned along the $y$-axis, bending the charged particles in the horizontal plane. The polarity of the magnetic is routinely switched during data taking. This helps to understand and cancel systematic effects that may affect measurements of \CP asymmetries. The two magnet polarities are referred to \emph{MagDown} and \emph{MagUp}, corresponding to a field in the negative and positive $y$-axis direction respectively.   
+The magnetic field is aligned along the $y$-axis, bending the charged particles in the horizontal plane. The polarity of the magnetic is routinely switched during data taking. This helps to understand and cancel systematic effects that may affect measurements of \CP asymmetries. The two magnet polarities are referred to \MagDown and \MagUp, corresponding to a field in the negative and positive $y$-axis direction respectively.   
 
 A schematic of the magnet is shown in Fig.~\ref{fig:Dec_magnet}, along with the strength of the magnetic field as a function of the $z$-axis position. Both magnet polarities are represented in this figure. 
 
@@ -501,7 +501,7 @@ All of the calorimeter components work on the same basic principle; the particle
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-The first layer of the calorimeter system is the scintillator pad detector (\spd), as shown in Fig.~\ref{fig:Dec_calo_layout}. This provides information about whether the incident particles are neutral or charged. After this comes the pre-shower detector (\presh). This indicates the electromagnetic nature of the of the particle. For charged particles this separates electrons and charged hadrons; for neutral particle it helps separate photons from neutral hadrons. Next comes the electromagnetic calorimeter (\ecal) tasked with measuring the energy of electromagneticly interacting particles, including electrons and photons. Finally, the hadronic calorimeter (\hcal) determines the energy deposited by hadrons, including pions, kaons, protons and neutrons. 
+The first layer of the calorimeter system is the scintillator pad detector (\spd), as shown in Fig.~\ref{fig:Dec_calo_layout}. This provides information about whether the incident particles are neutral or charged. After this comes the pre-shower detector (\presh). This indicates the electromagnetic nature of the of the particle. For charged particles this separates electrons and charged hadrons; for neutral particle it helps separate photons from neutral hadrons. Next comes the electromagnetic calorimeter (\ecal) tasked with measuring the energy of electromagnetically interacting particles, including electrons and photons. Finally, the hadronic calorimeter (\hcal) determines the energy deposited by hadrons, including pions, kaons, protons and neutrons. 
 
 \subsubsection{Scintillator pad detector and Pre-shower detector}
 
@@ -554,14 +554,41 @@ The \hcal is a 500 tonne detector constructed from iron plates and scintillating
 
 \subsection{Muon system}
 
+
+The muon system serves two main purposes: to provide fast muon \pt measurements for use in the hardware trigger; and to provide muon identification information for use in the software trigger and offline analyses.
+The muon system is made of five rectangular stations. The first (M1) is positioned before the calorimeters and the remaining (M2--M4) are positioned after, as shown in Fig.~\ref{fig:Dec_muon_schematic}. The latter stations alternate with 80\cm layers of iron absorbers. The muon system is the last sub-detector as muons are highly penetrating particles, travelling through more material than other species. The interleaving iron absorbers help to isolate muons, as other particles are stopped by these layers. 
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{figure}[!h]
+%     \centering
+%     \includegraphics[width=0.4\textwidth]{figs/Detector/muon_layout.pdf}
+%     \caption{Schematic of the Muon sub-detector, from Ref.~\cite{Alves:2008zz}.}
+%     \label{fig:Dec_muon_schematic}   
+% \end{figure}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
     \centering
-    \includegraphics[width=0.4\textwidth]{figs/Detector/muon_layout.pdf}
-    \caption{Schematic of the Muon sub-detector, from Ref.~\cite{Alves:2008zz}.}
+    \begin{subfigure}[t]{0.4\textwidth}
+        \centering        
+        \includegraphics[width=1.0\textwidth]{figs/Detector/muon_layout.pdf}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.4\textwidth}
+        \centering
+        \includegraphics[width=1.0\textwidth]{figs/Detector/muon_cells_layout.pdf}
+    \end{subfigure}
+    \caption{Side view of the Muon sub-detector (left) and layout of the muon system regions (right), from Ref.~\cite{Alves:2008zz}.}
     \label{fig:Dec_muon_schematic}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Each of the stations are divided into four regions R1--R4. These are positioned increasingly further from the beam-pipe with increasingly large areas. Each of the regions are segmented into channels; the inner regions have more segmentation than the outer regions such that the particle flux is roughly constant over the four regions.   
+
+The majority of the detector is constructed from Multi Wire Proportional Chambers. These chambers contain a gaseous mixture of carbon dioxide, argon and tetrafluoromethane. When muons pass through this gas they cause ionisation. An array of gold-plated tungsten wires separated by 2\mm are held at a potential difference of around 2.5\,kV with respect to the chamber's conductive walls. The ionised gas and electrons are deflected by the electric field and result in a flow of current. 
+
+Due to the larger flux of particles, the innermost region (R1) of the first station (M1) is instrumented using triple gas electron multiplier detectors. The muons propagating through these detectors ionise a gas mixture made up of argon, carbon dioxide and tetrafluoromethane. The resulting electrons are accelerated toward an anode through three foil layers. The foil layers multiply the number electrons, creating a cascade. 
+This type of detector was chosen for the inner region as it is required to be especially radiation hard such that the detector can withstand 10 years of operation.  
 
 \subsection{Trigger}
 \subsubsection{\lone}
