@@ -1704,69 +1704,51 @@ Rank & Variable                         & Importance           & Rank & Variable
 \subsubsection{MVA method}
 \label{sec:mvamethod}
 
-The MVA training and validation is implemented using the \tmva package as part of the \root framework.
+The MVA training and validation is implemented using the \tmva package, part of the \root framework.
 During training, each method uses samples that have been defined to be `signal' and `background' in order to characterise the differences between the two categories. The multidimensional space defined by the input variables is effectively condensed onto a single axis given by the classifier's response. Typically, high values of the response correspond to `signal'-like events and low values to `background'-like events. This training produces a \emph{weights file} allowing the response to be calculated for other samples. 
 
 A second set of `signal'-like and `background'-like samples are used to blindly validate the training. The classifier response is compared in the training and validation samples to demonstrate if the expected separation is reproducible. 
-
-{\color{Red}
-\begin{itemize}
-\item Explain what overtraining is
-\end{itemize}
-}
+This is important to determine if the trained method suffers from \emph{overtraining}. This can happen when too few events are passed to the method, such that the statistical fluctuations in the distributions are significant. This can result in differences being identified that are actually artefacts of the low statistics and not representative of the sample as a whole. This results in the classifier being more discriminatory on the training sample than the validation sample.
 
 The `signal' and `background' samples are both taken from the relevant \decay{\Bsb}{\Dsp\pim} or \decay{\Bs}{\jpsi\phiz} decay samples.
 The signal samples include all events within the fit ranges shown in Fig.~\ref{fig:mvatrainingsamples}. Each candidate is weighted with the appropriate Gaussian fit component weight as determined by the \sPlot technique. This weight is passed to the \tmva framework when training the methods.
-The background samples are comprised of the sideband regions of the relevant ranges in Fig.~\ref{fig:mvatrainingsamples}. These ranges are defined by $|m(\Kp\Km)-m(\phiz)| > 10 \mevcc$ and $|m(h^{+}h^{-}h^{+})-m(\Dsp)| > 30\mevcc$ for the \phiz and \Dsp MVAs respectively. No weights are used for the background samples as the regions are known to contain no signal events.
+The background samples are comprised of the sideband regions of the relevant ranges in Fig.~\ref{fig:mvatrainingsamples}. These ranges are defined by $|m(\Kp\Km)-m(\phiz)| > 10 \mevcc$ and $|m(h^{+}h^{-}h^{+})-m(\Dsp)| > 30\mevcc$ for the \phiz and \Dsp MVAs respectively. No weights are used for the background samples as the regions are known to be signal-deficient.
 
 
-The efficacy of three MVA methods are compared and the most effective selected. The three methods are derivatives of Boosted Decision Trees (BDTs)~\cite{Breiman}.
 
-{\color{Red}
-\begin{itemize}
-\item Detail of what BDT is?
-\end{itemize}
-}
-% \begin{description}
-% \item \textbf{BDT: (Adaptive Boost)} 
-% \item \textbf{BDTG (Gradient Boosted Decision Tree):}
-% \item \textbf{BDTB (bagged Boosted Decision Tree):}
-% \end{description}
+The MVAs are trained using Gradient Boosted Decision Trees (BDTGs)~\cite{Breiman}. This method was compared to a number of different Boosted Decision Tree (BDT) derivatives and found to be most effective.
+
+The BDTG method categorises `signal' and `background' candidates by creating consecutive sets of questions called Decision Trees. Each question can have two possible answers and depends on the previous responses. Eventually the answer to a question results in a candidate being classes as `signal' or `background' rather than asking more questions. A definable number of decision trees are used to collectively categorise each candidate; the overall response combines the decisions of all trees. The trees are trained using \emph{boosing}. This means candidates that are most likely to be misclassified are weighted higher, such that the later trees concentrate on these trickier areas.  
+The boosting method utilised in the BDTG method is designed to be more robust and reproducible in noisy situations, for example with limited statistics. 
+The BDTG method is used in training all MVAs.
+
+ % the exact configuration of the method is listed in Table~\ref{tab:mvaconfiguration}. 
 
 % {\color{Red}
 % \begin{itemize}
-% \item Not sure where the ROC curve comparison is at the mo...
+% \item Explain configuration
 % \end{itemize}
 % }
-
-The BDTG method is found to separate the signal and background most effectively and therefore is used in training all MVAs.
-The exact configuration of the BDTG method is listed in Table~\ref{tab:mvaconfiguration}. 
-
-{\color{Red}
-\begin{itemize}
-\item Explain configuration
-\end{itemize}
-}
-\begin{table}[h]
-\begin{center}
-\begin{tabular}{ l l }
-\hline
-Parameter & Value \\
-\hline
-Number of trees         & 1000      \\
-Minimum node size       & 2.5\%     \\
-Boost type              & Gradient  \\ 
-Shrinkage               & 0.10      \\ 
-Bagged Boost            & True      \\ 
-Bagged sample fraction  & 0.5       \\  
-Number of cuts          & 20        \\  
-Maximum depth           & 2         \\  
-\hline
-\end{tabular}
-\end{center}
-\caption{MVA configuration}
-\label{tab:mvaconfiguration}
-\end{table}  
+% \begin{table}[h]
+% \begin{center}
+% \begin{tabular}{ l l }
+% \hline
+% Parameter & Value \\
+% \hline
+% Number of trees         & 1000      \\
+% Minimum node size       & 2.5\%     \\
+% Boost type              & Gradient  \\ 
+% Shrinkage               & 0.10      \\ 
+% Bagged Boost            & True      \\ 
+% Bagged sample fraction  & 0.5       \\  
+% Number of cuts          & 20        \\  
+% Maximum depth           & 2         \\  
+% \hline
+% \end{tabular}
+% \end{center}
+% \caption{The configuration of the BDTG method }
+% \label{tab:mvaconfiguration}
+% \end{table}  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
@@ -1817,21 +1799,15 @@ Maximum depth           & 2         \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 The MVA classifier distributions for each of the eight MVAs trained are shown in Fig.~\ref{fig:mvaclassifierresponses}. This figure shows both the signal and background samples, as well as the training and validation subsamples. Each mode shows a good separation between the signal and background samples. For the majority of the distributions the training and testing samples have almost identical shapes, implying response is reproducible and the method has not overtrained. There are noticeable exceptions, however. The signal training and validation samples tend to show different distributions in the regions where the background distributions are maximal. This effect is likely to be a result of the use of weights in the MVA training. Ideally, the MVA classifier should remain positive across the whole range. The negative values implies that in that range the MVA classifier is correlated to the parameter used to generate the weights: the \phiz or \Dsp mass. As this only affects the range of MVA classifier values that are dominantly `background'-like, it likely this discrepancy is due specifically to presence of weighted background events in the signal sample passed to \tmva.
-This effect is further studied to determine if it results in any systematic uncertainty in the MVA efficiencies. In all cases the discrepancies are far below the range of values that selection requirements are placed. 
+This effect is further studied to determine if it results in any systematic uncertainty in the MVA efficiencies as discussed in Sections~\ref{sec:B2DsKK_systuncertainy} and~\ref{sec:B2DsPhi_systuncertainy}. In all cases the discrepancies are far below the range of values that selection requirements are placed. 
 
-
-{\color{Red}
-\begin{itemize}
-\item Comparison to alternative? 
-\end{itemize}
-}
 
 \subsubsection{MVA efficiency}
 \label{sec:selection_MVA_eff}
 
 
 The efficiencies of the MVAs on \Dsp and \phiz meson in the signal decays can be obtained from the validation samples of \decay{\Bs}{\jpsi\phiz} and \decay{\Bsb}{\Dsp\pim} decays. Additionally, a sample of \decay{\Bp}{\Dzb\pip} decays is used to calculate the efficiency of \decay{\Dzb}{\Kp\Km} decays in the normalisation channel. The efficiency calculation takes into account the kinematic differences between the training and signal samples, as well as any possible correlations between the \Dsp and \phiz kinematics, by using input from simulation samples. 
-The signal MVA response is extracted from the validation samples in bins of \pt and $\chi^2_{\text{FD}}$. {\color{Red} How many?}. Simulation samples for \decay{\Bp}{\Dsp\phiz} or \decay{\Bp}{\Dsp\Dzb} decays are iterated though in turn, selecting the corresponding MVA response from the appropriate kinematic bins. The per-candidate efficiency is determined by integrating the validation sample \Dsp and \phiz MVA responses above the required cut values
+The signal MVA response is extracted from the validation samples in four bins of both \pt and $\chi^2_{\text{FD}}$. Simulation samples for \decay{\Bp}{\Dsp\phiz} or \decay{\Bp}{\Dsp\Dzb} decays are iterated though in turn, selecting the corresponding MVA response from the appropriate kinematic bins. The per-candidate efficiency is determined by integrating the validation sample \Dsp and \phiz MVA responses above the required cut values
 \begin{equation}
 \varepsilon_{\text{event}} = \int\limits_{\text{cut}_{\phiz}}^{1} f(x) dx \times  \int\limits_{\text{cut}_{\Dsp}}^{1} g(y) dy
 \label{eq:mva_eff}
@@ -1842,11 +1818,6 @@ The total efficiency for each mode is given by the sum of the per-candidate effi
 
 The \decay{\phiz}{\Kp\Km} MVA is also used to select the \Kp\Km pair in \decay{\Bp}{\Dsp\Kp\Km} decays. Due to the similar topologies of \decay{\Bp}{\Dsp\Kp\Km} and \decay{\Bp}{\Dsp\phiz} decays, the \Kp\Km pair share lots of similarities to the \decay{\phiz}{\Kp\Km} counterparts. One obvious difference is the invariant mass of the pair, as the \decay{\Bp}{\Dsp\Kp\Km} decays includes a much larger phase-space. In training the MVA this could lead to the selection being non-optimal for \decay{\Bp}{\Dsp\Kp\Km} decays at high $m(\Kp\Km)$. However, when determining the efficiency of the selection using these same \decay{\Bs}{\jpsi\phi} decays these differences could lead to bias. Instead, calibration samples are used to correct for the imperfect modelling of the particle identification in the \decay{\Bp}{\Dsp\Kp\Km} simulation samples. These corrected simulations are then used to obtain the variations in the MVA efficiencies as a function of the phase-space position, in particular of the $m(\Kp\Km)$ invariant mass as discussed in Section~\ref{sec:B2DsKK_effcorrection}.
 
-{\color{Red}
-\begin{itemize}
-\item Crosschecks for eff?
-\end{itemize}
-}
 
 \subsubsection{MVA optimisation}
 
@@ -2008,12 +1979,7 @@ As a cross-check, the same distributions are produced for the normalisation chan
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-
-{\color{Red}
-\begin{itemize}
-\item norm channel systematic 
-\end{itemize}
-}
+Small shifts are observed in the $\chi^{2}_{\text{IP}}$ distributions. These differences are studied as a source of systematic uncertainty as discussed in Sections~\ref{sec:B2DsKK_systuncertainy} and \ref{sec:B2DsPhi_systuncertainy}.
 
 
 \section{Multiple candidates}
@@ -2041,7 +2007,7 @@ The rate of multiple candidates is studied for each of the samples after passing
 \decay{\Bp}{\Dsp\Dzb}   & \decay{\Dsp}{\Kp\Km\pip}       & 0.21\%                      \\
 \hline
 \end{tabular}
-\caption{Multiple candidate rates for }
+\caption{Multiple candidate rates for signal and normalisation decays.}
 \label{table:multiplecandidates}
 \end{center}
 \end{table}
@@ -2055,19 +2021,15 @@ The \emph{raw} \Bp meson invariant mass is calculated in the vertex fits used to
 
 It is possible to reduce the effect of the resolution by adding more constraints in the fit to the decay chain. The mass of the \Dsp meson (and \Dzb meson for the normalisation channel) are constrained to their known values. Additionally, the momentum vector of the \Bp meson is constrained to be parallel to the line between the primary interaction and the \Bp meson decay vertex. 
 This is implemented with the Decay Tree Fitter algorithm \cite{Hulsbergen:2005pu}.
-With these constraints applied, the whole decay chain is refitted, and the \Bp meson mass recalculated. For genuine signal and normalisation decays the resolution is improved; the smearing effects that might lead the track momentum or position to be incorrectly measured can be circumvented by including the extra information about indeterminate meson masses, or \Bp flight direction. Background candidates that have different topologies to the constrained decay chain will be randomly shifted up or down in invariant mass, leading to no overall difference in the combinatorial distribution.    
+With these constraints applied, the whole decay chain is refitted, and the \Bp meson mass recalculated. For genuine signal and normalisation decays the resolution is improved; the smearing effects that might lead the track momentum or position to be incorrectly measured can be circumvented by including the extra information about intermediate meson masses, or \Bp flight direction. Background candidates that have different topologies to the constrained decay chain will be randomly shifted up or down in invariant mass, leading to no overall difference in the combinatorial distribution.    
 
 
 It is possible to calculate all kinematic distributions for the components of the decay chain with these constraints applied, for example the momentum of the decay products. However, these variables are not used when training the MVA methods even though they may result in a greater discrimination between signal and background. The modes used to train the MVA methods have slightly different topologies, therefore the improvements in the resolution achieved in these modes may not be the same as that seen for the signal and normalisation channel. 
 
+The search for \decay{\Bp}{\Dsp\Kp\Km} decays involves determining the phase-space distribution of candidates in both simulations and data using the two-body masses $m^{2}(\Dsp\Km)$ and $m^{2}(\Kp\Km)$. These are determined using the decay product 4-vectors calculated with the \Bp meson mass constrained in addition to the \Dsp mass and \Bp flight direction. This ensures the candidates are found within the kinematically allowed region of the two dimensional $m^{2}(\Dsp\Km)$ vs. $m^{2}(\Kp\Km)$ space.
 
-{\color{Red}
-\begin{itemize}
-\item plot of \Bp meson mass with and without constraint?
-\item DTF for helicity angle
-\item DTF for dalitz plot
-\end{itemize}
-}
+In the search for \decay{\Bp}{\Dsp\phiz} decays an angle, $\theta_{K}$, is used to split candidates into two categories. This angle is calculated using the decay products 4-vectors calculated using the \Dsp mass and \Bp flight direction constraints. This improves the separation power as opposed to using the \emph{raw} 4-vectors.  
+
 
 
 \section{Invariant mass distributions}
@@ -2076,24 +2038,6 @@ It is possible to calculate all kinematic distributions for the components of th
 
 The \Dsp and \phiz meson invariant mass distributions for signal \decay{\Bp}{\Dsp\phiz} candidates passing the full selection requirements are shown in Fig.~\ref{fig:d_phi_mass_signal}. The same distributions for the normalisation channel \decay{\Bp}{\Dsp\Dzb} are shown in Fig.~\ref{fig:d_phi_mass_normlaisation}. The purity of the \decay{\Dsp}{\pip\pim\pip} and \decay{\Dsp}{\Kp\pim\pip} decays are significantly lower than the \decay{\Dsp}{\Kp\Km\pip} mode as a result of the smaller branching fractions for these modes. 
 
-Requirements are placed in the invariant masses of the \Dsp, \phiz and \Dzb candidates to isolate the signal decays. The requirements are listed in Table~\ref{table:masscuts} and represented in Figs.~\ref{fig:d_phi_mass_signal} and~\ref{fig:d_phi_mass_normlaisation} by red vertical lines. The \phiz meson requirement is wider than those for the \Dsp and \Dzb mesons even though the width is clearly narrower. The \decay{\Bp}{\Dsp\phiz} candidates are further split into two categories as detailed in Chapter~\ref{ch:B2DsPhi}, therefore the sidebands either side of the \phiz meson are retained.
-
-\begin{table}[!h]
-\begin{center}
-\begin{tabular}{ c c }
-
-\hline
-Particle          & Requirement                     \\
-\hline
-\Dsp              & $|m(h^{+}h^{-}h^{+})-m(\Dsp)| < 25 \mevcc$ \\
-\Dzb              & $|m(\Kp\Km)-m(\Dzb)| < 25 \mevcc$          \\
-\phiz             & $|m(\Kp\Km)-m(\phiz)| < 40 \mevcc$ \\
-\hline
-\end{tabular}
-\caption{Invariant mass requirements applied to all candidates.}
-\label{table:masscuts}
-\end{center}
-\end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
@@ -2181,6 +2125,24 @@ Particle          & Requirement                     \\
    \label{fig:d_phi_mass_normlaisation}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Requirements are placed in the invariant masses of the \Dsp, \phiz and \Dzb candidates to isolate the signal decays. The requirements are listed in Table~\ref{table:masscuts} and represented in Figs.~\ref{fig:d_phi_mass_signal} and~\ref{fig:d_phi_mass_normlaisation} by red vertical lines. The \phiz meson requirement is wider than those for the \Dsp and \Dzb mesons even though the width is clearly narrower. The \decay{\Bp}{\Dsp\phiz} candidates are further split into two categories as detailed in Chapter~\ref{ch:B2DsPhi}, therefore the sidebands either side of the \phiz meson are retained.
+
+\begin{table}[!h]
+\begin{center}
+\begin{tabular}{ c c }
+
+\hline
+Particle          & Requirement                     \\
+\hline
+\Dsp              & $|m(h^{+}h^{-}h^{+})-m(\Dsp)| < 25 \mevcc$ \\
+\Dzb              & $|m(\Kp\Km)-m(\Dzb)| < 25 \mevcc$          \\
+\phiz             & $|m(\Kp\Km)-m(\phiz)| < 40 \mevcc$ \\
+\hline
+\end{tabular}
+\caption{Invariant mass requirements applied to all candidates.}
+\label{table:masscuts}
+\end{center}
+\end{table}
 
 
 
@@ -2219,11 +2181,14 @@ The distribution of \Dsp and \Kp\Km invariant masses for \decay{\Bp}{\Dsp\Kp\Km}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+The \Bp invariant mass distribution for the normalisation mode is shown in Fig.~\ref{fig:norm_selection}. The distribution of candidates is shown with the different aspects of the selection applied. It can be seen that the level of combinatorial background that is present accross the whole mass range dramatically decreases as the different selection criteria are applied. Additionally, it is clear the normalisation channel efficiency decreases too, but at a much slower rate. The final distribution has a negligible amount of combinatorial background with an isolated normalisation peak.
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
     \centering
         \includegraphics[width=0.8\textwidth]{figs/Selection/Normalisation_with_sel_B2DsD0.pdf}
-    \caption{Various selection steps applied to the normalisation channel.}
+    \caption{Various selection steps applied to the normalisation channel as defined in the legend.}
     \label{fig:norm_selection}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
