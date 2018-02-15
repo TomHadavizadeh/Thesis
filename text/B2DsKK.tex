@@ -755,18 +755,41 @@ The yields of signal and normalisation decays are corrected by the ratio of sele
 
 \item \textbf{Veto efficiency:} the efficiency of the misidentified \D and \Lc hadron veto applied to the \Dsp meson is assumed to be the same for the signal and normalisation channel. However, slight differences in the kinematics of the \Dsp mesons in each case might lead to this approximation not being valid when the particle identification requirements are tightened on the ambiguous track. 
 
-\item \textbf{MVA efficiency:}
+\item \textbf{MVA efficiency:} the relative efficiency of the MVA selection receives contributions from a number of sources. Primarily, the relative efficiencies are determined from simulation samples in which the PID variable distributions have been corrected as described in Sec.~\ref{sec:B2DsKK_eff_from_calib}. This method of correcting the PID distributions such that the simulation samples could be used directly was only available for Run I simulations at the time of analysis. The phase-space distributions of the Run II samples were assumed to be the same, but the overall scale adjusted using the MVA efficiencies derived from the \decay{\Bs}{\jpsi\phiz} and \decay{\Bsb}{\Dsp\pim} decay modes used to train the MVAs. The systematic uncertainty arising from using the Run I variations in Run II are estimated by calculating the largest difference between the signal and normalisation efficiencies in Run II and subtracting the smallest differences in Run I. This corresponds to a variation of 4.4\%, assigned as the systematic uncertainty.
+
+As they contribute to the scaling of the phase-space variations, all sourced of systematic uncertainty contributing to the data-driven efficiencies are also considered. The training modes are binned in four bins of \pt and $\chi^{2}_{\text{FD}}$. The choice of binning scheme is varied and the resulting variation in efficiency determined. The yields of the \decay{\Bs}{\jpsi\phiz} and \decay{\Bsb}{\Dsp\pim} decays used to obtain the data-driven efficiencies are limited, therefore the quantity $1/\sqrt{N}$ associated to the smallest of these yields is added as a systematic uncertainty. 
+
+Differences are observed in the distribution of $\chi^{2}_{\text{IP}}$ in simulations and data for the normalisation channel (Fig.~\ref{fig:ipchi2dist_normalisation}). To quantify the effect this may have on the MVA efficiencies, the simulations are re-weighted to match the data distributions and the efficiencies recalculated. The resulting difference is included as a systematic uncertainty.
+
+When training the MVA methods some discrepancies are observed between the MVA classifier response for the training and validations samples (Fig.~\ref{fig:mvaclassifierresponses}). To assess whether this affects the final relative MVA efficiencies the training and validation samples are swapped and the efficiencies recalculated. The differences for each year of data taking are weighted according to their contribution to the final data set and assigned as a systematic uncertainty.  
+
+The total systematic uncertainty associated to the relative MVA efficiency is therefore 7.6\%. 
+% - binning scheme
+% - yields of eff samples
+% - training testing discrepancies
+% - MVA classifier differences between norm and eff modes
+% - Run 1 as Run 2
 \end{description}
 
-{\color{Blue}
-\begin{description}
+% {\color{Blue}
+% \begin{description}
 
-\item \textbf{BDT Efficiency Ratio} All of the sources of systematic uncertainty associated with the BDT efficiency ratio still apply here, particularly as the data trained efficiencies are still used to find the ratio in Run 2. 
+% \item \textbf{BDT Efficiency Ratio} All of the sources of systematic uncertainty associated with the BDT efficiency ratio still apply here, particularly as the data trained efficiencies are still used to find the ratio in Run 2. 
 
-An additional systematic is assigned to account for the use Run 1 Dalitz plot dependences on the BDT and PID ratios. We assume the shapes of the Dalitz plot dependences are the same for Run 1 and Run 2, but adjust the overall scale to match the efficiencies determined previously. However by looking at the differences between the efficiencies for $\B \to \Ds \Dz$ and $\B \to \Ds \phi$ in Table~\ref{tab:BDT}, one sees that the differences get larger in Run 2, implying the shape may indeed get steeper. As a very conservative estimate we take the largest difference between $\B \to \Ds \Dz$ and $\B \to \Ds \phi$ in Run 2 and subtract the smallest difference in Run 1. This gives a difference of 4.4\% which we assign as the systematic uncertainty. This is likely to be an overestimate of the effect on the final branching fraction as most of the signal events are found in a small area of the phase-space, leading to smaller variations in efficiency. This systematic can be removed if support for Run 2 in \texttt{Meerkat}/\texttt{PIDCorr} becomes available before publishing.
+% - An additional systematic is assigned to account for the use Run 1 Dalitz plot dependences on the BDT and PID ratios. We assume the shapes of the Dalitz plot dependences are the same for Run 1 and Run 2, but adjust the overall scale to match the efficiencies determined previously. However by looking at the differences between the efficiencies for $\B \to \Ds \Dz$ and $\B \to \Ds \phi$ in Table~\ref{tab:BDT}, one sees that the differences get larger in Run 2, implying the shape may indeed get steeper. As a very conservative estimate we take the largest difference between $\B \to \Ds \Dz$ and $\B \to \Ds \phi$ in Run 2 and subtract the smallest difference in Run 1. This gives a difference of 4.4\% which we assign as the systematic uncertainty. This is likely to be an overestimate of the effect on the final branching fraction as most of the signal events are found in a small area of the phase-space, leading to smaller variations in efficiency. This systematic can be removed if support for Run 2 in \texttt{Meerkat}/\texttt{PIDCorr} becomes available before publishing.
 
-\end{description}
-}
+
+% - The calculation of the BDT efficiency has a systematic uncertainty due to the choice of binning scheme used to match the signal and training kinematics. The bins were chosen to have equal occupancy in each of the two variables in the BDT training modes. Varying the bin size by 20\% results in a change in the relative BDT efficiency of 2\%. 
+
+% - Additionally uncertainty arises due to the use of finite reference samples. The yields of each particle used to obtain the efficiencies are listed in Table~\ref{table:mva_training_yields}. Half of these samples are used for BDT training, and the other half for testing. The smallest sample is that of $\phi \to KK$ where there are $12.7k$ $\phi$ mesons in the testing sample. We apply a 1\% systematic uncertainty to account for this finite sample size by assuming the relative statistical errors associated with a finite sample are proportional to $1/\sqrt{N}$. 
+
+% - It is observed that there are discrepancies in the distributions of MVA response between the training and testing samples used by some of the MVAs in this analysis (see Appendix~\ref{sec:MVAtraining}). In order to quantify the extend to which these discrepancies might affect the measured branching fraction, we recalculate the BDT efficiencies for the optimised cut values using the training sample instead of the testing sample. For most \Ds decay modes and years the resulting change is very small. The largest changes are for $\Ds \to K\pi\pi$ where in 2011 and 2016 data the efficiencies for the signal and normalisation both rise by around $\sim$5\%. However, as both the normalisation channel and signal channel are affected in the same way, the change in the ratio is suppressed. A total systematic uncertainty is calculated by weighting the change in the ratio for each sub-sample by the fraction of total normalisation mode events observed in that sub-sample. This leads to a total change of $\sim$0.5\% in the weighted BDT efficiency ratio.
+
+% - There are some difference in the MVA classifer for the reweighted data training modes and the normalisation peaks as observed in Fig.~\ref{fig:mvaresponse}, particularly in the mode $\Ds \to \pi \pi \pi$ in Run 2. Additionally, difference are observed in the MC and data distributions of the \B meson impact parameter significance in Fig.~\ref{fig:IPCHI2_cuts_norm}. To determine what effect any mismodelling might have on the calculated BDT efficiencies, the signal and normalisation MC samples are reweighted to match the distributions in data of \B $\chi^{2}_{IP}$. The largest variation in the ratio of BDT efficiencies is for the sample of $\Ds \to \pi \pi \pi$, which changes by 2.7\%. When the change in all samples is weighted according to their relative contribution to the total dataset the variation is 0.9\%. The larger of these two variations is added as a systematic uncertainty for this effect. 
+% The total BDT efficiency systematic uncertainty is the sum of these effects, totalling 6.2\%.
+
+% \end{description}
+% }
 
 \subsection{Signal and normalisation PDFs}
 
@@ -778,7 +801,6 @@ In the signal mode the PDFs for the partially reconstructed background modes are
 
 In the normalisation mode a number of choices are made about the partially reconstructed backgrounds, namely the kinematic limits of the \decay{\Bp}{\Dssp\Dzb} and \decay{\Bp}{\Dsp\Dstarzb}, and the external branching fractions of \decay{\Dssp}{\Dsp[\Pgamma/\piz]},
  \decay{\Dstarzb}{\Dzb[\Pgamma/\piz]} decays. These assumptions are simultaneously varied within the relevant uncertainties, resulting in a change of $0.015\times10^{-6}$ in the branching fraction.
-
 
 
 
@@ -797,12 +819,13 @@ The systematic uncertainties contributed from each source discussed is detailed 
         \multirow{ 2}{*}{\textbf{Source of Uncertainty} }&\multicolumn{2}{ c }{ Systematic Uncertainty}           \\
                                                          &\textbf{Relative} & \textbf{Absolute ($\times 10^{-6}$)}\\
         \hline 
-        BDT Relative Efficiency                     & 6.2\% & $0.44$\\
-        Using Run 1 shapes as Run 2                 & 4.4\% & $0.31$\\
-        MC statistics                               & 2.0\% & $0.14$\\
-        PID Relative Efficiency                     & 2.0\% & $0.14$\\
-        Veto Relative Efficiency                    & 1.4\% & $0.10$\\
-        Charmless Contribution                      & 0.7\% & $0.05$\\
+        MVA relative efficiency                     & 7.6\% & $0.53$\\
+        %BDT Relative efficiency                     & 6.2\% & $0.44$\\
+        %Using Run 1 shapes as Run 2                 & 4.4\% & $0.31$\\
+        Simulation statistics                       & 2.0\% & $0.14$\\
+        PID relative efficiency                     & 2.0\% & $0.14$\\
+        Veto relative efficiency                    & 1.4\% & $0.10$\\
+        Charmless contribution                      & 0.7\% & $0.05$\\
         Signal PDF parametrisation                  &-      & $0.036$  \\
         Background PDF parametrisation              &-      & $0.015$  \\
         \hline
@@ -811,7 +834,7 @@ The systematic uncertainties contributed from each source discussed is detailed 
         Normalisation                               &       & $0.70$\\
         \hline
     \end{tabular}
-    \caption{Contributions to the total systematic uncertainty of the \decay{\Bp}{\Dsp\Kp\Km} branching fraction measurement. }
+    \caption{Contributions to the total systematic uncertainty of the \decay{\Bp}{\Dsp\Kp\Km} branching fraction measurement. The contributions are listed in descending order.}
     \label{table:B2DsKK_systematics}
 \end{table}  
 
@@ -830,7 +853,7 @@ The branching fraction is calculated as
 \begin{equation}
 N_{\text{corr}}(\decay{\Bp}{\Dsp\Kp\Km}) =  \sum\limits_{i} \frac{W_{i}}{\epsilon^{\text{ratio}}_{i}},
 \end{equation}
-\noindent where $W_{i}$ is the per-candidate weight, as determined by the \sPlot technique for candidate $i$; and $\epsilon^{\text{ratio}}_{i}$ represents the relative efficiency of the signal and normalisation modes $\epsilon_{i}(\decay{\Bp}{\Dsp\Kp\Km})/\epsilon(\decay{\Bp}{\Dsp\Dzb})$ in the relevant bin of the $\decay{\Bp}{\Dsp\Kp\Km}$ Dalitz plot. 
+\noindent where $W_{i}$ is the per-candidate weight, as determined by the \sPlot technique for candidate $i$; and $\epsilon^{\text{ratio}}_{i}$ represents the relative efficiency of the signal and normalisation modes $\epsilon_{i}(\decay{\Bp}{\Dsp\Kp\Km})/\epsilon(\decay{\Bp}{\Dsp\Dzb})$ in the relevant bin of the $\decay{\Bp}{\Dsp\Kp\Km}$ Dalitz plot as calculated in Sec.~\ref{sec:B2DsKK_effcorrection}.
 
 
 %The uncertainty of the corrected signal yield is calculated following the same procedure as outlined in the \decay{\Bp}{\Dp\Kp\pim} search analysis note~\cite{Wallace:2010891} and summarised here. 
@@ -883,38 +906,45 @@ The branching fraction for $\decay{\Bp}{\Dsp\Kp\Km}$ decays is determined to be
 \end{equation}
 where the first uncertainty is statistical, the second is systematic and the third from the branching fractions of $\decay{\Dzb}{\Kp\Km}$ and of the normalisation mode $\decay{\Bp}{\Dsp\Dzb}$. 
 The values used for the branching fractions are $\mathcal{B}(\decay{\Dz}{\Kp\Km}) = (4.01 \pm 0.07)\times10^{-3}$ and $\mathcal{B}(\decay{\Bp}{\Dsp\Dzb}) = (9.0 \pm 0.9)\times10^{-3}$~\cite{PDG2016}. 
-The two-body projections $m(D_{s}^{+}K^{-})$ and $m(K^{+}K^{-})$ are obtained for the signal component using the \sPlot technique, shown in Fig.~\ref{fig:B2DsKK_twobodyprojections}. No significant peak is observed in the \phiz region of the $m(\Kp\Km)$ plot; rather a broad distribution of candidates is found in the region up to $m(\Kp\Km) \simeq 1900 \mevcc$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
     \centering
-    \includegraphics[width=0.8\textwidth]{figs/B2DsKK/Dalitz_plot_sweighted.pdf}
-    \caption{Dalitz plot}
-    \label{fig:B2DsKK_Dalitzplot}   
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[!h]
-    \centering
-    \begin{subfigure}[t]{0.49\textwidth}
+    \begin{subfigure}[t]{0.4\textwidth}
         \includegraphics[width=1.0\textwidth]{figs/B2DsKK/DsKm_mass_sweighted.pdf}
         %\caption{Normalisation without selection}
     \end{subfigure}
-    \begin{subfigure}[t]{0.49\textwidth}
+    \begin{subfigure}[t]{0.4\textwidth}
         \includegraphics[width=1.0\textwidth]{figs/B2DsKK/DsKp_mass_sweighted.pdf}
         %\caption{Normalisation without selection}
     \end{subfigure}
-    \begin{subfigure}[t]{0.49\textwidth}
+    \begin{subfigure}[t]{0.4\textwidth}
         \includegraphics[width=1.0\textwidth]{figs/B2DsKK/phi_mass_sweighted.pdf}
         %\caption{Normalisation without selection}
     \end{subfigure}
-    \caption{Two-body mass projections}
+    \caption{Two-body mass projections of the background-subtracted efficiency-corrected \decay{\Bp}{\Dsp\Kp\Km} candidates. An inset has been included expanding the region around the \phiz meson mass using the same ranges defined in the search for \decay{\Bp}{\Dsp\phiz} decays in Fig.~\ref{fig:B2DsPhi_hel_mass_MC}.}
     \label{fig:B2DsKK_twobodyprojections}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+The two-body projections $m(D_{s}^{+}K^{-})$ and $m(K^{+}K^{-})$ are obtained for the signal component using the \sPlot technique, shown in Fig.~\ref{fig:B2DsKK_twobodyprojections}. No significant peak is observed in the \phiz region of the $m(\Kp\Km)$ plot; rather a broad distribution of candidates is found in the region up to $m(\Kp\Km) \simeq 1900 \mevcc$. These plots have been corrected to account for the variation in the relative efficiencies as a function of the phase-space.
 
+
+
+Additionally, the distribution of background-subtracted efficiency-corrected \decay{\Bp}{\Dsp\Kp\Km} decays are shown as a function of the two-dimensional space $m^{2}(\Dsp\Km)$ vs. $m^{2}(\Kp\Km)$ in Fig.~\ref{fig:B2DsKK_Dalitzplot}. The candidates can be seen to be localised to a small area of the phase-space. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figs/B2DsKK/Dalitz_plot_sweighted.pdf}
+    \caption{The Dalitz plot distribution of background-subtracted efficiency-corrected \decay{\Bp}{\Dsp\Kp\Km} decays.}
+    \label{fig:B2DsKK_Dalitzplot}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+The background-subtracted distribution of the angle, $\cos{\theta_{K}}$, defined to be the angle between the direction of the \Kp meson and \Bp momentum vector in the \Kp\Km rest frame is shown in Fig.~\ref{fig:B2DsKK_helicity_angle}. The distribution of this angle can change depending of the spin of the \Kp\Km system and therefore may help identify the contributing processes. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
@@ -923,12 +953,13 @@ The two-body projections $m(D_{s}^{+}K^{-})$ and $m(K^{+}K^{-})$ are obtained fo
         \includegraphics[width=1.0\textwidth]{figs/B2DsKK/helAngle_sweighted.pdf}
         %\caption{Normalisation without selection}
     \end{subfigure}
-    \caption{Helicity angle}
-    \label{fig:B2DsKK_twobodyprojections}
+    \caption{The background-subtracted efficiency-corrected distribution of $\cos{\theta_{K}}$ for \decay{\Bp}{\Dsp\Kp\Km} candidates.}
+    \label{fig:B2DsKK_helicity_angle}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
+Additionally, the distribution of the angle $\theta_{K}$ is plotted in bins of $m(\Kp\Km)$ in Fig.~\ref{fig:B2DsKK_helicty_angle_bins}.
+The distribution is observed to change as a function of $m(\Kp\Km)$, which may be a result of interference between competing processes.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
@@ -949,12 +980,13 @@ The two-body projections $m(D_{s}^{+}K^{-})$ and $m(K^{+}K^{-})$ are obtained fo
         \includegraphics[width=1.0\textwidth]{figs/B2DsKK/helAngle_bin4_sweighted.pdf}
         \caption{$m(\Kp\Km)>1750\mevcc$}
     \end{subfigure}
-    \caption{Helicity angle in bins of $m(\Kp\Km)$ mass.}
-    \label{fig:B2DsKK_twobodyprojections}
+    \caption{The distribution of $\cos{\theta_{K}}$ in bins of $m(\Kp\Km)$ mass.}
+    \label{fig:B2DsKK_helicty_angle_bins}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\section{Discussion and outlook}
+\section{Outlook}
+This analysis provides an initial insight to the possible processes that might contribute to the \decay{\Bp}{\Dsp\Kp\Km} decay. However, a full amplitude analysis would be needed to rigorously study the competing decays and account for any possible interference between the amplitudes. This search contains only a fraction of the Run II data sample; the inclusion of the 2017 and 2018 samples would provide a statistically solid base to further this line of investigation. 
 
-{\color{Red} Full Amplitude analysis}
+
