@@ -3,7 +3,7 @@
 
 \minitoc
 
-In this chapter the procedure developed to reconstruct and select \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} candidates is described. 
+In this chapter the procedures developed to reconstruct and select \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} candidates are described. 
 In both cases the branching fractions are measured relative to the normalisation channel \decay{\Bp}{\Dsp\Dzb}.
 The corresponding selection for the normalisation channel \decay{\Bp}{\Dsp\Dzb} is also described.  
 
@@ -14,8 +14,9 @@ The corresponding selection for the normalisation channel \decay{\Bp}{\Dsp\Dzb} 
 
 \subsection{Data samples}
 \label{sec:data}
-{\color{Red} The searches for \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays are performed using a data sample collected by the \lhcb experiment.
-This data sample includes the entire Run I sample and the first two years of the Run II data collection period.}
+
+The searches for \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays are performed using a combined data sample comprising of the entire Run I data set and part of the Run II data set.
+The Run II data set includes the data collected during the first two years of data taking, 2015 and 2016. 
 The total integrated luminosity obtained for each year is listed in Table~\ref{tab:lumi}, along with the corresponding centre-of-mass energies. 
 
 \begin{table}[h]
@@ -38,35 +39,25 @@ The total integrated luminosity obtained for each year is listed in Table~\ref{t
 \subsection{Simulation samples}
 \label{sec:mc}
 
-Simulated events are used to determine the relative efficiencies of the signal and normalisation channels. 
-The samples are generated separately for each of the running periods listed in Table~\ref{tab:lumi} and for both polarities of the \lhcb dipole magnet. In these simulations, $pp$ collisions are generated using \pythia~\cite{Sjostrand:2007gs,Sjostrand:2006za} with a specific \lhcb configuration~\cite{LHCb-PROC-2010-056}.  Decays of hadronic particles are described by \evtgen~\cite{Lange:2001uf}, in which final-state radiation is generated using \photos~\cite{Golonka:2005pn}. The interaction of the generated particles with the detector, and its response, are implemented using the \geant toolkit~\cite{Allison:2006ve, *Agostinelli:2002hh} as described in Ref.~\cite{LHCb-PROC-2011-006}.
+Many aspects of the searches for \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays requires input from simulation samples. This includes the relative selection efficiencies of the signal and normalisation channels and the determination of the invariant mass distributions of the candidates.
+The samples are generated separately for each of the running periods listed in Table~\ref{tab:lumi} and for both polarities of the \lhcb dipole magnet. The simulation samples for \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Dzb} decays are generated assuming they proceed via pseudo-two-body decays. In contrast, the phase-space dependence of \decay{\Bp}{\Dsp\Kp\Km} decays must be considered when generating these simulations. Samples are generating assuming a flat distribution across the phase-space. 
+Additionally, simulations samples are required for many of the background processes considered in the analyses. These are generated using the same framework and processed using the same reconstruction as the signal modes.
 
-{\color{Red}
-\begin{itemize}
-\item Probably need more detail?
-\item MC for \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km}
-\item phase-space generation
-\item MC for background components
-\end{itemize}
-}
+
+In the simulations, $pp$ collisions are generated using \pythia~\cite{Sjostrand:2007gs,Sjostrand:2006za} with a specific \lhcb configuration~\cite{LHCb-PROC-2010-056}.  Decays of hadronic particles are described by \evtgen~\cite{Lange:2001uf}, in which final-state radiation is generated using \photos~\cite{Golonka:2005pn}. The interaction of the generated particles with the detector, and its response, are implemented using the \geant toolkit~\cite{Allison:2006ve, *Agostinelli:2002hh} as described in Ref.~\cite{LHCb-PROC-2011-006}.
+
 
 \section{Online selection}
 \label{sec:selection_trigger}
-The online event selection is performed by the \lhcb trigger, which consists of a hardware stage, based on information from the calorimeter and muon
-systems, followed by a software stage, which reconstructs the full event.
-% {\color{Red}
-% \begin{itemize}
-% \item More relevant information on the trigger rather than jumping straight into TIS/TOS
-% \end{itemize}
-% }
+The online event selection is performed by the \lhcb trigger, which consists of a hardware stage, based on information from the calorimeter and muon systems, followed by a software stage, which reconstructs the full event, as detailed in Sec.~\ref{sec:Dec_trigger}.
 Trigger decisions are made globally for a given event; either the event is saved or it's discarded. However, for events that are retained more detailed information about the specific interaction that initiated the trigger can be used to help isolate events containing signal candidates. At both hardware and software level there are a number of different triggers that can lead to an event being retained. In hardware this is broadly separated according to the sub-detector that contained the triggering deposit. Deposits in the muon chambers or hadronic calorimeter would fire \texttt{L0Muon} or \texttt{L0Hadron} respectively. Electromagnetic calorimeter deposits could result in \texttt{L0Electron} or \texttt{L0Photon} firing. The \decay{\Bp}{\Dsp\Kp\Km} and \decay{\Bp}{\Dsp}{\phiz} decays are both reconstructed in fully hadronic final states, therefore events retained as a result of the \texttt{L0Electron}, \texttt{L0Photon} or \texttt{L0Muon} trigger firing are unlikely to have been caused by the signal decays. 
 
-In addition to specifying which triggers fired, it is possible to use more granular information about the specific hits initiating the trigger to improve the selection of signal candidates. The tracks constituting the reconstructed candidate are matched to the deposits in each sub-detector. The fraction of hits required to match in order for the trigger decision to be associated to that object vary depending on the subdetector in question, as listed in Table~\ref{tab:tosfrac}.
+In addition to specifying which triggers fired, it is possible to use more granular information about the specific hits initiating the trigger to improve the selection of signal candidates. The tracks constituting the reconstructed candidate are matched to the deposits in each sub-detector. The fraction of hits required to match in order for the trigger decision to be associated to that object vary depending on the sub-detector in question, as listed in Table~\ref{tab:tosfrac}.
 \begin{table}[h]
    \begin{center}
       \begin{tabular}{cc}
          \hline
-         Subdetector    &  Fraction of matching hits \\
+         Sub-detector    &  Fraction of matching hits \\
          \hline 
          \hcal          & 1\%    \\ 
          \ecal          & 1\%    \\ 
@@ -77,7 +68,7 @@ In addition to specifying which triggers fired, it is possible to use more granu
          \hline
       \end{tabular}
    \end{center}
-   \caption{The fraction of matching hits required for a offline reconstructed object to be associated to a online subdetector deposit.}
+   \caption{The fraction of matching hits required for a offline reconstructed object to be associated to a online sub-detector deposit.}
    \label{tab:tosfrac}
    %% From: https://gitlab.cern.ch/lhcb/Phys/blob/83e7320119561a4e4996e51a96601f65f1ff5cfe/Phys/TisTosTobbing/src/lib/TisTos.cpp
    %% https://gitlab.cern.ch/lhcb/Phys/blob/2016-patches/Phys/TisTosTobbing/src/lib/TisTos.cpp
@@ -118,39 +109,62 @@ Reconstructed objects are classified into categories when considering their rela
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-At the hardware trigger stage, the selected candidates are required to be \texttt{TOS} with respect to the hadronic trigger \texttt{L0Hadron}. This ensures the selected candidates were retained due to corresponding deposits in the hadronic calorimeter. Alternatively, candidates are selected if they are \texttt{TIS} with respect to the global hardware trigger \texttt{L0Global}. Any of the hardware trigger subsystems can contribute to the \texttt{L0Global} decision. This allows candidates that have been retained due another highly energetic decay in the same event to contribute. This could be the decay of hadron resulting from the other \bquark quark in a \bquark\bquarkbar pair production. 
+At the hardware trigger stage, the selected candidates are required to be \texttt{TOS} with respect to the hadronic trigger \texttt{L0Hadron}. This ensures the selected candidates were retained due to corresponding deposits in the hadronic calorimeter. Alternatively, candidates are selected if they are \texttt{TIS} with respect to the global hardware trigger \texttt{L0Global}; any of the hardware trigger subsystems can contribute to the \texttt{L0Global} decision. This allows candidates that have been retained due another highly energetic decay in the same event to contribute. This could be the decay of hadron resulting from the other \bquark quark in a \bquark\bquarkbar pair production. The relative fractions of simulated decays selected by these \texttt{L0Hadron TOS} and \texttt{L0Global TIS} for \decay{\Bp}{\Dsp\phiz} decays decaying to various \Dsp final states are shown in Table~\ref{tab:tis_tos_fractions}. 
 
-{\color{Red}
-\begin{itemize}
-\item Include approximate TIS TOS fractions
-\end{itemize}
-}
 
-%At the hardware trigger stage, events are required to have a muon with high \pt or a hadron, photon or electron with high transverse energy in the calorimeters. For hadrons, the transverse energy threshold is 3.5\gev. 
+\begin{table}[h]
+   \begin{center}
+      \begin{tabular}{lcccc}
+         \hline
+         \Dsp decay mode                &  \texttt{TOS} \& !\texttt{TIS} & \texttt{TIS}\&!\texttt{TOS} &  \texttt{TIS}\&\texttt{TOS}&  \texttt{TIS} or \texttt{TOS}\\
+         \hline 
+         \decay{\Dsp}{\Kp\Km\pip}       & $34.0\%$                   &$41.2\%$                   &$22.9\%$                   &$96.9\%$\\
+         \decay{\Dsp}{\Kp\pim\pip}      & $34.9\%$                   &$39.5\%$                   &$23.8\%$                   &$96.9\%$\\
+         \decay{\Dsp}{\pip\pim\pip}     & $35.9\%$                   &$38.7\%$                   &$23.5\%$                   &$96.9\%$\\
+         \hline
+      \end{tabular}
+   \end{center}
+   \caption{The fraction of simulated \decay{\Bp}{\Dsp\phiz} decays in each of the hardware trigger categories for the Run I conditions. Here \texttt{TOS} refers to candidates found to be \texttt{TOS} with respect to the \texttt{L0Hadron} trigger, and \texttt{TIS} to candidates found to be \texttt{TIS} with respect to the \texttt{L0Global} requirement. The percentages are given relative to the number of decays passing the reconstruction requirements.}
+   \label{tab:tis_tos_fractions}
+\end{table}
+
+
 
 The software trigger stage is split into two parts, \hltone and \hlttwo.
 The first stage, \hltone, requires that the selected candidates are associated with at least one well reconstructed track. This track must be significantly displaced from the primary interaction and has a large transverse momentum. In Run II, this trigger was reimplementing using a multivariate analysis trained to select a well reconstructed, high transverse momentum track that was significantly displaced from the primary interaction. An additional trigger was also included to select pairs of high transverse momentum tracks that form a vertex that is displaced from the primary interaction. The signal candidate is required to be \texttt{TOS} with respect to these trigger lines such that one of the candidate tracks passes this requirement.   
 
-{\color{Red}
-\begin{itemize}
-\item Include more details on HltTrackAllL0? 
-\item Trigger 2011 paper and Run 2 algorithms
-\item add citations
-\end{itemize}
-}
+% {\color{Red}
+% \begin{itemize}
+% \item Include more details on HltTrackAllL0? 
+% \item Trigger 2011 paper and Run 2 algorithms
+% \end{itemize}
+% }
 
 
 
 At the second software stage, \hlttwo, two different algorithms are used to select candidates for this analysis.
-The first one uses a multivariate algorithm~\cite{BBDT} to identify the presence of a secondary vertex that has two, three or four tracks and is displaced from any PV. At least one of these charged particles must have a transverse momentum $\pt > 1.7\gevc$ and be inconsistent with originating from a PV. 
+The first one uses a multivariate algorithm~\cite{BBDT} to identify the presence of a secondary vertex that has two, three or four tracks and is displaced from any PV. At least one of these charged particles must have a transverse momentum $\pt > 1.7\gevc$ and be inconsistent with originating from a PV. This trigger algorithm is referred to as the topological trigger.
 The second algorithm selects $\phiz$ candidates decaying to two charged kaons. Each kaon must have a transverse momentum $\pt > 0.8\gevc$ and be inconsistent with originating from a PV. The invariant mass of the kaon pair must be within $20\mevcc$ of the known \phiz mass~\cite{PDG2016}.
-The inclusive \phiz line is used to maximise the selection efficiencies as \phiz mesons can contribute directly to \decay{\Bp}{\Dsp\phiz} decays, as well as via the large fractions of \decay{\Dsp}{\phiz\pip} decays that contribute to the \decay{\Dsp}{\Kp\Km\pip} final state.
+This inclusive \phiz line is used to maximise the selection efficiencies as \phiz mesons can contribute directly to \decay{\Bp}{\Dsp\phiz} decays, as well as via the large fractions of \decay{\Dsp}{\phiz\pip} decays that contribute to the \decay{\Dsp}{\Kp\Km\pip} final state.
+The relative fractions of simulated \decay{\Bp}{\Dsp\phiz} decays selected by these different trigger algorithms are listed in Table~\ref{tab:topo_incphi_fractions}. It can be seen that the inclusive \phiz trigger algorithm helps additionally retain a larger fraction of decays for the \decay{\Dsp}{\Kp\Km\pip} decay. 
 
-{\color{Red}
-\begin{itemize}
-\item fractions of events added by each category
-\end{itemize}
-}
+\begin{table}[h]
+   \begin{center}
+      \begin{tabular}{lcccc}
+         \hline
+         \Dsp decay mode                &  \texttt{Topo} \& !\texttt{Phi} & \texttt{Phi}\&!\texttt{Topo} &  \texttt{Topo}\&\texttt{Phi}&  \texttt{Topo} or \texttt{Phi}\\
+         \hline 
+         \decay{\Dsp}{\Kp\Km\pip}       & $50.9\%$                   &$4.6\%$                   &$43.1\%$                   &$98.7\%$\\
+         \decay{\Dsp}{\Kp\pim\pip}      & $67.6\%$                   &$2.7\%$                   &$28.3\%$                   &$98.5\%$\\
+         \decay{\Dsp}{\pip\pim\pip}     & $67.5\%$                   &$2.6\%$                   &$28.5\%$                   &$98.7\%$\\
+         \hline
+      \end{tabular}
+   \end{center}
+   \caption{The fraction of simulated \decay{\Bp}{\Dsp\phiz} decays in each of the \hlttwo software trigger categories for the Run I conditions. Here \texttt{Topo} refers to candidates found to be \texttt{TOS} with respect to the topological algorithm, and \texttt{Phi} to candidates found to be \texttt{TOS} with respect to the inclusive \phiz algorithm. The fractions of selected decays are measured relative to the \hltone requirements.}
+   \label{tab:topo_incphi_fractions}
+\end{table}
+
+
 
 \section{Offline selection}
 
@@ -235,7 +249,8 @@ The selection of candidates makes requirements on many different distinguishing 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\item \textbf{Ghost track probability, $P_{\text{Ghost}}$:} {\color{Red}Look up definition}
+\item \textbf{Ghost track probability, $P_{\text{Ghost}}$:} This parameter quantifies the probability that a given track is an incorrect combination of tracking stations hits, known as a ghost track. The numerical value is the output of a Neural Network algorithm trained to separate true tracks from ghost tracks using simulated events. Various tracking parameters are inputs to the Neural Network including the number of hits in various tracking stations, the track fit quality and the number of tracks per event. 
+
 \item \textbf{Direction angle:} The angle between the particles momentum vector and the vector connecting the primary vertex and decay vertex as shown in Fig.~\ref{fig:dira}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -248,7 +263,7 @@ The selection of candidates makes requirements on many different distinguishing 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\item \textbf{Particle identification, $\text{PIDK}$:} {\color{red} Something }  
+\item \textbf{Particle identification, $\text{PIDK}$:} {\color{Red} Something }  
 \end{description}
 
 
@@ -256,74 +271,25 @@ As the final states are fully hadronic, the candidates are built from the combin
 Due to the relatively long lifetime of the \Bp and \D mesons, the decay products originate from a vertex that is displaced from the proton-proton collision vertex. Therefore it is possible that the trajectory that the decay products followed didn't pass through the collision position as shown in Fig.~\ref{fig:impact_parameter}. A requirement is placed on the significance of the impact parameter between the track and the proton-proton collision vertex of $\chi^{2}_{\text{IP}} > 4$ to ensure all of the tracks used are inconsistent with originating at the primary interaction.  
 
 
-Loose requirements are placed on \emph{Particle Identification} variables to ensure the tracks are of the required species. These are further tightened as detailed in Section~\ref{sec:pidrequirements}. Incorrect track candidates created by combining unrelated \velo and tracking station {\color{red}stubs} are suppressed by requiring the ghost track probability, $P_{\text{Ghost}}$, to be less than $0.4$. 
+Loose requirements are placed on \emph{Particle Identification} variables to ensure the tracks are of the required species. These are further tightened as detailed in Section~\ref{sec:pidrequirements}. Incorrect track candidates created by combining unrelated \velo and tracking station hits are suppressed by requiring the ghost track probability, $P_{\text{Ghost}}$, to be less than $0.4$. 
 
 %%%%%% Ds/ D0 and phi construction
 
 The tracks passing these requirements are combined in pairs or threes to form the \Dsp and \phiz or \Dzb meson candidates.  
-To create the \phiz candidates (or \Kp\Km pair), all combinations of two tracks are considered. The two tracks are assigned the mass hypothesis of kaons. Only pairs which pass within $0.5\mm$ of one another at their closest point are retained. A number of requirements are imposed to ensure the pair are consistent with coming from a \phiz meson originating from a \Bp meson decay. The vertex is required to be of good quality, the scalar sum of the transverse momentums must be greater than $1000\mevc$ and the flight distance significance is required to be $\chi^{2}_{\text{FD} } > 16$. Additionally the cosine of the direction angle, defined to be the angle between the momentum vector and flight vector, is required to be $\cos{\theta}>0$, preventing the vertex being backward of the PV when the momentum is in the forward direction. In the search for \decay{\Bp}{\Dsp\phiz} mesons, the invariant mass of the two kaons is required to be within $150\mevcc$ of the known \phiz meson mass.  
+To create the \phiz candidates (or \Kp\Km pair), all combinations of two tracks are considered. The two tracks are assigned the mass hypothesis of kaons. Only pairs which pass within $0.5\mm$ of one another at their closest point are retained. A number of requirements are imposed to ensure the pair are consistent with coming from a \phiz meson (or \Kp\Km pair) originating from a \Bp meson decay. The vertex is required to be of good quality, the scalar sum of the transverse momentums must be greater than $1000\mevc$ and the flight distance significance is required to be $\chi^{2}_{\text{FD} } > 16$. Additionally the cosine of the direction angle, defined to be the angle between the momentum vector and flight vector, is required to be $\cos{\theta}>0$, preventing the vertex being backward of the PV when the momentum is in the forward direction. In the search for \decay{\Bp}{\Dsp\phiz} mesons, the invariant mass of the two kaons is required to be within $150\mevcc$ of the known \phiz meson mass.  
 
-The \Dzb candidates are selecting using a similar parameters, however the exact values of the cuts are changed to reflect the differences in properties of the \phiz and \Dzb mesons.
-
-
-% & Products \pt scalar sum        &  $\sum{|\pt|} > 1000 \mevc$         \\  
-% & Direction angle                &  $\cos{\theta}>0$                 \\  
-% & Vertex quality                 &  $\chi^{2}/N_{\text{DOF}} < 16$   \\   
-% & Flight distance significance   &  $\chi^{2}_{\text{FD} }  > 16$    \\
+The \Dzb candidates are selecting using a similar parameters, however the exact values of the cuts are changed to reflect the differences in properties of the \phiz and \Dzb mesons. The vertex quality and flight distance significance requirements are tightened to $\chi^{2}/N_{\text{DOF}} < 10$ and $\chi^{2}_{\text{FD} }  > 36$ respectively. Additionally, the scalar \pt sum requirment is increased to $\sum{|\pt|} > 1800 \mevc$ as the decay products tend to have higher transverse momentum. 
 
 
-% \Dzb           & Mass                           &  $1765 < m(h^{+}h^{-}h^{+}) < 1965\mevcc$\\  
-%                & Products \pt scalar sum        &  $\sum{|\pt|} > 1800 \mevc$         \\  
-%                & Distance of closest approach   &  $\text{DOCA}(\Kp,\Km) < 0.5\mm$  \\  
-%                & Direction angle                &  $\cos{\theta}>0$                 \\  
-%                & Vertex quality                 &  $\chi^{2}/N_{\text{DOF}} < 10$   \\   
-%                & Flight distance significance   &  $\chi^{2}_{\text{FD} }  > 36$    \\ 
-
-The \Dsp mesons for the signal and normalisation modes are created using combinations of three tracks given the mass hypotheses kaons or pions, depending on the decay mode being constructed. All combinations of three tracks are considered {\color{Red} maybe with the exception of ones used in other candidates?}. 
-
-
-% \Dsp           & Mass                           &  $1770 < m(h^{+}h^{-}h^{+}) < 2068\mevcc$            \\  
-%                & Products \pt scalar sum        &  $\sum{|\pt|} > 1800 \mevc$         \\ 
-%                & Distance of closest approach   &  $\text{DOCA}(h^{+},h^{-}) < 0.5\mm$     \\  
-%                & Distance of closest approach   &  $\text{DOCA}(h^{+},h^{+}) < 0.5\mm$     \\  
-%                & Direction angle                &  $\cos{\theta}>0$                 \\  
-%                & Vertex quality                 &  $\chi^{2}/N_{\text{DOF}} < 10$   \\   
-%                & Flight distance significance   &  $\chi^{2}_{\text{FD} }  > 36$    \\ 
-
+The \Dsp mesons for the signal and normalisation modes are created using combinations of three tracks given the mass hypotheses kaons or pions, depending on the decay mode being constructed. All combinations of three tracks are considered and only those in which all three tracks are within 0.5\mm of one another are retained. Similar to the \Dzb meson the vertex quality, flight distance significance and scarlar \pt sum requirements are $\chi^{2}/N_{\text{DOF}} < 10$, $\chi^{2}_{\text{FD} }  > 36$ and $\sum{|\pt|} > 1800 \mevc$ respectively.
 
 %% B meson construction
 
 The \Bp meson candidates are constructed by creating all possible combinations of the \Dsp and \phiz or \Dzb meson candidates in each event.
-Requirements are placed on these combination to select just those consistent with \Bp mesons.
+Requirements are placed on these combination to select just those consistent with \Bp mesons; the combination is required to have a lifetime $\tau_{\Bp} > 0.2\ps$ and direction angle $\cos{\theta}>0.999$. The impact parameter significance is required to be $\chi^{2}_{\text{IP}} < 25$ to ensure the \Bp meson originated at the primary interaction. The vertex is required to have a quality of $\chi^{2}/N_{\text{DOF}} < 10$. 
+More requirements are additionally placed on the decay products that contribute to the \Bp meson. The selection requirements imposed on candidate \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays in their respective \emph{Stripping Lines} are detailed in Table~\ref{tab:strippinglinecuts}. 
 
 
-{\color{Red}
-\begin{itemize}
-\item something about how combineparticles works?
-\item \Dsp and \phiz construction 
-\item \Bp construction
-\end{itemize}
-}
-
-
-The selection requirements imposed on candidate \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays in their respective \emph{Stripping Lines} is detailed in Table~\ref{tab:strippinglinecuts}. 
-
-
-\begin{table}[h]
-   \begin{center}
-      \begin{tabular}{l l}
-         \hline
-         Mode & Stripping line \\ 
-         \hline
-         \decay{\Bp}{\Dsp\phiz}        & \texttt{StrippingB2DPhiD2HHHPIDBeauty2CharmLine}    \\
-         \decay{\Bp}{\Dsp\Kp\Km}       & \texttt{StrippingB2DKKD2HHHCFPIDBeauty2CharmLine}   \\
-         \decay{\Bp}{\Dsp\Dzb}         & \texttt{StrippingB2D0DBeauty2CharmLine}             \\
-         \hline
-      \end{tabular}
-   \end{center}
-   \caption{\emph{Stripping Lines} used in this analysis.}
-   \label{tab:strippinglines}
-\end{table}
 
 
 
@@ -499,10 +465,26 @@ Particles      & Quantity                       & Requirement                   
 
 
 Two slightly different strategies are used for the normalisation channel selection in the search for \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} events.
-In the former, the dedicated \decay{\Bp}{\Dsp\Dzb} \emph{Stripping Line} listed in Table~\ref{tab:strippinglines} is used to reconstruct the normalisation channel decays.
+In the former, a dedicated \decay{\Bp}{\Dsp\Dzb} \emph{Stripping Line} is used to reconstruct the normalisation channel decays.
 The \emph{Stripping Line} selection for this line is listed in Table~\ref{tab:strippinglinecuts_norm}.
 
-The \emph{Stripping Line} used in the search for \decay{\Bp}{\Dsp\Kp\Km} decays covers the full $m(\Kp\Km)$ phasespace. This includes the \Dzb mass such that this line reconstructs both the signal and normalisation channels simultaneously. 
+% \begin{table}[h]
+%    \begin{center}
+%       \begin{tabular}{l l}
+%          \hline
+%          Mode & Stripping line \\ 
+%          \hline
+%          \decay{\Bp}{\Dsp\phiz}        & \texttt{StrippingB2DPhiD2HHHPIDBeauty2CharmLine}    \\
+%          \decay{\Bp}{\Dsp\Kp\Km}       & \texttt{StrippingB2DKKD2HHHCFPIDBeauty2CharmLine}   \\
+%          \decay{\Bp}{\Dsp\Dzb}         & \texttt{StrippingB2D0DBeauty2CharmLine}             \\
+%          \hline
+%       \end{tabular}
+%    \end{center}
+%    \caption{\emph{Stripping Lines} used in this analysis.}
+%    \label{tab:strippinglines}
+% \end{table}
+
+The \emph{Stripping Line} used in the search for \decay{\Bp}{\Dsp\Kp\Km} decays covers the full $m(\Kp\Km)$ phase-space. This includes the \Dzb mass such that this line reconstructs both the signal and normalisation channels simultaneously. 
 Both modes are selected using this line to reduce systematic uncertainty in the ratio of selection efficiencies.
 
 \begin{table}[h]
@@ -660,22 +642,6 @@ Particles      & Quantity                       & Requirement                   
 Particle identification variables help to determine the species of tracks passing though the \lhcb detector. Using information from the RICH sub-detectors, the likelihood of different mass hypotheses are compared to the pion hypothesis. Loose requirements are made on the kaon hypothesis PID variable to reduce the contribution from other types of hadrons and background from other \bquark-hadron decays with misidentified hadrons. 
 %For the signal decays, the overall efficiency of the PID requirements varies from 80\% to 90\%, depending on the \Dsp mode.
 
-% if(d_Phi_K0_PIDK < 0 ) continue;
-% if(d_Phi_K1_PIDK < 0 ) continue;
-
-% if(d_mode == Ds2KKPi){
-%     if(d_D_K0_PIDK < -5) continue;
-%     if(d_D_K1_PIDK < -5) continue;
-%     if(d_D_P_PIDK  >  5) continue;
-
-% } else if(d_mode == Ds2KPiPi){
-%     if(d_D_K_PIDK  < -5) continue; 
-%     if(d_D_P0_PIDK >  5) continue; 
-%     if(d_D_P1_PIDK >  5) continue;     
-% } else if(d_mode == Ds2PiPiPi){
-%     if(d_D_P0_PIDK >  5) continue; 
-%     if(d_D_P1_PIDK >  5) continue;
-%     if(d_D_P2_PIDK >  5) continue;
 
 
 
@@ -706,14 +672,13 @@ Particle identification variables help to determine the species of tracks passin
       \end{tabular}
    \end{center}
    \caption{Particle idetification requirements applied to kaons and pions.}
-   \label{tab:strippinglines}
+   \label{tab:selection_pid_cuts}
 \end{table}
 
 
 
 {\color{Red}
 \begin{itemize}
-\item Include actual cuts
 \item description of what DLLs mean
 \end{itemize}
 }
@@ -751,14 +716,31 @@ The two-dimensional space defined by the \Dsp and \Dzb masses is split into four
 Asymmetric \Dzb sidebands are used to prevent misidentified \decay{\Bp}{\Dsp (\decay{\Dzb}{\Km\pip})} decays from being included in the sideband sample.
 The optimal selection requirements are chosen such that the maximal signal efficiency is achieved for a residual charmless contribution of 2\% of the normalisation yield.
 
+The optimisation of the signal and normalisation cuts is performed separately for each different \Dsp decay mode, and for the \decay{\Bp}{\Dsp\Kp\Km} and \decay{\Bp}{\Dsp\phiz} selections. The optimised requirements are listed in Table~\ref{tab:selection_fd_cuts}, along with the estimated residual yields of charmless and single charm yields in the signal region.  
 
-{\color{Red}
-\begin{itemize}
-\item Optmised separately for \decay{\Bp}{\Dsp\Kp\Km} and \decay{\Bp}{\Dsp\phiz}
-\item Include plots of selected cuts
-\item include table of expected residual yields 
-\end{itemize}
-}
+
+\begin{table}[h]
+   \begin{center}
+      \begin{tabular}{l c c c c }
+         \hline
+         \Bp decay mode         & \Dsp decay mode             & $\chi^{2}_{\text{FD}}(\Dsp)$  & $\chi^{2}_{\text{FD}}(\Dzb)$  & Residual yields \\ 
+         \hline
+         \decay{\Bp}{\Dsp\phiz} & \decay{\Dsp}{\Kp\Km\pip}    &  0.0              & -                 & 0.0             \\
+         \decay{\Bp}{\Dsp\phiz} & \decay{\Dsp}{\Kp\pim\pip}   &  25.0             & -                 & 2.6             \\
+         \decay{\Bp}{\Dsp\phiz} & \decay{\Dsp}{\pip\pim\pip}  &  5.0              & -                 & 0.0             \\
+         \decay{\Bp}{\Dsp\Dzb}  & \decay{\Dsp}{\Kp\Km\pip}    &  8.0              & 0.0               & 21.6            \\
+         \decay{\Bp}{\Dsp\Dzb}  & \decay{\Dsp}{\Kp\pim\pip}   &  18.0             & 0.0               & 3.3             \\
+         \decay{\Bp}{\Dsp\Dzb}  & \decay{\Dsp}{\pip\pim\pip}  &  16.0             & 0.0               & 3.9             \\
+         \hline
+         \decay{\Bp}{\Dsp\Kp\Km} & \decay{\Dsp}{\Kp\Km\pip}   & 5.0               & -                 & 0.19            \\
+         \decay{\Bp}{\Dsp\Dzb}   & \decay{\Dsp}{\Kp\Km\pip}   & 8.0               & 0.0               & 7.95            \\
+         \hline
+      \end{tabular}
+   \end{center}
+   \caption{Charmless and single charm minimum flight distance significance requirements applied to the \Dsp and \Dzb candidates.}
+   \label{tab:selection_fd_cuts}
+\end{table}
+
 
 
 \subsection{Misidentified \D and \Lc hadrons}
@@ -966,12 +948,9 @@ In the search for \decay{\Bp}{\Dsp\Kp\Km} decays the increased size of the $m(\K
    \label{fig:invariantmassvetoes_DsKK}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+Another set of vetoes rejects decays where the tracks forming the \Dsp candidate originate from an excited charged charm meson decay, for example $\decay{\Dstarp}{(\decay{\Dz}{h^{+}h'^{-}}) \pip}$. By requiring $\Delta m = m(h^{+}h'^{-}\pip)-m(h^{+}h'^{-}) > 150 \mevcc$ decays of this type are efficiently removed. These are applied to both the signal and normalisation modes for all \Dsp decays. 
 
-{\color{Red}
-\begin{itemize}
-\item Include details of D* to D vetos
-\end{itemize}
-}
 
 \subsection{Normalisation mode veto}
 \label{sec:normvetos}
@@ -1006,11 +985,12 @@ Another structure appears to be present to the left of the \Dzb peak in Fig.~\re
 
 
 \subsection{Multivariate analysis}
-{\color{Red}Add citation and mention DD analysis}
 
 Multivariate Analyses (MVAs) are used to help discriminate between genuine \Dsp and \phiz meson decays and combinations of unrelated tracks. 
 These MVAs are trained using large samples of candidates from other \B mesons decays with similar topologies reconstructed in data. 
 This data-driven approach can benefit from an expanded set of variables that are not perfectly represented in simulation, including track quality and particle identification information, in addition to the widely used kinematic and geometric properties.
+The method is based on the approach used in Ref.~\cite{LHCb-PAPER-2012-050}, however the choice of input variables has been optimised and training samples expanded to include Run II data.
+
 The sample of \Dsp mesons is obtained from the relatively abundant \decay{\Bsb}{\Dsp\pim} decay. Similarly, the sample of \phiz mesons is obtained from \decay{\Bs}{\jpsi\phiz} decays. Large, high purity samples are reconstructed using similar requirements to those applied in the selection of signal \Dsp and \phiz mesons.
 A sample is selected for each of the \Dsp and \phiz meson decays uses in this analysis, as listed in Table~\ref{tab:mva_modes}. 
 The training of separate MVAs for the different \Dsp modes allows the use of particle identification variables that separate kaons and pions to be fully exploited.
@@ -1127,7 +1107,7 @@ The fit model is constructed from signal and background contributions
 \begin{equation}
 n F(m| n_{\text{S}},n_{\text{B}},\vec{p'},\vec{p''}) = n_{\text{S}} f(m|\vec{p'}) + n_{\text{B}} g(m|\vec{p''}),
 \end{equation}
-where $n_{\text{S}}$ and $n_{\text{B}}$ are the signal and background yields, $f$ and $g$ are the PDFs for the signal and background respectively, and $\vec{p'}$ and $\vec{p''}$ represent the parameters controlling the PDF shapes. The 
+where $n_{\text{S}}$ and $n_{\text{B}}$ are the signal and background yields, $f$ and $g$ are the PDFs for the signal and background respectively, and $\vec{p'}$ and $\vec{p''}$ represent the parameters controlling the PDF shapes.
 
 After the extended maximum likelihood fits have been performed and the yields established, the subtraction of candidates attributed to the background component is performed using the \sPlot technique~\cite{Pivk:2004ty}.
 The \sPlot method assigns weights for each species in the fit model, namely signal and background. These are assigned to each event in the data set and are only dependent on the value of the fitted variable, in this case \phiz or \Dsp mass. When plotting other, uncorrelated variables and weighting each event accordingly, the contribution from each component in the fit can be extracted. 
@@ -1144,7 +1124,7 @@ g(m|a,b) = a\times(2m^{2}-1) + b\times m + 1,
 \end{equation}
 where $a$ and $b$ are parameters that can vary freely and $m$ is the observable invariant mass. 
 The \phiz meson mass is close to the threshold for \Kp\Km pair production so this parametrisation has sufficient freedom to successfully  model the increasing background shape.
-The background contribution to all three \Dsp decays are modelled using exponetial functions with a single degree of freedom controlling the effective slope
+The background contribution to all three \Dsp decays are modelled using exponential functions with a single degree of freedom controlling the effective slope
 \begin{equation}
 g(m|c) = e^{-m\times c},
 \end{equation}
@@ -1246,18 +1226,18 @@ The yields of candidates in each of the subsamples are tabulated in Table~\ref{t
 The MVA method is trained using a large set of variables chosen to help discriminate between the signals of interest and combinations of unrelated tracks. These variables include the properties of the \Kpm or \pipm decay products as well as those of the \phiz or \Dsp candidate itself. Many of the quantities are the same as those previously defined in Section.~\ref{sec:selectionrequirements}. The additional parameters relate to the track quality and particle identification information and are defined as follows:
 
 \begin{description}
-\item \textbf{Track matching quality, $\chi^{2}_{\text{TRKMATCH}}$}: {\color{Red} chi2 from matching velo stubs to trackers stubs?}
-\item \textbf{Velo track quality, $\chi^{2}_{\text{TRKVELO}}$}: {\color{Red} chi2 of fit to just hits in the velo?}
-\item \textbf{Kaon, proton, pion and ghost probabilities, ProbNNx}: these variables are an alternative form of \emph{Particle Identification} variables in addition to those already discussed in Section~\ref{sec:pidrequirements}. Each ProbNNx variable acts as the probability for the reconstructed track to be of the species x. These variables are the responses of Artificial Neural Networks trained to differentiate between the various particle types using a large number of inputs from different subdetectors. The trainings use simulated samples of signal and background decays and have been retuned between Run~I and Run~II to reflect the difference in the detector configuration. Four of the available ProbNNx tuning are used in this analysis. Three of these identify kaons, protons and pions. The last aims to identify ghost tracks, similar to the $P_{\text{Ghost}}$ variable already discussed. 
+\item \textbf{Track matching quality, $\chi^{2}_{\text{TRKMATCH}}$}: this parameter is an key component of the pattern recognition software that matches the \velo and tracking station track sections together to form \emph{long} tracks. It quantifies the quality of the track matching.
+
+\item \textbf{\velo track quality, $\chi^{2}_{\text{TRKVELO}}$}: this quantifies the quality of the track fit using just the hits in the \velo.  
+
+
+\item \textbf{Kaon, proton, pion and ghost probabilities, ProbNNx}: these variables are an alternative form of \emph{Particle Identification} variables in addition to those already discussed in Section~\ref{sec:pidrequirements}. Each ProbNNx variable acts as the probability for the reconstructed track to be of the species x. These variables are the responses of Artificial Neural Networks trained to differentiate between the various particle types using a large number of inputs from different sub-detectors. The trainings use simulated samples of signal and background decays and have been retuned between Run~I and Run~II to reflect the difference in the detector configuration. Four of the available ProbNNx tuning are used in this analysis. Three of these identify kaons, protons and pions. The last aims to identify ghost tracks, similar to the $P_{\text{Ghost}}$ variable already discussed. 
 \end{description}
 
 The variables used in the \phiz meson MVA are listed in Table~\ref{tab:mvavars_phi}. Some of the variables are input into the MVA training algorithm as their logarithm, rather than the variable directly. These variables tend to be rapidly increasing in at certain values, so using the logarithm aids visualisation. A total of 24 variables are used in this MVA.
 
-{\color{red}
-\begin{itemize}
-\item FDchi2 not included so it works on \Dzb and \phiz mesons.
-\end{itemize}
-} 
+When training the \phiz meson MVA, the flight distance significance is not included as an input variable. This MVA is used to select both \phiz and \Dzb mesons which are likely to have different flight distance significance distributions as a result of their different lifetimes. 
+
 
 \begin{table}[h]
    \begin{center}
