@@ -1704,7 +1704,7 @@ Rank & Variable                         & Importance           & Rank & Variable
 \subsubsection{MVA method}
 \label{sec:mvamethod}
 
-The MVA training and validation is implemented using the \tmva package, part of the \root framework.
+The MVA training and validation is implemented using the \tmva package, part of the \root framework~\cite{BRUN199781}.
 During training, each method uses samples that have been defined to be `signal' and `background' in order to characterise the differences between the two categories. The multidimensional space defined by the input variables is effectively condensed onto a single axis given by the classifier's response. Typically, high values of the response correspond to `signal'-like events and low values to `background'-like events. This training produces a \emph{weights file} allowing the response to be calculated for other samples. 
 
 A second set of `signal'-like and `background'-like samples are used to blindly validate the training. The classifier response is compared in the training and validation samples to demonstrate if the expected separation is reproducible. 

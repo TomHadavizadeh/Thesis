@@ -1174,9 +1174,13 @@ The yields of signal and normalisation decays are corrected by their relative se
 
 \item \textbf{MVA efficiency:} unlike the search for \decay{\Bp}{\Dsp\Kp\Km} decays, the efficiencies for the MVA requirements are just calculated using the \decay{\Bs}{\jpsi\phiz} and \decay{\Bsb}{\Dsp\pim} samples used in the validation of the MVA methods. There is no need account for the phase-space dependence, so the simulation samples have not been corrected. 
 These data-driven efficiencies are affected by the same sources as previously discussed in~\ref{sec:B2DsKK_sys_releff}.
-The validation samples are binned in four bins of both \pt and $\chi^{2}_{\text{FD}}$. The choice of binning scheme is varied and the resulting variation in the efficiencies assigned as a systematic uncertainty. The yields of \decay{\Bs}{\jpsi\phiz} and \decay{\Bsb}{\Dsp\pim} are limited, which could lead to fluctuations in the efficiencies determined. The quantity $1/\sqrt{N}$ of the smallest sample is assigned as a relative systematic uncertainty. 
+The validation samples are binned in four bins of both \pt and $\chi^{2}_{\text{FD}}$. The choice of binning scheme is varied and the resulting variation in the efficiencies assigned as a systematic uncertainty. The yields of \decay{\Bs}{\jpsi\phiz} and \decay{\Bsb}{\Dsp\pim} are limited, which could lead to fluctuations in the efficiencies determined. The quantity $1/\sqrt{N}$ for the smallest sample is assigned as the systematic uncertainty. 
 
 Some differences are observed in the distributions of $\chi^{2}_{\text{IP}}$ between simulations and data for the normalisation mode (Fig.~\ref{fig:ipchi2dist_normalisation}). The simulation samples are re-weighted to match the data distributions and the efficiencies recalculated. The resulting difference is included as a systematic uncertainty.
+
+In training the MVA methods, the distribution of the MVA classifier shows some discrepancies between the training and validation samples at low classifier values. To quantify the effect this may have on the relative efficiencies the samples are swapped and the efficiencies recalculated. The resulting difference is assigned as the associated systematic uncertainty.
+
+The total systematic uncertainty attributed to the relative MVA efficiencies is 6.2\%.
 % - binning scheme
 % - yields of eff samples
 % - training testing discrepancies
@@ -1185,14 +1189,34 @@ Some differences are observed in the distributions of $\chi^{2}_{\text{IP}}$ bet
 
 \subsection{Signal and normalisation PDFs}
 
+The PDFs used to describe the signal and normalisation channel invariant mass distributions are determined using input from fits to simulated decays. A similar approach to that already described in Sec.~\ref{sec:B2DsKK_sys_releff} is used to account for the systematic uncertainty that these fixed values contribute. The fit to data is repeated many times, each time the values of the fixed parameters are sampled from Gaussian distributions whose width is given by the associated statistical uncertainty from the fit to simulations. The resulting spread in the branching fraction obtained by re-sampling all fixed parameters simultaneously is $0.036\times10^{-7}$, assigned as the systematic uncertainty.
+
 \subsection{Background PDFs}
+Similarly the background PDFs require inputs determined from simulations. A large number of different properties of the PDFs are varied to determine the systematic uncertainty the fixed values incur. The resulting spread in the branching fraction is assigned as the systematic uncertainty. 
+
+The helicity fraction of \decay{\Bp}{\Dssp\phiz} decays is not measured and therefore assumed to be 0.5. This assumption is varied across all allowed values. Additionally, the PDF for both \decay{\Bp}{\Dssp\phiz} decay and the \decay{\Bp}{\Dssp\Dzb} and \decay{\Bp}{\Dsp\Dstarzb} decays that contribute to the normalisation mode require the kinematic limits $a$ and $b$ to be defined. These values are varied. 
+
+The backgrounds to the signal mode require the fraction of decays expected in each $m(\Kp\Km)$ and $\cos{\theta_{K}}$ category to be determined from simulations. These are each have an associated statistical uncertainty due to the limited simulation samples, therefore these fractions are varied by sampling a Gaussian whose width is determined by the uncertainty. 
+
+In the fit to the normalisation mode the partially reconstructed background \decay{\Bp}{\Dssp\Dstarzb} is approximated with a single PDF, rather than eight as required by the combinations of missed particles and helicity components. This function is replaced with a DCB function with free widths mean and tail parameters. This results in a negligible change in the branching fraction. 
+
+The combinatorial background is parametrised with an exponential and constrained to have the same slope in all categories. To determine if these choices lead to systematic uncertainty the fit is repeated with the slope allowed to be different in the different \Dsp decay mode categories. Additionally an exponential plus constant offset is tried as a parametrisation instead. The resulting changes in the branching fractions are included as systematic uncertainties.  
+
+The total systematic uncertainty associated to the background PDFs is determined to be $0.685\times 10^{-7}$
 
 \subsection{Charmless contribution}
+A residual yield of charmless and single-charm backgrounds are expected be present in the final dataset as detailed in Table~\ref{tab:selection_fd_cuts}. The nominal measurement for the branching fraction neglects these contributions. The branching fraction is recalculated assuming the expected yields contribute and the difference assigned as the systematic uncertainty. This is likely to be an overestimation of the possible difference as the charmless candidates are likely to have a wider distribution than the signal decays. This is a result of the \Dsp mass constraint applied to the candidates when calculating the fitted \Bp mass. 
+
+The charmless contributions lead to a systematic uncertainty of 2\%.
 
 \subsection{$\decay{\Bp}{\Dsp\Kp\Km}$ model assumption}
+The search for \decay{\Bp}{\Dsp\phiz} candidates includes a component for \decay{\Bp}{\Dsp\Kp\Km} decays that didn't proceed via a \phiz meson. As detailed in Sec.~\ref{sec:B2DsPhi_B2DsKKModel} various assumptions go into the choice of \decay{\Bp}{\Dsp\Kp\Km} model used to determine the fraction of these decays expected in each $m(\Kp\Km)$ and $\cos{\theta_{K}}$ category. The final choice of fractions detailed in Table~\ref{table:DsKK_rescfracs} are determined with associated uncertainties, calculated by taking the range of fractions in the models thought to be reasonable. The fit to data is performed many times changing these fixed fractions to values taken from Gaussian distributions whose widths are given by these assigned uncertainties. The resulting spread in the measured branching fraction is used a a proxy for the systematic uncertainty resulting from this choice of model. 
+
+An additional systematic uncertainty is included because these fractions are taken directly from simulations produced by \laurapp, rather than full detector simulations. This is calculated by taking the difference in the fractions found for the \decay{\Bp}{\Dsp\phiz} decay generated using \laurapp and the full \lhcb simulation.  
+
 
 \subsection{Total systematic uncertainty}
-
+The sources of systematic uncertainty are listed in Table~\ref{table:B2DsPhi_systematics} in decreasing order. The total is also included, calculated by summing the contributions in quadrature. Additionally the uncertainty arising from the externally measured branching fractions is included. 
 
 \begin{table}[!ht]
 \begin{center}
@@ -1212,12 +1236,12 @@ PID relative efficiency                     & 2.0\% & $0.023$\\
 Veto relative efficiency                    & 1.4\% & $0.016$\\
 Using \laurapp rather full sim.             & 1.1\% & $0.013$\\
 \hline
-Normalisation                               &       & $0.1$\\
-\hline
 Total                                       &       & $0.788$\\
 \hline
+Normalisation                               &       & $0.1$\\
+\hline
 \end{tabular}
-\caption{Contributions to the total systematic uncertainty. }
+\caption{Contributions to the total systematic uncertainty in the search for \decay{\Bp}{\Dsp\phiz} decays. The contribution from the external measurements of the normalisation channel branching fraction is also included.}
 \label{table:B2DsPhi_systematics}
 \end{center}
 \end{table}
@@ -1300,9 +1324,9 @@ The first method tried is the $\text{CL}_{\text{S}}$ method, widely used in the 
 \text{CL}_{\text{S}}  = \frac{\text{CL}_{\text{S}+\text{B}}}{\text{CL}_{\text{B}}}.
 \end{equation}
 The free parameters in the fit other than the POI are considered nuisance parameters.
-This method is implemented using the \roostats package within the \root framework. 
+This method is implemented using the \roostats package~\cite{Roostats} within the \root framework. 
 
-The $\text{CL}_{\text{S}}$ distribution is shown in Fig.~\ref{fig:B2DsPhi_limit_CLS} which includes the $1\sigma$ bands in green and $2\sigma$ bands in yellow.
+The $\text{CL}_{\text{S}}$ distribution is shown in Fig.~\ref{fig:B2DsPhi_limit_CLS} which includes the $1\sigma$ bands in green and $2\sigma$ bands in yellow. This limit is determined in the asymptotic limit~\cite{Cowan2011}.
 The 95\% upper limit is determined as the point where the $\text{CL}_{\text{S}}$ value falls below 5\% as illustrated by the red line.
 This corresponds to a 95\% limit of
 \begin{equation}
@@ -1311,13 +1335,15 @@ This corresponds to a 95\% limit of
 \end{equation}
 
 
-{\color{Red}
-\begin{itemize}
-\item Methods 
-\item Freq calc, Hybrid Calc and Aym Calc.
-\item citations
-\end{itemize}
-}
+
+
+% {\color{Red}
+% \begin{itemize}
+% \item Methods 
+% \item Freq calc, Hybrid Calc and Aym Calc.
+% \item citations
+% \end{itemize}
+% }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
@@ -1361,12 +1387,12 @@ The limit at 95\% CL including the systematic uncertainty is determined to be
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-{\color{Red}
-\begin{itemize}
-\item include assumptions and possible issues
-\item asymmetric likelihood 
-\end{itemize}
-}
+% {\color{Red}
+% \begin{itemize}
+% \item include assumptions and possible issues
+% \item asymmetric likelihood 
+% \end{itemize}
+% }
 \subsubsection{The Feldman-Cousins method}
 
 Upper limits at 95\% and 90\% confidence levels (CL) are also determined using the Feldman-Cousins approach~\cite{FeldmanCousins}. An ensemble of pseudo-experiments is generated for different values of the branching fraction $\BF(\decay{\Bp}{\Dsp\phiz})$. These generated pseudo-experiments are then fitted with the nominal fit model to calculate the fitted branching fraction and associated statistical uncertainty, $\sigma_{\text{stat}}$. This method constructs confidence bands based on a likelihood ratio method, calculating the probability of fitting a branching fraction for a given generated branching fraction. This probability is assumed to follow a Gaussian distribution with width $\sigma = \sqrt{\sigma_{\text{stat}}^{2}+\sigma_{\text{syst}}^{2}}$, where $\sigma_{\text{stat}}$ and $\sigma_{\text{syst}}$ are the statistical and systematic uncertainties. The dominant source of systematic uncertainty in this measurement is from the background PDFs. As the size of this uncertainty is not expected to vary as a function of the generated branching fraction, $\sigma_{\text{syst}}$ is assumed to be constant. Nuisance parameters are accounted for using the plug-in method~\cite{plugin}. The generated confidence bands are shown in Fig.~\ref{fig:B2DsPhi_limit_FC}, where the statistical-only 90\% and 95\% confidence level bands are shown, along with the 95\% confidence level band with systematic uncertainty included. 
@@ -1386,14 +1412,19 @@ This corresponds to a statistical-only 95\% (90\%) confidence level of $\BF(\dec
 
 
 
-{\color{Red}
-\begin{itemize}
-\item Document all methods attempted
-\item CLs plots
-\item likelihood
-\item FC bands
-\item Table of comparison 
-\end{itemize}
-}
+% {\color{Red}
+% \begin{itemize}
+% \item Table of comparison 
+% \end{itemize}
+% }
 
 \subsection{Comparison to the previous measurement}
+
+The limit on the \decay{\Bp}{\Dsp\phiz} branching fraction presented here and in Ref~\cite{LHCb-PAPER-2017-032} supersede the previous evidence reported by the LHCb collaboration in Ref.~\cite{LHCb-PAPER-2012-025}. The updated analysis takes advantage of a much larger dataset now available at \lhcb. 
+This update determines that there is a sizeable contribution from $\decay{\Bp}{\Dsp\Kp\Km}$ decays that contribute within the $\phiz$-meson mass window that was previously not considered. 
+The result is consistent with the prediction that rescattering contributions to $\decay{\Bp}{\Dsp\phiz}$ decays are small.
+
+
+
+
+
