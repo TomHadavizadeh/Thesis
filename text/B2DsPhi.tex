@@ -8,34 +8,25 @@ The branching fraction $\BF(\decay{\Bp}{\Dsp\phiz})$ is constructed by measuring
 The branching fraction $\BF(\decay{\Bp}{\Dsp\phiz})$ is then determined by multiplying this corrected ratio by externally measured values for the branching fractions $\BF(\decay{\Bp}{\Dsp\Dzb})$ and $\BF(\decay{\Dzb}{\Kp\Km})$, and dividing by $\BF(\decay{\phiz}{\Kp\Km})$. 
 
 
-{\color{Red}
-\begin{itemize}
-\item Details of blinding procedure for historic context?
-\end{itemize}
-}
-
-
 \section{Fit strategy}
 \label{sec:B2DsPhi_fitstrategy}
 The strategy used to search for \decay{\Bp}{\Dsp\phiz} is more complicated than the method used to search for \decay{\Bp}{\Dsp\Kp\Km} decays as outlined in Chapter~\ref{ch:B2DsKK}. This is necessary to allow various different signal and background components to be distinguished. In particular, the majority of \decay{\Bp}{\Dsp\Kp\Km} decays now act as a background; those not proceeding via the \phiz resonance must be distinguished from \decay{\Bp}{\Dsp\phiz} decays. 
-The ratio of \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Dzb} yields is determined using a simultaneous unbinned maximum likelihood fit in a number of different categories. Three sets of categories are used, separating the candidates according to \Dsp meson decay mode, invariant mass of \Kp\Km pair, $m(\Kp\Km)$, and the cosine of an angle $\cos\theta_{K}$. The details and definitions of these categories are listed in Sec~\ref{sec:B2DsPhi_fit_cats}. 
+The ratio of \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Dzb} yields is determined using a simultaneous extended unbinned maximum likelihood fit. Three sets of categories are used, separating the candidates according to \Dsp meson decay mode, invariant mass of the \Kp\Km pair consititing the \phiz meson, $m(\Kp\Km)$, and the cosine of an angle $\cos\theta_{K}$. The details and definitions of these categories are listed in Sec~\ref{sec:B2DsPhi_fit_cats}. 
 The total extended NLL for this fit is created from the sum of each NLL in each of the categories
 \begin{equation}
 -\log\mathcal{L}(n_{0}...n_{j},\vec{p}) = \sum_{\alpha} \sum_{\beta} \sum_{\gamma} \left(-\log\mathcal{L^{\alpha,\beta,\gamma}}(n_{0}^{\alpha,\beta,\gamma}...n_{j}^{\alpha,\beta,\gamma},\vec{p}) \right)
 \end{equation} 
 where $\alpha$, $\beta$ and $\gamma$ represent indexes over the \Dsp mode, $m(\Kp\Km)$ and $\cos\theta_{K}$ categories.
-The NLL for each category is defined as before
+The NLL for each category is defined as
 \begin{equation}
 -\log\mathcal{L^{\alpha,\beta,\gamma}}(n_{0}^{\alpha,\beta,\gamma}...n_{j}^{\alpha,\beta,\gamma},\vec{p}) = -\sum_{i}^{N^{\alpha,\beta,\gamma}} \log \left( \sum_{j} n_{j}^{\alpha,\beta,\gamma} f_{j}^{\alpha,\beta,\gamma}(m=m_{i},\vec{p}) \right) + \sum_{j}n_{j}^{\alpha,\beta,\gamma}.
 \end{equation} 
 As before, $j$ represents the index over each contribution to the fit model, and $i$ represents each of $N^{\alpha,\beta,\gamma}$ entries in the data set for category $\alpha,\beta,\gamma$. 
 The composite extended NLL is minimised with respect to the parameters $\vec{p}$ to find the values for which the data is most likely.
-{\color{Red}
-\begin{itemize}
-\item Comment about MINOS
-\item also hesse and the others?
-\end{itemize}
-}
+
+The fit is implemented using the \roofit package within the \root framework. 
+As the yields of candidates is likely to be small (especially in the \Dsp decay modes with smaller branching fractions) the error on the branching fraction is determined asymmetrically using the \minos procedure. This determines the error intervals by finding the positions either side of the minimum that the NLL value increases by one unit. As the NLL distribution may not be symmetric this can lead to different upper and lower uncertainties. However, this calculation is computationally expensive, especially in this large fit with many degrees of freedom.  
+
 
 \subsection{Simultaneous categories}
 \label{sec:B2DsPhi_fit_cats}
@@ -48,7 +39,7 @@ The three \Dsp decays modes used to reconstruct the signal and normalisation dec
 The \decay{\Dsp}{\Kp\Km\pip} decay mode is additionally split into two further categories; candidates consistent with \decay{\Dsp}{\phiz\pip} decays, and non-\phiz candidates. This exploits the high purity of \decay{\Dsp}{\phiz\pip} decays. 
 
 \subsubsection{Invariant mass of \Kp\Km pair, $m(\Kp\Km)$} 
-Three distinct ranges of $m(\Kp\Km)$ invariant mass are used to split the candidates. The first of these corresponds to normalisation \decay{\Bp}{\Dsp\Dzb} candidates within the range $|m(\Kp\Km)-m(\Dzb)|<25 \mevcc$. These are reconstructed separately to the signal decays, unlike in the search for \decay{\Bp}{\Dsp\Kp\Km}, as detailed in Chapter~\ref{ch:selection}. The candidates reconstructed as \decay{\Bp}{\Dsp\phiz} decays are split into two ranges; those within $|m(\Kp\Km)-m(\phiz)|<10\mevcc$, referred to as the \emph{inner \phiz mass category} and those candidates with $10<|m(\Kp\Km)-m(\phiz)|<40\mevcc$, referred to as the \emph{outer \phiz mass category}. These two categories for the signal mode allow contributions from decays that do not proceed via a \phiz meson to be distinguished from those that do. The \emph{inner \phiz mass category} contains 88\% of signal \decay{\Bp}{\Dsp\phiz} candidates, with the other 12\% in the \emph{outer \phiz mass category}. The $m(\Kp\Km)$ invariant mass distribution for simulated \decay{\Bp}{\Dsp\phiz} is shown in Fig~\ref{fig:B2DsPhi_hel_mass_MC}.
+Three distinct ranges of $m(\Kp\Km)$ invariant mass are used to split the candidates. The first of these corresponds to normalisation \decay{\Bp}{\Dsp\Dzb} candidates within the range $|m(\Kp\Km)-m(\Dzb)|<25 \mevcc$. These are reconstructed separately to the signal decays, unlike in the search for \decay{\Bp}{\Dsp\Kp\Km} decays, as detailed in Chapter~\ref{ch:selection}. The candidates reconstructed as \decay{\Bp}{\Dsp\phiz} decays are split into two ranges; those within $|m(\Kp\Km)-m(\phiz)|<10\mevcc$, referred to as the \emph{inner \phiz mass category} and those candidates with $10<|m(\Kp\Km)-m(\phiz)|<40\mevcc$, referred to as the \emph{outer \phiz mass category}. These two categories for the signal mode allow contributions from decays that do not proceed via a \phiz meson to be distinguished from those that do. The \emph{inner \phiz mass category} contains 88\% of signal \decay{\Bp}{\Dsp\phiz} candidates, with the other 12\% in the \emph{outer \phiz mass category}. The $m(\Kp\Km)$ invariant mass distribution for simulated \decay{\Bp}{\Dsp\phiz} is shown in Fig~\ref{fig:B2DsPhi_hel_mass_MC}.
 
 
 
@@ -108,7 +99,7 @@ This helicity angle is constructed using the momentum of the decay products calc
 \label{sec:B2DsPhi_B2DsKKModel}
 The search for \decay{\Bp}{\Dsp\phiz} decays includes a component for \decay{\Bp}{\Dsp\Kp\Km} decays that didn't proceed via a \phiz meson. This is necessary as the search documented in Chapter~\ref{ch:B2DsKK} determined there is a non-zero contribution from these decays in the range of $m(\Kp\Km)$ invariant mass considered here (Fig~\ref{fig:B2DsKK_twobodyprojections}). To avoid overestimating \decay{\Bp}{\Dsp\phiz} signal yield, separate components are included in the fit model for the \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays. Although the invariant mass distributions of these contributions are identical, they can still be disentangled by exploiting the different fractions of these decays expected in each of the helicity angle and $m(\Kp\Km)$ categories. 
 The fractions for the \decay{\Bp}{\Dsp\phiz} signal decays as listed in Table~\ref{tab:signal_ratios} show the decays are concentrated in the \emph{inner \phiz mass category} with $|\cos{\theta_{K}} |> 0.4$. 
-To determine similar fractions for \decay{\Bp}{\Dsp\Kp\Km} decays the \laurapp package {\color{Red}(cite)} is used to generate a number of simulation samples for different intermediate resonance models.
+To determine similar fractions for \decay{\Bp}{\Dsp\Kp\Km} decays the \laurapp package~\cite{1711.09854} is used to generate a number of simulation samples for different intermediate resonance models.
 
 Only resonances in the \Kp\Km system are considered as no significant structure is observed in the $m(\Dsp\Km)$ distribution in Fig.~\ref{fig:B2DsKK_twobodyprojections}. As such, all resonances are neutral mesons. The models are generated separately, therefore the effect of interference between any combination of states has been entirely neglected.    
 The generated samples are described in the following sections.
@@ -273,7 +264,7 @@ The yields of \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Dzb} decays are extrac
 \subsection{Signal and normalisation decays}
 \label{sec:B2DsPhi_signalcomps}
 
-The invariant mass distributions of \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Dzb} decays are parametrised using the same DCB function as in the search for \decay{\Bp}{\Dsp\Kp\Km} decays (Sec.~\ref{sec:B2DsKK_sigcomps}):
+The invariant mass distributions of \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Dzb} decays are parametrised using the same DCB function as in the search for \decay{\Bp}{\Dsp\Kp\Km} decays (Sec.~\ref{sec:B2DsKK_sigcomps})
 \begin{equation}
 \text{DCB}(m|\mu,\sigma_1,\sigma_2,n,\alpha) = f_\sigma \times \text{CB}(m|\mu,\sigma_1,n,\alpha) + (1-f_\sigma) \times \text{CB}(m|\mu,\sigma_2,n,\alpha),
 \label{eq:DoubleBD}
@@ -388,7 +379,7 @@ These components are shown by the blue lines in Fig.~\ref{fig:B2DsPhi_DsD0_partr
 \begin{figure}[!h]
     \centering
     \includegraphics[width=0.80\textwidth]{figs/B2DsPhi/DsD0_part_reco_Shapes.pdf}
-    \caption{Partially reconstructed $\Dsp\Dzb$ shapes.}
+    \caption{Partially reconstructed \decay{\Bp}{\Dsp\Dstarzb} and \decay{\Bp}{\Dssp\Dzb} decay parametrisations. The \Bp mass is represented by a vertical dashed red line. Candidates in the area below 4900\mevcc are not included in the fit.}
     \label{fig:B2DsPhi_DsD0_partreco}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -405,7 +396,7 @@ The choice of PDF for this component is found to have negligible effect on the d
 \begin{figure}[!h]
     \centering
     \includegraphics[width=0.80\textwidth]{figs/B2DsPhi/DsstarDstar0_part_reco_Shapes.pdf}
-    \caption{Partially reconstructed $\Dsp\Dzb$ shapes.}
+    \caption{Partially reconstructed \decay{\Bp}{\Dssp\Dstarzb} decay parametrisation. The PDF extends below the lower fit range at 4900\mevcc.}
     \label{fig:B2DsPhi_DsstarDstar0_partreco}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -443,7 +434,7 @@ This decay is unobserved, therefore the relative contribution to this decay in n
       \Pgamma           & 101       & $(\mu - \frac{a+b}{2})^{2} +(\frac{a+b}{2})^{2} $ & 4936.4       & 5220.6         \\
       \hline
    \end{tabular}
-   \caption{Parabolas.} 
+   \caption{The parabolas contributing to the partially reconstructed \decay{\Bp}{\Dssp\phiz} decay parametrisation as defined in Eq.~\ref{eq:DsPhi_DsstarPhi_shapes}. } 
    \label{tab:DsPhi_DsstarPhi_parabolas}  
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -459,9 +450,9 @@ This decay is unobserved, therefore the relative contribution to this decay in n
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-{\color{Blue}
-Additionally, the distribution of each shape in the helicity angle described in Section~\ref{subsec:Hel} is approximated to be $\cos^2(\theta)$ for the longitudinally polarized shapes (010) and $\sin^2(\theta)$ for the transversely (101). The fraction in each bin for 010 or 101 is taken from the appropriate integrals of these assumed distributions. 
-}
+% {\color{Blue}
+% Additionally, the distribution of each shape in the helicity angle described in Section~\ref{subsec:Hel} is approximated to be $\cos^2(\theta)$ for the longitudinally polarized shapes (010) and $\sin^2(\theta)$ for the transversely (101). The fraction in each bin for 010 or 101 is taken from the appropriate integrals of these assumed distributions. 
+% }
 
 \begin{description}
 \item \textbf{\decay{\Bsb}{\Dsp\Km\Kstarz}:} this decay can form a background to \decay{\Bp}{\Dsp\phiz} decays when the soft pion from the \decay{\Kstarz}{\Kp\pim} decay is not reconstructed. The lower bound of the fit range is wide enough that a significant fraction of these decays are retained in the fitted data set. The $\Km\Kstarz$ is modelled as originating from the $a_1(1260)$ resonance. This resonance has a width of $250-600$ MeV~\cite{PDG2016}, allowing it to decay to $\Km\Kstarz$ even though it's pole mass is below the $\Km\Kstarz$ threshold. A PDF for this component is determined by reconstructing simulated \decay{\Bsb}{\Dsp\Km\Kstarz} decays through the identical reconstruction and selection steps as the signal. The \roofit class \texttt{RooKeysPDF} is used to create a kernel estimation of the partially reconstructed \Bp mass distribution for the candidates passing the selection. This is shown in Fig.~\ref{fig:B2DsPhi_part_reco_shapes_DsKKstar}. The fraction of these decays expected in each of the four $m(\Kp\Km)$ and $\cos\theta_{K}$ categories is determined from the simulations samples.
@@ -479,7 +470,8 @@ Additionally, the distribution of each shape in the helicity angle described in 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{description}
-\item \textbf{\decay{\Bsb}{\Dssp\Km\Kstarz}:} this decay similarly forms a background to the signal mode when both a low momentum neutral particle (\piz or \Pgamma) is not reconstructed in the decay of the \Dssp meson, in addition to the low momentum pion from the \Kstarz decay. {\color{Red} Add more words}
+\item \textbf{\decay{\Bsb}{\Dssp\Km\Kstarz}:} this decay similarly forms a background to the signal mode when both a low momentum neutral particle (\piz or \Pgamma) is not reconstructed in the decay of the \Dssp meson, in addition to the low momentum pion from the \Kstarz decay. The PDF is similarly determined using a kernel estimation from simulated decays passing the full selection as shown in Fig.~\ref{fig:B2DsPhi_part_reco_shapes_DsKKstar}. The fraction of candidates expected in each of the $m(\Kp\Km)$ and $\cos{\theta_{K}}$ categories are determined from these simulation samples.  
+
 \end{description}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -586,7 +578,7 @@ As detailed in Sec~\ref{sec:B2DsPhi_fitcomponents}, the fit included eight param
 \begin{itemize}
 \item The combinatorial background PDF is controlled by a single slope parameter $c$ for all categories.
 \item The mean \Bp mass for the signal and normalisation mode is free to vary in the fit. The same value is used for all \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Dzb} PDFs.
-\item {\color{Red}Offset $\delta$}
+\item The invariant mass offset $\delta$ shared between all partially reconstructed background PDFs is allowed to freely vary in the fit. The same value is used for the signal and normalisation modes.
 \item The relative heights of the two peaks in partially reconstructed \decay{\Bp}{\Dssp\phiz}, \decay{\Bp}{\Dssp\Dzb} and \decay{\Bp}{\Dsp\Dstarzb} decays, $\xi$, is allowed to vary. The same value is used for all modes.
 \item The smaller CB width parameter, $\sigma_{1}$, is allowed to vary for each of the \Dsp decay modes, leading to four more free parameters. 
 \end{itemize}
@@ -776,7 +768,7 @@ The distributions of the values, errors and pulls for the yields of the normalis
       \caption{\decay{\Dsp}{\Kp\pim\pip}}
    \end{subfigure}
 
-   \caption{Pulls normalisation}
+   \caption{The yield, error and pull distributions for the normalisation channel.}
    \label{fig:B2DsPhi_Pulls_normalisation}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -813,7 +805,7 @@ Similarly, the distributions of the signal yield, error and pull for each of the
       \caption{\decay{\Dsp}{\Kp\pim\pip}}
    \end{subfigure}
 
-   \caption{Pulls signal}
+   \caption{The yield, error and pull distributions for the signal channel.}
    \label{fig:B2DsPhi_Pulls_signal}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -831,7 +823,7 @@ The model is also studied using a single branching fraction $\BF(\decay{\Bp}{\Ds
       \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Error_Branching_fraction.pdf}
       \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Pull_Branching_fraction.pdf}
    \end{subfigure}
-   \caption{Pulls branching fraction}
+   \caption{The branching fraction, error and pull distributions for the full simultaneous fit. The branching fraction is generated assuming the value obtained in the fit to data.}
    \label{fig:B2DsPhi_Pulls_signal}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1158,7 +1150,7 @@ The total relative efficiencies are listed for each \Dp decay mode in Table~\ref
       $\pip\pim\pip$       &   0.907 $\pm$ 0.019 \\ 
       \hline
    \end{tabular}
-   \caption{The total relative efficiency $\epsilon(\decay{\Bp}{\Dsp\Dzb})/\epsilon(\decay{\Bp}{\Dsp\phiz})$ determined for each \Dsp decay mode. The errors are statistical.} 
+   \caption{The total relative efficiency $\epsilon(\decay{\Bp}{\Dsp\Dzb})/\epsilon(\decay{\Bp}{\Dsp\phiz})$ determined for each \Dsp decay mode. The values for the individual years that contribute to the data set are weighted according to the size of their relative contribution. The errors are statistical.} 
    \label{tab:B2DsPhi_eff_total} 
 \end{table} 
 
@@ -1171,6 +1163,25 @@ The total relative efficiencies are listed for each \Dp decay mode in Table~\ref
 The sources of systematic uncertainty are broadly similar to those considered in the search for \decay{\Bp}{\Dsp\Kp\Km} decays. The more complex fit strategy and model requires most of these systematics to be reassessed and additional source included. 
 
 \subsection{Relative efficiencies}
+The yields of signal and normalisation decays are corrected by their relative selection efficiencies, calculated separately for each \Dsp decay mode. A number of sources contribute to the systematic uncertainty in these values.
+
+\begin{description}
+\item \textbf{Simulation statistics:} limited simulation samples are used to determine some of the selection efficiencies. A systematic uncertainty of 2\% is assigned to account for the bias this might incur. 
+
+\item \textbf{Particle identification:} the efficiency of the PID requirements are calculated using calibration samples within the \pidcalib package. These are also of a limited size and possibly affected by the choice of binning scheme. To first order these should affect the signal and normalisation decays to the same extent as the same final state is used. However, differences in the kinematics could invalidate this assumption. Therefore a systematic uncertainty of 0.5\% per track is assigned to the use of the \pidcalib efficiencies. This is assumed to be uncorrelated for the five signal and five normalisation tracks, leading to a total uncertainty in the relative efficiency of 2.0\%. 
+
+\item \textbf{Veto efficiency:} similar to the search for \decay{\Bp}{\Dsp\Kp\Km} the efficiency of the misidentified \D and \Lc hadron veto applied to the \Dsp meson is assumed to be the same for the signal and normalisation channel. A similar systematic uncertainty of 1.4\% is assigned to account for the uncertainty incurred if the relative efficiency were to be fully calculated. 
+
+\item \textbf{MVA efficiency:} unlike the search for \decay{\Bp}{\Dsp\Kp\Km} decays, the efficiencies for the MVA requirements are just calculated using the \decay{\Bs}{\jpsi\phiz} and \decay{\Bsb}{\Dsp\pim} samples used in the validation of the MVA methods. There is no need account for the phase-space dependence, so the simulation samples have not been corrected. 
+These data-driven efficiencies are affected by the same sources as previously discussed in~\ref{sec:B2DsKK_sys_releff}.
+The validation samples are binned in four bins of both \pt and $\chi^{2}_{\text{FD}}$. The choice of binning scheme is varied and the resulting variation in the efficiencies assigned as a systematic uncertainty. The yields of \decay{\Bs}{\jpsi\phiz} and \decay{\Bsb}{\Dsp\pim} are limited, which could lead to fluctuations in the efficiencies determined. The quantity $1/\sqrt{N}$ of the smallest sample is assigned as a relative systematic uncertainty. 
+
+Some differences are observed in the distributions of $\chi^{2}_{\text{IP}}$ between simulations and data for the normalisation mode (Fig.~\ref{fig:ipchi2dist_normalisation}). The simulation samples are re-weighted to match the data distributions and the efficiencies recalculated. The resulting difference is included as a systematic uncertainty.
+% - binning scheme
+% - yields of eff samples
+% - training testing discrepancies
+% - MVA classifier differences between norm and eff modes
+\end{description}
 
 \subsection{Signal and normalisation PDFs}
 
@@ -1180,15 +1191,41 @@ The sources of systematic uncertainty are broadly similar to those considered in
 
 \subsection{$\decay{\Bp}{\Dsp\Kp\Km}$ model assumption}
 
+\subsection{Total systematic uncertainty}
+
+
+\begin{table}[!ht]
+\begin{center}
+\begin{tabular}{ l  c  c}
+
+\hline
+\multirow{ 2}{*}{\textbf{Source of Uncertainty} }&\multicolumn{2}{c}{ Systematic Uncertainty}           \\
+                                                 &\textbf{Relative} & \textbf{Absolute ($\times 10^{-7}$)}\\
+\hline 
+Background PDF parametrisation              &-      & $0.685$\\
+Choice of \decay{\Bp}{\Dsp\Kp\Km} model     &-      & $0.379$\\
+MVA relative efficiency                     & 6.2\% & $0.072$\\
+Signal PDF parametrisation                  &-      & $0.036$\\ %$0.27$
+Charmless contribution                      & 2.0\% & $0.023$\\
+Simulation statistics                       & 2.0\% & $0.023$\\
+PID relative efficiency                     & 2.0\% & $0.023$\\
+Veto relative efficiency                    & 1.4\% & $0.016$\\
+Using \laurapp rather full sim.             & 1.1\% & $0.013$\\
+\hline
+Normalisation                               &       & $0.1$\\
+\hline
+Total                                       &       & $0.788$\\
+\hline
+\end{tabular}
+\caption{Contributions to the total systematic uncertainty. }
+\label{table:B2DsPhi_systematics}
+\end{center}
+\end{table}
+
 
 \section{Results}
 \label{sec:B2DsPhi_results}
 
-{\color{Red}
-\begin{itemize}
-\item Copy most of results section from paper
-\end{itemize}
-}
 
 The fit to $\decay{\Bp}{\Dsp\phiz}$ candidates finds a total yield of $N(\decay{\Bp}{\Dsp\phiz}) = 5.3 \pm 6.7$, summed across all categories and \Dsp meson decay modes. 
 A yield of $N(\decay{\Bp}{\Dsp\Km\Kp}) = 65 \pm 10 $ is found, consistent with the yield obtained from the full $\decay{\Bp}{\Dsp\Kp\Km}$ measurement. 
@@ -1359,4 +1396,4 @@ This corresponds to a statistical-only 95\% (90\%) confidence level of $\BF(\dec
 \end{itemize}
 }
 
-\subsection{Comparison to 2011?}
+\subsection{Comparison to the previous measurement}
