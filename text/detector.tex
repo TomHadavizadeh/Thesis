@@ -90,15 +90,15 @@ The beam conditions at the \lhc have varied between the different years of data 
          Integrated luminosity (\invfb)                 & 1.0       & 2.0       & 0.3       & 1.5       & -         \\ 
          \hline
       \end{tabular}
-   \caption{Beam conditions in the different datasets used in this thesis. The last two rows are \lhcb specific conditions.}
+   \caption{Beam conditions in the different datasets used in this thesis. The last two rows are specific to \lhcb.}
    \label{tab:Dec_phys_params}
 \end{table}
 
 
-During a normal fill the luminosity delivered to the large experiments slowly decreases as the protons burn off. Additionally, for \atlas and \cms the average number of collisions per bunch crossing (known as pile up) is high, around 27 in 2016 for example. 
-The \lhcb experiment chooses to level the luminosity to a lower value than the maximum achievable. This means the average number of visible collisions per bunch crossing, $\mu$, is much lower, between 1.1 and 1.7 depending on the year. The same luminosity is maintained for the majority of a fill via a process know as luminosity levelling. At the beginning of the fill the two beams are vertically separated from one another such that the overlap between them is not maximised. As the fill progresses the two beams are brought closer together to compensate for the burn off of the bunches. This way a constant instantaneous luminosity of between 2--4$\times 10^{32} \cm^{2} \sec^{-1}$ can be maintained thorough out the given fill.
+During a normal fill the luminosity delivered to the large experiments slowly decreases as the protons burn off. For \atlas and \cms the average number of collisions per bunch crossing (known as pile up) is high: around 27 in 2016. 
+The \lhcb experiment chooses to level the luminosity to a lower value than the maximum achievable. This means the average number of visible collisions per bunch crossing, $\mu$, is much lower, between 1.1 and 1.7 depending on the year. The same luminosity is maintained for the majority of a fill via a process know as luminosity levelling. At the beginning of the fill the two beams are vertically separated from one another such that the overlap between them is not maximised. As the fill progresses the two beams are brought closer together to compensate for the burn off of the bunches. This way a constant instantaneous luminosity of between (2--4)$\times 10^{32} \cm^{2} \sec^{-1}$ can be maintained thorough out the given fill.
 
-In addition to the luminosity levelling, the two beams collide at an angle in the horizontal plane. This helps to reduce unwanted collisions between the bunches either side of the intended collision bunches. The angle of collision depends on the polarity of the \lhcb spectrometer magnet as this affects steering magnetic fields around the interaction point. 
+In addition to the luminosity levelling, the two beams collide at an angle in the horizontal plane. This helps to reduce unwanted collisions between the bunches either side of the intended collision bunches. The angle of collision depends on the polarity of the \lhcb spectrometer magnet as the dipole field affects beam-steering fields around the interaction point. 
 
 
 % {\color{Red}
@@ -224,7 +224,7 @@ The impact parameter (IP) represents the distance between a track and a primary 
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The \velo is situated in a harsh environment, therefore the components gradually degrade as exposed to more and more radiation. The damage to the silicon sensors is monitored over time to ensure the sub-detector is operational and to estimate the remaining lifetime of the sensors. In between \lhc fills current-voltage (IV) scans are performed on the silicon semiconductors, measuring the current leaking as a function of the bias voltage. The evolution of this current is shown in Fig.~\ref{fig:Dec_velo_run2_performance}, along with the delivered luminosity. These measurements help to predict what bias voltages will required by the end of Run II. 
+The \velo is situated in a harsh environment, therefore the components gradually degrade as exposed to more and more radiation. The damage to the silicon sensors is monitored over time to ensure the sub-detector is operational and to estimate the remaining lifetime of the sensors. In between \lhc fills current-voltage (IV) scans are performed on the silicon semiconductors, measuring the current leaking as a function of the bias voltage. The evolution of this current in Run I is shown in Fig.~\ref{fig:Dec_velo_run2_performance}, along with the delivered luminosity. These measurements help to predict what bias voltages will required by the end of Run II. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
@@ -276,17 +276,11 @@ The silicon sensors are made up of single-sided $p^{+}$-on-$n$ sensors. The hits
 Both sub-detectors are cooled to 5\degrees{C} and their sealed containers flushed with nitrogen gas to prevent condensation.
 
 
-{\color{Red}
-\begin{itemize}
-\item performance
-\end{itemize}
-}
-
 
 \subsubsection{Tracker Turicensis}
 
 The \ttracker is positioned before the dipole magnet and covers the entire \lhcb acceptance, standing 130\cm tall and 150\cm wide.
-It is made up of four layers orientated at angles to one another. The first and fourth layers are parallel, with the second and third at angles -5\degrees and +5\degrees to these respectively. The first and second are separated from the third and fourth by 27\cm along the beam axis. The layout of the silicon modules in the \ttracker is shown in Fig.~\ref{fig:Dec_tt_scematic}. The sensors are grouped into \emph{half-modules} that span half of the vertical height of the sub-detector. These are made up of seven silicon sensors and a readout hybrid (?) at the outermost end. The readout electronics are positioned outside of the \lhcb acceptance, limiting the amount of multiple scattering due to interactions with the detector material. 
+It is made up of four layers orientated at angles to one another. The first and fourth layers are parallel, with the second and third at angles -5\degrees and +5\degrees to these respectively. The first and second are separated from the third and fourth by 27\cm along the beam axis. The layout of the silicon modules in the \ttracker is shown in Fig.~\ref{fig:Dec_tt_scematic}. The sensors are grouped into \emph{half-modules} that span half of the vertical height of the sub-detector. These are made up of seven silicon sensors and a readout hybrid at the outermost end. The readout electronics are positioned outside of the \lhcb acceptance, limiting the amount of multiple scattering due to interactions with the detector material. 
 
 The \emph{half-modules} are arranged to prevent any gaps in the instrumentation. The adjacent \emph{half-modules} are offset by 1\cm along the beam axis, allowing the modules to overlap by a few millimetres in the $x$-axis. 
 
@@ -336,27 +330,9 @@ These stations are constructed as of four boxes distributed around the beam-pipe
 
 
 
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \begin{figure}[!h]
-%     \centering
-%     \includegraphics[width=0.6\textwidth]{figs/Detector/it_layout.pdf}
-%     \caption{Schematic of the \intr sub-detector, from Ref.~\cite{Alves:2008zz}.}
-%     \label{fig:Dec_it_layout}   
-% \end{figure}
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 The detector modules consist of either one or two silicon sensors and a readout chip. These are also offset along the beam axis to allow the modules to overlap slightly in the $x$-axis.
 
-
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \begin{figure}[!h]
-%     \centering
-%     \includegraphics[width=0.6\textwidth]{figs/Detector/it_resolution.pdf}
-%     \caption{The \ttracker resolution, from Ref.~\cite{LHCb-DP-2014-002}.}
-%     \label{fig:Dec_velo_leakage_current}   
-% \end{figure}
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The resolution of the \intr is shown in Fig.~\ref{fig:Dec_it_scematic}. The resolution is between 40--60\mum and varies between the four different layers.    
 
 
 
@@ -379,15 +355,7 @@ The double layers of straw tubes as shown in Fig.~\ref{fig:Dec_ot_schematic} mak
 The readout boards contain a number of circuits to process the signals and provide the potential difference to the straw wires.
 The analogue signals pass through an amplification circuit before being are processed and cleaned. These then pass into a digitiser creating a digital value of the drift-time.   
 
-
-{\color{Red}
-\begin{itemize}
-\item principle or straw trackers
-\item readout chain
-\item performance
-\end{itemize}
-}
-
+The single hit resolution is determined for the \ot by determining the width of the hit distance residual distribution. This is shown in Fig.~\ref{fig:Dec_ot_resolution} giving a resolution of 205\mum.
 
 
 
@@ -396,14 +364,10 @@ The analogue signals pass through an amplification circuit before being are proc
     \centering
     \begin{subfigure}[t]{0.4\textwidth}
         \centering
-        \includegraphics[width=1.0\textwidth]{figs/Detector/ot_drifttime.pdf}
-    \end{subfigure}
-    \begin{subfigure}[t]{0.4\textwidth}
-        \centering
         \includegraphics[width=1.0\textwidth]{figs/Detector/ot_residuals.pdf}
     \end{subfigure}
-    \caption{Drift time and residuals of hits in \ot, from Ref.~\cite{LHCb-DP-2013-003}.}
-    \label{fig:Dec_magnet}   
+    \caption{The hit distance residuals for the \ot, from Ref.~\cite{LHCb-DP-2013-003}.}
+    \label{fig:Dec_ot_resolution}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -446,34 +410,15 @@ Although the particles produced in the collisions are all highly energetic and t
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-
-{\color{Red}
-\begin{itemize}
-\item mirrors
-\item HPDs
-\item pattern recognition 
-\end{itemize}
-}
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[!h]
-    \centering
-    \begin{subfigure}[t]{0.4\textwidth}
-        \centering        
-        \includegraphics[width=1.0\textwidth]{figs/Detector/rich_k_pi_2012.pdf}
-        \caption{2012}
-    \end{subfigure}
-    \begin{subfigure}[t]{0.4\textwidth}
-        \centering
-        \includegraphics[width=1.0\textwidth]{figs/Detector/rich_k_pi_2016.pdf}
-        \caption{2016}
-    \end{subfigure}
-    \caption{The \rich detector performance for kaon and pion separation, from Ref.~\cite{LHCb-DP-2012-003}.}
-    \label{fig:Dec_rich_k_pi}   
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In both \richone and \richtwo the cone of Cherenkov radiation is reflected of spherical and planar mirrors. This not only redirects the radiation onto Hybrid Photon Detectors (HPDs) situated outside of the acceptance but also focusses the radiation into a single ring.    
+The radius of this ring is used to determine the Cherenkov angle $\theta$. 
+The identity of particles is determined by comparing likelihood for a given ring of hits to have been created by various species. 
+This is performed globally for all tracks in an event. All tracks are assumed to be pions as these are most abundant. The hypothesis of each is switched to $e$, $\mu$, $K$ and proton, leaving all other tracks unchanged, and the likelihood recomputed. The species resulting in the minimum value of the global event likelihood is kept. This is repeated until all tracks are set to their preferred hypothesis. 
+The difference in the global event log-likelihood is then used to indicate the species of each track. Each species is determined relative to the pion hypothesis 
+\begin{equation}
+\text{DLL} = \Delta \log{\mathcal{L}(X-\pi)} = \log{\mathcal{L}(X)} - \log{\mathcal{L}(\pi)},
+\end{equation}
+where $\mathcal{L}(X)$ is the global event likelihood when the given track is of the species $X$.
 
 
 
@@ -511,13 +456,8 @@ The \richone sub-detector was designed to aid particle identification for lower 
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+In Run II the aerogel was removed from the \richone detector. Although this catered specifically to the lower momentum tracks, the overall PID efficiency increased {\color{Red} Why?}. 
 
-{\color{Red}
-\begin{itemize}
-\item talk about aero gel being removed
-\item find some references 
-\end{itemize}
-}
 
 \subsubsection{\richtwo}
 
@@ -532,11 +472,29 @@ The \richtwo detector is designed to provide particle identification information
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-{\color{Red}
-\begin{itemize}
-\item radiator and refractive indices 
-\end{itemize}
-}
+
+
+\subsubsection{Performance}
+The performance of the \rich detectors can be quantified in terms of the selection efficiency and misidentification rates for different pairs of species. The efficiency of kaon identification and rate of pions being misidentified as kaons is shown in Fig.~\ref{fig:Dec_rich_k_pi} for Run I and Run II.  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+    \centering
+    \begin{subfigure}[t]{0.4\textwidth}
+        \centering        
+        \includegraphics[width=1.0\textwidth]{figs/Detector/rich_k_pi_2012.pdf}
+        \caption{2012}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.4\textwidth}
+        \centering
+        \includegraphics[width=1.0\textwidth]{figs/Detector/rich_k_pi_2016.pdf}
+        \caption{2016}
+    \end{subfigure}
+    \caption{The \rich detector performance for kaon and pion separation, from Ref.~\cite{LHCb-DP-2012-003}.}
+    \label{fig:Dec_rich_k_pi}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \subsection{Calorimeters}
 
@@ -575,11 +533,11 @@ The \ecal is made of 66 layers of alternating lead and scintillator, with a tota
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
     \centering
-    \begin{subfigure}[t]{0.4\textwidth}
+    \begin{subfigure}[m]{0.4\textwidth}
         \centering        
         \includegraphics[width=1.0\textwidth]{figs/Detector/ecal_diagram.pdf}
     \end{subfigure}
-    \begin{subfigure}[t]{0.4\textwidth}
+    \begin{subfigure}[m]{0.4\textwidth}
         \centering
         \includegraphics[width=1.0\textwidth]{figs/Detector/ecal_layout.pdf}
     \end{subfigure}
@@ -588,20 +546,30 @@ The \ecal is made of 66 layers of alternating lead and scintillator, with a tota
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+{\color{Red}
+\begin{itemize}
+\item Find resolution
+\end{itemize}
+}
 
 \subsubsection{Hadronic calorimeter}
 
 The \hcal is a 500 tonne detector constructed from iron plates and scintillating tiles. Unlike the \ecal, these are arranged parallel to the beam-pipe as shown in Fig.~\ref{fig:Dec_hcal_layout}. The cells vary in size in the different regions of the detector; the inner regions correspond to $13 \times 13 \cm$ cells and the outer to $26\times26\cm$. The widths of the iron tiles are chosen to be one radiation length (1\cm), and the lengths are one hadron interaction length. The scintillation light is collected by wavelength-shifting fibres that are read out by PMTs located at the rear of each cell.    
 
+{\color{Red}
+\begin{itemize}
+\item Find resolution
+\end{itemize}
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
     \centering
-    \begin{subfigure}[t]{0.4\textwidth}
+    \begin{subfigure}[m]{0.4\textwidth}
         \centering        
         \includegraphics[width=1.0\textwidth]{figs/Detector/hcal_diagram.pdf}
     \end{subfigure}
-    \begin{subfigure}[t]{0.4\textwidth}
+    \begin{subfigure}[m]{0.4\textwidth}
         \centering
         \includegraphics[width=1.0\textwidth]{figs/Detector/hcal_layout.pdf}
     \end{subfigure}
@@ -628,11 +596,11 @@ The muon system is made of five rectangular stations. The first (M1) is position
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
     \centering
-    \begin{subfigure}[t]{0.4\textwidth}
+    \begin{subfigure}[m]{0.4\textwidth}
         \centering        
         \includegraphics[width=1.0\textwidth]{figs/Detector/muon_layout.pdf}
     \end{subfigure}
-    \begin{subfigure}[t]{0.4\textwidth}
+    \begin{subfigure}[m]{0.4\textwidth}
         \centering
         \includegraphics[width=1.0\textwidth]{figs/Detector/muon_cells_layout.pdf}
     \end{subfigure}
@@ -650,40 +618,56 @@ This type of detector was chosen for the inner region as it is required to be es
 
 \subsection{Trigger}
 \label{sec:Dec_trigger}
-\subsubsection{\lone}
 
+The primary role of the trigger is to reduce the nominal 40\,MHz beam crossing frequency to a more manageable rate that can realistically be recorded. The trigger is composed to two parts: a custom hardware trigger called Level 1 (\lone) that operates at the nominal 40\, MHz beam crossing rate; and an asynchronous High Level Trigger (\hlt) running software algorithms. These two stages reduce the event rate to around 2\,kHz, exploiting the characteristics of \bquark- and \cquark-hadron decays to preferentially retain signal decays and discard the many uninteresting events.
+
+\subsubsection{Level 1}
+The \lone trigger takes input from the muon system, calorimeters and pile-up veto in the \velo. These three systems feed into a single unit to make a global decision about the event. Although the nominal bunch spacing is 25\ns, the \lone decision is made after 4\mus. During this time the detector signals are stored in a \emph{pipeline} buffer. Half of this 4\mus budget is required for the time-of-flight of the particles and delays in the electronics, leaving the \lone trigger 2\mus to reach a decision about each event.  
 
 {\color{Red}
 \begin{itemize}
-\item Talk about pipelines
 \item talk about derandomizers 
 \item thresholds per year
 \item where the farm is
 \end{itemize}
 }
 
-
-\subsubsection{\hltone}
-\subsubsection{\hlttwo}
-
-\subsection{Reconstruction}
-\subsubsection{Charged particle reconstruction}
+\subsubsection{High Level Trigger}
 
 
 {\color{Red}
 \begin{itemize}
-\item Track types
+\item Difference between Run 1 and Run 2
+\item Mention Turbo in passing
+\item farm
 \end{itemize}
 }
+
+
+%\subsubsection{High Level Trigger 1}
+%\subsubsection{High Level Trigger 2}
+
+\subsection{Reconstruction}
+\subsubsection{Charged particle reconstruction}
+Charged tracks are reconstructed using the hits in the \velo, \ttracker, \intr and \ot. These are classified into different categories depending on their route taken through the detector as shown in Fig.~\ref{fig:Dec_reco_tracks}. The \intr and \ot are collectively referred to as the T stations. 
+
+\begin{description}
+\item \textbf{Long tracks:} these tracks have passed through both \velo and T stations.
+\item \textbf{Upstream tracks:} 
+\item \textbf{Downstream tracks:} these tracks only contain \ttracker and T station hits. They provide vital information about long-lived particles that decay after they have traversed the \velo. 
+\item \textbf{VELO tracks:} these tracks only contain hits in the \velo. They can help improve the primary vertex determination. 
+\item \textbf{T tracks:}
+\end{description}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
     \centering
-    \begin{subfigure}[t]{0.4\textwidth}
+    \begin{subfigure}[m]{0.4\textwidth}
         \centering
         \includegraphics[width=1.0\textwidth]{figs/Detector/reco_track_types.pdf}
     \end{subfigure}
-    \begin{subfigure}[t]{0.4\textwidth}
+    \begin{subfigure}[m]{0.4\textwidth}
         \centering
         \includegraphics[width=1.0\textwidth]{figs/Detector/reco_track_reco.pdf}
     \end{subfigure}
@@ -701,4 +685,11 @@ This type of detector was chosen for the inner region as it is required to be es
 \end{itemize}
 }
 
-\section{VELO resolution and luminosity determination}
+\section{Luminosity determinations and \velo resolution}
+Precise measurements of the recorded luminosity of $pp$ collisions are essential for cross-section measurements. 
+
+\begin{itemize}
+\item Van der Meer scans
+\item Beam gas imaging
+\end{itemize} 
+
