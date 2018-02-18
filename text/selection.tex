@@ -15,8 +15,7 @@ The corresponding selection for the normalisation channel \decay{\Bp}{\Dsp\Dzb} 
 \subsection{Data samples}
 \label{sec:data}
 
-The searches for \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays are performed using a combined data sample comprising of the entire Run I data set and part of the Run II data set.
-The Run II data set includes the data collected during the first two years of data taking, 2015 and 2016. 
+The searches for \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays are performed using a combined data sample comprising of the entire Run I data set and a part of the Run II data set, namely the years 2015 and 2016.
 The total integrated luminosity obtained for each year is listed in Table~\ref{tab:lumi}, along with the corresponding centre-of-mass energies. 
 
 \begin{table}[h]
@@ -640,10 +639,12 @@ Particles      & Quantity                       & Requirement                   
 \subsection{Particle identification requirements}
 \label{sec:pidrequirements}
 Particle identification variables help to determine the species of tracks passing though the \lhcb detector. Using information from the RICH sub-detectors, the likelihood of different mass hypotheses are compared to the pion hypothesis. Loose requirements are made on the kaon hypothesis PID variable to reduce the contribution from other types of hadrons and background from other \bquark-hadron decays with misidentified hadrons. 
-%For the signal decays, the overall efficiency of the PID requirements varies from 80\% to 90\%, depending on the \Dsp mode.
-
-
-
+The parameter is defined to be
+\begin{equation}
+\text{PIDK} = \Delta \log(K - \pi) = \log\mathcal{L}(K) - \log\mathcal{L}(\pi)
+\end{equation}
+where $\mathcal{L}(K)$ and $\mathcal{L}(\pi)$ are the likelihoods of the kaon and pion hypotheses respectively.
+The requirements placed on each decay product are listed in Table~\ref{tab:selection_pid_cuts}.
 
 \begin{table}[h]
    \begin{center}
@@ -671,17 +672,10 @@ Particle identification variables help to determine the species of tracks passin
          \hline
       \end{tabular}
    \end{center}
-   \caption{Particle idetification requirements applied to kaons and pions.}
+   \caption{Particle identification requirements applied to kaons and pions.}
    \label{tab:selection_pid_cuts}
 \end{table}
 
-
-
-{\color{Red}
-\begin{itemize}
-\item description of what DLLs mean
-\end{itemize}
-}
 
 \subsection{Charmless and single-charm backgrounds}
 
