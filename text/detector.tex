@@ -60,9 +60,9 @@ These extra gaps allow enough room to safely divert the direction of the beam, w
 
 Once the \lhc is at capacity the beams are accelerated from the injection energy of 450\gev to the nominal energy of up to 7\tev. This is achieved using eight RF cavities per beam to increase the beam energies and 1232 superconducting dipole magnets that bend the trajectory of the charged particles, ensuring they follow the paths dictated by the circular tunnels. The 15\m long dipole magnets contain superconducting niobium-titanium cables, kept cool at 1.9\,K using super-fluid helium. The 11,850\,A current flowing through the magnets generates a large magnetic field of 8.33\,T. The current is gradually and synchronously ramped as the particles are accelerated, such that the same curvature trajectory is maintained. 
 
-The \lhc contains a wealth of other magnets, another 8,361 in addition to the dipole magnets, that optimise the orbit of the beams. This includes ensuring the beams remain tightly packed together, as well as many higher order corrections.   
+The \lhc contains a wealth of other magnets, another 8,361 in addition to the dipole magnets, that optimise the orbit of the beams. These ensure the beams remain tightly packed together, as well as correcting many higher order perturbations.   
 
-During the injection and acceleration phase no collisions take place. Once the beams are at the nominal energy and beam profiles have been optimised, the two are brought together at four interaction points around the ring. Magnets are used to both redirect the beams such that they crossover and to squeeze the beams to a smaller cross-section at the collision points, increasing the likelihood of collisions. Once the beams overlap and the particles collide the experiments located around the four interaction points can begin to record data. The collisions typically continue for a duration of 10--20\hr (referred to as a fill). The number of particles in the bunches reduce, or \emph{burn-off}, as they collide with one another and the beam-pipes. A fill ends when the beams are intentionally or unintentionally dumped. The beam dumps are large graphite blocks surrounded by concrete shielding, designed to absorb the energy of the beams.  
+During the injection and acceleration phase no collisions take place. Once the beams are at the nominal energy and profile distribution have been optimised, the two beams are brought together at four interaction points around the ring. Magnets are used to both redirect the beams such that they crossover and to squeeze the beams to a smaller cross-section at the collision points, increasing the likelihood of collisions. Once the beams overlap and the particles collide the experiments located around the four interaction points can begin to record data. The collisions typically continue for a duration of 10--20\hr (referred to as a fill). The number of particles in the bunches reduce, or \emph{burn-off}, as they collide with one another and the beam-pipes. A fill ends when the beams are intentionally dumped, as too many of the protons have \emph{burnt-off}, or unintentionally,  . The beam dumps are large graphite blocks surrounded by concrete shielding, designed to absorb the energy of the beams.  
 
 A total of seven experiments are located at the \lhc, situated in four caverns. The four largest are \atlas, \cms, \lhcb and \alice. The TOTEM, LHCf and MoDEL experiments are located in the same caverns as \cms, \atlas and \lhcb respectively. 
 
@@ -385,7 +385,7 @@ The single hit resolution is determined for the \ot by determining the width of 
 
 
 \subsection{Ring imaging Cherenkov detectors}
-
+\label{sec:Dec_RICH}
 The ring imaging Cherenkov detectors (\rich) provide essential information about the particle identification of tracks, allowing different hadronic species to be distinguished.
 This allows kaons and protons to be distinguished from one another and the abundant pions tracks in a typical event. It can also help differentiate leptonic tracks in combination with the calorimeters and muon systems. 
 
@@ -546,21 +546,26 @@ The \ecal is made of 66 layers of alternating lead and scintillator, with a tota
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-{\color{Red}
-\begin{itemize}
-\item Find resolution
-\end{itemize}
-}
+The resolution of the \ecal can be parametrised as 
+\begin{equation}
+\frac{\sigma_{E}}{E} = \frac{(8.5-9.5)\%}{\sqrt{E}} \oplus 0.8\%,
+\end{equation}
+where the energy $E$ is measured in \gev (from Ref.~\cite{1748-0221-12-07-C07024}). During data taking the \ecal receives a large dose of radiation. This radiation damages the detector modules as well as the light guides and PMTs. The measurement of irradiation can be quantifies by looking at the PMT light yields, as shown in Fig.~\ref{fig:Dec_calo_damage}. This can be extrapolated to determine the innermost \ecal modules will remain operational for a 13\tev data set corresponding to an integrated luminosity of 10--13\invfb.   
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+    \centering        
+    \includegraphics[width=1.0\textwidth]{figs/Detector/calo_performance.pdf}
+    \caption{The result of radiation damage to the \ecal (a) and \hcal detectors (b), from Ref.~\cite{1748-0221-12-07-C07024}.}
+    \label{fig:Dec_calo_damage}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Hadronic calorimeter}
 
 The \hcal is a 500 tonne detector constructed from iron plates and scintillating tiles. Unlike the \ecal, these are arranged parallel to the beam-pipe as shown in Fig.~\ref{fig:Dec_hcal_layout}. The cells vary in size in the different regions of the detector; the inner regions correspond to $13 \times 13 \cm$ cells and the outer to $26\times26\cm$. The widths of the iron tiles are chosen to be one radiation length (1\cm), and the lengths are one hadron interaction length. The scintillation light is collected by wavelength-shifting fibres that are read out by PMTs located at the rear of each cell.    
 
-{\color{Red}
-\begin{itemize}
-\item Find resolution
-\end{itemize}
-}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
@@ -577,6 +582,15 @@ The \hcal is a 500 tonne detector constructed from iron plates and scintillating
     \label{fig:Dec_hcal_layout}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+The resolution of the \hcal can be parametrised as 
+\begin{equation}
+\frac{\sigma_{E}}{E} = \frac{(69\pm5)\%}{\sqrt{E}} \oplus (9\pm2)\%,
+\end{equation}
+where the energy $E$ is measured in \gev (from Ref.~\cite{1748-0221-12-07-C07024}).
+The \hcal receives a large dose of radiation during data taking. This mainly affects the detector modules as the PMTs are located further away from the beam. The decrease in the light yield as a function of the accumulated data set is shown in Fig.~\ref{fig:Dec_calo_damage}.
+
 
 \subsection{Muon system}
 
@@ -619,7 +633,7 @@ This type of detector was chosen for the inner region as it is required to be es
 \subsection{Trigger}
 \label{sec:Dec_trigger}
 
-The primary role of the trigger is to reduce the nominal 40\,MHz beam crossing frequency to a more manageable rate that can realistically be recorded. The trigger is composed to two parts: a custom hardware trigger called Level 1 (\lone) that operates at the nominal 40\, MHz beam crossing rate; and an asynchronous High Level Trigger (\hlt) running software algorithms. These two stages reduce the event rate to around 2\,kHz, exploiting the characteristics of \bquark- and \cquark-hadron decays to preferentially retain signal decays and discard the many uninteresting events.
+The primary role of the trigger is to reduce the nominal 40\,MHz beam crossing frequency to a more manageable rate that can realistically be recorded. The trigger is composed to two parts: a custom hardware trigger called Level 0 (\lone) that operates at the nominal 40\, MHz beam crossing rate; and an asynchronous High Level Trigger (\hlt) running software algorithms. These two stages reduce the event rate to around 2\,kHz, exploiting the characteristics of \bquark- and \cquark-hadron decays to preferentially retain signal decays and discard the many uninteresting events.
 
 \subsubsection{Level 0}
 The \lone trigger takes input from the muon system, calorimeters and pile-up veto in the \velo. These three systems feed into a single unit to make a global decision about the event. Although the nominal bunch spacing is 25\ns, the \lone decision is made after 4\mus. During this time the detector signals are stored in a \emph{pipeline} buffer. Half of this 4\mus budget is required for the time-of-flight of the particles and delays in the electronics, leaving the \lone trigger 2\mus to reach a decision about each event.  
@@ -641,49 +655,35 @@ The \lone muon trigger selects the two highest \pt muons in each of the four qua
 
 The third component of the \lone trigger, the pile-up veto, helps to determine how many primary interactions occurred in a given event. Two \velo $r$-sensors measure the radii of backward tracks, $r_{a}$ and $r_{b}$. For tracks originated at the same vertex the ratio of these is a constant, $k = r_{b}/r_{a}$. The ratio of hits are compared and events with multiple events can be vetoed. 
 
-
-{\color{Red}
-\begin{itemize}
-\item talk about derandomisers 
-\item thresholds per year
-\item where the farm is
-\end{itemize}
-}
-
 \subsubsection{High Level Trigger}
 
 The \hlt is a software trigger comprised of \cpp algorithms on a dedicated processing farm. It is further subdivided into two sections: \hltone and \hlttwo. 
-The first stage, \hltone, reduces the rate of events by matching \lone deposits to tracks in the \velo and T-stations. The software algorithm performs partial pattern recognition to match the charged particle \lone deposits to track candidates and or to ensure that \Pgamma or \piz \lone candidates are not associated to tracks. This part of the trigger reduces the \lone output rate to around 43\,kHz.
-
-The second stage, \hlttwo, performs a full event reconstruction  
-
-
-{\color{Red}
-\begin{itemize}
-\item Difference between Run 1 and Run 2
-\item Mention Turbo in passing
-\item farm
-\end{itemize}
-}
+The first stage, \hltone, reduces the rate of events by matching \lone deposits to tracks in the \velo and T-stations. The software algorithm performs partial pattern recognition to match the charged particle \lone deposits to track candidates and to ensure that \Pgamma or \piz \lone candidates are not associated to tracks. This part of the trigger reduces the \lone output rate (870\,kHz) to around 43\,kHz.
+The \velo tracks are used to create vertices with 5 or more tracks. Tracks are accepted if they are consistent with originating at one of these vertices. For events selected with the muon \lone lines, the \velo tracks are extrapolated to the muon stations to form muon candidates. These \velo or muon candidates are extrapolated to the T-stations (\ot and \intr) and reconstructed with a Kalman filter~\cite{Kalmanone,FRUHWIRTH1987444}.
 
 
-%\subsubsection{High Level Trigger 1}
-%\subsubsection{High Level Trigger 2}
+
+
+The second stage, \hlttwo, performs a full event reconstruction , allowing explicit decays to be reconstructed. Many different trigger algorithms are included in \hlttwo, reconstructing a wide range of decays. Additionally a set of inclusive \bquark-hadron decay lines exist, exploiting the common characteristics of these decays. These \emph{topological} trigger lines make decisions based on 2, 3 or 4 body combinations of tracks that can form a partially reconstructed \bquark-hadron decay. These tracks are required to pass a minimum distance if closest approach requirement with respect to each other. The invariant mass of these tracks would span a large range in the case of additional non-reconstructed particles, so a quantity called the corrected mass is calculated instead:
+\begin{equation}
+m_{\text{corr}} = \sqrt{m^{2} + |\pt'_{\text{miss}}|} + |\pt'_{\text{miss}}|,
+\end{equation}   
+where $\pt'_{\text{miss}}$ is the missing momentum transverse to the flight direction of the particle, defined by the vector between the PV and 2, 3, or 4-body vertex.  
+The tracks are required to have a significant impact parameter with respect to the PV. This helps to remove \cquark-hadrons combined with an additional track both originating at the PV.
+
+
+
+The \hlt underwent various improvements between Run I and Run II. The number of CPU cores in the Event Filter Farm (EFF) increased from around 29,000 to 52,000. Most notably the \hltone and \hlttwo components were modified to operate asynchronously. This means during Run II the events passing \hltone are stored in a temporary buffer (around 11 petabytes in size) to be processed later by \hlttwo. This allows alignment and calibration to be performed between the running of \hltone and \hlttwo. Dedicated calibration samples are produced by \hltone and processed on the EFF. This includes calculating the \velo and tracking station alignments to optmise the momentum resolution. Additionally, the refractive index of the \rich radiators is calibrated using samples of particles with known masses from specific decays. The difference in the measured and expected Cherenkov angle is used to determine the required calibration. 
+
+These improvements in calibration allow the \hlttwo reconstruction to be effectively the same as can be achieved offline. An additional trigger system called the Turbo Stream~\cite{1742-6596-664-8-082004} was added in Run II to create candidates ready for analysis straight out of \hlttwo. However, candidates analysed in this these were processed in the trigger and again offline.
+
 
 \subsection{Reconstruction}
-Particles are reconstructed offline using information from the various sub-detectors. 
+%Particles are reconstructed using information from the various sub-detectors. 
+The reconstruction of charged and neutral particles is described in this section. 
 
 \subsubsection{Charged particle reconstruction}
 Charged tracks are reconstructed using the hits in the \velo, \ttracker, \intr and \ot. These are classified into different categories depending on their route taken through the detector as shown in Fig.~\ref{fig:Dec_reco_tracks}. The \intr and \ot are collectively referred to as the T-stations. 
-
-\begin{description}
-\item \textbf{Long tracks:} these tracks have passed through both \velo and T-stations.
-\item \textbf{Upstream tracks:} 
-\item \textbf{Downstream tracks:} these tracks only contain \ttracker and T-station hits. They provide vital information about long-lived particles that decay after they have traversed the \velo. 
-\item \textbf{VELO tracks:} these tracks only contain hits in the \velo. They can help improve the primary vertex determination. 
-\item \textbf{T tracks:}
-\end{description}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
@@ -701,22 +701,43 @@ Charged tracks are reconstructed using the hits in the \velo, \ttracker, \intr a
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-{\color{Red}
-\begin{itemize}
-\item PArticle Identification: hadrons
-\item muons
-\item electrons 
-\end{itemize}
-}
+
+\begin{description}
+\item \textbf{Long tracks:} these tracks have passed through both \velo and T-stations.
+\item \textbf{Upstream tracks:} these only pass through the \velo and \ttracker tracker, not the T-stations. This may be because their momentum is too low so the tracks get bent out of the acceptance in the magnetic field. 
+\item \textbf{Downstream tracks:} these tracks only contain \ttracker and T-station hits. They provide vital information about long-lived particles that decay after they have traversed the \velo. 
+\item \textbf{VELO tracks:} these tracks only contain hits in the \velo. They can help improve the primary vertex determination. 
+\item \textbf{T tracks:} these tracks don't pass through the \velo or \ttracker and are likely to be produced in secondary interaction between the particles and detector material. 
+\end{description}
+
+
+The identification of charged tracks used input from the \rich sub-detectors, along side input from the calorimeter and muon systems to identify electrons and muons respectively. 
+As already described in Sec.~\ref{sec:Dec_RICH}, the \rich particle identification is performed by comparing the global event likelihood when changing the particle hypothesis. 
+This is combined with information from the calorimeter and muon systems to create an overall particle identification variable
+\begin{multline}
+\Delta \log{\mathcal{L}_\text{comb}}(X-\pi) =  \Delta \log{\mathcal{L}_\text{RICH}}(X-\pi) + \\
+ \Delta \log{\mathcal{L}_\text{Calo}}(X-\pi) + \Delta \log{\mathcal{L}_\text{Muon}}(X-\pi),
+\end{multline}
+where RICH, Calo and Muon refer to the difference in the log-likelihood of the $X$ and $\pi$ hypothesis as determined by the \rich, calorimeter or muon systems respectively. 
+
+The calorimeter log-likelihood is constructed by comparing the electron to hadron hypotheses. This uses input from the \ecal, \hcal and \presh sub-systems
+\begin{multline}
+\Delta \log{\mathcal{L}_\text{Calo}}(e - h) =  \Delta \log{\mathcal{L}_\text{\ecal}}(e - h) + \\
+ \Delta \log{\mathcal{L}_\text{\hcal}}(e - h) + \Delta \log{\mathcal{L}_\text{\presh}}(e - h)
+\end{multline}
+For the \hcal and \presh this input is determined using the energy deposited. For the \ecal this is constructed comparing the ratio of energy to momentum, $E/pc$, for the candidates, which peaks around one for electrons and at lower values for hadrons. Additionally, the centre of the \ecal deposit and extrapolated track position are compared.     
+
+The muon system log-likelihood is determined by extrapolating the track in question to the muon stations. The average squared distance of the extrapolated positions and hits in the stations are used to compare the muon to non-muon hypothesis.   
 
 \subsubsection{Neutral particle reconstruction}
 
 The energy of neutral particles are determined directly from the calorimeter system. This system is calibrated during running to maintain the optimal resolution.  
 
-\begin{itemize}
-\item\textbf{Photons:} Isolated \ecal clusters with an corresponding cluster in the \presh are used to create photon candidates. The energy is determined from the total energy in the \ecal and \presh. 
-\item \textbf{Neutral pions:} These mesons decay dominantly to two photons, however the reconstruction depends on the transverse momentum of the \piz. For low \pt \piz meson decays the two photons are well separated (\emph{resolved}) leading to two photon deposits. For higher \pt \piz mesons the two photon deposits overlap (\emph{merged}) leading to a single \ecal cluster. 
-\end{itemize}
+\begin{description}
+\item\textbf{Photons:} Isolated \ecal clusters with an corresponding cluster in the \presh are used to create photon candidates. The energy is determined from the total energy deposited in the \ecal and \presh. 
+\item \textbf{Neutral pions:} These mesons decay dominantly to two photons, however the reconstruction depends on the transverse momentum of the \piz. For low \pt decays the two photons are well separated (\emph{resolved}) leading to two photon deposits. For higher \pt decays the two photon deposits overlap leading to a single \ecal cluster (\emph{merged}). 
+\item \textbf{Bremsstrahlung correction:} as a result of their small mass, electrons can radiate Bremsstrahlung photons. If this occurred before the magnetic field the photon produced results in a separate \ecal cluster. If this radiation occurs after the magnet the photon cluster can overlaps with the electron cluster. Clusters in the \ecal that are consistent with radiated Bremsstrahlung photons are used to correct the initial energy of the electron.
+\end{description}
 
 
 
