@@ -621,18 +621,41 @@ This type of detector was chosen for the inner region as it is required to be es
 
 The primary role of the trigger is to reduce the nominal 40\,MHz beam crossing frequency to a more manageable rate that can realistically be recorded. The trigger is composed to two parts: a custom hardware trigger called Level 1 (\lone) that operates at the nominal 40\, MHz beam crossing rate; and an asynchronous High Level Trigger (\hlt) running software algorithms. These two stages reduce the event rate to around 2\,kHz, exploiting the characteristics of \bquark- and \cquark-hadron decays to preferentially retain signal decays and discard the many uninteresting events.
 
-\subsubsection{Level 1}
+\subsubsection{Level 0}
 The \lone trigger takes input from the muon system, calorimeters and pile-up veto in the \velo. These three systems feed into a single unit to make a global decision about the event. Although the nominal bunch spacing is 25\ns, the \lone decision is made after 4\mus. During this time the detector signals are stored in a \emph{pipeline} buffer. Half of this 4\mus budget is required for the time-of-flight of the particles and delays in the electronics, leaving the \lone trigger 2\mus to reach a decision about each event.  
+
+The \lone calorimeter trigger uses input from the \spd, \presh, \ecal and \hcal to trigger events. The particles are reconstructed using $2\times2$ cell clusters to calculate the total transverse energy $E_{\text{T}}$ deposited. 
+The different particle species are inferred by combining the information from the different calorimeter components.
+\begin{description}
+\item \texttt{L0Hadron}: Hadronic deposits are created by finding the highest energy \hcal cluster with a corresponding \ecal cluster in front of it.  
+\item \texttt{L0Photon}: Photons are created from the highest \ecal deposits with corresponding \presh hits. 
+\item \texttt{L0Electron}: Electrons are created from the highest \ecal deposits with corresponding \presh and at least one \spd hit. 
+\end{description}
+If any of these candidates pass corresponding $E_{\text{T}}$ thresholds, then the trigger fires. 
+
+The \lone muon trigger selects the two highest \pt muons in each of the four quadrant of the muon system. 
+\begin{description}
+\item \texttt{L0Muon}: Any of the eight muons can fire this trigger if their \pt is greater than a threshold.
+\item \texttt{L0DiMuon}: Pairs of muons can fire this trigger if the quantity $\pt_{1} \times\ \pt_{2}$ is greater than a threshold.
+\end{description}
+
+The third component of the \lone trigger, the pile-up veto, helps to determine how many primary interactions occurred in a given event. Two \velo $r$-sensors measure the radii of backward tracks, $r_{a}$ and $r_{b}$. For tracks originated at the same vertex the ratio of these is a constant, $k = r_{b}/r_{a}$. The ratio of hits are compared and events with multiple events can be vetoed. 
+
 
 {\color{Red}
 \begin{itemize}
-\item talk about derandomizers 
+\item talk about derandomisers 
 \item thresholds per year
 \item where the farm is
 \end{itemize}
 }
 
 \subsubsection{High Level Trigger}
+
+The \hlt is a software trigger comprised of \cpp algorithms on a dedicated processing farm. It is further subdivided into two sections: \hltone and \hlttwo. 
+The first stage, \hltone, reduces the rate of events by matching \lone deposits to tracks in the \velo and T-stations. The software algorithm performs partial pattern recognition to match the charged particle \lone deposits to track candidates and or to ensure that \Pgamma or \piz \lone candidates are not associated to tracks. This part of the trigger reduces the \lone output rate to around 43\,kHz.
+
+The second stage, \hlttwo, performs a full event reconstruction  
 
 
 {\color{Red}
@@ -648,13 +671,15 @@ The \lone trigger takes input from the muon system, calorimeters and pile-up vet
 %\subsubsection{High Level Trigger 2}
 
 \subsection{Reconstruction}
+Particles are reconstructed offline using information from the various sub-detectors. 
+
 \subsubsection{Charged particle reconstruction}
-Charged tracks are reconstructed using the hits in the \velo, \ttracker, \intr and \ot. These are classified into different categories depending on their route taken through the detector as shown in Fig.~\ref{fig:Dec_reco_tracks}. The \intr and \ot are collectively referred to as the T stations. 
+Charged tracks are reconstructed using the hits in the \velo, \ttracker, \intr and \ot. These are classified into different categories depending on their route taken through the detector as shown in Fig.~\ref{fig:Dec_reco_tracks}. The \intr and \ot are collectively referred to as the T-stations. 
 
 \begin{description}
-\item \textbf{Long tracks:} these tracks have passed through both \velo and T stations.
+\item \textbf{Long tracks:} these tracks have passed through both \velo and T-stations.
 \item \textbf{Upstream tracks:} 
-\item \textbf{Downstream tracks:} these tracks only contain \ttracker and T station hits. They provide vital information about long-lived particles that decay after they have traversed the \velo. 
+\item \textbf{Downstream tracks:} these tracks only contain \ttracker and T-station hits. They provide vital information about long-lived particles that decay after they have traversed the \velo. 
 \item \textbf{VELO tracks:} these tracks only contain hits in the \velo. They can help improve the primary vertex determination. 
 \item \textbf{T tracks:}
 \end{description}
@@ -676,14 +701,24 @@ Charged tracks are reconstructed using the hits in the \velo, \ttracker, \intr a
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsubsection{Neutral particle reconstruction}
-
-
 {\color{Red}
 \begin{itemize}
-\item photons, \piz, a bit on electrons?
+\item PArticle Identification: hadrons
+\item muons
+\item electrons 
 \end{itemize}
 }
+
+\subsubsection{Neutral particle reconstruction}
+
+The energy of neutral particles are determined directly from the calorimeter system. This system is calibrated during running to maintain the optimal resolution.  
+
+\begin{itemize}
+\item\textbf{Photons:} Isolated \ecal clusters with an corresponding cluster in the \presh are used to create photon candidates. The energy is determined from the total energy in the \ecal and \presh. 
+\item \textbf{Neutral pions:} These mesons decay dominantly to two photons, however the reconstruction depends on the transverse momentum of the \piz. For low \pt \piz meson decays the two photons are well separated (\emph{resolved}) leading to two photon deposits. For higher \pt \piz mesons the two photon deposits overlap (\emph{merged}) leading to a single \ecal cluster. 
+\end{itemize}
+
+
 
 \section{Luminosity determinations and \velo resolution}
 Precise measurements of the recorded luminosity of $pp$ collisions are essential for cross-section measurements. 
