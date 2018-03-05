@@ -8,18 +8,26 @@
 %\section{Overview} 
 
 
-Throughout history, society has endeavoured to glimpse into the heart of matter, and to try and break it down into elementary chunks.
+Throughout history, society has endeavoured to glimpse into the heart of matter, trying to break it down into elementary chunks.
 The term \emph{atom} was used by the ancient Greek philosophers to speculate on the nature of matter. 
-However, modern particle physics took until the 19th century to get going; the first of today's elementary particles, the electron, was discovered by J.J. Thomson in 1897.
+However, modern particle physics took until the 19th century to get going; the first of today's elementary particles, the electron, was discovered by J.J. Thomson in 1897~\cite{electron}.
 
-Rutherford's discovery of the proton and Chadwick's discovery of the neutron all by completed the picture, as between them these three particles constitute essentially all stable matter in the universe.  
-In 1934 Yukawa proposed that the neutrons and protons were bound together using an interaction appropriately called the strong force. This required a new mediator named the \emph{meson}. The mass of this particle would have to sit inbetween the light electron and heavy protons and neutrons, hence the name meson (intermediate). The electron correspondingly became part of a class of particles call \emph{leptons} (light) and the protons and neutrons part of \emph{baryons} (heavy). 
+Rutherford's discovery of the proton~\cite{Rutherford:1911zz} and Chadwick's discovery of the neutron~\cite{Chadwick:1932ma} all but completed the picture, as between them these three particles constitute essentially all stable matter in the universe.  
+In 1934 Yukawa proposed that the neutrons and protons were bound together using an interaction appropriately called the strong force~\cite{193548}. This required a new particle to be hypothesised: the \emph{meson}. The mass of this particle would have to sit inbetween the light electron and heavier  protons and neutrons, hence the name meson meaning intermediate. The electron correspondingly became part of a class of particles call \emph{leptons} (light) and the protons and neutrons part of \emph{baryons} (heavy). 
+The search for the strong force mediator resulted in the joint discoveries of the pion and muon~\cite{Lattes:1947mw,Lattes:1947mx}, both initially thought to be mesons. 
+
+
+Over the next {\color{Red}something} years further pieces of the puzzle were uncovered, including anti-electrons, neutrinos and a wealth of mesons and baryons. 
+The seemingly bizarre complexity of particles was eventually explained by Gell-Mann~\cite{GellMann:1964nj} and Zweig~\cite{Zweig:1964jf} through the quark model. This proposed that mesons and baryons were composed of elementary particles called \emph{quarks} that combined rather simply lead to the   
+
 
 {\color{Red}
 \begin{itemize}
 \item atom used to mean a particle that can't be made into smaller pieces 
 \item Historical context 
+\item formulation of the SM
 \end{itemize}}
+
 
 
 
@@ -37,35 +45,33 @@ The Standard Model (SM) provides explanation for a large number of natural pheno
 
 \subsection{Building blocks}
 
-The SM is composed of a small number of fundamental particles; some are the components of matter and others are force-carriers that mediate interactions. The fundamental particles can be combined into composites combination, bound by these fundamental interactions to form a rich tapestry of particles.
+The SM is composed of a small number of fundamental particles; some are the components of matter and others are force-carriers that mediate interactions. The fundamental particles can be combined into composite combinations, bound by these fundamental interactions to form a rich tapestry of observable particles.
 
 Mathematically, the theory is described by the unitary product group $\text{SU}(3)\times\text{SU}(2)\times\text{U}(1)$ 
-
-The particles of the SM are either fermions or bosons.
 
 
 
 {\color{Red}
 \begin{itemize}
-\item Fermions and bosons
-\item quark model-> Gell-Mann and Zwity 
 \item QFT?
-\item people?
 \item Feynman diagrams
 \end{itemize}}
+
+The particles of the SM can be separated in to fundamental fermions (particles with half-integer spin) and fundamental bosons (particles with integer spin). These are described in the following sections.  
+
 
 \subsubsection{Fundamental fermions}
 
 The fundamental spin-$1/2$ fermions that constitute matter can be divided into two categories: leptons and quarks. 
-These particles can be divided up into \emph{families} or \emph{generations} containing two leptons and two quarks. Each of these contains an up-type and down-type quark, a charged lepton and a neutrino. There are three of these \emph{generations} that are identical clones of one another, differing only by their rest masses; each subsequent generation is heavier than the previous. Their interactions are identical in the SM. 
+These particles can be divided up into \emph{families} or \emph{generations} containing two leptons and two quarks. Each of these contains an up-type and down-type quark, a charged lepton and a neutrino. There are three of these \emph{generations} that are identical clones of one another, differing only by their rest masses; each subsequent generation is heavier than the previous. The interactions of these three generations via the fundamental forces are identical in the SM. 
 These particles are listed in Table~\ref{tab:intro_particles} along with their electromagnetic charge.
 \begin{table}[h]
    \begin{center}
-      \begin{tabular}{lcc | lcc}
+      \begin{tabular}{lcr | lcr}
          \hline
          \multicolumn{3}{c|}{Quarks} & \multicolumn{3}{c}{Leptons}\\
          \hline
-         Name       & Symbol            & charge  & Name                & Symbol            & charge    \\ 
+         Name       & Symbol            & Q  & Name                & Symbol            & $Q$    \\ 
          \hline
          Up         & \uquark           &  $+2/3$ & Electron neutrino   & \neue             &  $0$   \\ 
          Down       & \dquark           &  $-1/3$ & Electron            & \en               &  $-1$  \\ 
@@ -78,11 +84,14 @@ These particles are listed in Table~\ref{tab:intro_particles} along with their e
          \hline
       \end{tabular}
    \end{center}
-   \caption{The fundamental fermions in the standard model. The electromagnetic charges are given in units of the absolute value of the electron charge: $1.6\times 10^{-19}$\,C.}
+   \caption{The fundamental fermions in the standard model. The electromagnetic charge, $Q$, is given in units of the absolute value of the electron charge: $1.6\times 10^{-19}$\,C.}
    \label{tab:intro_particles}
 \end{table}
-The first generation, containing the \uquark, \dquark, \en and \neue particles, are the least massive generation and most stable. The second and third generations exist only fleetingly, before decaying back down to the first generation. Therefore, all stable matter in the universe is comprised of first-generation particles. 
+The first generation, containing the \uquark, \dquark, \en and \neue particles, is the least massive generation and most stable. The second and third generations exist only fleetingly, before decaying back down to the first generation. Therefore, all stable matter in the universe is comprised of first-generation particles. 
 
+As detailed in Table~\ref{tab:intro_particles}, all fermions except neutrinos have a electromagnetic charge. 
+
+ Additionally the 
 
 {\color{Red}
 \begin{itemize}
@@ -90,9 +99,12 @@ The first generation, containing the \uquark, \dquark, \en and \neue particles, 
 \end{itemize}}
 
 
-\subsubsection{Antimatter}
+\subsubsection{Antimatter partners}
 
-For each of the fundamental fermions in the standard model there exists a anti-matter partner. First discovered by 
+For each of the fundamental fermions in the standard model there exists a anti-matter partner. The positive electron partner, called positron, was first discovered by C. Anderson in 1932~\cite{PhysRev.43.491}.
+
+Antimatter particles only differ from their matter counterparts by their quantum numbers, such as charge or baryon and lepton number. The mass of a particles antimatter partner is identical. Matter and antimatter can recombine or \emph{annihilate}, releasing the energy stored in their rest masses. 
+
 
 \subsubsection{Fundamental interactions}
 
@@ -103,14 +115,14 @@ The SM provides a mechanism for three fundamental forces: the electromagnetic, w
       \begin{tabular}{ccccc}
          \hline
 
-         Force              & Boson             & Symbol    & Mass      & Range                 \\
+         Force              & Boson             & Symbol    & Mass (\gevcc)      & Range (\m)                 \\
          \hline 
-         Strong             & gluon             & $g$       & 0         &  $10^{-15}\m$                     \\
-         Electromagnetic    & photon            & \Pgamma   & 0         &                       \\
-         Weak               & $W$ boson         & \Wpm      &           &                       \\
-                            & $Z$ boson         & \Z        &           &  $10^{-18}\m$                     \\
+         Strong             & gluon             & $g$       & 0         & $10^{-15}$                     \\
+         Electromagnetic    & photon            & \Pgamma   & 0         & $\infty$                      \\
+         \multirow{ 2}{*}{Weak}& $W$ boson      & \Wpm      & $80.385\pm0.015$ & \multirow{ 2}{*}{$10^{-18}$}                       \\
+                            & $Z$ boson         & \Z        & $90.188\pm0.002$ &  \\
          \hline
-         Gravity            & \emph{graviton?}  &           &           &                       \\
+         Gravity            & \emph{graviton?}  &           &           & $\infty$                      \\
 
          \hline
       \end{tabular}
