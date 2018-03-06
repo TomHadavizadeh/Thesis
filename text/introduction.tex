@@ -9,22 +9,22 @@
 
 
 Throughout history, society has endeavoured to glimpse into the heart of matter, trying to break it down into elementary chunks.
-The term \emph{atom} was used by the ancient Greek philosophers to speculate on the nature of matter. 
+The term \emph{atom} was originally used by the ancient Greek philosophers to speculate on the nature of matter, used to denote something that cannot be split into any further pieces. 
 However, modern particle physics took until the 19th century to get going; the first of today's elementary particles, the electron, was discovered by J.J. Thomson in 1897~\cite{electron}.
 
 Rutherford's discovery of the proton~\cite{Rutherford:1911zz} and Chadwick's discovery of the neutron~\cite{Chadwick:1932ma} all but completed the picture, as between them these three particles constitute essentially all stable matter in the universe.  
-In 1934 Yukawa proposed that the neutrons and protons were bound together using an interaction appropriately called the strong force~\cite{193548}. This required a new particle to be hypothesised: the \emph{meson}. The mass of this particle would have to sit inbetween the light electron and heavier  protons and neutrons, hence the name meson meaning intermediate. The electron correspondingly became part of a class of particles call \emph{leptons} (light) and the protons and neutrons part of \emph{baryons} (heavy). 
+In 1934 Yukawa proposed that the neutrons and protons were bound together using an interaction appropriately called the strong force~\cite{193548}. This required a new particle to be hypothesised: the \emph{meson} (meaning intermediate). The mass of this particle would have to sit inbetween the light electron and heavier  protons and neutrons. The electron correspondingly became part of a class of particles call \emph{leptons} (meaning light) and the protons and neutrons part of \emph{baryons} (meaning heavy). 
 The search for the strong force mediator resulted in the joint discoveries of the pion and muon~\cite{Lattes:1947mw,Lattes:1947mx}, both initially thought to be mesons. 
 
 
 Over the next {\color{Red}something} years further pieces of the puzzle were uncovered, including anti-electrons, neutrinos and a wealth of mesons and baryons. 
-The seemingly bizarre complexity of particles was eventually explained by Gell-Mann~\cite{GellMann:1964nj} and Zweig~\cite{Zweig:1964jf} through the quark model. This proposed that mesons and baryons were composed of elementary particles called \emph{quarks} that combined rather simply lead to the   
+The seemingly bizarre complexity of particles was eventually explained by Gell-Mann~\cite{GellMann:1964nj} and Zweig~\cite{Zweig:1964jf} through the quark model. This proposed that mesons and baryons were in fact composite particles, made up of elementary constituents called \emph{quarks}. These were considered point-like could be combined rather simply: a quark and anti-quark combined to make a meson ($q\bar{q}$), and three quarks or three anti-quarks combined to form baryons ($qqq$,$\bar{q}\bar{q}\bar{q}$)\footnote{More exotic combinations ($q\bar{q}q\bar{q}$, $qqqq\bar{q}$...) were also proposed and recently observed~\cite{PhysRevLett.91.262001,PhysRevLett.115.072001}.}.     
 
 
 {\color{Red}
 \begin{itemize}
-\item atom used to mean a particle that can't be made into smaller pieces 
-\item Historical context 
+%\item atom used to mean a particle that can't be made into smaller pieces 
+%\item Historical context 
 \item formulation of the SM
 \end{itemize}}
 
@@ -56,6 +56,12 @@ Mathematically, the theory is described by the unitary product group $\text{SU}(
 \item QFT?
 \item Feynman diagrams
 \end{itemize}}
+
+The standard model is encapsulated by a Lagrangian density
+\begin{equation}
+\mathcal{L} = \mathcal{L}_{\text{QCD}}+\mathcal{L}_{\text{QED}}+\mathcal{L}_{\text{Weak}}+\mathcal{L}_{\text{Higgs}},
+\end{equation}
+where the total quantity receives 
 
 The particles of the SM can be separated in to fundamental fermions (particles with half-integer spin) and fundamental bosons (particles with integer spin). These are described in the following sections.  
 
@@ -91,7 +97,7 @@ The first generation, containing the \uquark, \dquark, \en and \neue particles, 
 
 As detailed in Table~\ref{tab:intro_particles}, all fermions except neutrinos have a electromagnetic charge. 
 
- Additionally the 
+%Additionally the 
 
 {\color{Red}
 \begin{itemize}
@@ -140,21 +146,39 @@ The strong interaction is described by Quantum Chromodynamics (QCD), a non-Abeli
 
 The weak force is mediated by the massive \Wpm and \Z bosons. The range of this force is limited to the order of $1/m_{\Wpm,\,\Z}$ and appears much weaker than the electromagnetic force for interactions with typical energies much below $\sim m_{\Wpm,\,\Z}$. The weak interaction is also described a non-Abelian gauge theory in which the gauge bosons can self-interact. 
 
-{\color{Red}
-\begin{itemize}
-\item EM - Abeilan: no self coupling (except light by light scattering)
-\item Weak, strong: non-abeilan: self coupling
-\item Range: EM- massles photon -> infinite 
-\item Range: Weak - massive bosons -> short range
-\item Range: Strong - massless but self interaction/confinement -> short range (force is infinite )
-\end{itemize}}
+% {\color{Red}
+% \begin{itemize}
+% \item EM - Abeilan: no self coupling (except light by light scattering)
+% \item Weak, strong: non-abeilan: self coupling
+% \item Range: EM- massles photon -> infinite 
+% \item Range: Weak - massive bosons -> short range
+% \item Range: Strong - massless but self interaction/confinement -> short range (force is infinite )
+% \end{itemize}}
 
 
 \subsection{The origin of mass}
 The final component of the SM is the Higgs boson, a key component to allow the fundamental particles to gain mass. Discovered in 2012 at the Large Hadron Collider~\cite{20121,201230} it constitutes the final particle predicted to be part of the SM. 
 
+In the standard model all fermions would naively be expected to be massless, as the Lagrangian density terms that would allow them to gain a mass are excluded due to symmetry constraints. The exact symmetry can be broken by a mechanism proposed by R. Brout, F. Englert and P. Higgs~\cite{PhysRevLett.13.508,PhysRevLett.13.321} 
+
+{\color{Red}
+\begin{itemize}
+\item The majority of mass is actually from binding energy 
+\item how gauge bosons get mass
+\end{itemize}}
+
 \subsection{Parameters}
 
+The SM contains 26 free parameters. The theory doesn't predict the value of these numbers, instead they must be worked out experimentally.  
+\begin{description}
+\item \textbf{Masses:} the masses of the 12 fundamental fermions.
+\item \textbf{Couplings:} the three coupling strengths of the electromagnetic, strong and weak forces.
+\item \textbf{Higgs potential:} two parameters determine the Higgs potential: the vacuum expectation value and the Higgs Boson mass.
+\item \textbf{Mixing parameters:} these eight parameters allow the weak interaction eigenstates and mass eigenstates to differ in both the quark and lepton sector.
+\item \textbf{Strong \CP  phase:} this could allow \CP violation in the strong interaction, but is experimentally measured to be extremely small.
+\end{description}
+
+The relatively large number of free parameters in the SM may hint to this model only being a subset of a more complete theory. Trends are observed between the quantities, for example the masses of the fermions in each generation are each fairly similar in size. Some larger theory may be responsible for these trends.  
 
 \subsection{Triumphs}
 

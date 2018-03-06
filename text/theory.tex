@@ -20,18 +20,48 @@ Although the weak interaction dictates the core of the process, the contribution
 
 \subsection{The weak force}
 
-The weak and electromagnetic forces are unified in the SM through the gauge group $\text{SU}(2)\times\text{U}(1)$.
+The weak interaction differs remarkably from the electromagnetic and strong interactions. It is the only of the three to be mediated by massive gauge bosons and violates parity; the action of mirroring space. 
+Additionally, there are two types of gauge boson: the charged \Wpm bosons that result in \emph{charged-current} interactions; and the neutral \Z boson, responsible for \emph{neutral-current} interactions. 
+
+Confusingly, the weak interaction is actually stronger than the electromagnetic force, however the large mass of the mediators suppresses the interaction at low energy.
+The \emph{charged-current} weak interaction was originally described by Fermi using a four point coupling $G_{\text{F}}$. This works well for low energy interactions in which the momentum transfer is much less than the \Wpm boson mass, $|q^{2}|<<m_\Wpm^2$. In the higher mass range this breaks down leading to unitarity violation in processes such as \decay{\ep\en}{\Wp\Wm}. This is resolved by the addition of the neutral \Z boson and the \emph{neutral-current} interactions that restore unitarity. 
+
+
+
+{\color{Red}
+\begin{itemize}
+\item Hyper charge
+\item couplings
+\end{itemize}}
+
+
+
+\subsubsection{Parity violation}
+Parity is conserved in QCD and QED so it was naturally assumed to follow suit in the weak interaction. In 1957 is was shown by C.S. Wu and collaborators that parity was indeed violated in the beta decay of cobalt-60~\cite{PhysRev.105.1413}. The rate of electrons emitted during the decay were measured as a function of the polar angle. In the parity conservation scenario the same rates would have been expected at angles of $\theta$ and $180^\circ-\theta$ to an applied magnetic field; however electrons are preferably emitted against the field.          
+
+The weak interaction can be described as a V-A interaction (vector-axialvector), corresponding to a maximally parity violating interaction. In the ultra-relativistic limit this would mean that the weak force only couples to left-handed particles and right-handed antiparticles. {\color{Red} define helicity?} This is relaxed when accounting for the non-zero masses of fermions, but leads to helicity suppression for certain processes, for example \decay{\pim}{\en\neueb} with respect to \decay{\pim}{\mun\neumb}. The relative branching fractions for these two processes acts as strong experimental evidence for the V-A interaction.
+
+\subsubsection{Electroweak unification}
+
+Although the weak and electromagnetic forces can be described by QED and the Fermi interaction at low energies, this becomes insufficient at high energies. Here, the weak and electromagnetic forces can be unified through the single Electroweak gauge theory with a $\text{SU}(2)_{L}\times\text{U}(1)_{Y}$ symmetry.
+
+The \Z boson introduced to prevent unitarity violation is experimentally observed to couple to both left-handed and right-handed particles, in contrast to the \Wpm boson. This seemingly contradictory situation was resolved by Glashow, Salam and Weinberg~\cite{Glashow:1959wxa,Salam:1968rm,Weinberg:1967tq} who developed a unification of the electromagnetic and weak interactions. 
+This begins by replacing the physical electromagnetic $\text{U}(1)_{\text{Q}}$ interaction with a similar $\text{U}(1)_{\text{Y}}$ interaction that couples to weak hyper-charge, $Y$. This gauge symmetry requires a new gauge boson $B$. The weak $\text{SU}(2)_{L}$ interaction generates three gauge bosons. The third of these, $W^{3}$, can mix with the new $B$ gauge boson to generate the two physical bosons $\gamma$ and \Z
+\begin{equation}
+\left( \begin{array}{c} \gamma \\ \Z \end{array} \right) = \begin{pmatrix} \cos{\theta_{W}} & \sin{\theta_{W}} \\ -\sin{\theta_{W}} & \cos{\theta_{W}} \end{pmatrix} \left( \begin{array}{c} B \\ W^{3} \end{array} \right),
+\end{equation}
+where $\theta_{W}$ is the weak mixing angle. 
 
 {\color{Red}
 \begin{itemize}
 \item Photon and Z mix
-\item Hyper charge
-\item couplings
-\item Parity in the weak force
-\item CP? 
 \end{itemize}}
 
+
 \subsection{Weak interactions of quarks}
+
+The weak force couples to quarks 
+
 
 {\color{Red}
 \begin{itemize}
@@ -42,6 +72,16 @@ The weak and electromagnetic forces are unified in the SM through the gauge grou
 
 
 \subsection{The CKM matrix}
+
+\begin{equation}
+\left( \begin{array}{c} d' \\ s'  \\ b' \end{array} \right) = \begin{pmatrix} \Vud & \Vus & \Vub \\ \Vcd & \Vcs & \Vcb  \\ \Vtd & \Vts & \Vtb \end{pmatrix} \left( \begin{array}{c} d \\ s  \\ b \end{array} \right)
+\end{equation}
+
+
+\begin{equation}
+\left( \begin{array}{c} d' \\ s'  \\ b' \end{array} \right) = \begin{pmatrix} 1 - \lambda^2/2 & \lambda & A\lambda^3(\rho-i\eta) \\ -\lambda & 1-\lambda^2/2 & A\lambda^2  \\ A\lambda^3(1-\rho-i\eta) & -A\lambda^2 & 1 \end{pmatrix} \left( \begin{array}{c} d \\ s  \\ b \end{array} \right)
+\end{equation}
+
 
 {\color{Red}
 \begin{itemize}
