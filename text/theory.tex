@@ -20,73 +20,79 @@ Although the weak interaction dictates the core of the process, the contribution
 
 \subsection{The weak force}
 
-The weak interaction differs remarkably from the electromagnetic and strong interactions. It is the only of the three to be mediated by massive gauge bosons and violates parity; the action of mirroring space. 
+The weak interaction differs remarkably from the electromagnetic and strong interactions. It is the only of the three to be mediated by massive gauge bosons and uniquely violates parity; the action of mirroring space. 
 Additionally, there are two types of gauge boson: the charged \Wpm bosons that result in \emph{charged-current} interactions; and the neutral \Z boson, responsible for \emph{neutral-current} interactions. 
 
 Confusingly, the weak interaction is actually stronger than the electromagnetic force, however the large mass of the mediators suppresses the interaction at low energy.
-The \emph{charged-current} weak interaction was originally described by Fermi using a four point coupling $G_{\text{F}}$. This works well for low energy interactions in which the momentum transfer is much less than the \Wpm boson mass, $|q^{2}|<<m_\Wpm^2$. In the higher mass range this breaks down leading to unitarity violation in processes such as \decay{\ep\en}{\Wp\Wm}. This is resolved by the addition of the neutral \Z boson and the \emph{neutral-current} interactions that restore unitarity. 
-
-
-
-{\color{Red}
-\begin{itemize}
-\item Hyper charge
-\item couplings
-\end{itemize}}
-
+The \emph{charged-current} weak interaction was originally described by Fermi using a four point coupling $G_{\text{F}}$. 
+%This was introduced to account for the missing energy taken away 
+This works well for low energy interactions in which the momentum transfer is much less than the \Wpm boson mass, $|q^{2}|<<m_\Wpm^2$. In the higher mass range this breaks down leading to unitarity violation in processes such as \decay{\ep\en}{\Wp\Wm}. This is resolved by the addition of the neutral \Z boson and the \emph{neutral-current} interactions that restore unitarity. 
 
 
 \subsubsection{Parity violation}
 Parity is conserved in QCD and QED so it was naturally assumed to follow suit in the weak interaction. In 1957 is was shown by C.S. Wu and collaborators that parity was indeed violated in the beta decay of cobalt-60~\cite{PhysRev.105.1413}. The rate of electrons emitted during the decay were measured as a function of the polar angle. In the parity conservation scenario the same rates would have been expected at angles of $\theta$ and $180^\circ-\theta$ to an applied magnetic field; however electrons are preferably emitted against the field.          
 
-The weak interaction can be described as a V-A interaction (vector-axialvector), corresponding to a maximally parity violating interaction. In the ultra-relativistic limit this would mean that the weak force only couples to left-handed particles and right-handed antiparticles. {\color{Red} define helicity?} This is relaxed when accounting for the non-zero masses of fermions, but leads to helicity suppression for certain processes, for example \decay{\pim}{\en\neueb} with respect to \decay{\pim}{\mun\neumb}. The relative branching fractions for these two processes acts as strong experimental evidence for the V-A interaction.
+The weak interaction can be described as a V-A interaction (vector-axialvector), corresponding to a maximally parity violating interaction; the \Wpm boson only couples to left-handed chiral particle states. In the ultra-relativistic limit this would mean that the weak force only couples to left-handed helicity particles and right-handed helicity antiparticles. {\color{Red} define helicity?} This is relaxed when accounting for the non-zero masses of fermions (when the helicity eigenstates are no longer equal to the chiral eigenstates), but leads to helicity suppression for certain processes, for example \decay{\pim}{\en\neueb} with respect to \decay{\pim}{\mun\neumb}. The relative branching fractions for these two processes acts as strong experimental evidence for the V-A interaction.
 
 \subsubsection{Electroweak unification}
 
 Although the weak and electromagnetic forces can be described by QED and the Fermi interaction at low energies, this becomes insufficient at high energies. Here, the weak and electromagnetic forces can be unified through the single Electroweak gauge theory with a $\text{SU}(2)_{L}\times\text{U}(1)_{Y}$ symmetry.
 
 The \Z boson introduced to prevent unitarity violation is experimentally observed to couple to both left-handed and right-handed particles, in contrast to the \Wpm boson. This seemingly contradictory situation was resolved by Glashow, Salam and Weinberg~\cite{Glashow:1959wxa,Salam:1968rm,Weinberg:1967tq} who developed a unification of the electromagnetic and weak interactions. 
-This begins by replacing the physical electromagnetic $\text{U}(1)_{\text{Q}}$ interaction with a similar $\text{U}(1)_{\text{Y}}$ interaction that couples to weak hyper-charge, $Y$. This gauge symmetry requires a new gauge boson $B$. The weak $\text{SU}(2)_{L}$ interaction generates three gauge bosons. The third of these, $W^{3}$, can mix with the new $B$ gauge boson to generate the two physical bosons $\gamma$ and \Z
+This begins by replacing the physical electromagnetic $\text{U}(1)_{\text{Q}}$ interaction with a similar $\text{U}(1)_{\text{Y}}$ interaction that couples to weak hyper-charge, $Y$. This gauge symmetry requires a new gauge boson $B$. The weak $\text{SU}(2)_{L}$ interaction generates three gauge bosons. The third of these, the neutral $W^{3}$, can mix with the new $B$ gauge boson to generate the two physical bosons $\gamma$ and \Z
 \begin{equation}
 \left( \begin{array}{c} \gamma \\ \Z \end{array} \right) = \begin{pmatrix} \cos{\theta_{W}} & \sin{\theta_{W}} \\ -\sin{\theta_{W}} & \cos{\theta_{W}} \end{pmatrix} \left( \begin{array}{c} B \\ W^{3} \end{array} \right),
 \end{equation}
 where $\theta_{W}$ is the weak mixing angle. 
 
-{\color{Red}
-\begin{itemize}
-\item Photon and Z mix
-\end{itemize}}
 
 
 \subsection{Weak interactions of quarks}
 
-The weak force couples to quarks 
 
+It is experimentally observed that the rates of kaon and pions decays do not proceed at the same rate; the rates of the \squark-quark containing particles are suppressed,
+\begin{equation}
+\frac{\Gamma(\decay{\Kp}{\mup\neum})}{\Gamma(\decay{\pip}{\mup\neum})}\sim 0.257.
+\end{equation}
+It was proposed by N. Cabibbo that, as with many other quantum mechanical processes, the eigenstates of the weak interaction may be different to the mass eigenstates that govern the propagation of particles~\cite{PhysRevLett.10.531}. Systems can described by different \emph{good} quantum numbers depending on the dynamics. 
+The Cabibbo angle, $\theta_{c}$, was introduced to mix the mass eigenstates into the weakly interacting eigenstate.
+\begin{equation}
+d' = \cos{\theta_{c}}d + \sin{\theta_{c}}s.
+\end{equation}
+However, this on its own was not enough to explain the lack of flavour-changing neutral currents such as \decay{\Kz}{\mup\mun}. This was resolved by S.L. Glashow, J. Iliopoulos, and L. Maiani with the introduction of the GIM mechanism~\cite{PhysRevD.2.1285}. This suppressed neutral current processes by proposing a fourth quark, the charm quark. This was paired with the strange quark and allowed  Cabibbo's mixing matrix elegantly completed
+\begin{equation}
+\left( \begin{array}{c} d' \\ s'  \end{array} \right) = \begin{pmatrix} \Vud & \Vus \\ \Vcd & \Vcs \end{pmatrix} \left( \begin{array}{c} d \\ s \end{array} \right)= \begin{pmatrix} \cos{\theta_{c}} & \sin{\theta_{c}} \\ -\sin{\theta_{c}} & \cos{\theta_{c}} \end{pmatrix} \left( \begin{array}{c} d \\ s \end{array} \right).
+\end{equation}
 
-{\color{Red}
-\begin{itemize}
-\item semileptonic decays 
-\item cabibbo formulated angle
-\item  
-\end{itemize}}
+In the SM the weak interaction facilitates the changing of quark flavour via the \emph{charged-current} interaction $\decay{\Wpm}{q\bar{q'}}$ whilst the \emph{neutral-current} interaction must conserve flavour, $\decay{\Z}{q\bar{q}}$. 
 
 
 \subsection{The CKM matrix}
-
+Cabibbo's two-generation mixing matrix can be easily extended to the three-generation scenario in the SM. The extended matrix referred to at the Cabibbo-Koboyashi-Maskawa (CKM) matrix~\cite{CKM} is expressed generally as 
 \begin{equation}
 \left( \begin{array}{c} d' \\ s'  \\ b' \end{array} \right) = \begin{pmatrix} \Vud & \Vus & \Vub \\ \Vcd & \Vcs & \Vcb  \\ \Vtd & \Vts & \Vtb \end{pmatrix} \left( \begin{array}{c} d \\ s  \\ b \end{array} \right)
 \end{equation}
-
-
+where the transitions between quark flavours are determined by the complex quantities $V_{qq'}$. 
+In the SM this matrix is required to be a unitary matrix obeying the condition
 \begin{equation}
-\left( \begin{array}{c} d' \\ s'  \\ b' \end{array} \right) = \begin{pmatrix} 1 - \lambda^2/2 & \lambda & A\lambda^3(\rho-i\eta) \\ -\lambda & 1-\lambda^2/2 & A\lambda^2  \\ A\lambda^3(1-\rho-i\eta) & -A\lambda^2 & 1 \end{pmatrix} \left( \begin{array}{c} d \\ s  \\ b \end{array} \right)
+U_{\text{CKM}}^\dag U_{\text{CKM}} = I
 \end{equation}
+Therefore, the extension of the mixing matrix not only allows all three generations to be considered, but also increases the number of terms that parametrise the mixing matrix from one to four. Of these four parameters, three can be represented as angles and one must be interpreted as a complex phase. Importantly, this phase allows \CP violation to be present in the SM and was one of the main motivations of M. Koboyashi and T. Maskawa in proposing the matrix.
+The matrix can be represented in the Wolfenstein parametrisation using four parameters $\lambda$, $A$, $\rho$ and $\eta$~\cite{PhysRevLett.51.1945}. When represented with factors up to $\mathcal{O}(\lambda^{3})$, the CKM matrix is given by 
+\begin{equation}
+\left( \begin{array}{c} d' \\ s'  \\ b' \end{array} \right) = \begin{pmatrix} 1 - \lambda^2/2 & \lambda & A\lambda^3(\rho-i\eta) \\ -\lambda & 1-\lambda^2/2 & A\lambda^2  \\ A\lambda^3(1-\rho-i\eta) & -A\lambda^2 & 1 \end{pmatrix} \left( \begin{array}{c} d \\ s  \\ b \end{array} \right).
+\end{equation}
+This representation is helpful as it dictates that for \CP violation to be present in the SM, $\eta$ must be non-zero. Additionally, the contribution from the imaginary parts is predominately in \Vub and \Vtd (the terms \Vcd and \Vts receive smaller contributions from $\eta$ at $\mathcal{O}(\lambda^{5})$). 
+
+
 
 
 {\color{Red}
 \begin{itemize}
+\item values of CKM elements
 \item introduce idea of CP violation
 \item Observation of CP violation? 
+\item for pseudo-scalars just change C, for baryons more complicated
 \end{itemize}}
 
 \subsection{\bquark-hadron physics}
@@ -101,12 +107,45 @@ The b stands for beauty
 \subsection{QCD and hadronisation}
 {\color{Red}
 \begin{itemize}
+\item weak interactions are small so only obserable when QCD and QED are suppressed
 \item Explain why predictions are hard
 \item lattice QCD
 \item light cone sum rules? 
 \end{itemize}}
 
 \section{Annihilation topology decays}
+
+Annihilation topology decays are a class of processes in which the initial state particles annihilate to form a virtual propagator. This mediator then decays to a (possibly different) set of particles.
+Perhaps the simplest \Bp meson annihilation process imaginable is \decay{\Bp}{\ellp\neul}, shown in Fig.~\ref{fig:Theory_B2ellnu}. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+    \centering
+        \centering
+        \includegraphics[width=0.5\textwidth]{figs/Theory/B2ellnu.pdf}
+    \caption{Annihilation topology process for \decay{\Bp}{\ellp\neul} decays.}
+    \label{fig:Theory_B2ellnu}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+This purely leptonic \Bp meson decay 
+
+\begin{table}[h]
+   \begin{center}
+      \begin{tabular}{lcc}
+         \hline
+
+         Decay Mode                 & SM prediction & Measurement \\
+         \hline 
+         \decay{\Bp}{\ep\neue}      &               & \\
+         \decay{\Bp}{\mup\neum}     &               & \\
+         \decay{\Bp}{\taup\neut}    &               & \\
+         \hline
+      \end{tabular}
+   \end{center}
+   \caption{Theoretical predictions for SM processes.}
+   \label{tab:Theory_B2ellnu}
+\end{table}
+
+
 
 {\color{Red}
 \begin{itemize}
@@ -129,11 +168,38 @@ The b stands for beauty
 
 \section{Rescattering}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+    \centering
+    \begin{subfigure}[m]{0.8\textwidth}
+        \centering
+        \includegraphics[width=1.0\textwidth]{figs/Theory/B2DsPhi_Rescattering_B2D0K.pdf}
+        \caption{via \decay{\Bp}{\Dstarz\Kstarp}}
+    \end{subfigure}
+    \begin{subfigure}[m]{0.8\textwidth}
+        \centering
+        \includegraphics[width=1.0\textwidth]{figs/Theory/B2DsPhi_Rescattering_B2Dsomega.pdf}
+        \caption{via $\decay{\Bp}{\Dsp\omega}$}
+    \end{subfigure}
+    \caption{Rescattering contributions to \decay{\Bp}{\Dsp\phiz} decays.}
+    \label{fig:Theory_rescattering}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 {\color{Red}
 \begin{itemize}
 \item What is rescattering?
 \item Examples of it?
 \item Why it's expected to be small
+\item $\decay{\Bu}{\Dsp\omega}$
+\item $\omega\to\phi$ is OZI suppressed 
+\item $\decay{\Bu}{\Dz\Kstarp}$
+\item References: \Dp\Kstarz~\cite{Mehraban2016}.
+\item $\omega - \phi$ mixing: ~\cite{OKUBO1963165,PhysRevD.79.074006}.
+
 \end{itemize}}
 
 \section{Theoretical predictions for the \decay{\Bp}{\Dsp\phiz} decay}
