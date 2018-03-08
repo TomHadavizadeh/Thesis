@@ -150,15 +150,64 @@ The weak force is mediated by the massive \Wpm and \Z bosons. The range of this 
 \subsubsection{The origin of mass}
 The final particle of the SM is the Higgs boson, a key component to allow the fundamental particles to gain mass. Discovered in 2012 at the Large Hadron Collider~\cite{20121,201230} it constitutes the final particle predicted to be part of the SM. 
 
-In the standard model all fermions would naively be expected to be massless, as the Lagrangian density terms that would allow them to gain a mass are excluded due to symmetry constraints. The exact symmetry can be broken by a mechanism proposed by R. Brout, F. Englert and P. Higgs~\cite{PhysRevLett.13.508,PhysRevLett.13.321} 
+In the standard model all fermions would naively be expected to be massless, as the Lagrangian density terms that would allow them to gain a mass are excluded due to symmetry constraints. The exact symmetry can be broken by a mechanism proposed by R. Brout, F. Englert and P. Higgs~\cite{PhysRevLett.13.508,PhysRevLett.13.321} in which a new scalar field is introduced called the Higgs field. 
+
+The masses of particles arise as a result of the self coupling of the Higgs field. The field potential contains quadratic and quartic terms in the field strength, allowing a situation where stable minima exist, displaced from the origin (which is an unstable maximum). The perturbations of this field occur around any one of the degenerate minima, requiring the symmetry of the system to be spontaneously broken. This leads the vacuum expectation value, $v$, of the field to be non-zero.   
+
+Gauge boson masses are a result of the kinetic energy of the Higgs field. The dynamics of the field result in Lagrangian density mass terms for the \Wpm and \Z bosons,
+\begin{equation}
+m_{\Wpm} = \frac{g_{\Wpm}v}{2}, ~~m_{\Z} = \frac{g_{\Z}v}{2},
+\end{equation}
+where $g_{\Wpm}$ and $g_{\Z}$ are the coupling strengths of \Wpm and \Z boson respectively.
+
+
+The fermion masses arise from the Higgs-fermion field interactions directly. Again the non-zero vacuum expectation value results in a Lagrangian density mass term for the fermions 
+\begin{equation}
+m_{f} = \frac{\lambda_{f}v}{\sqrt{2}}
+\end{equation}
+where $\lambda_{f}$ is a coupling that determines the strength of the interaction between the higgs field and fermion. This dictates the mass of the fermion.
+
+The Higgs boson gains mass itself from the Higgs field kinematics potential. When displaced by the non-zero vacuum expectation value the Lagrangian density obtains a higgs mass term
+\begin{equation}
+m_{H} = \sqrt{2\lambda}v,
+\end{equation}
+where $\lambda$ is one the terms that determines the shape of the Higgs potential. 
+The masses of the fermions in the SM are shown in Table~\ref{tab:intro_particles_masses}. 
+\begin{table}[h]
+   \begin{center}
+      \begin{tabular}{cc}
+         \hline
+         Particle          & Mass                        \\ 
+         \hline
+         \uquark           & $2.2^{+0.6}_{-0.4}\mevcc$   \\ 
+         \dquark           & $4.7^{+0.5}_{-0.4}\mevcc$   \\ 
+         \en            & $0.5109989461\pm0.0000000031\mevcc$ \\ 
+         \hline
+         \cquark           & $1280\pm30\mevcc$         \\ 
+         \squark           & $96^{+8}_{-4}\mevcc$        \\
+         \mun           & $105.6583745\pm0.0000024\mevcc$      \\
+         \hline
+         \tquark           & $173\pm0.6\gevcc$           \\ 
+         \bquark           & $4.18^{+0.04}_{-0.03}\gevcc$\\
+         \taum             & $1.77686\pm0.00012 \gevcc$         \\       
+         \hline                                
+         \neue          &       \\                                
+         \neum          &      \\                                 
+         \neut          &      \\                                 
+         \hline
+      \end{tabular}
+   \end{center}
+   \caption{The masses of the fundamental fermions. }
+   \label{tab:intro_particles_masses}
+\end{table}
 
 {\color{Red}
 \begin{itemize}
-\item add quark masses
 \item maybe say how they can be measured?
 \item The majority of mass is actually from binding energy 
 \item how gauge bosons get mass
 \end{itemize}}
+
 
 \subsection{Parameters}
 
