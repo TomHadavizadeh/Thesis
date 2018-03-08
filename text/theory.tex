@@ -13,7 +13,7 @@
 %\section{The Standard model of Particle of Physics}
 \section{The weak force in \bquark-hadron decays}
 
-Ground state \bquark-hadrons can only decay via the weak interaction as the \bquark must change flavour to one of the first or second generation quarks.
+Ground state \bquark-hadrons can only decay via the weak interaction as the \bquark-quark must change flavour to one of the first or second generation quarks.
 These decays were first observed ... with lifetime ...
 Although the weak interaction dictates the core of the process, the contributions from the strong force are unavoidable. In the SM quarks abide by \emph{confinement}, preventing bare quarks from propagating unhindered. Instead quarks are only ever observed in bound states, or hadrons, with other quarks or anti-quarks. Therefore the observation of the weakly decaying \bquark-quark is necessarily accompanied by the strong interaction governing the hadronisation of the initial and final state quarks.
 
@@ -54,8 +54,9 @@ It is experimentally observed that the rates of kaon and pions decays do not pro
 \begin{equation}
 \frac{\Gamma(\decay{\Kp}{\mup\neum})}{\Gamma(\decay{\pip}{\mup\neum})}\sim 0.257.
 \end{equation}
-It was proposed by N. Cabibbo that, as with many other quantum mechanical processes, the eigenstates of the weak interaction may be different to the mass eigenstates that govern the propagation of particles~\cite{PhysRevLett.10.531}. Systems can described by different \emph{good} quantum numbers depending on the dynamics. 
-The Cabibbo angle, $\theta_{c}$, was introduced to mix the mass eigenstates into the weakly interacting eigenstate.
+It was observed by N. Cabibbo that in many quantum mechanical systems, different \emph{good} quantum numbers are appropriate depending on the dynamics. He proposed that the eigenstates of the weak interaction may be different to the mass eigenstates that govern the propagation of particles~\cite{PhysRevLett.10.531}.
+%It was proposed by N. Cabibbo that, as with many other quantum mechanical processes, the eigenstates of the weak interaction may be different to the mass eigenstates that govern the propagation of particles~\cite{PhysRevLett.10.531}. Systems can described by different \emph{good} quantum numbers depending on the dynamics. 
+The Cabibbo angle, $\theta_{c}$, was introduced to mix the mass eigenstates into the weakly interacting eigenstate,
 \begin{equation}
 d' = \cos{\theta_{c}}d + \sin{\theta_{c}}s.
 \end{equation}
@@ -116,7 +117,7 @@ The b stands for beauty
 \section{Annihilation topology decays}
 
 Annihilation topology decays are a class of processes in which the initial state particles annihilate to form a virtual propagator. This mediator then decays to a (possibly different) set of particles.
-Perhaps the simplest \Bp meson annihilation process imaginable is \decay{\Bp}{\ellp\neul}, shown in Fig.~\ref{fig:Theory_B2ellnu}. 
+Perhaps the simplest \Bp meson annihilation process is \decay{\Bp}{\ellp\neul}, shown in Fig.~\ref{fig:Theory_B2ellnu}. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
     \centering
@@ -126,7 +127,6 @@ Perhaps the simplest \Bp meson annihilation process imaginable is \decay{\Bp}{\e
     \label{fig:Theory_B2ellnu}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-This purely leptonic \Bp meson decay 
 
 \begin{table}[h]
    \begin{center}
@@ -135,16 +135,18 @@ This purely leptonic \Bp meson decay
 
          Decay Mode                 & SM prediction & Measurement \\
          \hline 
-         \decay{\Bp}{\ep\neue}      &               & \\
-         \decay{\Bp}{\mup\neum}     &               & \\
-         \decay{\Bp}{\taup\neut}    &               & \\
+         \decay{\Bp}{\ep\neue}      & $(1.3\pm0.4)\times10^{-11}$           & $<9.8\times10^{-7}$\\
+         \decay{\Bp}{\mup\neum}     & $(5.6\pm0.4)\times10^{-7}$            & $<1.0\times10^{-6}$\\
+         \decay{\Bp}{\taup\neut}    & $(0.75^{+1.0}_{-0.05} )\times 10^{-4}$& $(1.09\pm0.24)\times 10^{-4}$ \\
+
          \hline
       \end{tabular}
    \end{center}
-   \caption{Theoretical predictions for SM processes.}
+   \caption{Theoretical predictions and experimental measurements for \decay{\Bp}{\ellp\neul} processes, from Refs.~\cite{PhysRevD.92.051102,PhysRevD.79.091101,SATOYAMA200767}.}
    \label{tab:Theory_B2ellnu}
 \end{table}
-
+This purely leptonic \Bp meson decay can proceed to either of the three generations with the branching fractions detailed in Table~\ref{tab:Theory_B2ellnu}. The effect of helicity suppression in the final state is illustrated by the rapid decrease in predicted branching fraction as the mass charged lepton decreases. The neutrino in the final state makes this decay experimentally challenging to reconstruct at hadron colliders such as the \lhc. The measurement of \decay{\Bp}{\taup\neut} was performed at the \belle experiment, a \B-factory colliding \ep\en pairs at the $\PUpsilon(\text{4S})$ resonance. 
+Hadronic annihilation decays are necessarily more complicated than these purely leptionic processes as the quark and antiquark must be further hadronised as they cannot remain bare.
 
 
 {\color{Red}
@@ -155,12 +157,17 @@ This purely leptonic \Bp meson decay
 
 
 \subsection{Pure annihilation topology decays}
+Pure annihilation topology decays are an interesting subset of processes in which (at lowest order) only annihilation decay diagrams contribute. These are of particular interest because this allows the magnitudes of these processes to be isolated. Additionally, they provide a suitable forum in which to search for new physics; enhanced or decreased branching fractions and non-zero \CP violations are symptomatic of multiple competing processes interfering with one another.  
+
+Typically, hadronic \emph{pure} annihilation processes are characterised by a mutually exclusive set of quarks in the initial and final state. This implies that the initial state must have completely annihilated into a mediator for this process to occur.   
+
 {\color{Red}
 \begin{itemize}
 \item Pure annihilation - charmless Bc
 \end{itemize}}
-\subsection{Other annihilation decays}
 
+\subsection{Other annihilation decays}
+Processes that don't uniquely proceed via annihilation decays are also of interest. 
 {\color{Red}
 \begin{itemize}
 \item non pure - donals Bc 
@@ -168,16 +175,17 @@ This purely leptonic \Bp meson decay
 
 \section{Rescattering}
 
+Rescattering allows \Bp mesons to decay to final states that are ideal pure annihilation topologies via an intermediate process of some other topology. This can potential limit the sensitivity the annihilation decay if these processes happen at a significant rate. Intermediate processes that could contribute to the \decay{\Bp}{\Dsp\phiz} decay are shown in Fig.~\ref{fig:Theory_rescattering}. These rather complicated processes both involve tree-level \decay{\bquarkbar}{\uquarkbar} transitions in which one of both of the products undergo a final state interactions.  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
     \centering
-    \begin{subfigure}[m]{0.8\textwidth}
+    \begin{subfigure}[m]{0.7\textwidth}
         \centering
         \includegraphics[width=1.0\textwidth]{figs/Theory/B2DsPhi_Rescattering_B2D0K.pdf}
         \caption{via \decay{\Bp}{\Dstarz\Kstarp}}
     \end{subfigure}
-    \begin{subfigure}[m]{0.8\textwidth}
+    \begin{subfigure}[m]{0.7\textwidth}
         \centering
         \includegraphics[width=1.0\textwidth]{figs/Theory/B2DsPhi_Rescattering_B2Dsomega.pdf}
         \caption{via $\decay{\Bp}{\Dsp\omega}$}

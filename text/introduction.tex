@@ -8,8 +8,8 @@
 %\section{Overview} 
 
 
-Throughout history, society has endeavoured to glimpse into the heart of matter, trying to break it down into elementary chunks.
-The term \emph{atom} was originally used by the ancient Greek philosophers to speculate on the nature of matter, used to denote something that cannot be split into any further pieces. 
+Throughout history, society has endeavoured to glimpse into the heart of matter, trying to break it down into it's elementary building blocks.
+The term \emph{atom} was originally used by the ancient Greek philosophers to speculate on the nature of matter and used to denote something that was indivisible. 
 However, modern particle physics took until the 19th century to get going; the first of today's elementary particles, the electron, was discovered by J.J. Thomson in 1897~\cite{electron}.
 
 Rutherford's discovery of the proton~\cite{Rutherford:1911zz} and Chadwick's discovery of the neutron~\cite{Chadwick:1932ma} all but completed the picture, as between them these three particles constitute essentially all stable matter in the universe.  
@@ -47,23 +47,13 @@ The Standard Model (SM) provides explanation for a large number of natural pheno
 
 The SM is composed of a small number of fundamental particles; some are the components of matter and others are force-carriers that mediate interactions. The fundamental particles can be combined into composite combinations, bound by these fundamental interactions to form a rich tapestry of observable particles.
 
-Mathematically, the theory is described by the unitary product group $\text{SU}(3)\times\text{SU}(2)\times\text{U}(1)$ 
-
-
-
-{\color{Red}
-\begin{itemize}
-\item QFT?
-\item Feynman diagrams
-\end{itemize}}
-
+Mathematically, the theory is described by the unitary product group $\text{SU}(3)_{C}\times\text{SU}(2)_{L}\times\text{U}(1)_{Y}$, as the components are represented as gauge field theories. Throughout this thesis decays will be represented by Feynman Diagrams, pictorial representations of the mathematical amplitudes for various processes~\cite{PhysRev.76.749}.  
 The standard model is encapsulated by a Lagrangian density
 \begin{equation}
 \mathcal{L} = \mathcal{L}_{\text{QCD}}+\mathcal{L}_{\text{QED}}+\mathcal{L}_{\text{Weak}}+\mathcal{L}_{\text{Higgs}},
 \end{equation}
-where the total quantity receives 
-
-The particles of the SM can be separated in to fundamental fermions (particles with half-integer spin) and fundamental bosons (particles with integer spin). These are described in the following sections.  
+where the total quantity receives contributions from the fundamental forces as well as the spontaneous symmetry breaking mechanism allowing the particles to obtain masses. 
+The particles of the SM can be separated into fundamental fermions (particles with half-integer spin) and fundamental bosons (particles with integer spin). These are described in the following sections.  
 
 
 \subsubsection{Fundamental fermions}
@@ -101,6 +91,7 @@ As detailed in Table~\ref{tab:intro_particles}, all fermions except neutrinos ha
 
 {\color{Red}
 \begin{itemize}
+\item Quantum numbers?
 \item Degrees of freedom: colour, flavour
 \end{itemize}}
 
@@ -137,14 +128,14 @@ Details of these forces are listed in Table~\ref{tab:intro_forces} along with gr
    \label{tab:intro_forces}
 \end{table}
 
-The electromagnetic interaction is mediated by the massless photon. This affects all particles with a electromagnetic charge, including all fundamental fermions except neutrinos. As the mediator is massless the range of this force is infinite. The interaction is described fully by Quantum Electrodynamics (QED), an Abelian gauge theory in which the photon doesn't interaction with itself at the lowest order\footnote{Light-by-light scattering has been observed when mediated by quark loops~\cite{Aaboud:2017bwk}}.
+The electromagnetic interaction is mediated by the massless photon. This affects all particles with a electromagnetic charge, including all fundamental fermions except neutrinos. As the mediator is massless the range of this force is infinite. The interaction is described fully by Quantum Electrodynamics (QED), an Abelian gauge field theory in which the photon doesn't interaction with itself at the lowest order\footnote{Light-by-light scattering has been observed when mediated by quark loops~\cite{Aaboud:2017bwk}}.
 
 The strong force is mediated by the massless gluon. This couples to colour charge, which comes in three variants; red, green and blue.  
 The strong interaction is described by Quantum Chromodynamics (QCD), a non-Abelian gauge theory. This allows gluon self-coupling as the gluons carry colour charge themselves. This leads to complicated dynamics that limits the range of the strong force. Of the fundamental fermions, only the quarks have colour charge. Leptons don't interact strongly. 
 
 
 
-The weak force is mediated by the massive \Wpm and \Z bosons. The range of this force is limited to the order of $1/m_{\Wpm,\,\Z}$ and appears much weaker than the electromagnetic force for interactions with typical energies much below $\sim m_{\Wpm,\,\Z}$. The weak interaction is also described a non-Abelian gauge theory in which the gauge bosons can self-interact. 
+The weak force is mediated by the massive \Wpm and \Z bosons. The range of this force is limited to the order of $1/m_{\Wpm,\,\Z}$ and appears much weaker than the electromagnetic force for interactions with energies much below $\sim m_{\Wpm,\,\Z}$. The weak interaction is also described a non-Abelian gauge theory in which the gauge bosons can self-interact. 
 
 % {\color{Red}
 % \begin{itemize}
@@ -156,13 +147,15 @@ The weak force is mediated by the massive \Wpm and \Z bosons. The range of this 
 % \end{itemize}}
 
 
-\subsection{The origin of mass}
-The final component of the SM is the Higgs boson, a key component to allow the fundamental particles to gain mass. Discovered in 2012 at the Large Hadron Collider~\cite{20121,201230} it constitutes the final particle predicted to be part of the SM. 
+\subsubsection{The origin of mass}
+The final particle of the SM is the Higgs boson, a key component to allow the fundamental particles to gain mass. Discovered in 2012 at the Large Hadron Collider~\cite{20121,201230} it constitutes the final particle predicted to be part of the SM. 
 
 In the standard model all fermions would naively be expected to be massless, as the Lagrangian density terms that would allow them to gain a mass are excluded due to symmetry constraints. The exact symmetry can be broken by a mechanism proposed by R. Brout, F. Englert and P. Higgs~\cite{PhysRevLett.13.508,PhysRevLett.13.321} 
 
 {\color{Red}
 \begin{itemize}
+\item add quark masses
+\item maybe say how they can be measured?
 \item The majority of mass is actually from binding energy 
 \item how gauge bosons get mass
 \end{itemize}}
@@ -181,6 +174,7 @@ The SM contains 26 free parameters. The theory doesn't predict the value of thes
 The relatively large number of free parameters in the SM may hint to this model only being a subset of a more complete theory. Trends are observed between the quantities, for example the masses of the fermions in each generation are each fairly similar in size. Some larger theory may be responsible for these trends.  
 
 \subsection{Triumphs}
+The SM predicts a number of processes to an extraordinary accuracy. 
 
 \begin{itemize}
 \item g-2
@@ -188,11 +182,14 @@ The relatively large number of free parameters in the SM may hint to this model 
 \end{itemize}
 
 \subsection{Shortfalls}
+
+
 \begin{itemize}
 \item Baryon asymmetry 
 \item Neutrino masses
 \item Gravity
 \item Dark matter
+\item Strong \CP 
 \item hierarchy problem
 \end{itemize}
 %\subsection{QCD, QED, Weak}
