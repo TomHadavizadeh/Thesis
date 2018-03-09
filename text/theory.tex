@@ -84,7 +84,7 @@ The matrix can be represented in the Wolfenstein parametrisation using four para
 \end{equation}
 This representation is helpful as it dictates that for \CP violation to be present in the SM, $\eta$ must be non-zero. Additionally, the contribution from the imaginary parts is predominately in \Vub and \Vtd (the terms \Vcd and \Vts receive smaller contributions from $\eta$ at $\mathcal{O}(\lambda^{5})$). 
 
-The magnitudes of the CKM matrix elements can be inferred from various processes~\cite{PDG2016}. The values of the diagonal elements are determined to be close to unity, with the elements getting smaller further away from the diagonal.
+The magnitudes of the CKM matrix elements can be inferred from various processes and currently have the following sizes~\cite{PDG2016}
 \begin{equation} 
     \begin{pmatrix} 
         |\Vud| & |\Vus| & |\Vub| \\ 
@@ -96,23 +96,79 @@ The magnitudes of the CKM matrix elements can be inferred from various processes
         0.97417\pm0.00021        & 0.2248\pm0.0006           & (4.09\pm0.39)\times10^{-3}\\ 
         0.220\pm0.005            & 0.995\pm0.016             & (40.5\pm1.5)\times10^{-3} \\
         (8.2\pm0.6)\times10^{-3} & (40.0\pm2.7)\times10^{-3} & 1.009\pm0.031            
-    \end{pmatrix}
+    \end{pmatrix}.
 \end{equation}
+The values of the diagonal elements are determined to be close to unity, with the elements getting smaller further away from the diagonal.
 
+The first observation of \CP violation occurred in 1964 by V. Fitch and J. Cronin~\cite{PhysRevLett.13.138}.  
+A beam of long-lived neutral kaons were produced and their decay to $2\pi$ was observed. Neutral kaons were known to decay to $2\pi$ and $3\pi$ final states. The $2\pi$ state is a +1 eigenstate of the \CP operation, whilst the $3\pi$ is a -1 eigenstate. If the long-lived and short-lived neutral kaon eigenstates were also \CP eigenstates then only the $\decay{\KS}{\pi\pi}$ and $\decay{\KL}{\pi\pi\piz}$ decays would be allowed. The observation of \decay{\KL}{\pip\pim} decays demonstrated that the physical kaon states did not conserve \CP symmetry. 
 
+Mesons containing \cquark-quarks have not been observed to violate \CP asymmetry. The SM predictions for \CP violation in the charm sector are very small as a result of the CKM elements that govern these processes.     
 
-
-
-{\color{Red}
-\begin{itemize}
-\item values of CKM elements
-\item introduce idea of CP violation
-\item Observation of CP violation? 
-\item for pseudo-scalars just change C, for baryons more complicated
-\end{itemize}}
+% {\color{Red}
+% \begin{itemize} 
+% \item for pseudo-scalars just change C, for baryons more complicated
+% \end{itemize}}
 
 \subsection{\bquark-hadron physics}
-The b stands for beauty
+Hadrons containing \bquark-quarks are a rich environment to study CKM physics. 
+There are a wide variety of topologies that allow different parameters to be measured.
+The relevent topologies of two-body \bquark-meson decays are shown in Fig.~\ref{fig:Theory_topo}. 
+
+\begin{itemize}
+\item Tree-Level: 
+\item Strong Penguin decays:
+\item Electroweak Penguin decays:
+\item \W-boson exchange
+\item Annihilation: 
+\item Penguin Annihilation
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+    \centering
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=1.0\textwidth]{figs/Theory/TreeFav.pdf}
+        \caption{Colour-favoured Tree}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=1.0\textwidth]{figs/Theory/TreeSup.pdf}
+        \caption{Colour-suppressed Tree}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=1.0\textwidth]{figs/Theory/Exch.pdf}
+        \caption{\W-boson exchange}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=1.0\textwidth]{figs/Theory/Peng.pdf}
+        \caption{Penguin}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=1.0\textwidth]{figs/Theory/An.pdf}
+        \caption{Annihilation}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=1.0\textwidth]{figs/Theory/PengAn.pdf}
+        \caption{Penguin Annihilation}
+    \end{subfigure}
+    \caption{Two-body weak decay topologies of \bquark-mesons.}
+    \label{fig:Theory_topo}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\CP violation has been 
+
+
+
 {\color{Red}
 \begin{itemize}
 \item CP violation in the B sector
@@ -122,9 +178,14 @@ The b stands for beauty
 \end{itemize}}
 
 \subsection{QCD and hadronisation}
+
+At low energies the weak interaction is weaker than electromagnetic and strong interactions, therefore weak processes can only be observed when electromagnetic and strong interactions are explicitly forbidden. Decays of ground state \Bp mesons are ideal as the flavour changing transitions can only be mediated by the weak interaction. In hadronic decays of \Bp mesons, the hadronisation of the final state still requires predictions from QCD though.
+
+At low energies QCD cannot be treated perturbatively as the coupling of the strong force remains large. This means a large number of terms must be considered when calculating quantities. 
+Various schemes are used to make these calculations feasible. 
+ 
 {\color{Red}
 \begin{itemize}
-\item weak interactions are small so only obserable when QCD and QED are suppressed
 \item Explain why predictions are hard
 \item lattice QCD
 \item light cone sum rules? 
@@ -153,8 +214,7 @@ Perhaps the simplest \Bp meson annihilation process is \decay{\Bp}{\ellp\neul}, 
          \hline 
          \decay{\Bp}{\ep\neue}      & $(1.3\pm0.4)\times10^{-11}$           & $<9.8\times10^{-7}$\\
          \decay{\Bp}{\mup\neum}     & $(5.6\pm0.4)\times10^{-7}$            & $<1.0\times10^{-6}$\\
-         \decay{\Bp}{\taup\neut}    & $(0.75^{+1.0}_{-0.05} )\times 10^{-4}$& $(1.09\pm0.24)\times 10^{-4}$ \\
-
+         \decay{\Bp}{\taup\neut}    & $(1.6\pm0.4)\times10^{-4}$&           $(1.09\pm0.24)\times 10^{-4}$ \\
          \hline
       \end{tabular}
    \end{center}
@@ -162,7 +222,9 @@ Perhaps the simplest \Bp meson annihilation process is \decay{\Bp}{\ellp\neul}, 
    \label{tab:Theory_B2ellnu}
 \end{table}
 This purely leptonic \Bp meson decay can proceed to either of the three generations with the branching fractions detailed in Table~\ref{tab:Theory_B2ellnu}. The effect of helicity suppression in the final state is illustrated by the rapid decrease in predicted branching fraction as the mass charged lepton decreases. The neutrino in the final state makes this decay experimentally challenging to reconstruct at hadron colliders such as the \lhc. The measurement of \decay{\Bp}{\taup\neut} was performed at the \belle experiment, a \B-factory colliding \ep\en pairs at the $\PUpsilon(\text{4S})$ resonance. 
-Hadronic annihilation decays are necessarily more complicated than these purely leptionic processes as the quark and antiquark must be further hadronised as they cannot remain bare.
+Hadronic annihilation decays are necessarily more complicated than these purely leptionic processes as the quark and antiquark must be further hadronised.
+
+Decays that proceed via annihilation amplitudes are important in sectors other than \Bp decays. 
 
 
 {\color{Red}
