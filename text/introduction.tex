@@ -9,9 +9,9 @@
 
 
 Throughout history, society has endeavoured to glimpse into the heart of matter, trying to break it down into it's elementary building blocks.
-The term \emph{atom} was originally used by the ancient Greek philosophers to speculate on the nature of matter and used to denote something that was indivisible. 
-However, modern particle physics took until the 19th century to get going; the first of today's elementary particles, the electron, was discovered by J.J. Thomson in 1897~\cite{electron}.
-
+% The term \emph{atom} was originally used by the ancient Greek philosophers to speculate on the nature of matter and used to denote something that was indivisible. 
+% However, modern particle physics took until the 19th century to get going; the first of today's elementary particles, the electron, was discovered by J.J. Thomson in 1897~\cite{electron}.
+Although the term \emph{atom} was originally used by the Ancient Greek philosophers to describe something that was indivisible, modern particle physics took until the 19th century to take off; the first of today's elementary particles, the electron, was discovered by J.J. Thomson in 1897~\cite{electron}.
 Rutherford's discovery of the proton~\cite{Rutherford:1911zz} and Chadwick's discovery of the neutron~\cite{Chadwick:1932ma} all but completed the picture, as between them these three particles constitute essentially all stable matter in the universe.  
 In 1934 Yukawa proposed that the neutrons and protons were bound together using an interaction appropriately called the strong force~\cite{193548}. This required a new particle to be hypothesised: the \emph{meson} (meaning intermediate). The mass of this particle would have to sit inbetween the light electron and heavier  protons and neutrons. The electron correspondingly became part of a class of particles call \emph{leptons} (meaning light) and the protons and neutrons part of \emph{baryons} (meaning heavy). 
 The search for the strong force mediator resulted in the joint discoveries of the pion and muon~\cite{Lattes:1947mw,Lattes:1947mx}, both initially thought to be mesons. 
@@ -32,7 +32,7 @@ The seemingly bizarre complexity of particles was eventually explained by Gell-M
 
 
 
-A brief introduction to the Standard Model of Particle Physics is detailed later in this chapter. A more detailed description of the relevant theoretical aspects that underpin the rare hadronic \B meson decays is described in Chapter~\ref{ch:theory}. A description of experimental apparatus used to collect data is included in Chapter~\ref{ch:detector}, followed by the methodology used to process this data in Chapter~\ref{ch:selection}. The statistical methods used to extract measurements of the decays can be found in Chapters~\ref{ch:B2DsKK} and~\ref{ch:B2DsPhi}.
+A brief introduction to the Standard Model of Particle Physics is detailed later in this chapter. A more detailed description of the relevant theoretical aspects that underpin the rare hadronic \B meson decays are described in Chapter~\ref{ch:theory}. A description of experimental apparatus used to collect data set is included in Chapter~\ref{ch:detector}, followed by the methodology used to process this data set in Chapter~\ref{ch:selection}. Finally, the statistical methods used to extract measurements of the decays can be found in Chapters~\ref{ch:B2DsKK} and~\ref{ch:B2DsPhi}.
 
 
 The research presented in this thesis has been published in Ref.~\cite{LHCb-PAPER-2017-032}. 
@@ -41,13 +41,13 @@ The research presented in this thesis has been published in Ref.~\cite{LHCb-PAPE
 
 \section{The Standard Model of Particle Physics}
 
-The Standard Model (SM) provides explanation for a large number of natural phenomena to a high precision. There are currently a number of unresolved issues that are not explained, implying that this theory is not the complete description of the natural world. The theory was formulated in the 1970s, with particles being predicted and discovered by physicists around the world in the decades following.
+The Standard Model (SM) provides explanation for a large number of natural phenomena to a high precision. There are currently a number of unresolved issues that are not explained, implying that this theory is not the complete description of the natural world. The theory was formulated in the 1970s, with the final particles being predicted and discovered by physicists around the world in the decades following.
 
 \subsection{Building blocks}
 
 The SM is composed of a small number of fundamental particles; some are the components of matter and others are force-carriers that mediate interactions. The fundamental particles can be combined into composite combinations, bound by these fundamental interactions to form a rich tapestry of observable particles.
 
-Mathematically, the theory is described by the unitary product group $\text{SU}(3)_{C}\times\text{SU}(2)_{L}\times\text{U}(1)_{Y}$, as the components are represented as gauge field theories. Throughout this thesis decays will be represented by Feynman Diagrams, pictorial representations of the mathematical expressions for processes~\cite{PhysRev.76.749}.  
+Mathematically, the theory is described by the unitary product group $\text{SU}(3)_{C}\times\text{SU}(2)_{L}\times\text{U}(1)_{Y}$, as the components are represented as gauge field theories. Throughout this thesis decays will be represented by Feynman Diagrams, pictorial representations of mathematical expressions~\cite{PhysRev.76.749}.  
 The standard model is encapsulated by a Lagrangian density
 \begin{equation}
 \mathcal{L} = \mathcal{L}_{\text{QCD}}+\mathcal{L}_{\text{QED}}+\mathcal{L}_{\text{Weak}}+\mathcal{L}_{\text{Higgs}},
@@ -84,16 +84,14 @@ These particles are listed in Table~\ref{tab:intro_particles} along with their e
    \label{tab:intro_particles}
 \end{table}
 The first generation, containing the \uquark, \dquark, \en and \neue particles, is the least massive generation and most stable. The second and third generations exist only fleetingly, before decaying back down to the first generation. Therefore, all stable matter in the universe is comprised of first-generation particles. 
-
 As detailed in Table~\ref{tab:intro_particles}, all fermions except neutrinos have a electromagnetic charge. 
+Additionally, they have other quantum numbers that define their interaction with the other fundamental interactions. 
 
-%Additionally the 
-
-{\color{Red}
-\begin{itemize}
-\item Quantum numbers?
-\item Degrees of freedom: colour, flavour
-\end{itemize}}
+% {\color{Red}
+% \begin{itemize}
+% \item Quantum numbers?
+% \item Degrees of freedom: colour, flavour
+% \end{itemize}}
 
 
 \subsubsection{Antimatter}
@@ -119,7 +117,7 @@ Details of these forces are listed in Table~\ref{tab:intro_forces} along with gr
          \multirow{ 2}{*}{Weak} & $W$ boson         & \Wpm      & $80.385\pm0.015$  & \multirow{ 2}{*}{$10^{-18}$}  \\
                                 & $Z$ boson         & \Z        & $90.188\pm0.002$  &                               \\
          \hline
-         Gravity                & \emph{graviton?}  &           &                   & $\infty$                      \\
+         Gravity                & \emph{graviton?}  &           & 0                 & $\infty$                      \\
 
          \hline
       \end{tabular}
@@ -128,7 +126,7 @@ Details of these forces are listed in Table~\ref{tab:intro_forces} along with gr
    \label{tab:intro_forces}
 \end{table}
 
-The electromagnetic interaction is mediated by the massless photon. This affects all particles with a electromagnetic charge, including all fundamental fermions except neutrinos. As the mediator is massless the range of this force is infinite. The interaction is described fully by Quantum Electrodynamics (QED), an Abelian gauge field theory in which the photon doesn't interaction with itself at the lowest order\footnote{Light-by-light scattering has been observed when mediated by quark loops~\cite{Aaboud:2017bwk}}.
+The electromagnetic interaction is mediated by the massless photon. This affects all particles with a electromagnetic charge, including all fundamental fermions except neutrinos. As the mediator is massless the range of this force is infinite. The interaction is described fully by Quantum Electrodynamics (QED), an Abelian gauge field theory in which the photon doesn't interaction with itself as it does not had a charge\footnote{Light-by-light scattering has been observed when mediated by quark loops~\cite{Aaboud:2017bwk}}.
 
 The strong force is mediated by the massless gluon. This couples to colour charge, which comes in three variants; red, green and blue.  
 The strong interaction is described by Quantum Chromodynamics (QCD), a non-Abelian gauge theory. This allows gluon self-coupling as the gluons carry colour charge themselves. This leads to complicated dynamics that limits the range of the strong force. Of the fundamental fermions, only the quarks have colour charge. Leptons don't interact strongly. 
@@ -154,25 +152,29 @@ In the standard model all fermions would naively be expected to be massless, as 
 
 The masses of particles arise as a result of the self coupling of the Higgs field. The field potential contains quadratic and quartic terms in the field strength, allowing a situation where stable minima exist, displaced from the origin (which is an unstable maximum). The perturbations of this field occur around any one of the degenerate minima, requiring the symmetry of the system to be spontaneously broken. This leads the vacuum expectation value, $v$, of the field to be non-zero.   
 
-Gauge boson masses are a result of the kinetic energy of the Higgs field. The dynamics of the field result in Lagrangian density mass terms for the \Wpm and \Z bosons,
-\begin{equation}
-m_{\Wpm} = \frac{g_{\Wpm}v}{2}, ~~m_{\Z} = \frac{g_{\Z}v}{2}, 
-\end{equation}
-where $g_{\Wpm}$ and $g_{\Z}$ are the weak coupling strengths of \Wpm and \Z boson respectively.
-%, related via $g_{\Wpm} = g_{\Z}\cos{\theta_{W}}$.
+% Gauge boson masses are a result of the kinetic energy of the Higgs field. The dynamics of the field result in Lagrangian density mass terms for the \Wpm and \Z bosons,
+% \begin{equation}
+% m_{\Wpm} = \frac{g_{\Wpm}v}{2}, ~~m_{\Z} = \frac{g_{\Z}v}{2}, 
+% \end{equation}
+% where $g_{\Wpm}$ and $g_{\Z}$ are the weak coupling strengths of \Wpm and \Z boson respectively.
+% %, related via $g_{\Wpm} = g_{\Z}\cos{\theta_{W}}$.
 
 
-The fermion masses arise from the Higgs-fermion field interactions directly. Again the non-zero vacuum expectation value results in a Lagrangian density mass term for the fermions 
-\begin{equation}
-m_{f} = \frac{\lambda_{f}v}{\sqrt{2}}
-\end{equation}
-where $\lambda_{f}$ is a coupling that determines the strength of the interaction between the higgs field and fermion. This dictates the mass of the fermion.
+% The fermion masses arise from the Higgs-fermion field interactions directly. Again the non-zero vacuum expectation value results in a Lagrangian density mass term for the fermions 
+% \begin{equation}
+% m_{f} = \frac{\lambda_{f}v}{\sqrt{2}}
+% \end{equation}
+% where $\lambda_{f}$ is a coupling that determines the strength of the interaction between the higgs field and fermion. This dictates the mass of the fermion.
 
-The Higgs boson gains mass itself from the Higgs field kinematics and potential. When displaced by the non-zero vacuum expectation value the Lagrangian density obtains a higgs mass term
-\begin{equation}
-m_{H} = \sqrt{2\lambda}v,
-\end{equation}
-where $\lambda$ is one the terms that determines the shape of the Higgs potential. 
+% The Higgs boson gains mass itself from the Higgs field kinematics and potential. When displaced by the non-zero vacuum expectation value the Lagrangian density obtains a higgs mass term
+% \begin{equation}
+% m_{H} = \sqrt{2\lambda}v,
+% \end{equation}
+% where $\lambda$ is one the terms that determines the shape of the Higgs potential. 
+
+Gauge boson masses are a result of the kinetic energy of the Higgs field. The fermion masses arise from the Higgs-fermion field interactions directly. The Higgs boson itself gains mass from the Higgs field kinematics and potential.
+
+
 The masses of the SM fermions as determined using experiment input are shown in Table~\ref{tab:intro_particles_masses}. 
 \begin{table}[h]
    \begin{center}
@@ -224,7 +226,7 @@ The weak interaction introduces all of the \CP violation observed in the SM. Bot
 
 The SM contains 26 free parameters. The theory doesn't predict the value of these numbers, instead they must be worked out experimentally.  
 \begin{description}
-\item \textbf{Masses:} the masses of the 12 fundamental fermions (alternatively parametrised as the Higgs couplings $\lambda_{f}$).
+\item \textbf{Masses:} the masses of the 12 fundamental fermions (alternatively parametrised as the Higgs-fermion couplings).
 \item \textbf{Couplings:} the three coupling strengths of the electromagnetic, strong and weak forces.
 \item \textbf{Higgs potential:} two parameters determine the Higgs potential: the vacuum expectation value and the Higgs Boson mass.
 \item \textbf{Mixing parameters:} these eight parameters allow the weak interaction eigenstates and mass eigenstates to differ in both the quark and lepton sector.
@@ -235,13 +237,21 @@ The relatively large number of free parameters in the SM may hint to this model 
 
 \subsection{Triumphs}
 The SM predicts a number of processes to an extraordinary accuracy. 
+\subsubsection{Magnetic moments}
+The intrinsic magnetic moment for electrons was predicted by Dirac to be $g=2$. In QED this quantity receives corrections as a result of higher order effects that make the value slightly larger than two. This has been measured
 
-\begin{itemize}
-\item g-2
-\item SM measurements
-\end{itemize}
+\subsubsection{Precision tests of electroweak theory}
+
+
+
+
+% \begin{itemize}
+% \item \textbf{g-2:}     
+% \item \textbf{SM measurements:}
+% \end{itemize}
 
 \subsection{Shortfalls}
+In spite of the success of SM predictions a number of areas are not explained by the theory.  
 
 \subsubsection{Baryon asymmetry} 
 
@@ -250,27 +260,40 @@ The universe is observed to be matter dominated. Macroscopic quantities of antim
 Three conditions that can lead to asymmetries between matter and anitmatter were postulated by A.D. Sakharov in 1966~\cite{Sakharov:1967dj}. These require baryon number violation, $C$- and \CP-symmetry violation and interactions out of thermal equilibrium. The SM provides all of these, however the source of \CP-violation is far too small to account for the observed cosmic asymmetry. For processes at the electroweak energy scale, the quark masses (excluded the \tquark-quark) are comparatively small, leading to a tiny level of \CP violation. Sources beyond the scope of the SM are therefore expected to contribute to this asymmetry. 
 
 \subsubsection{Neutrino masses} 
-The neutrinos in the SM are massless. This has been demonstrated to be incorrect by the observation of neutrino flavour oscillations that require non-zero masses. Models that go beyond the SM explore the possibilities of neutrinos being Dirac fermions (similar to SM fermions) or Majorana fermions (it's own antiparticle). 
+The neutrinos in the SM are massless. This has been demonstrated to be incorrect by the observation of neutrino flavour oscillations that require non-zero masses~\cite{PhysRevLett.81.1158,PhysRevLett.87.071301}. Models that go beyond the SM explore the possibilities of neutrinos being Dirac fermions (similar to SM fermions) or Majorana fermions (their own antiparticles). 
 
 \subsubsection{Gravity}
-The SM doesn't incorporate a gauge field theory of gravity. The interaction can be hypothesised to be mediated by a massless spin-2 graviton. 
+The SM doesn't incorporate a gauge field theory of gravity. The interaction can be hypothesised to be quantised by a massless spin-2 graviton. However, a complete integration of general relativity and the standard model would require a theory of quantum gravity. 
 
 \subsubsection{Dark matter and dark energy}
 Astrophysical evidence suggests that baryonic matter only makes up small fraction of the total matter content of the universe. 
-The distribution of galactic rotation curves suggests a large halo of matter is present in the galaxy that only interacts gravitationally. Additionally phenomena such as the bullet cluster and gravitational lensing point towards a higher density of matter than can be observed with electromagnetic radiation. 
+The distribution of galactic rotation curves suggests a large halo of matter is present in the galaxy that only interacts gravitationally~\cite{DMrotation}. Additionally phenomena such as the bullet cluster and gravitational lensing point towards a higher density of matter than can be observed with electromagnetic radiation~\cite{0004-637X-604-2-596,0004-637X-606-2-819}. 
 
 The acceleration of universe's expansion is attributed to dark energy; a currently poorly understood type of energy distinct from dark matter and baryonic matter.
 
-\subsubsection{Strong \CP}  
-The string interaction \CP violating phase is constrained to be  ... from measurements of the neutrons magnetic (?) moment. 
+\subsubsection{Strong \CP violation}  
+The string interaction \CP violating phase is constrained to be extremely small from measurements of the neutrons electric dipole moment. The current limits constrain the strong \CP violating phase to be below $\mathcal{O}(10^{-10})$~\cite{Kuckei2007} 
 
 \subsubsection{Hierarchy problem}
+The typical energies of different interactions in the SM are on vastly difference scales, for example the electroweak interaction scale is $\mathcal{O}(10^{3})\gev$, whilst the GUT scale (the energy at which the electroweak and strong force could be unified) is of order $\mathcal{O}(10^{16})\gev$. Additionally, gravity is expected to be comparable at the Planck scale $\mathcal{O}(10^{19})\gev$. These different mass scales make it difficult to understand why the Higgs mass is so much less than these energies; quantum corrections would be expected to raise the mass to these scales. Additional theories are required to cancel these contributions. 
 
 
 
 \section{Beyond the Standard Model}
-As the SM is deficient in it's description of the natural world, a large number of theories proposing extensions have been hypothesised.
+As the SM is deficient in it's description of the natural world a large number of theories proposing extensions have been hypothesised.
+A small selection of Beyond the Standard Model (BSM) theories are summarised here. 
 
+\subsection{Supersymmetry}
+
+The Supersummetry (SUSY) theory unifies fermions and bosons by proposing a symmetry that can interchange the two. This requires creating an additional set of particles for each SM fermion and boson; the supersymmeteric partners. This symmetry is broken to allow the SM and SUSY partners to have different masses. This theory predicts dark matter candidates, fixes the hierarchy problem and unifies the gauge interactions. 
+
+However, the broken symmetry results in a large number of free parameters, leading to a huge phasespace in which to search. So far no evidence of SUSY has been observed.
+
+\subsection{Leptoquarks}
+
+\subsection{Extra dimensions}
+
+\subsection{Axions}
 
 {\color{Red}
 \begin{itemize}
