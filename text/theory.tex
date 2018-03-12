@@ -59,7 +59,7 @@ The Cabibbo angle, $\theta_{c}$, was introduced to mix the mass eigenstates into
 \begin{equation}
 d' = \cos{\theta_{c}}d + \sin{\theta_{c}}s.
 \end{equation}
-However, this on its own was not enough to explain the lack of flavour-changing neutral currents such as \decay{\Kz}{\mup\mun}. This was resolved by S.L. Glashow, J. Iliopoulos, and L. Maiani with the introduction of the GIM mechanism~\cite{PhysRevD.2.1285}. This suppressed neutral current processes by proposing a fourth quark, the charm quark. This was paired with the strange quark and allowed  Cabibbo's mixing matrix elegantly completed
+However, this on its own was not enough to explain the lack of flavour-changing neutral currents such as \decay{\Kz}{\mup\mun}. This was resolved by S.L. Glashow, J. Iliopoulos, and L. Maiani with the introduction of the GIM mechanism~\cite{PhysRevD.2.1285}. This suppressed neutral current processes by proposing a fourth quark, the charm quark. This was paired with the strange quark and allowed  Cabibbo's mixing matrix to be elegantly completed
 \begin{equation}
 \left( \begin{array}{c} d' \\ s'  \end{array} \right) = \begin{pmatrix} \Vud & \Vus \\ \Vcd & \Vcs \end{pmatrix} \left( \begin{array}{c} d \\ s \end{array} \right)= \begin{pmatrix} \cos{\theta_{c}} & \sin{\theta_{c}} \\ -\sin{\theta_{c}} & \cos{\theta_{c}} \end{pmatrix} \left( \begin{array}{c} d \\ s \end{array} \right).
 \end{equation}
@@ -112,18 +112,20 @@ Mesons containing \cquark-quarks have not been observed to violate \CP asymmetry
 
 \subsection{\bquark-hadron physics}
 Hadrons containing \bquark-quarks are a rich environment to study CKM physics. 
-There are a wide variety of topologies that allow different parameters to be measured.
-The relevant topologies of hadronic two-body \bquark-meson decays are shown in Fig.~\ref{fig:Theory_topo}. 
+There are a wide variety of topologies that allow different parameters to be measured. 
+In the \bquark-meson sector \CP violation has been observed in decays of \Bp~\cite{PhysRevD.82.072004,PhysRevD.81.112002}, \Bz~\cite{PhysRevLett.87.091801,PhysRevLett.87.091802}, \Bs~\cite{PhysRevLett.110.221601} mesons.
+Neutral \B mesons are observed to oscillate between the particle and antiparticle states, allowing the extraction of ratios of CKM matrix elements.
 
-% \begin{itemize}
-% \item Tree-Level: 
-% \item Strong Penguin decays:
-% \item Electroweak Penguin decays:
-% \item \W-boson exchange
-% \item Annihilation: 
-% \item Penguin Annihilation
-% \end{itemize}
 
+{\color{Red}
+\begin{itemize}
+\item lifetime maybe? 
+\end{itemize}}
+
+
+
+This thesis is concerned with hadronic two- and three-body decays of charged \B mesons.
+The relevant topologies of hadronic two-body \Bp meson decays are shown in Fig.~\ref{fig:Theory_topo}. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
     \centering
@@ -131,21 +133,25 @@ The relevant topologies of hadronic two-body \bquark-meson decays are shown in F
         \centering
         \includegraphics[width=1.0\textwidth]{figs/Theory/TreeFav.pdf}
         \caption{Colour-favoured Tree}
+        \label{fig:theory_colour_fav}
     \end{subfigure}
     \begin{subfigure}[b]{0.32\textwidth}
         \centering
         \includegraphics[width=1.0\textwidth]{figs/Theory/TreeSup.pdf}
         \caption{Colour-suppressed Tree}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.32\textwidth}
-        \centering
-        \includegraphics[width=1.0\textwidth]{figs/Theory/Exch.pdf}
-        \caption{\W-boson exchange}
+        \label{fig:theory_colour_sup}
     \end{subfigure}
     \begin{subfigure}[b]{0.32\textwidth}
         \centering
         \includegraphics[width=1.0\textwidth]{figs/Theory/Peng.pdf}
         \caption{Penguin}
+        \label{fig:theory_penguin}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=1.0\textwidth]{figs/Theory/Exch.pdf}
+        \caption{\W-boson exchange}
+        \label{fig:theory_exchange}
     \end{subfigure}
     \begin{subfigure}[b]{0.32\textwidth}
         \centering
@@ -157,37 +163,29 @@ The relevant topologies of hadronic two-body \bquark-meson decays are shown in F
         \centering
         \includegraphics[width=1.0\textwidth]{figs/Theory/PengAn.pdf}
         \caption{Penguin Annihilation}
+        \label{fig:theory_peng_ann}
     \end{subfigure}
     \caption{Two-body weak decay topologies of \bquark-mesons.}
     \label{fig:Theory_topo}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+These topologies receive varying levels of suppression as a result of the arrangement. The quark accompanying the \bquark-quark can act as a spectator (as in Figs.~\ref{fig:theory_colour_fav},~\ref{fig:theory_colour_sup}, and~\ref{fig:theory_penguin}) or can be involved in the decay process (as in Figs.~\ref{fig:theory_exchange},~\ref{fig:theory_ann},~\ref{fig:theory_peng_ann}).   
 
 
-In the \bquark-meson sector \CP violation has been observed in decays of \Bp~\cite{PhysRevD.82.072004,PhysRevD.81.112002}, \Bz~\cite{PhysRevLett.87.091801,PhysRevLett.87.091802}, \Bs~\cite{PhysRevLett.110.221601} mesons.
-
-
-
-{\color{Red}
-\begin{itemize}
-\item \B meson mixing
-\item lifetime maybe?
-\item talk about different types of processes- tree, loop, penguin annihliation etc. and relative strenghs 
-\end{itemize}}
 
 \subsection{QCD and hadronisation}
 
-At low energies the weak interaction is weaker than electromagnetic and strong interactions, therefore weak processes can only be observed when electromagnetic and strong interactions are explicitly forbidden. Decays of ground state \Bp mesons are ideal as the flavour changing transitions can only be mediated by the weak interaction. In hadronic decays of \Bp mesons, the hadronisation of the final state still requires predictions from QCD though.
+At low energies the weak interaction is weaker than electromagnetic and strong interactions, therefore weak processes can only be observed when electromagnetic and strong interactions are explicitly forbidden. Decays of ground state \Bp mesons are ideal as the flavour changing transitions can only be mediated by the weak interaction. In hadronic decays of \Bp mesons, the hadronisation of the final state still requires predictions from QCD.
 
-At low energies QCD cannot be treated perturbatively as the coupling of the strong force remains large. This means a large number of terms must be considered when calculating quantities. 
-Various schemes are used to make these calculations feasible. 
+At low energies QCD cannot be treated perturbatively as the coupling of the strong force remains large~\cite{PhysRevLett.30.1343,PhysRevLett.30.1346}. This means a large number of terms must be considered when calculating quantities. 
+Various schemes are used to make these calculations more feasible: perturbation QCD can be performed at high energies; Lattice QCD in which space time is quantised; or various effective field theories.  
  
-{\color{Red}
-\begin{itemize}
-\item Explain why predictions are hard
-\item lattice QCD
-\item light cone sum rules? 
-\end{itemize}}
+% {\color{Red}
+% \begin{itemize}
+% \item Explain why predictions are hard
+% \item lattice QCD
+% \item light cone sum rules? 
+% \end{itemize}}
 
 \section{Annihilation topology decays}
 
@@ -224,11 +222,10 @@ Hadronic annihilation decays are necessarily more complicated than these purely 
 
 Decays that proceed via annihilation amplitudes are important in sectors other than \Bp decays. 
 
-
 {\color{Red}
 \begin{itemize}
 \item Talk about \D and other annihilation topologies 
-\item Find origin of hadronic uncertainties 
+% \item Find origin of hadronic uncertainties 
 \item \decay{\Bz}{\Kp\Km}? penguin annihilation
 \item non pure - donals Bc
 \end{itemize}}
@@ -238,21 +235,14 @@ Pure annihilation topology decays are an interesting subset of processes in whic
 
 Typically, hadronic \emph{pure} annihilation processes are characterised by a mutually exclusive set of quarks in the initial and final state. This implies that the initial state must have completely annihilated into a mediator for this process to occur.   
 
-{\color{Red}
-\begin{itemize}
-\item Pure annihilation - charmless Bc
-\end{itemize}}
+In the \Bp sector two decays are of particular interest; \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dp\Kstarz}.
 
-%\subsection{Other annihilation decays}
-% Processes that don't uniquely proceed via annihilation decays are also of interest. 
-% {\color{Red}
-% \begin{itemize}
-% \item non pure - donals Bc 
-% \end{itemize}}
+Pure anihliation decays are also of particular interest in the \Bc sector. Charmless decays of \Bcp mesons can proceed exclusively via annihilation topologies~\cite{PhysRevD.80.114031}. These additionally benefit from the larger size of the CKM matrix element \Vcb with respect to \Vub.
+
 
 \section{Rescattering}
 
-Rescattering allows \Bp mesons to decay to final states that are ideal pure annihilation topologies via an intermediate process of some other topology. This can potential limit the sensitivity the annihilation decay if these processes happen at a significant rate. Intermediate processes that could contribute to the \decay{\Bp}{\Dsp\phiz} decay are shown in Fig.~\ref{fig:Theory_rescattering}. These rather complicated processes both involve tree-level \decay{\bquarkbar}{\uquarkbar} transitions in which one of both of the products undergo a final state interactions.  
+Rescattering allows \Bp mesons to decay to final states that are ideal pure annihilation topologies via an intermediate process of some other topology. This can potential limit the sensitivity the annihilation decay if these processes happen at a significant rate. Intermediate processes that could contribute to the \decay{\Bp}{\Dsp\phiz} decay are shown in Fig.~\ref{fig:Theory_rescattering}~\cite{Gronau:2012gs}. These rather complicated processes both involve tree-level \decay{\bquarkbar}{\uquarkbar} transitions in which one of both of the products undergo a final state interactions.  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
@@ -261,31 +251,34 @@ Rescattering allows \Bp mesons to decay to final states that are ideal pure anni
         \centering
         \includegraphics[width=1.0\textwidth]{figs/Theory/B2DsPhi_Rescattering_B2D0K.pdf}
         \caption{via \decay{\Bp}{\Dstarz\Kstarp}}
+        \label{fig:theory_rescattering_DK}
     \end{subfigure}
     \begin{subfigure}[m]{0.7\textwidth}
         \centering
         \includegraphics[width=1.0\textwidth]{figs/Theory/B2DsPhi_Rescattering_B2Dsomega.pdf}
         \caption{via $\decay{\Bp}{\Dsp\omega}$}
+        \label{fig:theory_rescattering_DsO}
     \end{subfigure}
     \caption{Rescattering contributions to \decay{\Bp}{\Dsp\phiz} decays.}
     \label{fig:Theory_rescattering}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In Fig.~\ref{fig:theory_rescattering_DK}, the path via the \decay{\Bp}{\Dstarz\Kstarp} intermediate state is shown. The initial process is a weak colour-suppressed tree level decay, followed by a strong final state interaction that interchanges the quark flavours. 
+
+An alternative path via the state $\decay{\Bp}{\Dsp\omega}$ is shown in Fig.~\ref{fig:theory_rescattering_DsO}. This is a colour-favoured tree level process followed by the mixing of a $\omega$ meson to a \phiz meson. This $\omega-\phi$ mixing has been shown to be small as a result of OZI suppression~\cite{OKUBO1963165,PhysRevD.79.074006}.
 
 
-
-{\color{Red}
-\begin{itemize}
-\item What is rescattering?
-\item Examples of it?
-\item Why it's expected to be small
-\item $\decay{\Bu}{\Dsp\omega}$
-\item $\omega\to\phi$ is OZI suppressed 
-\item $\decay{\Bu}{\Dz\Kstarp}$
-\item References: \Dp\Kstarz~\cite{Mehraban2016}.
-\item $\omega - \phi$ mixing: ~\cite{OKUBO1963165,PhysRevD.79.074006}.
-
-\end{itemize}}
+% {\color{Red}
+% \begin{itemize}
+% \item What is rescattering?
+% \item Examples of it?
+% \item Why it's expected to be small
+% \item $\decay{\Bu}{\Dsp\omega}$
+% \item $\omega\to\phi$ is OZI suppressed 
+% \item $\decay{\Bu}{\Dz\Kstarp}$
+% \item References: \Dp\Kstarz~\cite{Mehraban2016}.
+% \item $\omega - \phi$ mixing: ~\cite{OKUBO1963165,PhysRevD.79.074006}.
+% \end{itemize}}
 
 \section{Theoretical predictions for the \decay{\Bp}{\Dsp\phiz} decay}
 
