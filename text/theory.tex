@@ -3,6 +3,9 @@
 
 \minitoc
 
+
+This chapter contains an overview of the theory relevant to rare hadronic \B meson decays.
+
 %What's the standard model all about? 
 
 %\section{In the beginning...}
@@ -169,17 +172,37 @@ The relevant topologies of hadronic two-body \Bp meson decays are shown in Fig.~
     \label{fig:Theory_topo}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-These topologies receive varying levels of suppression as a result of the arrangement. The quark accompanying the \bquark-quark can act as a spectator (as in Figs.~\ref{fig:theory_colour_fav},~\ref{fig:theory_colour_sup}, and~\ref{fig:theory_penguin}) or can be involved in the decay process (as in Figs.~\ref{fig:theory_exchange},~\ref{fig:theory_ann},~\ref{fig:theory_peng_ann}).   
-
+These different possibilities receive varying levels of suppression as a result of the topology. The quark accompanying the \bquark-quark can act as a spectator (as in Figs.~\ref{fig:theory_colour_fav},~\ref{fig:theory_colour_sup}, and~\ref{fig:theory_penguin}) or can be involved in the decay process (as in Figs.~\ref{fig:theory_exchange},~\ref{fig:theory_ann},~\ref{fig:theory_peng_ann}).   
+In situations in which more than one of these topologies can contribute, interference can occur between the competing amplitudes. If the processes have different weak phases, \ie contain different CKM matrix elements, the interference can lead to \CP violation.  
 
 
 \subsection{QCD and hadronisation}
+\label{sec:theory_QCD}
+%At low energies the weak interaction is weaker than electromagnetic and strong interactions, therefore weak processes can only be observed when electromagnetic and strong interactions are explicitly forbidden. Decays of ground state \Bp mesons are ideal as the flavour changing transitions can only be mediated by the weak interaction. 
+%In hadronic decays of \Bp mesons, the hadronisation of the final state still requires predictions from QCD.
+Although the core decay of ground state \Bp mesons is mediated by the weak interaction, the prediction of decay rates requires input from the strong interaction.  
+The prediction of processes involving QCD is difficult because quarks and gluons cannot propagate freely as a result of \emph{confinement}. This means hadronisation will occur, leading to the physically observed bound states. It is still possible to make comparisons of experimental observations with QCD predictions by exploiting a number of features of the theory. 
 
-At low energies the weak interaction is weaker than electromagnetic and strong interactions, therefore weak processes can only be observed when electromagnetic and strong interactions are explicitly forbidden. Decays of ground state \Bp mesons are ideal as the flavour changing transitions can only be mediated by the weak interaction. In hadronic decays of \Bp mesons, the hadronisation of the final state still requires predictions from QCD.
+Unlike electromagnetism, at small length scales the strong interaction coupling is weak, whilst at larger length scales it becomes stronger. This is referred to as Asymptotic Freedom~\cite{PhysRevLett.30.1343,PhysRevLett.30.1346} and allows high energy (small length scale) processes to be calculated perturbatively. Low energy interactions remain difficult as infinite numbers of terms would be required to compute exactly.  
 
-At low energies QCD cannot be treated perturbatively as the coupling of the strong force remains large~\cite{PhysRevLett.30.1343,PhysRevLett.30.1346}. This means a large number of terms must be considered when calculating quantities. 
-Various schemes are used to make these calculations more feasible: perturbation QCD can be performed at high energies; Lattice QCD in which space time is quantised; or various effective field theories.  
- 
+It is possible to impose an arbitrary energy scale into the calculations. General expressions for processes can then be related to physical observables. 
+For example, the fractional content of different species within hadrons can be computed as Parton Density Functions, which can then be evolved to work at any arbitrary scale via DGLAP equations. 
+
+Factorisation can be exploited to split high energy perturbative QCD (pQCD) from the low energy processes below the QCD scale $\mathcal{O}(200\mev)$. This allows the high energy components to be computed perturbatively, with the low energy components taken from other calculations. One method of computing the non-perturbative expressions is Lattice QCD. This involves quantising space-time using a finite grid. The field equations are evaluated at these discrete points. The spacing of the lattice can be changed such that the physical values in the continuum limit can be extrapolated. This is computationally expensive are requires the use of supercomputers. 
+
+
+% {\color{Red}
+% \begin{itemize}
+% \item QCD predictions are hard because of confinement
+% \item quarks and gluons can't be observed directly
+% \item methods used to make comparisons: Asymptotic freedom, renomalisation group equation, factorization
+% \item Asymptotic freedom: weak at small scales; strong at large
+% \item scale introduced: renomalisation group equation relates expression at scale to observables 
+% \item factorization: separate hard from soft 200\mev
+% \item pdf for some scale; evolved to others with DGLAP 
+% \end{itemize}
+% }
+
 % {\color{Red}
 % \begin{itemize}
 % \item Explain why predictions are hard
@@ -220,40 +243,42 @@ Perhaps the simplest \Bp meson annihilation process is \decay{\Bp}{\ellp\neul}, 
 This purely leptonic \Bp meson decay can proceed to either of the three generations with the branching fractions detailed in Table~\ref{tab:Theory_B2ellnu}. The effect of helicity suppression in the final state is illustrated by the rapid decrease in predicted branching fraction as the mass charged lepton decreases. The neutrino in the final state makes this decay experimentally challenging to reconstruct at hadron colliders such as the \lhc. The measurement of \decay{\Bp}{\taup\neut} was performed at the \belle experiment, a \B-factory colliding \ep\en pairs at the $\PUpsilon(\text{4S})$ resonance. 
 Hadronic annihilation decays are necessarily more complicated than these purely leptionic processes as the quark and antiquark must be further hadronised.
 
-Decays that proceed via annihilation amplitudes are important in sectors other than \Bp decays. 
+Decays that proceed via annihilation amplitudes are important in sectors other than \Bp decays. In the neutral \B sector, the decays \decay{\Bz}{\Kp\Km} and \decay{\Bs}{\pip\pim} proceed via a combination of penguin annihilation and exchange diagrams~\cite{PhysRevLett.118.081801}. These topologies are affected by QCD hadronic uncertainties therefore precise experimental measurements are required to help understand the QCD dynamics.
 
-{\color{Red}
-\begin{itemize}
-\item Talk about \D and other annihilation topologies 
-% \item Find origin of hadronic uncertainties 
-\item \decay{\Bz}{\Kp\Km}? penguin annihilation
-\item non pure - donals Bc
-\end{itemize}}
+In the \Bc sector, the recently observed \decay{\Bcp}{\Dz\Kp} decay has been shown to proceed via a combination of annihilation and penguin topologies~\cite{LHCb-PAPER-2016-058}. This motivates the search for pure annihilation topology decays to understand the relative contributions from the annihilation and penguin processes.
+
+% {\color{Red}
+% \begin{itemize}
+% \item Talk about \D and other annihilation topologies 
+% % \item Find origin of hadronic uncertainties 
+% \item \decay{\Bz}{\Kp\Km}? penguin annihilation
+% \item non pure - donals Bc
+% \end{itemize}}
 
 \subsection{Pure annihilation topology decays}
 Pure annihilation topology decays are an interesting subset of processes in which (at lowest order) only annihilation decay diagrams contribute. These are of particular interest because this allows the magnitudes of these processes to be isolated. Additionally, they provide a suitable forum in which to search for new physics; enhanced or decreased branching fractions and non-zero \CP violations are symptomatic of multiple competing processes interfering with one another.  
 
 Typically, hadronic \emph{pure} annihilation processes are characterised by a mutually exclusive set of quarks in the initial and final state. This implies that the initial state must have completely annihilated into a mediator for this process to occur.   
 
-In the \Bp sector two decays are of particular interest; \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dp\Kstarz}.
+In the \Bp sector two decays are of particular interest; \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dp\Kstarz}. A search at the \lhcb experiment set a stringent limit on the branching fraction of the latter, $\BR(\decay{\Bp}{\Dp\Kstarz})< 6.1\times10^{−7}$ at 95\% confidence limit~\cite{LHCb-PAPER-2015-054}. A discussion of the \decay{\Bp}{\Dsp\phiz} decay can be found in Sec.~\ref{sec:theory_B2DsPhi}. 
 
-Pure anihliation decays are also of particular interest in the \Bc sector. Charmless decays of \Bcp mesons can proceed exclusively via annihilation topologies~\cite{PhysRevD.80.114031}. These additionally benefit from the larger size of the CKM matrix element \Vcb with respect to \Vub.
+Pure annihilation decays are also of particular interest in the \Bc sector. Charmless decays of \Bcp mesons can proceed exclusively via annihilation topologies~\cite{PhysRevD.80.114031}. These additionally benefit from the larger size of the CKM matrix element \Vcb with respect to \Vub.
 
 
 \section{Rescattering}
-
+\label{sec:theory_rescattting}
 Rescattering allows \Bp mesons to decay to final states that are ideal pure annihilation topologies via an intermediate process of some other topology. This can potential limit the sensitivity the annihilation decay if these processes happen at a significant rate. Intermediate processes that could contribute to the \decay{\Bp}{\Dsp\phiz} decay are shown in Fig.~\ref{fig:Theory_rescattering}~\cite{Gronau:2012gs}. These rather complicated processes both involve tree-level \decay{\bquarkbar}{\uquarkbar} transitions in which one of both of the products undergo a final state interactions.  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
     \centering
-    \begin{subfigure}[m]{0.7\textwidth}
+    \begin{subfigure}[m]{0.6\textwidth}
         \centering
         \includegraphics[width=1.0\textwidth]{figs/Theory/B2DsPhi_Rescattering_B2D0K.pdf}
         \caption{via \decay{\Bp}{\Dstarz\Kstarp}}
         \label{fig:theory_rescattering_DK}
     \end{subfigure}
-    \begin{subfigure}[m]{0.7\textwidth}
+    \begin{subfigure}[m]{0.6\textwidth}
         \centering
         \includegraphics[width=1.0\textwidth]{figs/Theory/B2DsPhi_Rescattering_B2Dsomega.pdf}
         \caption{via $\decay{\Bp}{\Dsp\omega}$}
@@ -265,7 +290,7 @@ Rescattering allows \Bp mesons to decay to final states that are ideal pure anni
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 In Fig.~\ref{fig:theory_rescattering_DK}, the path via the \decay{\Bp}{\Dstarz\Kstarp} intermediate state is shown. The initial process is a weak colour-suppressed tree level decay, followed by a strong final state interaction that interchanges the quark flavours. 
 
-An alternative path via the state $\decay{\Bp}{\Dsp\omega}$ is shown in Fig.~\ref{fig:theory_rescattering_DsO}. This is a colour-favoured tree level process followed by the mixing of a $\omega$ meson to a \phiz meson. This $\omega-\phi$ mixing has been shown to be small as a result of OZI suppression~\cite{OKUBO1963165,PhysRevD.79.074006}.
+An alternative path via the state $\decay{\Bp}{\Dsp\omega}$ is shown in Fig.~\ref{fig:theory_rescattering_DsO}. This is a colour-favoured tree level process followed by the mixing of a $\omega$ meson to a \phiz meson. This $\omega-\phi$ mixing is found to be small as a result of OZI suppression~\cite{OKUBO1963165,PhysRevD.79.074006}.
 
 
 % {\color{Red}
@@ -281,44 +306,90 @@ An alternative path via the state $\decay{\Bp}{\Dsp\omega}$ is shown in Fig.~\re
 % \end{itemize}}
 
 \section{Theoretical predictions for the \decay{\Bp}{\Dsp\phiz} decay}
+\label{sec:theory_B2DsPhi}
 
+In the SM, the decay $\decay{\Bp}{\Dsp\phi}$ proceeds dominantly via the pure annihilation diagram shown in Fig.~\ref{fig:Theory_DsPhiDiagram}. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
     \centering
     \includegraphics[width=0.6\textwidth]{figs/Theory/B2DsPhi.pdf}
-    \caption{\decay{\Bp}{\Dsp\phiz} }
+    \caption{The annihilation topology decay \decay{\Bp}{\Dsp\phiz}. }
     \label{fig:Theory_DsPhiDiagram}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-{\color{Blue}
-In the SM, the decay $\decay{\Bp}{\Dsp\phi}$ proceeds dominantly via the annihilation diagram shown in Fig.~\ref{fig:Theory_DsPhiDiagram}. 
-This suppressed topology requires the wave functions of the incoming quarks to overlap sufficiently to annihilate into a virtual \Wp boson. 
-The decay is further suppressed by the small magnitude of the CKM matrix element \Vub associated with the annihilation vertex. 
-
-
-}
+This suppressed topology requires the wave functions of the incoming quarks to overlap sufficiently to annihilate into a virtual \Wp boson. The decay is further suppressed by the small magnitude of the CKM matrix element \Vub associated with the annihilation vertex. 
 
 \subsection{Standard model predictions}
-{\color{Blue}
-Several SM predictions have been made for the branching fraction of the $\decay{\Bp}{\Dsp\phi}$ decay~\cite{Zou:2009zza, Mohanta:2002wf, Mohanta:2007uu, Lu:2001yz}, using input from lattice calculations~\cite{fB:2013HPQCD,fB:2016ETM, fB:2016Fermi}. These predictions are in the range $(1-7)\times10^{-7}$, where the limit on the precision is dominated by hadronic uncertainties. 
+Predictions have been computed for the branching fraction of \decay{\Bp}{\Dsp\phiz} in the SM.  
+These are performed in a range of QCD frameworks, leading to predictions in the range $(1-7)\times10^{-7}$ as listed in Table~\ref{tab:theory_predicted_br}. As detailed in Sec.~\ref{sec:theory_QCD} these predictions require additional input from Lattice QCD calculations~\cite{fB:2013HPQCD,fB:2016ETM, fB:2016Fermi}.  
+\begin{table}[h]
+    \centering
+    \begin{tabular}{ l c c }
+        \hline
+        Framework                      & $\BR(\decay{\Bp}{\Dsp\phiz})$ Prediction           & Ref.                       \\
+        \hline
+        Pertubative QCD                & $1.3\times10^{-7}$    & ~\cite{Zou:2009zza}        \\
+        QCD Improved Factorization     & $6.7\times10^{-7}$    & ~\cite{Mohanta:2002wf}     \\
+        QCD Factorization              & $4.2\times10^{-7}$    & ~\cite{Mohanta:2007uu}     \\
+        Pertubative QCD                & $3.0\times10^{-7}$    & ~\cite{Lu:2001yz}          \\
+        \hline 
+    \end{tabular}
+   \caption{Predictions for the branching fraction of \decay{\Bp}{\Dsp\phiz} decays computed in different QCD frameworks within the SM.}
+   \label{tab:theory_predicted_br}
+\end{table}
 
-In addition, unlike many rare hadronic decays including $\decay{\Bp}{\Dsp\Kp\Km}$, possible contributions from rescattering effects are expected to be small, for example contributions from intermediate states such as $\decay{\Bp}{\Dsp\omega}$~\cite{Gronau:2012gs}.
+Unlike many rare hadronic processes, the contribution from the rescattering processes described in Sec.~\ref{sec:theory_rescattting} are expected to be small. The branching fraction of decays passing through the $\decay{\Bp}{\Dsp\omega}$ intermediate state are predicted to have a branching fraction $\BR(\decay{\Bp}{\Dsp\phiz})_{\omega-\phiz}\sim 0.7\times10^{-7}$~\cite{Gronau:2012gs}. 
 
-}
 
-{\color{Red}
-\begin{itemize}
-\item Find origin of hadronic uncertainties 
-\end{itemize}}
+% {\color{Blue}
+% % Several SM predictions have been made for the branching fraction of the $\decay{\Bp}{\Dsp\phi}$ decay~\cite{Zou:2009zza, Mohanta:2002wf, Mohanta:2007uu, Lu:2001yz}, using input from lattice calculations~\cite{fB:2013HPQCD,fB:2016ETM, fB:2016Fermi}. These predictions are in the range $(1-7)\times10^{-7}$, where the limit on the precision is dominated by hadronic uncertainties. 
+
+% In addition, unlike many rare hadronic decays including $\decay{\Bp}{\Dsp\Kp\Km}$, possible contributions from rescattering effects are expected to be small, for example contributions from intermediate states such as $\decay{\Bp}{\Dsp\omega}$~\cite{Gronau:2012gs}.
+
+% }
+
+% {\color{Red}
+% \begin{itemize}
+% \item Find origin of hadronic uncertainties 
+% \end{itemize}}
 
 \subsection{BSM models and predictions}
-{\color{Blue}
-However, additional diagrams contributing to this decay can arise in some extensions of the SM, such as supersymmetric models with R-parity 
-violation. They could enhance the branching fraction and/or produce large \CP asymmetries~\cite{Mohanta:2002wf, Mohanta:2007uu}, which makes the $\decay{\Bp}{\Dsp\phi}$ decay a promising place to search for new physics beyond the SM.\footnote{Charge conjugation is implied throughout this paper. Furthermore, $\phi$ denotes the $\phi(1020)$ resonance.}
-}
+Extensions to the SM can enhance the branching fraction and/or produce large \CP asymmetries in \decay{\Bp}{\Dsp\phiz} decays by contributing additional decay amplitudes that interfere with the SM process.
+Predictions have been computed in a range of BSM scenarios as listed in Table~\ref{tab:theory_BSM_br}. Overviews of the Two Higgs Doublet Model and Minimal SUSY model with RPV can be found in Sec.~\ref{sec:intro_BSM}.
+% \begin{description}
+% \item \textbf{Two Higgs Doublet Model:}  
+% \item \textbf{Minimal SUSY model with $R$-parity violation:}
+
+% \end{description}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{ l c c c }
+        \hline
+        BSM model                                        & $\BR(\decay{\Bp}{\Dsp\phiz})$ Prediction     & $A_{CP}$&  Ref.\\
+        \hline
+        Two Higgs Doublet Model                          & $8.0\times10^{-6}$    & $<59\%$ & ~\cite{Mohanta:2002wf}        \\
+        Minimal SUSY model with RPV                      & $3.04\times10^{-4}$   & $<14\%$ & ~\cite{Mohanta:2002wf}     \\
+        Scale invariant unparticles~\cite{GEORGI2007275} & $0-20\times10^{-6}$   & $<50\%$ & ~\cite{Mohanta:2007uu}     \\
+        \hline 
+    \end{tabular}
+    \caption{Predictions for the branching fraction of \decay{\Bp}{\Dsp\phiz} decays and \CP asymmetry $A_{CP}$ computed in various BSM scenarios.}
+    \label{tab:theory_BSM_br}
+\end{table}
+
+
+% \begin{description}
+% \item \textbf{Two Higgs Doublet Model: } 
+% \item \textbf{Minimal SUSY model with $R$-parity violation:}
+
+% \end{description}
+
+% {\color{Blue}
+% However, additional diagrams contributing to this decay can arise in some extensions of the SM, such as supersymmetric models with R-parity 
+% violation. They could enhance the branching fraction and/or produce large \CP asymmetries~\cite{Mohanta:2002wf, Mohanta:2007uu}, which makes the $\decay{\Bp}{\Dsp\phi}$ decay a promising place to search for new physics beyond the SM.
+
+% \footnote{Charge conjugation is implied throughout this paper. Furthermore, $\phi$ denotes the $\phi(1020)$ resonance.}
+% }
 
 {\color{Red}
 \begin{itemize}
@@ -330,40 +401,45 @@ violation. They could enhance the branching fraction and/or produce large \CP as
 
 \subsection{Previous measurements}
 
-{\color{Blue}
-The \lhcb experiment reported evidence for the decay $\decay{\Bp}{\Dsp\phi}$ using $pp$ collision data corresponding to an integrated luminosity of 1\invfb taken during 2011, at a centre-of-mass energy of 7\tev~\cite{Aaij:2012zh}. A total of $6.7^{+4.5}_{-2.6}$ candidates was observed. The branching fraction was determined to be 
-
+The \lhcb experiment previously reported evidence for the decay $\decay{\Bp}{\Dsp\phi}$ using $pp$ collision data corresponding to an integrated luminosity of 1\invfb taken during 2011, at a centre-of-mass energy of 7\tev~\cite{Aaij:2012zh}. A total of $6.7^{+4.5}_{-2.6}$ candidates was observed as shown in Fig.~\ref{fig:Theory_prev_B2DsPhi}. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figs/Theory/Prev_B2DsPhi.pdf}
+    \caption{The invariant mass of \decay{\Bp}{\Dsp\phiz} candidates previously observed by \lhcb, from Ref.~\cite{Aaij:2012zh}. }
+    \label{fig:Theory_prev_B2DsPhi}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The branching fraction was determined to be 
 \begin{equation}
 \mathcal{B}(\decay{\Bp}{\Dsp\phi}) = (1.87^{+1.25}_{-0.73} \pm 0.19 \pm 0.32) \times 10^{-6},
 \end{equation}
 where the first uncertainty is statistical, the second is systematic and the third is due to the uncertainty on the branching fraction of the decay $\decay{\Bp}{\Dsp\Dzb}$, which was used as normalisation. 
 Given the large uncertainties on both the theoretical and experimental values, the previously measured value is consistent with the range of SM values given above.
-}
+
+
 
 {\color{Red}
 \begin{itemize}
-\item Include plot and measurement
 \item say something about similarites 
 \end{itemize}}
 
 
 \section{Theoretical predictions for the \decay{\Bp}{\Dsp\Kp\Km} decay}
 
+In the search for \decay{\Bp}{\Dsp\phiz} decays it is important to consider other decays that may decay to the same final state. As the \decay{\phiz}{\Kp\Km} decay is used to reconstruct the \phiz candidates it is crucial to understand processes that might contribute to \decay{\Bp}{\Dsp\Kp\Km} decays. 
 
+The decay $\decay{\Bp}{\Dsp\Kp\Km}$ is mediated by a $\decay{\bquarkbar}{\uquarkbar}$ transition shown in Fig.~\ref{fig:Theory_DsKKDiagram} and is therefore suppressed in the Standard Model (SM) due to the small size of the Cabibbo-Kobayashi-Maskawa (CKM) matrix element \Vub.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
     \centering
     \includegraphics[width=0.6\textwidth]{figs/Theory/B2DsKK.pdf}
-    \caption{\decay{\Bp}{\Dsp\Kp\Km} }
+    \caption{The decay process \decay{\Bp}{\Dsp\Kp\Km}.}
     \label{fig:Theory_DsKKDiagram}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-
-{\color{Blue}
-The decay $\decay{\Bp}{\Dsp\Kp\Km}$ is mediated by a $\decay{\bquarkbar}{\uquarkbar}$ transition shown in Fig.~\ref{fig:Theory_DsKKDiagram} and is therefore suppressed in the Standard Model (SM) due to the small size of the Cabibbo-Kobayashi-Maskawa (CKM) matrix element \Vub. 
-}
+This three-body decay differs from the 2-body topologies already considered. In $\decay{1}{2}$ processes, the momentum of the decay products in the rest frame of the initial particle is determined exactly. In $\decay{1}{3}$ processes this is not the case as different fractions of the momentum can be distributed among the decay products. This leads to two degrees of freedom that characterise the phase-space of three-body decays. This phase space is represented by a Dalitz plot: a two-dimension plot defined by the squared invariant masses of pairs of particles as devised by R. Dalitz~\cite{PhysRev.94.1046}.
 
 
 {\color{Red}
