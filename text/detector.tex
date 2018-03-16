@@ -686,7 +686,10 @@ The tracks are required to have a significant impact parameter with respect to t
 
 
 
-The \hlt underwent various improvements between Run I and Run II. The number of CPU cores in the Event Filter Farm (EFF) increased from around 29,000 to 52,000. Most notably the \hltone and \hlttwo components were modified to operate asynchronously. This means during Run II the events passing \hltone are stored in a temporary buffer (around 11 petabytes in size) to be processed later by \hlttwo. This allows alignment and calibration to be performed between the running of \hltone and \hlttwo. Dedicated calibration samples are produced by \hltone and processed on the EFF. This includes calculating the \velo and tracking station alignments to optmise the momentum resolution. Additionally, the refractive index of the \rich radiators is calibrated using samples of particles with known masses from specific decays. The difference in the measured and expected Cherenkov angle is used to determine the required calibration. 
+The \hlt underwent various improvements between Run I and Run II. The number of CPU cores in the Event Filter Farm (EFF) increased from around 29,000 to 52,000. Most notably the \hltone and \hlttwo components were modified to operate asynchronously. This means during Run II the events passing \hltone are stored in a temporary buffer (around 11 petabytes in size) to be processed later by \hlttwo. This allows alignment and calibration to be performed between the running of \hltone and \hlttwo. Dedicated calibration samples are produced by \hltone and processed on the EFF. This includes calculating the \velo and tracking station alignments to optimise the momentum resolution. Additionally, the refractive index of the \rich radiators is calibrated and alignment of the \rich mirror system updated. 
+The distribution of the difference between the reconstructed and measured Cherenkov angle in dedicated calibration samples is used to determine a calibration scaling factor. The misalignment is determined by investigating this difference as a function of azimuthal angle.
+This allows resolutions of 1.65\mrad and 0.67\mrad to be achieved online for \richone and \richtwo respectively. 
+%Dedicated calibration samples are used to determine the difference in the measured and expected Cherenkov angle. A scaling factor  
 
 These improvements in calibration allow the \hlttwo reconstruction to be effectively the same as can be achieved offline. An additional trigger system called the Turbo Stream~\cite{1742-6596-664-8-082004} was added in Run II to create candidates ready for analysis straight out of \hlttwo. However, candidates analysed in this thesis were processed offline.
 
@@ -696,6 +699,16 @@ These improvements in calibration allow the \hlttwo reconstruction to be effecti
 The reconstruction of charged and neutral particles is described in this section. 
 
 \subsubsection{Charged particle reconstruction}
+Charged particles are reconstructed using tracks passing through the various tracking stations within the \lhcb detector. The curvature of the track as is traverses through the magnetic field allows a precise determination of the momentum. The kinematics of charged particles also require a measurement of the particles energy. However, as the energy is not measured as precisely as the momentum, particles are assigned mass hypotheses, $m$, to determine the energy
+\begin{equation}
+E = \sqrt{\boldsymbol{p}^{2}+m^{2}}.
+\end{equation} 
+The invariant mass of n-body combination can therefore be calculated as
+\begin{equation}
+m^{2}_\text{tot} = E_{\text{tot}}^{2} - \vec{p}_\text{tot}^2 = \left(\sum^{n} \sqrt{\boldsymbol{p}_{i}^{2}+m_{i}^{2}}\right)^{2} - \left(\sum^{n} \boldsymbol{p}_{i}\right)^2
+\end{equation}
+using the mass hypotheses for each of the contributing tracks.
+
 Charged tracks are reconstructed using the hits in the \velo, \ttracker, \intr and \ot. These are classified into different categories depending on their route taken through the detector as shown in Fig.~\ref{fig:Dec_reco_tracks}. The \intr and \ot are collectively referred to as the T-stations. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -831,9 +844,46 @@ These resolution values are used to subtract the smearing from the \velo resolut
 \subsubsection{Real-time beam measurements}
 The beam gas imaging method additionally allows measurements of the beam profiles to be made in real-time during data taking. 
 As detailed in Sec.~\ref{sec:Dec_beam_conds} the \lhc runs with a smaller number of bunches than the full capacity would allow. The distribution of filled and empty bunch slots are usually chosen to maximise the luminosity for \atlas and \cms, therefore only a subset of the total bunches collide at \lhcb. Those beam crossings in which only one of the two bunches pass through \lhcb can be used to make measurements of the beam-gas interactions during normal running.
-These provide information about the beam angle, positions and shapes. The shape parameters can be used to calculate the emittance of the beams. This information is published back to the \lhc, providing important information about the performance of the machine~\cite{Hadavizadeh:IPAC2017-MOPAB131}.
+These provide information about the beam angle, positions and shapes. The shape parameters can be used to calculate the emittance of the beams. This information is published back to the \lhc, providing important information about the performance of the machine.
+
+A fraction of collisions are sent to a dedicated monitoring farm to be analysed in real-time. Measurements are made of the beam positions and widths averaged over all bunches in each beam. The measurements of Beam 1 and Beam 2 in the $x$-dimension are shown in Fig.~\ref{fig:Dec_bgi_realtime}. These plots can be monitored during data taking in the \lhcb control room.   
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+    \centering
+    \begin{subfigure}[m]{0.7\textwidth}
+        \centering
+        \includegraphics[width=1.0\textwidth]{figs/Detector/Beam_position_realtime.pdf}
+    \end{subfigure}
+    \begin{subfigure}[m]{0.7\textwidth}
+        \centering
+        \includegraphics[width=1.0\textwidth]{figs/Detector/Beam_sigma_realtime.pdf}
+    \end{subfigure}
+    \caption{The mean position (top) and width (bottom) of Beam 1 (left) and Beam 2 (right) bunches in the $x$-dimension. These values were collected in real time during one fill and appear as presented in the \lhcb control room.}
+    \label{fig:Dec_bgi_realtime}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+
+The beam-gas collisions can be re-analysed offline to exploit the full available statistics. A dedicated \lhc-wide cross-calibration of emittance measuring devices was performed in 2016~\cite{Hadavizadeh:IPAC2017-MOPAB131}. The increased statistics allow the positions and widths of individual bunches to be determined as shown in Fig.~\ref{fig:Dec_bgi_fill}.  
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+    \centering
+    \begin{subfigure}[m]{0.49\textwidth}
+        \centering
+        \includegraphics[width=1.0\textwidth]{figs/Detector/PerBXID_MeanX_unfolded_Beam1.pdf}
+    \end{subfigure}
+    \begin{subfigure}[m]{0.49\textwidth}
+        \centering
+        \includegraphics[width=1.0\textwidth]{figs/Detector/PerBXID_SigmaX_unfolded_Beam1.pdf}
+    \end{subfigure}
+    \caption{The mean position (left) and width (right) of Beam 1 bunches in the $x$-dimension. These values have been corrected for the \velo resolution and were recorded during a dedicated beam size calibration fill. The quantities are displayed for individual bunches. The beam optics were designed to have a large range of beam sizes. }
+    \label{fig:Dec_bgi_fill}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
