@@ -798,10 +798,27 @@ The optimisation of the signal and normalisation cuts is performed separately fo
          \decay{\Bp}{\Dsp\Dzb}   & \decay{\Dsp}{\Kp\Km\pip}   & 8.0               & 0.0               & 7.95            \\
          \hline
       \end{tabular}
-   
    \caption{Charmless and single charm minimum flight distance significance requirements applied to the \Dsp and \Dzb candidates.}
    \label{tab:selection_fd_cuts}
 \end{table}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+    \centering
+    \begin{subfigure}[t]{0.4\textwidth}
+        \includegraphics[width=1.0\textwidth]{figs/Selection/Signal_Ds2KPiPi_Test2_0_000000_DslessFDCHI2.pdf}
+        \caption{Before}
+    \end{subfigure}%
+    \begin{subfigure}[t]{0.4\textwidth}
+        \includegraphics[width=1.0\textwidth]{figs/Selection/Signal_Ds2KPiPi_Test2_25_000000_DslessFDCHI2.pdf}
+        \caption{After}
+    \end{subfigure}\\
+    \caption{The invariant mass distribution of \decay{\Bp}{(\decay{\Dsp}{\Kp\pim\pip})\phiz} candidates with $25 < |m(\Kp\pim\pip) - m(\Dsp)| < 50\mevcc $ before (left) and after (right) the flight distance significance requirement is applied. The significant contribution from \decay{\Bp}{\Kp\pim\pip\phiz} and \decay{\Bp}{\Kp\pim\pip\Kp\Km} decays is removed. Partially reconstructed charmless decays below the \Bp meson mass are neglected.}
+    \label{fig:Selection_charmless_before_after}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 
 
@@ -820,7 +837,7 @@ The specific vetoes included in this selection are listed in Table~\ref{table:pi
 Decay Mode & Misidentified decay\\
 \hline
 \decay{\Dsp}{{\color{Red}\Kp}\Km\pip}   & \decay{\Dp}{{\color{Red}\pip}\Km\pip}    \\
-                           & \decay{\Lc}{{\color{Red}\Pp}\Km\pip}     \\
+                           & $\decay{\Lc}{{\color{Red}\Pp^{+}}\Km\pip}$     \\
 %                           &                             \\
 \hline
 \decay{\Dsp}{{\color{Red}\Kp}\pim\pip}  & \decay{\Dp}{{\color{Red}\pip}\pim\pip}   \\
