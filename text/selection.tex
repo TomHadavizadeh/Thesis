@@ -541,6 +541,11 @@ The \emph{Stripping Line} selection for this line is listed in Table~\ref{tab:st
 The \emph{Stripping Line} used in the search for \decay{\Bp}{\Dsp\Kp\Km} decays covers the full $m(\Kp\Km)$ phase-space. This includes the \Dzb mass such that this line reconstructs both the signal and normalisation channels simultaneously. 
 Both modes are selected using this line to reduce systematic uncertainty in the ratio of selection efficiencies.
 
+The \emph{Stripping Lines} for \decay{\Bp}{\Dsp\phiz}, \decay{\Bp}{\Dsp\Dzb} and \decay{\Bp}{\Dsp\Kp\Km} decays retain approximately 0.005\%, 0.04\% and 0.04\% of event that are saved by the software trigger. For an \hlttwo output rate of 2\,kHz, this corresponds to effective rates of 0.1\,Hz, 0.8\,Hz and 0.8\,Hz for each of the lines.
+
+%DPhi,: 0.00521% DKK: 0.04382% DD0: 0.05491% —> times 2kHz out of trigger 
+
+
 % \begin{table}[h]
 % \centering
 % \begin{tabular}{ l l l}
@@ -751,9 +756,36 @@ The distribution of PIDK for pions and kaons is shown in Fig.~\ref{fig:selection
 Decays of \Bp mesons that didn't proceed via \D mesons could form a peaking background below the signal invariant mass distributions when they decay to the same final state.
 The signal mode could receive contributions from the decays $\decay{\Bp}{h^{+}h^{-}h^{+}\phiz}$ or $\decay{\Bp}{h^{+}h^{-}h^{+}h^{+}h^{-}}$, referred to as charmless backgrounds. Here $h^{\pm}$ is used to represent \Kpm or \pipm in the specific \Dsp, \Dzb or \phiz final state.
 The normalisation mode is also susceptible, however as it involves two charm mesons it could receive contributions from the decays $\decay{\Bp}{h^{+}h^{-}h^{+}\Dzb}$ or $\decay{\Bp}{\Dsp h^{+}h^{-}}$, referred to as single-charm backgrounds, and $\decay{\Bp}{h^{+}h^{-}h^{+} h^{+}h^{-}}$ referred to as a charmless background.
-These backgrounds can be suppressed by requiring the \D meson decay vertex to be displaced from the \Bp meson decay vertex. Requirements are applied to the significance of the vertex separation ($\chi^{2}_{\text{FD}}$).
+These backgrounds can be suppressed by requiring the \D meson decay vertex to be displaced from the \Bp meson decay vertex. Requirements of varying strength are applied to the significance of the vertex separation ($\chi^{2}_{\text{FD}}$), depending on the extend to which each mode is affected by these backgrounds. The distribution of the flight distance significance for \decay{\Bp}{(\decay{\Dsp}{\Kp\pim\pip})\phiz} decays is shown in Fig.~\ref{fig:Selection_FDCHI2}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+    \centering
+        \includegraphics[width=0.6\textwidth]{figs/Selection/Charmless_Comparison_B2DsPhi_Ds2KPiPi_log10_D_FDCHI2_ORIVX.pdf}
+        \caption{The log of the flight distance significance between the \Bp and \Dsp decay vertices in samples of charmless \decay{\Bp}{\Kp\pim\pim\phiz} decays in data (black) and \decay{\Bp}{(\decay{\Dsp}{\Kp\pim\pip})\phiz} signal decays in simulation (red). The vertical line represents the requirement applied to this mode.}
+    \label{fig:Selection_FDCHI2}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 The residual yields of charmless backgrounds in the signal mode are estimated by performing a fit to the \Bp invariant mass for candidates with $25 < |m(h^{+}h^{-}h^{+}) - m(\Dsp)| < 50\mevcc $. This background estimation is performed separately for the \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} searches. 
+
+The invariant mass distribution for \decay{\Bp}{(\decay{\Dsp}{\Kp\pim\pip})\phiz} candidates with $25 < |m(\Kp\pim\pip) - m(\Dsp)| < 50\mevcc$ is shown in Fig.~\ref{fig:Selection_charmless_before_after}, with and without the flight distance significance requirement applied. The large contribution from charmless decays is effectively removed.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+    \centering
+    \begin{subfigure}[t]{0.4\textwidth}
+        \includegraphics[width=1.0\textwidth]{figs/Selection/Signal_Ds2KPiPi_Test2_0_000000_DslessFDCHI2.pdf}
+        \caption{Before}
+    \end{subfigure}%
+    \begin{subfigure}[t]{0.4\textwidth}
+        \includegraphics[width=1.0\textwidth]{figs/Selection/Signal_Ds2KPiPi_Test2_25_000000_DslessFDCHI2.pdf}
+        \caption{After}
+    \end{subfigure}\\
+    \caption{The invariant mass distribution of \decay{\Bp}{(\decay{\Dsp}{\Kp\pim\pip})\phiz} candidates with $25 < |m(\Kp\pim\pip) - m(\Dsp)| < 50\mevcc $ before (left) and after (right) the flight distance significance requirement is applied. The significant contribution from \decay{\Bp}{\Kp\pim\pip\phiz} and \decay{\Bp}{\Kp\pim\pip\Kp\Km} decays is removed. Partially reconstructed charmless decays below the \Bp meson mass are neglected.}
+    \label{fig:Selection_charmless_before_after}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 For the \decay{\Bp}{\Dsp\Dzb} normalisation channel, a two-dimensional optimisation is performed to calculate the contribution from decays without a \Dsp meson, \Dzb meson or both. 
 The two-dimensional space defined by the \Dsp and \Dzb masses is split into four types of area as shown in Fig~\ref{fig:2d_normalisation}.
@@ -780,7 +812,6 @@ The optimal selection requirements are chosen such that the maximal signal effic
 
 The optimisation of the signal and normalisation cuts is performed separately for each different \Dsp decay mode, and for the \decay{\Bp}{\Dsp\Kp\Km} and \decay{\Bp}{\Dsp\phiz} selections. The optimised requirements are listed in Table~\ref{tab:selection_fd_cuts}, along with the estimated residual yields of charmless and single charm yields in the signal region.  
 
-
 \begin{table}[h]
    \centering
       \begin{tabular}{l c c c c }
@@ -803,23 +834,6 @@ The optimisation of the signal and normalisation cuts is performed separately fo
 \end{table}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[!h]
-    \centering
-    \begin{subfigure}[t]{0.4\textwidth}
-        \includegraphics[width=1.0\textwidth]{figs/Selection/Signal_Ds2KPiPi_Test2_0_000000_DslessFDCHI2.pdf}
-        \caption{Before}
-    \end{subfigure}%
-    \begin{subfigure}[t]{0.4\textwidth}
-        \includegraphics[width=1.0\textwidth]{figs/Selection/Signal_Ds2KPiPi_Test2_25_000000_DslessFDCHI2.pdf}
-        \caption{After}
-    \end{subfigure}\\
-    \caption{The invariant mass distribution of \decay{\Bp}{(\decay{\Dsp}{\Kp\pim\pip})\phiz} candidates with $25 < |m(\Kp\pim\pip) - m(\Dsp)| < 50\mevcc $ before (left) and after (right) the flight distance significance requirement is applied. The significant contribution from \decay{\Bp}{\Kp\pim\pip\phiz} and \decay{\Bp}{\Kp\pim\pip\Kp\Km} decays is removed. Partially reconstructed charmless decays below the \Bp meson mass are neglected.}
-    \label{fig:Selection_charmless_before_after}   
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 
 
 \subsection{Misidentified \D and \Lc hadrons}
@@ -827,7 +841,7 @@ The optimisation of the signal and normalisation cuts is performed separately fo
 
 It is possible for the samples \Dsp mesons to be contaminated by other misidentified decays of \Dp mesons or \Lc baryons in which one of the decay products has been incorrectly identified.
 Such backgrounds can be vetoed by recalculating the invariant mass of the \Dsp meson, swapping the mass hypothesis of the ambiguous track to that of the \kaon, \pion or \proton, depending on the decay mode. 
-The particle identification requirements are tightened within a mass window around the \Dp or \Lc mass, effectively removing this crossfeed. For the mode \decay{\Dsp}{\Kp\Km\pip}, the vetoes are not applied to candidates for which $m|(\Km\Kp)-m_{\phiz}| < 10\mevcc$ as there are a high purity of \decay{\Dsp}{\Kp\Km\pip} decays in this region.
+The particle identification requirements are tightened within a mass window around the \Dp or \Lc mass, effectively removing this crossfeed. For the mode \decay{\Dsp}{\Kp\Km\pip}, the vetoes are not applied to candidates for which $|m(\Km\Kp)-m_{\phiz}| < 10\mevcc$ as there are a high purity of \decay{\Dsp}{\Kp\Km\pip} decays in this region.
 
 The specific vetoes included in this selection are listed in Table~\ref{table:pidvetos}. 
 \begin{table*}[!ht]
@@ -853,53 +867,88 @@ The invariant mass distributions for each the misidentified \decay{\Dsp}{\Kp\Km\
 
 
 
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{figure}[!h]
+%     \centering
+%     \begin{subfigure}[t]{0.4\textwidth}
+%         \includegraphics[width=1.0\textwidth]{figs/Selection/B2DsD0_Ds2KKPi_D_Veto_NoBDT.pdf}
+%         \caption{Normalisation without selection}
+%     \end{subfigure}%
+%     \begin{subfigure}[t]{0.4\textwidth}
+%         \includegraphics[width=1.0\textwidth]{figs/Selection/B2DsPhi_Ds2KKPi_D_Veto_NoBDT.pdf}
+%         \caption{Signal without selection}
+%     \end{subfigure}\\
+%     \begin{subfigure}[t]{0.4\textwidth}
+%         \includegraphics[width=1.0\textwidth]{figs/Selection/B2DsD0_Ds2KKPi_D_Veto_WithBDT.pdf}
+%         \caption{Normalisation with selection}
+%     \end{subfigure}%
+%     \begin{subfigure}[t]{0.4\textwidth}
+%         \includegraphics[width=1.0\textwidth]{figs/Selection/B2DsPhi_Ds2KKPi_D_Veto_WithBDT.pdf}
+%         \caption{Signal with selection}
+%     \end{subfigure}\\
+%     \caption{Invariant mass distributions of \decay{\Dsp}{\Kp\Km\pip} samples reconstructed as \decay{\Dp}{\pip\Km\pip} for the signal and normalisation samples. The samples are shown with (red) and without (black) the veto described in Sec.~\ref{sec:pidvetos}. The distributions are shown before (top) and after (bottom) the MVA requirements have been applied.}
+%     \label{fig:PIDVetos_Ds2KKPi_D_Veto}   
+% \end{figure}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
     \centering
-    \begin{subfigure}[t]{0.4\textwidth}
-        \includegraphics[width=1.0\textwidth]{figs/Selection/B2DsD0_Ds2KKPi_D_Veto_NoBDT.pdf}
-        \caption{Normalisation without selection}
+    \begin{subfigure}[t]{0.49\textwidth}
+        \includegraphics[width=1.0\textwidth]{figs/Selection/B2DsPhi_Ds2KKPi_2D_D_Veto_NoBDT.pdf}
+        %\caption{Normalisation without selection}
     \end{subfigure}%
-    \begin{subfigure}[t]{0.4\textwidth}
+    \begin{subfigure}[t]{0.49\textwidth}
         \includegraphics[width=1.0\textwidth]{figs/Selection/B2DsPhi_Ds2KKPi_D_Veto_NoBDT.pdf}
-        \caption{Signal without selection}
-    \end{subfigure}\\
-    \begin{subfigure}[t]{0.4\textwidth}
-        \includegraphics[width=1.0\textwidth]{figs/Selection/B2DsD0_Ds2KKPi_D_Veto_WithBDT.pdf}
-        \caption{Normalisation with selection}
-    \end{subfigure}%
-    \begin{subfigure}[t]{0.4\textwidth}
-        \includegraphics[width=1.0\textwidth]{figs/Selection/B2DsPhi_Ds2KKPi_D_Veto_WithBDT.pdf}
-        \caption{Signal with selection}
+        %\caption{Signal without selection}
     \end{subfigure}\\
     \caption{Invariant mass distributions of \decay{\Dsp}{\Kp\Km\pip} samples reconstructed as \decay{\Dp}{\pip\Km\pip} for the signal and normalisation samples. The samples are shown with (red) and without (black) the veto described in Sec.~\ref{sec:pidvetos}. The distributions are shown before (top) and after (bottom) the MVA requirements have been applied.}
     \label{fig:PIDVetos_Ds2KKPi_D_Veto}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{figure}[!h]
+%     \centering
+%     \begin{subfigure}[t]{0.4\textwidth}
+%         \includegraphics[width=1.0\textwidth]{figs/Selection/B2DsD0_Ds2KKPi_Lc_Veto_NoBDT.pdf}
+%         \caption{Normalisation without MVA cut}
+%     \end{subfigure}%
+%     \begin{subfigure}[t]{0.4\textwidth}
+%         \includegraphics[width=1.0\textwidth]{figs/Selection/B2DsPhi_Ds2KKPi_Lc_Veto_NoBDT.pdf}
+%         \caption{Signal without MVA cut}
+%     \end{subfigure}\\
+%     \begin{subfigure}[t]{0.4\textwidth}
+%         \includegraphics[width=1.0\textwidth]{figs/Selection/B2DsD0_Ds2KKPi_Lc_Veto_WithBDT.pdf}
+%         \caption{Normalisation with MVA cut}
+%     \end{subfigure}%
+%     \begin{subfigure}[t]{0.4\textwidth}
+%         \includegraphics[width=1.0\textwidth]{figs/Selection/B2DsPhi_Ds2KKPi_Lc_Veto_WithBDT.pdf}
+%         \caption{Signal with MVA cut}
+%     \end{subfigure}\\
+%     \caption{Invariant mass distributions of \decay{\Dsp}{\Kp\Km\pip} samples reconstructed as \decay{\Lc}{\Pp\Km\pip} for the signal and normalisation samples. The samples are shown with (red) and without (black) the veto described in Sec.~\ref{sec:pidvetos}. The distributions are shown before (top) and after (bottom) the MVA requirements have been applied.}
+%     \label{fig:PIDVetos_Ds2KKPi_Lc_Veto}   
+% \end{figure}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
     \centering
-    \begin{subfigure}[t]{0.4\textwidth}
-        \includegraphics[width=1.0\textwidth]{figs/Selection/B2DsD0_Ds2KKPi_Lc_Veto_NoBDT.pdf}
-        \caption{Normalisation without MVA cut}
+    \begin{subfigure}[t]{0.49\textwidth}
+        \includegraphics[width=1.0\textwidth]{figs/Selection/B2DsPhi_Ds2KKPi_2D_Lc_Veto_NoBDT.pdf}
+        %\caption{Normalisation without MVA cut}
     \end{subfigure}%
-    \begin{subfigure}[t]{0.4\textwidth}
+    \begin{subfigure}[t]{0.49\textwidth}
         \includegraphics[width=1.0\textwidth]{figs/Selection/B2DsPhi_Ds2KKPi_Lc_Veto_NoBDT.pdf}
-        \caption{Signal without MVA cut}
-    \end{subfigure}\\
-    \begin{subfigure}[t]{0.4\textwidth}
-        \includegraphics[width=1.0\textwidth]{figs/Selection/B2DsD0_Ds2KKPi_Lc_Veto_WithBDT.pdf}
-        \caption{Normalisation with MVA cut}
-    \end{subfigure}%
-    \begin{subfigure}[t]{0.4\textwidth}
-        \includegraphics[width=1.0\textwidth]{figs/Selection/B2DsPhi_Ds2KKPi_Lc_Veto_WithBDT.pdf}
-        \caption{Signal with MVA cut}
+        %\caption{Signal without MVA cut}
     \end{subfigure}\\
     \caption{Invariant mass distributions of \decay{\Dsp}{\Kp\Km\pip} samples reconstructed as \decay{\Lc}{\Pp\Km\pip} for the signal and normalisation samples. The samples are shown with (red) and without (black) the veto described in Sec.~\ref{sec:pidvetos}. The distributions are shown before (top) and after (bottom) the MVA requirements have been applied.}
     \label{fig:PIDVetos_Ds2KKPi_Lc_Veto}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 
 \subsection{Invariant mass vetoes}
 \label{sec:kinematicvetos}
@@ -1058,7 +1107,7 @@ The region affected by the veto $|m(\Kp\Km) - m(\Dzb)| > 25 \mevcc$ is shown in 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-In addition to the correctly reconstructed normalisation channel, the presence of the incorrectly reconstructed \decay{\Bp}{\Dsp(\decay{\Dzb}{\Kp\pim})} decay is observable in Fig.~\ref{fig:normalisationveto_KK}. This appears as smeared out peak to the right of the \Dzb peak. Although the probability of the \pim meson being misidentified as a \Km meson is low, the branching fraction for \decay{\Dzb}{\Kp\pim} is larger, leading to the observed excess. It is possible, and necessary, to remove this contribution. The \Kp\Km candidates are reconstructed again, swapping the mass hypothesis of the second track from \Km to \pim. The distribution of these candidates in the vicinity of the \Dzb mass is shown in Fig.~\ref{fig:normalisationveto_KPi}. A distinct peak is observed at the \Dzb mass. This contribution is removed by the requirement $|m(\Kp\pim) - m(\Dzb)| > 25 \mevcc$. The effect of this requirement on the $m(\Kp\Km)$ spectrum is shown by the red line in Fig.~\ref{fig:normalisationveto_KK}, which represents the sample with this veto applied. The \decay{\Bp}{\Dsp(\decay{\Dzb}{\Kp\pim})} background is reduced to a negligible level.
+In addition to the correctly reconstructed normalisation channel, the presence of the incorrectly reconstructed \decay{\Bp}{\Dsp(\decay{\Dzb}{\Kp\pim})} decay is observable in Fig.~\ref{fig:normalisationveto_KK}. This appears as smeared out peak to the right of the \Dzb peak. Although the probability of the \pim meson being misidentified as a \Km meson is low for the chosen PID requirements ($\mathcal{O}(1\%)$), the branching fraction for \decay{\Dzb}{\Kp\pim} is larger, leading to the observed excess. It is possible, and necessary, to remove this contribution. The \Kp\Km candidates are reconstructed again, swapping the mass hypothesis of the second track from \Km to \pim. The distribution of these candidates in the vicinity of the \Dzb mass is shown in Fig.~\ref{fig:normalisationveto_KPi}. A distinct peak is observed at the \Dzb mass. This contribution is removed by the requirement $|m(\Kp\pim) - m(\Dzb)| > 25 \mevcc$. The effect of this requirement on the $m(\Kp\Km)$ spectrum is shown by the red line in Fig.~\ref{fig:normalisationveto_KK}, which represents the sample with this veto applied. The \decay{\Bp}{\Dsp(\decay{\Dzb}{\Kp\pim})} background is reduced to a negligible level.
 
 Another structure appears to be present to the left of the \Dzb peak in Fig.~\ref{fig:normalisationveto_KK}. This is likely to be due to \decay{\Dzb}{\Kp\Km X} decays in which one or more particles have not been reconstructed. This partially reconstructed background would not peak at the \Bp mass in the $m(\Dsp\Kp\Km)$ spectrum due to the missing particles, therefore no attempt is made to remove this contribution.
 
@@ -1182,14 +1231,26 @@ The extended NLL becomes
 -\log\mathcal{L}(n,\vec{p}) = -\sum_{i}^{N} \log n F(m=m_{i},\vec{p}) + n + \log N!.
 \end{equation}
 The $\log N!$ term can be ignored as it is a constant.
-The fit model is constructed from signal and background contributions 
+In general, a fit model can be constructed from an arbitrary number of species, $N_{\text{s}}$, each with PDF $f_{j}(m=m_{i},\vec{p})$ and yield $n_{j}$   
+\begin{equation}
+-\log\mathcal{L}(n_{j},\vec{p}) = -\sum_{i}^{N} \log \sum^{N_{\text{s}}}_{j} n_{j} f_{j}(m=m_{i},\vec{p}) + \sum_{j}^{N_{\text{s}}}n_{j}  + \log N!.
+\end{equation}
+In this instance the fit model is constructed from the signal and background contributions 
 \begin{equation}
 n F(m| n_{\text{S}},n_{\text{B}},\vec{p'},\vec{p''}) = n_{\text{S}} f(m|\vec{p'}) + n_{\text{B}} g(m|\vec{p''}),
 \end{equation}
 where $n_{\text{S}}$ and $n_{\text{B}}$ are the signal and background yields, $f$ and $g$ are the PDFs for the signal and background respectively, and $\vec{p'}$ and $\vec{p''}$ represent the parameters controlling the PDF shapes.
-
 After the extended maximum likelihood fits have been performed and the yields established, the subtraction of candidates attributed to the background component is performed using the \sPlot technique~\cite{Pivk:2004ty}.
-The \sPlot method assigns weights for each species in the fit model, namely signal and background. These are assigned to each event in the data set and are only dependent on the value of the fitted variable, in this case \phiz or \Dsp mass. When plotting other, uncorrelated variables and weighting each event accordingly, the contribution from each component in the fit can be extracted. 
+The \sPlot method assigns weights for each species in the fit model, namely signal and background.  
+The weights, $W_{k}$, for species $k$ are determined as a function of the discriminating variable, $m$,
+\begin{equation}
+W_{k}(m) = \frac{\sum_{j}^{N_{\text{s}}} V_{kj} f_{j}(m) }{ \sum_{l}^{N_{\text{s}}} n_{l} f_{l}(m)},
+\end{equation}
+where $V_{nj}$ is the inverse covariance matrix of the negative log likelihood,
+\begin{equation}
+V^{-1}_{kj} = \frac{  \partial^2 (-\log{\mathcal{L}} ) }{  \partial n_{k} \partial n_{j}}.
+\end{equation}
+These are assigned to each event in the data set and are only dependent on the value of the fitted variable, in this case \phiz or \Dsp mass. When plotting other, uncorrelated variables and weighting each event accordingly, the contribution from each component in the fit can be extracted.
 
 %% Fit model
 For both \decay{\Bs}{\jpsi\phiz} and \decay{\Bsb}{\Dsp\pim} decays, simple fit models are found to be sufficient when performing the \sPlot technique. For each mode the signal components are modelled with a single Gaussian probability density function
@@ -1309,7 +1370,7 @@ The MVA method is trained using a large set of variables chosen to help discrimi
 \item \textbf{Kaon, proton, pion and ghost probabilities, ProbNN$x$ ($x\in[K,\pi,\proton,\text{ghost}]$)}: these variables are an alternative form of \emph{Particle Identification} variables in addition to those already discussed in Section~\ref{sec:pidrequirements}. Each ProbNN$x$ variable acts as the probability for the reconstructed track to be of the species $x$. These variables are the responses of Artificial Neural Networks trained to differentiate between the various particle types using a large number of inputs from different sub-detectors. The trainings use simulated samples of signal and background decays and have been retuned between Run~I and Run~II to reflect the difference in the detector configuration. Four of the available ProbNN$x$ variables are used in this analysis. Three of these identify kaons, protons and pions. The last aims to identify ghost tracks, similar to the $P_{\text{Ghost}}$ variable already discussed. 
 \end{description}
 
-The variables used in the \phiz meson MVA are listed in Table~\ref{tab:mvavars_phi}. Some of the variables are input into the MVA training algorithm as their logarithm, rather than the variable directly. These variables tend to be rapidly increasing in at certain values, so using the logarithm aids visualisation. A total of 24 variables are used in this MVA.
+The variables used in the \phiz meson MVA are listed in Table~\ref{tab:mvavars}. Some of the variables are input into the MVA training algorithm as their logarithm, rather than the variable directly. These variables tend to be rapidly increasing in at certain values, so using the logarithm aids visualisation. A total of 24 variables are used in this MVA.
 
 When training the \phiz meson MVA, the flight distance significance is not included as an input variable. This MVA is used to select both \phiz and \Dzb mesons which are likely to have different flight distance significance distributions as a result of their different lifetimes. 
 
@@ -1342,7 +1403,7 @@ When training the \phiz meson MVA, the flight distance significance is not inclu
       \end{tabular}
    
    \caption{Discriminating variables used to train the \phiz and \Dsp MVAs. Poorly discriminating variables are removed from the \phiz MVA to prevent overtraining. The flight distance significance is remove as the MVA is applied to both \phiz and \Dzb candidates.}
-   \label{tab:mvavars_phi}
+   \label{tab:mvavars}
 \end{table}
  
 The variables used in the \Dsp MVA are also listed in Table~\ref{tab:mvavars}. These are largely very similar to those used for the \phiz meson MVA, however it also includes the \Dsp meson's flight distance significance as, unlike the \phiz meson, the \Dsp meson decays displaced from its production vertex. A total of 35 variables are used in these MVAs.
@@ -1935,9 +1996,9 @@ Additionally, the opposite requirement is made of the \Dsp meson, $\chi^2_{\text
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The distributions for the \Bp and \Dsp meson impact parameter significance is shown in Figs.~\ref{fig:ipchi2dist_signal_B} and~\ref{fig:ipchi2dist_signal_B} respectively for \decay{\Bp}{\Dsp\phiz} candidates. The requirement values are represented by vertical lines. Small peaks can be observed at low \Dsp meson impact parameter significance, corresponding to \Dsp mesons that originated at the PV. 
+The distributions for the \Bp and \Dsp meson impact parameter significance is shown in Figs.~\ref{fig:ipchi2dist_signal_B} and~\ref{fig:ipchi2dist_signal_D} respectively for \decay{\Bp}{\Dsp\phiz} candidates. The requirement values are represented by vertical lines. Small peaks can be observed at low \Dsp meson impact parameter significance, corresponding to \Dsp mesons that originated at the PV. 
 As a cross-check, the same distributions are produced for the normalisation channel, \decay{\Bp}{\Dsp\Dzb}. 
-As there are plentiful numbers of events only those within $20\mevcc$ of the \Bp mass are included. The normalisation sample has a very high purity so this effectively isolates these decays in data. This comparison of data and simulation distributions is shown in Fig.~\ref{fig:ipchi2dist_normalisation}.
+As there are plentiful numbers of events, only those within $20\mevcc$ of the \Bp mass are included. The normalisation sample has a very high purity so this effectively isolates these decays in data. This comparison of data and simulation distributions is shown in Fig.~\ref{fig:ipchi2dist_normalisation}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
@@ -2141,11 +2202,11 @@ Requirements are placed in the invariant masses of the \Dsp, \phiz and \Dzb cand
 \begin{tabular}{ c c c }
 
 \hline
-Particle          & Requirement                                 & FWHM  \\
+Particle          & Requirement (\mevcc)                   & FWHM (\mevcc)  \\
 \hline
-\Dsp              & $|m(h^{+}h^{-}h^{+})-m(\Dsp)| < 25 \mevcc$  &       \\
-\Dzb              & $|m(\Kp\Km)-m(\Dzb)| < 25 \mevcc$           &       \\
-\phiz             & $|m(\Kp\Km)-m(\phiz)| < 40 \mevcc$          &       \\
+\Dsp              & $|m(h^{+}h^{-}h^{+})-m(\Dsp)| < 25 $  &   15    \\
+\Dzb              & $|m(\Kp\Km)-m(\Dzb)| < 25 $           &   15    \\
+\phiz             & $|m(\Kp\Km)-m(\phiz)| < 40 $          &    5   \\
 \hline
 \end{tabular}
 \caption{Invariant mass requirements applied to all candidates, along with the full width at half maximum (FWHM) for reference.}
