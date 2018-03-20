@@ -25,7 +25,9 @@ The search for $\decay{\Bp}{\Dsp\Kp\Km}$ involves two independent unbinned exten
 \begin{equation}
 -\log\mathcal{L}(n_{0}...n_{j},\vec{p}) = -\sum_{i}^{N} \log \left( \sum_{j} n_{j} f_{j}(m=m_{i},\vec{p}) \right) + \sum_{j}n_{j},
 \end{equation}
-where the index $j$ represents each component of the model with yield $n_{j}$ and PDF $f_{j}$. The constant $\log{N!}$ term has been ignored. Separate likelihoods are created for the signal and normalisation fits.
+where the index $j$ represents each component of the model with yield $n_{j}$ and PDF $f_{j}$.
+As before, the PDF parameters are denoted by $\vec{p}$, the total number of events by $N$, the invariant mass variable by $m$, and the invariant mass of the $i$th candidate by $m_{i}$.
+The constant $\log{N!}$ term has been ignored. Separate likelihoods are created for the signal and normalisation fits.
 
 
 
@@ -105,7 +107,7 @@ $\alpha$                    & 2.67 $\pm$ 0.12    \\
 $n$                         & 1 $\pm$ 0          \\
 \hline
 \end{tabular} 
-\caption{Fixed values obtained in fits to simulations used in the model for the signal and normalisation PDFs.} 
+\caption{Fixed values obtained in fits to simulations used in the model for the signal and normalisation PDFs. The uncertainties are determined in the fits to simulated decays. The uncertainties used to extract the systematic uncertainty arising from the finite simulation sizes.} 
 \label{tab:B2DsKK_signal_mc_fits}
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -159,13 +161,33 @@ Decay                           & Branching fraction \\
 The excited charm mesons \Dstarzb and \Dss are vector ($J^{P} = 1^{-}$) mesons. The partially reconstructed invariant mass of the \Dsp and \Dzb mesons, $m(\Dsp\Dzb)$, varies depending on the spin of the missed particle.
 Analytical PDFs are used to account for the spin and mass of the missing particle. These PDFs have been used to describe other partially reconstructed \decay{\B}{\D X} decays investigated by the LHCb collaboration~\cite{LHCb-PAPER-2017-021}. 
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=1.0\textwidth]{figs/B2DsKK/partreco_diagram.pdf}
+    \caption{Components of the analytical PDFs used to represent various partially reconstructed \decay{\B}{\D X} decays. Parabolas determined by the spin of the missing particle are shown in blue, the linear function used to account for the relative selection efficiency is shown in red and the Gaussian resolution function is shown in green.} 
+    \label{fig:B2DsKK_partreco_diagram}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figs/B2DsKK/partreco_decay.pdf}
+    \caption{The \decay{\Bp}{\Dsp(\decay{\Dstarzb}{\Dzb \piz/\Pgamma})} decay in the \Dstarzb rest frame. The invariant mass $m(\Dsp\Dzb)$ is highest when $\theta = 0\degrees$ and lowest when $\theta = 180\degrees$.} 
+    \label{fig:B2DsKK_partreco_decay}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 \begin{description}
-\item \textbf{\decay{\Bp}{(\decay{\Dssp}{\Dsp[\piz]})\Dzb} and \decay{\Bp}{\Dsp(\decay{\Dstarzb}{\Dzb[\piz]})}:} the \piz meson is a pseudo-scalar ($J^{P} = 0^{-}$) particle with a mass $m(\piz) = 134.9766 \pm 0.0006 \mevcc$. The partially reconstructed invariant mass distribution $m(\Dsp\Dzb)$ can be described by a parabola convolved with a Gaussian resolution function. The parabola does not extend beyond kinematic endpoints defined by the parameters $a$ and $b$ and has a minimum in the centre 
+\item \textbf{\decay{\Bp}{(\decay{\Dssp}{\Dsp[\piz]})\Dzb} and \decay{\Bp}{\Dsp(\decay{\Dstarzb}{\Dzb[\piz]})}:} the \piz meson is a pseudo-scalar ($J^{P} = 0^{-}$) particle with a mass $m(\piz) = 134.9766 \pm 0.0006 \mevcc$. The partially reconstructed invariant mass distribution $m(\Dsp\Dzb)$ can be described by a parabola convolved with a Gaussian resolution function as pictorially represented in Fig.~\ref{fig:B2DsKK_partreco_diagram}. The parabola does not extend beyond kinematic endpoints that arise from the relative direction of the missing particle with respect to the \Dsp\Dzb candidate (Fig.~\ref{fig:B2DsKK_partreco_decay}). These are represented by the parameters $a$ and $b$. The parabola has a minimum in the centre 
 \begin{equation}
 f(m|a,b,\sigma,\xi, \delta) = \int_{a}^{b}\left(\mu-\frac{a+b}{2}\right)^{2} \left( \frac{1-\xi}{b-a}\mu + \frac{b\xi-a}{b-a} \right) e^{-\frac{-(\mu-(m-\delta))^{2}}{2\sigma^{2}}} d\mu.
 \end{equation} 
 
-Here, $\sigma$ is the width of the resolution Gaussian and $\delta$ allows the function to be offset in invariant mass. The parameter $\xi$ introduces the freedom for the two sides of the parabola to have difference heights, achieved by multiplying the parabola by a line whose slope is depends on $\xi$. The resulting function is a double peaked structure shown in Fig.~\ref{fig:B2DsKK_DsD0_partreco}.   
+Here, $\sigma$ is the width of the resolution Gaussian and $\delta$ allows the function to be offset in invariant mass, accounting for any differences in the reconstructed and predicted kinematic endpoints. The parameter $\xi$ introduces the freedom for the two sides of the parabola to have difference heights, achieved by multiplying the parabola by a line whose slope is depends on $\xi$. This accounts for variation in the selection efficiency across the PDF. The resulting function is a double peaked structure shown in Fig.~\ref{fig:B2DsKK_DsD0_partreco}.   
 The parameters $a$ and $b$ are calculated from the kinematics of the \decay{\Bp}{(\decay{\Dssp}{\Dsp\piz})\Dzb} and \decay{\Bp}{\Dsp(\decay{\Dstarzb}{\Dzb\piz})} decays respectively, and are listed in Table~\ref{tab:DsKK_pi0_a_and_b}.
 
 \end{description}
@@ -351,12 +373,12 @@ The signal (normalisation) mass fits have eleven (nine) free parameters which ca
 
 \subsection{Shape parameters}
 \begin{description}
-\item \textbf{Signal fit:} The signal fit contains four free parameters that determine the shape of various PDFs. This corresponds to the mass offset $\delta$, signal mean value $\mu$, signal width $\sigma_{1}$ and combinatorial slope $c$.
+\item \textbf{Signal fit:} The signal fit contains four free parameters that determine the shape of various PDFs. This corresponds to the mass offset $\delta$ for the partially reconstructed backgrounds, signal mean value $\mu$, signal width $\sigma_{1}$ and combinatorial slope $c$.
           % global_shift    2.2538e+00    3.5457e+00 +/-  1.17e+01  <none>
           %       mean_B    5.2789e+03    5.2789e+03 +/-  8.82e-01  <none>
           %        sigma    1.2298e+01    1.2291e+01 +/-  8.77e-01  <none>
           %        slope   -2.8199e-03   -2.8202e-03 +/-  2.79e-04  <none>
-\item \textbf{Normalisation fit:} The normalisation fit has five free parameters that control the distributions of the signal and background PDFs. This includes the mean \Bp mass $\mu$, signal width $\sigma_{1}$, the combinational slope $c$, the mass offset $\delta$ and the relative heights of the double peaked partially reconstructed shapes $\xi$.   
+\item \textbf{Normalisation fit:} The normalisation fit has five free parameters that control the distributions of the signal and background PDFs. This includes the mean \Bp mass $\mu$, signal width $\sigma_{1}$, the combinational slope $c$, the mass offset $\delta$ for the partially reconstructed backgrounds and the relative heights of the double peaked partially reconstructed shapes $\xi$.   
           %   global_csi    1.2683e-06    5.2233e-08 +/-  2.25e-01  <none>
           % global_shift   -1.0585e+01   -1.0586e+01 +/-  1.31e+00  <none>
           %       mean_B    5.2784e+03    5.2784e+03 +/-  4.00e-01  <none>
@@ -574,12 +596,12 @@ The efficiencies are all determined using samples of simulated signal and normal
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
    \centering
-   \begin{subfigure}[t]{0.4\textwidth}
+   \begin{subfigure}[t]{0.45\textwidth}
       \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Relative_Eff_gen_All_Full.pdf}
       \caption{Acceptance}
       \label{fig:B2DsKK_releff_acceptance}
    \end{subfigure}
-   \begin{subfigure}[t]{0.4\textwidth}
+   \begin{subfigure}[t]{0.45\textwidth}
       \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Relative_Eff_reco_All.pdf}
       \caption{Reconstruction}
       \label{fig:B2DsKK_releff_reconstruction}
@@ -598,12 +620,12 @@ The efficiencies are all determined using samples of simulated signal and normal
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
    \centering
-   \begin{subfigure}[t]{0.4\textwidth}
+   \begin{subfigure}[t]{0.45\textwidth}
       \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Relative_Eff_trig_All.pdf}
       \caption{Trigger}
       \label{fig:B2DsKK_releff_trigger}
    \end{subfigure}
-   \begin{subfigure}[t]{0.4\textwidth}
+   \begin{subfigure}[t]{0.45\textwidth}
       \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Relative_Eff_veto_All.pdf}
       \caption{Vetoes}
       \label{fig:B2DsKK_releff_vetoes}
@@ -622,12 +644,12 @@ The efficiencies are all determined using samples of simulated signal and normal
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
    \centering
-   \begin{subfigure}[t]{0.4\textwidth}
+   \begin{subfigure}[t]{0.45\textwidth}
       \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Relative_Eff_FDCHI2_All.pdf}
       \caption{Charmless}
       \label{fig:B2DsKK_releff_charmless}
    \end{subfigure}
-   \begin{subfigure}[t]{0.4\textwidth}
+   \begin{subfigure}[t]{0.45\textwidth}
       \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Relative_Eff_Bcut_All.pdf}
       \caption{$\chi^{2}_{\text{IP}}$}
       \label{fig:B2DsKK_releff_ipchi2}
@@ -646,7 +668,7 @@ The efficiencies are all determined using samples of simulated signal and normal
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
    \centering
-   \begin{subfigure}[t]{0.4\textwidth}
+   \begin{subfigure}[t]{0.45\textwidth}
       \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Relative_Eff_mass_All.pdf}
       \caption{Mass windows}
       \label{fig:B2DsKK_releff_masswindows}
@@ -670,17 +692,17 @@ The phase-space distribution of the relative PID efficiency between the signal a
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
    \centering
-   \begin{subfigure}[t]{0.4\textwidth}
+   \begin{subfigure}[t]{0.45\textwidth}
       \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Relative_Eff_PID_All.pdf}
       \caption{PID}
       \label{fig:B2DsKK_releff_PID}
    \end{subfigure}
-   \begin{subfigure}[t]{0.4\textwidth}
+   \begin{subfigure}[t]{0.45\textwidth}
       \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Relative_Eff_BDT_All.pdf}
       \caption{MVA}
       \label{fig:B2DsKK_releff_MVA}
    \end{subfigure}
-   \caption{Efficiencies}
+   \caption{The relative efficiency $\epsilon_{\text{ratio}}(m^{2}(\Dsp\Km),m^{2}(\Kp\Km))$ as a function of the \decay{\Bp}{\Dsp\Kp\Km} kinematics.}
    \label{fig:B2DsKK_dalitz_eff_three}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -694,11 +716,11 @@ The MVA efficiency is determined from samples for signal and normalisation simul
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
    \centering
-   \begin{subfigure}[t]{0.4\textwidth}
+   \begin{subfigure}[t]{0.49\textwidth}
       \includegraphics[width=1.0\textwidth]{figs/B2DsKK/mKK_eff_2011_Both.pdf}
       \caption{2011}
    \end{subfigure}
-   \begin{subfigure}[t]{0.4\textwidth}
+   \begin{subfigure}[t]{0.49\textwidth}
       \includegraphics[width=1.0\textwidth]{figs/B2DsKK/mKK_eff_2012_Both.pdf}
       \caption{2012}
    \end{subfigure}
@@ -722,17 +744,17 @@ This could lead to biases when correcting the weights of signal candidates, espe
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
    \centering
-   \begin{subfigure}[t]{0.4\textwidth}
+   \begin{subfigure}[t]{0.45\textwidth}
       \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Full_Eff_Hist_All.pdf}
       \caption{Total efficiency}
       \label{fig:B2DsKK_eff_total_hist}
    \end{subfigure}
-   \begin{subfigure}[t]{0.4\textwidth}
+   \begin{subfigure}[t]{0.45\textwidth}
       \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Full_Eff_Spline_All_withLimit.pdf}
       \caption{Spline interpolation}
       \label{fig:B2DsKK_eff_total_spline}
    \end{subfigure}
-   \caption{The total relative efficiency between the signal and normalisation mode as a function of the two-dimensional $m^{2}(\Dsp\Km)$ vs. $m^{2}(\Kp\Km)$ (right) and a cubic spline interpolation of the same distribution.}
+   \caption{The total relative efficiency $\epsilon_{\text{ratio}}(m^{2}(\Dsp\Km),m^{2}(\Kp\Km))$ between the signal and normalisation mode as a function of the two-dimensional $m^{2}(\Dsp\Km)$ vs. $m^{2}(\Kp\Km)$ (left) and a cubic spline interpolation of the same distribution (right).}
    \label{fig:B2DsKK_total_eff}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -921,15 +943,15 @@ This branching fraction is of a comparable magnitude to the decay \decay{\Bp}{\D
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
     \centering
-    \begin{subfigure}[t]{0.4\textwidth}
+    \begin{subfigure}[t]{0.49\textwidth}
         \includegraphics[width=1.0\textwidth]{figs/B2DsKK/DsKm_mass_sweighted.pdf}
         %\caption{Normalisation without selection}
     \end{subfigure}
-    \begin{subfigure}[t]{0.4\textwidth}
-        \includegraphics[width=1.0\textwidth]{figs/B2DsKK/DsKp_mass_sweighted.pdf}
-        %\caption{Normalisation without selection}
-    \end{subfigure}
-    \begin{subfigure}[t]{0.4\textwidth}
+    % \begin{subfigure}[t]{0.4\textwidth}
+    %     \includegraphics[width=1.0\textwidth]{figs/B2DsKK/DsKp_mass_sweighted.pdf}
+    %     %\caption{Normalisation without selection}
+    % \end{subfigure}
+    \begin{subfigure}[t]{0.49\textwidth}
         \includegraphics[width=1.0\textwidth]{figs/B2DsKK/phi_mass_sweighted.pdf}
         %\caption{Normalisation without selection}
     \end{subfigure}
