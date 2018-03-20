@@ -1,0 +1,108 @@
+\chapter{Fit validation for the \decay{\Bp}{\Dsp\phiz} fitting framework}
+\label{ch:appendix_toys}
+
+
+
+The simultaneous fitting framework is validated by generating pseudo-experiments (also referred to as \emph{toys}). The total fit model PDF is randomly sampled to create a simulation sample with the same number of candidates as the nominal fit. These are then fitted using the same fit model, determining the best estimate and uncertainty of each parameter. The parameter values used to generate the pseudo-experiments are chosen to be the final parameter values as determined in a fit to data. This is known as the plug-in method~\cite{plugin}.
+The fitted value and associated error is used to determine the pull of each parameter of interest. As the errors are determined asymmetrically using \minos the is defined conditionally to incorporate the appropriate error 
+\begin{equation}
+  g_{\text{pull}} = \left \{
+  \begin{aligned}
+    &\frac{x_{\text{gen}} - x_{\text{fit}} }{\sigma_{+}}, && \text{if}\ x_{\text{fit}} < x_{\text{gen}}\\
+    &\frac{x_{\text{fit}} - x_{\text{gen}} }{\sigma_{-}}, && \text{otherwise},
+  \end{aligned} \right.
+\end{equation} 
+where $x_{\text{fit}}$ and $x_{\text{gen}}$ are the fitted and generated values of the variable, and $\sigma_{+}$ and $\sigma_{-}$ are the high and low asymmetric errors.
+
+The distributions of the values, errors and pulls for the yields of the normalisation decay in each of the \Dsp decays are shown in Fig.~\ref{fig:B2DsPhi_Pulls_normalisation}. The mean and widths are determined using simple fits to the pull distributions. The results and PDFs for these fits are overlaid on the distributions. The normalisation yield means and widths are found to be within $2\sigma$ of zero and one respectively.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+   \centering
+   \begin{subfigure}[t]{1.0\textwidth}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Value_yield_peak_DsD0_Ds2PhiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Error_yield_peak_DsD0_Ds2PhiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Pull_yield_peak_DsD0_Ds2PhiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+      \caption{\decay{\Dsp}{\phiz\pip}}
+   \end{subfigure}\\
+   \begin{subfigure}[t]{1.0\textwidth}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Value_yield_peak_DsD0_Ds2KKPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Error_yield_peak_DsD0_Ds2KKPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Pull_yield_peak_DsD0_Ds2KKPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+      \caption{\decay{\Dsp}{\Kp\Km\pip}}
+   \end{subfigure}\\
+   \begin{subfigure}[t]{1.0\textwidth}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Value_yield_peak_DsD0_Ds2PiPiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Error_yield_peak_DsD0_Ds2PiPiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Pull_yield_peak_DsD0_Ds2PiPiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+      \caption{\decay{\Dsp}{\pip\pim\pip}}
+   \end{subfigure}\\
+   \begin{subfigure}[t]{1.0\textwidth}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Value_yield_peak_DsD0_Ds2KPiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Error_yield_peak_DsD0_Ds2KPiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Pull_yield_peak_DsD0_Ds2KPiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+      \caption{\decay{\Dsp}{\Kp\pim\pip}}
+   \end{subfigure}
+
+   \caption{The yield, error and pull distributions for the normalisation channel.}
+   \label{fig:B2DsPhi_Pulls_normalisation}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Similarly, the distributions of the signal yield, error and pull for each of the different \Dsp decay modes are shown in Fig.~\ref{fig:B2DsPhi_Pulls_signal}. The pull means and widths are all within $2\sigma$ of zero and one respectively.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+   \centering
+   \begin{subfigure}[t]{1.0\textwidth}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Value_yield_peak_total_DsPhi_Ds2PhiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Error_yield_peak_total_DsPhi_Ds2PhiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Pull_yield_peak_total_DsPhi_Ds2PhiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+      \caption{\decay{\Dsp}{\phiz\pip}}
+   \end{subfigure}\\
+   \begin{subfigure}[t]{1.0\textwidth}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Value_yield_peak_total_DsPhi_Ds2KKPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Error_yield_peak_total_DsPhi_Ds2KKPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Pull_yield_peak_total_DsPhi_Ds2KKPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+      \caption{\decay{\Dsp}{\Kp\Km\pip}}
+   \end{subfigure}\\
+   \begin{subfigure}[t]{1.0\textwidth}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Value_yield_peak_total_DsPhi_Ds2PiPiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Error_yield_peak_total_DsPhi_Ds2PiPiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Pull_yield_peak_total_DsPhi_Ds2PiPiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+      \caption{\decay{\Dsp}{\pip\pim\pip}}
+   \end{subfigure}\\
+   \begin{subfigure}[t]{1.0\textwidth}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Value_yield_peak_total_DsPhi_Ds2KPiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Error_yield_peak_total_DsPhi_Ds2KPiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Pull_yield_peak_total_DsPhi_Ds2KPiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+      \caption{\decay{\Dsp}{\Kp\pim\pip}}
+   \end{subfigure}
+
+   \caption{The yield, error and pull distributions for the signal channel.}
+   \label{fig:B2DsPhi_Pulls_signal}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+These distributions were generated using pseudo-experiments in which the yields for each \Dsp mode were free variables rather than being determined using a single free branching fraction parameter.
+
+The model is also studied using a single branching fraction $\BF(\decay{\Bp}{\Dsp\phiz})$ that determines the yields in each signal mode. This parameter is calculated directly in the fit so it can be assessed for any possible bias. The distribution of the measured values, uncertainties and pulls are shown in Fig.~\ref{fig:B2DsPhi_Pulls_signal}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+   \centering
+   \begin{subfigure}[t]{1.0\textwidth}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Error_Branching_fraction.pdf}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Error_Branching_fraction.pdf}
+      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Pull_Branching_fraction.pdf}
+   \end{subfigure}
+   \caption{The branching fraction, error and pull distributions for the full simultaneous fit. The branching fraction is generated assuming the value obtained in the fit to data.}
+   \label{fig:B2DsPhi_Pulls_signal}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The pull mean and width are both within $2\sigma$ of zero and one respectively. 
+As no significant biases are observed in the pulls of any of the yields or branching fraction no corrections are applied to the values determined fit.

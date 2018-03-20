@@ -5,12 +5,12 @@
 
 In this chapter the methodology used to search for \decay{\Bp}{\Dsp\phiz} decays is described.
 The branching fraction $\BF(\decay{\Bp}{\Dsp\phiz})$ is constructed by measuring the yield of \decay{\Bp}{\Dsp\phiz} decays relative to the normalisation channel \decay{\Bp}{\Dsp\Dzb}. This ratio is corrected by the ratio of selection efficiencies for the two modes. 
-The branching fraction $\BF(\decay{\Bp}{\Dsp\phiz})$ is then determined by multiplying this corrected ratio by externally measured values for the branching fractions $\BF(\decay{\Bp}{\Dsp\Dzb})$ and $\BF(\decay{\Dzb}{\Kp\Km})$, and dividing by $\BF(\decay{\phiz}{\Kp\Km})$. 
+The branching fraction $\BF(\decay{\Bp}{\Dsp\phiz})$is determined by multiplying this corrected ratio by published values for the branching fractions $\BF(\decay{\Bp}{\Dsp\Dzb})$ and $\BF(\decay{\Dzb}{\Kp\Km})$~\cite{PDG2016}, and dividing by $\BF(\decay{\phiz}{\Kp\Km})$. 
 
 
 \section{Fit strategy}
 \label{sec:B2DsPhi_fitstrategy}
-The strategy used to search for \decay{\Bp}{\Dsp\phiz} is more complicated than the method used to search for \decay{\Bp}{\Dsp\Kp\Km} decays as outlined in Chapter~\ref{ch:B2DsKK}. This is necessary to allow various different signal and background components to be distinguished. In particular, the majority of \decay{\Bp}{\Dsp\Kp\Km} decays now act as a background; those not proceeding via the \phiz resonance must be distinguished from \decay{\Bp}{\Dsp\phiz} decays. 
+The strategy to search for \decay{\Bp}{\Dsp\phiz} is complicated by \decay{\Bp}{\Dsp\Kp\Km} decays (Chapter~\ref{ch:B2DsKK}) being present as a peaking background to \decay{\Bp}{\Dsp(\decay{\phiz}{\Kp\Km})}.
 The ratio of \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Dzb} yields is determined using a simultaneous extended unbinned maximum likelihood fit. Three sets of categories are used, separating the candidates according to \Dsp meson decay mode, invariant mass of the \Kp\Km pair consititing the \phiz meson, $m(\Kp\Km)$, and the cosine of an angle $\cos\theta_{K}$. The details and definitions of these categories are listed in Sec~\ref{sec:B2DsPhi_fit_cats}. 
 The total extended NLL for this fit is created from the sum of each NLL in each of the categories
 \begin{equation}
@@ -31,15 +31,15 @@ As the yields of candidates is likely to be small (especially in the \Dsp decay 
 \subsection{Simultaneous categories}
 \label{sec:B2DsPhi_fit_cats}
 
-The data sample is split into categories primarily to aid the differentiation of different signal and background components that contribute in similar invariant mass ranges.
+The data sample is split into categories to gain the maximum sensitivity to the signal decays.
 
 \subsubsection{\Dsp meson decay mode} 
 The three \Dsp decays modes used to reconstruct the signal and normalisation decays (\decay{\Dsp}{\Kp\Km\pip}, \decay{\Dsp}{\pip\pim\pip}, and \decay{\Dsp}{\Kp\pim\pip}) are fitted simultaneously in different categories. This allows the invariant mass distributions for the three modes to vary slightly in ways that could not be easily accounted for if the modes were combined in a single data set. In principle, the widths and resolutions of the \Bp meson mass distributions could vary for the three different modes as a result of the different numbers of pions and kaons in the final state. The background levels also differ between the modes as a result of the smaller branching fractions for \decay{\Dsp}{\pip\pim\pip} and \decay{\Dsp}{\Kp\pim\pip}. This leads to the background from combinations of unrelated tracks having a larger relative contribution.
 
-The \decay{\Dsp}{\Kp\Km\pip} decay mode is additionally split into two further categories; candidates consistent with \decay{\Dsp}{\phiz\pip} decays, and non-\phiz candidates. This exploits the high purity of \decay{\Dsp}{\phiz\pip} decays. 
+The \decay{\Dsp}{\Kp\Km\pip} decay mode is additionally split into two further categories; candidates consistent with \decay{\Dsp}{\phiz\pip} decays, and those candidates from elsewhere in the \decay{\Dsp}{\Kp\Km\pip} Dalitz plane. This exploits the high purity of \decay{\Dsp}{\phiz\pip} decays. 
 
-\subsubsection{Invariant mass of \Kp\Km pair, $m(\Kp\Km)$} 
-Three distinct ranges of $m(\Kp\Km)$ invariant mass are used to split the candidates. The first of these corresponds to normalisation \decay{\Bp}{\Dsp\Dzb} candidates within the range $|m(\Kp\Km)-m(\Dzb)|<25 \mevcc$. These are reconstructed separately to the signal decays, unlike in the search for \decay{\Bp}{\Dsp\Kp\Km} decays, as detailed in Chapter~\ref{ch:selection}. The candidates reconstructed as \decay{\Bp}{\Dsp\phiz} decays are split into two ranges; those within $|m(\Kp\Km)-m(\phiz)|<10\mevcc$, referred to as the \emph{inner \phiz mass category} and those candidates with $10<|m(\Kp\Km)-m(\phiz)|<40\mevcc$, referred to as the \emph{outer \phiz mass category}. These two categories for the signal mode allow contributions from decays that do not proceed via a \phiz meson to be distinguished from those that do. The \emph{inner \phiz mass category} contains 88\% of signal \decay{\Bp}{\Dsp\phiz} candidates, with the other 12\% in the \emph{outer \phiz mass category}. The $m(\Kp\Km)$ invariant mass distribution for simulated \decay{\Bp}{\Dsp\phiz} is shown in Fig~\ref{fig:B2DsPhi_hel_mass_MC}.
+\subsubsection{Invariant mass of the bachelor \Kp\Km pair, $m(\Kp\Km)$} 
+Three distinct ranges of $m(\Kp\Km)$ invariant mass are used to split the candidates. The first of these corresponds to normalisation \decay{\Bp}{\Dsp\Dzb} candidates within the range $|m(\Kp\Km)-m(\Dzb)|<25 \mevcc$. The second corresponds to \decay{\Bp}{\Dsp\phiz} decays and is split into two ranges; those within $|m(\Kp\Km)-m(\phiz)|<10\mevcc$, referred to as the \emph{inner \phiz mass category} and those candidates with $10<|m(\Kp\Km)-m(\phiz)|<40\mevcc$, referred to as the \emph{outer \phiz mass category}. These two categories for the signal mode allow contributions from decays that do not proceed via a \phiz meson to be distinguished from those that do. The \emph{inner \phiz mass category} contains 88\% of signal \decay{\Bp}{\Dsp\phiz} candidates, with the other 12\% in the \emph{outer \phiz mass category}. The $m(\Kp\Km)$ invariant mass distribution for simulated \decay{\Bp}{\Dsp\phiz} is shown in Fig~\ref{fig:B2DsPhi_hel_mass_MC}.
 
 
 
@@ -76,7 +76,7 @@ The $\decay{\Bp}{\Dsp\phiz}$ decay involves the decay of a pseudoscalar particle
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-This helicity angle is constructed using the momentum of the decay products calculated after the whole decay chain has been refitted with a \Dsp mass and \Bp direction constraint. This significantly increases the fraction of signal events expected in the first of the two categories.
+This helicity angle is constructed using the momentum of the decay products calculated after the whole decay chain has been refitted with a \Dsp mass and \Bp direction constraint. 
 
 
 \begin{table}[t]
@@ -97,111 +97,117 @@ This helicity angle is constructed using the momentum of the decay products calc
 
 \subsection{\decay{\Bp}{\Dsp \Kp \Km} model and assumptions}
 \label{sec:B2DsPhi_B2DsKKModel}
-The search for \decay{\Bp}{\Dsp\phiz} decays includes a component for \decay{\Bp}{\Dsp\Kp\Km} decays that didn't proceed via a \phiz meson. This is necessary as the search documented in Chapter~\ref{ch:B2DsKK} determined there is a non-zero contribution from these decays in the range of $m(\Kp\Km)$ invariant mass considered here (Fig~\ref{fig:B2DsKK_twobodyprojections}). To avoid overestimating \decay{\Bp}{\Dsp\phiz} signal yield, separate components are included in the fit model for the \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays. Although the invariant mass distributions of these contributions are identical, they can still be disentangled by exploiting the different fractions of these decays expected in each of the helicity angle and $m(\Kp\Km)$ categories. 
+The search for \decay{\Bp}{\Dsp\phiz} decays includes a component for \decay{\Bp}{\Dsp\Kp\Km} decays that does not proceed via a \phiz meson. To avoid overestimating \decay{\Bp}{\Dsp\phiz} signal yield, separate components are included in the fit model for the \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays. Although the invariant mass PDFs of these two contributions are identical, they can still be disentangled by exploiting the different fractions of these decays expected in each of the helicity angle and $m(\Kp\Km)$ categories: \decay{\Bp}{\Dsp\phiz} decays peak sharply in $m(\Kp\Km)$ whilst \decay{\Bp}{\Dsp\Kp\Km} are flat; \decay{\Bp}{\Dsp\phiz} decays peak sharply around $|\cos{\theta_{K}} |= 1.0$ whilst \decay{\Bp}{\Dsp\Kp\Km} doesn't necessarily. 
+
+
 The fractions for the \decay{\Bp}{\Dsp\phiz} signal decays as listed in Table~\ref{tab:signal_ratios} show the decays are concentrated in the \emph{inner \phiz mass category} with $|\cos{\theta_{K}} |> 0.4$. 
-To determine similar fractions for \decay{\Bp}{\Dsp\Kp\Km} decays the \laurapp package~\cite{1711.09854} is used to generate a number of simulation samples for different intermediate resonance models.
-
-Only resonances in the \Kp\Km system are considered as no significant structure is observed in the $m(\Dsp\Km)$ distribution in Fig.~\ref{fig:B2DsKK_twobodyprojections}. As such, all resonances are neutral mesons. The models are generated separately, therefore the effect of interference between any combination of states has been entirely neglected.    
-The generated samples are described in the following sections.
-
-\subsubsection{The $\phi(1020)$ resonance} 
-Decays proceeding via a $\phiz(1020)$ are produced as a crosscheck. As the simulations generated with \laurapp have not been reconstructed with the full \lhcb detector model, this sample is compared to the existing full simulation samples. The differences in between the fraction of the decays in the different $m(\Kp\Km)$ and $\cos\theta_{K}$ categories in the two samples are taken as a proxy for the potential level of bias introduced by using these generator level samples instead of full simulation. The distribution of these simulated decays in $m(\Kp\Km)$ and $\cos\theta_{K}$ are shown in Fig.~\ref{fig:DsKK_model_phi1020}. This figure also include the Dalitz plot distribution of the decays parametrised with the variables $m^{2}(\Dsp\Km)$ and $m^{2}(\Kp\Km)$.
-This resonance is generated with a Relativistic Breit-Wigner line shape~\cite{RelBWPhysRev.49.519}.
-%%%%%%%%%%%%%
-\begin{figure}[!h]
-   \centering   
-   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/phi_phi_mass.pdf}
-   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/phi_Helicity.pdf}
-   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/phi_Dalitz_plot.pdf}
-   \caption{The distribution of $m(\Kp\Km)$ (left), Dalitz plot (middle) and the helicity angle $\cos\theta_{K}$ for generated for the $\phiz(1020)$ resonance.} 
-   \label{fig:DsKK_model_phi1020}   
-\end{figure}
-%%%%%%%%%%%%%
-
-\subsubsection{Non-resonant decays}
-
-In addition to \Kp\Km resonances, a non-resonant model is considered. This model is defined to have a uniform amplitude across the allowed phase-space. The distribution in $m(\Kp\Km)$ of \decay{\Bp}{\Dsp\Kp\Km} decays in Fig.~\ref{fig:B2DsKK_twobodyprojections} is not consistent with this model as there are no candidates above $m(\Kp\Km) \sim 1900\mevcc$. However, this component is included in this study for comparative purposes. The distributions of decays generated with this flat model are shown in Fig.~\ref{fig:DsKK_model_NR}. 
-
-%%%%%%%%%%%%%
-\begin{figure}[!h]
-   \centering   
-   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/NR_phi_mass.pdf}
-   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/NR_Helicity.pdf}
-   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/NR_Dalitz_plot.pdf}
-   \caption{The distribution of $m(\Kp\Km)$ (left), Dalitz plot (middle) and the helicity angle $\cos\theta_{K}$ for generated for non-resonant decays.} 
-   \label{fig:DsKK_model_NR}   
-\end{figure}
-%%%%%%%%%%%%%
-
-\subsubsection{The $f_{0}^{0}(980)$ resonance}
-
-The $f_{0}^{0}(980)$ resonance is a light unflavoured $J^{P} = 0^{+}$ state with mass $990\pm20\mevcc$ and width 10--100\mevcc~\cite{PDG2016}. It has been observed to decay to $\Kp\Km$ making it a suitable resonance to consider. Although it's mass is at the lower end of the range considered here, it's significant width allows it to contribute at higher invariant masses. This component is modelled with the Flatt\'{e} line shape~\cite{Flatte:1976xu} and the relevant distributions shown in Fig.~\ref{fig:DsKK_model_f0980}.
-%%%%%%%%%%%%%
-\begin{figure}[!h]
-   \centering   
-   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f0_phi_mass.pdf}
-   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f0_Helicity.pdf}
-   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f0_Dalitz_plot.pdf}
-   \caption{The distribution of $m(\Kp\Km)$ (left), Dalitz plot (middle) and the helicity angle $\cos\theta_{K}$ for generated for the $f_{0}^{0}(980)$ resonance.} 
-   \label{fig:DsKK_model_f0980}   
-\end{figure}
-%%%%%%%%%%%%%
-
-\subsubsection{The $a_{0}^{0}(980)$ resonance}
-The $a_{0}^{0}(980)$ resonance is a light unflavoured $J^{P} = 0^{+}$ state with mass $980\pm20\mevcc$ and width 50--100\mevcc and has been observed to decay to $\PK\Kb$ final states~\cite{PDG2016}. This resonance is also modelled with the Flatt\'{e} line shape and the relevant distributions are shown in Fig~\ref{fig:DsKK_model_a0980}.
-%%%%%%%%%%%%%
-\begin{figure}[!h]
-   \centering   
-   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/a0_phi_mass.pdf}
-   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/a0_Helicity.pdf}
-   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/a0_Dalitz_plot.pdf}
-   \caption{The distribution of $m(\Kp\Km)$ (left), Dalitz plot (middle) and the helicity angle $\cos\theta_{K}$ for generated for the $a_{0}^{0}(980)$ resonance.} 
-   \label{fig:DsKK_model_a0980}   
-\end{figure}
-%%%%%%%%%%%%%
-
-\subsubsection{The $f_{0}^{0}(1370)$ resonance}
-The $f_{0}^{0}(1370)$ resonance is a light unflavoured $J^{P} = 0^{+}$ state with a mass in the range 1200--1500\mevcc and width in the range 200--500\mevcc. It has been observed to decay to the \kaon\Kb final states. It is modelled with a Relativistic Breit-Wigner line shape and the relevant distributions are shown in Fig.~\ref{fig:DsKK_model_f01370}.
-%%%%%%%%%%%%%
-\begin{figure}[!h]
-   \centering   
-   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f0_1370_phi_mass.pdf}
-   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f0_1370_Helicity.pdf}
-   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f0_1370_Dalitz_plot.pdf}
-   \caption{The distribution of $m(\Kp\Km)$ (left), Dalitz plot (middle) and the helicity angle $\cos\theta_{K}$ for generated for the $f_{0}^{0}(1370)$ resonance.} 
-   \label{fig:DsKK_model_f01370}   
-\end{figure}
-%%%%%%%%%%%%%
-
-\subsubsection{The $f_{2}^{0}(1270)$ resonance}
-The $f_{2}^{0}(1270)$ resonance is a $J^{P} = 2^{+}$ state with mass $1275.5\pm08\mevcc$ and width $186.7^{+2.2}_{-2.5}\mevcc$ that has been observed to decay to \kaon\Kb final states. This resonance is modelled with a Relativistic Breit-Wigner line shape as shown in Fig.~\ref{fig:DsKK_model_f21270}.
-
-%%%%%%%%%%%%%
-\begin{figure}[!h]
-   \centering   
-   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f2_phi_mass.pdf}
-   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f2_Helicity.pdf}
-   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f2_Dalitz_plot.pdf}
-   \caption{The distribution of $m(\Kp\Km)$ (left), Dalitz plot (middle) and the helicity angle $\cos\theta_{K}$ for generated for the $f_{2}^{0}(1270)$ resonance.} 
-   \label{fig:DsKK_model_f21270}   
-\end{figure}
-%%%%%%%%%%%%%
 
 
-\subsubsection{The $a_{2}^{0}(1320)$ resonance}
-The $a_{2}^{0}(1320)$ resonance is a $J^{P} = 2^{+}$ state with a mass $1318.1\pm0.7\mevcc$ and width $109.8\pm2.4\mevcc$ (both measured in the \kaon\Kb mode) observed decaying to the \kaon\Kb final state. This resonance is modelled with a Relativistic Breit-Wigner line shape and shown in Fig.~\ref{fig:DsKK_model_a21320}.
-%%%%%%%%%%%%%
-\begin{figure}[!h]
-   \centering   
-   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/a2_1320_phi_mass.pdf}
-   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/a2_1320_Helicity.pdf}
-   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/a2_1320_Dalitz_plot.pdf}
-   \caption{The distribution of $m(\Kp\Km)$ (left), Dalitz plot (middle) and the helicity angle $\cos\theta_{K}$ for generated for the $a_{2}^{0}(1320)$ resonance.} 
-   \label{fig:DsKK_model_a21320}   
-\end{figure}
-%%%%%%%%%%%%%
+% To determine similar fractions for \decay{\Bp}{\Dsp\Kp\Km} decays the \laurapp package~\cite{1711.09854} is used to generate a number of simulation samples for different intermediate resonance models.
+
+% Only resonances in the \Kp\Km system are considered as no significant structure is observed in the $m(\Dsp\Km)$ distribution in Fig.~\ref{fig:B2DsKK_twobodyprojections}. As such, all resonances are neutral mesons. The models are generated separately, therefore the effect of interference between any combination of states has been entirely neglected.    
+% The generated samples are described in the following sections.
+
+% \subsubsection{The $\phi(1020)$ resonance} 
+% Decays proceeding via a $\phiz(1020)$ are produced as a crosscheck. As the simulations generated with \laurapp have not been reconstructed with the full \lhcb detector model, this sample is compared to the existing full simulation samples. The differences in between the fraction of the decays in the different $m(\Kp\Km)$ and $\cos\theta_{K}$ categories in the two samples are taken as a proxy for the potential level of bias introduced by using these generator level samples instead of full simulation. The distribution of these simulated decays in $m(\Kp\Km)$ and $\cos\theta_{K}$ are shown in Fig.~\ref{fig:DsKK_model_phi1020}. This figure also include the Dalitz plot distribution of the decays parametrised with the variables $m^{2}(\Dsp\Km)$ and $m^{2}(\Kp\Km)$.
+% This resonance is generated with a Relativistic Breit-Wigner line shape~\cite{RelBWPhysRev.49.519}.
+% %%%%%%%%%%%%%
+% \begin{figure}[!h]
+%    \centering   
+%    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/phi_phi_mass.pdf}
+%    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/phi_Helicity.pdf}
+%    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/phi_Dalitz_plot.pdf}
+%    \caption{The distribution of $m(\Kp\Km)$ (left), Dalitz plot (middle) and the helicity angle $\cos\theta_{K}$ for generated for the $\phiz(1020)$ resonance.} 
+%    \label{fig:DsKK_model_phi1020}   
+% \end{figure}
+% %%%%%%%%%%%%%
+
+% \subsubsection{Non-resonant decays}
+
+% In addition to \Kp\Km resonances, a non-resonant model is considered. This model is defined to have a uniform amplitude across the allowed phase-space. The distribution in $m(\Kp\Km)$ of \decay{\Bp}{\Dsp\Kp\Km} decays in Fig.~\ref{fig:B2DsKK_twobodyprojections} is not consistent with this model as there are no candidates above $m(\Kp\Km) \sim 1900\mevcc$. However, this component is included in this study for comparative purposes. The distributions of decays generated with this flat model are shown in Fig.~\ref{fig:DsKK_model_NR}. 
+
+% %%%%%%%%%%%%%
+% \begin{figure}[!h]
+%    \centering   
+%    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/NR_phi_mass.pdf}
+%    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/NR_Helicity.pdf}
+%    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/NR_Dalitz_plot.pdf}
+%    \caption{The distribution of $m(\Kp\Km)$ (left), Dalitz plot (middle) and the helicity angle $\cos\theta_{K}$ for generated for non-resonant decays.} 
+%    \label{fig:DsKK_model_NR}   
+% \end{figure}
+% %%%%%%%%%%%%%
+
+% \subsubsection{The $f_{0}^{0}(980)$ resonance}
+
+% The $f_{0}^{0}(980)$ resonance is a light unflavoured $J^{P} = 0^{+}$ state with mass $990\pm20\mevcc$ and width 10--100\mevcc~\cite{PDG2016}. It has been observed to decay to $\Kp\Km$ making it a suitable resonance to consider. Although it's mass is at the lower end of the range considered here, it's significant width allows it to contribute at higher invariant masses. This component is modelled with the Flatt\'{e} line shape~\cite{Flatte:1976xu} and the relevant distributions shown in Fig.~\ref{fig:DsKK_model_f0980}.
+% %%%%%%%%%%%%%
+% \begin{figure}[!h]
+%    \centering   
+%    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f0_phi_mass.pdf}
+%    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f0_Helicity.pdf}
+%    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f0_Dalitz_plot.pdf}
+%    \caption{The distribution of $m(\Kp\Km)$ (left), Dalitz plot (middle) and the helicity angle $\cos\theta_{K}$ for generated for the $f_{0}^{0}(980)$ resonance.} 
+%    \label{fig:DsKK_model_f0980}   
+% \end{figure}
+% %%%%%%%%%%%%%
+
+% \subsubsection{The $a_{0}^{0}(980)$ resonance}
+% The $a_{0}^{0}(980)$ resonance is a light unflavoured $J^{P} = 0^{+}$ state with mass $980\pm20\mevcc$ and width 50--100\mevcc and has been observed to decay to $\PK\Kb$ final states~\cite{PDG2016}. This resonance is also modelled with the Flatt\'{e} line shape and the relevant distributions are shown in Fig~\ref{fig:DsKK_model_a0980}.
+% %%%%%%%%%%%%%
+% \begin{figure}[!h]
+%    \centering   
+%    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/a0_phi_mass.pdf}
+%    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/a0_Helicity.pdf}
+%    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/a0_Dalitz_plot.pdf}
+%    \caption{The distribution of $m(\Kp\Km)$ (left), Dalitz plot (middle) and the helicity angle $\cos\theta_{K}$ for generated for the $a_{0}^{0}(980)$ resonance.} 
+%    \label{fig:DsKK_model_a0980}   
+% \end{figure}
+% %%%%%%%%%%%%%
+
+% \subsubsection{The $f_{0}^{0}(1370)$ resonance}
+% The $f_{0}^{0}(1370)$ resonance is a light unflavoured $J^{P} = 0^{+}$ state with a mass in the range 1200--1500\mevcc and width in the range 200--500\mevcc. It has been observed to decay to the \kaon\Kb final states. It is modelled with a Relativistic Breit-Wigner line shape and the relevant distributions are shown in Fig.~\ref{fig:DsKK_model_f01370}.
+% %%%%%%%%%%%%%
+% \begin{figure}[!h]
+%    \centering   
+%    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f0_1370_phi_mass.pdf}
+%    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f0_1370_Helicity.pdf}
+%    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f0_1370_Dalitz_plot.pdf}
+%    \caption{The distribution of $m(\Kp\Km)$ (left), Dalitz plot (middle) and the helicity angle $\cos\theta_{K}$ for generated for the $f_{0}^{0}(1370)$ resonance.} 
+%    \label{fig:DsKK_model_f01370}   
+% \end{figure}
+% %%%%%%%%%%%%%
+
+% \subsubsection{The $f_{2}^{0}(1270)$ resonance}
+% The $f_{2}^{0}(1270)$ resonance is a $J^{P} = 2^{+}$ state with mass $1275.5\pm08\mevcc$ and width $186.7^{+2.2}_{-2.5}\mevcc$ that has been observed to decay to \kaon\Kb final states. This resonance is modelled with a Relativistic Breit-Wigner line shape as shown in Fig.~\ref{fig:DsKK_model_f21270}.
+
+% %%%%%%%%%%%%%
+% \begin{figure}[!h]
+%    \centering   
+%    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f2_phi_mass.pdf}
+%    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f2_Helicity.pdf}
+%    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f2_Dalitz_plot.pdf}
+%    \caption{The distribution of $m(\Kp\Km)$ (left), Dalitz plot (middle) and the helicity angle $\cos\theta_{K}$ for generated for the $f_{2}^{0}(1270)$ resonance.} 
+%    \label{fig:DsKK_model_f21270}   
+% \end{figure}
+% %%%%%%%%%%%%%
 
 
+% \subsubsection{The $a_{2}^{0}(1320)$ resonance}
+% The $a_{2}^{0}(1320)$ resonance is a $J^{P} = 2^{+}$ state with a mass $1318.1\pm0.7\mevcc$ and width $109.8\pm2.4\mevcc$ (both measured in the \kaon\Kb mode) observed decaying to the \kaon\Kb final state. This resonance is modelled with a Relativistic Breit-Wigner line shape and shown in Fig.~\ref{fig:DsKK_model_a21320}.
+% %%%%%%%%%%%%%
+% \begin{figure}[!h]
+%    \centering   
+%    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/a2_1320_phi_mass.pdf}
+%    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/a2_1320_Helicity.pdf}
+%    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/a2_1320_Dalitz_plot.pdf}
+%    \caption{The distribution of $m(\Kp\Km)$ (left), Dalitz plot (middle) and the helicity angle $\cos\theta_{K}$ for generated for the $a_{2}^{0}(1320)$ resonance.} 
+%    \label{fig:DsKK_model_a21320}   
+% \end{figure}
+% %%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%====================
+%%%%%%%%%%%%%%====================
 
 \subsubsection{Summary of models}
 
@@ -249,6 +255,8 @@ In order to choose suitable fractions for the \decay{\Bp}{\Dsp\Kp\Km} fit compon
 
 These considerations leave the $f_{0}^{0}(980)$ and $a_{0}^{0}(980)$ resonances. The fractions of \decay{\Bp}{\Dsp\Kp\Km} decays that have been used in the fit model are fixed to the average of these two, listed in the final row of Table~\ref{table:DsKK_rescfracs}. Uncertainties are assigned that correspond to half the difference of the two values. These uncertainties are propagated to the $\BF(\decay{\Bp}{\Dsp\phiz})$ branching fraction in Sec.~\ref{sec:B2DsPhi_systuncertainy}. 
 
+%%%%%%%%%%%%%%====================
+%%%%%%%%%%%%%%====================
 
 
 \section{Fit components}
@@ -279,81 +287,81 @@ where the CB function is defined as follows
 \end{equation}
 Again, $\mu$, $\sigma$, $n$, $\alpha$ and $f_{\sigma}$ are adjustable parameters and $m$ is the \B meson invariant mass observable.
 The tail parameter $\alpha$ is fixed to values determined from maximum likelihood fits to simulated candidates for the signal and normalisation decays. The parameter $n$ is fixed to unity in the fits to both simulation and data to increase the stability of the tails.     
-The two CB function are allowed have different widths, $\sigma_{1}$ and $\sigma_{2}$, but the ratio $\sigma_{1}/\sigma_{2}$ is fixed from the fits to simulations, as is $f_{\sigma}$ that determines the fractional contribution of the narrower CB function ($\sigma_{1}<\sigma_{2}$). The values determined for each of these fixed parameters are tabulated in Table~\ref{tab:DsPhi_mc_fits}, along with the uncertainty obtained from the fits.
+The two CB function are allowed have different widths, $\sigma_{1}$ and $\sigma_{2}$, but the ratio $\sigma_{1}/\sigma_{2}$ is fixed from the fits to simulations, as is $f_{\sigma}$ that determines the fractional contribution of the narrower CB function ($\sigma_{1}<\sigma_{2}$). The values determined for each of these fixed parameters are tabulated in Appendix~\ref{ch:appendix_MCfits}, along with the uncertainty obtained from the fits.
 
-An extra constraint is added to the signal and normalisation DCB functions with respect to the configuration used in the search for \decay{\Bp}{\Dsp\Kp\Km} decays. As the number of signal candidates is likely to be small, the relative width of the narrower signal and normalisation CB functions, $\sigma_{1}(\Dsp\phi) / \sigma_{1}(\Dsp\Dzb)$, is also fixed to values obtained from the fits to simulations. All fixed parameters are determined separately for the different \Dsp decay modes, and the results of the fits to simulated decays are shown in Fig.~\ref{fig:B2DsPhi_signal_fits}.     
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-\begin{table}[h]
-   \centering
-   \begin{tabular}{ c c c c }
-      \hline
-      \multirow{2}{*}{Parameter}                   & \multicolumn{3}{c} {Value} \\
-      \cline{2-4}
-                                  & \decay{\Dsp}{\Kp\Km\pip}   & \decay{\Dsp}{\Kp\pim\pip} & \decay{\Dsp}{\pip\pim\pip}  \\
-      \hline
-      %\textbf{$\B \to \Ds \phi$}  &                    &                    &                        \\
-      \multicolumn{4}{l} {\decay{\Bp}{\Dsp\phiz}}\\
-
-      \hline
-      $\sigma_1/\sigma_2$         & 0.49 $\pm$ 0.01    & 0.47 $\pm$ 0.01    & 0.46 $\pm$ 0.01        \\
-      $f_\sigma$                  & 0.80 $\pm$ 0.01    & 0.84 $\pm$ 0.01    & 0.81 $\pm$ 0.01        \\
-      $\alpha$                    & 2.76 $\pm$ 0.07    & 3.06 $\pm$ 0.16    & 3.71 $\pm$ 0.23        \\
-      $n$                         & 1 $\pm$ 0          & 1  $\pm$ 0         & 1  $\pm$ 0             \\
-      \hline
-      %\textbf{ }  &                    &                    &                        \\
-      \multicolumn{4}{l} {\decay{\Bp}{\Dsp\Dzb}}\\
-      \hline
-      $\sigma_1/\sigma_2$         & 0.43 $\pm$ 0.01    & 0.42 $\pm$ 0.01    & 0.40 $\pm$ 0.01        \\
-      $f_\sigma$                  & 0.88 $\pm$ 0.01    & 0.88 $\pm$ 0.01    & 0.88 $\pm$ 0.01        \\
-      $\alpha$                    & 2.91 $\pm$ 0.06    & 3.36 $\pm$ 0.26    & 3.53 $\pm$ 0.25        \\
-      $n$                         & 1 $\pm$ 0          & 1 $\pm$ 0          & 1 $\pm$ 0              \\
-      \hline 
-      $\sigma_{1}(\Dsp\phi) / \sigma_{1}(\Dsp\Dzb)$ & 1.27 $\pm$ 0.02 & 1.31 $\pm$ 0.02 & 1.26 $\pm$ 0.02 \\
-      \hline
-   \end{tabular}
-   \caption{Fixed values obtained in fits to MC used in the model for the signal pdf.} 
-   \label{tab:DsPhi_mc_fits}  
-\end{table}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+An extra constraint is added to the signal and normalisation DCB functions with respect to the configuration used in the search for \decay{\Bp}{\Dsp\Kp\Km} decays. As the number of signal candidates is likely to be small, the relative width of the narrower signal and normalisation CB functions, $\sigma_{1}(\Dsp\phi) / \sigma_{1}(\Dsp\Dzb)$, is also fixed to values obtained from the fits to simulations. 
+%All fixed parameters are determined separately for the different \Dsp decay modes, and the results of the fits to simulated decays are shown in Fig.~\ref{fig:B2DsPhi_signal_fits}.     
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[!h]
-   \centering
-   \begin{subfigure}[t]{1.0\textwidth}
-      \centering
-      \includegraphics[width=0.40\textwidth]{figs/B2DsPhi/Plot_Signal_Fit_All_B2PhiDs_Ds2KKPi.pdf}
-      \includegraphics[width=0.40\textwidth]{figs/B2DsPhi/Plot_Signal_Fit_All_B2D0Ds_Ds2KKPi.pdf}
-   \caption{\decay{\Dsp}{\Kp\Km\pip}}
-   \end{subfigure}\\
-   \begin{subfigure}[t]{1.0\textwidth}
-      \centering
-      \includegraphics[width=0.40\textwidth]{figs/B2DsPhi/Plot_Signal_Fit_All_B2PhiDs_Ds2PiPiPi.pdf}
-      \includegraphics[width=0.40\textwidth]{figs/B2DsPhi/Plot_Signal_Fit_All_B2D0Ds_Ds2PiPiPi.pdf}
-      \caption{\decay{\Dsp}{\pip\pim\pip}}
-   \end{subfigure}\\
-   \begin{subfigure}[t]{1.0\textwidth}
-      \centering
-      \includegraphics[width=0.40\textwidth]{figs/B2DsPhi/Plot_Signal_Fit_All_B2PhiDs_Ds2KPiPi.pdf}
-      \includegraphics[width=0.40\textwidth]{figs/B2DsPhi/Plot_Signal_Fit_All_B2D0Ds_Ds2KPiPi.pdf}
-      \caption{\decay{\Dsp}{\Kp\pim\pip}}
-   \end{subfigure}\\
-   \caption{Invariant mass fits to simulated signal (left) and normalisation (right) decays. The results of maximum likelihood fits using the signal PDFs are over laid, with the total function in black and the two contributing CB shapes in red and blue.}
-   \label{fig:B2DsPhi_signal_fits}   
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% \begin{table}[h]
+%    \centering
+%    \begin{tabular}{ c c c c }
+%       \hline
+%       \multirow{2}{*}{Parameter}                   & \multicolumn{3}{c} {Value} \\
+%       \cline{2-4}
+%                                   & \decay{\Dsp}{\Kp\Km\pip}   & \decay{\Dsp}{\Kp\pim\pip} & \decay{\Dsp}{\pip\pim\pip}  \\
+%       \hline
+%       %\textbf{$\B \to \Ds \phi$}  &                    &                    &                        \\
+%       \multicolumn{4}{l} {\decay{\Bp}{\Dsp\phiz}}\\
+
+%       \hline
+%       $\sigma_1/\sigma_2$         & 0.49 $\pm$ 0.01    & 0.47 $\pm$ 0.01    & 0.46 $\pm$ 0.01        \\
+%       $f_\sigma$                  & 0.80 $\pm$ 0.01    & 0.84 $\pm$ 0.01    & 0.81 $\pm$ 0.01        \\
+%       $\alpha$                    & 2.76 $\pm$ 0.07    & 3.06 $\pm$ 0.16    & 3.71 $\pm$ 0.23        \\
+%       $n$                         & 1 $\pm$ 0          & 1  $\pm$ 0         & 1  $\pm$ 0             \\
+%       \hline
+%       %\textbf{ }  &                    &                    &                        \\
+%       \multicolumn{4}{l} {\decay{\Bp}{\Dsp\Dzb}}\\
+%       \hline
+%       $\sigma_1/\sigma_2$         & 0.43 $\pm$ 0.01    & 0.42 $\pm$ 0.01    & 0.40 $\pm$ 0.01        \\
+%       $f_\sigma$                  & 0.88 $\pm$ 0.01    & 0.88 $\pm$ 0.01    & 0.88 $\pm$ 0.01        \\
+%       $\alpha$                    & 2.91 $\pm$ 0.06    & 3.36 $\pm$ 0.26    & 3.53 $\pm$ 0.25        \\
+%       $n$                         & 1 $\pm$ 0          & 1 $\pm$ 0          & 1 $\pm$ 0              \\
+%       \hline 
+%       $\sigma_{1}(\Dsp\phi) / \sigma_{1}(\Dsp\Dzb)$ & 1.27 $\pm$ 0.02 & 1.31 $\pm$ 0.02 & 1.26 $\pm$ 0.02 \\
+%       \hline
+%    \end{tabular}
+%    \caption{Fixed values obtained in fits to MC used in the model for the signal pdf.} 
+%    \label{tab:DsPhi_mc_fits}  
+% \end{table}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{figure}[!h]
+%    \centering
+%    \begin{subfigure}[t]{1.0\textwidth}
+%       \centering
+%       \includegraphics[width=0.40\textwidth]{figs/B2DsPhi/Plot_Signal_Fit_All_B2PhiDs_Ds2KKPi.pdf}
+%       \includegraphics[width=0.40\textwidth]{figs/B2DsPhi/Plot_Signal_Fit_All_B2D0Ds_Ds2KKPi.pdf}
+%    \caption{\decay{\Dsp}{\Kp\Km\pip}}
+%    \end{subfigure}\\
+%    \begin{subfigure}[t]{1.0\textwidth}
+%       \centering
+%       \includegraphics[width=0.40\textwidth]{figs/B2DsPhi/Plot_Signal_Fit_All_B2PhiDs_Ds2PiPiPi.pdf}
+%       \includegraphics[width=0.40\textwidth]{figs/B2DsPhi/Plot_Signal_Fit_All_B2D0Ds_Ds2PiPiPi.pdf}
+%       \caption{\decay{\Dsp}{\pip\pim\pip}}
+%    \end{subfigure}\\
+%    \begin{subfigure}[t]{1.0\textwidth}
+%       \centering
+%       \includegraphics[width=0.40\textwidth]{figs/B2DsPhi/Plot_Signal_Fit_All_B2PhiDs_Ds2KPiPi.pdf}
+%       \includegraphics[width=0.40\textwidth]{figs/B2DsPhi/Plot_Signal_Fit_All_B2D0Ds_Ds2KPiPi.pdf}
+%       \caption{\decay{\Dsp}{\Kp\pim\pip}}
+%    \end{subfigure}\\
+%    \caption{Invariant mass fits to simulated signal (left) and normalisation (right) decays. The results of maximum likelihood fits using the signal PDFs are over laid, with the total function in black and the two contributing CB shapes in red and blue.}
+%    \label{fig:B2DsPhi_signal_fits}   
+% \end{figure}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \subsection{Partially reconstructed backgrounds}
 \label{sec:B2DsPhi_partrecocomps}
 
 The accurate parametrisation of partially reconstructed backgrounds is particularly important in the search for \decay{\Bp}{\Dsp\phiz} decays as many different processes contribute to the low invariant mass range of the $m(\Dsp\phiz)$ spectrum. These processes involve decays of \Bs, \Bz or \Bp mesons in which the five final state tracks reconstructed in the search for \decay{\Bp}{\Dsp\phiz} decays are only a subset of the background modes final state. 
-Typically, processes in which a low momentum pion or photon has not been reconstructed are found closest in mass to the signal decays. Decays of \Bs mesons are particularly dominant as the \Bs meson has a larger mass than the \Bp meson.   
+Typically, processes in which a low momentum pion or photon has not been reconstructed are found closest in mass to the signal decays. 
 
-
-\subsubsection{Backgrounds to the normalisation channel}
+\subsubsection{Backgrounds to the normalisation channel, \decay{\Bp}{\Dsp\Dzb}}
 
 The modes \decay{\Bp}{\Dsp\Dstarzb} and \decay{\Bp}{\Dssp\Dzb} can both contribute as partially reconstructed backgrounds to the \decay{\Bp}{\Dsp\Dzb} normalisation mode. These are parametrised using the same PDFs as in the search for \decay{\Bp}{\Ds\Kp\Km} decays, detailed in Sec.~\ref{sec:B2DsKK_norm_partreco}. 
 
@@ -403,7 +411,7 @@ The choice of PDF for this component is found to have negligible effect on the d
 
 
 
-\subsubsection{Backgrounds to the signal channel}
+\subsubsection{Backgrounds to the signal channel, \decay{\Bp}{\Dsp\phiz}}
 
 %The signal channel invariant mass distribution receives contributions from the partially reconstructed modes considered in the search for \decay{\Bp}{\Dsp\Kp\Km} decays. The PDFs determined are 
 
@@ -543,7 +551,7 @@ To account for difference between the simulation and data samples all PDFs deter
 Combinations of unrelated tracks form a background to the signal decays and extend across the entire fitted \Bp meson mass range. 
 This component is parametrised with a decaying exponential function 
 \begin{equation}
-f(m|c) = e^{-m\times c},
+f(m|c) = e^{-mc},
 \end{equation}
 where the parameter $c$ controls the slope and $m$ is the observable \Bp meson invariant mass. 
 The combinatorial background is the dominant background under the signal decays, therefore it is important to accurately extrapolate distribution from the high and low mass ranges to the signal range. 
@@ -725,110 +733,112 @@ This parameter is included as a cross check. The normalisation decays have a fla
 
 \section{Fit validation}
 \label{sec:B2DsPhi_fitstrategy}
-
-The simultaneous fitting framework is validated by generating pseudo-experiments (also referred to as \emph{toys}). The total fit model PDF is randomly sampled to create a simulation sample with the same number of candidates as the nominal fit. These are then fitted using the same fit model, determining the best estimate and uncertainty of each parameter. The parameter values used to generate the pseudo-experiments are chosen to be the final parameter values as determined in a fit to data. This is known as the plug-in method~\cite{plugin}.
-The fitted value and associated error is used to determine the pull of each parameter of interest. As the errors are determined asymmetrically using \minos the is defined conditionally to incorporate the appropriate error 
-\begin{equation}
-  g_{\text{pull}} = \left \{
-  \begin{aligned}
-    &\frac{x_{\text{gen}} - x_{\text{fit}} }{\sigma_{+}}, && \text{if}\ x_{\text{fit}} < x_{\text{gen}}\\
-    &\frac{x_{\text{fit}} - x_{\text{gen}} }{\sigma_{-}}, && \text{otherwise},
-  \end{aligned} \right.
-\end{equation} 
-where $x_{\text{fit}}$ and $x_{\text{gen}}$ are the fitted and generated values of the variable, and $\sigma_{+}$ and $\sigma_{-}$ are the high and low asymmetric errors.
-
-The distributions of the values, errors and pulls for the yields of the normalisation decay in each of the \Dsp decays are shown in Fig.~\ref{fig:B2DsPhi_Pulls_normalisation}. The mean and widths are determined using simple fits to the pull distributions. The results and PDFs for these fits are overlaid on the distributions. The normalisation yield means and widths are found to be within $2\sigma$ of zero and one respectively.
+The simultaneous fitting framework is validated by generating pseudo-experiments using a similar procedure as described in the search for \decay{\Bp}{\Dsp\Kp\Km} decays. The frame work is found to not have any significant bias as described in Appendix~\ref{ch:appendix_toys}.
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[!h]
-   \centering
-   \begin{subfigure}[t]{1.0\textwidth}
-      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Value_yield_peak_DsD0_Ds2PhiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
-      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Error_yield_peak_DsD0_Ds2PhiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
-      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Pull_yield_peak_DsD0_Ds2PhiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
-      \caption{\decay{\Dsp}{\phiz\pip}}
-   \end{subfigure}\\
-   \begin{subfigure}[t]{1.0\textwidth}
-      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Value_yield_peak_DsD0_Ds2KKPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
-      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Error_yield_peak_DsD0_Ds2KKPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
-      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Pull_yield_peak_DsD0_Ds2KKPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
-      \caption{\decay{\Dsp}{\Kp\Km\pip}}
-   \end{subfigure}\\
-   \begin{subfigure}[t]{1.0\textwidth}
-      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Value_yield_peak_DsD0_Ds2PiPiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
-      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Error_yield_peak_DsD0_Ds2PiPiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
-      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Pull_yield_peak_DsD0_Ds2PiPiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
-      \caption{\decay{\Dsp}{\pip\pim\pip}}
-   \end{subfigure}\\
-   \begin{subfigure}[t]{1.0\textwidth}
-      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Value_yield_peak_DsD0_Ds2KPiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
-      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Error_yield_peak_DsD0_Ds2KPiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
-      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Pull_yield_peak_DsD0_Ds2KPiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
-      \caption{\decay{\Dsp}{\Kp\pim\pip}}
-   \end{subfigure}
+% The simultaneous fitting framework is validated by generating pseudo-experiments (also referred to as \emph{toys}). The total fit model PDF is randomly sampled to create a simulation sample with the same number of candidates as the nominal fit. These are then fitted using the same fit model, determining the best estimate and uncertainty of each parameter. The parameter values used to generate the pseudo-experiments are chosen to be the final parameter values as determined in a fit to data. This is known as the plug-in method~\cite{plugin}.
+% The fitted value and associated error is used to determine the pull of each parameter of interest. As the errors are determined asymmetrically using \minos the is defined conditionally to incorporate the appropriate error 
+% \begin{equation}
+%   g_{\text{pull}} = \left \{
+%   \begin{aligned}
+%     &\frac{x_{\text{gen}} - x_{\text{fit}} }{\sigma_{+}}, && \text{if}\ x_{\text{fit}} < x_{\text{gen}}\\
+%     &\frac{x_{\text{fit}} - x_{\text{gen}} }{\sigma_{-}}, && \text{otherwise},
+%   \end{aligned} \right.
+% \end{equation} 
+% where $x_{\text{fit}}$ and $x_{\text{gen}}$ are the fitted and generated values of the variable, and $\sigma_{+}$ and $\sigma_{-}$ are the high and low asymmetric errors.
 
-   \caption{The yield, error and pull distributions for the normalisation channel.}
-   \label{fig:B2DsPhi_Pulls_normalisation}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The distributions of the values, errors and pulls for the yields of the normalisation decay in each of the \Dsp decays are shown in Fig.~\ref{fig:B2DsPhi_Pulls_normalisation}. The mean and widths are determined using simple fits to the pull distributions. The results and PDFs for these fits are overlaid on the distributions. The normalisation yield means and widths are found to be within $2\sigma$ of zero and one respectively.
 
 
-Similarly, the distributions of the signal yield, error and pull for each of the different \Dsp decay modes are shown in Fig.~\ref{fig:B2DsPhi_Pulls_signal}. The pull means and widths are all within $2\sigma$ of zero and one respectively.
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{figure}[!h]
+%    \centering
+%    \begin{subfigure}[t]{1.0\textwidth}
+%       \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Value_yield_peak_DsD0_Ds2PhiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+%       \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Error_yield_peak_DsD0_Ds2PhiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+%       \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Pull_yield_peak_DsD0_Ds2PhiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+%       \caption{\decay{\Dsp}{\phiz\pip}}
+%    \end{subfigure}\\
+%    \begin{subfigure}[t]{1.0\textwidth}
+%       \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Value_yield_peak_DsD0_Ds2KKPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+%       \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Error_yield_peak_DsD0_Ds2KKPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+%       \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Pull_yield_peak_DsD0_Ds2KKPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+%       \caption{\decay{\Dsp}{\Kp\Km\pip}}
+%    \end{subfigure}\\
+%    \begin{subfigure}[t]{1.0\textwidth}
+%       \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Value_yield_peak_DsD0_Ds2PiPiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+%       \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Error_yield_peak_DsD0_Ds2PiPiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+%       \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Pull_yield_peak_DsD0_Ds2PiPiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+%       \caption{\decay{\Dsp}{\pip\pim\pip}}
+%    \end{subfigure}\\
+%    \begin{subfigure}[t]{1.0\textwidth}
+%       \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Value_yield_peak_DsD0_Ds2KPiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+%       \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Error_yield_peak_DsD0_Ds2KPiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+%       \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Pull_yield_peak_DsD0_Ds2KPiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+%       \caption{\decay{\Dsp}{\Kp\pim\pip}}
+%    \end{subfigure}
+
+%    \caption{The yield, error and pull distributions for the normalisation channel.}
+%    \label{fig:B2DsPhi_Pulls_normalisation}
+% \end{figure}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[!h]
-   \centering
-   \begin{subfigure}[t]{1.0\textwidth}
-      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Value_yield_peak_total_DsPhi_Ds2PhiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
-      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Error_yield_peak_total_DsPhi_Ds2PhiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
-      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Pull_yield_peak_total_DsPhi_Ds2PhiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
-      \caption{\decay{\Dsp}{\phiz\pip}}
-   \end{subfigure}\\
-   \begin{subfigure}[t]{1.0\textwidth}
-      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Value_yield_peak_total_DsPhi_Ds2KKPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
-      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Error_yield_peak_total_DsPhi_Ds2KKPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
-      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Pull_yield_peak_total_DsPhi_Ds2KKPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
-      \caption{\decay{\Dsp}{\Kp\Km\pip}}
-   \end{subfigure}\\
-   \begin{subfigure}[t]{1.0\textwidth}
-      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Value_yield_peak_total_DsPhi_Ds2PiPiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
-      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Error_yield_peak_total_DsPhi_Ds2PiPiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
-      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Pull_yield_peak_total_DsPhi_Ds2PiPiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
-      \caption{\decay{\Dsp}{\pip\pim\pip}}
-   \end{subfigure}\\
-   \begin{subfigure}[t]{1.0\textwidth}
-      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Value_yield_peak_total_DsPhi_Ds2KPiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
-      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Error_yield_peak_total_DsPhi_Ds2KPiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
-      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Pull_yield_peak_total_DsPhi_Ds2KPiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
-      \caption{\decay{\Dsp}{\Kp\pim\pip}}
-   \end{subfigure}
-
-   \caption{The yield, error and pull distributions for the signal channel.}
-   \label{fig:B2DsPhi_Pulls_signal}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-These distributions were generated using pseudo-experiments in which the yields for each \Dsp mode were free variables rather than being determined using a single free branching fraction parameter.
-
-The model is also studied using a single branching fraction $\BF(\decay{\Bp}{\Dsp\phiz})$ that determines the yields in each signal mode. This parameter is calculated directly in the fit so it can be assessed for any possible bias. The distribution of the measured values, uncertainties and pulls are shown in Fig.~\ref{fig:B2DsPhi_Pulls_signal}.
+% Similarly, the distributions of the signal yield, error and pull for each of the different \Dsp decay modes are shown in Fig.~\ref{fig:B2DsPhi_Pulls_signal}. The pull means and widths are all within $2\sigma$ of zero and one respectively.
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[!h]
-   \centering
-   \begin{subfigure}[t]{1.0\textwidth}
-      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Error_Branching_fraction.pdf}
-      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Error_Branching_fraction.pdf}
-      \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Pull_Branching_fraction.pdf}
-   \end{subfigure}
-   \caption{The branching fraction, error and pull distributions for the full simultaneous fit. The branching fraction is generated assuming the value obtained in the fit to data.}
-   \label{fig:B2DsPhi_Pulls_signal}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The pull mean and width are both within $2\sigma$ of zero and one respectively. 
-As no significant biases are observed in the pulls of any of the yields or branching fraction no corrections are applied to the values determined fit.
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{figure}[!h]
+%    \centering
+%    \begin{subfigure}[t]{1.0\textwidth}
+%       \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Value_yield_peak_total_DsPhi_Ds2PhiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+%       \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Error_yield_peak_total_DsPhi_Ds2PhiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+%       \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Pull_yield_peak_total_DsPhi_Ds2PhiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+%       \caption{\decay{\Dsp}{\phiz\pip}}
+%    \end{subfigure}\\
+%    \begin{subfigure}[t]{1.0\textwidth}
+%       \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Value_yield_peak_total_DsPhi_Ds2KKPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+%       \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Error_yield_peak_total_DsPhi_Ds2KKPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+%       \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Pull_yield_peak_total_DsPhi_Ds2KKPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+%       \caption{\decay{\Dsp}{\Kp\Km\pip}}
+%    \end{subfigure}\\
+%    \begin{subfigure}[t]{1.0\textwidth}
+%       \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Value_yield_peak_total_DsPhi_Ds2PiPiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+%       \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Error_yield_peak_total_DsPhi_Ds2PiPiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+%       \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Pull_yield_peak_total_DsPhi_Ds2PiPiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+%       \caption{\decay{\Dsp}{\pip\pim\pip}}
+%    \end{subfigure}\\
+%    \begin{subfigure}[t]{1.0\textwidth}
+%       \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Value_yield_peak_total_DsPhi_Ds2KPiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+%       \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Error_yield_peak_total_DsPhi_Ds2KPiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+%       \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Pull_yield_peak_total_DsPhi_Ds2KPiPi_toy_both_DsBDTbin1_PhiBDTbin1_both_both.pdf}
+%       \caption{\decay{\Dsp}{\Kp\pim\pip}}
+%    \end{subfigure}
+
+%    \caption{The yield, error and pull distributions for the signal channel.}
+%    \label{fig:B2DsPhi_Pulls_signal}
+% \end{figure}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% These distributions were generated using pseudo-experiments in which the yields for each \Dsp mode were free variables rather than being determined using a single free branching fraction parameter.
+
+% The model is also studied using a single branching fraction $\BF(\decay{\Bp}{\Dsp\phiz})$ that determines the yields in each signal mode. This parameter is calculated directly in the fit so it can be assessed for any possible bias. The distribution of the measured values, uncertainties and pulls are shown in Fig.~\ref{fig:B2DsPhi_Pulls_signal}.
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{figure}[!h]
+%    \centering
+%    \begin{subfigure}[t]{1.0\textwidth}
+%       \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Error_Branching_fraction.pdf}
+%       \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Error_Branching_fraction.pdf}
+%       \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/Plots_DsKK_Pull_Branching_fraction.pdf}
+%    \end{subfigure}
+%    \caption{The branching fraction, error and pull distributions for the full simultaneous fit. The branching fraction is generated assuming the value obtained in the fit to data.}
+%    \label{fig:B2DsPhi_Pulls_signal}
+% \end{figure}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The pull mean and width are both within $2\sigma$ of zero and one respectively. 
+% As no significant biases are observed in the pulls of any of the yields or branching fraction no corrections are applied to the values determined fit.
 
 
 \section{Normalisation and signal fits}
@@ -938,7 +948,6 @@ Fractions  & Ratio of \Dsp\Kp\Km to \Dsp\Dzb                                    
 \caption{The fit result with final values of all floating variables used in the fit model. Here H1 and H2 represent the $|\cos\theta_{K}|>0.4$ and $|\cos\theta_{K}|<0.4$ categories respectively.} 
 \label{tab:B2DsPhi_free_variables} 
 \end{longtable}
-
 
 
 \section{Efficiency corrections}
