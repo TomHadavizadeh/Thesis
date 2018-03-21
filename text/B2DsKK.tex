@@ -265,24 +265,53 @@ The PDF for this background is determined from a sample of fully reconstructed s
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
     \centering
-    \includegraphics[width=0.49\textwidth]{figs/B2DsKK/Bs2Dsa1_4800_5900_Shape.pdf}
-    \caption{Partially reconstructed \decay{\Bsb}{\Dsp\Km\Kstarz} mass shape. The \Bp meson mass is represented by a vertical dashed line. The range below $5100\mevcc$ (highlighted in red) is not included in the fit range.}
-    \label{fig:B2DsKK_part_reco_backgrounds_DsKKstar}   
+    \begin{subfigure}[t]{0.49\textwidth}
+        \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Bs2Dsa1_4800_5900_Shape.pdf}
+        \caption{\decay{\Bsb}{\Dsp\Km\Kstarz} }
+        \label{fig:B2DsKK_part_reco_backgrounds_DsKKstar}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.49\textwidth}
+        \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Bs2DsstKKst_4800_5900_Shape.pdf}
+        \caption{\decay{\Bsb}{\Dssp\Km\Kstarz}}
+        \label{fig:B2DsKK_part_reco_backgrounds_DssKKstar}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.49\textwidth}
+        \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Bs2DsDs_4800_5900_Shape.pdf}
+        \caption{\decay{\Bsb}{\Dsp\Dsm} }
+        \label{fig:B2DsKK_part_reco_backgrounds_DsDs}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.49\textwidth}
+        \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Bs2DsstDs_4800_5900_Shape.pdf}
+        \caption{\decay{\Bsb}{\Dssp\Dsm} }
+        \label{fig:B2DsKK_part_reco_backgrounds_DssDs}
+    \end{subfigure}
+    \caption{Partially reconstructed mass PDFs. The \Bp meson mass is represented by a vertical dashed line. The range below $5100\mevcc$ (highlighted in red) is not included in the fit range.}
+    \label{fig:B2DsKK_part_reco_backgrounds}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{figure}[!h]
+%     \centering
+%     \includegraphics[width=0.49\textwidth]{figs/B2DsKK/Bs2Dsa1_4800_5900_Shape.pdf}
+%     \caption{Partially reconstructed \decay{\Bsb}{\Dsp\Km\Kstarz} mass shape. The \Bp meson mass is represented by a vertical dashed line. The range below $5100\mevcc$ (highlighted in red) is not included in the fit range.}
+%     \label{fig:B2DsKK_part_reco_backgrounds_DsKKstar}   
+% \end{figure}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{description}
 \item \decay{\Bsb}{\Dssp\Km\Kstarz}: similarly this decay can form a background at low invariant mass when a soft neutral particle is not reconstructed in the \decay{\Dssp}{\Dsp X} decay in addition to the pion from the \Kstarz. This PDF is also determined using the \texttt{RooKeysPDF} class and shown in Fig.~\ref{fig:B2DsKK_part_reco_backgrounds_DssKKstar}.
 \end{description}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[!h]
-    \centering
-    \includegraphics[width=0.49\textwidth]{figs/B2DsKK/Bs2DsstKKst_4800_5900_Shape.pdf}
-    \caption{Partially reconstructed \decay{\Bsb}{\Dssp\Km\Kstarz} mass shape. The \Bp meson mass is represented by a vertical dashed line. The range below $5100\mevcc$ (highlighted in red) is not included in the fit range.}
-    \label{fig:B2DsKK_part_reco_backgrounds_DssKKstar}   
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{figure}[!h]
+%     \centering
+%     \includegraphics[width=0.49\textwidth]{figs/B2DsKK/Bs2DsstKKst_4800_5900_Shape.pdf}
+%     \caption{Partially reconstructed \decay{\Bsb}{\Dssp\Km\Kstarz} mass shape. The \Bp meson mass is represented by a vertical dashed line. The range below $5100\mevcc$ (highlighted in red) is not included in the fit range.}
+%     \label{fig:B2DsKK_part_reco_backgrounds_DssKKstar}   
+% \end{figure}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{description}
 \item \decay{\Bsb}{\Dsp\Dsm}: this decay can form a background to the signal when a pion is missed from either of the \Dsp decays. This requires both \Dsp mesons to decay to the \decay{\Dsp}{\Kp\Km\pip} final state. 
@@ -292,14 +321,14 @@ This background becomes significant at close to the \Bp meson mass as shown in F
 This PDF is similarly determined by creating a kernel estimation of fully-reconstructed simulated events passing the signal selection.  
 \end{description}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[!h]
-    \centering
-    \includegraphics[width=0.49\textwidth]{figs/B2DsKK/Bs2DsDs_4800_5900_Shape.pdf}
-    \caption{Partially reconstructed \decay{\Bsb}{\Dsp\Dsm} mass shape. The \Bp meson mass is represented by a vertical dashed line. The range below $5100\mevcc$ (highlighted in red) is not included in the fit range.}
-    \label{fig:B2DsKK_part_reco_backgrounds_DsDs}   
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{figure}[!h]
+%     \centering
+%     \includegraphics[width=0.49\textwidth]{figs/B2DsKK/Bs2DsDs_4800_5900_Shape.pdf}
+%     \caption{Partially reconstructed \decay{\Bsb}{\Dsp\Dsm} mass shape. The \Bp meson mass is represented by a vertical dashed line. The range below $5100\mevcc$ (highlighted in red) is not included in the fit range.}
+%     \label{fig:B2DsKK_part_reco_backgrounds_DsDs}   
+% \end{figure}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{description}
 \item \decay{\Bzb}{\Dsp\Dm}: this decay can form a background when both the \Dsp and \Dm mesons decay to the \Kpm\Kmp\pipm final state. Due to the similar topology to the \decay{\Bsb}{\Dsp\Dsm} decay, the same PDF determined from simulated events is used, however it is shifted down in mass by 40\mevcc to account for the difference in kinematics. The mode \decay{\Dp}{\Kp\Km\pip} is Cabibbo suppressed with respect to \decay{\Dsp}{\Kp\Km\pip}.
@@ -307,41 +336,18 @@ This PDF is similarly determined by creating a kernel estimation of fully-recons
 \item \decay{\Bsb}{\Dssp\Dsm}: similarly this decay can cause a background when both a soft neutral particle is missed from the \decay{\Dssp}{\Dsp X} decay as well as a pion from either of the \Dsp mesons. As such this only has a small contribution within the fit range as shown in Fig.~\ref{fig:B2DsKK_part_reco_backgrounds_DssDs}. 
 \end{description}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[!h]
-    \centering
-    \includegraphics[width=0.49\textwidth]{figs/B2DsKK/Bs2DsstDs_4800_5900_Shape.pdf}
-    \caption{Partially reconstructed \decay{\Bsb}{\Dssp\Dsm} mass shape.}
-    \label{fig:B2DsKK_part_reco_backgrounds_DssDs}   
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-All PDFs determined using kernel estimations from simulated events are convolved with a Gaussian distribution to account for difference between the simulations and data. The mean position of the Gaussian is given by a single free parameter $\delta$, allowing these PDF to move slightly high or lower in mass. The width of the Gaussian is increased to account for the difference in resolution between simulation and data.
-
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \begin{figure}[!h]
 %     \centering
-%     \begin{subfigure}[t]{0.49\textwidth}
-%         \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Bs2Dsa1_4800_5900_Shape.pdf}
-%         \caption{\decay{\Bsb}{\Dsp\Km\Kstarz} }
-%     \end{subfigure}
-%     \begin{subfigure}[t]{0.49\textwidth}
-%         \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Bs2DsstKKst_4800_5900_Shape.pdf}
-%         \caption{\decay{\Bsb}{\Dssp\Km\Kstarz}}
-%     \end{subfigure}
-%     \begin{subfigure}[t]{0.49\textwidth}
-%         \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Bs2DsDs_4800_5900_Shape.pdf}
-%         \caption{\decay{\Bsb}{\Dsp\Dsm} }
-%     \end{subfigure}
-%     \begin{subfigure}[t]{0.49\textwidth}
-%         \includegraphics[width=1.0\textwidth]{figs/B2DsKK/Bs2DsstDs_4800_5900_Shape.pdf}
-%         \caption{\decay{\Bsb}{\Dssp\Dsm} }
-%     \end{subfigure}
-%     \caption{Partially reconstructed mass shapes}
-%     \label{fig:B2DsKK_part_reco_backgrounds}   
+%     \includegraphics[width=0.49\textwidth]{figs/B2DsKK/Bs2DsstDs_4800_5900_Shape.pdf}
+%     \caption{Partially reconstructed \decay{\Bsb}{\Dssp\Dsm} mass shape.}
+%     \label{fig:B2DsKK_part_reco_backgrounds_DssDs}   
 % \end{figure}
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+All PDFs determined using kernel estimations from simulated events are convolved with a Gaussian distribution to account for difference between the simulations and data. The mean position of the Gaussian is given by a single free parameter $\delta$, allowing these PDF to move slightly high or lower in mass. The width of the Gaussian is increased by 4\mevcc to account for the difference in resolution between simulation and data determined from the normalisation channel.
+
 
 
 \subsection{Combinatorial  background}
@@ -780,15 +786,22 @@ The yields of signal and normalisation decays are corrected by the ratio of sele
 
 \item \textbf{Veto efficiency:} the efficiency of the misidentified \D and \Lc hadron veto applied to the \Dsp meson is assumed to be the same for the signal and normalisation channel. However, slight differences in the kinematics of the \Dsp mesons in each case might lead to this approximation not being valid when the particle identification requirements are tightened on the ambiguous track. The relative veto efficiency could be calculated by determining the relative PID efficiency for the sub-set of particles that would be affected by the tightening of the cuts. Rather than calculating this ratio, an uncertainty of 1.4\% is assigned to account for any bias.   
 
-\item \textbf{MVA efficiency:} the relative efficiency of the MVA selection receives contributions from a number of sources. Primarily, the relative efficiencies are determined from simulation samples in which the PID variable distributions have been corrected as described in Sec.~\ref{sec:B2DsKK_eff_from_calib}. This method of correcting the PID distributions such that the simulation samples could be used directly was only available for Run I simulations at the time of analysis. The phase-space distributions of the Run II samples were assumed to be the same, but the overall scale adjusted using the MVA efficiencies derived from the \decay{\Bs}{\jpsi\phiz} and \decay{\Bsb}{\Dsp\pim} decay modes used to train the MVAs. The systematic uncertainty arising from using the Run I variations in Run II are estimated by calculating the largest difference between the signal and normalisation efficiencies in Run II and subtracting the smallest differences in Run I. This corresponds to a variation of 4.4\%, assigned as the systematic uncertainty.
+\item \textbf{MVA efficiency:} the relative MVA efficiency receives contributions from a number of sources.
+They are determined from corrected simulations samples (Sec.~\ref{sec:B2DsKK_eff_from_calib}) using Run I calibrations. The phase-space distributions in Run I and Run II are assumed to be the same, whilst the absolute values of the efficiencies are scaled using input from the calibration samples \decay{\Bs}{\jpsi\phiz} and \decay{\Bsb}{\Dsp\pim}. An uncertainty of 4.4\% is associated to this assumption. 
+The data-driven efficiencies obtained from the \decay{\Bs}{\jpsi\phiz} and \decay{\Bsb}{\Dsp\pim} samples are associated to uncertainties as a result of the choice of binning scheme and finite sample sizes. 
+The uncertainty arising from differences in simulation and data distributions that could affect the MVA efficiencies (Fig.~\ref{fig:ipchi2dist_normalisation} and Fig.~\ref{fig:mvaclassifierresponses}) are also taken into account.
+The total systematic uncertainty associated to the relative MVA efficiency is 7.6\%. 
 
-As they contribute to the scaling of the phase-space variations, all sourced of systematic uncertainty contributing to the data-driven efficiencies are also considered. The training modes are binned in four bins of \pt and $\chi^{2}_{\text{FD}}$. The choice of binning scheme is varied and the resulting variation in efficiency determined. The yields of the \decay{\Bs}{\jpsi\phiz} and \decay{\Bsb}{\Dsp\pim} decays used to obtain the data-driven efficiencies are limited, therefore the quantity $1/\sqrt{N}$ associated to the smallest of these yields is added as a systematic uncertainty. 
 
-Differences are observed in the distribution of $\chi^{2}_{\text{IP}}$ in simulations and data for the normalisation channel (Fig.~\ref{fig:ipchi2dist_normalisation}). To quantify the effect this may have on the MVA efficiencies, the simulations are re-weighted to match the data distributions and the efficiencies recalculated. The resulting difference is included as a systematic uncertainty.
+%%%%%%%%=====> 
+% the relative efficiency of the MVA selection receives contributions from a number of sources. Primarily, the relative efficiencies are determined from simulation samples in which the PID variable distributions have been corrected as described in Sec.~\ref{sec:B2DsKK_eff_from_calib}. This method of correcting the PID distributions such that the simulation samples could be used directly was only available for Run I simulations at the time of analysis. The phase-space distributions of the Run II samples were assumed to be the same, but the overall scale adjusted using the MVA efficiencies derived from the \decay{\Bs}{\jpsi\phiz} and \decay{\Bsb}{\Dsp\pim} decay modes used to train the MVAs. The systematic uncertainty arising from using the Run I variations in Run II are estimated by calculating the largest difference between the signal and normalisation efficiencies in Run II and subtracting the smallest differences in Run I. This corresponds to a variation of 4.4\%, assigned as the systematic uncertainty.
 
-When training the MVA methods some discrepancies are observed between the MVA classifier response for the training and validations samples (Fig.~\ref{fig:mvaclassifierresponses}). To assess whether this affects the final relative MVA efficiencies the training and validation samples are swapped and the efficiencies recalculated. The differences for each year of data taking are weighted according to their contribution to the final data set and assigned as a systematic uncertainty.  
+% As they contribute to the scaling of the phase-space variations, all sourced of systematic uncertainty contributing to the data-driven efficiencies are also considered. The training modes are binned in four bins of \pt and $\chi^{2}_{\text{FD}}$. The choice of binning scheme is varied and the resulting variation in efficiency determined. The yields of the \decay{\Bs}{\jpsi\phiz} and \decay{\Bsb}{\Dsp\pim} decays used to obtain the data-driven efficiencies are limited, therefore the quantity $1/\sqrt{N}$ associated to the smallest of these yields is added as a systematic uncertainty. 
 
-The total systematic uncertainty associated to the relative MVA efficiency is therefore 7.6\%. 
+% Differences are observed in the distribution of $\chi^{2}_{\text{IP}}$ in simulations and data for the normalisation channel (Fig.~\ref{fig:ipchi2dist_normalisation}). To quantify the effect this may have on the MVA efficiencies, the simulations are re-weighted to match the data distributions and the efficiencies recalculated. The resulting difference is included as a systematic uncertainty.
+
+% When training the MVA methods some discrepancies are observed between the MVA classifier response for the training and validations samples (Fig.~\ref{fig:mvaclassifierresponses}). To assess whether this affects the final relative MVA efficiencies the training and validation samples are swapped and the efficiencies recalculated. The differences for each year of data taking are weighted according to their contribution to the final data set and assigned as a systematic uncertainty.  
+
 % - binning scheme
 % - yields of eff samples
 % - training testing discrepancies
@@ -1020,23 +1033,25 @@ The background-subtracted distribution of the angle, $\cos{\theta_{K}}$, defined
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-This analysis provides an initial insight to the possible processes that might contribute to the \decay{\Bp}{\Dsp\Kp\Km} decay. However, a full amplitude analysis is needed to understand the competing decays and interference between the amplitudes. This search contains only a fraction of the Run II data sample; the inclusion of the 2017 and 2018 samples would provide a statistically solid base to further this line of investigation. 
+The distribution of the helicty angle $\cos{\theta_{K}}$ in the region $1500<m(\Kp\Km)<1750\mevcc$ appears to have distinct minimum around $\cos{\theta_{K}}=0$. This may imply a spin-1 resonance contributes in this invariant mass region, for example the $\phiz(1680)$ or $\rho(1700)$ resonances.
 
 
 %%%%%%%%%%%%%%====================
 
 
-\subsection{Possible contributions}
+\subsection{Possible resonant contributions}
+\label{sec:B2DsKK_possible_res}
 
-
-To determine similar fractions for \decay{\Bp}{\Dsp\Kp\Km} decays the \laurapp package~\cite{1711.09854} is used to generate a number of simulation samples for different intermediate resonance models.
+In the search for \decay{\Bp}{\Dsp\phiz} decays, detailed in Chapter~\ref{ch:B2DsPhi}, it is important to understand the contribution from \decay{\Bp}{\Dsp\Kp\Km} decays in the vicinity of the \phiz meson mass.
+A number of possible contributions around this region are investigated using the \laurapp package~\cite{1711.09854}. Simulation samples are generated for different intermediate resonance models.
+%To determine similar fractions for \decay{\Bp}{\Dsp\Kp\Km} decays the \laurapp package~\cite{1711.09854} is used to generate a number of simulation samples for different intermediate resonance models.
 
 Only resonances in the \Kp\Km system are considered as no significant structure is observed in the $m(\Dsp\Km)$ distribution in Fig.~\ref{fig:B2DsKK_twobodyprojections}. As such, all resonances are neutral mesons. The models are generated separately, therefore the effect of interference between any combination of states has been entirely neglected.    
 The generated samples are described in the following sections.
 
+
 \subsubsection{The $\phi(1020)$ resonance} 
-Decays proceeding via a $\phiz(1020)$ are produced as a crosscheck. As the simulations generated with \laurapp have not been reconstructed with the full \lhcb detector model, this sample is compared to the existing full simulation samples. The differences in between the fraction of the decays in the different $m(\Kp\Km)$ and $\cos\theta_{K}$ categories in the two samples are taken as a proxy for the potential level of bias introduced by using these generator level samples instead of full simulation. The distribution of these simulated decays in $m(\Kp\Km)$ and $\cos\theta_{K}$ are shown in Fig.~\ref{fig:DsKK_model_phi1020}. This figure also include the Dalitz plot distribution of the decays parametrised with the variables $m^{2}(\Dsp\Km)$ and $m^{2}(\Kp\Km)$.
+Decays proceeding via a $\phiz(1020)$ are produced as a crosscheck. As the simulations generated with \laurapp have not been reconstructed with the full \lhcb detector model, this sample is compared to the existing full simulation samples. The differences in between the $m(\Kp\Km)$ and $\cos\theta_{K}$ distribution in the two samples are taken as a proxy for the potential level of bias introduced by using these generator level samples instead of full simulation. The distribution of these simulated decays in $m(\Kp\Km)$ and $\cos\theta_{K}$ are shown in Fig.~\ref{fig:DsKK_model_phi1020}. This figure also include the Dalitz plot distribution of the decays parametrised with the variables $m^{2}(\Dsp\Km)$ and $m^{2}(\Kp\Km)$.
 This resonance is generated with a Relativistic Breit-Wigner line shape~\cite{RelBWPhysRev.49.519}.
 %%%%%%%%%%%%%
 \begin{figure}[!h]
@@ -1133,15 +1148,26 @@ The $a_{2}^{0}(1320)$ resonance is a $J^{P} = 2^{+}$ state with a mass $1318.1\p
 %%%%%%%%%%%%%
 
 
-In order to choose suitable fractions for the \decay{\Bp}{\Dsp\Kp\Km} fit component a number of points are considered;
+
+
+%In order to choose suitable fractions for the \decay{\Bp}{\Dsp\Kp\Km} fit component a number of points are considered;
+\subsubsection{Models consistent with data}
+
+To determine which of the models that contribute in the region of the \phiz meson mass are most consistent with the observed signal, the following points are considered: 
 
 \begin{itemize}
 \item Very few events are observed above 2000\mevcc in the background-subtracted $m(\Kp\Km)$ distribution, therefore the non-resonant model is neglected.
 \item No significant peaking structure is observed in the $m(\Kp\Km)$ spectrum so on-shell resonances are neglected
-\item The helicity distribution shows no distinctive structure so spin zero states are favoured.  
+\item The helicity distribution at low $m(\Kp\Km)$ shows no distinctive structure so spin zero states are favoured.  
 \item As this is not a full amplitude analysis no attempt is made to include the effects of interference, either between the remaining off-shell resonances or between these and any possible \decay{\Bp}{\Dsp\phiz} decays.
 \end{itemize}
 
-These considerations leave the $f_{0}^{0}(980)$ and $a_{0}^{0}(980)$ resonances. The fractions of \decay{\Bp}{\Dsp\Kp\Km} decays that have been used in the fit model are fixed to the average of these two, listed in the final row of Table~\ref{table:DsKK_rescfracs}. Uncertainties are assigned that correspond to half the difference of the two values. These uncertainties are propagated to the $\BF(\decay{\Bp}{\Dsp\phiz})$ branching fraction in Sec.~\ref{sec:B2DsPhi_systuncertainy}. 
+These considerations leave the $f_{0}^{0}(980)$ and $a_{0}^{0}(980)$ resonances as possible contributions in the region of the \phiz meson mass. 
 
 %%%%%%%%%%%%%%====================
+
+
+\subsubsection{Looking forward}
+
+This analysis provides an initial insight to the possible processes that might contribute to the \decay{\Bp}{\Dsp\Kp\Km} decay. However, a full amplitude analysis is needed to understand the competing decays and interference between the amplitudes. This search contains only a fraction of the Run II data sample; the inclusion of the 2017 and 2018 samples would provide a statistically solid base to further this line of investigation. 
+

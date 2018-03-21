@@ -10,7 +10,7 @@ The branching fraction $\BF(\decay{\Bp}{\Dsp\phiz})$is determined by multiplying
 
 \section{Fit strategy}
 \label{sec:B2DsPhi_fitstrategy}
-The strategy to search for \decay{\Bp}{\Dsp\phiz} is complicated by \decay{\Bp}{\Dsp\Kp\Km} decays (Chapter~\ref{ch:B2DsKK}) being present as a peaking background to \decay{\Bp}{\Dsp(\decay{\phiz}{\Kp\Km})}.
+The strategy to search for \decay{\Bp}{\Dsp\phiz} is complicated by \decay{\Bp}{\Dsp\Kp\Km} decays (Chapter~\ref{ch:B2DsKK}) being present as a peaking background to \decay{\Bp}{\Dsp(\decay{\phiz}{\Kp\Km})} decays.
 The ratio of \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Dzb} yields is determined using a simultaneous extended unbinned maximum likelihood fit. Three sets of categories are used, separating the candidates according to \Dsp meson decay mode, invariant mass of the \Kp\Km pair consititing the \phiz meson, $m(\Kp\Km)$, and the cosine of an angle $\cos\theta_{K}$. The details and definitions of these categories are listed in Sec~\ref{sec:B2DsPhi_fit_cats}. 
 The total extended NLL for this fit is created from the sum of each NLL in each of the categories
 \begin{equation}
@@ -31,7 +31,17 @@ As the yields of candidates is likely to be small (especially in the \Dsp decay 
 \subsection{Simultaneous categories}
 \label{sec:B2DsPhi_fit_cats}
 
-The data sample is split into categories to gain the maximum sensitivity to the signal decays.
+The data sample is split into 24 categories to gain the maximum sensitivity to the signal decays as illustrated in Fig.~\ref{fig:B2DsPhi_simfit}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figs/B2DsPhi/simfit_cats.pdf}
+    \caption{The simultaneous fit categories include the \Dsp meson decay mode (left), invariant mass of the bachelor \Kp\Km pair (centre) and helicity angle (right).}
+    \label{fig:B2DsPhi_simfit}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \subsubsection{\Dsp meson decay mode} 
 The three \Dsp decays modes used to reconstruct the signal and normalisation decays (\decay{\Dsp}{\Kp\Km\pip}, \decay{\Dsp}{\pip\pim\pip}, and \decay{\Dsp}{\Kp\pim\pip}) are fitted simultaneously in different categories. This allows the invariant mass distributions for the three modes to vary slightly in ways that could not be easily accounted for if the modes were combined in a single data set. In principle, the widths and resolutions of the \Bp meson mass distributions could vary for the three different modes as a result of the different numbers of pions and kaons in the final state. The background levels also differ between the modes as a result of the smaller branching fractions for \decay{\Dsp}{\pip\pim\pip} and \decay{\Dsp}{\Kp\pim\pip}. This leads to the background from combinations of unrelated tracks having a larger relative contribution.
@@ -66,7 +76,19 @@ Three distinct ranges of $m(\Kp\Km)$ invariant mass are used to split the candid
 
 \subsubsection{Helicity angle, $\cos\theta_{K}$} 
 
-The $\decay{\Bp}{\Dsp\phiz}$ decay involves the decay of a pseudoscalar particle to a pseudoscalar and vector particle. Therefore the \phiz vector meson ($J^{P} = 1^{-}$) must be produced longitudinally polarised. For a longitudinally polarised \phiz meson decaying to $\Kp\Km$, the distribution of the angle $\theta_{K}$, defined as the angle that the kaon meson forms with the \Bp momentum in the \phiz rest frame (Fig.~\ref{fig:B2DsPhi_helicity_angle}), is proportional to $\cos^{2}{\theta_{K}}$. The distribution of $\cos{\theta_{K}}$ for $\decay{\Bp}{\Dsp\phiz}$ as determined from simulated events is shown in Fig~\ref{fig:B2DsPhi_hel_mass_MC}. Candidates are split into two categories; $|\cos{\theta_{K}} |> 0.4$ and $|\cos{\theta_{K}} |< 0.4$. These categories contain 93\% and 7\% of the signal respectively.
+The $\decay{\Bp}{\Dsp\phiz}$ decay involves the decay of a pseudoscalar particle (\Bp) to a pseudoscalar (\Dsp) and vector particle (\phiz), $\decay{0^{-}}{0^{-}1^{-}}$. In general, spin-1 \phiz mesons can be in $\lambda= +1,0,-1$ polarisation states. However, to conserve angular momentum in \decay{\Bp}{\Dsp\phiz} decays it must be produced in the $\lambda = 0$ state. 
+%To conserve angular momentum, the \Dsp\phiz system must be produced in a $J ^{P} = 0^{-}$ state. This is only possible if the $z$-component of the \phiz meson's total angular momentum is $J_{z} = 0$, hence it is produced longitudinally polarised.
+%Therefore the \phiz vector meson ($J^{P} = 1^{-}$) must be produced longitudinally polarised. 
+
+The decay  \decay{\phiz}{\Kp\Km} is a $\decay{1^{-}}{0^{-}0^{-}}$ process. 
+The distribution of the angle $\theta_{K}$, defined as the angle that the kaon meson forms with the \Bp momentum in the \phiz rest frame (Fig.~\ref{fig:B2DsPhi_helicity_angle}) depends on the polarisation state of the \phiz meson. For \phiz mesons in the $\lambda = 0$ ($\lambda = \pm1$) polarisation state this is proportional to $\cos^{2}{\theta_{K}}$ ($\sin^{2}{\theta_{K}}$).
+
+
+%To conserve angular momentum, the decay products must be produced with a relative orbital angular momentum of $L_{r} = 1$. 
+%For a longitudinally polarised \phiz meson decaying to $\Kp\Km$, 
+%The distribution of the angle $\theta_{K}$, defined as the angle that the kaon meson forms with the \Bp momentum in the \phiz rest frame (Fig.~\ref{fig:B2DsPhi_helicity_angle}), is proportional to $\cos^{2}{\theta_{K}}$. 
+
+The distribution of $\cos{\theta_{K}}$ for $\decay{\Bp}{\Dsp\phiz}$ as determined from simulated events is shown in Fig~\ref{fig:B2DsPhi_hel_mass_MC}. Candidates are split into two categories chosen to help separate the signal from other decays; $|\cos{\theta_{K}} |> 0.4$ and $|\cos{\theta_{K}} |< 0.4$. These categories contain 93\% and 7\% of the signal respectively.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
     \centering
@@ -97,7 +119,7 @@ This helicity angle is constructed using the momentum of the decay products calc
 
 \subsection{\decay{\Bp}{\Dsp \Kp \Km} model and assumptions}
 \label{sec:B2DsPhi_B2DsKKModel}
-The search for \decay{\Bp}{\Dsp\phiz} decays includes a component for \decay{\Bp}{\Dsp\Kp\Km} decays that does not proceed via a \phiz meson. To avoid overestimating \decay{\Bp}{\Dsp\phiz} signal yield, separate components are included in the fit model for the \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays. Although the invariant mass PDFs of these two contributions are identical, they can still be disentangled by exploiting the different fractions of these decays expected in each of the helicity angle and $m(\Kp\Km)$ categories: \decay{\Bp}{\Dsp\phiz} decays peak sharply in $m(\Kp\Km)$ whilst \decay{\Bp}{\Dsp\Kp\Km} are flat; \decay{\Bp}{\Dsp\phiz} decays peak sharply around $|\cos{\theta_{K}} |= 1.0$ whilst \decay{\Bp}{\Dsp\Kp\Km} doesn't necessarily. 
+The search for \decay{\Bp}{\Dsp\phiz} decays includes a component for \decay{\Bp}{\Dsp\Kp\Km} decays that do not proceed via a \phiz meson. To avoid overestimating \decay{\Bp}{\Dsp\phiz} signal yield, separate components are included in the fit model for the \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays. Although the invariant mass PDFs of these two contributions are identical, they can still be disentangled by exploiting the different fractions of these decays expected in each of the helicity angle and $m(\Kp\Km)$ categories: \decay{\Bp}{\Dsp\phiz} decays peak sharply in $m(\Kp\Km)$ whilst \decay{\Bp}{\Dsp\Kp\Km} are flat; and \decay{\Bp}{\Dsp\phiz} decays peak sharply around $\cos{\theta_{K}} = \pm 1$ whilst \decay{\Bp}{\Dsp\Kp\Km} doesn't necessarily. 
 
 
 The fractions for the \decay{\Bp}{\Dsp\phiz} signal decays as listed in Table~\ref{tab:signal_ratios} show the decays are concentrated in the \emph{inner \phiz mass category} with $|\cos{\theta_{K}} |> 0.4$. 
@@ -209,10 +231,13 @@ The fractions for the \decay{\Bp}{\Dsp\phiz} signal decays as listed in Table~\r
 %%%%%%%%%%%%%%====================
 %%%%%%%%%%%%%%====================
 
-\subsubsection{Summary of models}
+In Section~\ref{sec:B2DsKK_possible_res}, the possible contributions to \decay{\Bp}{\Dsp\Kp\Km} decays in the region of the \phiz-meson mass are discussed. The points considered leave the $f_{0}^{0}(980)$ and $a_{0}^{0}(980)$ resonances as possible contributions. 
+The fraction of decays expected in each $m(\Kp\Km)$ and $\cos\theta_{K}$ category for the different models considered are tabulated in Table~\ref{table:DsKK_rescfracs}. These are calculated by counting the numbers of entries in the corresponding ranges delineated by the vertical lines in Figs.~\ref{fig:DsKK_model_phi1020}-\ref{fig:DsKK_model_a21320}. For reference, the $\phi(1020)$ fractions are included for both the fully simulated decays and those generated with \laurapp. The maximum difference between these fractions is included as a source of systematic uncertainty in Sec.~\ref{sec:B2DsPhi_systuncertainy}.
+between It is clear that the \phiz resonance has significantly different fractions in each category for all of the models considered, allowing the component to be distinguished.   
 
-The fraction of decays expected in each $m(\Kp\Km)$ and $\cos\theta_{K}$ category for the different models considered are tabulated in Table~\ref{table:DsKK_rescfracs}. These are calculated by counting the numbers of entries in the corresponding ranges delineated by the vertical lines in Figs.~\ref{fig:DsKK_model_phi1020}-\ref{fig:DsKK_model_a21320}. For reference the $\phi(1020)$ fractions are included for both the fully simulated decays and those generated with \laurapp. The maximum difference between these fractions is included as a source of systematic uncertainty in Sec.~\ref{sec:B2DsPhi_systuncertainy}.
-between For all of the models considered it is clear that the \phiz resonance has significantly different fractions to all of the models considered, allowing the component to be distinguished.   
+
+
+The fractions of \decay{\Bp}{\Dsp\Kp\Km} decays that have been used in the fit model are fixed to the average of the $f_{0}^{0}(980)$ and $a_{0}^{0}(980)$ resonance fractions, listed in the final row of Table~\ref{table:DsKK_rescfracs}. Uncertainties are assigned that correspond to half the difference of the two values. These uncertainties are propagated to the $\BF(\decay{\Bp}{\Dsp\phiz})$ branching fraction in Sec.~\ref{sec:B2DsPhi_systuncertainy}. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -244,19 +269,25 @@ between For all of the models considered it is clear that the \phiz resonance ha
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-In order to choose suitable fractions for the \decay{\Bp}{\Dsp\Kp\Km} fit component a number of points are considered;
 
-\begin{itemize}
-\item Very few events are observed above 2000\mevcc in the background-subtracted $m(\Kp\Km)$ distribution, therefore the non-resonant model is neglected.
-\item No significant peaking structure is observed in the $m(\Kp\Km)$ spectrum so on-shell resonances are neglected
-\item The helicity distribution shows no distinctive structure so spin zero states are favoured.  
-\item As this is not a full amplitude analysis no attempt is made to include the effects of interference, either between the remaining off-shell resonances or between these and any possible \decay{\Bp}{\Dsp\phiz} decays.
-\end{itemize}
 
-These considerations leave the $f_{0}^{0}(980)$ and $a_{0}^{0}(980)$ resonances. The fractions of \decay{\Bp}{\Dsp\Kp\Km} decays that have been used in the fit model are fixed to the average of these two, listed in the final row of Table~\ref{table:DsKK_rescfracs}. Uncertainties are assigned that correspond to half the difference of the two values. These uncertainties are propagated to the $\BF(\decay{\Bp}{\Dsp\phiz})$ branching fraction in Sec.~\ref{sec:B2DsPhi_systuncertainy}. 
+% \subsubsection{Summary of models}
 
-%%%%%%%%%%%%%%====================
-%%%%%%%%%%%%%%====================
+
+
+% In order to choose suitable fractions for the \decay{\Bp}{\Dsp\Kp\Km} fit component a number of points are considered;
+
+% \begin{itemize}
+% \item Very few events are observed above 2000\mevcc in the background-subtracted $m(\Kp\Km)$ distribution, therefore the non-resonant model is neglected.
+% \item No significant peaking structure is observed in the $m(\Kp\Km)$ spectrum so on-shell resonances are neglected
+% \item The helicity distribution shows no distinctive structure so spin zero states are favoured.  
+% \item As this is not a full amplitude analysis no attempt is made to include the effects of interference, either between the remaining off-shell resonances or between these and any possible \decay{\Bp}{\Dsp\phiz} decays.
+% \end{itemize}
+
+% These considerations leave the $f_{0}^{0}(980)$ and $a_{0}^{0}(980)$ resonances. The fractions of \decay{\Bp}{\Dsp\Kp\Km} decays that have been used in the fit model are fixed to the average of these two, listed in the final row of Table~\ref{table:DsKK_rescfracs}. Uncertainties are assigned that correspond to half the difference of the two values. These uncertainties are propagated to the $\BF(\decay{\Bp}{\Dsp\phiz})$ branching fraction in Sec.~\ref{sec:B2DsPhi_systuncertainy}. 
+
+% %%%%%%%%%%%%%%====================
+% %%%%%%%%%%%%%%====================
 
 
 \section{Fit components}
@@ -1036,37 +1067,37 @@ The efficiencies for each step of selection are listed separately for the differ
 %%%%%%%
 \begin{table}[h]
    \centering
-   \begin{tabular}{ l l c c c }
+   \begin{tabular}{ l l S[table-format=3.2(3)] S[table-format=3.2(3)] S[table-format=1.3(3)] }
       \hline
-      Requirement             & \Dsp mode         & $\epsilon(\decay{\Bp}{\Dsp\Dzb})$  & $\epsilon(\decay{\Bp}{\Dsp\phiz})$ & Ratio \\
+      Requirement             & \Dsp mode   & {$\epsilon(\decay{\Bp}{\Dsp\Dzb})$}  & {$\epsilon(\decay{\Bp}{\Dsp\phiz})$} & {Ratio} \\
       \hline
-      Acceptance              & $\Kp\Km\pip$      & 17.42 $\pm$ 0.03         & 18.35 $\pm$ 0.04      & 0.950 $\pm$ 0.003  \\
-                              & $\Kp\pim\pip$     & 16.53 $\pm$ 0.04         & 17.36 $\pm$ 0.04      & 0.952 $\pm$ 0.003  \\
-                              & $\pip\pim\pip$    & 15.91 $\pm$ 0.03         & 16.77 $\pm$ 0.04      & 0.949 $\pm$ 0.003  \\
+      Acceptance              & $\Kp\Km\pip$      & 17.42 \pm 0.03         & 18.35 \pm 0.04      & 0.950 \pm 0.003  \\
+                              & $\Kp\pim\pip$     & 16.53 \pm 0.04         & 17.36 \pm 0.04      & 0.952 \pm 0.003  \\
+                              & $\pip\pim\pip$    & 15.91 \pm 0.03         & 16.77 \pm 0.04      & 0.949 \pm 0.003  \\
       \hline
-      Reconstruction          & $\Kp\Km\pip$      & 2.11 $\pm$ 0.02         & 1.96 $\pm$ 0.02     & 1.078 $\pm$ 0.013  \\
-                              & $\Kp\pim\pip$     & 2.27 $\pm$ 0.02         & 2.06 $\pm$ 0.02     & 1.095 $\pm$ 0.014  \\
-                              & $\pip\pim\pip$    & 2.36 $\pm$ 0.02         & 2.13 $\pm$ 0.02     & 1.105 $\pm$ 0.014  \\
+      Reconstruction          & $\Kp\Km\pip$      & 2.11 \pm 0.02         & 1.96 \pm 0.02     & 1.078 \pm 0.013  \\
+                              & $\Kp\pim\pip$     & 2.27 \pm 0.02         & 2.06 \pm 0.02     & 1.095 \pm 0.014  \\
+                              & $\pip\pim\pip$    & 2.36 \pm 0.02         & 2.13 \pm 0.02     & 1.105 \pm 0.014  \\
       \hline
-      Trigger                 & $\Kp\Km\pip$      & 93.3 $\pm$ 0.2         & 93.1 $\pm$ 0.2     & 1.003 $\pm$ 0.003  \\
-                              & $\Kp\pim\pip$     & 95.1 $\pm$ 0.2         & 93.5 $\pm$ 0.2     & 1.017 $\pm$ 0.003  \\
-                              & $\pip\pim\pip$    & 95.3 $\pm$ 0.2         & 93.7 $\pm$ 0.2     & 1.017 $\pm$ 0.003  \\
+      Trigger                 & $\Kp\Km\pip$      & 93.3 \pm 0.2         & 93.1 \pm 0.2     & 1.003 \pm 0.003  \\
+                              & $\Kp\pim\pip$     & 95.1 \pm 0.2         & 93.5 \pm 0.2     & 1.017 \pm 0.003  \\
+                              & $\pip\pim\pip$    & 95.3 \pm 0.2         & 93.7 \pm 0.2     & 1.017 \pm 0.003  \\
       \hline
-      Mass window             & $\Kp\Km\pip$      & 96.2 $\pm$ 0.2         & 94.1 $\pm$ 0.2     & 1.022 $\pm$ 0.003  \\
-                              & $\Kp\pim\pip$     & 94.9 $\pm$ 0.2         & 94.1 $\pm$ 0.2     & 1.008 $\pm$ 0.003  \\
-                              & $\pip\pim\pip$    & 93.7 $\pm$ 0.2         & 92.4 $\pm$ 0.2     & 1.015 $\pm$ 0.004  \\
+      Mass window             & $\Kp\Km\pip$      & 96.2 \pm 0.2         & 94.1 \pm 0.2     & 1.022 \pm 0.003  \\
+                              & $\Kp\pim\pip$     & 94.9 \pm 0.2         & 94.1 \pm 0.2     & 1.008 \pm 0.003  \\
+                              & $\pip\pim\pip$    & 93.7 \pm 0.2         & 92.4 \pm 0.2     & 1.015 \pm 0.004  \\
       \hline
-      Vetoes                  & $\Kp\Km\pip$      & 99.9 $\pm$ 0.0         & 95.2 $\pm$ 0.2     & 1.049 $\pm$ 0.002  \\
-                              & $\Kp\pim\pip$     & 99.9 $\pm$ 0.0         & 92.4 $\pm$ 0.3     & 1.080 $\pm$ 0.004  \\
-                              & $\pip\pim\pip$    & 99.9 $\pm$ 0.0         & 90.3 $\pm$ 0.3     & 1.105 $\pm$ 0.004  \\
+      Vetoes                  & $\Kp\Km\pip$      & 99.9 \pm 0.0         & 95.2 \pm 0.2     & 1.049 \pm 0.002  \\
+                              & $\Kp\pim\pip$     & 99.9 \pm 0.0         & 92.4 \pm 0.3     & 1.080 \pm 0.004  \\
+                              & $\pip\pim\pip$    & 99.9 \pm 0.0         & 90.3 \pm 0.3     & 1.105 \pm 0.004  \\
       \hline
-      Charmless               & $\Kp\Km\pip$      & 72.6 $\pm$ 0.4         & 100.0 $\pm$ 0.0     & 0.726 $\pm$ 0.004  \\
-                              & $\Kp\pim\pip$     & 65.8 $\pm$ 0.4         & 63.0 $\pm$ 0.5     & 1.044 $\pm$ 0.011  \\
-                              & $\pip\pim\pip$    & 66.0 $\pm$ 0.4         & 82.9 $\pm$ 0.4     & 0.796 $\pm$ 0.006  \\
+      Charmless               & $\Kp\Km\pip$      & 72.6 \pm 0.4         & 100.0 \pm 0.0     & 0.726 \pm 0.004  \\
+                              & $\Kp\pim\pip$     & 65.8 \pm 0.4         & 63.0 \pm 0.5     & 1.044 \pm 0.011  \\
+                              & $\pip\pim\pip$    & 66.0 \pm 0.4         & 82.9 \pm 0.4     & 0.796 \pm 0.006  \\
       \hline
-      $\chi^{2}_{\text{IP}}$  & $\Kp\Km\pip$      & 100.0 $\pm$ 0.0         & 96.2 $\pm$ 0.2     & 1.039 $\pm$ 0.002  \\
-                              & $\Kp\pim\pip$     & 100.0 $\pm$ 0.0         & 95.7 $\pm$ 0.3     & 1.045 $\pm$ 0.003  \\
-                              & $\pip\pim\pip$    & 100.0 $\pm$ 0.0         & 95.9 $\pm$ 0.3     & 1.043 $\pm$ 0.003  \\
+      $\chi^{2}_{\text{IP}}$  & $\Kp\Km\pip$      & 100.0 \pm 0.0         & 96.2 \pm 0.2     & 1.039 \pm 0.002  \\
+                              & $\Kp\pim\pip$     & 100.0 \pm 0.0         & 95.7 \pm 0.3     & 1.045 \pm 0.003  \\
+                              & $\pip\pim\pip$    & 100.0 \pm 0.0         & 95.9 \pm 0.3     & 1.043 \pm 0.003  \\
       \hline
    \end{tabular}
    \caption{Efficiencies (in \%) determined from simulation samples for signal and normalisation decays and the ratio $\epsilon(\decay{\Bp}{\Dsp\Dzb})/\epsilon(\decay{\Bp}{\Dsp\phiz})$ for each \Dsp decay mode. The errors are statistical.} 
@@ -1079,9 +1110,13 @@ The efficiencies for each step of selection are listed separately for the differ
 
 \item \textbf{Acceptance:} this accounts for the fraction of generated decays in which all five final state tracks end up within the \lhcb detector's acceptance. For all \Dsp decay modes the signal decay has a slightly higher efficiency than the normalisation channel. This may because of the kinematics of the \decay{\phiz}{\Kp\Km} decay in which the two kaon tracks are typically close to one another and therefore more likely to both be in the acceptance.   
 
-\item \textbf{Reconstruction:} this efficiency determines the fraction of decays in which all tracks are well reconstructed and combined into a suitable candidate. The candidate must pass all requirements outlined in the \emph{Stripping Line} for the specific decay. The reconstruction selections used for both the signal and normalisation decays explicitly require that the event in which the candidate was found had fired the trigger. Therefore this efficiency includes some, but not all, of the trigger efficiency. This results in small efficiencies around 2\% for each mode. Here, the efficiencies are slightly larger for the normalisation channel than the signal. This may be because the kaons from the \phiz decay are typically lower momentum than those from the \Dzb, and therefore less likely to be reconstructed.  
+\item \textbf{Reconstruction:} this efficiency determines the fraction of decays in which all tracks are well reconstructed and combined into a suitable candidate. 
+The candidate must pass all requirements outlined in the \emph{Stripping Line} for the specific decay. 
+Only events in which there was positive trigger decision are processed in the reconstruction (in simulation as well as data), therefore this efficiency effectively includes some, but not all, of the triggering efficiency.
+%The reconstruction selections used for both the signal and normalisation decays explicitly require that the event in which the candidate was found had fired the trigger. Therefore this efficiency includes some, but not all, of the trigger efficiency. 
+This results in small efficiencies around 2\% for each mode. Here, the efficiencies are slightly larger for the normalisation channel than the signal. This may be because the kaons from the \phiz decay are typically lower momentum than those from the \Dzb, and therefore less likely to be reconstructed.  
 
-\item \textbf{Trigger:} this efficiency effectively accounts for the likelihood that the candidate passed at least one of the requirements in Sec.~\ref{sec:selection_trigger}, given a trigger fired in that event. These efficiencies have very high values around 94\%.  
+\item \textbf{Trigger:} this efficiency effectively accounts for the likelihood that the candidate passed at least one of the requirements in Sec.~\ref{sec:selection_trigger}, given that an event had a positive trigger decision. These efficiencies have very high values around 94\%.  
 
 \item \textbf{Mass windows:} this represents the efficiency for the candidates to be within the invariant mass windows for the \Dsp and \phiz or \Dzb mesons. Again, this is slightly high for the normalisation than the signal. The \phiz meson invariant mass peak a fairly long tail extending to higher invariant masses that may be the cause.  
 
@@ -1172,23 +1207,29 @@ The total relative efficiencies are listed for each \Dp decay mode in Table~\ref
 The sources of systematic uncertainty are broadly similar to those considered in the search for \decay{\Bp}{\Dsp\Kp\Km} decays. The more complex fit strategy and model requires most of these systematics to be reassessed and additional source included. 
 
 \subsection{Relative efficiencies}
-The yields of signal and normalisation decays are corrected by their relative selection efficiencies, calculated separately for each \Dsp decay mode. A number of sources contribute to the systematic uncertainty in these values.
+The yields of signal and normalisation decays are corrected by their relative selection efficiencies, calculated separately for each \Dsp decay mode. 
+%A number of sources contribute to the systematic uncertainty in these values.
 
 \begin{description}
 \item \textbf{Simulation statistics:} limited simulation samples are used to determine some of the selection efficiencies. A systematic uncertainty of 2\% is assigned to account for the bias this might incur. 
 
-\item \textbf{Particle identification:} the efficiency of the PID requirements are calculated using calibration samples within the \pidcalib package. These are also of a limited size and possibly affected by the choice of binning scheme. To first order these should affect the signal and normalisation decays to the same extent as the same final state is used. However, differences in the kinematics could invalidate this assumption. Therefore a systematic uncertainty of 0.5\% per track is assigned to the use of the \pidcalib efficiencies. This is assumed to be uncorrelated for the five signal and five normalisation tracks, leading to a total uncertainty in the relative efficiency of 2.0\%. 
+\item \textbf{Particle identification:} the efficiency of the PID requirements are calculated using calibration samples within the \pidcalib package. These are also of a limited size and possibly affected by the choice of binning scheme. 
+%To first order these should affect the signal and normalisation decays to the same extent as the same final state is used. 
+%However, differences in the kinematics could invalidate this assumption. 
+A systematic uncertainty of 0.5\% per track is assigned to the use of the \pidcalib efficiencies. This is assumed to be uncorrelated for the five signal and five normalisation tracks, leading to a total uncertainty in the relative efficiency of 2.0\%. 
 
-\item \textbf{Veto efficiency:} similar to the search for \decay{\Bp}{\Dsp\Kp\Km} the efficiency of the misidentified \D and \Lc hadron veto applied to the \Dsp meson is assumed to be the same for the signal and normalisation channel. A similar systematic uncertainty of 1.4\% is assigned to account for the uncertainty incurred if the relative efficiency were to be fully calculated. 
+\item \textbf{Veto efficiency:} the same uncertainty of 1.4\% is used as in the search for \decay{\Bp}{\Dsp\Kp\Km} decays.
+%similar to the search for \decay{\Bp}{\Dsp\Kp\Km} the efficiency of the misidentified \D and \Lc hadron veto applied to the \Dsp meson is assumed to be the same for the signal and normalisation channel. A similar systematic uncertainty of 1.4\% is assigned to account for the uncertainty incurred if the relative efficiency were to be fully calculated. 
 
-\item \textbf{MVA efficiency:} unlike the search for \decay{\Bp}{\Dsp\Kp\Km} decays, the efficiencies for the MVA requirements are just calculated using the \decay{\Bs}{\jpsi\phiz} and \decay{\Bsb}{\Dsp\pim} samples used in the validation of the MVA methods. There is no need account for the phase-space dependence, so the simulation samples have not been corrected. 
-These data-driven efficiencies are affected by the same sources as previously discussed in~\ref{sec:B2DsKK_sys_releff}.
-The validation samples are binned in four bins of both \pt and $\chi^{2}_{\text{FD}}$. The choice of binning scheme is varied and the resulting variation in the efficiencies assigned as a systematic uncertainty. The yields of \decay{\Bs}{\jpsi\phiz} and \decay{\Bsb}{\Dsp\pim} are limited, which could lead to fluctuations in the efficiencies determined. The quantity $1/\sqrt{N}$ for the smallest sample is assigned as the systematic uncertainty. 
-
-Some differences are observed in the distributions of $\chi^{2}_{\text{IP}}$ between simulations and data for the normalisation mode (Fig.~\ref{fig:ipchi2dist_normalisation}). The simulation samples are re-weighted to match the data distributions and the efficiencies recalculated. The resulting difference is included as a systematic uncertainty.
-
-In training the MVA methods, the distribution of the MVA classifier shows some discrepancies between the training and validation samples at low classifier values. To quantify the effect this may have on the relative efficiencies the samples are swapped and the efficiencies recalculated. The resulting difference is assigned as the associated systematic uncertainty.
-
+\item \textbf{MVA efficiency:} %unlike the search for \decay{\Bp}{\Dsp\Kp\Km} decays, 
+the MVA requirement efficiencies are just calculated using the \decay{\Bs}{\jpsi\phiz} and \decay{\Bsb}{\Dsp\pim} samples used in the validation of the MVA methods. The uncertainty resulting from the choice of validation sample binning scheme and from the limited sample size is accounted for. 
+%There is no need account for the phase-space dependence, so the simulation samples have not been corrected. 
+%These data-driven efficiencies are affected by the same sources as previously discussed in~\ref{sec:B2DsKK_sys_releff}.
+%The validation samples are binned in four bins of both \pt and $\chi^{2}_{\text{FD}}$. 
+%The choice of validation sample binning scheme is varied and the resulting variation in the efficiencies assigned as a systematic uncertainty. The yields of \decay{\Bs}{\jpsi\phiz} and \decay{\Bsb}{\Dsp\pim} are limited, which could lead to fluctuations in the efficiencies determined. The quantity $1/\sqrt{N}$ for the smallest sample is assigned as the systematic uncertainty. 
+Additionally, the uncertainty associated to difference in simulation and data distributions (Fig.~\ref{fig:ipchi2dist_normalisation}) that may affect the MVA efficiencies are taken into account. 
+%Some differences are observed in the distributions of $\chi^{2}_{\text{IP}}$ between simulations and data for the normalisation mode (Fig.~\ref{fig:ipchi2dist_normalisation}). The simulation samples are re-weighted to match the data distributions and the efficiencies recalculated. The resulting difference is included as a systematic uncertainty.
+%In training the MVA methods, the distribution of the MVA classifier shows some discrepancies between the training and validation samples at low classifier values. To quantify the effect this may have on the relative efficiencies the samples are swapped and the efficiencies recalculated. The resulting difference is assigned as the associated systematic uncertainty.
 The total systematic uncertainty attributed to the relative MVA efficiencies is 6.2\%.
 % - binning scheme
 % - yields of eff samples
@@ -1198,11 +1239,13 @@ The total systematic uncertainty attributed to the relative MVA efficiencies is 
 
 \subsection{Signal and normalisation PDFs}
 
-The PDFs used to describe the signal and normalisation channel invariant mass distributions are determined using input from fits to simulated decays. A similar approach to that already described in Sec.~\ref{sec:B2DsKK_sys_releff} is used to account for the systematic uncertainty that these fixed values contribute. The fit to data is repeated many times, each time the values of the fixed parameters are sampled from Gaussian distributions whose width is given by the associated statistical uncertainty from the fit to simulations. The resulting spread in the branching fraction obtained by re-sampling all fixed parameters simultaneously is $0.036\times10^{-7}$, assigned as the systematic uncertainty.
+The PDFs used to describe the signal and normalisation channel invariant mass distributions are determined using input from fits to simulated decays. A similar approach as already described in Sec.~\ref{sec:B2DsKK_sys_releff} in which the fixed values are varied within their errors is used to account for the associated systematic uncertainty. 
+%The fit to data is repeated many times, each time the values of the fixed parameters are sampled from Gaussian distributions whose width is given by the associated statistical uncertainty from the fit to simulations. 
+The resulting spread in the branching fraction obtained by re-sampling all fixed parameters simultaneously is $0.036\times10^{-7}$, assigned as the systematic uncertainty.
 
 \subsection{Background PDFs}
-Similarly the background PDFs require inputs determined from simulations. A large number of different properties of the PDFs are varied to determine the systematic uncertainty the fixed values incur. The resulting spread in the branching fraction is assigned as the systematic uncertainty. 
-
+Similarly the background PDFs require inputs determined from simulations. 
+%A large number of different properties of the PDFs are varied to determine the systematic uncertainty the fixed values incur. The resulting spread in the branching fraction is assigned as the systematic uncertainty. 
 The helicity fraction of \decay{\Bp}{\Dssp\phiz} decays is not measured and therefore assumed to be 0.5. This assumption is varied across all allowed values. Additionally, the PDF for both \decay{\Bp}{\Dssp\phiz} decay and the \decay{\Bp}{\Dssp\Dzb} and \decay{\Bp}{\Dsp\Dstarzb} decays that contribute to the normalisation mode require the kinematic limits $a$ and $b$ to be defined. These values are varied. 
 
 The backgrounds to the signal mode require the fraction of decays expected in each $m(\Kp\Km)$ and $\cos{\theta_{K}}$ category to be determined from simulations. These are each have an associated statistical uncertainty due to the limited simulation samples, therefore these fractions are varied by sampling a Gaussian whose width is determined by the uncertainty. 
@@ -1235,19 +1278,19 @@ The sources of systematic uncertainty are listed in Table~\ref{table:B2DsPhi_sys
 \multirow{ 2}{*}{\textbf{Source of Uncertainty} }&\multicolumn{2}{c}{ Systematic Uncertainty}           \\
                                                  &\textbf{Relative} & \textbf{Absolute ($\times 10^{-7}$)}\\
 \hline 
-Background PDF parametrisation              &-      & $0.685$\\
-Choice of \decay{\Bp}{\Dsp\Kp\Km} model     &-      & $0.379$\\
+Background PDF parametrisation              &59.0\% & $0.685$\\
+Choice of \decay{\Bp}{\Dsp\Kp\Km} model     &32.6\% & $0.379$\\
 MVA relative efficiency                     & 6.2\% & $0.072$\\
-Signal PDF parametrisation                  &-      & $0.036$\\ %$0.27$
+Signal PDF parametrisation                  & 3.1\% & $0.036$\\ %$0.27$
 Charmless contribution                      & 2.0\% & $0.023$\\
 Simulation statistics                       & 2.0\% & $0.023$\\
 PID relative efficiency                     & 2.0\% & $0.023$\\
 Veto relative efficiency                    & 1.4\% & $0.016$\\
 Using \laurapp rather full sim.             & 1.1\% & $0.013$\\
 \hline
-Total                                       &       & $0.788$\\
+Total                                       &67.9\% & $0.788$\\
 \hline
-Normalisation                               &       & $0.1$\\
+Normalisation                               & 8.6\% & $0.1$\\
 \hline
 \end{tabular}
 \caption{Contributions to the total systematic uncertainty in the search for \decay{\Bp}{\Dsp\phiz} decays. The contribution from the external measurements of the normalisation channel branching fraction is also included.}
@@ -1430,8 +1473,11 @@ This corresponds to a statistical-only 95\% (90\%) confidence level of $\BF(\dec
 \subsection{Comparison to the previous measurement}
 
 The limit on the \decay{\Bp}{\Dsp\phiz} branching fraction presented here and in Ref~\cite{LHCb-PAPER-2017-032} supersede the previous evidence reported by the LHCb collaboration in Ref.~\cite{LHCb-PAPER-2012-025}. The updated analysis takes advantage of a much larger dataset now available at \lhcb. 
-This update determines that there is a sizeable contribution from $\decay{\Bp}{\Dsp\Kp\Km}$ decays that contribute within the $\phiz$-meson mass window that was previously not considered. 
-The result is consistent with the prediction that rescattering contributions to $\decay{\Bp}{\Dsp\phiz}$ decays are small.
+This update determines that there is a sizeable contribution from $\decay{\Bp}{\Dsp\Kp\Km}$ decays that contribute within the $\phiz$-meson mass window that was previously neglected, but should have been considered. As such, this measurement paints a more detailed and completed picture of the processes contributing to \decay{\Bp}{\Dsp\Kp\Km} decays.
+Additionally, the result presented here is consistent with the prediction that rescattering contributions to $\decay{\Bp}{\Dsp\phiz}$ decays are small.
+
+In future, a full amplitude analysis of \decay{\Bp}{\Dsp\Kp\Km} decays using the complete \lhcb Run I and Run II data sets could incorporate a further search for \decay{\Bp}{\Dsp\phiz} decays.
+
 
 
 
