@@ -22,7 +22,9 @@
 \raggedbottom
 
 %define the default submitted text
-\newcommand{\submittedtext}{{A thesis submitted for the degree of}}
+%\newcommand{\submittedtext}{{A thesis submitted for the degree of}}
+\newcommand{\submittedtext}{{A thesis submitted in fulfilment of the requirements for the degree of
+}}
 
 %
 % DECLARATIONS
@@ -112,6 +114,8 @@
     {{\submittedtext} \par}
 \vspace*{1ex}
     {\it {\@degree} \par}
+    \vspace*{1ex}
+    {{at the University of Oxford} \par}
 \vspace*{2ex}
     {\@degreedate}}
   \end{center}
