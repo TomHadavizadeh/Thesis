@@ -38,7 +38,7 @@ The total integrated luminosity obtained for each year is listed in Table~\ref{t
 \subsection{Simulation samples}
 \label{sec:mc}
 
-Many aspects of the searches for \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays requires input from simulation samples. This includes the relative selection efficiencies of the signal and normalisation channels and the determination of the invariant mass distributions of the candidates.
+Many aspects of the searches for \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays require input from simulation samples. This includes the relative selection efficiencies of the signal and normalisation channels and the determination of the invariant mass distributions of the candidates.
 The samples are generated separately for each of the running periods listed in Table~\ref{tab:lumi} and for both polarities of the \lhcb dipole magnet. The simulation samples for \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Dzb} decays are generated assuming they proceed via pseudo-two-body decays. In contrast, the phase-space dependence of \decay{\Bp}{\Dsp\Kp\Km} decays must be considered when generating these simulations. Samples are generating assuming a flat distribution across the phase-space. 
 Additionally, simulations samples are required for many of the background processes considered in the analyses. These are generated using the same framework and processed using the same reconstruction as the signal modes.
 
@@ -49,18 +49,20 @@ In the simulations, $pp$ collisions are generated using \pythia~\cite{Sjostrand:
 \section{Online selection}
 \label{sec:selection_trigger}
 
-The nominal collision frequency at the \lhc is 40\,MHz. In Run II, this corresponded to a peak \Bpm-hadron production rate of around 17\,kHz, assuming a peak luminosity of $\mathcal{L} = 2\times10^{32}\cm^{-2}\,\sec^{-1}$ and \Bpm-hadron production cross-section of $\sigma(\decay{\proton\proton}{\Bpm X}) \sim 87\mub$~\cite{LHCb-PAPER-2017-037}. Of these, only a rate of 156\,Hz correspond to the normalisation channel mode \decay{\Bp}{\Dsp\Dzb}, reduced to 0.04\,Hz when also requiring the \D mesons to decay to the appropriate final states. The selection aims to reduce overall rate of collisions, whilst maximising the signal efficiency. 
+The nominal collision frequency at the \lhc is 40\,MHz. In Run II, this corresponds to a peak \Bpm-hadron production rate of around 17\,kHz, assuming a peak luminosity of $\mathcal{L} = 2\times10^{32}\cm^{-2}\,\sec^{-1}$ and \Bpm-hadron production cross-section of $\sigma(\decay{\proton\proton}{\Bpm X}) \sim 87\mub$~\cite{LHCb-PAPER-2017-037}. 
+This means the normalisation channel mode \decay{\Bp}{\Dsp\Dzb} is produced at a rate of 156\,Hz, reduced to 0.04\,Hz when also requiring the \D mesons to decay to the appropriate final states.
+%Of these, only a rate of 156\,Hz correspond to the normalisation channel mode \decay{\Bp}{\Dsp\Dzb}, reduced to 0.04\,Hz when also requiring the \D mesons to decay to the appropriate final states. 
+The event selection aims to reduce overall rate of collisions, whilst maximising the signal efficiency. 
 
-The online event selection is performed by the \lhcb trigger, which consists of a hardware stage, based on information from the calorimeter and muon systems, followed by a software stage, which reconstructs the full event, as detailed in Sec.~\ref{sec:Dec_trigger}. 
-Trigger decisions are made globally for a given event; either the event is saved or it's discarded. However, for events that are retained more detailed information about the specific interaction that initiated the trigger can be used to help isolate events containing signal candidates. At both hardware and software level there are a number of different triggers that can lead to an event being retained. In hardware this is broadly separated according to the sub-detector that contained the triggering deposit. 
-The single-muon and double-muon hardware triggers are initiated by high \pt deposits in the muon system whilst the hadronic trigger is initiated by \hcal clusters. 
-%Deposits in the muon chambers or hadronic calorimeter would fire \texttt{L0Muon} or \texttt{L0Hadron} respectively. 
-Deposits in the \ecal can trigger the photon or electron hardward trigger, depending on whether the hit was associated with an \spd hit.
-%Electromagnetic calorimeter deposits could result in \texttt{L0Electron} or \texttt{L0Photon} firing. 
+The online event selection is performed by the \lhcb trigger as described in Sec.~\ref{sec:Dec_trigger}.
+%, which consists of a hardware stage, based on information from the calorimeter and muon systems, followed by a software stage, which reconstructs the full event, as detailed in Sec.~\ref{sec:Dec_trigger}. 
+Trigger decisions are made globally for a given event; either the event is saved or it's discarded. However, for events that are retained, more detailed information about the specific interaction that initiated the trigger can be used to help isolate events containing signal candidates. At both hardware and software level there are a number of different triggers that can lead to an event being retained. In hardware this is broadly separated according to the sub-detector that contained the triggering deposit. 
+The single-muon and double-muon hardware triggers are initiated by high \pt deposits in the muon system whilst the hadronic trigger is initiated by \hcal clusters.  
+Deposits in the \ecal can trigger the photon or electron hardware trigger, depending on whether the hit was associated with an \spd hit.
 The \decay{\Bp}{\Dsp\Kp\Km} and \decay{\Bp}{\Dsp}{\phiz} decays are both reconstructed in fully hadronic final states, therefore events retained as a result of the electron, photon or muon triggers are unlikely to have been caused by the signal decays. 
 
 % In addition to specifying which triggers fired, it is possible to use more granular information about the specific hits initiating the trigger to improve the selection of signal candidates. The tracks constituting the reconstructed candidate are matched to the deposits in each sub-detector. 
-After the \emph{offline} track reconstruction has been performed, the \Bp meson tracks are matched to the deposits in each triggering sub-detector.
+After the \emph{offline} track reconstruction has been performed, the \Bp meson candidate tracks are matched to the deposits in each triggering sub-detector.
 The fraction of the \emph{online} reconstructed trigger candidate hits that are contained within the set of all \emph{offline} \Bp candidate hits are compared and required to be above thresholds that vary between sub-detector systems, as listed in Table~\ref{tab:tosfrac}. This matching determines if the candidate was responsible for the positive trigger decision. The sub-detectors involved in the hardware trigger have lower thresholds than those associated to tracking systems that contribute to the higher level triggers.  
 
 % For a simple trigger candidate (e.g. Track), more than around 70% (depending on the subdetector)
@@ -135,7 +137,7 @@ Candidates are selected if they are \texttt{TIS} with respect to this combinatio
 This allows a second source of decays; those events where the other \bquark quark in a \bquark\bquarkbar pair production has been selected by the trigger. 
 
 
-This allows candidates that have been retained due another highly energetic decay in the same event to contribute. This could be the decay of hadron resulting from the other \bquark quark in a \bquark\bquarkbar pair production. 
+%This allows candidates that have been retained due another highly energetic decay in the same event to contribute. This could be the decay of hadron resulting from the other \bquark quark in a \bquark\bquarkbar pair production. 
 
 The relative fractions of simulated decays selected by these \texttt{L0Hadron TOS} and \texttt{L0Global TIS} requirements for \decay{\Bp}{\Dsp\phiz} decays decaying to various \Dsp final states are shown in Table~\ref{tab:tis_tos_fractions}. The fractions are normalised to the total number of signal decays passing the \texttt{L0Hadron TOS} or \texttt{L0Global TIS} trigger requirements. 
 
@@ -230,7 +232,8 @@ The candidate \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays are buil
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The candidate \decay{\Bp}{\Dsp\Kp\Km} and \decay{\Bp}{\Dsp\phiz} signal decays and \decay{\Bp}{\Dsp\Dzb} normalisation decay are reconstructed in fully hadronic final states. Both the \Dzb and \phiz mesons are reconstructed using pairs of oppositely charged kaons. The branching fractions are $\BF(\decay{\Dzb}{\Kp\Km})= (3.97 \pm 0.07)\times 10^{-3}$ and $\BF(\decay{\phiz}{\Kp\Km})= (48.9 \pm 0.5)\%$ respectively~\cite{PDG2016}. Although the similar two-body hadronic decay \decay{\Dz}{\Km\pip} has a larger branching fraction than mode chosen for the normalisation channel, $\BF(\decay{\Dz}{\Km\pip})= (3.89 \pm 0.04)\%$, sharing the same final state helps to reduced systematic uncertainties in the ratio of selection efficiencies. Many differences in how pions and kaons interact with the detector can be neglected as they would affect the signal and normalisation channel in the same way.
+%The candidate \decay{\Bp}{\Dsp\Kp\Km} and \decay{\Bp}{\Dsp\phiz} signal decays and \decay{\Bp}{\Dsp\Dzb} normalisation decay are reconstructed in fully hadronic final states. 
+Both the \Dzb and \phiz mesons are reconstructed using pairs of oppositely charged kaons. The branching fractions are $\BF(\decay{\Dzb}{\Kp\Km})= (3.97 \pm 0.07)\times 10^{-3}$ and $\BF(\decay{\phiz}{\Kp\Km})= (48.9 \pm 0.5)\%$ respectively~\cite{PDG2016}. Although the similar two-body hadronic decay \decay{\Dz}{\Km\pip} has a larger branching fraction than mode chosen for the normalisation channel, $\BF(\decay{\Dz}{\Km\pip})= (3.89 \pm 0.04)\%$, sharing the same final state helps to reduced systematic uncertainties in the ratio of selection efficiencies. Many differences in how pions and kaons interact with the detector can be neglected as they would affect the signal and normalisation channel in the same way.
 The \Dsp mesons used in the search for \decay{\Bp}{\Dsp\Kp\Km} decays are reconstructed using the \decay{\Dsp}{\Kp\Km\pip} decay. The search for the rarer \decay{\Bp}{\Dsp\phiz} decay additionally includes the modes \decay{\Dsp}{\pip\pim\pip} and \decay{\Dsp}{\Kp\pim\pip} to increase the sensitivity of the search. The branching fractions for these decays are listed in Table~\ref{tab:dsbranchingfractions}. In each instance the normalisation channel is reconstructed using the same \Dsp decay mode as the signal.  
 
 
@@ -304,8 +307,10 @@ The selection of candidates makes requirements on many different distinguishing 
 \end{description}
 
 
-As the final states are fully hadronic, the candidates are built from the combination of five tracks. Only \emph{long} tracks (those with hits in the \velo and tracking stations) are used to build these mesons. The track $\chi^{2}/N_{\text{DOF}}$ is required to be below $4.0$ to ensure these are well reconstructed. Additionally, they are required to have a total momentum $\ptot > 1000 \mevc$ and the transverse momentum is required to be $\pt > 100 \mevc$.
-Due to the long lifetime and high boost of the \Bp and \D mesons, the decay products originate from a vertex that is displaced from the proton-proton collision vertex. In this case the trajectory of the \B or \D decay products do not pass through the primary collision position, as shown in Fig.~\ref{fig:impact_parameter}. A requirement is placed on the significance of the impact parameter between the track and the proton-proton collision vertex of $\chi^{2}_{\text{IP}} > 4$ to ensure all of the tracks used are inconsistent with originating at the primary interaction.  
+As the final states are fully hadronic, the candidates are built from the combination of five \emph{long} tracks. 
+%Only tracks are used to build these mesons. 
+The track $\chi^{2}/N_{\text{DOF}}$ is required to be below $4.0$ to ensure these are well reconstructed. Additionally, they are required to have a total momentum $\ptot > 1000 \mevc$ and the transverse momentum is required to be $\pt > 100 \mevc$.
+Due to the long lifetime and high boost of the \Bp and \D mesons, the decay products originate from a vertex that is displaced from the proton-proton collision vertex. In this case the trajectory of the \Bp or \D decay products do not pass through the primary collision position, as shown in Fig.~\ref{fig:impact_parameter}. A requirement is placed on the significance of the impact parameter between the track and the proton-proton collision vertex of $\chi^{2}_{\text{IP}} > 4$ to ensure all of the tracks used are inconsistent with originating at the primary interaction.  
 
 
 Loose requirements are placed on \emph{Particle Identification} variables to ensure the tracks are of the required species. These are further tightened as detailed in Section~\ref{sec:pidrequirements}. Incorrect track candidates created by combining unrelated \velo and tracking station hits are suppressed by requiring the ghost track probability, $P_{\text{Ghost}}$, to be less than $0.4$. 
@@ -741,7 +746,7 @@ The distribution of PIDK for pions and kaons is shown in Fig.~\ref{fig:selection
 \begin{figure}[!h]
     \centering
         \includegraphics[width=0.6\textwidth]{figs/Selection/Calib_sample_PIDK.pdf}
-        \caption{The distribution of the particle identification variable PIDK for pions (red) and kaons (black) from data calibration samples. The vertical dashed lines illustrate the requirements $\text{PIDK}>5$ and $\text{PIDK}<-5$ applied to kaons and pions respectively.}
+        \caption{The distribution of the particle identification variable PIDK for pions (red) and kaons (black) from data calibration samples. The vertical dashed lines illustrate the requirements $\text{PIDK}<-5$ and $\text{PIDK}>5$ applied to pions and kaons respectively.}
     \label{fig:selection_PIDK_distribution}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -863,7 +868,7 @@ Decay Mode & Misidentified decay\\
 \label{table:pidvetos}
 
 \end{table*}
-The invariant mass distributions for each the misidentified \decay{\Dsp}{\Kp\Km\pip} decays are shown before the MVA requirements are applied in Figs.~\ref{fig:PIDVetos_Ds2KKPi_D_Veto} and \ref{fig:PIDVetos_Ds2KKPi_Lc_Veto}. For candidates within windows around the misidentified hadron mass, tighter PID requirements are imposed. These are illustrated in two-dimensional plots. 
+The invariant mass distributions for each the misidentified \decay{\Dsp}{\Kp\Km\pip} decays are shown before any MVA requirements are applied in Figs.~\ref{fig:PIDVetos_Ds2KKPi_D_Veto} and \ref{fig:PIDVetos_Ds2KKPi_Lc_Veto}. For candidates within windows around the misidentified hadron mass, tighter PID requirements are imposed. These are illustrated in two-dimensional plots. 
 
 
 
@@ -1113,6 +1118,7 @@ Another structure appears to be present to the left of the \Dzb peak in Fig.~\re
 
 
 \subsection{Multivariate analysis}
+\label{sec:selection_MVA}
 
 Multivariate Analyses (MVAs) are used to help discriminate between genuine \Dsp and \phiz meson decays and combinations of unrelated tracks. 
 These MVAs are trained on data using large samples of \B mesons decays which have similar topologies. 
@@ -1149,59 +1155,51 @@ A total of eight MVAs are trained, one for each of the \Dsp and \phiz modes, in 
 \subsubsection{Preselection}
 
 Before the samples of \Dsp and \phiz mesons are used to train the MVAs, precautions are taken to ensure the samples are representative of the \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} signal decays. The \decay{\Bsb}{\Dsp\pim} and \decay{\Bs}{\jpsi\phiz} decays are selected using a similar procedure to the signal modes. Firstly, \emph{Stripping Lines} reconstruct the candidates. The \decay{\Bsb}{\Dsp\pim} decays are built using the same software module as the signal and normalisation channel. Therefore, the selection requirements for \Dsp candidates in \decay{\Bsb}{\Dsp\pim} decays are identical to those listed for the signal in Table~\ref{tab:strippinglinecuts}.
-The \decay{\Bs}{\jpsi\phiz} decays are reconstructed using \decay{\jpsi}{\mup\mun} decays, therefore they are built using a different software module as the final state is not fully hadronic. As such there are some differences in the selection requirements for the \phiz mesons from the two sources. In general the selection requirements for the \decay{\Bs}{\jpsi\phiz} channel are looser as the presence of the muons allows an efficient triggering without the need to make tight selections on the \Kp\Km pair. A direct comparison of the relevant quantities are listed in Table~\ref{tab:strippingrequirments_phi}.
+The \decay{\Bs}{\jpsi\phiz} decays are reconstructed using \decay{\jpsi}{\mup\mun} decays, therefore they are built using a different software module as the final state is not fully hadronic. As such there are some differences in the selection requirements for the \phiz mesons from the two sources. In general the selection requirements for the \decay{\Bs}{\jpsi\phiz} channel are looser as the presence of the muons allows an efficient triggering without the need to make tight selections on the \Kp\Km pair. 
+A full comparison of the relevant quantities are detailed in Appendix~\ref{sec:app_mva_preselection}.
 
-% Phi_P > 7000 && 
-% Phi_FDCHI2_OWNPV >15 && 
-% Phi_K0_P > 2000 && 
-% Phi_K1_P > 2000 && 
-% Phi_K0_IPCHI2_OWNPV > 4 && 
-% Phi_K1_IPCHI2_OWNPV > 4 &&
-% Phi_DIRA_OWNPV>0 && 
-% Phi_ENDVERTEX_CHI2<16 && 
-% Phi_K0_TRACK_GhostProb<0.4&& 
-% Phi_K1_TRACK_GhostProb<0.4 && 
-% (Phi_K0_PT+Phi_K1_PT)>1000)
-
-\begin{table}[h]
-\centering
-\begin{tabular}{ l l l l }
-\hline
-Particle       & Quantity                       &  Signal                              & Control                                 \\  
-\hline
-\phiz          & Mass minimum                   &  $870\mevcc$                         & $980\mevcc$ \\ 
-               & Mass maximum                   &  $1170\mevcc$                        & $1050\mevcc$ \\ 
-               & Transverse Momentum            &  -                                   & $\pt > 500 \mevc$                       \\  
-               & Products \pt scalar sum        &  $\sum{|\pt|} > 1000 \mevc$          &  -                                      \\  
-               & $\text{DOCA}(\Kp,\Km)$         &  $ < 0.5\mm$     &  -                                      \\  
-               & Direction angle                &  $\cos{\theta}>0$                    &  -                                      \\  
-               & Vertex quality                 &  $\chi^{2}/N_{\text{DOF}} < 16$      & $\chi^{2}/N_{\text{DOF}} < 25$          \\   
-               & Flight distance significance   &  $\chi^{2}_{\text{FD} }  > 16$       &  -                                      \\ 
-\hline
-\Kpm           & Track quality                  &  $\chi^{2}/N_{\text{DOF}}<4.0$       &  $\chi^{2}/N_{\text{DOF}}<5.0$          \\  
-               & Transverse momentum            &  $\pt > 100 \mevc$                   &  -                                      \\  
-               & Momentum                       &  $\ptot > 1000 \mevc$                &  -                                      \\  
-               & Impact parameter significance  &  $\chi^{2}_{\text{IP}} > 4$          &  -                                      \\  
-               & Ghost track probability        &  $P_{\text{Ghost}} < 0.4$            &  -                                      \\
-               & Particle identification        &  $\text{PIDK}>-10$                   & $\text{PIDK}>0$                         \\ 
-\hline
-\end{tabular}
-
-\caption{The \emph{Stripping Line} requirements for \decay{\phiz}{\Kp\Km} candidates in the signal and MVA training (control) mode selection. All requirements are looser for the control channel with the exception of the particle identification requirements.}
-\label{tab:strippingrequirments_phi}
-\end{table}
-
-The difference in the two selections could be potentially biasing when calculating the efficiency of the MVA, therefore the requirements are tightened on the half of the \decay{\Bs}{\jpsi\phiz} sample used to calculate the efficiency. The looser set of requirements are still used when training the MVA methods to maximise the sample sizes to help prevent overtraining. When training the MVAs the \phiz meson invariant mass sidebands in the \decay{\Bs}{\jpsi\phiz} sample are used as the background sample. It was found that using the tighter set of requirements led to a negligible amount of background candidates, resulting in overtraining. 
+%A direct comparison of the relevant quantities are listed in Table~\ref{tab:strippingrequirments_phi}.
 
 
-The second step of preselection aims to apply the same sequence of requirements to the modes used to train the MVAs as are applied to the signal and normalisation before the MVAs are applied. These are made up of the same trigger, background veto and PID requirements.
-For \Dsp candidates from \decay{\Bsb}{\Dsp\pim} decays, the \Bsb meson is required to either be \texttt{TOS} with respect to the \texttt{L0Hadron} trigger or \texttt{TIS} with respect to \texttt{L0Global} as with the signal. The \Bsb candidates are then required to be \texttt{TOS} with respect to the same \hltone and \hlttwo triggers as used with the signal modes.
+% \begin{table}[h]
+% \centering
+% \begin{tabular}{ l l l l }
+% \hline
+% Particle       & Quantity                       &  Signal                              & Control                                 \\  
+% \hline
+% \phiz          & Mass minimum                   &  $870\mevcc$                         & $980\mevcc$ \\ 
+%                & Mass maximum                   &  $1170\mevcc$                        & $1050\mevcc$ \\ 
+%                & Transverse Momentum            &  -                                   & $\pt > 500 \mevc$                       \\  
+%                & Products \pt scalar sum        &  $\sum{|\pt|} > 1000 \mevc$          &  -                                      \\  
+%                & $\text{DOCA}(\Kp,\Km)$         &  $ < 0.5\mm$     &  -                                      \\  
+%                & Direction angle                &  $\cos{\theta}>0$                    &  -                                      \\  
+%                & Vertex quality                 &  $\chi^{2}/N_{\text{DOF}} < 16$      & $\chi^{2}/N_{\text{DOF}} < 25$          \\   
+%                & Flight distance significance   &  $\chi^{2}_{\text{FD} }  > 16$       &  -                                      \\ 
+% \hline
+% \Kpm           & Track quality                  &  $\chi^{2}/N_{\text{DOF}}<4.0$       &  $\chi^{2}/N_{\text{DOF}}<5.0$          \\  
+%                & Transverse momentum            &  $\pt > 100 \mevc$                   &  -                                      \\  
+%                & Momentum                       &  $\ptot > 1000 \mevc$                &  -                                      \\  
+%                & Impact parameter significance  &  $\chi^{2}_{\text{IP}} > 4$          &  -                                      \\  
+%                & Ghost track probability        &  $P_{\text{Ghost}} < 0.4$            &  -                                      \\
+%                & Particle identification        &  $\text{PIDK}>-10$                   & $\text{PIDK}>0$                         \\ 
+% \hline
+% \end{tabular}
 
-For the \decay{\Bs}{\jpsi\phiz} candidates, a large fraction are triggered due to the muons from the \jpsi decay. To ensure the sample is reflective of the signal decays the \Bs meson is required to be \texttt{TOS} with respect to the \texttt{L0Hadron} trigger or \texttt{TIS} with respect to \texttt{L0Global}. This effectively excludes events that have been selected solely due to muons initiating the muon hardware trigger. This consequently results in a large decrease in the available statistics.
+% \caption{The \emph{Stripping Line} requirements for \decay{\phiz}{\Kp\Km} candidates in the signal and MVA training (control) mode selection. All requirements are looser for the control channel with the exception of the particle identification requirements.}
+% \label{tab:strippingrequirments_phi}
+% \end{table}
 
-As shown in Table~\ref{tab:strippingrequirments_phi}, the MVA training mode has tighter particle identification requirements than the signal mode. Particle identification plays a crucial role in the efficacy of the MVA methods, therefore the signal PID requirements for the \phiz meson decay products are tightened accordingly as discussed in Section~\ref{sec:pidrequirements}.
+% The difference in the two selections could be potentially biasing when calculating the efficiency of the MVA, therefore the requirements are tightened on the half of the \decay{\Bs}{\jpsi\phiz} sample used to calculate the efficiency. The looser set of requirements are still used when training the MVA methods to maximise the sample sizes to help prevent overtraining. When training the MVAs the \phiz meson invariant mass sidebands in the \decay{\Bs}{\jpsi\phiz} sample are used as the background sample. It was found that using the tighter set of requirements led to a negligible amount of background candidates, resulting in overtraining. 
 
-Finally, the same misidentified \D and \Lc hadron vetoes as detailed in Section~\ref{sec:pidvetos} are applied to the \decay{\Bsb}{\Dsp\pim} sample. These help to ensure the samples of \Dsp candidates are free from contamination.
+
+% The second step of preselection aims to apply the same sequence of requirements to the modes used to train the MVAs as are applied to the signal and normalisation before the MVAs are applied. These are made up of the same trigger, background veto and PID requirements.
+% For \Dsp candidates from \decay{\Bsb}{\Dsp\pim} decays, the \Bsb meson is required to either be \texttt{TOS} with respect to the \texttt{L0Hadron} trigger or \texttt{TIS} with respect to \texttt{L0Global} as with the signal. The \Bsb candidates are then required to be \texttt{TOS} with respect to the same \hltone and \hlttwo triggers as used with the signal modes.
+
+% For the \decay{\Bs}{\jpsi\phiz} candidates, a large fraction are triggered due to the muons from the \jpsi decay. To ensure the sample is reflective of the signal decays the \Bs meson is required to be \texttt{TOS} with respect to the \texttt{L0Hadron} trigger or \texttt{TIS} with respect to \texttt{L0Global}. This effectively excludes events that have been selected solely due to muons initiating the muon hardware trigger. This consequently results in a large decrease in the available statistics.
+
+% As shown in Table~\ref{tab:strippingrequirments_phi}, the MVA training mode has tighter particle identification requirements than the signal mode. Particle identification plays a crucial role in the efficacy of the MVA methods, therefore the signal PID requirements for the \phiz meson decay products are tightened accordingly as discussed in Section~\ref{sec:pidrequirements}.
+
+% Finally, the same misidentified \D and \Lc hadron vetoes as detailed in Section~\ref{sec:pidvetos} are applied to the \decay{\Bsb}{\Dsp\pim} sample. These help to ensure the samples of \Dsp candidates are free from contamination.
 
 
 \subsubsection{Background subtraction}
@@ -1253,107 +1251,108 @@ V^{-1}_{kj} = \frac{  \partial^2 (-\log{\mathcal{L}} ) }{  \partial n_{k} \parti
 These are assigned to each event in the data set and are only dependent on the value of the fitted variable, in this case \phiz or \Dsp mass. When plotting other, uncorrelated variables and weighting each event accordingly, the contribution from each component in the fit can be extracted.
 
 %% Fit model
-For both \decay{\Bs}{\jpsi\phiz} and \decay{\Bsb}{\Dsp\pim} decays, simple fit models are found to be sufficient when performing the \sPlot technique. For each mode the signal components are modelled with a single Gaussian probability density function
-\begin{equation}
-f(m|\mu,\sigma) = \frac{1}{\sqrt{2\pi\sigma^{2}}} \times e^{-\frac{(m-\mu)^{2}}{2\sigma^{2}}}, 
-\end{equation}
-where $\mu$ and $\sigma$ are the mean and width of the Gaussian distribution and $m$ is the observable invariant mass. The parameters $\mu$ and $\sigma$ are allowed to vary freely.
-The background contributions to the \decay{\phiz}{\Kp\Km} decays are modelled using a Chebychev polynomial with two degrees of freedom
-\begin{equation}
-g(m|a,b) = a\times(2m^{2}-1) + b\times m + 1,
-\end{equation}
-where $a$ and $b$ are parameters that can vary freely and $m$ is the observable invariant mass. 
-The \phiz meson mass is close to the threshold for \Kp\Km pair production so this parametrisation has sufficient freedom to successfully  model the increasing background shape.
-The background contribution to all three \Dsp decays are modelled using exponential functions with a single degree of freedom controlling the effective slope
-\begin{equation}
-g(m|c) = e^{-m\times c},
-\end{equation}
-where $c$ is a freely varying parameter and $m$ is the observable invariant mass.
-The fits to the \phiz and \Dsp meson masses in the \decay{\Bs}{\jpsi\phiz} and \decay{\Bsb}{\Dsp\pim} samples are performed separately for each year of data taking and polarity of the \lhcb dipole magnet. These distributions are shown in Fig.~\ref{fig:mvatrainingsamples} for each of the \phiz and \Dsp decay modes.
-The yields of candidates in each of the subsamples are tabulated in Table~\ref{table:mva_training_yields}, along with the totals for each mode. 
+For both \decay{\Bs}{\jpsi\phiz} and \decay{\Bsb}{\Dsp\pim} decays, simple fit models are found to be sufficient when performing the \sPlot technique, as detailed in Appendix~\ref{sec:app_mva_fit_models}.
+% For each mode the signal components are modelled with a single Gaussian probability density function
+% \begin{equation}
+% f(m|\mu,\sigma) = \frac{1}{\sqrt{2\pi\sigma^{2}}} \times e^{-\frac{(m-\mu)^{2}}{2\sigma^{2}}}, 
+% \end{equation}
+% where $\mu$ and $\sigma$ are the mean and width of the Gaussian distribution and $m$ is the observable invariant mass. The parameters $\mu$ and $\sigma$ are allowed to vary freely.
+% The background contributions to the \decay{\phiz}{\Kp\Km} decays are modelled using a Chebychev polynomial with two degrees of freedom
+% \begin{equation}
+% g(m|a,b) = a\times(2m^{2}-1) + b\times m + 1,
+% \end{equation}
+% where $a$ and $b$ are parameters that can vary freely and $m$ is the observable invariant mass. 
+% The \phiz meson mass is close to the threshold for \Kp\Km pair production so this parametrisation has sufficient freedom to successfully  model the increasing background shape.
+% The background contribution to all three \Dsp decays are modelled using exponential functions with a single degree of freedom controlling the effective slope
+% \begin{equation}
+% g(m|c) = e^{-m\times c},
+% \end{equation}
+% where $c$ is a freely varying parameter and $m$ is the observable invariant mass.
+% The fits to the \phiz and \Dsp meson masses in the \decay{\Bs}{\jpsi\phiz} and \decay{\Bsb}{\Dsp\pim} samples are performed separately for each year of data taking and polarity of the \lhcb dipole magnet. These distributions are shown in Fig.~\ref{fig:mvatrainingsamples} for each of the \phiz and \Dsp decay modes.
+% The yields of candidates in each of the subsamples are tabulated in Table~\ref{table:mva_training_yields}, along with the totals for each mode. 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[!h]
-   \centering
-   \begin{subfigure}[t]{0.4\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Fit_Data_Bs2JpsiPhi_Jpsi2MuMu_Phi2KK_2016_MagDown.pdf}
-      \caption{\decay{\phiz}{\Kp\Km} MagDown}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.4\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Fit_Data_Bs2JpsiPhi_Jpsi2MuMu_Phi2KK_2016_MagUp.pdf}
-      \caption{\decay{\phiz}{\Kp\Km} MagUp}
-   \end{subfigure}\\
-   \begin{subfigure}[t]{0.4\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Fit_Data_Bs02DsPi_Ds2KKPi_2016_MagDown_PreSel.pdf}
-      \caption{\decay{\Dsp}{\Kp\Km\pip} MagDown}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.4\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Fit_Data_Bs02DsPi_Ds2KKPi_2016_MagUp_PreSel.pdf}
-      \caption{\decay{\Dsp}{\Kp\Km\pip} MagUp}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.4\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Fit_Data_Bs02DsPi_Ds2PiPiPi_2016_MagDown_PreSel.pdf}
-      \caption{\decay{\Dsp}{\pip\pim\pip} MagDown}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.4\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Fit_Data_Bs02DsPi_Ds2PiPiPi_2016_MagUp_PreSel.pdf}
-      \caption{\decay{\Dsp}{\pip\pim\pip} MagUp}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.4\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Fit_Data_Bs02DsPi_Ds2KPiPi_2016_MagDown_PreSel.pdf}
-      \caption{\decay{\Dsp}{\Kp\pim\pip} MagDown}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.4\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Fit_Data_Bs02DsPi_Ds2KPiPi_2016_MagUp_PreSel.pdf}
-      \caption{\decay{\Dsp}{\Kp\pim\pip} MagUp}
-   \end{subfigure}
-   \caption{Unbinned maximum likelihood fit to \decay{\Bs}{\jpsi\phiz} (top) and \decay{\Bsb}{\Dsp\pim} (bottom three rows) candidates. These distributions correspond to just the 2016 data samples. Slight discrepancies are observed as a result of the simplified fit model in the top two plots.}
-   \label{fig:mvatrainingsamples}
-\end{figure}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{figure}[!h]
+%    \centering
+%    \begin{subfigure}[t]{0.4\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Fit_Data_Bs2JpsiPhi_Jpsi2MuMu_Phi2KK_2016_MagDown.pdf}
+%       \caption{\decay{\phiz}{\Kp\Km} MagDown}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.4\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Fit_Data_Bs2JpsiPhi_Jpsi2MuMu_Phi2KK_2016_MagUp.pdf}
+%       \caption{\decay{\phiz}{\Kp\Km} MagUp}
+%    \end{subfigure}\\
+%    \begin{subfigure}[t]{0.4\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Fit_Data_Bs02DsPi_Ds2KKPi_2016_MagDown_PreSel.pdf}
+%       \caption{\decay{\Dsp}{\Kp\Km\pip} MagDown}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.4\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Fit_Data_Bs02DsPi_Ds2KKPi_2016_MagUp_PreSel.pdf}
+%       \caption{\decay{\Dsp}{\Kp\Km\pip} MagUp}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.4\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Fit_Data_Bs02DsPi_Ds2PiPiPi_2016_MagDown_PreSel.pdf}
+%       \caption{\decay{\Dsp}{\pip\pim\pip} MagDown}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.4\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Fit_Data_Bs02DsPi_Ds2PiPiPi_2016_MagUp_PreSel.pdf}
+%       \caption{\decay{\Dsp}{\pip\pim\pip} MagUp}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.4\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Fit_Data_Bs02DsPi_Ds2KPiPi_2016_MagDown_PreSel.pdf}
+%       \caption{\decay{\Dsp}{\Kp\pim\pip} MagDown}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.4\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Fit_Data_Bs02DsPi_Ds2KPiPi_2016_MagUp_PreSel.pdf}
+%       \caption{\decay{\Dsp}{\Kp\pim\pip} MagUp}
+%    \end{subfigure}
+%    \caption{Unbinned maximum likelihood fit to \decay{\Bs}{\jpsi\phiz} (top) and \decay{\Bsb}{\Dsp\pim} (bottom three rows) candidates. These distributions correspond to just the 2016 data samples. Slight discrepancies are observed as a result of the simplified fit model in the top two plots.}
+%    \label{fig:mvatrainingsamples}
+% \end{figure}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{table}[!h]
-   \centering
-      \begin{tabular}{ll S[table-format=6.0(4)] S[table-format=6.0(4)] S[table-format=7.0(4)]}
-         \hline
-         Mode                       & Year   & {MagDown}          & {MagUp}           & {Total} \\ 
-         \hline                                                
-         \decay{\phiz}{\Kp\Km}      & 2011   & 3190 \pm 170     &   2120 \pm 140  &    \\
-                                    & 2012   & 5800 \pm 200     &   5540 \pm 200  &     \\
-                                    & 2015   & 2240 \pm 110     &   1640 \pm 100  &     \\
-                                    & 2016   & 11200 \pm 300    &   11100 \pm 300 & 42830 \pm 600    \\
-         \hline                                                
-         \decay{\Dsp}{\Kp\Km\pip}   & 2011   & 97100  \pm 500   & 68600  \pm 400  &     \\
-                                    & 2012   & 216600 \pm 800   & 212800 \pm 800  &     \\
-                                    & 2015   & 68600  \pm 400   & 43400  \pm 300  &     \\
-                                    & 2016   & 321400 \pm 900   & 310800 \pm 900  & 1339300 \pm 1900    \\
-         \hline                                                
-         \decay{\Dsp}{\pip\pim\pip} & 2011   & 24300 \pm 500    &   17100 \pm 400 &      \\
-                                    & 2012   & 57700 \pm 800    &   56500 \pm 900 &     \\
-                                    & 2015   & 20400 \pm 500    &   13100 \pm 400 &     \\
-                                    & 2016   & 99200 \pm 1200   &  92100 \pm 1200 & 380400 \pm 2300    \\
-         \hline                                                
-         \decay{\Dsp}{\Kp\pim\pip}  & 2011   & 13200 \pm 600    & 9500  \pm 400   &     \\
-                                    & 2012   & 29300 \pm 900    & 29300 \pm 900   &     \\
-                                    & 2015   & 10000 \pm 500    & 6200  \pm 400   &     \\
-                                    & 2016   & 47800 \pm 1200   & 44200 \pm 1100  & 189500 \pm 2300    \\
-         \hline
-      \end{tabular}
-      \caption{Yields of the samples used to train data-driven MVAs. The total yields are summed over all years and both magnet polarities.}
-      \label{table:mva_training_yields}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{table}[!h]
+%    \centering
+%       \begin{tabular}{ll S[table-format=6.0(4)] S[table-format=6.0(4)] S[table-format=7.0(4)]}
+%          \hline
+%          Mode                       & Year   & {MagDown}          & {MagUp}           & {Total} \\ 
+%          \hline                                                
+%          \decay{\phiz}{\Kp\Km}      & 2011   & 3190 \pm 170     &   2120 \pm 140  &    \\
+%                                     & 2012   & 5800 \pm 200     &   5540 \pm 200  &     \\
+%                                     & 2015   & 2240 \pm 110     &   1640 \pm 100  &     \\
+%                                     & 2016   & 11200 \pm 300    &   11100 \pm 300 & 42830 \pm 600    \\
+%          \hline                                                
+%          \decay{\Dsp}{\Kp\Km\pip}   & 2011   & 97100  \pm 500   & 68600  \pm 400  &     \\
+%                                     & 2012   & 216600 \pm 800   & 212800 \pm 800  &     \\
+%                                     & 2015   & 68600  \pm 400   & 43400  \pm 300  &     \\
+%                                     & 2016   & 321400 \pm 900   & 310800 \pm 900  & 1339300 \pm 1900    \\
+%          \hline                                                
+%          \decay{\Dsp}{\pip\pim\pip} & 2011   & 24300 \pm 500    &   17100 \pm 400 &      \\
+%                                     & 2012   & 57700 \pm 800    &   56500 \pm 900 &     \\
+%                                     & 2015   & 20400 \pm 500    &   13100 \pm 400 &     \\
+%                                     & 2016   & 99200 \pm 1200   &  92100 \pm 1200 & 380400 \pm 2300    \\
+%          \hline                                                
+%          \decay{\Dsp}{\Kp\pim\pip}  & 2011   & 13200 \pm 600    & 9500  \pm 400   &     \\
+%                                     & 2012   & 29300 \pm 900    & 29300 \pm 900   &     \\
+%                                     & 2015   & 10000 \pm 500    & 6200  \pm 400   &     \\
+%                                     & 2016   & 47800 \pm 1200   & 44200 \pm 1100  & 189500 \pm 2300    \\
+%          \hline
+%       \end{tabular}
+%       \caption{Yields of the samples used to train data-driven MVAs. The total yields are summed over all years and both magnet polarities.}
+%       \label{table:mva_training_yields}
    
-\end{table}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \end{table}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{Input variables}
 
@@ -1441,315 +1440,317 @@ The variables used in the \Dsp MVA are also listed in Table~\ref{tab:mvavars}. T
 % \end{table}
 
 
-When training the MVA methods, the variables are ranked according to their discrimination power. Examples of these ranking are shown for the Run~II, \decay{\phiz}{\Kp\Km} MVA and Run~II, \decay{\Dsp}{\Kp\Km\pip} MVA in Table~\ref{tab:mvarank_dsandphi}. It can be seen that for both the \Dsp and \phiz meson MVAs that the kaon particle identification variable and various $\log_{10}(\chi^{2}_{\text{IP}})$ variables are the most discriminating.
+When training the MVA methods, the variables are ranked according to their discrimination power. 
+It is found that the kaon particle identification variable and various $\log_{10}(\chi^{2}_{\text{IP}})$ variables are the most discriminating as detailed in Appendix~\ref{sec:App_MVA_input}.
+%Examples of these ranking are shown for the Run~II, \decay{\phiz}{\Kp\Km} MVA and Run~II, \decay{\Dsp}{\Kp\Km\pip} MVA in Table~\ref{tab:mvarank_dsandphi}. 
+%It can be seen that for both the \Dsp and \phiz meson MVAs that the kaon particle identification variable and various $\log_{10}(\chi^{2}_{\text{IP}})$ variables are the most discriminating.
 
-\begin{table}[h]
-\centering
-\scalebox{1.0}{
-\begin{tabular}{ c l c | c l c}
+% \begin{table}[h]
+% \centering
+% \scalebox{1.0}{
+% \begin{tabular}{ c l c | c l c}
 
-\hline 
+% \hline 
 
-\multicolumn{3}{c|}{\decay{\Dsp}{\Kp\Km\pip}}                 & \multicolumn{3}{c}{\decay{\phiz}{\Kp\Km}}                       \\
-Rank & Variable                             & Importance (\%) & Rank & Variable                           & Importance (\%)      \\
-\hline
- 1 & \Kp ProbNNk                            & $7.6$ &  1 & \Kp ProbNNk                                & $6.0$\\
- 2 & \Km ProbNNk                            & $6.0$ &  2 & \phiz $\log_{10}(\chi^{2}_{\text{IP}})$    & $6.0$\\
- 3 & \Kp $\log_{10}(\chi^{2}_{\text{IP}})$  & $5.5$ &  3 & \Km $\log_{10}(\chi^{2}_{\text{IP}})$      & $6.0$\\
- 4 & \pip $\log_{10}(\chi^{2}_{\text{IP}})$ & $5.0$ &  4 & \phiz $\log_{10}(\chi^{2}_{\text{VTX}})$   & $5.8$\\
- 5 & \Kp \ptot                              & $4.3$ &  5 & \Km ProbNNpi                               & $5.8$\\
- 6 & \Dsp $\log_{10}(\chi^{2}_{\text{IP}})$ & $4.1$ &  6 & \Kp $\log_{10}(\chi^{2}_{\text{IP}})$      & $5.8$\\
- 7 & \pip \pt                               & $4.0$ &  7 & \Kp ProbNNghost                            & $5.4$\\
- 8 & \Kp \pt                                & $3.9$ &  8 & \Km ProbNNk                                & $5.4$\\
- 9 & \pip ProbNNpi                          & $3.9$ &  9 & \Kp $\chi^{2}_{\text{TRK}}$                & $5.6$\\
-10 & \Dsp $\log_{10}(\chi^{2}_{\text{FD}})$ & $3.8$ & 10 & \Km $\chi^{2}_{\text{TRK}}$                & $5.2$\\
-11 & \Km $\log_{10}(\chi^{2}_{\text{IP}})$  & $3.7$ & 11 & \Kp ProbNNpi                               & $5.2$\\
-12 & \Dsp $\log_{10}(\chi^{2}_{\text{VTX}})$& $3.0$ & 12 & \Km ProbNNghost                            & $5.0$\\
-13 & \Km \ptot                              & $2.8$ & 13 & \Kp ProbNNp                                & $4.5$\\
-14 & \Kp ProbNNp                            & $2.8$ & 14 & \Km ProbNNp                                & $4.4$\\
-15 & \Km ProbNNp                            & $2.7$ & 15 & \Kp $\chi^{2}_{\text{TRKMATCH}}$           & $4.3$\\
-% 16 & \pip ProbNNghost                   & $2.623$ & 16 & \Km $\chi^{2}_{\text{TRKMATCH}}$     & $3.977\times 10^{-2}$\\
-% 17 & \Kp ProbNNghost                    & $2.593$ & 17 & \Km \pt                              & $3.437\times 10^{-2}$\\
-% 18 & \Dsp \pt                           & $2.543$ & 18 & \Kp \pt                              & $3.012\times 10^{-2}$\\
-% 19 & \Kp ProbNNpi                       & $2.525$ & 19 & \phiz PT                             & $2.400\times 10^{-2}$\\
-% 20 & \Km \pt                            & $2.355$ & 20 & \phiz P                              & $1.792\times 10^{-2}$\\
-% 21 & \Dsp \ptot                         & $2.327$ & 21 & \Km \pz                              & $1.397\times 10^{-2}$\\
-% 22 & \Km ProbNNpi                       & $2.226$ & 22 & \Km \ptot                            & $1.387\times 10^{-2}$\\
-% 23 & \pip \ptot                         & $2.083$ & 23 & \Kp \pz                              & $1.245\times 10^{-2}$\\
-% 24 & \pip ProbNNp                       & $1.849$ & 24 & \Kp \ptot                            & $1.218\times 10^{-2}$\\
-% 25 & \pip ProbNNk                       & $1.793$ \\
-% 26 & \Km ProbNNghost                    & $1.607$ \\
-% 27 & \pip $\chi^{2}_{\text{TRKVELO}}$   & $1.589$ \\
-% 28 & \Km $\chi^{2}_{\text{TRK}}$        & $1.588$ \\
-% 29 & \pip $\chi^{2}_{\text{TRKMATCH}}$  & $1.548$ \\
-% 30 & \Kp $\chi^{2}_{\text{TRK}}$        & $1.522$ \\
-% 31 & \Km $\chi^{2}_{\text{TRKMATCH}}$   & $1.442$ \\
-% 32 & \pip $\chi^{2}_{\text{TRK}}$       & $1.433$ \\
-% 33 & \Kp $\chi^{2}_{\text{TRKVELO}}$    & $1.184$ \\
-% 34 & \Kp $\chi^{2}_{\text{TRKMATCH}}$   & $1.176$ \\
-% 35 & \Km $\chi^{2}_{\text{TRKVELO}}$    & $8.818\times10^{-3}$ \\
-\hline
-\end{tabular}
-}
-\caption{Ranking of variables for the 15 highest ranked variables used to train the \decay{\Dsp}{\Kp\Km\pip} (left) and \decay{\phiz}{\Kp\Km} (right) Run~II MVAs.}
-\label{tab:mvarank_dsandphi}
-\end{table}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[!h]
-   \centering
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_Phi_P.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_Phi_PT.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_log10_Phi_ENDVERTEX_CHI2.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_log10_Phi_IPCHI2_OWNPV.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_Phi_K0_P.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_Phi_K1_P.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_Phi_K0_PT.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_Phi_K1_PT.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_Phi_K0_PZ.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_Phi_K1_PZ.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_log10_Phi_K0_IPCHI2_OWNPV.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_log10_Phi_K1_IPCHI2_OWNPV.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_Phi_K0_MC15TuneV1_ProbNNk.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_Phi_K1_MC15TuneV1_ProbNNk.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_Phi_K0_MC15TuneV1_ProbNNp.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_Phi_K1_MC15TuneV1_ProbNNp.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_Phi_K0_MC15TuneV1_ProbNNpi.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_Phi_K1_MC15TuneV1_ProbNNpi.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_Phi_K0_MC15TuneV1_ProbNNghost.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_Phi_K1_MC15TuneV1_ProbNNghost.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_Phi_K0_TRACK_CHI2NDOF.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_Phi_K1_TRACK_CHI2NDOF.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_Phi_K0_TRACK_MatchCHI2.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_Phi_K1_TRACK_MatchCHI2.pdf}
-   \end{subfigure}
-   \caption{Distributions of MVA training variables in the signal (blue) and background (red) samples for the Run~II \decay{\phiz}{\Kp\Km} MVA.}
-   \label{fig:mvatrainingvariables_phi}   
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \multicolumn{3}{c|}{\decay{\Dsp}{\Kp\Km\pip}}                 & \multicolumn{3}{c}{\decay{\phiz}{\Kp\Km}}                       \\
+% Rank & Variable                             & Importance (\%) & Rank & Variable                           & Importance (\%)      \\
+% \hline
+%  1 & \Kp ProbNNk                            & $7.6$ &  1 & \Kp ProbNNk                                & $6.0$\\
+%  2 & \Km ProbNNk                            & $6.0$ &  2 & \phiz $\log_{10}(\chi^{2}_{\text{IP}})$    & $6.0$\\
+%  3 & \Kp $\log_{10}(\chi^{2}_{\text{IP}})$  & $5.5$ &  3 & \Km $\log_{10}(\chi^{2}_{\text{IP}})$      & $6.0$\\
+%  4 & \pip $\log_{10}(\chi^{2}_{\text{IP}})$ & $5.0$ &  4 & \phiz $\log_{10}(\chi^{2}_{\text{VTX}})$   & $5.8$\\
+%  5 & \Kp \ptot                              & $4.3$ &  5 & \Km ProbNNpi                               & $5.8$\\
+%  6 & \Dsp $\log_{10}(\chi^{2}_{\text{IP}})$ & $4.1$ &  6 & \Kp $\log_{10}(\chi^{2}_{\text{IP}})$      & $5.8$\\
+%  7 & \pip \pt                               & $4.0$ &  7 & \Kp ProbNNghost                            & $5.4$\\
+%  8 & \Kp \pt                                & $3.9$ &  8 & \Km ProbNNk                                & $5.4$\\
+%  9 & \pip ProbNNpi                          & $3.9$ &  9 & \Kp $\chi^{2}_{\text{TRK}}$                & $5.6$\\
+% 10 & \Dsp $\log_{10}(\chi^{2}_{\text{FD}})$ & $3.8$ & 10 & \Km $\chi^{2}_{\text{TRK}}$                & $5.2$\\
+% 11 & \Km $\log_{10}(\chi^{2}_{\text{IP}})$  & $3.7$ & 11 & \Kp ProbNNpi                               & $5.2$\\
+% 12 & \Dsp $\log_{10}(\chi^{2}_{\text{VTX}})$& $3.0$ & 12 & \Km ProbNNghost                            & $5.0$\\
+% 13 & \Km \ptot                              & $2.8$ & 13 & \Kp ProbNNp                                & $4.5$\\
+% 14 & \Kp ProbNNp                            & $2.8$ & 14 & \Km ProbNNp                                & $4.4$\\
+% 15 & \Km ProbNNp                            & $2.7$ & 15 & \Kp $\chi^{2}_{\text{TRKMATCH}}$           & $4.3$\\
+% % 16 & \pip ProbNNghost                   & $2.623$ & 16 & \Km $\chi^{2}_{\text{TRKMATCH}}$     & $3.977\times 10^{-2}$\\
+% % 17 & \Kp ProbNNghost                    & $2.593$ & 17 & \Km \pt                              & $3.437\times 10^{-2}$\\
+% % 18 & \Dsp \pt                           & $2.543$ & 18 & \Kp \pt                              & $3.012\times 10^{-2}$\\
+% % 19 & \Kp ProbNNpi                       & $2.525$ & 19 & \phiz PT                             & $2.400\times 10^{-2}$\\
+% % 20 & \Km \pt                            & $2.355$ & 20 & \phiz P                              & $1.792\times 10^{-2}$\\
+% % 21 & \Dsp \ptot                         & $2.327$ & 21 & \Km \pz                              & $1.397\times 10^{-2}$\\
+% % 22 & \Km ProbNNpi                       & $2.226$ & 22 & \Km \ptot                            & $1.387\times 10^{-2}$\\
+% % 23 & \pip \ptot                         & $2.083$ & 23 & \Kp \pz                              & $1.245\times 10^{-2}$\\
+% % 24 & \pip ProbNNp                       & $1.849$ & 24 & \Kp \ptot                            & $1.218\times 10^{-2}$\\
+% % 25 & \pip ProbNNk                       & $1.793$ \\
+% % 26 & \Km ProbNNghost                    & $1.607$ \\
+% % 27 & \pip $\chi^{2}_{\text{TRKVELO}}$   & $1.589$ \\
+% % 28 & \Km $\chi^{2}_{\text{TRK}}$        & $1.588$ \\
+% % 29 & \pip $\chi^{2}_{\text{TRKMATCH}}$  & $1.548$ \\
+% % 30 & \Kp $\chi^{2}_{\text{TRK}}$        & $1.522$ \\
+% % 31 & \Km $\chi^{2}_{\text{TRKMATCH}}$   & $1.442$ \\
+% % 32 & \pip $\chi^{2}_{\text{TRK}}$       & $1.433$ \\
+% % 33 & \Kp $\chi^{2}_{\text{TRKVELO}}$    & $1.184$ \\
+% % 34 & \Kp $\chi^{2}_{\text{TRKMATCH}}$   & $1.176$ \\
+% % 35 & \Km $\chi^{2}_{\text{TRKVELO}}$    & $8.818\times10^{-3}$ \\
+% \hline
+% \end{tabular}
+% }
+% \caption{Ranking of variables for the 15 highest ranked variables used to train the \decay{\Dsp}{\Kp\Km\pip} (left) and \decay{\phiz}{\Kp\Km} (right) Run~II MVAs.}
+% \label{tab:mvarank_dsandphi}
+% \end{table}
 
 
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{figure}[!h]
+%    \centering
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_Phi_P.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_Phi_PT.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_log10_Phi_ENDVERTEX_CHI2.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_log10_Phi_IPCHI2_OWNPV.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_Phi_K0_P.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_Phi_K1_P.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_Phi_K0_PT.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_Phi_K1_PT.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_Phi_K0_PZ.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_Phi_K1_PZ.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_log10_Phi_K0_IPCHI2_OWNPV.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_log10_Phi_K1_IPCHI2_OWNPV.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_Phi_K0_MC15TuneV1_ProbNNk.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_Phi_K1_MC15TuneV1_ProbNNk.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_Phi_K0_MC15TuneV1_ProbNNp.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_Phi_K1_MC15TuneV1_ProbNNp.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_Phi_K0_MC15TuneV1_ProbNNpi.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_Phi_K1_MC15TuneV1_ProbNNpi.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_Phi_K0_MC15TuneV1_ProbNNghost.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_Phi_K1_MC15TuneV1_ProbNNghost.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_Phi_K0_TRACK_CHI2NDOF.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_Phi_K1_TRACK_CHI2NDOF.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_Phi_K0_TRACK_MatchCHI2.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_Var_Ds2KKPi_Phi_K1_TRACK_MatchCHI2.pdf}
+%    \end{subfigure}
+%    \caption{Distributions of MVA training variables in the signal (blue) and background (red) samples for the Run~II \decay{\phiz}{\Kp\Km} MVA.}
+%    \label{fig:mvatrainingvariables_phi}   
+% \end{figure}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[!h]
-   \centering
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_P.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_PT.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_log10_D_ENDVERTEX_CHI2.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_log10_D_IPCHI2_OWNPV.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_log10_D_FDCHI2_OWNPV.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_K0_P.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_K1_P.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_P_P.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_K0_PT.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_K1_PT.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_P_PT.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_log10_D_K0_IPCHI2_OWNPV.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_log10_D_K1_IPCHI2_OWNPV.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_log10_D_P_IPCHI2_OWNPV.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_K0_MC15TuneV1_ProbNNk.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_K1_MC15TuneV1_ProbNNk.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_P_MC15TuneV1_ProbNNk.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_K0_MC15TuneV1_ProbNNp.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_K1_MC15TuneV1_ProbNNp.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_P_MC15TuneV1_ProbNNp.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_K0_MC15TuneV1_ProbNNpi.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_K1_MC15TuneV1_ProbNNpi.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_P_MC15TuneV1_ProbNNpi.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_K0_MC15TuneV1_ProbNNghost.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_K1_MC15TuneV1_ProbNNghost.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_P_MC15TuneV1_ProbNNghost.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_K0_BDT_TRACK_VeloCHI2NDOF.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_K1_BDT_TRACK_VeloCHI2NDOF.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_P_BDT_TRACK_VeloCHI2NDOF.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_K0_TRACK_CHI2NDOF.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_K1_TRACK_CHI2NDOF.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_P_TRACK_CHI2NDOF.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_K0_TRACK_MatchCHI2.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_K1_TRACK_MatchCHI2.pdf}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.22\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_P_TRACK_MatchCHI2.pdf}
-   \end{subfigure}
-   \caption{Distributions of MVA training variables in the signal (blue) and background (red) samples for the Run~II \decay{\Dsp}{\Kp\Km\pip} MVA.}
-   \label{fig:mvatrainingvariables_Ds}   
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{figure}[!h]
+%    \centering
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_P.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_PT.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_log10_D_ENDVERTEX_CHI2.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_log10_D_IPCHI2_OWNPV.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_log10_D_FDCHI2_OWNPV.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_K0_P.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_K1_P.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_P_P.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_K0_PT.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_K1_PT.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_P_PT.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_log10_D_K0_IPCHI2_OWNPV.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_log10_D_K1_IPCHI2_OWNPV.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_log10_D_P_IPCHI2_OWNPV.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_K0_MC15TuneV1_ProbNNk.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_K1_MC15TuneV1_ProbNNk.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_P_MC15TuneV1_ProbNNk.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_K0_MC15TuneV1_ProbNNp.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_K1_MC15TuneV1_ProbNNp.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_P_MC15TuneV1_ProbNNp.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_K0_MC15TuneV1_ProbNNpi.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_K1_MC15TuneV1_ProbNNpi.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_P_MC15TuneV1_ProbNNpi.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_K0_MC15TuneV1_ProbNNghost.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_K1_MC15TuneV1_ProbNNghost.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_P_MC15TuneV1_ProbNNghost.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_K0_BDT_TRACK_VeloCHI2NDOF.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_K1_BDT_TRACK_VeloCHI2NDOF.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_P_BDT_TRACK_VeloCHI2NDOF.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_K0_TRACK_CHI2NDOF.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_K1_TRACK_CHI2NDOF.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_P_TRACK_CHI2NDOF.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_K0_TRACK_MatchCHI2.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_K1_TRACK_MatchCHI2.pdf}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.22\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_Var_Ds2KKPi_D_P_TRACK_MatchCHI2.pdf}
+%    \end{subfigure}
+%    \caption{Distributions of MVA training variables in the signal (blue) and background (red) samples for the Run~II \decay{\Dsp}{\Kp\Km\pip} MVA.}
+%    \label{fig:mvatrainingvariables_Ds}   
+% \end{figure}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection{MVA method}
 \label{sec:mvamethod}
@@ -1759,97 +1760,73 @@ During training, each method uses samples that have been defined to be `signal' 
 
 A second set of `signal'-like and `background'-like samples are used to blindly validate the training. The classifier response is compared in the training and validation samples to demonstrate if the expected separation is reproducible. 
 This is important to determine if the trained method suffers from \emph{overtraining}. This can happen when too few events are passed to the method, such that the statistical fluctuations in the distributions are significant. This can result in differences being identified that are actually artefacts of the low statistics and not representative of the sample as a whole. This results in the classifier being more discriminatory on the training sample than the validation sample.
+In this data-driven MVA approach, the `signal' and `background' training samples are both taken from the relevant \decay{\Bsb}{\Dsp\pim} or \decay{\Bs}{\jpsi\phiz} decay samples, where the signal has been background subtracted.
+Full details of the MVA training procedure and overtraining tests can be found in Appendix~\ref{sec:app_mva_method}.
 
-In this data  driven approach, the `signal' and `background' samples are both taken from the relevant \decay{\Bsb}{\Dsp\pim} or \decay{\Bs}{\jpsi\phiz} decay samples.
-The signal samples include all events within the fit ranges shown in Fig.~\ref{fig:mvatrainingsamples}. Each candidate is weighted with the appropriate Gaussian fit component weight as determined by the \sPlot technique. This weight is passed to the \tmva framework when training the methods.
-The background samples are comprised of the sideband regions of the relevant ranges in Fig.~\ref{fig:mvatrainingsamples}. These ranges are defined by $|m(\Kp\Km)-m(\phiz)| > 10 \mevcc$ and $|m(h^{+}h^{-}h^{+})-m(\Dsp)| > 30\mevcc$ for the \phiz and \Dsp MVAs respectively. No weights are used for the background samples as the regions are known to be signal-deficient.
+% In this data-driven approach, the `signal' and `background' samples are both taken from the relevant \decay{\Bsb}{\Dsp\pim} or \decay{\Bs}{\jpsi\phiz} decay samples.
+% The signal samples include all events within the background subtraction fit ranges. Each candidate is weighted with the appropriate Gaussian fit component weight as determined by the \sPlot technique. This weight is passed to the \tmva framework when training the methods.
+% The background samples are comprised of the sideband regions of the relevant ranges in Fig.~\ref{fig:mvatrainingsamples}. These ranges are defined by $|m(\Kp\Km)-m(\phiz)| > 10 \mevcc$ and $|m(h^{+}h^{-}h^{+})-m(\Dsp)| > 30\mevcc$ for the \phiz and \Dsp MVAs respectively. No weights are used for the background samples as the regions are known to be signal-deficient.
 
 
 
-The MVAs are trained using Gradient Boosted Decision Trees (BDTGs)~\cite{Breiman}. This method was compared to a number of different Boosted Decision Tree (BDT) derivatives and found to be most effective.
+% The MVAs are trained using Gradient Boosted Decision Trees (BDTGs)~\cite{Breiman}. This method was compared to a number of different Boosted Decision Tree (BDT) derivatives and found to be most effective.
 
-The BDTG method categorises `signal' and `background' candidates by creating consecutive sets of questions called Decision Trees. Each question can have two possible answers and depends on the previous responses. Eventually the answer to a question results in a candidate being classes as `signal' or `background' rather than asking more questions. A definable number of decision trees are used to collectively categorise each candidate; the overall response combines the decisions of all trees. The trees are trained using \emph{boosting}. This means candidates that are most likely to be misclassified are weighted higher, such that the later trees concentrate on these trickier areas.  
-The boosting method utilised in the BDTG method is designed to be more robust and reproducible in noisy situations, for example with limited statistics. 
-The BDTG method is used in training all MVAs.
+% The BDTG method categorises `signal' and `background' candidates by creating consecutive sets of questions called Decision Trees. Each question can have two possible answers and depends on the previous responses. Eventually the answer to a question results in a candidate being classes as `signal' or `background' rather than asking more questions. A definable number of decision trees are used to collectively categorise each candidate; the overall response combines the decisions of all trees. The trees are trained using \emph{boosting}. This means candidates that are most likely to be misclassified are weighted higher, such that the later trees concentrate on these trickier areas.  
+% The boosting method utilised in the BDTG method is designed to be more robust and reproducible in noisy situations, for example with limited statistics. 
+% The BDTG method is used in training all MVAs.
 
- % the exact configuration of the method is listed in Table~\ref{tab:mvaconfiguration}. 
 
-% {\color{Red}
-% \begin{itemize}
-% \item Explain configuration
-% \end{itemize}
-% }
-% \begin{table}[h]
-% \centering
-% \begin{tabular}{ l l }
-% \hline
-% Parameter & Value \\
-% \hline
-% Number of trees         & 1000      \\
-% Minimum node size       & 2.5\%     \\
-% Boost type              & Gradient  \\ 
-% Shrinkage               & 0.10      \\ 
-% Bagged Boost            & True      \\ 
-% Bagged sample fraction  & 0.5       \\  
-% Number of cuts          & 20        \\  
-% Maximum depth           & 2         \\  
-% \hline
-% \end{tabular}
-% 
-% \caption{The configuration of the BDTG method }
-% \label{tab:mvaconfiguration}
-% \end{table}  
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[!h]
-   \centering
-   \begin{subfigure}[t]{0.32\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_classifier_Run1.pdf}
-      \caption{Run I \decay{\phiz}{\Kp\Km}}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.32\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_classifier_Run2.pdf}
-      \caption{Run II \decay{\phiz}{\Kp\Km}}
-   \end{subfigure}\\
-   \begin{subfigure}[t]{0.32\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_classifier_Ds2KKPi_Run1.pdf}
-      \caption{Run I \decay{\Dsp}{\Kp\Km\pip}}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.32\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_classifier_Ds2KKPi_Run2.pdf}
-      \caption{Run II \decay{\Dsp}{\Kp\Km\pip}}
-   \end{subfigure}\\
-   \begin{subfigure}[t]{0.32\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_classifier_Ds2PiPiPi_Run1.pdf}
-      \caption{Run I \decay{\Dsp}{\pip\pim\pip}}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.32\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_classifier_Ds2PiPiPi_Run2.pdf}
-      \caption{Run II \decay{\Dsp}{\pip\pim\pip}}
-   \end{subfigure}\\
-   \begin{subfigure}[t]{0.32\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_classifier_Ds2KPiPi_Run1.pdf}
-      \caption{Run I \decay{\Dsp}{\Kp\pim\pip}}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.32\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_classifier_Ds2KPiPi_Run2.pdf}
-      \caption{Run II \decay{\Dsp}{\Kp\pim\pip}}
-   \end{subfigure}\\
-   \caption{MVA classifier response for the eight MVAs trained for both signal (blue) and background (red). The training samples are represented by markers and the validation samples by filled histograms.}
-   \label{fig:mvaclassifierresponses}   
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{figure}[!h]
+%    \centering
+%    \begin{subfigure}[t]{0.32\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_classifier_Run1.pdf}
+%       \caption{Run I \decay{\phiz}{\Kp\Km}}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.32\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Phi_BDT_classifier_Run2.pdf}
+%       \caption{Run II \decay{\phiz}{\Kp\Km}}
+%    \end{subfigure}\\
+%    \begin{subfigure}[t]{0.32\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_classifier_Ds2KKPi_Run1.pdf}
+%       \caption{Run I \decay{\Dsp}{\Kp\Km\pip}}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.32\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_classifier_Ds2KKPi_Run2.pdf}
+%       \caption{Run II \decay{\Dsp}{\Kp\Km\pip}}
+%    \end{subfigure}\\
+%    \begin{subfigure}[t]{0.32\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_classifier_Ds2PiPiPi_Run1.pdf}
+%       \caption{Run I \decay{\Dsp}{\pip\pim\pip}}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.32\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_classifier_Ds2PiPiPi_Run2.pdf}
+%       \caption{Run II \decay{\Dsp}{\pip\pim\pip}}
+%    \end{subfigure}\\
+%    \begin{subfigure}[t]{0.32\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_classifier_Ds2KPiPi_Run1.pdf}
+%       \caption{Run I \decay{\Dsp}{\Kp\pim\pip}}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.32\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds_BDT_classifier_Ds2KPiPi_Run2.pdf}
+%       \caption{Run II \decay{\Dsp}{\Kp\pim\pip}}
+%    \end{subfigure}\\
+%    \caption{MVA classifier response for the eight MVAs trained for both signal (blue) and background (red). The training samples are represented by markers and the validation samples by filled histograms.}
+%    \label{fig:mvaclassifierresponses}   
+% \end{figure}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The MVA classifier distributions for each of the eight MVAs trained are shown in Fig.~\ref{fig:mvaclassifierresponses}. This figure shows both the signal and background samples, as well as the training and validation subsamples. Each mode shows a good separation between the signal and background samples. For the majority of the distributions the training and testing samples have almost identical shapes, implying response is reproducible and the method has not overtrained. There are noticeable exceptions, however. The signal training and validation samples tend to show different distributions in the regions where the background distributions are maximal. This effect is likely to be a result of the use of weights in the MVA training. Ideally, the MVA classifier should remain positive across the whole range. The negative values implies that in that range the MVA classifier is correlated to the parameter used to generate the weights: the \phiz or \Dsp mass. As this only affects the range of MVA classifier values that are dominantly `background'-like, it likely this discrepancy is due specifically to presence of weighted background events in the signal sample passed to \tmva.
-This effect is further studied to determine if it results in any systematic uncertainty in the MVA efficiencies as discussed in Sections~\ref{sec:B2DsKK_systuncertainy} and~\ref{sec:B2DsPhi_systuncertainy}. In all cases the discrepancies are far below the range of values that selection requirements are placed. 
+% The MVA classifier distributions for each of the eight MVAs trained are shown in Fig.~\ref{fig:mvaclassifierresponses}. This figure shows both the signal and background samples, as well as the training and validation subsamples. Each mode shows a good separation between the signal and background samples. For the majority of the distributions the training and testing samples have almost identical shapes, implying response is reproducible and the method has not overtrained. There are noticeable exceptions, however. The signal training and validation samples tend to show different distributions in the regions where the background distributions are maximal. This effect is likely to be a result of the use of weights in the MVA training. Ideally, the MVA classifier should remain positive across the whole range. The negative values implies that in that range the MVA classifier is correlated to the parameter used to generate the weights: the \phiz or \Dsp mass. As this only affects the range of MVA classifier values that are dominantly `background'-like, it likely this discrepancy is due specifically to presence of weighted background events in the signal sample passed to \tmva.
+% This effect is further studied to determine if it results in any systematic uncertainty in the MVA efficiencies as discussed in Sections~\ref{sec:B2DsKK_systuncertainy} and~\ref{sec:B2DsPhi_systuncertainy}. In all cases the discrepancies are far below the range of values that selection requirements are placed. 
 
 
 \subsubsection{MVA efficiency}
