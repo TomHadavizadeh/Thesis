@@ -38,12 +38,14 @@
 
 % You can set the spacing here for the roman-numbered pages (acknowledgements, table of contents, etc.)
 \setlength{\frontmatterbaselineskip}{17pt plus1pt minus1pt}
+%\setlength{\frontmatterbaselineskip}{18pt plus2pt minus1pt}
 
 % Leave this line alone; it gets things started for the real document.
 \setlength{\baselineskip}{\textbaselineskip}
 
 
-\pagenumbering{roman}
+\begin{romanpages}
+%\pagenumbering{roman}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%     Title Page      %%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -58,7 +60,6 @@
 %\input{text/dedication}
 %\input{text/acknowledgements}
 %\input{text/originality}
-\input{text/preface}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -77,14 +78,14 @@
 
 
 \cleardoublepage
-
-\pagenumbering{arabic}
-\setcounter{page}{1}
+\end{romanpages}
+%\pagenumbering{arabic}
+%\setcounter{page}{1}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%  Main body of text  %%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\input{text/preface}
 \input{text/introduction}
 \input{text/theory}
 \input{text/detector}

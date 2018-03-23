@@ -174,6 +174,7 @@ Analytical PDFs are used to account for the spin and mass of the missing particl
 \item \textbf{\decay{\Bp}{(\decay{\Dssp}{\Dsp[\piz]})\Dzb} and \decay{\Bp}{\Dsp(\decay{\Dstarzb}{\Dzb[\piz]})}:} the \piz meson is a pseudo-scalar ($J^{P} = 0^{-}$) particle with a mass $m(\piz) = 134.9766 \pm 0.0006 \mevcc$. The partially reconstructed invariant mass distribution $m(\Dsp\Dzb)$ can be described by a parabola convolved with a Gaussian resolution function as pictorially represented in Fig.~\ref{fig:B2DsKK_partreco_diagram}. The parabola does not extend beyond kinematic endpoints, $a$ and $b$, that arise from the relative direction of the missing particle (Fig.~\ref{fig:B2DsKK_partreco_decay}). The parabola has a minimum in the centre 
 \begin{equation}
 f(m|a,b,\sigma,\xi, \delta) = \int_{a}^{b}\left(\mu-\frac{a+b}{2}\right)^{2} \left( \frac{1-\xi}{b-a}\mu + \frac{b\xi-a}{b-a} \right) e^{-\frac{-(\mu-(m-\delta))^{2}}{2\sigma^{2}}} d\mu.
+\label{eq:DsPhi_RooHorns}
 \end{equation} 
 
 Here, $\sigma$ is the width of the resolution Gaussian and $\delta$ allows the function to be offset in invariant mass, accounting for any differences in the reconstructed and predicted kinematic endpoints. The parameter $\xi$ introduces the freedom for the two sides of the parabola to have difference heights, achieved by multiplying the parabola by a line whose slope is depends on $\xi$. This accounts for variation in the selection efficiency across the PDF. The resulting function is a double peaked structure shown in Fig.~\ref{fig:B2DsKK_DsD0_partreco}.   
@@ -217,6 +218,7 @@ Mode                                              & $a$ (\mevcc)       & $b$ (\m
 \item \textbf{\decay{\Bp}{(\decay{\Dssp}{\Dsp[\Pgamma]})\Dzb} and \decay{\Bp}{\Dsp(\decay{\Dstarzb}{\Dzb[\Pgamma]})}:} the \Pgamma boson is a massless vector ($J^{P} = 1^{-}$) particle. The partially reconstructed $m(\Dsp\Dzb)$ invariant mass is also described by a parabola convolved with a Gaussian resolution function. The parabola does not extend beyond the endpoints $a$ and $b$, and has a maximum in the centre   
 \begin{equation}
 f(m|a,b,\sigma,\xi, \delta) = \int_{a}^{b} -(\mu-a)(\mu-b)\left( \frac{1-\xi}{b-a}\mu + \frac{b\xi-a}{b-a} \right) e^{-\frac{-(\mu-(m-\delta))^{2}}{2\sigma^{2}}} d\mu.
+\label{eq:DsPhi_RooHills}
 \end{equation}
 Again $\sigma$, $\delta$ and $\xi$ control the width, offset and relative heights of two sides of the parabola. The resulting function is a broad single peak shown in Fig.~\ref{fig:B2DsKK_DsD0_partreco}.
 
@@ -254,7 +256,7 @@ Mode                                                 & $a$ (\mevcc)      & $b$ (
 
 
 \subsubsection{Backgrounds to the signal channel, \decay{\Bp}{\Dsp\Kp\Km}}
-
+\label{sec:B2DsKK_sig_partreco}
 The signal channel receives contributions at low invariant mass from a number of different decays. 
 All modes considered involve a \Bs or \Bz meson decay in which one or more soft decay products have not been reconstructed.
 Decays of \Bs mesons are particularly dominant as the \Bs meson has a larger mass than the \Bp meson.   

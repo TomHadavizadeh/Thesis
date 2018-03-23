@@ -134,6 +134,12 @@
 % for the contents and figures lists. It also resets
 % page-numbering for the remainder of the dissertation (arabic, starting at 1).
 
+%\newenvironment{romanpages}
+%{\cleardoublepage\setcounter{page}{1}\renewcommand{\thepage}{\roman{page}}}
+%{\cleardoublepage\renewcommand{\thepage}{\arabic{page}}\setcounter{page}{1}}
+
 \newenvironment{romanpages}
-{\cleardoublepage\setcounter{page}{1}\renewcommand{\thepage}{\roman{page}}}
-{\cleardoublepage\renewcommand{\thepage}{\arabic{page}}\setcounter{page}{1}}
+{\cleardoublepage\setlength{\baselineskip}{\frontmatterbaselineskip}\setcounter{page}{1}\renewcommand{\thepage}{\roman{page}}}
+{\cleardoublepage\setcounter{page}{1}\renewcommand{\thepage}{\arabic{page}}}
+
+
