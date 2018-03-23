@@ -157,32 +157,21 @@ Decay                           & Branching fraction \\
 \label{tab:dstar_BFs}
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-
-The excited charm mesons \Dstarzb and \Dss are vector ($J^{P} = 1^{-}$) mesons. The partially reconstructed invariant mass of the \Dsp and \Dzb mesons, $m(\Dsp\Dzb)$, varies depending on the spin of the missed particle.
+The excited charm mesons \Dstarzb and \Dss are vector ($J^{P} = 1^{-}$) mesons. The partially reconstructed invariant mass of the \Dsp and \Dzb mesons, $m(\Dsp\Dzb)$, varies depending on the angle at which the missing particle was produced, as shown in Fig.~\ref{fig:B2DsKK_partreco_decay}. The distribution of this angle depends on the spin of the missing particle. 
 Analytical PDFs are used to account for the spin and mass of the missing particle. These PDFs have been used to describe other partially reconstructed \decay{\B}{\D X} decays investigated by the LHCb collaboration~\cite{LHCb-PAPER-2017-021}. 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[!h]
-    \centering
-    \includegraphics[width=1.0\textwidth]{figs/B2DsKK/partreco_diagram.pdf}
-    \caption{Components of the analytical PDFs used to represent various partially reconstructed \decay{\B}{\D X} decays. Parabolas determined by the spin of the missing particle are shown in blue, the linear function used to account for the relative selection efficiency is shown in red and the Gaussian resolution function is shown in green.} 
-    \label{fig:B2DsKK_partreco_diagram}   
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
     \centering
     \includegraphics[width=0.5\textwidth]{figs/B2DsKK/partreco_decay.pdf}
-    \caption{The \decay{\Bp}{\Dsp(\decay{\Dstarzb}{\Dzb \piz/\Pgamma})} decay in the \Dstarzb rest frame. The invariant mass $m(\Dsp\Dzb)$ is highest when $\theta = 0\degrees$ and lowest when $\theta = 180\degrees$.} 
+    \caption{The \decay{\Bp}{\Dsp(\decay{\Dstarzb}{\Dzb \piz/\Pgamma})} decay in the \Dstarzb rest frame. The invariant mass $m(\Dsp\Dzb)$ is highest when $\theta = 0\degrees$ and lowest when $\theta = 180\degrees$. Spin-0 particles (\piz) are emitted preferentially at angles $\theta = 0, 180\degrees$, leading to an invariant mass distribution with two peaks at high and low $m(\Dsp\Dzb)$. Spin-1 particles (\Pgamma) are emitted preferentially at angles $\theta = 90,270\degrees$, both of which correspond to intermediate $m(\Dsp\Dzb)$, resulting in a singly peaked distribution.} 
     \label{fig:B2DsKK_partreco_decay}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \begin{description}
-\item \textbf{\decay{\Bp}{(\decay{\Dssp}{\Dsp[\piz]})\Dzb} and \decay{\Bp}{\Dsp(\decay{\Dstarzb}{\Dzb[\piz]})}:} the \piz meson is a pseudo-scalar ($J^{P} = 0^{-}$) particle with a mass $m(\piz) = 134.9766 \pm 0.0006 \mevcc$. The partially reconstructed invariant mass distribution $m(\Dsp\Dzb)$ can be described by a parabola convolved with a Gaussian resolution function as pictorially represented in Fig.~\ref{fig:B2DsKK_partreco_diagram}. The parabola does not extend beyond kinematic endpoints that arise from the relative direction of the missing particle with respect to the \Dsp\Dzb candidate (Fig.~\ref{fig:B2DsKK_partreco_decay}). These are represented by the parameters $a$ and $b$. The parabola has a minimum in the centre 
+\item \textbf{\decay{\Bp}{(\decay{\Dssp}{\Dsp[\piz]})\Dzb} and \decay{\Bp}{\Dsp(\decay{\Dstarzb}{\Dzb[\piz]})}:} the \piz meson is a pseudo-scalar ($J^{P} = 0^{-}$) particle with a mass $m(\piz) = 134.9766 \pm 0.0006 \mevcc$. The partially reconstructed invariant mass distribution $m(\Dsp\Dzb)$ can be described by a parabola convolved with a Gaussian resolution function as pictorially represented in Fig.~\ref{fig:B2DsKK_partreco_diagram}. The parabola does not extend beyond kinematic endpoints, $a$ and $b$, that arise from the relative direction of the missing particle (Fig.~\ref{fig:B2DsKK_partreco_decay}). The parabola has a minimum in the centre 
 \begin{equation}
 f(m|a,b,\sigma,\xi, \delta) = \int_{a}^{b}\left(\mu-\frac{a+b}{2}\right)^{2} \left( \frac{1-\xi}{b-a}\mu + \frac{b\xi-a}{b-a} \right) e^{-\frac{-(\mu-(m-\delta))^{2}}{2\sigma^{2}}} d\mu.
 \end{equation} 
@@ -191,6 +180,19 @@ Here, $\sigma$ is the width of the resolution Gaussian and $\delta$ allows the f
 The parameters $a$ and $b$ are calculated from the kinematics of the \decay{\Bp}{(\decay{\Dssp}{\Dsp\piz})\Dzb} and \decay{\Bp}{\Dsp(\decay{\Dstarzb}{\Dzb\piz})} decays respectively, and are listed in Table~\ref{tab:DsKK_pi0_a_and_b}.
 
 \end{description}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=1.0\textwidth]{figs/B2DsKK/partreco_diagram.pdf}
+    \caption{Components of the analytical PDFs used to represent various partially reconstructed \decay{\B}{\D X} decays. Parabolas determined by the spin of the missing particle are shown in blue and the linear function used to account for the relative selection efficiency is shown in red. The product of these are convolved with a Gaussian resolution function, shown in green.} 
+    \label{fig:B2DsKK_partreco_diagram}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 
 \begin{description}
 
@@ -258,7 +260,7 @@ All modes considered involve a \Bs or \Bz meson decay in which one or more soft 
 Decays of \Bs mesons are particularly dominant as the \Bs meson has a larger mass than the \Bp meson.   
 
 \begin{description}
-\item \decay{\Bsb}{\Dsp\Km\Kstarz}: this decay can form a background to the \decay{\Bp}{\Dsp\Kp\Km} signal when a pion from the \decay{\Kstarz}{\Kp\pim} decay is not reconstructed. The $\Km\Kstarz$ is modelled as originating from the $a_1(1260)$ resonance. This resonance has a width of $250-600$ MeV~\cite{PDG2016}, allowing it to decay to $\Km\Kstarz$ even though it's pole mass is below the $\Km\Kstarz$ threshold.
+\item \decay{\Bsb}{\Dsp\Km\Kstarz}: this decay can form a background to the \decay{\Bp}{\Dsp\Kp\Km} signal when a pion from the \decay{\Kstarz}{\Kp\pim} decay is not reconstructed. The $\Km\Kstarz$ is modelled as originating from the $a_1(1260)$ resonance. This resonance has a width of 250--600\mevcc~\cite{PDG2016}, allowing it to decay to $\Km\Kstarz$ even though it's pole mass is below the $\Km\Kstarz$ threshold.
 The PDF for this background is determined from a sample of fully reconstructed simulated events that have been processed using the same procedure as the signal decays. The PDF is created using a kernel estimation technique~\cite{Cranmer:2000du} implemented in the \texttt{RooKeysPDF} class within \roofit. The resulting PDF is shown in Fig.~\ref{fig:B2DsKK_part_reco_backgrounds_DsKKstar}.
 \end{description}
 
@@ -365,7 +367,7 @@ where $c$ is the effective slope of the function and $m$ is the observable \Bp m
 \section{Free and constrained parameters}
 
 
-The signal (normalisation) mass fits have eleven (nine) free parameters which can vary to find a best fir to the data. These parameters are of three types:
+The signal (normalisation) mass fits have eleven (nine) free parameters which can vary to find a best fit to the data. These parameters are of three types:
 \subsection{Parameter of interest}
 \begin{description}
 \item \textbf{Signal fit:} the parameter of interest in the signal decay is $N(\decay{\Bp}{\Dsp\Kp\Km})$, the yield attributed to the signal PDF.
@@ -449,7 +451,7 @@ For the signal yield the mean and with are within $3\sigma$ of zero and one resp
 If the normalisation yield uncertainty dominates the uncertainty in the branching fraction this could lead to an overestimation of the uncertainty on the final measured branching fraction.
 
 To determine how the normalisation uncertainty propagates to the branching fraction another set of pseudo-experiments are produced.
-This set includes both signal and normalisation decays. To calculated the branching fraction the yield of \decay{\Bp}{\Dsp\Kp\Km} decays is corrected according to the signal efficiency as a function of the kinematics of a given candidate, as detailed previously in Eq.~\ref{eq:B2DsKK_corrected_yield}. The candidates are assumed to have a flat distribution in the two dimensional $m^{2}(\Kp\Km)$ vs. $m^{2}(\Dsp\Km)$ space used to parametrise the efficiency. 
+This set includes both signal and normalisation decays. To calculated the branching fraction the yield of \decay{\Bp}{\Dsp\Kp\Km} decays is corrected according to the signal efficiency as a function of the kinematics of a given candidate, as detailed previously in Eq.~\ref{eq:B2DsKK_corrected_yield}. The candidates are assumed to have a flat distribution in the two dimensional $m^{2}(\Kp\Km)$ vs. $m^{2}(\Dsp\Km)$ space used to parametrise the efficiency. The bias in the final branching fraction is much smaller than the bias normalisation pull.
 
 % For each pseudo-experiment the branching fraction and uncertainty are produced. As no branching fraction is explicitly used to generate the pseudo-experiment (rather independent signal and normalisation yields), the pulls are redefined to be measured relative to the mean branching fraction
 % \begin{equation}
@@ -476,7 +478,7 @@ This set includes both signal and normalisation decays. To calculated the branch
 
 \section{Normalisation and signal fits}
 
-The signal and normalisation fits are performed using the model and dataset previously described. The results of the two fits are shown in Figs.~\ref{fig:B2DsKK_fit_B2DsD0} and \ref{fig:B2DsKK_fit_B2DsKK}. These figures shown the distribution of \Bp candidates along with the total model PDF constructed with the values of the free parameters determined in the NLL minimisation process. The contributions from each different component in the model are superimposed, stacked upon one another, and detailed in the legends.
+The signal and normalisation fits are performed using the model and data set previously described. The results of the two fits are shown in Figs.~\ref{fig:B2DsKK_fit_B2DsD0} and \ref{fig:B2DsKK_fit_B2DsKK}. These figures shown the distribution of \Bp candidates along with the total model PDF constructed with the values of the free parameters determined in the NLL minimisation process. The contributions from each different component in the model are superimposed, stacked upon one another, and detailed in the legends.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
@@ -596,7 +598,11 @@ The efficiencies are all determined using samples of simulated signal and normal
 \begin{description}
 \item \textbf{Acceptance:} this accounts for the likelihood for the five final state tracks to be within the \lhcb detector's acceptance. The charged tracks are required to be in the range $10 < \cos\theta < 400 \mrad$, where $\theta$ is the angle between the beam direction and the track. The relative efficiency is shown as a function of the \decay{\Bp}{\Dsp\Kp\Km} Dalitz plot in Fig.\ref{fig:B2DsKK_releff_acceptance}. The relative efficiency is close to one for most of the phase-space. 
 
-\item \textbf{Reconstruction:} the reconstruction efficiency accounts for the fraction of decays in which all five final state tracks have been correctly reconstructed and combined into a \Bp candidate that passes all selection requirements outlined in the \decay{\Bp}{\Dsp\Kp\Km} \emph{Stripping Line}. The \emph{Stripping Line} reconstruction also explicitly requires that at least one trigger has fired for the event to be reconstructed, therefore this efficiency also accounts for part of the trigger efficiency. The distribution of the relative reconstruction efficiency between the signal and normalisation mode is shown in Fig.~\ref{fig:B2DsKK_releff_reconstruction}. This is greater than one across the whole phase-space as a result of the choice to reconstruct the \decay{\Bp}{\Dsp\Dzb} normalisation decays using the same selection as the \decay{\Bp}{\Dsp\Kp\Km} signal. The latter requires the \Dsp, \Kp and \Km candidates to form a well reconstructed vertex where the \Bp meson decays. However, for the normalisation channel the \Dzb meson travels away from this vertex, so some of the longer lived \Dzb candidates do not pass the vertex quality requirement. This reduces the efficiency for the normalisation channel relative to the signal.
+\item \textbf{Reconstruction:} the reconstruction efficiency accounts for the fraction of decays in which all five final state tracks have been correctly reconstructed and pass the \decay{\Bp}{\Dsp\Kp\Km} \emph{Stripping Line} requirements. The reconstruction is only run on events with a positive trigger decision, therefore this also partially accounts for the trigger efficiency. 
+%The \emph{Stripping Line} reconstruction also explicitly requires that at least one trigger has fired for the event to be reconstructed, therefore this efficiency also accounts for part of the trigger efficiency. 
+The distribution of the relative reconstruction efficiency between the signal and normalisation mode is shown in Fig.~\ref{fig:B2DsKK_releff_reconstruction} and is consistently greater than one. In this measurement, the \decay{\Bp}{\Dsp\Dzb} normalisation decays are reconstructed using the same topology as the \decay{\Bp}{\Dsp\Kp\Km} signal. This requires the \Dsp, \Kp and \Km candidates to form a well reconstructed vertex, reducing the efficiency for long-lived \Dzb mesons. 
+
+%This is greater than one across the whole phase-space as a result of the choice to reconstruct the \decay{\Bp}{\Dsp\Dzb} normalisation decays using the same selection as the \decay{\Bp}{\Dsp\Kp\Km} signal. The latter requires the \Dsp, \Kp and \Km candidates to form a well reconstructed vertex where the \Bp meson decays. However, for the normalisation channel the \Dzb meson travels away from this vertex, so some of the longer lived \Dzb candidates do not pass the vertex quality requirement. This reduces the efficiency for the normalisation channel relative to the signal.
 
 \end{description}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -619,8 +625,16 @@ The efficiencies are all determined using samples of simulated signal and normal
 
 
 \begin{description}
-\item \textbf{Trigger:} the trigger efficiency accounts for the fraction of decays for which the signal candidate meets the \texttt{TIS} and \texttt{TOS} requirements outlined in Sec.~\ref{sec:selection_trigger}, given that there was a positive trigger decision in that event. For the signal and normalisation simulation samples it is very likely that the signal candidate was the cause of the trigger if there was a positive trigger decision, therefore these are typically around 95\%. The phase-space distribution of the relative efficiency is very uniform and shown in Fig.~\ref{fig:B2DsKK_releff_trigger}.
-\item \textbf{Vetoes:} this efficiency accounts for the fraction of decays passing the kinematic and normalisation vetoes detailed in Sec.~\ref{sec:kinematicvetos} and \ref{sec:normvetos}. The vetoes to remove misidentified \D and \Lc hadrons are only applied to the \Dsp meson and therefore assumed to affect the signal and normalisation mode equally. The systematic uncertainty arising from this choice is discussed in Sections~\ref{sec:B2DsKK_sys_releff}. Although the veto for misidentified normalisation decays proceeding via \decay{\Dzb}{\Kp\pim} decays is included, the veto to remove correctly reconstructed normalisation decays with \decay{\Dzb}{\Kp\Km} is not included. This is because the width of this veto is less that the binning width so it would therefore lead to the wrong efficiency for candidates within in the same bin but not in the window. This doesn't affect the final result, it simply means areas of the efficiency Dalitz plot are populated that will never be sampled. The distribution of the relative efficiency is shown in Fig.~\ref{fig:B2DsKK_releff_vetoes}. A vertical band is clear in the centre as a result of the veto for misidentified normalisation decays with \decay{\Dzb}{\Kp\pim}.
+\item \textbf{Trigger:} the trigger efficiency accounts for the fraction of decays for which the signal candidate meets the \texttt{TIS} and \texttt{TOS} requirements outlined in Sec.~\ref{sec:selection_trigger}, given that there was a positive trigger decision in that event. 
+%For the signal and normalisation simulation samples it is very likely that the signal candidate was the cause of the trigger if there was a positive trigger decision, therefore 
+These efficiencies are typically around 95\%. 
+The phase-space distribution of the relative efficiency is very uniform and shown in Fig.~\ref{fig:B2DsKK_releff_trigger}.
+
+\item \textbf{Vetoes:} this efficiency accounts for the fraction of decays passing the kinematic and normalisation vetoes detailed in Sec.~\ref{sec:kinematicvetos} and \ref{sec:normvetos}. The vetoes to remove misidentified \D and \Lc hadrons are only applied to the \Dsp meson and therefore assumed to affect the signal and normalisation mode equally. The systematic uncertainty arising from this choice is discussed in Sections~\ref{sec:B2DsKK_sys_releff}. 
+The veto to remove the normalisation channel \decay{\Bp}{\Dsp(\decay{\Dzb}{\Kp\Km})} is not included in this figure as the mass window is narrower than the bin width, and would bias the efficiency for other candidates within the same bin. The area of phase-space excluded by the veto will not be sampled in the final result.
+%Although the veto for misidentified normalisation decays proceeding via \decay{\Dzb}{\Kp\pim} decays is included, the veto to remove correctly reconstructed normalisation decays with \decay{\Dzb}{\Kp\Km} is not included. This is because the width of this veto is less that the binning width so it would therefore lead to the wrong efficiency for candidates within in the same bin but not in the window. This doesn't affect the final result, it simply means areas of the efficiency Dalitz plot are populated that will never be sampled. 
+The distribution of the relative efficiency is shown in Fig.~\ref{fig:B2DsKK_releff_vetoes}. 
+A vertical band is clear in the centre as a result of the veto for misidentified normalisation decays with \decay{\Dzb}{\Kp\pim}.
 \end{description}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -644,7 +658,7 @@ The efficiencies are all determined using samples of simulated signal and normal
 \begin{description}
 
 \item \textbf{Charmless:} this accounts for the fraction of decays failing the requirements on the \D meson flight distance requirements aimed at removing charmless and single-charm backgrounds. The distribution shown in Fig.\ref{fig:B2DsKK_releff_charmless} shows a fairly flat distribution with the exception of some of the edge bins.
-\item \textbf{$\chi^{2}_{\text{IP}}$:} this accounts for the fraction of decays that pass the requirements on the \Bp and \Dsp meson impact parameter significance. The relative efficiency is shown in Fig.~\ref{fig:B2DsKK_releff_ipchi2} and shows a strong dependency on phase-space at high $m^{2}(\Kp\Km)$. The lower relative efficiencies at high $m^{2}(\Kp\Km)$ may be because the \Dsp meson is produced almost at rest in this region. Therefore these \Dsp mesons are likely to have a lower transverse momentum and may fail the minimum impact parameter significance requirement.
+\item \textbf{$\chi^{2}_{\text{IP}}$:} this accounts for the fraction of decays that pass the requirements on the \Bp and \Dsp meson impact parameter significance. The relative efficiency is shown in Fig.~\ref{fig:B2DsKK_releff_ipchi2} and shows a strong dependency on phase-space at high $m^{2}(\Kp\Km)$. The lower relative efficiencies at high $m^{2}(\Kp\Km)$ may be because the \Dsp mesons are produced collinear with the \Bp direction and may fail the minimum impact parameter significance requirement.
 \end{description}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -743,8 +757,8 @@ The total relative efficiency between the signal and normalisation decays is cal
 \label{eq:B2DsPhi_eff_eq}
 \end{multline}
 where each relative efficiency $x$ is defined relative to the previous selection step $y$ as $\epsilon^{x|y}$. This is determined as a function of the two-dimensional $m^{2}(\Dsp\Km)$ vs. $m^{2}(\Kp\Km)$ space and shown in Fig.~\ref{fig:B2DsKK_eff_total_hist}. This two dimensional histogram has a coarse binning and is susceptible to variations from statistical fluctuation.  
-
-This could lead to biases when correcting the weights of signal candidates, especially if the candidates are concentrated within a one or a few bins. To reduce this the two dimensional histogram is made into a smoothly varying distribution by using a cubic spline interpolation as shown in Fig.~\ref{fig:B2DsKK_eff_total_spline}. The final distribution used to correct the yields of signal decays is the weighted sum of the splines for each year of data taking.
+%This could lead to biases when correcting the weights of signal candidates, especially if the candidates are concentrated within a one or a few bins. To reduce this 
+The two dimensional histogram is made into a smoothly varying distribution by using a cubic spline interpolation as shown in Fig.~\ref{fig:B2DsKK_eff_total_spline}. The final distribution used to correct the yields of signal decays is the weighted sum of the splines for each year of data taking.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -780,11 +794,12 @@ A number of sources of systematic uncertainty are considered when determining th
 The yields of signal and normalisation decays are corrected by the ratio of selection efficiencies. The limitations and assumptions surrounding this ratio contribute to the systematic uncertainty.
 
 \begin{description}
-\item \textbf{Simulation statistics:} the relative efficiencies used to correct the signal and normalisation yields in this analysis are determined from samples of simulated decays. These are of a limited size, therefore the relative efficiencies have an associated statistical uncertainty. The size of the simulation samples results in a 2\% systematic uncertainty. 
+\item \textbf{Simulation statistics:} the relative efficiencies used in this analysis are determined from samples of simulated decays. These samples are of a limited size, therefore introduce associated statistical uncertainty of 2\%. 
 
-\item \textbf{Particle identification:} the procedure used to determine the PID efficiencies from the \Dz and \Lc samples contains sources of systematic uncertainty, for example the choice of binning scheme used to match the calibration samples to the signal decays and the background-subtraction procedure used to isolate the distributions. The presence of the same particle species in the signal and normalisation mode helps to reduce this effect in the ratio of efficiencies. A conservative uncertainty of 0.5\% per track is assigned to any residual differences. This is assumed to be uncorrelated for the five tracks contributing to the signal channel and five tracks contributing to the normalisation channel, resulting in a total relative uncertainty of 2.0\%.
+\item \textbf{Particle identification:} the procedure used to determine the PID efficiencies from the \Dz and \Lz samples contains sources of systematic uncertainty, for example the choice of binning scheme used to match the calibration samples to the signal decays and the background-subtraction procedure used to isolate the distributions. The presence of the same particle species in the signal and normalisation mode helps to reduce this effect in the ratio of efficiencies. A conservative uncertainty of 0.5\% per track is assigned to any residual differences. This is assumed to be uncorrelated for the five signal and five normalisation tracks, resulting in a total relative uncertainty of 2.0\%.
 
-\item \textbf{Veto efficiency:} the efficiency of the misidentified \D and \Lc hadron veto applied to the \Dsp meson is assumed to be the same for the signal and normalisation channel. However, slight differences in the kinematics of the \Dsp mesons in each case might lead to this approximation not being valid when the particle identification requirements are tightened on the ambiguous track. The relative veto efficiency could be calculated by determining the relative PID efficiency for the sub-set of particles that would be affected by the tightening of the cuts. Rather than calculating this ratio, an uncertainty of 1.4\% is assigned to account for any bias.   
+\item \textbf{Veto efficiency:} the efficiency of the misidentified \Dp and \Lc hadron vetoes applied to the \Dsp meson is assumed to be the same for the signal and normalisation channel. However, slight differences in the kinematics of the \Dsp mesons in each case might lead to this approximation not being valid.
+% when the particle identification requirements are tightened on the ambiguous track. The relative veto efficiency could be calculated by determining the relative PID efficiency for the sub-set of particles that would be affected by the tightening of the cuts. Rather than calculating this ratio, an uncertainty of 1.4\% is assigned to account for any bias.   
 
 \item \textbf{MVA efficiency:} the relative MVA efficiency receives contributions from a number of sources.
 They are determined from corrected simulations samples (Sec.~\ref{sec:B2DsKK_eff_from_calib}) using Run I calibrations. The phase-space distributions in Run I and Run II are assumed to be the same, whilst the absolute values of the efficiencies are scaled using input from the calibration samples \decay{\Bs}{\jpsi\phiz} and \decay{\Bsb}{\Dsp\pim}. An uncertainty of 4.4\% is associated to this assumption. 
@@ -991,12 +1006,8 @@ Additionally, the distribution of background-subtracted efficiency-corrected \de
 
 
 The background-subtracted distribution of the angle, $\cos{\theta_{K}}$, defined to be the angle between the direction of the \Kp meson and \Bp momentum vector in the \Kp\Km rest frame is shown in Fig.~\ref{fig:B2DsKK_helicty_angle_bins} in bins of $m(\Kp\Km)$. The distribution of this angle can change depending of the spin of the \Kp\Km system and therefore may help identify the contributing processes. 
-
 % Additionally, the distribution of the angle $\theta_{K}$ is plotted in bins of $m(\Kp\Km)$ in .
 % The distribution is observed to change as a function of $m(\Kp\Km)$, which may be a result of interference between competing processes.
-
-
-
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \begin{figure}[!h]
 %     \centering
@@ -1008,7 +1019,6 @@ The background-subtracted distribution of the angle, $\cos{\theta_{K}}$, defined
 %     \label{fig:B2DsKK_helicity_angle}
 % \end{figure}
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
     \centering
@@ -1032,8 +1042,7 @@ The background-subtracted distribution of the angle, $\cos{\theta_{K}}$, defined
     \label{fig:B2DsKK_helicty_angle_bins}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-The distribution of the helicty angle $\cos{\theta_{K}}$ in the region $1500<m(\Kp\Km)<1750\mevcc$ appears to have distinct minimum around $\cos{\theta_{K}}=0$. This may imply a spin-1 resonance contributes in this invariant mass region, for example the $\phiz(1680)$ or $\rho(1700)$ resonances.
+The distribution of $\cos{\theta_{K}}$ in the region $1500<m(\Kp\Km)<1750\mevcc$ appears to have distinct minimum around $\cos{\theta_{K}}=0$. This may imply a spin-1 resonance contributes in this invariant mass region, for example the $\phiz(1680)$ or $\rho(1700)$ resonances.
 
 
 %%%%%%%%%%%%%%====================
@@ -1045,9 +1054,8 @@ The distribution of the helicty angle $\cos{\theta_{K}}$ in the region $1500<m(\
 In the search for \decay{\Bp}{\Dsp\phiz} decays, detailed in Chapter~\ref{ch:B2DsPhi}, it is important to understand the contribution from \decay{\Bp}{\Dsp\Kp\Km} decays in the vicinity of the \phiz meson mass.
 A number of possible contributions around this region are investigated using the \laurapp package~\cite{1711.09854}. Simulation samples are generated for different intermediate resonance models.
 %To determine similar fractions for \decay{\Bp}{\Dsp\Kp\Km} decays the \laurapp package~\cite{1711.09854} is used to generate a number of simulation samples for different intermediate resonance models.
-
 Only resonances in the \Kp\Km system are considered as no significant structure is observed in the $m(\Dsp\Km)$ distribution in Fig.~\ref{fig:B2DsKK_twobodyprojections}. As such, all resonances are neutral mesons. The models are generated separately, therefore the effect of interference between any combination of states has been entirely neglected.    
-The generated samples are described in the following sections.
+%The generated samples are described in the following sections.
 
 
 \subsubsection{The $\phi(1020)$ resonance} 
@@ -1059,7 +1067,7 @@ This resonance is generated with a Relativistic Breit-Wigner line shape~\cite{Re
    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/phi_phi_mass.pdf}
    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/phi_Helicity.pdf}
    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/phi_Dalitz_plot.pdf}
-   \caption{The distribution of $m(\Kp\Km)$ (left), Dalitz plot (middle) and the helicity angle $\cos\theta_{K}$ for generated for the $\phiz(1020)$ resonance.} 
+   \caption{The distribution of $m(\Kp\Km)$ (left) the helicity angle $\cos\theta_{K}$ (middle) and Dalitz plot (right) generated for the $\phiz(1020)$ resonance.} 
    \label{fig:DsKK_model_phi1020}   
 \end{figure}
 %%%%%%%%%%%%%
@@ -1074,7 +1082,7 @@ In addition to \Kp\Km resonances, a non-resonant model is considered. This model
    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/NR_phi_mass.pdf}
    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/NR_Helicity.pdf}
    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/NR_Dalitz_plot.pdf}
-   \caption{The distribution of $m(\Kp\Km)$ (left), Dalitz plot (middle) and the helicity angle $\cos\theta_{K}$ for generated for non-resonant decays.} 
+   \caption{The distribution of $m(\Kp\Km)$ (left) the helicity angle $\cos\theta_{K}$ (middle) and Dalitz plot (right) generated for non-resonant decays.} 
    \label{fig:DsKK_model_NR}   
 \end{figure}
 %%%%%%%%%%%%%
@@ -1088,7 +1096,7 @@ The $f_{0}^{0}(980)$ resonance is a light unflavoured $J^{P} = 0^{+}$ state with
    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f0_phi_mass.pdf}
    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f0_Helicity.pdf}
    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f0_Dalitz_plot.pdf}
-   \caption{The distribution of $m(\Kp\Km)$ (left), Dalitz plot (middle) and the helicity angle $\cos\theta_{K}$ for generated for the $f_{0}^{0}(980)$ resonance.} 
+   \caption{The distribution of $m(\Kp\Km)$ (left) the helicity angle $\cos\theta_{K}$ (middle) and Dalitz plot (right) generated for the $f_{0}^{0}(980)$ resonance.} 
    \label{fig:DsKK_model_f0980}   
 \end{figure}
 %%%%%%%%%%%%%
@@ -1101,7 +1109,7 @@ The $a_{0}^{0}(980)$ resonance is a light unflavoured $J^{P} = 0^{+}$ state with
    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/a0_phi_mass.pdf}
    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/a0_Helicity.pdf}
    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/a0_Dalitz_plot.pdf}
-   \caption{The distribution of $m(\Kp\Km)$ (left), Dalitz plot (middle) and the helicity angle $\cos\theta_{K}$ for generated for the $a_{0}^{0}(980)$ resonance.} 
+   \caption{The distribution of $m(\Kp\Km)$ (left) the helicity angle $\cos\theta_{K}$ (middle) and Dalitz plot (right) generated for the $a_{0}^{0}(980)$ resonance.} 
    \label{fig:DsKK_model_a0980}   
 \end{figure}
 %%%%%%%%%%%%%
@@ -1114,7 +1122,7 @@ The $f_{0}^{0}(1370)$ resonance is a light unflavoured $J^{P} = 0^{+}$ state wit
    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f0_1370_phi_mass.pdf}
    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f0_1370_Helicity.pdf}
    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f0_1370_Dalitz_plot.pdf}
-   \caption{The distribution of $m(\Kp\Km)$ (left), Dalitz plot (middle) and the helicity angle $\cos\theta_{K}$ for generated for the $f_{0}^{0}(1370)$ resonance.} 
+   \caption{The distribution of $m(\Kp\Km)$ (left) the helicity angle $\cos\theta_{K}$ (middle) and Dalitz plot (right) generated for the $f_{0}^{0}(1370)$ resonance.} 
    \label{fig:DsKK_model_f01370}   
 \end{figure}
 %%%%%%%%%%%%%
@@ -1128,7 +1136,7 @@ The $f_{2}^{0}(1270)$ resonance is a $J^{P} = 2^{+}$ state with mass $1275.5\pm0
    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f2_phi_mass.pdf}
    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f2_Helicity.pdf}
    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f2_Dalitz_plot.pdf}
-   \caption{The distribution of $m(\Kp\Km)$ (left), Dalitz plot (middle) and the helicity angle $\cos\theta_{K}$ for generated for the $f_{2}^{0}(1270)$ resonance.} 
+   \caption{The distribution of $m(\Kp\Km)$ (left) the helicity angle $\cos\theta_{K}$ (middle) and Dalitz plot (right) generated for the $f_{2}^{0}(1270)$ resonance.} 
    \label{fig:DsKK_model_f21270}   
 \end{figure}
 %%%%%%%%%%%%%
@@ -1142,7 +1150,7 @@ The $a_{2}^{0}(1320)$ resonance is a $J^{P} = 2^{+}$ state with a mass $1318.1\p
    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/a2_1320_phi_mass.pdf}
    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/a2_1320_Helicity.pdf}
    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/a2_1320_Dalitz_plot.pdf}
-   \caption{The distribution of $m(\Kp\Km)$ (left), Dalitz plot (middle) and the helicity angle $\cos\theta_{K}$ for generated for the $a_{2}^{0}(1320)$ resonance.} 
+   \caption{The distribution of $m(\Kp\Km)$ (left) the helicity angle $\cos\theta_{K}$ (middle) and Dalitz plot (right) generated for the $a_{2}^{0}(1320)$ resonance.} 
    \label{fig:DsKK_model_a21320}   
 \end{figure}
 %%%%%%%%%%%%%

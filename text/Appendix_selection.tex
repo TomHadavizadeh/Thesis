@@ -1,0 +1,72 @@
+\chapter{Selection requirments}
+\label{ch:appendix_selection}
+
+The full list of requirements placed on candidates in their respective \emph{stripping lines} are listed in Table~\ref{tab:strippinglinecuts}.
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{ l l l}
+\hline
+Particle       & Quantity                       & Requirement                       \\ 
+\hline
+\Bp            & Mass                           &  $4750 < m(\Dsp\phiz) < 7000\mevcc$    \\  
+%               & Transverse Momentum            &  $\pt > 4000 \gevc$               \\  
+               & Products \pt scalar sum        &  $\sum{|\pt|} > 5000 \mevc$         \\  
+               & Vertex quality                 &  $\chi^{2}/N_{\text{DOF}} < 10$   \\  
+               & Lifetime                       &  $\tau_{\Bp} > 0.2\ps$            \\  
+               & Impact parameter significance  &  $\chi^{2}_{\text{IP}} < 25$      \\  
+               & Direction angle                &  $\cos{\theta}>0.999$             \\  
+               & \textit{$>$0 decay products with:}    &                                   \\
+               & Momentum                       &  $\ptot > 10000 \mevc$            \\  
+               & Transverse momentum            &  $\pt > 1700 \mevc$               \\  
+               & Impact parameter significance  &  $\chi^{2}_{\text{IP}} > 16$      \\  
+               & Impact parameter               &  $\text{IP} > 0.1\mm$             \\  
+               & \textit{$>$1 decay products with:}   &                                   \\
+               & Momentum                       &  $\ptot > 5000 \mevc$             \\  
+               & Transverse momentum            &  $\pt > 500 \mevc$                \\
+%               &                                &                                   \\
+\hline  
+\Dsp           & Mass                           &  $1770 < m(h^{+}h^{-}h^{+}) < 2068\mevcc$            \\  
+               & Products \pt scalar sum        &  $\sum{|\pt|} > 1800 \mevc$         \\ 
+               & Distance of closest approach   &  $\text{DOCA}(h^{+},h^{-}) < 0.5\mm$     \\
+               & Distance of closest approach   &  $\text{DOCA}(h^{-},h'^{+}) < 0.5\mm$     \\    
+               & Distance of closest approach   &  $\text{DOCA}(h^{+},h'^{+}) < 0.5\mm$     \\  
+               & Direction angle                &  $\cos{\theta}>0$                 \\  
+               & Vertex quality                 &  $\chi^{2}/N_{\text{DOF}} < 10$   \\   
+               & Flight distance significance   &  $\chi^{2}_{\text{FD} }  > 36$    \\   
+%               &                                &                                   \\  
+% \hline
+% \phiz          & Mass (only for \decay{\Bp}{\Dsp\phiz})&  $|m(\Kp\Km)-m_{\phiz}| < 150\mevcc$\\ 
+%                & Products \pt scalar sum        &  $\sum{|\pt|} > 1000 \mevc$         \\  
+%                & Distance of closest approach   &  $\text{DOCA}(\Kp,\Km) < 0.5\mm$  \\  
+%                & Direction angle                &  $\cos{\theta}>0$                 \\  
+%                & Vertex quality                 &  $\chi^{2}/N_{\text{DOF}} < 16$   \\   
+%                & Flight distance significance   &  $\chi^{2}_{\text{FD} }  > 16$    \\   
+%               &                                &                                   \\  
+\hline
+\phiz(\Dzb)    & Mass                           &  $870(1770) < m(X) < 1170(2068)\mevcc$\\ 
+               & Products \pt scalar sum        &  $\sum{|\pt|} > 1000~(1800) \mevc$         \\  
+               & Distance of closest approach   &  $\text{DOCA}(\Kp,\Km) < 0.5\mm$  \\  
+               & Direction angle                &  $\cos{\theta}>0$                 \\  
+               & Vertex quality                 &  $\chi^{2}/N_{\text{DOF}} < 16~(10)$   \\   
+               & Flight distance significance   &  $\chi^{2}_{\text{FD} }  > 16~(36)$    \\   
+%               &                                &                                   \\  
+% \hline
+% \Dzb           & Mass                           &  $1765 < m(h^{+}h^{-}h^{+}) < 1965\mevcc$\\  
+%                & Products \pt scalar sum        &  $\sum{|\pt|} > 1800 \mevc$         \\  
+%                & Distance of closest approach   &  $\text{DOCA}(\Kp,\Km) < 0.5\mm$  \\  
+%                & Direction angle                &  $\cos{\theta}>0$                 \\  
+%                & Vertex quality                 &  $\chi^{2}/N_{\text{DOF}} < 10$   \\   
+%                & Flight distance significance   &  $\chi^{2}_{\text{FD} }  > 36$    \\
+\hline
+\Kpm(\pipm)    & Track quality                  &  $\chi^{2}/N_{\text{DOF}}<4.0$    \\  
+               & Transverse momentum            &  $\pt > 100 \mevc$                \\  
+               & Momentum                       &  $\ptot > 1000 \mevc$             \\  
+               & Impact parameter significance  &  $\chi^{2}_{\text{IP}} > 4$       \\  
+               & Ghost track probability        &  $P_{\text{Ghost}} < 0.4$         \\
+               & Particle identification        &  $\text{PIDK}>-10$ ($\text{PIDK}<20$)\\  
+\hline
+\end{tabular}
+\caption{Selection requirements for \decay{\Bp}{\Dsp\phiz}, \decay{\Bp}{\Dsp\Kp\Km} and \decay{\Bp}{\Dsp\Dzb} candidates. The \phiz meson invariant mass window is not applied to \decay{\Bp}{\Dsp\Kp\Km} candidates.}
+\label{tab:strippinglinecuts}
+\end{table}
