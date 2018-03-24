@@ -733,7 +733,7 @@ The phase-space distribution of the relative PID efficiency between the signal a
 
 \subsubsection{MVA efficiency}
 
-The MVA efficiency is determined from samples for signal and normalisation simulations in which the PID distributions have been corrected as described previously. This is different to the approach used in the search for \decay{\Bp}{\Dsp\phiz} decays (Sec.~\ref{sec:B2DsPhi_eff_MVA}) and is required to account for the variation in the efficiency across the phase-space. The corrected PID variables are used to determine the \Dsp and \phiz MVA classifiers and the efficiency of the MVA requirements determined in different positions in the Dalitz plot as shown in Fig.\ref{fig:B2DsKK_releff_MVA}. There is a strong dependence on the position, with decays at low $m^{2}(\Kp\Km)$ values having a larger relative efficiency than those at higher values. This is likely to be because the MVA methods were trained using a sample of \decay{\phiz}{\Kp\Km} decays, so the selection favourably selects candidates with an invariant mass near the \phiz meson mass. A cross check is performed to compare the MVA efficiencies determined directly using the classifier produced with the corrected PID variables and the method described in Sec.~\ref{sec:selection_MVA_eff} that uses the MVA training samples to calculate the efficiency. The values of the efficiency determined for each mode are compared in Fig.~\ref{fig:B2DsKK_PID_eff_crosscheck} as a function of the $m(\Kp\Km)$ mass. The MVA training modes only exist for two discreet values; $m(\Kp\Km)=m(\phiz)$ and $m(\Kp\Km)=m(\Dzb)$ represented by the red points. These are compared to the \decay{\Bp}{\Dsp\Kp\Km} and \decay{\Bp}{\Ds\Dzb} efficiencies from the corrected simulations in black and blue respectively. A good agreement is found.
+The MVA efficiency is determined from samples for signal and normalisation simulations in which the PID distributions have been corrected as described previously. This is different to the approach used in the search for \decay{\Bp}{\Dsp\phiz} decays (Sec.~\ref{sec:B2DsPhi_eff_MVA}) and is required to account for the variation in the efficiency across the phase-space. The corrected PID variables are used to determine the \Dsp and \phiz MVA classifiers and the efficiency of the MVA requirements determined in different positions in the Dalitz plot as shown in Fig.\ref{fig:B2DsKK_releff_MVA}. There is a strong dependence on the position, with decays at low $m^{2}(\Kp\Km)$ values having a larger relative efficiency than those at higher values. This is likely to be because the MVA methods were trained using a sample of \decay{\phiz}{\Kp\Km} decays, so the selection favourably selects candidates with an invariant mass near the \phiz-meson mass. A cross check is performed to compare the MVA efficiencies determined directly using the classifier produced with the corrected PID variables and the method described in Sec.~\ref{sec:selection_MVA_eff} that uses the MVA training samples to calculate the efficiency. The values of the efficiency determined for each mode are compared in Fig.~\ref{fig:B2DsKK_PID_eff_crosscheck} as a function of the $m(\Kp\Km)$ mass. The MVA training modes only exist for two discreet values; $m(\Kp\Km)=m(\phiz)$ and $m(\Kp\Km)=m(\Dzb)$ represented by the red points. These are compared to the \decay{\Bp}{\Dsp\Kp\Km} and \decay{\Bp}{\Ds\Dzb} efficiencies from the corrected simulations in black and blue respectively. A good agreement is found.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
@@ -1053,109 +1053,205 @@ The distribution of $\cos{\theta_{K}}$ in the region $1500<m(\Kp\Km)<1750\mevcc$
 \subsection{Possible resonant contributions}
 \label{sec:B2DsKK_possible_res}
 
-In the search for \decay{\Bp}{\Dsp\phiz} decays, detailed in Chapter~\ref{ch:B2DsPhi}, it is important to understand the contribution from \decay{\Bp}{\Dsp\Kp\Km} decays in the vicinity of the \phiz meson mass.
+In the search for \decay{\Bp}{\Dsp\phiz} decays, detailed in Chapter~\ref{ch:B2DsPhi}, it is important to understand the contribution from \decay{\Bp}{\Dsp\Kp\Km} decays in the vicinity of the \phiz-meson mass.
 A number of possible contributions around this region are investigated using the \laurapp package~\cite{1711.09854}. Simulation samples are generated for different intermediate resonance models.
 %To determine similar fractions for \decay{\Bp}{\Dsp\Kp\Km} decays the \laurapp package~\cite{1711.09854} is used to generate a number of simulation samples for different intermediate resonance models.
-Only resonances in the \Kp\Km system are considered as no significant structure is observed in the $m(\Dsp\Km)$ distribution in Fig.~\ref{fig:B2DsKK_twobodyprojections}. As such, all resonances are neutral mesons. The models are generated separately, therefore the effect of interference between any combination of states has been entirely neglected.    
+Only resonances in the \Kp\Km system are considered as no significant structure is observed in the $m(\Dsp\Km)$ distribution in Fig.~\ref{fig:B2DsKK_twobodyprojections}. As such, all resonances are neutral mesons. The resonances, listed in Table~\ref{tab:B2DsKK_models}, are generated separately, therefore the effect of interference between any combination of states has been entirely neglected.    
 %The generated samples are described in the following sections.
 
 
-\subsubsection{The $\phi(1020)$ resonance} 
-Decays proceeding via a $\phiz(1020)$ are produced as a crosscheck. As the simulations generated with \laurapp have not been reconstructed with the full \lhcb detector model, this sample is compared to the existing full simulation samples. The differences in between the $m(\Kp\Km)$ and $\cos\theta_{K}$ distribution in the two samples are taken as a proxy for the potential level of bias introduced by using these generator level samples instead of full simulation. The distribution of these simulated decays in $m(\Kp\Km)$ and $\cos\theta_{K}$ are shown in Fig.~\ref{fig:DsKK_model_phi1020}. This figure also include the Dalitz plot distribution of the decays parametrised with the variables $m^{2}(\Dsp\Km)$ and $m^{2}(\Kp\Km)$.
-This resonance is generated with a Relativistic Breit-Wigner line shape~\cite{RelBWPhysRev.49.519}.
-%%%%%%%%%%%%%
+% \subsubsection{The $\phi(1020)$ resonance} 
+% Decays proceeding via a $\phiz(1020)$ are produced as a crosscheck. As the simulations generated with \laurapp have not been reconstructed with the full \lhcb detector model, this sample is compared to the existing full simulation samples. The differences in between the $m(\Kp\Km)$ and $\cos\theta_{K}$ distribution in the two samples are taken as a proxy for the potential level of bias introduced by using these generator level samples instead of full simulation. The distribution of these simulated decays in $m(\Kp\Km)$ and $\cos\theta_{K}$ are shown in Fig.~\ref{fig:DsKK_model_phi1020}. This figure also include the Dalitz plot distribution of the decays parametrised with the variables $m^{2}(\Dsp\Km)$ and $m^{2}(\Kp\Km)$.
+% This resonance is generated with a Relativistic Breit-Wigner line shape~\cite{RelBWPhysRev.49.519}.
+% %%%%%%%%%%%%%
+% \begin{figure}[!h]
+%    \centering   
+%    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/phi_phi_mass.pdf}
+%    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/phi_Helicity.pdf}
+%    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/phi_Dalitz_plot.pdf}
+%    \caption{The distribution of $m(\Kp\Km)$ (left) the helicity angle $\cos\theta_{K}$ (middle) and Dalitz plot (right) generated for the $\phiz(1020)$ resonance.} 
+%    \label{fig:DsKK_model_phi1020}   
+% \end{figure}
+% %%%%%%%%%%%%%
+
+% \subsubsection{Non-resonant decays}
+
+% In addition to \Kp\Km resonances, a non-resonant model is considered. This model is defined to have a uniform amplitude across the allowed phase-space. The distribution in $m(\Kp\Km)$ of \decay{\Bp}{\Dsp\Kp\Km} decays in Fig.~\ref{fig:B2DsKK_twobodyprojections} is not consistent with this model as there are no candidates above $m(\Kp\Km) \sim 1900\mevcc$. However, this component is included in this study for comparative purposes. The distributions of decays generated with this flat model are shown in Fig.~\ref{fig:DsKK_model_NR}. 
+
+% %%%%%%%%%%%%%
+% \begin{figure}[!h]
+%    \centering   
+%    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/NR_phi_mass.pdf}
+%    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/NR_Helicity.pdf}
+%    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/NR_Dalitz_plot.pdf}
+%    \caption{The distribution of $m(\Kp\Km)$ (left) the helicity angle $\cos\theta_{K}$ (middle) and Dalitz plot (right) generated for non-resonant decays.} 
+%    \label{fig:DsKK_model_NR}   
+% \end{figure}
+% %%%%%%%%%%%%%
+
+% \subsubsection{The $f_{0}^{0}(980)$ resonance}
+
+% The $f_{0}^{0}(980)$ resonance is a light unflavoured $J^{P} = 0^{+}$ state with mass $990\pm20\mevcc$ and width 10--100\mevcc~\cite{PDG2016}. It has been observed to decay to $\Kp\Km$ making it a suitable resonance to consider. Although it's mass is at the lower end of the range considered here, it's significant width allows it to contribute at higher invariant masses. This component is modelled with the Flatt\'{e} line shape~\cite{Flatte:1976xu} and the relevant distributions shown in Fig.~\ref{fig:DsKK_model_f0980}.
+% %%%%%%%%%%%%%
+% \begin{figure}[!h]
+%    \centering   
+%    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f0_phi_mass.pdf}
+%    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f0_Helicity.pdf}
+%    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f0_Dalitz_plot.pdf}
+%    \caption{The distribution of $m(\Kp\Km)$ (left) the helicity angle $\cos\theta_{K}$ (middle) and Dalitz plot (right) generated for the $f_{0}^{0}(980)$ resonance.} 
+%    \label{fig:DsKK_model_f0980}   
+% \end{figure}
+% %%%%%%%%%%%%%
+
+% \subsubsection{The $a_{0}^{0}(980)$ resonance}
+% The $a_{0}^{0}(980)$ resonance is a light unflavoured $J^{P} = 0^{+}$ state with mass $980\pm20\mevcc$ and width 50--100\mevcc and has been observed to decay to $\PK\Kb$ final states~\cite{PDG2016}. This resonance is also modelled with the Flatt\'{e} line shape and the relevant distributions are shown in Fig~\ref{fig:DsKK_model_a0980}.
+% %%%%%%%%%%%%%
+% \begin{figure}[!h]
+%    \centering   
+%    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/a0_phi_mass.pdf}
+%    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/a0_Helicity.pdf}
+%    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/a0_Dalitz_plot.pdf}
+%    \caption{The distribution of $m(\Kp\Km)$ (left) the helicity angle $\cos\theta_{K}$ (middle) and Dalitz plot (right) generated for the $a_{0}^{0}(980)$ resonance.} 
+%    \label{fig:DsKK_model_a0980}   
+% \end{figure}
+% %%%%%%%%%%%%%
+
+% \subsubsection{The $f_{0}^{0}(1370)$ resonance}
+% The $f_{0}^{0}(1370)$ resonance is a light unflavoured $J^{P} = 0^{+}$ state with a mass in the range 1200--1500\mevcc and width in the range 200--500\mevcc. It has been observed to decay to the \kaon\Kb final states. It is modelled with a Relativistic Breit-Wigner line shape and the relevant distributions are shown in Fig.~\ref{fig:DsKK_model_f01370}.
+% %%%%%%%%%%%%%
+% \begin{figure}[!h]
+%    \centering   
+%    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f0_1370_phi_mass.pdf}
+%    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f0_1370_Helicity.pdf}
+%    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f0_1370_Dalitz_plot.pdf}
+%    \caption{The distribution of $m(\Kp\Km)$ (left) the helicity angle $\cos\theta_{K}$ (middle) and Dalitz plot (right) generated for the $f_{0}^{0}(1370)$ resonance.} 
+%    \label{fig:DsKK_model_f01370}   
+% \end{figure}
+% %%%%%%%%%%%%%
+
+% \subsubsection{The $f_{2}^{0}(1270)$ resonance}
+% The $f_{2}^{0}(1270)$ resonance is a $J^{P} = 2^{+}$ state with mass $1275.5\pm08\mevcc$ and width $186.7^{+2.2}_{-2.5}\mevcc$ that has been observed to decay to \kaon\Kb final states. This resonance is modelled with a Relativistic Breit-Wigner line shape as shown in Fig.~\ref{fig:DsKK_model_f21270}.
+
+% %%%%%%%%%%%%%
+% \begin{figure}[!h]
+%    \centering   
+%    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f2_phi_mass.pdf}
+%    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f2_Helicity.pdf}
+%    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f2_Dalitz_plot.pdf}
+%    \caption{The distribution of $m(\Kp\Km)$ (left) the helicity angle $\cos\theta_{K}$ (middle) and Dalitz plot (right) generated for the $f_{2}^{0}(1270)$ resonance.} 
+%    \label{fig:DsKK_model_f21270}   
+% \end{figure}
+% %%%%%%%%%%%%%
+
+
+% \subsubsection{The $a_{2}^{0}(1320)$ resonance}
+% The $a_{2}^{0}(1320)$ resonance is a $J^{P} = 2^{+}$ state with a mass $1318.1\pm0.7\mevcc$ and width $109.8\pm2.4\mevcc$ (both measured in the \kaon\Kb mode) observed decaying to the \kaon\Kb final state. This resonance is modelled with a Relativistic Breit-Wigner line shape and shown in Fig.~\ref{fig:DsKK_model_a21320}.
+% %%%%%%%%%%%%%
+% \begin{figure}[!h]
+%    \centering   
+%    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/a2_1320_phi_mass.pdf}
+%    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/a2_1320_Helicity.pdf}
+%    \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/a2_1320_Dalitz_plot.pdf}
+%    \caption{The distribution of $m(\Kp\Km)$ (left) the helicity angle $\cos\theta_{K}$ (middle) and Dalitz plot (right) generated for the $a_{2}^{0}(1320)$ resonance.} 
+%    \label{fig:DsKK_model_a21320}   
+% \end{figure}
+% %%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%S[table-format=4.1(3)]
+\begin{table}[h]
+    \centering
+    \begin{tabular}{ l c c c c c }
+        \hline
+        Resonance           & $J^{P}$ & Mass (\mevcc)       & Width (\mevcc)        & Line shape    & Observed decay    \\
+        \hline
+        $\phi(1020)$        & $1^{-}$ & 1019.46$\pm$0.016   & 4.247$\pm$0.016       & RBW           & \Kp\Km            \\
+        \hline
+        $f_{0}^{0}(980)$    & $0^{+}$ & 990$\pm$20          & 10--100               & Flatt\'{e}    & \Kp\Km            \\
+        $a_{0}^{0}(980)$    & $0^{+}$ & 980$\pm$20          & 50--100               & Flatt\'{e}    & \kaon\Kb          \\
+        $f_{0}^{0}(1370)$   & $0^{+}$ & 1200--1500          & 200--500              & RBW           & \kaon\Kb          \\
+        $f_{2}^{0}(1270)$   & $2^{+}$ & 1275.5$\pm$08       & $186.7^{+2.2}_{-2.5}$ & RBW           & \kaon\Kb          \\
+        $a_{2}^{0}(1320)$   & $2^{+}$ & 1318.1$\pm$0.7      & 109.8$\pm$2.4         & RBW           & \kaon\Kb          \\
+        \hline
+        Non-resonant        & -       &  -              & -                     & -             &                   \\
+        \hline
+    \end{tabular}  
+    \caption{The properties of the resonances that could contribute to \decay{\Bp}{\Dsp\Kp\Km} decays in the vicinity of the \phiz-meson mass decays. Resonances are generated using a Relativistic Breit-Wigner (RBW)~\cite{RelBWPhysRev.49.519} or Flatt\'{e}~\cite{Flatte:1976xu} line shape. } 
+    \label{tab:B2DsKK_models}
+\end{table}
+
+
+Decays proceeding via a $\phiz(1020)$ are produced as a crosscheck. As the simulations generated with \laurapp have not been reconstructed with the full \lhcb detector model, this sample is compared to the existing full simulation samples. The differences in between the $m(\Kp\Km)$ and $\cos\theta_{K}$ distribution in the two samples are taken as a proxy for the potential level of bias introduced by using these generator level samples instead of full simulation. 
+
+The distribution of the models listed in Table~\ref{tab:B2DsKK_models} in $m(\Kp\Km)$, $\cos\theta_{K}$ and the \decay{\Bp}{\Dsp\Kp\Km} Dalitz plot are shown in Figs.~\ref{fig:B2DsKK_models_1} and~\ref{fig:B2DsKK_models_2}. 
+%This figure also include the Dalitz plot distribution of the decays parametrised with the variables $m^{2}(\Dsp\Km)$ and $m^{2}(\Kp\Km)$.
+In addition to \Kp\Km resonances, a non-resonant model is considered. This model is defined to have a uniform amplitude across the allowed phase-space. The distribution in $m(\Kp\Km)$ of \decay{\Bp}{\Dsp\Kp\Km} decays in Fig.~\ref{fig:B2DsKK_twobodyprojections} is not consistent with this model as there are no candidates above $m(\Kp\Km) \sim 1900\mevcc$. However, this component is included in this study for comparative purposes. The distributions of decays generated with this flat model are shown in Fig.~\ref{fig:B2DsKK_model_NR}. 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
-   \centering   
-   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/phi_phi_mass.pdf}
-   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/phi_Helicity.pdf}
-   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/phi_Dalitz_plot.pdf}
-   \caption{The distribution of $m(\Kp\Km)$ (left) the helicity angle $\cos\theta_{K}$ (middle) and Dalitz plot (right) generated for the $\phiz(1020)$ resonance.} 
-   \label{fig:DsKK_model_phi1020}   
+    \centering
+    \begin{subfigure}[t]{1.0\textwidth}
+       \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/phi_phi_mass.pdf}
+       \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/phi_Helicity.pdf}
+       \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/phi_Dalitz_plot.pdf}
+       \caption{$\phiz(1020)$} 
+       \label{fig:B2DsKK_model_phi}
+    \end{subfigure}
+    \begin{subfigure}[t]{1.0\textwidth}
+        \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/NR_phi_mass.pdf}
+        \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/NR_Helicity.pdf}
+        \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/NR_Dalitz_plot.pdf}
+        \caption{Non-resonant} 
+       \label{fig:B2DsKK_model_NR}
+    \end{subfigure}
+    \begin{subfigure}[t]{1.0\textwidth}
+        \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f0_phi_mass.pdf}
+        \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f0_Helicity.pdf}
+        \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f0_Dalitz_plot.pdf}
+        \caption{$f_{0}^{0}(980)$} 
+    \end{subfigure}
+    \begin{subfigure}[t]{1.0\textwidth}
+        \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/a0_phi_mass.pdf}
+        \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/a0_Helicity.pdf}
+        \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/a0_Dalitz_plot.pdf}
+        \caption{$a_{0}^{0}(980)$} 
+    \end{subfigure}
+    \caption{The distribution of $m(\Kp\Km)$ (left) the helicity angle $\cos\theta_{K}$ (middle) and Dalitz plot (right) generated for the various models.}
+    \label{fig:B2DsKK_models_1}
 \end{figure}
-%%%%%%%%%%%%%
-
-\subsubsection{Non-resonant decays}
-
-In addition to \Kp\Km resonances, a non-resonant model is considered. This model is defined to have a uniform amplitude across the allowed phase-space. The distribution in $m(\Kp\Km)$ of \decay{\Bp}{\Dsp\Kp\Km} decays in Fig.~\ref{fig:B2DsKK_twobodyprojections} is not consistent with this model as there are no candidates above $m(\Kp\Km) \sim 1900\mevcc$. However, this component is included in this study for comparative purposes. The distributions of decays generated with this flat model are shown in Fig.~\ref{fig:DsKK_model_NR}. 
-
-%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
-   \centering   
-   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/NR_phi_mass.pdf}
-   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/NR_Helicity.pdf}
-   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/NR_Dalitz_plot.pdf}
-   \caption{The distribution of $m(\Kp\Km)$ (left) the helicity angle $\cos\theta_{K}$ (middle) and Dalitz plot (right) generated for non-resonant decays.} 
-   \label{fig:DsKK_model_NR}   
+    \centering
+    \begin{subfigure}[t]{1.0\textwidth}
+        \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f0_1370_phi_mass.pdf}
+        \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f0_1370_Helicity.pdf}
+        \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f0_1370_Dalitz_plot.pdf}
+        \caption{$f_{0}^{0}(1370)$}
+    \end{subfigure}
+    \begin{subfigure}[t]{1.0\textwidth}
+        \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f2_phi_mass.pdf}
+        \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f2_Helicity.pdf}
+        \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f2_Dalitz_plot.pdf}
+        \caption{$f_{2}^{0}(1270)$} 
+    \end{subfigure}
+    \begin{subfigure}[t]{1.0\textwidth}
+        \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/a2_1320_phi_mass.pdf}
+        \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/a2_1320_Helicity.pdf}
+        \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/a2_1320_Dalitz_plot.pdf}
+        \caption{$a_{2}^{0}(1320)$} 
+    \end{subfigure}
+    \caption{The distribution of $m(\Kp\Km)$ (left) the helicity angle $\cos\theta_{K}$ (middle) and Dalitz plot (right) generated for the various models.}
+    \label{fig:B2DsKK_models_2}
 \end{figure}
-%%%%%%%%%%%%%
-
-\subsubsection{The $f_{0}^{0}(980)$ resonance}
-
-The $f_{0}^{0}(980)$ resonance is a light unflavoured $J^{P} = 0^{+}$ state with mass $990\pm20\mevcc$ and width 10--100\mevcc~\cite{PDG2016}. It has been observed to decay to $\Kp\Km$ making it a suitable resonance to consider. Although it's mass is at the lower end of the range considered here, it's significant width allows it to contribute at higher invariant masses. This component is modelled with the Flatt\'{e} line shape~\cite{Flatte:1976xu} and the relevant distributions shown in Fig.~\ref{fig:DsKK_model_f0980}.
-%%%%%%%%%%%%%
-\begin{figure}[!h]
-   \centering   
-   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f0_phi_mass.pdf}
-   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f0_Helicity.pdf}
-   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f0_Dalitz_plot.pdf}
-   \caption{The distribution of $m(\Kp\Km)$ (left) the helicity angle $\cos\theta_{K}$ (middle) and Dalitz plot (right) generated for the $f_{0}^{0}(980)$ resonance.} 
-   \label{fig:DsKK_model_f0980}   
-\end{figure}
-%%%%%%%%%%%%%
-
-\subsubsection{The $a_{0}^{0}(980)$ resonance}
-The $a_{0}^{0}(980)$ resonance is a light unflavoured $J^{P} = 0^{+}$ state with mass $980\pm20\mevcc$ and width 50--100\mevcc and has been observed to decay to $\PK\Kb$ final states~\cite{PDG2016}. This resonance is also modelled with the Flatt\'{e} line shape and the relevant distributions are shown in Fig~\ref{fig:DsKK_model_a0980}.
-%%%%%%%%%%%%%
-\begin{figure}[!h]
-   \centering   
-   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/a0_phi_mass.pdf}
-   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/a0_Helicity.pdf}
-   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/a0_Dalitz_plot.pdf}
-   \caption{The distribution of $m(\Kp\Km)$ (left) the helicity angle $\cos\theta_{K}$ (middle) and Dalitz plot (right) generated for the $a_{0}^{0}(980)$ resonance.} 
-   \label{fig:DsKK_model_a0980}   
-\end{figure}
-%%%%%%%%%%%%%
-
-\subsubsection{The $f_{0}^{0}(1370)$ resonance}
-The $f_{0}^{0}(1370)$ resonance is a light unflavoured $J^{P} = 0^{+}$ state with a mass in the range 1200--1500\mevcc and width in the range 200--500\mevcc. It has been observed to decay to the \kaon\Kb final states. It is modelled with a Relativistic Breit-Wigner line shape and the relevant distributions are shown in Fig.~\ref{fig:DsKK_model_f01370}.
-%%%%%%%%%%%%%
-\begin{figure}[!h]
-   \centering   
-   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f0_1370_phi_mass.pdf}
-   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f0_1370_Helicity.pdf}
-   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f0_1370_Dalitz_plot.pdf}
-   \caption{The distribution of $m(\Kp\Km)$ (left) the helicity angle $\cos\theta_{K}$ (middle) and Dalitz plot (right) generated for the $f_{0}^{0}(1370)$ resonance.} 
-   \label{fig:DsKK_model_f01370}   
-\end{figure}
-%%%%%%%%%%%%%
-
-\subsubsection{The $f_{2}^{0}(1270)$ resonance}
-The $f_{2}^{0}(1270)$ resonance is a $J^{P} = 2^{+}$ state with mass $1275.5\pm08\mevcc$ and width $186.7^{+2.2}_{-2.5}\mevcc$ that has been observed to decay to \kaon\Kb final states. This resonance is modelled with a Relativistic Breit-Wigner line shape as shown in Fig.~\ref{fig:DsKK_model_f21270}.
-
-%%%%%%%%%%%%%
-\begin{figure}[!h]
-   \centering   
-   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f2_phi_mass.pdf}
-   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f2_Helicity.pdf}
-   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/f2_Dalitz_plot.pdf}
-   \caption{The distribution of $m(\Kp\Km)$ (left) the helicity angle $\cos\theta_{K}$ (middle) and Dalitz plot (right) generated for the $f_{2}^{0}(1270)$ resonance.} 
-   \label{fig:DsKK_model_f21270}   
-\end{figure}
-%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\subsubsection{The $a_{2}^{0}(1320)$ resonance}
-The $a_{2}^{0}(1320)$ resonance is a $J^{P} = 2^{+}$ state with a mass $1318.1\pm0.7\mevcc$ and width $109.8\pm2.4\mevcc$ (both measured in the \kaon\Kb mode) observed decaying to the \kaon\Kb final state. This resonance is modelled with a Relativistic Breit-Wigner line shape and shown in Fig.~\ref{fig:DsKK_model_a21320}.
-%%%%%%%%%%%%%
-\begin{figure}[!h]
-   \centering   
-   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/a2_1320_phi_mass.pdf}
-   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/a2_1320_Helicity.pdf}
-   \includegraphics[width=0.32\textwidth]{figs/B2DsPhi/a2_1320_Dalitz_plot.pdf}
-   \caption{The distribution of $m(\Kp\Km)$ (left) the helicity angle $\cos\theta_{K}$ (middle) and Dalitz plot (right) generated for the $a_{2}^{0}(1320)$ resonance.} 
-   \label{fig:DsKK_model_a21320}   
-\end{figure}
-%%%%%%%%%%%%%
 
 
 
@@ -1163,7 +1259,7 @@ The $a_{2}^{0}(1320)$ resonance is a $J^{P} = 2^{+}$ state with a mass $1318.1\p
 %In order to choose suitable fractions for the \decay{\Bp}{\Dsp\Kp\Km} fit component a number of points are considered;
 \subsubsection{Models consistent with data}
 
-To determine which of the models that contribute in the region of the \phiz meson mass are most consistent with the observed signal, the following points are considered: 
+To determine which of the models that contribute in the region of the \phiz-meson mass are most consistent with the observed signal, the following points are considered: 
 
 \begin{itemize}
 \item Very few events are observed above 2000\mevcc in the background-subtracted $m(\Kp\Km)$ distribution, therefore the non-resonant model is neglected.
@@ -1172,7 +1268,7 @@ To determine which of the models that contribute in the region of the \phiz meso
 \item As this is not a full amplitude analysis no attempt is made to include the effects of interference, either between the remaining off-shell resonances or between these and any possible \decay{\Bp}{\Dsp\phiz} decays.
 \end{itemize}
 
-These considerations leave the $f_{0}^{0}(980)$ and $a_{0}^{0}(980)$ resonances as possible contributions in the region of the \phiz meson mass. 
+These considerations leave the $f_{0}^{0}(980)$ and $a_{0}^{0}(980)$ resonances as possible contributions in the region of the \phiz-meson mass. 
 
 %%%%%%%%%%%%%%====================
 

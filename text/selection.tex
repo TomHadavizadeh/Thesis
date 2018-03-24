@@ -57,8 +57,8 @@ The event selection aims to reduce overall rate of collisions, whilst maximising
 The online event selection is performed by the \lhcb trigger as described in Sec.~\ref{sec:Dec_trigger}.
 %, which consists of a hardware stage, based on information from the calorimeter and muon systems, followed by a software stage, which reconstructs the full event, as detailed in Sec.~\ref{sec:Dec_trigger}. 
 Trigger decisions are made globally for a given event; either the event is saved or it's discarded. However, for events that are retained, more detailed information about the specific interaction that initiated the trigger can be used to help isolate events containing signal candidates. At both hardware and software level there are a number of different triggers that can lead to an event being retained. In hardware this is broadly separated according to the sub-detector that contained the triggering deposit. 
-The single-muon and double-muon hardware triggers are initiated by high \pt deposits in the muon system whilst the hadronic trigger is initiated by \hcal clusters.  
-Deposits in the \ecal can trigger the photon or electron hardware trigger, depending on whether the hit was associated with an \spd hit.
+%The single-muon and double-muon hardware triggers are initiated by high \pt deposits in the muon system whilst the hadronic trigger is initiated by \hcal clusters.  
+%Deposits in the \ecal can trigger the photon or electron hardware trigger, depending on whether the hit was associated with an \spd hit.
 The \decay{\Bp}{\Dsp\Kp\Km} and \decay{\Bp}{\Dsp}{\phiz} decays are both reconstructed in fully hadronic final states, therefore events retained as a result of the electron, photon or muon triggers are unlikely to have been caused by the signal decays. 
 
 % In addition to specifying which triggers fired, it is possible to use more granular information about the specific hits initiating the trigger to improve the selection of signal candidates. The tracks constituting the reconstructed candidate are matched to the deposits in each sub-detector. 
@@ -227,7 +227,7 @@ The candidate \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays are buil
         \includegraphics[width=1.0\textwidth]{figs/Selection/B2DsD0_topology.pdf}
         \caption{Normalisation decays}
     \end{subfigure}\\
-    \caption{The signal and normalisation decay topologies. The collision of the two protons (blue) results in the primary collision vertex (PV). Many promptly produced tracks (red) originate at the PV. In both cases, the long-lived \Bp meson decay vertex is displaced from the PV. The long-lived charm mesons are also displaced from the \Bp meson decay vertex.}
+    \caption{The signal and normalisation decay topologies. The collision of the two protons (blue) results in the primary collision vertex (PV). Many promptly produced tracks (red) originate at the PV. In both cases, the long-lived \Bp-meson decay vertex is displaced from the PV. The long-lived charm mesons are also displaced from the \Bp-meson decay vertex.}
     \label{fig:topo}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -253,7 +253,7 @@ The \Dsp mesons used in the search for \decay{\Bp}{\Dsp\Kp\Km} decays are recons
    \label{tab:dsbranchingfractions}
 \end{table}
 
-%The searches for \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays employ the use of two different \emph{Stripping Lines} as detailed in Table~\ref{tab:strippinglines}. These differ only in the invariant mass window applied to the $\Kp\Km$ pair used to reconstruct the $\phi$ meson, and in the number of \Dsp decay modes included: the \decay{\Bp}{\Dsp\Kp\Km} line only reconstructs the Cabibbo Favoured (CF) \decay{\Dsp}{\Kp\Km\pip} decay. The \emph{Stripping Line} used to select the normalisation channel \decay{\Bp}{\Dsp\Dzb} is also included in Table~\ref{tab:strippinglines}. This has slightly different requirements allowing the \Dzb meson decay vertex to be be displaced from the \Bp meson decay vertex.
+%The searches for \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays employ the use of two different \emph{Stripping Lines} as detailed in Table~\ref{tab:strippinglines}. These differ only in the invariant mass window applied to the $\Kp\Km$ pair used to reconstruct the $\phi$ meson, and in the number of \Dsp decay modes included: the \decay{\Bp}{\Dsp\Kp\Km} line only reconstructs the Cabibbo Favoured (CF) \decay{\Dsp}{\Kp\Km\pip} decay. The \emph{Stripping Line} used to select the normalisation channel \decay{\Bp}{\Dsp\Dzb} is also included in Table~\ref{tab:strippinglines}. This has slightly different requirements allowing the \Dzb meson decay vertex to be be displaced from the \Bp-meson decay vertex.
 
 
 The selection of candidates makes requirements on many different distinguishing characteristics. The definitions of the relevant quantities are as follows:  
@@ -328,7 +328,7 @@ Loose requirements are placed on PIDK to ensure the tracks are of the required s
 %%%%%% Ds/ D0 and phi construction
 \subsubsection{\Dzb, \phiz and \Dsp requirements}
 The tracks passing these requirements are combined in pairs or triplets to form the \Dsp and \phiz or \Dzb meson candidates.  
-For the purpose of forming the \phiz candidates (or \Kp\Km pair), all combinations of two tracks are considered where the tracks are assigned the kaon mass. Only pairs which pass within $0.5\mm$ of one another at their closest point are retained. A number of requirements are imposed to ensure the pair are consistent with coming from a \phiz meson (or \Kp\Km pair) that originated in a \Bp meson decay. The vertex is required to be of good quality, the scalar sum of the transverse momentums must be greater than $1000\mevc$ and the flight distance significance is required to be $\chi^{2}_{\text{FD} } > 16$. Additionally the cosine of the direction angle, defined to be the angle between the momentum vector and flight vector, is required to be $\cos{\theta}>0$, preventing the vertex being backward of the PV when the momentum is in the forward direction. In the search for \decay{\Bp}{\Dsp\phiz} decays, the invariant mass of the two kaons is required to be within $150\mevcc$ of the known \phiz meson mass.  
+For the purpose of forming the \phiz candidates (or \Kp\Km pair), all combinations of two tracks are considered where the tracks are assigned the kaon mass. Only pairs which pass within $0.5\mm$ of one another at their closest point are retained. A number of requirements are imposed to ensure the pair are consistent with coming from a \phiz meson (or \Kp\Km pair) that originated in a \Bp-meson decay. The vertex is required to be of good quality, the scalar sum of the transverse momentums must be greater than $1000\mevc$ and the flight distance significance is required to be $\chi^{2}_{\text{FD} } > 16$. Additionally the cosine of the direction angle, defined to be the angle between the momentum vector and flight vector, is required to be $\cos{\theta}>0$, preventing the vertex being backward of the PV when the momentum is in the forward direction. In the search for \decay{\Bp}{\Dsp\phiz} decays, the invariant mass of the two kaons is required to be within $150\mevcc$ of the known \phiz-meson mass.  
 
 The \Dzb meson candidates are selecting using a similar parameters, however the exact values of the cuts are changed to reflect the differences in properties of the \phiz and \Dzb mesons. The vertex quality and flight distance significance requirements are tightened to $\chi^{2}/N_{\text{DOF}} < 10$ and $\chi^{2}_{\text{FD} }  > 36$ respectively. Additionally, the scalar \pt sum requirment is increased to $\sum{|\pt|} > 1800 \mevc$ as the decay products tend to have higher transverse momentum. 
 
@@ -761,7 +761,7 @@ The distribution of PIDK for pions and kaons is shown in Fig.~\ref{fig:selection
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The kaons and pions originating from the decays of \Dsp mesons are required to pass $\text{PIDK} > -5$ and $\text{PIDK} < 5$ respectively. Kaons originating in the \phiz meson decay, or from the \Bp meson in the case of \decay{\Bp}{\Dsp\Kp\Km}, are required to pass $\text{PIDK} > 0$. 
+The kaons and pions originating from the decays of \Dsp mesons are required to pass $\text{PIDK} > -5$ and $\text{PIDK} < 5$ respectively. Kaons originating in the \phiz-meson decay, or from the \Bp meson in the case of \decay{\Bp}{\Dsp\Kp\Km}, are required to pass $\text{PIDK} > 0$. 
 
 
 
@@ -771,7 +771,7 @@ The kaons and pions originating from the decays of \Dsp mesons are required to p
 Decays of \Bp mesons that didn't proceed via \D mesons could form a peaking background below the signal invariant mass distributions when they decay to the same final state.
 The signal mode could receive contributions from the decays $\decay{\Bp}{h^{+}h^{-}h^{+}\phiz}$ or $\decay{\Bp}{h^{+}h^{-}h^{+}h^{+}h^{-}}$, referred to as charmless backgrounds. Here $h^{\pm}$ is used to represent \Kpm or \pipm in the specific \Dsp, \Dzb or \phiz final state.
 The normalisation mode is also susceptible, however as it involves two charm mesons it could receive contributions from the decays $\decay{\Bp}{h^{+}h^{-}h^{+}\Dzb}$ or $\decay{\Bp}{\Dsp h^{+}h^{-}}$, referred to as single-charm backgrounds, and $\decay{\Bp}{h^{+}h^{-}h^{+} h^{+}h^{-}}$ referred to as a charmless background.
-These backgrounds can be suppressed by requiring the \D meson decay vertex to be displaced from the \Bp meson decay vertex. Requirements of varying strength are applied to the significance of the vertex separation ($\chi^{2}_{\text{FD}}$), depending on the extend to which each mode is affected by these backgrounds. The distributions of the flight distance significance for \decay{\Bp}{(\decay{\Dsp}{\Kp\pim\pip})\phiz} signal decays and the charmless \decay{\Bp}{\Kp\pim\pip\phiz} decay is shown in Fig.~\ref{fig:Selection_FDCHI2}.
+These backgrounds can be suppressed by requiring the \D-meson decay vertex to be displaced from the \Bp-meson decay vertex. Requirements of varying strength are applied to the significance of the vertex separation ($\chi^{2}_{\text{FD}}$), depending on the extend to which each mode is affected by these backgrounds. The distributions of the flight distance significance for \decay{\Bp}{(\decay{\Dsp}{\Kp\pim\pip})\phiz} signal decays and the charmless \decay{\Bp}{\Kp\pim\pip\phiz} decay is shown in Fig.~\ref{fig:Selection_FDCHI2}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
@@ -1130,13 +1130,13 @@ Another structure appears to be present to the left of the \Dzb peak in Fig.~\re
 \subsection{Multivariate analysis}
 \label{sec:selection_MVA}
 
-Multivariate Analyses (MVAs) are used to help discriminate between genuine \Dsp and \phiz meson decays and combinations of unrelated tracks. 
+Multivariate Analyses (MVAs) are used to help discriminate between genuine \Dsp and \phiz-meson decays and combinations of unrelated tracks. 
 These MVAs are trained on data using large samples of \B mesons decays which have similar topologies. 
 This data-driven approach can benefit from an expanded set of variables that are not perfectly represented in simulation, including track quality and particle identification information, in addition to the widely used kinematic and geometric properties.
 The method is based on the approach used in Ref.~\cite{LHCb-PAPER-2012-050}, however the choice of input variables has been optimised and training samples expanded to include Run II data.
 
 The sample of \Dsp mesons is obtained from the relatively abundant \decay{\Bsb}{\Dsp\pim} decay. Similarly, the sample of \phiz mesons is obtained from \decay{\Bs}{\jpsi\phiz} decays. Large, high purity samples are reconstructed using similar requirements to those applied in the selection of signal \Dsp and \phiz mesons.
-A sample is selected for each of the \Dsp and \phiz meson decays uses in this analysis, as listed in Table~\ref{tab:mva_modes}. 
+A sample is selected for each of the \Dsp and \phiz-meson decays uses in this analysis, as listed in Table~\ref{tab:mva_modes}. 
 The training of separate MVAs for the different \Dsp modes allows the use of particle identification variables that separate kaons and pions to be fully exploited.
 The MVA trained using \decay{\Bs}{\jpsi(\decay{\phiz}{\Kp\Km})} decays is used to select both \decay{\phiz}{\Kp}{\Km} and \decay{\Dzb}{\Kp\Km} decays. For the normalisation mode this may be suboptimal, however it ensures the selection of the signal and normalisation channels are almost identical such that the systematic uncertainty in the ratio of efficiencies is minimised.
 The samples of \decay{\Bsb}{\Dsp\pim} and \decay{\Bs}{\jpsi\phiz} decays are randomly split into two subsamples. The first is used to train the MVAs and the second is used to determine the efficiency of the selection. To prevent the difference between \phiz and \Dzb decays from affecting the ratio of efficiencies, the normalisation channel MVA efficiency is instead determined from a dedicated sample of \decay{\Dzb}{\Kp\Km} decays as detailed in Table.~\ref{tab:mva_modes}. The \decay{\phiz}{\Kp\Km} MVA is also used to select the \Kp\Km pair in \decay{\Bp}{\Dsp\Kp\Km} decays.
@@ -1207,7 +1207,7 @@ A full comparison of the relevant quantities are detailed in Appendix~\ref{sec:a
 
 % For the \decay{\Bs}{\jpsi\phiz} candidates, a large fraction are triggered due to the muons from the \jpsi decay. To ensure the sample is reflective of the signal decays the \Bs meson is required to be \texttt{TOS} with respect to the \texttt{L0Hadron} trigger or \texttt{TIS} with respect to \texttt{L0Global}. This effectively excludes events that have been selected solely due to muons initiating the muon hardware trigger. This consequently results in a large decrease in the available statistics.
 
-% As shown in Table~\ref{tab:strippingrequirments_phi}, the MVA training mode has tighter particle identification requirements than the signal mode. Particle identification plays a crucial role in the efficacy of the MVA methods, therefore the signal PID requirements for the \phiz meson decay products are tightened accordingly as discussed in Section~\ref{sec:pidrequirements}.
+% As shown in Table~\ref{tab:strippingrequirments_phi}, the MVA training mode has tighter particle identification requirements than the signal mode. Particle identification plays a crucial role in the efficacy of the MVA methods, therefore the signal PID requirements for the \phiz-meson decay products are tightened accordingly as discussed in Section~\ref{sec:pidrequirements}.
 
 % Finally, the same misidentified \D and \Lc hadron vetoes as detailed in Section~\ref{sec:pidvetos} are applied to the \decay{\Bsb}{\Dsp\pim} sample. These help to ensure the samples of \Dsp candidates are free from contamination.
 
@@ -1272,7 +1272,7 @@ For both \decay{\Bs}{\jpsi\phiz} and \decay{\Bsb}{\Dsp\pim} decays, simple fit m
 % g(m|a,b) = a\times(2m^{2}-1) + b\times m + 1,
 % \end{equation}
 % where $a$ and $b$ are parameters that can vary freely and $m$ is the observable invariant mass. 
-% The \phiz meson mass is close to the threshold for \Kp\Km pair production so this parametrisation has sufficient freedom to successfully  model the increasing background shape.
+% The \phiz-meson mass is close to the threshold for \Kp\Km pair production so this parametrisation has sufficient freedom to successfully  model the increasing background shape.
 % The background contribution to all three \Dsp decays are modelled using exponential functions with a single degree of freedom controlling the effective slope
 % \begin{equation}
 % g(m|c) = e^{-m\times c},
@@ -1941,7 +1941,7 @@ The data-driven MVAs target the selection of \phiz and \Dsp candidates, removing
 
 The \Bp meson candidate is required to be consistent with originating at the PV by requiring $\chi^2_{\text{IP}} < 10$. This helps to remove background as unrelated combinations of \Dsp and \phiz mesons will not necessarily point back towards the PV.
 Additionally, the opposite requirement is made of the \Dsp meson, $\chi^2_{\text{IP}} > 10$, to reduce charm meson backgrounds where the charm is produced promptly at the PV.
-%It is possible for \Dsp mesons to be produced promptly at the PV rather than in a \Bp meson decay and this requirement helps to remove those candidates.
+%It is possible for \Dsp mesons to be produced promptly at the PV rather than in a \Bp-meson decay and this requirement helps to remove those candidates.
 
 
 
@@ -2081,7 +2081,7 @@ Two variants of invariant mass are available, the \emph{raw} \Bp meson invariant
 A \emph{refit} \Bp meson invariant mass is also available. This improves the precision of the mass measurements by adding kinematic or topological constraints in a fit to the whole decay chain. 
 %in the vertex fits used to constructed the \Bp candidates from combinations of \Dsp and \phiz or \Dzb candidates. The 4-momentum vectors for the decay products trajectories are extrapolated to the vertex location and the invariant mass calculated from the sum of the decay products 4-vectors. The width of the \Bp meson distribution is dominated by the resolution of the \lhcb detector, as the natural width of the meson itself is $~0.4\times 10^{-3}\ev$.
 %It is possible to reduce the effect of the resolution by adding more constraints in the fit to the decay chain. 
-The mass of the \Dsp  (and \Dzb) meson is constrained to the known value. Additionally, the momentum vector of the \Bp meson is constrained to be parallel to the line between the primary interaction and the \Bp meson decay vertex. 
+The mass of the \Dsp  (and \Dzb) meson is constrained to the known value. Additionally, the momentum vector of the \Bp meson is constrained to be parallel to the line between the primary interaction and the \Bp-meson decay vertex. 
 This is implemented with the Decay Tree Fitter algorithm \cite{Hulsbergen:2005pu}.
 %With these constraints applied, the whole decay chain is refitted, and the \Bp meson mass recalculated. 
 For genuine signal and normalisation decays the resolution is improved.
