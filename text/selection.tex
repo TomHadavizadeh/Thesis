@@ -318,11 +318,8 @@ As the final states are fully hadronic, the candidates are built from the combin
 % \item loose requirements are places on PIDK to ensure the tracks are of the required species,
 % \item incorrect track candidates are suppressed by requiring $P_{\text{Ghost}}<0.4$.
 % \end{itemize} 
-
-The track $\chi^{2}/N_{\text{DOF}}$ is required to be below $4.0$ to ensure these are well reconstructed. Additionally, they are required to have a total momentum $\ptot > 1000 \mevc$ and the transverse momentum is required to be $\pt > 100 \mevc$.
+The track $\chi^{2}/N_{\text{DOF}}$ is required to be below $4.0$ to ensure these are well reconstructed. Additionally, they are required to have a total momentum $\ptot > 1000 \mevc$ and a transverse momentum $\pt > 100 \mevc$.
 Due to the long lifetime and high boost of the \Bp and \D mesons, the decay products originate from a vertex that is displaced from the proton-proton collision vertex. In this case the trajectory of the \Bp or \D decay products do not pass through the primary collision position, as shown in Fig.~\ref{fig:impact_parameter}. A requirement is placed on the significance of the impact parameter between the track and the proton-proton collision vertex of $\chi^{2}_{\text{IP}} > 4$ to ensure all of the tracks used are inconsistent with originating at the primary interaction.  
-
-
 Loose requirements are placed on PIDK to ensure the tracks are of the required species. These are further tightened as detailed in Section~\ref{sec:pidrequirements}. Incorrect track candidates created by combining unrelated \velo and tracking station hits are suppressed by requiring the ghost track probability, $P_{\text{Ghost}}$, to be less than $0.4$. 
 
 %%%%%% Ds/ D0 and phi construction
@@ -783,7 +780,6 @@ These backgrounds can be suppressed by requiring the \D-meson decay vertex to be
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 The residual yields of charmless backgrounds in the signal mode are estimated by performing a fit to the \Bp invariant mass for candidates with $25 < |m(h^{+}h^{-}h^{+}) - m(\Dsp)| < 50\mevcc $. This background estimation is performed separately for the \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} searches. 
-
 The invariant mass distribution for \decay{\Bp}{(\decay{\Dsp}{\Kp\pim\pip})\phiz} candidates with $25 < |m(\Kp\pim\pip) - m(\Dsp)| < 50\mevcc$ is shown in Fig.~\ref{fig:Selection_charmless_before_after}, with and without the flight distance significance requirement applied. The large contribution from charmless decays is effectively removed.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
@@ -796,7 +792,7 @@ The invariant mass distribution for \decay{\Bp}{(\decay{\Dsp}{\Kp\pim\pip})\phiz
         \includegraphics[width=1.0\textwidth]{figs/Selection/Signal_Ds2KPiPi_Test2_25_000000_DslessFDCHI2.pdf}
         \caption{After}
     \end{subfigure}\\
-    \caption{The invariant mass distribution of \decay{\Bp}{(\decay{\Dsp}{\Kp\pim\pip})\phiz} candidates with $25 < |m(\Kp\pim\pip) - m(\Dsp)| < 50\mevcc $ before (left) and after (right) the flight distance significance requirement is applied. The significant contribution from \decay{\Bp}{\Kp\pim\pip\phiz} and \decay{\Bp}{\Kp\pim\pip\Kp\Km} decays is removed. Partially reconstructed charmless decays below the \Bp meson mass are neglected.}
+    \caption{The invariant mass distribution of \decay{\Bp}{(\decay{\Dsp}{\Kp\pim\pip})\phiz} candidates with $25 < |m(\Kp\pim\pip) - m(\Dsp)| < 50\mevcc $ before (left) and after (right) the flight distance significance requirement is applied. The significant contribution from \decay{\Bp}{\Kp\pim\pip\phiz} and \decay{\Bp}{\Kp\pim\pip\Kp\Km} decays is removed. Partially reconstructed charmless decays below the \Bp meson mass are neglected in the simple fit model.}
     \label{fig:Selection_charmless_before_after}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -878,7 +874,7 @@ Decay Mode & Misidentified decay\\
 \label{table:pidvetos}
 
 \end{table*}
-The invariant mass distributions for each the misidentified \decay{\Dsp}{\Kp\Km\pip} decays are shown before any MVA requirements are applied in Figs.~\ref{fig:PIDVetos_Ds2KKPi_D_Veto} and \ref{fig:PIDVetos_Ds2KKPi_Lc_Veto}. For candidates within windows around the misidentified hadron mass, tighter PID requirements are imposed. These are illustrated in two-dimensional plots. 
+The invariant mass distributions for each the misidentified \decay{\Dsp}{\Kp\Km\pip} decays are shown in Figs.~\ref{fig:PIDVetos_Ds2KKPi_D_Veto} and \ref{fig:PIDVetos_Ds2KKPi_Lc_Veto}. For candidates within windows around the misidentified hadron mass, tighter PID requirements are imposed. These are illustrated in two-dimensional plots. 
 
 
 
@@ -1164,7 +1160,7 @@ A total of eight MVAs are trained, one for each of the \Dsp and \phiz modes, in 
 
 \subsubsection{Preselection}
 
-Before the samples of \Dsp and \phiz mesons are used to train the MVAs, precautions are taken to ensure the samples are representative of the \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} signal decays. The \decay{\Bsb}{\Dsp\pim} and \decay{\Bs}{\jpsi\phiz} decays are selected using a similar procedure to the signal modes. Firstly, \emph{Stripping Lines} reconstruct the candidates. The \decay{\Bsb}{\Dsp\pim} decays are built using the same software module as the signal and normalisation channel. Therefore, the selection requirements for \Dsp candidates in \decay{\Bsb}{\Dsp\pim} decays are identical to those listed for the signal in Table~\ref{tab:strippinglinecuts}.
+Before the samples of \Dsp and \phiz mesons are used to train the MVAs, precautions are taken to ensure the samples are representative of the \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} signal decays. The \decay{\Bsb}{\Dsp\pim} and \decay{\Bs}{\jpsi\phiz} decays are selected using a similar procedure to the signal modes. Firstly, \emph{Stripping Lines} reconstruct the candidates. The \decay{\Bsb}{\Dsp\pim} decays are built using the same software module as the signal and normalisation channel. Therefore, the selection requirements for \Dsp candidates in \decay{\Bsb}{\Dsp\pim} decays are identical to those for the signal (Appendix~\ref{ch:appendix_selection}).
 The \decay{\Bs}{\jpsi\phiz} decays are reconstructed using \decay{\jpsi}{\mup\mun} decays, therefore they are built using a different software module as the final state is not fully hadronic. As such there are some differences in the selection requirements for the \phiz mesons from the two sources. In general the selection requirements for the \decay{\Bs}{\jpsi\phiz} channel are looser as the presence of the muons allows an efficient triggering without the need to make tight selections on the \Kp\Km pair. 
 A full comparison of the relevant quantities are detailed in Appendix~\ref{sec:app_mva_preselection}.
 
@@ -1373,7 +1369,7 @@ The MVA method is trained using a large set of variables chosen to help discrimi
 \begin{description}
 \item \textbf{Track matching quality, $\chi^{2}_{\text{TRKMATCH}}$}: this parameter is an key component of the pattern recognition software that matches the \velo and tracking station track sections together to form \emph{long} tracks. It quantifies the quality of the track matching; incorrect combinations of track sections can have larger $\chi^{2}_{\text{TRKMATCH}}$ values than true tracks.  
 
-\item \textbf{\velo track quality, $\chi^{2}_{\text{TRKVELO}}$}: this quantifies the quality of the track fit using just the hits in the \velo as incorrect combinations of hits are likely to have higher values of $\chi^{2}_{\text{TRKVELO}}$ than true tracks.  
+\item \textbf{\velo track quality, $\chi^{2}_{\text{TRKVELO}}$}: this quantifies the quality of the track fit using just the hits in the \velo. Incorrect combinations of hits are likely to have higher values of $\chi^{2}_{\text{TRKVELO}}$ than true tracks.  
 
 
 \item \textbf{Kaon, proton, pion and ghost probabilities, ProbNN$x$ ($x\in[K,\pi,\proton,\text{ghost}]$)}: these variables are an alternative form of \emph{Particle Identification} variables in addition to those already discussed in Section~\ref{sec:pidrequirements}. Each ProbNN$x$ variable acts as the probability for the reconstructed track to be of the species $x$. These variables are the responses of Artificial Neural Networks trained to differentiate between the various particle types using a large number of inputs from different sub-detectors. The trainings use simulated samples of signal and background decays and have been retuned between Run~I and Run~II to reflect the difference in the detector configuration. Four of the available ProbNN$x$ variables are used in this analysis. Three of these identify kaons, protons and pions. The last aims to identify ghost tracks, similar to the $P_{\text{Ghost}}$ variable already discussed. 
@@ -1383,7 +1379,8 @@ The variables used in the \phiz and \Dsp meson MVAs are listed in Table~\ref{tab
 %Some of the variables are input into the MVA training algorithm as their logarithm, rather than the variable directly. These variables tend to be rapidly increasing in at certain values, so using the logarithm aids visualisation. 
 A total of 24 and 35 variables are used in the \phiz and \Dsp MVAs respectively.
 
-When training the \phiz meson MVA, the flight distance significance is not included as an input variable. This MVA is used to select both \phiz and \Dzb mesons which are likely to have different flight distance significance distributions as a result of their different lifetimes. The \Dsp MVA includes the flight distance significance as these mesons decay displaced from their production vertex.
+When training the \phiz meson MVA, the flight distance significance is not included as an input variable. This MVA is used to select both \phiz and \Dzb mesons which are likely to have different flight distance significance distributions as a result of their different lifetimes. 
+%The \Dsp MVA includes the flight distance significance as these mesons decay displaced from their production vertex.
 
 
 \begin{table}[h]
