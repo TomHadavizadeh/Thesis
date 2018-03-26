@@ -308,24 +308,24 @@ The yields of \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Dzb} decays are extrac
 \subsection{Signal and normalisation decays}
 \label{sec:B2DsPhi_signalcomps}
 
-The invariant mass distributions of \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Dzb} decays are parametrised using the same DCB function as in the search for \decay{\Bp}{\Dsp\Kp\Km} decays (Sec.~\ref{sec:B2DsKK_sigcomps})
-\begin{equation}
-\text{DCB}(m|\mu,\sigma_1,\sigma_2,n,\alpha) = f_\sigma \times \text{CB}(m|\mu,\sigma_1,n,\alpha) + (1-f_\sigma) \times \text{CB}(m|\mu,\sigma_2,n,\alpha),
-\label{eq:DoubleBD}
-\end{equation}
-where the CB function is defined as follows
-\begin{equation}
-\text{CB}(m|\mu,\sigma,n,\alpha) = \left \{
-  \begin{aligned}
-    &e^{-\frac{1}{2} \left(\frac{m-\mu}{\sigma}\right)^2} && \text{if}\ \left(\frac{m-\mu}{\sigma}\right) < -|\alpha|\\
-    &\frac{\left(\frac{n}{|\alpha|}\right)^n\times e ^{-\frac{1}{2}|\alpha|^2} }{\left(\frac{n}{|\alpha|}-|\alpha| - \frac{m-\mu}{\sigma}\right)^n} && \text{otherwise.}
-  \end{aligned} \right.
-\end{equation}
-Again, $\mu$, $\sigma$, $n$, $\alpha$ and $f_{\sigma}$ are adjustable parameters and $m$ is the \B meson invariant mass observable.
-The tail parameter $\alpha$ is fixed to values determined from maximum likelihood fits to simulated candidates for the signal and normalisation decays. The parameter $n$ is fixed to unity in the fits to both simulation and data to increase the stability of the tails.     
-The two CB function are allowed have different widths, $\sigma_{1}$ and $\sigma_{2}$, but the ratio $\sigma_{1}/\sigma_{2}$ is fixed from the fits to simulations, as is $f_{\sigma}$ that determines the fractional contribution of the narrower CB function ($\sigma_{1}<\sigma_{2}$). The values determined for each of these fixed parameters are tabulated in Appendix~\ref{ch:appendix_MCfits}, along with the uncertainty obtained from the fits.
-
-An extra constraint is added to the signal and normalisation DCB functions with respect to the configuration used in the search for \decay{\Bp}{\Dsp\Kp\Km} decays. As the number of signal candidates is likely to be small, the relative width of the narrower signal and normalisation CB functions, $\sigma_{1}(\Dsp\phi) / \sigma_{1}(\Dsp\Dzb)$, is also fixed to values obtained from the fits to simulations. 
+The invariant mass distributions of \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Dzb} decays are parametrised using the same DCB function as in the search for \decay{\Bp}{\Dsp\Kp\Km} decays (Sec.~\ref{sec:B2DsKK_sigcomps}).
+% \begin{equation}
+% \text{DCB}(m|\mu,\sigma_1,\sigma_2,n,\alpha) = f_\sigma \times \text{CB}(m|\mu,\sigma_1,n,\alpha) + (1-f_\sigma) \times \text{CB}(m|\mu,\sigma_2,n,\alpha),
+% \label{eq:DoubleBD}
+% \end{equation}
+% where the CB function is defined as follows
+% \begin{equation}
+% \text{CB}(m|\mu,\sigma,n,\alpha) = \left \{
+%   \begin{aligned}
+%     &e^{-\frac{1}{2} \left(\frac{m-\mu}{\sigma}\right)^2} && \text{if}\ \left(\frac{m-\mu}{\sigma}\right) < -|\alpha|\\
+%     &\frac{\left(\frac{n}{|\alpha|}\right)^n\times e ^{-\frac{1}{2}|\alpha|^2} }{\left(\frac{n}{|\alpha|}-|\alpha| - \frac{m-\mu}{\sigma}\right)^n} && \text{otherwise.}
+%   \end{aligned} \right.
+% \end{equation}
+% Again, $\mu$, $\sigma$, $n$, $\alpha$ and $f_{\sigma}$ are adjustable parameters and $m$ is the \B meson invariant mass observable.
+% The tail parameter $\alpha$ is fixed to values determined from maximum likelihood fits to simulated candidates for the signal and normalisation decays. The parameter $n$ is fixed to unity in the fits to both simulation and data to increase the stability of the tails.     
+% The two CB function are allowed have different widths, $\sigma_{1}$ and $\sigma_{2}$, but the ratio $\sigma_{1}/\sigma_{2}$ is fixed from the fits to simulations, as is $f_{\sigma}$ that determines the fractional contribution of the narrower CB function ($\sigma_{1}<\sigma_{2}$). 
+However, an extra constraint is added to the signal and normalisation DCB functions with respect to the previous configuration. As the number of signal candidates is likely to be small, the relative width of the narrower signal and normalisation CB functions, $\sigma_{1}(\Dsp\phi) / \sigma_{1}(\Dsp\Dzb)$, is also fixed to values obtained from the fits to simulations. 
+The simulation invariant mass fits and corresponding fixed parameter values can be found in Appendix~\ref{ch:appendix_MCfits}.
 %All fixed parameters are determined separately for the different \Dsp decay modes, and the results of the fits to simulated decays are shown in Fig.~\ref{fig:B2DsPhi_signal_fits}.     
 
 
@@ -617,51 +617,54 @@ To account for difference between the simulation and data samples all PDFs deter
 \subsection{Combinatorial  backgrounds}
 \label{sec:B2DsPhi_combcomps}
 
-Combinations of unrelated tracks form a background to the signal decays and extend across the entire fitted \Bp meson mass range. 
-This component is parametrised with a decaying exponential function 
-\begin{equation}
-f(m|c) = e^{-mc},
-\end{equation}
-where the parameter $c$ controls the slope and $m$ is the observable \Bp meson invariant mass. 
-The combinatorial background is the dominant background under the signal decays, therefore it is important to accurately extrapolate distribution from the high and low mass ranges to the signal range. 
+% Combinations of unrelated tracks form a background to the signal decays and extend across the entire fitted \Bp meson mass range. 
+% This component is parametrised with a decaying exponential function 
+% \begin{equation}
+% f(m|c) = e^{-mc},
+% \end{equation}
+% where the parameter $c$ controls the slope and $m$ is the observable \Bp meson invariant mass. 
+% The combinatorial background is the dominant background under the signal decays, therefore it is important to accurately extrapolate distribution from the high and low mass ranges to the signal range. 
 
+The combinatorial background is parametrised with the same PDF as used in the search for \decay{\Bp}{\Dsp\Kp\Km} decays in Sec.~\ref{sec:B2DsKK_combcomps}.
 The yields of combinatorial background is allowed to vary freely in each of the separate simultaneous fit categories. To improve the stability of the fit, the single slope parameter, $c$, is shared between all of the categories. 
 %In categories with lower statistics, for example the \decay{\Dsp}{\Kp\pim\pip} decay mode, it would be possible for the partially reconstructed backgrounds to be incorrectly assigned to the combinatorial component. This can happen if the exponential slope for that mode gets to large, causing it to `kick up' at low invariant masses. This may bias the signal yield in this mode. Fixing the slope parameter to be the same between the different \Dsp modes and between the signal and normalisation channel allows the lower statistics modes to benefit from those with higher statistics.
 
 \section{Free and constrained parameters}
 
 The fit to \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Dzb} decays contains a total of 54 free parameters. 
-These are divided into four different categories;
+These are divided into four different categories.
 
 %These are listed in Tab.~\ref{tab:B2DsPhi_free_variables}. 
 
-\subsection{Parameter of interest}
+%\subsection{Parameter of interest}
 
-The parameter of interest (POI) is the branching fraction for \decay{\Bp}{\Dsp\phiz} decays. This is determined directly in the fit to the signal and normalisation decays. The same single branching fraction is used for all of the \Dsp decays modes.
-The yield of signal candidates is calculated using the equation 
-\begin{equation}
-N(\decay{\Bp}{\Dsp\phiz}) = k_{\Dsp} \times \BF(\decay{\Bp}{\Dsp\phiz}) \times N(\decay{\Bp}{\Dsp\Dzb}),
-\end{equation}
-where $k_{\Dsp}$ is a constant defined for each \Dsp decay mode
-\begin{equation}
-k_{\Dsp} = \frac{\epsilon(\decay{\Bp}{\Dsp\Dzb})}{\epsilon(\decay{\Bp}{\Dsp\phiz})} \times  \frac{\BF(\decay{\phiz}{\Kp\Km})}{\BF(\decay{\Bp}{\Dsp\Dzb})\BF(\decay{\Dzb}{\Kp\Km})}.
-\end{equation}
-Here, the efficiencies $\epsilon$ are calculated for the specific \Dsp decay mode in question and external measurements are used for the additional branching fractions.
-The yield $N(\decay{\Bp}{\Dsp\phiz})$ is the total signal yield in all four $m(\Kp\Km)$ and $\cos\theta_{K}$ categories. The yields in each category are constrained to be in the ratios previously listed in Table~\ref{tab:signal_ratios}, \ie the yield in the $|m(\Kp\Km)<10\mevcc$ and $|\cos\theta_{K}|>0.4$ category is $0.82\times N(\decay{\Bp}{\Dsp\phiz})$.
+The parameter of interest (POI) is the branching fraction for \decay{\Bp}{\Dsp\phiz} decays. This is determined directly in the fit to the signal and normalisation decays. The same single branching fraction is used for all \Dsp decays modes.
+
+% The yield of signal candidates is calculated using the equation 
+% \begin{equation}
+% N(\decay{\Bp}{\Dsp\phiz}) = k_{\Dsp} \times \BF(\decay{\Bp}{\Dsp\phiz}) \times N(\decay{\Bp}{\Dsp\Dzb}),
+% \end{equation}
+% where $k_{\Dsp}$ is a constant defined for each \Dsp decay mode
+% \begin{equation}
+% k_{\Dsp} = \frac{\epsilon(\decay{\Bp}{\Dsp\Dzb})}{\epsilon(\decay{\Bp}{\Dsp\phiz})} \times  \frac{\BF(\decay{\phiz}{\Kp\Km})}{\BF(\decay{\Bp}{\Dsp\Dzb})\BF(\decay{\Dzb}{\Kp\Km})}.
+% \end{equation}
+% Here, the efficiencies $\epsilon$ are calculated for the specific \Dsp decay mode in question and external measurements are used for the additional branching fractions.
+% The yield $N(\decay{\Bp}{\Dsp\phiz})$ is the total signal yield in all four $m(\Kp\Km)$ and $\cos\theta_{K}$ categories. The yields in each category are constrained to be in the ratios previously listed in Table~\ref{tab:signal_ratios}, \ie the yield in the $|m(\Kp\Km)<10\mevcc$ and $|\cos\theta_{K}|>0.4$ category is $0.82\times N(\decay{\Bp}{\Dsp\phiz})$.
 
 
 
-\subsection{Shape parameters}
-As detailed in Sec~\ref{sec:B2DsPhi_fitcomponents}, the fit included eight parameters governing the shapes of various PDFs.
-\begin{itemize}
-\item The combinatorial background PDF is controlled by a single slope parameter $c$ for all categories.
-\item The mean \Bp mass for the signal and normalisation mode is free to vary in the fit. The same value is used for all \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Dzb} PDFs.
-\item The invariant mass offset $\delta$ shared between all partially reconstructed background PDFs is allowed to freely vary in the fit. The same value is used for the signal and normalisation modes.
-\item The relative heights of the two peaks in partially reconstructed \decay{\Bp}{\Dssp\phiz}, \decay{\Bp}{\Dssp\Dzb} and \decay{\Bp}{\Dsp\Dstarzb} decays, $\xi$, is allowed to vary. The same value is used for all modes.
-\item The smaller CB width parameter, $\sigma_{1}$, is allowed to vary for each of the \Dsp decay modes, leading to four more free parameters. 
-\end{itemize}
+%\subsection{Shape parameters}
+The fit included eight parameters governing the shapes of various PDFs.
+This includes: a single combinatorial background slope parameter, $c$; the mean \Bp mass, $\mu$; the partially reconstructed background mass offset, $\delta$; the relative height of the double peaked \decay{\Bp}{\Dssp\phiz}, \decay{\Bp}{\Dssp\Dzb} and \decay{\Bp}{\Dsp\Dstarzb} decays, $\xi$; and the narrower CB width parameter $\sigma_{1}$ (for each \Dsp mode). 
+% \begin{itemize}
+% \item The combinatorial background PDF is controlled by a single slope parameter $c$ for all categories.
+% \item The mean \Bp mass for the signal and normalisation mode is free to vary in the fit. The same value is used for all \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Dzb} PDFs.
+% \item The invariant mass offset $\delta$ shared between all partially reconstructed background PDFs is allowed to freely vary in the fit. The same value is used for the signal and normalisation modes.
+% \item The relative heights of the two peaks in partially reconstructed \decay{\Bp}{\Dssp\phiz}, \decay{\Bp}{\Dssp\Dzb} and \decay{\Bp}{\Dsp\Dstarzb} decays, $\xi$, is allowed to vary. The same value is used for all modes.
+% \item The smaller CB width parameter, $\sigma_{1}$, is allowed to vary for each of the \Dsp decay modes, leading to four more free parameters. 
+% \end{itemize}
 
-\subsection{Yields}
+%\subsection{Yields}
 
 The fit model contains a total of 36 free parameters that are yields.
 \begin{itemize}
@@ -673,7 +676,7 @@ The fit model contains a total of 36 free parameters that are yields.
 
 
 
-\subsection{Fractions}
+%\subsection{Fractions}
 
 
 
@@ -803,7 +806,7 @@ This parameter is included as a cross check. The normalisation decays have a fla
 
 \section{Fit validation}
 \label{sec:B2DsPhi_fitstrategy}
-The simultaneous fitting framework is validated by generating pseudo-experiments using a similar procedure as described in the search for \decay{\Bp}{\Dsp\Kp\Km} decays. The frame work is found to not have any significant bias as described in Appendix~\ref{ch:appendix_toys}.
+The simultaneous fitting framework is validated by generating pseudo-experiments using a similar procedure as described in the search for \decay{\Bp}{\Dsp\Kp\Km} decays. The framework is found to not have any significant bias as described in Appendix~\ref{sec:app_toys_B2DsPhi}.
 
 
 % The simultaneous fitting framework is validated by generating pseudo-experiments (also referred to as \emph{toys}). The total fit model PDF is randomly sampled to create a simulation sample with the same number of candidates as the nominal fit. These are then fitted using the same fit model, determining the best estimate and uncertainty of each parameter. The parameter values used to generate the pseudo-experiments are chosen to be the final parameter values as determined in a fit to data. This is known as the plug-in method~\cite{plugin}.
@@ -1026,17 +1029,16 @@ Fractions  & Ratio of \Dsp\Kp\Km to \Dsp\Dzb                                    
 The branching fraction for \decay{\Bp}{\Dsp\phiz} decays is determined by correcting the yields for the signal and normalisation channels by their respective efficiencies. 
 %In determining the efficiencies both the \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Dzb} decays are assumed to be pseudo-two-body decays in which variations as a function of phase-space are negligible. 
 %This means the relative efficiency can be calculated as a simple ratio for each \Dsp decay mode, simplifying the correction considerably.    
-The relative efficiency are calculated as a ratio for each \Dsp decay mode.    
-
-The efficiencies for each stage of selection are either determined from the appropriate simulation samples for the signal and normalisation decays, or from dedicated calibration data samples for the efficiencies involving particle identification requirements. 
-Each set of efficiencies are determined with respect to the previous one, such that the total efficiency is given by the product of each of them.
+The relative efficiency is calculated as a ratio for each \Dsp decay mode.    
+The efficiencies for each stage of selection are either determined from simulations, or from dedicated calibration data samples for the efficiencies involving particle identification requirements. 
+%Each set of efficiencies are determined with respect to the previous one, such that the total efficiency is given by the product of each of them.
 
 
 \subsection{Efficiencies from simulation}
 
 The efficiencies for each step of selection are listed separately for the different \Dsp decay modes in Table~\ref{tab:B2DsPhi_eff}. 
 %These steps are closely related to the stages previously described in Chapter~\ref{ch:selection}, however more specific details of what is included in each step is described here. 
-The efficiencies are calculated separately for the different years of data taking, however they are combined here, weighting according to the relative contributions to the total data set. 
+The efficiencies are calculated separately for the different years of data taking, however they are combined here, weighted according to the relative contributions to the total data set. 
 
 % \begin{table}[h]
 % \centering
@@ -1152,22 +1154,25 @@ The efficiencies are calculated separately for the different years of data takin
 
 \begin{description}
 
-\item \textbf{Acceptance:} this accounts for the fraction of generated decays in which all five final state tracks end up within the \lhcb detector's acceptance. For all \Dsp decay modes the signal decay has a slightly higher efficiency than the normalisation channel. This may because of the kinematics of the \decay{\phiz}{\Kp\Km} decay in which the two kaon tracks are typically close to one another and therefore more likely to both be in the acceptance.   
+\item \textbf{Acceptance:} this accounts for the fraction of generated decays in which all five final state tracks end up within the \lhcb detector's acceptance. The signal decay has a slightly higher efficiency than the normalisation as the two kaon from the \phiz meson are typically produced close to one another and therefore more likely to both be in the acceptance.   
 
-\item \textbf{Reconstruction:} this efficiency determines the fraction of decays in which all tracks are well reconstructed and combined into a suitable candidate that passes all \emph{stripping line} requirements. 
-Only events in which there was positive trigger decision are processed in the reconstruction (in simulation as well as data), therefore this efficiency effectively includes some, but not all, of the triggering efficiency.
+\item \textbf{Reconstruction:} this efficiency determines the fraction of decays in which all tracks are well reconstructed and combined into a suitable candidate that pass the \emph{stripping line} requirements. 
+Only events in which there was positive trigger decision are reconstructed (in simulation as well as data) resulting in small efficiencies around 2\%.
 %The reconstruction selections used for both the signal and normalisation decays explicitly require that the event in which the candidate was found had fired the trigger. Therefore this efficiency includes some, but not all, of the trigger efficiency. 
-This results in small efficiencies around 2\% for each mode. Here, the efficiencies are slightly larger for the normalisation channel than the signal. This may be because the kaons from the \phiz decay are typically lower momentum than those from the \Dzb, and therefore less likely to be reconstructed.  
+%This results in small efficiencies around 2\% for each mode. 
+Here, the efficiencies are slightly larger for the normalisation channel than the signal as the kaons from the \phiz decay are typically lower momentum than those from the \Dzb, and therefore less likely to be reconstructed.  
 
-\item \textbf{Trigger:} this efficiency effectively accounts for the likelihood that the candidate passed at least one of the requirements in Sec.~\ref{sec:selection_trigger}, given that an event had a positive trigger decision. These efficiencies have very high values around 94\%.  
+\item \textbf{Trigger:} this efficiency effectively accounts for the likelihood that the candidate passed the trigger requirements, given that an event had a positive trigger decision. These efficiencies have very high values around 94\%.  
 
-\item \textbf{Mass windows:} this represents the efficiency for the candidates to be within the invariant mass windows for the \Dsp and \phiz or \Dzb mesons. Again, this is slightly high for the normalisation than the signal as \phiz meson invariant mass peak has a tail extending to higher invariant masses.  
+\item \textbf{Mass windows:} this represents the efficiency for the candidates to be within the invariant mass windows for the \Dsp and \phiz or \Dzb mesons. 
 
-\item \textbf{Vetoes:} the efficiency of the kinematic vetoes described in Sec.~\ref{sec:kinematicvetos} is included in this quantity. The misidentified \D and \Lc hadron vetoes target the \Dsp meson, present in both the signal and normalisation decays. The relative efficiency is assumed to be one for these specific vetoes therefore not included in this efficiency. The systematic uncertainty resulting from this assumption is discussed in Sec.~\ref{sec:B2DsPhi_systuncertainy}. Most of the kinematic vetoes are only applied to the signal mode, hence why the normalisation channel efficiencies are almost 100\%.
+\item \textbf{Vetoes:} the efficiency of the invariant mass vetoes are included in this quantity. The relative efficiency of the misidentified \D and \Lc hadron vetoes is assumed to be one and therefore not included in this efficiency. 
+%The systematic uncertainty resulting from this assumption is discussed in Sec.~\ref{sec:B2DsPhi_systuncertainy}. 
+Most of the invariant mass vetoes are relevant to the signal mode, hence why the normalisation channel efficiencies are almost 100\%.
 
 \item \textbf{Charmless:} the requirements applied to the flight distance significance of the \Dsp meson is tuned differently for each \Dsp decay and signal and normalisation. As a result, the efficiencies have large variations between the different modes.
 
-\item \textbf{$\chi^{2}_{\text{IP}}$:} the efficiency of the $\chi^{2}_{\text{IP}}$ requirements for the \Bp and \Dsp candidates as detailed in Sec.~\ref{sec:selection_IPCHI2} are included in this quantity. These are only applied to the signal mode therefore the normalisation mode is 100\% efficient.
+\item \textbf{$\chi^{2}_{\text{IP}}$:} the efficiency of the $\chi^{2}_{\text{IP}}$ requirements for the \Bp and \Dsp candidates are included in this quantity. These are only applied to the signal mode therefore the normalisation mode is 100\% efficient.
 
 \end{description}
 
@@ -1202,15 +1207,19 @@ The efficiencies of the particle identification and MVA requirements are both de
 \subsubsection{PID efficiency}
 \label{sec:B2DsPhi_eff_PID}
 
-The efficiency of the particle identification requirements described in Sec.~\ref{sec:pidrequirements} are determined using a package called \pidcalib~\cite{PIDCalib}. This uses calibrations samples for the different particle species to determine the fraction of candidates passing the various PID variable requirements. The samples are background-subtracted to isolate the distributions of the PID variables for the tracks of interest. The calibration samples for both \Kp and \pip mesons are collected from a sample of \decay{\Dstarp}{(\decay{\Dz}{\Kp\pim})\pip} decays, using the decay products of the \Dz decay. 
-
+The efficiency of the PIDK requirements are determined using \pidcalib~\cite{PIDCalib}. 
+% This uses calibrations samples for the different particle species to determine the fraction of candidates passing the various PID variable requirements. 
+Sample of \decay{\Dstarp}{(\decay{\Dz}{\Kp\pim})\pip} decays are background-subtracted to isolate the distributions of the PID variables for the \Kp and \pim mesons. 
+%The calibration samples for both \Kp and \pip mesons are collected from a sample of \decay{\Dstarp}{(\decay{\Dz}{\Kp\pim})\pip} decays, using the decay products of the \Dz decay. 
 Unlike in the search for \decay{\Bp}{\Dsp\Kp\Km} decays, the PID variable distributions of the calibration samples are parametrised using a binned approach, with three characterising variables; the momentum \ptot, pseudo-rapidity \Peta, and total number of tracks $n_{\text{Track}}$. Input from the signal and normalisation simulation samples is used to determine per-candidate efficiencies. The characteristics (\ptot,\Peta,$n_{\text{Track}}$) of each simulated decay is used to find the corresponding calibration PID variable distribution. The per-candidate efficiency is calculated by integrating this distribution above the PID requirement. The total efficiency is given by the average of the per-candidate efficiencies. The efficiencies of the PID requirements on the signal and normalisation for the different \Dsp decay modes are listed in Table~\ref{tab:B2DsPhi_eff_from_calib}.
 
 
 \subsubsection{MVA efficiency}
 \label{sec:B2DsPhi_eff_MVA}
 
-The efficiency of the MVA requirements is determined using the method outlined in Sec.~\ref{sec:selection_MVA_eff}. The validation samples of \decay{\Bsb}{\Dsp\pim} and \decay{\Bs}{\jpsi\phiz} decays are binned in transverse momentum \pt and flight distance significance $\chi^{2}_{\text{FD}}$. The background-subtracted MVA responses are extracted for each bin. Samples of simulated decays are iterated though, finding the \pt and $\chi^{2}_{\text{FD}}$ values for each candidate and calculating the MVA cut efficiency from the corresponding validation samples. The total efficiency for each candidate is the product of the \Dsp and \phiz MVA selection efficiencies. The total efficiency for the whole sample is then given by the sum of the per-candidate efficiencies as listed in Table~\ref{tab:B2DsPhi_eff_from_calib}.
+The relative MVA efficiencies shown in Table~\ref{tab:B2DsPhi_eff_from_calib} are determined using the data-driven method outlined in Sec.~\ref{sec:selection_MVA_eff}. 
+%The validation samples of \decay{\Bsb}{\Dsp\pim} and \decay{\Bs}{\jpsi\phiz} decays are binned in transverse momentum \pt and flight distance significance $\chi^{2}_{\text{FD}}$. The background-subtracted MVA responses are extracted for each bin. Samples of simulated decays are iterated though, finding the \pt and $\chi^{2}_{\text{FD}}$ values for each candidate and calculating the MVA cut efficiency from the corresponding validation samples. The total efficiency for each candidate is the product of the \Dsp and \phiz MVA selection efficiencies. 
+%The total efficiency for the whole sample is then given by the sum of the per-candidate efficiencies as listed in Table~\ref{tab:B2DsPhi_eff_from_calib}.
 
 
 
@@ -1287,17 +1296,21 @@ The PDFs used to describe the signal and normalisation channel invariant mass di
 The resulting spread in the branching fraction obtained by re-sampling all fixed parameters simultaneously is $0.036\times10^{-7}$, assigned as the systematic uncertainty.
 
 \subsection{Background PDFs}
-Similarly the background PDFs require inputs determined from simulations. 
+Similarly the background PDFs require inputs determined from simulations. The fit is repeated, varying the fixed values and the resulting variation in the branching fraction is measured.
 %A large number of different properties of the PDFs are varied to determine the systematic uncertainty the fixed values incur. The resulting spread in the branching fraction is assigned as the systematic uncertainty. 
-The helicity fraction of \decay{\Bp}{\Dssp\phiz} decays is not measured and therefore assumed to be 0.5. This assumption is varied across all allowed values. Additionally, the PDF for both \decay{\Bp}{\Dssp\phiz} decay and the \decay{\Bp}{\Dssp\Dzb} and \decay{\Bp}{\Dsp\Dstarzb} decays that contribute to the normalisation mode require the kinematic limits $a$ and $b$ to be defined. These values are varied. 
-
-The backgrounds to the signal mode require the fraction of decays expected in each $m(\Kp\Km)$ and $\cos{\theta_{K}}$ category to be determined from simulations. These are each have an associated statistical uncertainty due to the limited simulation samples, therefore these fractions are varied by sampling a Gaussian whose width is determined by the uncertainty. 
-
-In the fit to the normalisation mode the partially reconstructed background \decay{\Bp}{\Dssp\Dstarzb} is approximated with a single PDF, rather than eight as required by the combinations of missed particles and helicity components. This function is replaced with a DCB function with free widths mean and tail parameters. This results in a negligible change in the branching fraction. 
-
-The combinatorial background is parametrised with an exponential and constrained to have the same slope in all categories. To determine if these choices lead to systematic uncertainty the fit is repeated with the slope allowed to be different in the different \Dsp decay mode categories. Additionally an exponential plus constant offset is tried as a parametrisation instead. The resulting changes in the branching fractions are included as systematic uncertainties.  
-
+These include: the assumed helicity fraction of \decay{\Bp}{\Dssp\phiz} decays; the kinematic endpoints of \decay{\Bp}{\Dssp\phiz}, \decay{\Bp}{\Dssp\Dzb} and \decay{\Bp}{\Dsp\Dstarzb} decays; and the fraction of signal and background decays expected in each $m(\Kp\Km)$ and $\cos{\theta_{K}}$ category.
+Additionally, different parametrisations of the \decay{\Bp}{\Dssp\Dstarzb} and combinatorial background components are tested.
 The total systematic uncertainty associated to the background PDFs is determined to be $0.685\times 10^{-7}$
+
+%The helicity fraction of \decay{\Bp}{\Dssp\phiz} decays is not measured and therefore assumed to be 0.5. This assumption is varied across all allowed values. Additionally, the PDF for both \decay{\Bp}{\Dssp\phiz} decay and the \decay{\Bp}{\Dssp\Dzb} and \decay{\Bp}{\Dsp\Dstarzb} decays that contribute to the normalisation mode require the kinematic limits $a$ and $b$ to be defined. These values are varied. 
+
+%The backgrounds to the signal mode require the fraction of decays expected in each $m(\Kp\Km)$ and $\cos{\theta_{K}}$ category to be determined from simulations. These are each have an associated statistical uncertainty due to the limited simulation samples, therefore these fractions are varied by sampling a Gaussian whose width is determined by the uncertainty. 
+
+% In the fit to the normalisation mode the partially reconstructed background \decay{\Bp}{\Dssp\Dstarzb} is approximated with a single PDF, rather than eight as required by the combinations of missed particles and helicity components. This function is replaced with a DCB function with free widths mean and tail parameters. This results in a negligible change in the branching fraction. 
+
+% The combinatorial background is parametrised with an exponential and constrained to have the same slope in all categories. To determine if these choices lead to systematic uncertainty the fit is repeated with the slope allowed to be different in the different \Dsp decay mode categories. Additionally an exponential plus constant offset is tried as a parametrisation instead. The resulting changes in the branching fractions are included as systematic uncertainties.  
+
+% The total systematic uncertainty associated to the background PDFs is determined to be $0.685\times 10^{-7}$
 
 \subsection{Charmless contribution}
 A residual yield of charmless and single-charm backgrounds are expected be present in the final dataset as detailed in Table~\ref{tab:selection_fd_cuts}. The nominal measurement for the branching fraction neglects these contributions. The branching fraction is recalculated assuming the expected yields contribute and the difference assigned as the systematic uncertainty. This is likely to be an overestimation of the possible difference as the charmless candidates are likely to have a wider distribution than the signal decays. This is a result of the \Dsp mass constraint applied to the candidates when calculating the fitted \Bp mass. 

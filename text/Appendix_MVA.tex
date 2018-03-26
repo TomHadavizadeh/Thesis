@@ -538,3 +538,67 @@ The BDTG method is used in training all MVAs.
 
 The MVA classifier distributions for each of the eight MVAs trained are shown in Fig.~\ref{fig:mvaclassifierresponses}. This figure shows both the signal and background samples, as well as the training and validation subsamples. Each mode shows a good separation between the signal and background samples. For the majority of the distributions the training and testing samples have almost identical shapes, implying response is reproducible and the method has not overtrained. There are noticeable exceptions, however. The signal training and validation samples tend to show different distributions in the regions where the background distributions are maximal. This effect is likely to be a result of the use of weights in the MVA training. Ideally, the MVA classifier should remain positive across the whole range. The negative values implies that in that range the MVA classifier is correlated to the parameter used to generate the weights: the \phiz or \Dsp mass. As this only affects the range of MVA classifier values that are dominantly `background'-like, it likely this discrepancy is due specifically to presence of weighted background events in the signal sample passed to \tmva.
 This effect is further studied to determine if it results in any systematic uncertainty in the MVA efficiencies as discussed in Sections~\ref{sec:B2DsKK_systuncertainy} and~\ref{sec:B2DsPhi_systuncertainy}. In all cases the discrepancies are far below the range of values that selection requirements are placed. 
+
+\section{Optimisation}
+\label{sec:app_mva_optimisation}
+The VA optimisation is performed in two dimensions, one for each of the \phiz and \Dsp MVAs. This is performed separately for the three different \Dsp decay modes. The results of the optimisation for each \Dsp decay mode and running period are shown in Fig.~\ref{fig:mvaoptmisation}. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+   \centering
+   \begin{subfigure}[t]{0.4\textwidth}
+      \centering
+      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds2KKPi_BDTG_punzi_Run1_cont.pdf}
+      \caption{Run I \decay{\Dsp}{\Kp\Km\pip}}
+   \end{subfigure}
+   \begin{subfigure}[t]{0.4\textwidth}
+      \centering
+      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds2KKPi_BDTG_punzi_Run2_cont.pdf}
+      \caption{Run II \decay{\Dsp}{\Kp\Km\pip}}
+   \end{subfigure}\\
+   \begin{subfigure}[t]{0.4\textwidth}
+      \centering
+      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds2PiPiPi_BDTG_punzi_Run1_cont.pdf}
+      \caption{Run I \decay{\Dsp}{\pip\pim\pip}}
+   \end{subfigure}
+   \begin{subfigure}[t]{0.4\textwidth}
+      \centering
+      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds2PiPiPi_BDTG_punzi_Run2_cont.pdf}
+      \caption{Run II \decay{\Dsp}{\pip\pim\pip}}
+   \end{subfigure}\\
+   \begin{subfigure}[t]{0.4\textwidth}
+      \centering
+      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds2KPiPi_BDTG_punzi_Run1_cont.pdf}
+      \caption{Run I \decay{\Dsp}{\Kp\pim\pip}}
+   \end{subfigure}
+   \begin{subfigure}[t]{0.4\textwidth}
+      \centering
+      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds2KPiPi_BDTG_punzi_Run2_cont.pdf}
+      \caption{Run II \decay{\Dsp}{\Kp\pim\pip}}
+   \end{subfigure}\\
+   \caption{FOM versus MVA requirements.}
+   \label{fig:mvaoptmisation}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The optimal values are selected separately for each of the modes and tabulated in Table~\ref{table:mvarequirementvalues}.
+
+\begin{table}[!h]
+\centering
+\begin{tabular}{ l l  c  c  }
+
+\hline
+Period   & \Dsp decay mode               & \Dsp requirement & \phiz/\Dzb requirement \\ 
+\hline
+Run I    & \decay{\Dsp}{\Kp\Km\pip}      & 0.5 & 0.8 \\
+         & \decay{\Dsp}{\pip\pim\pip}    & 0.3 & 0.8 \\
+         & \decay{\Dsp}{\Kp\pim\pip}     & 0.2 & 0.8 \\ 
+\hline
+Run II   & \decay{\Dsp}{\Kp\Km\pip}      & 0.5 & 0.8 \\
+         & \decay{\Dsp}{\pip\pim\pip}    & 0.2 & 0.8 \\
+         & \decay{\Dsp}{\Kp\pim\pip}     & 0.2 & 0.8 \\                                      
+\hline
+\end{tabular}
+\caption{Optimised MVA cuts for the different \Dsp decay modes and datasets. }
+\label{table:mvarequirementvalues}
+
+\end{table}

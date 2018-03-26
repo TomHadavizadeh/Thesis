@@ -428,40 +428,40 @@ where $\mathcal{L}(X)$ is the global event likelihood when the given track is of
 
 
 
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \begin{figure}[!h]
-%     \centering
-%     \begin{subfigure}[t]{0.4\textwidth}
-%         \centering        
-%         \includegraphics[width=1.0\textwidth]{figs/Detector/richone_layout.pdf}
-%         \caption{\richone}
-%     \end{subfigure}
-%     \begin{subfigure}[t]{0.4\textwidth}
-%         \centering
-%         \includegraphics[width=1.0\textwidth]{figs/Detector/richtwo_layout.pdf}
-%         \caption{\richtwo}
-%     \end{subfigure}
-%     \caption{Schematic the \richone and \richtwo sub-detectors, from Ref.~\cite{Alves:2008zz}.}
 
-%     \label{fig:Dec_rich_layout}   
-% \end{figure}
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
 
 \subsubsection{\richone}
-The \richone sub-detector was designed for tracks in the range 1--60\gevc using two radiators: aerogel and decafluorobutane ($\text{C}_{4}\text{F}_{10}$). These materials have refractive indices of $n = 1.030$ and $n = 1.0014$ respectively for $\lambda = 400\nm$ light. A diagram of the \richone detector as seen from the side is shown in Fig.~\ref{fig:Dec_richone_layout}. To minimise the amount of material that the particles pass through, the \richone detector is attached directly onto the \velo exit window.  
+The \richone sub-detector was designed for tracks in the range 1--60\gevc using two radiators: aerogel and decafluorobutane ($\text{C}_{4}\text{F}_{10}$). These materials have refractive indices of $n = 1.030$ and $n = 1.0014$ respectively for $\lambda = 400\nm$ light. A diagram of the \richone detector as seen from the side is shown in Fig.~\ref{fig:Dec_rich_layout}. To minimise the amount of material that the particles pass through, the \richone detector is attached directly onto the \velo exit window.  
 
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{figure}[!h]
+%     \centering        
+%     \includegraphics[width=0.4\textwidth]{figs/Detector/richone_layout.pdf}
+%     \caption{Schematic the \richone sub-detectors viewed from the side, from Ref.~\cite{Alves:2008zz}.}
+%     \label{fig:Dec_richone_layout}   
+% \end{figure}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
-    \centering        
-    \includegraphics[width=0.4\textwidth]{figs/Detector/richone_layout.pdf}
-    \caption{Schematic the \richone sub-detectors viewed from the side, from Ref.~\cite{Alves:2008zz}.}
-    \label{fig:Dec_richone_layout}   
+    \centering
+    \begin{subfigure}[t]{0.4\textwidth}
+        \centering        
+        \includegraphics[width=1.0\textwidth]{figs/Detector/richone_layout.pdf}
+        \caption{\richone}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.4\textwidth}
+        \centering
+        \includegraphics[width=1.0\textwidth]{figs/Detector/richtwo_layout_2.pdf}
+        \caption{\richtwo}
+    \end{subfigure}
+    \caption{Schematic the \richone (left) and \richtwo (right) sub-detectors viewed from the side, from Ref.~\cite{Alves:2008zz}.}
+
+    \label{fig:Dec_rich_layout}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 In Run II the aerogel was removed from the \richone detector. Although this catered specifically to the lower momentum tracks, the overall PID efficiency benefited from less material~\cite{PAPANESTIS2017221}. Compared to design expectations, the ability of the aerogel to provide particle identification for kaons below the $\text{C}_{4}\text{F}_{10}$ threshold was deteriorated by the number of photons in \richone. This was the result of \lhcb running at a higher than anticipated pile up. As well as improving the reconstruction speed, the removal of the aerogel also allows the photons emitted in the aerogel volume to be collected. 
 
 The single photon resolution for \richone is 1.65\mrad, and found to be the same in Run I and Run II. The dominant source of resolution degradation are the finite pixel size, the unknown emission point and the chromatic aberration.  
@@ -471,14 +471,14 @@ The single photon resolution for \richone is 1.65\mrad, and found to be the same
 
 The \richtwo detector is designed to provide particle identification of tracks in the range 15--100\gevc using a gas radiator, tetrafluoromethane ($\text{C}\text{F}_{4}$). The refractive index for this material is $n=1.0005$ for $\lambda = 400\nm$ light.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[!h]
-    \centering        
-    \includegraphics[width=0.4\textwidth]{figs/Detector/richtwo_layout.pdf}
-    \caption{Schematic the \richtwo sub-detector viewed from above, from Ref.~\cite{Alves:2008zz}.}
-    \label{fig:Dec_richtwo_layout}   
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{figure}[!h]
+%     \centering        
+%     \includegraphics[width=0.4\textwidth]{figs/Detector/richtwo_layout_2.pdf}
+%     \caption{Schematic the \richtwo sub-detector viewed from above, from Ref.~\cite{Alves:2008zz}.}
+%     \label{fig:Dec_richtwo_layout}   
+% \end{figure}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 The single photon resolution for \richtwo is 0.67\mrad and found to be consistent between Run I and Run II~\cite{PAPANESTIS2017221}.
 
 
@@ -650,12 +650,14 @@ The \lone trigger takes input from the muon system and calorimeters. These syste
 
 The \lone calorimeter trigger uses input from the \spd, \presh, \ecal and \hcal to trigger events. The particles are reconstructed using $2\times2$ cell clusters to calculate the total transverse energy $E_{\text{T}}$ deposited. 
 The different particle species are inferred by combining the information from the different calorimeter components.
-\begin{description}
-\item \texttt{L0Hadron}: Hadronic deposits are created by finding the highest energy \hcal cluster with a corresponding \ecal cluster in front of it.  
-\item \texttt{L0Photon}: Photons are created from the highest \ecal deposits with corresponding \presh hits. 
-\item \texttt{L0Electron}: Electrons are created from the highest \ecal deposits with corresponding \presh and at least one \spd hit. 
-\end{description}
-If any of these candidates pass corresponding $E_{\text{T}}$ thresholds, then the trigger fires. 
+Hadronic deposits are created by finding the highest energy \hcal cluster with a corresponding \ecal cluster in front of it.
+Photons are created from the highest \ecal deposits with corresponding \presh hits. Electrons are created from the highest \ecal deposits with corresponding \presh and at least one \spd hit. 
+% \begin{description}
+% \item \texttt{L0Hadron}: Hadronic deposits are created by finding the highest energy \hcal cluster with a corresponding \ecal cluster in front of it.  
+% \item \texttt{L0Photon}: Photons are created from the highest \ecal deposits with corresponding \presh hits. 
+% \item \texttt{L0Electron}: Electrons are created from the highest \ecal deposits with corresponding \presh and at least one \spd hit. 
+% \end{description}
+If any of these candidates pass corresponding $E_{\text{T}}$ thresholds, then the trigger is initiated. 
 
 The \lone muon trigger selects the two highest \pt muons in each of the four quadrant of the muon system. The event is retained if any of the eight muons' \pt is greater than a threshold, or if any pair has $\pt_{1} \times\ \pt_{2}$ greater than a threshold.
 
@@ -748,11 +750,11 @@ This is combined with information from the calorimeter and muon systems to creat
 \end{multline}
 where RICH, Calo and Muon refer to the difference in the log-likelihood of the $X$ and $\pi$ hypothesis as determined by the \rich, calorimeter or muon systems respectively. 
 
-The calorimeter log-likelihood is constructed by comparing the electron to hadron hypotheses. This uses input from the \ecal, \hcal and \presh sub-systems
-\begin{multline}
-\Delta \log{\mathcal{L}_\text{Calo}}(e - h) =  \Delta \log{\mathcal{L}_\text{\ecal}}(e - h) + \\
- \Delta \log{\mathcal{L}_\text{\hcal}}(e - h) + \Delta \log{\mathcal{L}_\text{\presh}}(e - h)
-\end{multline}
+The calorimeter log-likelihood is constructed by comparing the electron to hadron hypotheses. This uses input from the \ecal, \hcal and \presh sub-systems.
+% \begin{multline}
+% \Delta \log{\mathcal{L}_\text{Calo}}(e - h) =  \Delta \log{\mathcal{L}_\text{\ecal}}(e - h) + \\
+%  \Delta \log{\mathcal{L}_\text{\hcal}}(e - h) + \Delta \log{\mathcal{L}_\text{\presh}}(e - h)
+% \end{multline}
 For the \hcal and \presh this input is determined using the energy deposited. For the \ecal this is constructed comparing the ratio of energy to momentum, $E/pc$, for the candidates, which peaks around one for electrons and at lower values for hadrons. Additionally, the centre of the \ecal deposit and extrapolated track position are compared.     
 
 The muon system log-likelihood is determined by extrapolating the track in question to the muon stations. The average squared distance of the extrapolated positions and hits in the stations are used to compare the muon to non-muon hypothesis.   
@@ -848,29 +850,29 @@ The beam gas imaging method additionally allows measurements of the beam profile
 As detailed in Sec.~\ref{sec:Dec_beam_conds} the \lhc runs with a smaller number of bunches than the full capacity would allow. The distribution of filled and empty bunch slots are usually chosen to maximise the luminosity for \atlas and \cms, therefore only a subset of the total bunches collide at \lhcb. Those beam crossings in which only one of the two bunches pass through \lhcb can be used to make measurements of the beam-gas interactions during normal running.
 These provide information about the beam angle, positions and shapes. The shape parameters can be used to calculate the emittance of the beams. This information is published back to the \lhc, providing important information about the performance of the machine.
 
-A fraction of collisions are sent to a dedicated monitoring farm to be analysed in real-time. Measurements are made of the beam positions and widths averaged over all bunches in each beam. Examples of the measurements of Beam 1 and Beam 2 in the $x$-dimension are shown in Fig.~\ref{fig:Dec_bgi_realtime}. These plots can be monitored during data taking in the \lhcb control room and the values are transmitted to the \lhc. During normal data taking updates are published approximately every five minutes, depending on the \lhc filling-scheme. 
-Additionally, measurement of individual bunches are produced, but at a much lower frequency due to the limited statistics. 
+A fraction of collisions are sent to a dedicated monitoring farm to be analysed in real-time. Measurements are made of the beam positions and widths averaged over all bunches in each beam. 
+%Examples of the measurements of Beam 1 and Beam 2 in the $x$-dimension are shown in Fig.~\ref{fig:Dec_bgi_realtime}. 
+Plots can be monitored during data taking in the \lhcb control room and the values are transmitted to the \lhc. During normal data taking updates are published approximately every five minutes, depending on the \lhc filling-scheme. 
+%Additionally, measurement of individual bunches are produced, but at a much lower frequency due to the limited statistics. 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[!h]
-    \centering
-    \begin{subfigure}[m]{0.7\textwidth}
-        \centering
-        \includegraphics[width=1.0\textwidth]{figs/Detector/Beam_position_realtime.pdf}
-    \end{subfigure}
-    \begin{subfigure}[m]{0.7\textwidth}
-        \centering
-        \includegraphics[width=1.0\textwidth]{figs/Detector/Beam_sigma_realtime.pdf}
-    \end{subfigure}
-    \caption{The mean position (top) and width (bottom) of Beam 1 (left) and Beam 2 (right) bunches in the $x$-dimension. These values were collected in real time during one fill and appear as presented in the \lhcb control room.}
-    \label{fig:Dec_bgi_realtime}   
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{figure}[!h]
+%     \centering
+%     \begin{subfigure}[m]{0.7\textwidth}
+%         \centering
+%         \includegraphics[width=1.0\textwidth]{figs/Detector/Beam_position_realtime.pdf}
+%     \end{subfigure}
+%     \begin{subfigure}[m]{0.7\textwidth}
+%         \centering
+%         \includegraphics[width=1.0\textwidth]{figs/Detector/Beam_sigma_realtime.pdf}
+%     \end{subfigure}
+%     \caption{The mean position (top) and width (bottom) of Beam 1 (left) and Beam 2 (right) bunches in the $x$-dimension. These values were collected in real time during one fill and appear as presented in the \lhcb control room.}
+%     \label{fig:Dec_bgi_realtime}   
+% \end{figure}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-The beam-gas collisions can be re-analysed offline to exploit the full available statistics. A dedicated \lhc-wide cross-calibration of emittance measuring devices was performed in 2016~\cite{Hadavizadeh:IPAC2017-MOPAB131}. The increased offline statistics allow the positions and widths of individual bunches to be determined throughout the fill as shown in Fig.~\ref{fig:Dec_bgi_fill}. During this calibration fill gas was injected into the beam-pipe vacuum within the \velo to increase the rate of beam-gas interactions. The \lhcb beam-gas imaging measurements were found to be mostly consistent with the other beam-size measurement devices around the \lhc, however the specific optics of the \lhc beams resulted in large uncertainties.   
-
-
+%The beam-gas collisions can be re-analysed offline to exploit the full available statistics. 
+A dedicated \lhc-wide cross-calibration of emittance measuring devices was performed in 2016~\cite{Hadavizadeh:IPAC2017-MOPAB131}. The increased statistics available offline allow the positions and widths of individual bunches to be determined throughout the fill as shown in Fig.~\ref{fig:Dec_bgi_fill}. During this calibration fill gas was injected into the beam-pipe vacuum within the \velo to increase the rate of beam-gas interactions. The \lhcb beam-gas imaging measurements were found to be mostly consistent with the other beam-size measurement devices around the \lhc, however the specific optics of the \lhc beams resulted in large uncertainties.   
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
     \centering
@@ -882,7 +884,7 @@ The beam-gas collisions can be re-analysed offline to exploit the full available
         \centering
         \includegraphics[width=1.0\textwidth]{figs/Detector/PerBXID_SigmaX_unfolded_Beam1.pdf}
     \end{subfigure}
-    \caption{The mean position (left) and width (right) of Beam 1 bunches in the $x$-dimension. These values have been corrected for the \velo resolution and were recorded during a dedicated beam size calibration fill. The quantities are displayed for individual bunches. The beam optics were designed to have a large range of beam sizes. }
+    \caption{The mean position (left) and width (right) of individual Beam 1 bunches in the $x$-dimension. These values have been corrected for the \velo resolution. The beam optics were designed to have a large range of bunch sizes.}
     \label{fig:Dec_bgi_fill}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -97,7 +97,7 @@ Reconstructed objects are classified into categories when considering their rela
 These categories are,
 \begin{description}
 \item \textbf{Triggered on Signal:} if the deposited matched to a reconstructed object was sufficient to have initiated a given trigger then this object is said to be \emph{Triggered on Signal} (\texttt{TOS}) with respect to that trigger (Fig.~\ref{fig:TOS}). As such, if the hits that this object caused were removed from the events the trigger would no longer have been initiated.
-\item \textbf{Triggered Independently of Signal:} conversely, if the specific trigger fired solely due to other interactions within the same event the object is \emph{Triggered Independently of Signal} (\texttt{TIS}) with respect to that trigger (Fig.~\ref{fig:TIS}). In this case, removal of hits matched to the object would not affect the trigger decision.  It is possible for a candidate to be both \texttt{TIS} and \texttt{TOS} (Fig.~\ref{fig:TOSandTIS}).
+\item \textbf{Triggered Independently of Signal:} conversely, if the specific trigger was initiated solely due to other interactions within the same event the object is \emph{Triggered Independently of Signal} (\texttt{TIS}) with respect to that trigger (Fig.~\ref{fig:TIS}). In this case, removal of hits matched to the object would not affect the trigger decision.  It is possible for a candidate to be both \texttt{TIS} and \texttt{TOS} (Fig.~\ref{fig:TOSandTIS}).
 \item \textbf{Triggered on Both:} a third category is possible, \emph{Triggered on Both} (\texttt{TOB}), where both the signal object and another object are required to reach the threshold for a positive trigger decision (Fig.~\ref{fig:TOB}). In this situation neither are sufficient to individually initiate the trigger, but removing either one of them would prevent the a positive trigger decision. Events in this category are not considered in this analysis.
 \end{description}
 
@@ -308,29 +308,45 @@ The selection of candidates makes requirements on many different distinguishing 
 
 
 \subsubsection{Track requirements}
-As the final states are fully hadronic, the candidates are built from the combination of five \emph{long} tracks. 
-%Only tracks are used to build these mesons. 
+As the final states are fully hadronic, the candidates are built from the combination of five \emph{long} tracks.  
 % The tracks are required to meet the following criteria; 
 % \begin{itemize}
-% \item tracks must be well reconstructed with $\chi^{2}/N_{\text{DOF}} < 4 $,
-% \item the momentum and transverse momentum must pass $\ptot > 1000 \mevc$ and $\pt > 100 \mevc$,
-% \item the tracks must have a significant impact parameter with respect to the $pp$ collision vertex, $\chi^{2}_{\text{IP}} > 4$,
-% \item loose requirements are places on PIDK to ensure the tracks are of the required species,
-% \item incorrect track candidates are suppressed by requiring $P_{\text{Ghost}}<0.4$.
+% \item well reconstructed with $\chi^{2}/N_{\text{DOF}} < 4 $,
+% \item $\ptot > 1000 \mevc$ and $\pt > 100 \mevc$,
+% \item significant impact parameter with respect to the PV of $\chi^{2}_{\text{IP}} > 4$,
+% \item loose requirements on PIDK ensure the tracks are of the required species,
+% \item incorrect track candidates are suppressed with $P_{\text{Ghost}}<0.4$.
 % \end{itemize} 
-The track $\chi^{2}/N_{\text{DOF}}$ is required to be below $4.0$ to ensure these are well reconstructed. Additionally, they are required to have a total momentum $\ptot > 1000 \mevc$ and a transverse momentum $\pt > 100 \mevc$.
-Due to the long lifetime and high boost of the \Bp and \D mesons, the decay products originate from a vertex that is displaced from the proton-proton collision vertex. In this case the trajectory of the \Bp or \D decay products do not pass through the primary collision position, as shown in Fig.~\ref{fig:impact_parameter}. A requirement is placed on the significance of the impact parameter between the track and the proton-proton collision vertex of $\chi^{2}_{\text{IP}} > 4$ to ensure all of the tracks used are inconsistent with originating at the primary interaction.  
-Loose requirements are placed on PIDK to ensure the tracks are of the required species. These are further tightened as detailed in Section~\ref{sec:pidrequirements}. Incorrect track candidates created by combining unrelated \velo and tracking station hits are suppressed by requiring the ghost track probability, $P_{\text{Ghost}}$, to be less than $0.4$. 
+The track $\chi^{2}/N_{\text{DOF}}$ is required to be below $4.0$ to ensure these are well reconstructed, with $\ptot > 1000 \mevc$ and $\pt > 100 \mevc$.
+Due to the long lifetime and high boost of the \Bp and \D mesons, the decay products originate from a vertex that is displaced from the proton-proton collision vertex. In this case the trajectory of the \Bp or \D decay products do not pass through the primary collision position. A requirement is placed on the significance of the impact parameter between the track and the PV of $\chi^{2}_{\text{IP}} > 4$ to ensure all of the tracks used are inconsistent with originating at the primary interaction.  
+Loose requirements on PIDK ensure the tracks are of the required species. These are further tightened as detailed in Section~\ref{sec:pidrequirements}. Incorrect track candidates are suppressed by requiring $P_{\text{Ghost}}<0.4$. 
 
 %%%%%% Ds/ D0 and phi construction
 \subsubsection{\Dzb, \phiz and \Dsp requirements}
 The tracks passing these requirements are combined in pairs or triplets to form the \Dsp and \phiz or \Dzb meson candidates.  
-For the purpose of forming the \phiz candidates (or \Kp\Km pair), all combinations of two tracks are considered where the tracks are assigned the kaon mass. Only pairs which pass within $0.5\mm$ of one another at their closest point are retained. A number of requirements are imposed to ensure the pair are consistent with coming from a \phiz meson (or \Kp\Km pair) that originated in a \Bp-meson decay. The vertex is required to be of good quality, the scalar sum of the transverse momentums must be greater than $1000\mevc$ and the flight distance significance is required to be $\chi^{2}_{\text{FD} } > 16$. Additionally the cosine of the direction angle, defined to be the angle between the momentum vector and flight vector, is required to be $\cos{\theta}>0$, preventing the vertex being backward of the PV when the momentum is in the forward direction. In the search for \decay{\Bp}{\Dsp\phiz} decays, the invariant mass of the two kaons is required to be within $150\mevcc$ of the known \phiz-meson mass.  
 
-The \Dzb meson candidates are selecting using a similar parameters, however the exact values of the cuts are changed to reflect the differences in properties of the \phiz and \Dzb mesons. The vertex quality and flight distance significance requirements are tightened to $\chi^{2}/N_{\text{DOF}} < 10$ and $\chi^{2}_{\text{FD} }  > 36$ respectively. Additionally, the scalar \pt sum requirment is increased to $\sum{|\pt|} > 1800 \mevc$ as the decay products tend to have higher transverse momentum. 
+% The \phiz candidates (or \Kp\Km pair) are created from all combinations of two tracks meeting the following requirements:
+% \begin{itemize}
+% \item pass within $0.5\mm$ of one another at their closest point,
+% \item well reconstructed vertex with $\chi^{2}/N_{\text{DOF}} < 16$,
+% \item decay product' scalar \pt sum greater than $1000\mevc$,
+% \item flight distance significance is required to be $\chi^{2}_{\text{FD} } > 16$,
+% \item the direction angle is required to be $\cos{\theta}>0$, preventing the vertex being backward of the PV when the momentum is forward,
+% \item for \decay{\Bp}{\Dsp\phiz} decays, $|m(\Kp\Km) -m(\phiz)| < 150\mevcc$.
+% \end{itemize} 
+
+
+For the purpose of forming the \phiz candidates (or \Kp\Km pair), all combinations of two tracks are considered where the tracks are assigned the kaon mass. Only pairs which pass within $0.5\mm$ of one another at their closest point are retained. 
+%A number of requirements are imposed to ensure the pair are consistent with coming from a \phiz meson (or \Kp\Km pair) that originated in a \Bp-meson decay. 
+The vertex is required to be of good quality, the scalar sum of the transverse momentums must be greater than $1000\mevc$ and the flight distance significance is required to be $\chi^{2}_{\text{FD} } > 16$. Additionally the cosine of the direction angle, defined to be the angle between the momentum vector and flight vector, is required to be $\cos{\theta}>0$, preventing the vertex being backward of the PV when the momentum is in the forward direction. In the search for \decay{\Bp}{\Dsp\phiz} decays, the invariant mass of the two kaons is required to be within $150\mevcc$ of the known \phiz-meson mass.  
+
+The \Dzb meson candidates are selecting using a similar parameters, however the exact values of the cuts are changed to reflect the differences in properties of the \phiz and \Dzb mesons. The vertex quality and flight distance significance requirements are tightened to $\chi^{2}/N_{\text{DOF}} < 10$ and $\chi^{2}_{\text{FD} }  > 36$ respectively, and the scalar \pt sum requirement is increased to $\sum{|\pt|} > 1800 \mevc$. 
 
 
 The \Dsp mesons candidates are created using combinations of three tracks given the mass hypotheses kaons or pions, depending on the decay mode being constructed. All combinations of three tracks are considered and only those in which all three tracks are within 0.5\mm of one another are retained. As with the \Dzb meson selection, the vertex quality, flight distance significance and scalar \pt sum requirements are $\chi^{2}/N_{\text{DOF}} < 10$, $\chi^{2}_{\text{FD} }  > 36$ and $\sum{|\pt|} > 1800 \mevc$ respectively.
+
+
+
 
 %% B meson construction
 \subsubsection{\Bp requirements}
@@ -344,7 +360,7 @@ That is
 \item the vertex is required to have a quality of $\chi^{2}/N_{\text{DOF}} < 10$. 
 \end{itemize}
 %More requirements are additionally placed on the decay products that contribute to the \Bp meson. 
-The full list of selection requirements imposed on candidate \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays in their respective \emph{Stripping Lines} are detailed in Appendix~\ref{ch:appendix_selection}. 
+The full list of selection requirements are detailed in Appendix~\ref{ch:appendix_selection}. 
 
 
 % \begin{table}[!h]
@@ -964,129 +980,134 @@ The invariant mass distributions for each the misidentified \decay{\Dsp}{\Kp\Km\
 \subsection{Invariant mass vetoes}
 \label{sec:kinematicvetos}
 
-Sharp peaking structures are observed in subsets of the final state particles. These are removed with simple invariant mass cuts to remove combinatorial or partially reconstructed backgrounds that result from these incorrectly reconstructed decays. 
-For simplicity the final state particles for each mode are labelled with a number between 1--5 as described in Table~\ref{table:vetolabels}.
-
-\begin{table*}[!ht]
-\centering
-\begin{tabular}{ l c c c c c c }
-\hline
-Decay Mode & 1  & 2 & 3 & 4 & 5 \\
-\hline
-\decay{\Bp}{(\decay{\Dsp}{\Kp\Km\pip})\phiz}       & \Kp    & \Km    & \pip  & \Kp  & \Km \\
-\decay{\Bp}{(\decay{\Dsp}{\pip\pim\pip})\phiz}     & \pip   & \pim   & \pip  & \Kp  & \Km \\
-\decay{\Bp}{(\decay{\Dsp}{\Kp\pim\pip})\phiz}      & \Kp    & \pim   & \pip  & \Kp  & \Km \\
-\hline
-\decay{\Bp}{(\decay{\Dsp}{\Kp\Km\pip})\Kp\Km}      & \Kp    & \Km    & \pip  & \Kp  & \Km \\
-\hline
-\end{tabular}
-\caption{Particle labels used when studying invariant mass vetoes for \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} candidates.}
-\label{table:vetolabels}
-
-\end{table*}
-
+Sharp peaking structures are observed in subsets of the final state particles.  
+These are removed with simple invariant mass cuts to remove combinatorial or partially reconstructed backgrounds that result from these incorrectly reconstructed decays.
 All combinations of the final state particles that create a neutral or singly-charged candidate are investigated.
-Significant structures are observed for all three \Dsp decay modes in some combination. 
-
-The following vetos are applied to remove these incorrectly reconstructed decays.
-\begin{itemize}
-\item For the mode \decay{\Bp}{(\decay{\Dsp}{\Kp\Km\pip})\phiz}
-\begin{itemize}
-\item $|m(\text{1245})- m(\Bs)| > 50\mevcc$
-\item $|m(\text{345})- m(\Dsp)| > 25\mevcc$ and $|m(\text{345})- m(\Dp)| > 25\mevcc$
-\end{itemize}
-
-\item For the mode \decay{\Bp}{(\decay{\Dsp}{\pip\pim\pip})\phiz}
-\begin{itemize}
-\item $|m(\text{145})- m(\Dsp)| > 25\mevcc$ and $|m(\text{145})- m(\Dp)| > 25\mevcc$
-\item $|m(\text{245})- m(\Dsp)| > 25\mevcc$ and $|m(\text{245})- m(\Dp)| > 25\mevcc$
-\item $|m(\text{345})- m(\Dsp)| > 25\mevcc$ and $|m(\text{345})- m(\Dp)| > 25\mevcc$
-\end{itemize}
-\item For the mode \decay{\Bp}{(\decay{\Dsp}{\Kp\pim\pip})\phiz}
-\begin{itemize}
-\item $|m(\text{245})- m(\Dsp)| > 25\mevcc$ and $|m(\text{245})- m(\Dp)| > 25\mevcc$
-\item $|m(\text{345})- m(\Dsp)| > 25\mevcc$ and $|m(\text{345})- m(\Dp)| > 25\mevcc$
-\end{itemize}
-\end{itemize}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[!h]
-   \centering
-   \begin{subfigure}[t]{1.0\textwidth}
-      \centering
-      \begin{subfigure}[t]{0.32\textwidth}
-         \includegraphics[width=1.0\textwidth]{figs/Selection/Veto_Comparison_B2DsPhi_Ds2KKPi_m1245.pdf}
-      \end{subfigure}
-      \begin{subfigure}[t]{0.32\textwidth}
-         \includegraphics[width=1.0\textwidth]{figs/Selection/Veto_Comparison_B2DsPhi_Ds2KKPi_m345.pdf}
-      \end{subfigure}
-      \caption{\decay{\Bp}{(\decay{\Dsp}{\Kp\Km\pip})\phiz}}
-   \end{subfigure}
-   \begin{subfigure}[t]{1.0\textwidth}
-      \centering
-      \begin{subfigure}[t]{0.32\textwidth}
-         \includegraphics[width=1.0\textwidth]{figs/Selection/Veto_Comparison_B2DsPhi_Ds2PiPiPi_m145.pdf}
-      \end{subfigure}
-      \begin{subfigure}[t]{0.32\textwidth}
-         \includegraphics[width=1.0\textwidth]{figs/Selection/Veto_Comparison_B2DsPhi_Ds2PiPiPi_m245.pdf}
-      \end{subfigure}
-      \begin{subfigure}[t]{0.32\textwidth}
-         \includegraphics[width=1.0\textwidth]{figs/Selection/Veto_Comparison_B2DsPhi_Ds2PiPiPi_m345.pdf}
-      \end{subfigure}
-      \caption{\decay{\Bp}{(\decay{\Dsp}{\pip\pim\pip})\phiz}}
-   \end{subfigure}
-   \begin{subfigure}[t]{1.0\textwidth}
-      \centering
-      \begin{subfigure}[t]{0.32\textwidth}
-         \includegraphics[width=1.0\textwidth]{figs/Selection/Veto_Comparison_B2DsPhi_Ds2KPiPi_m245.pdf}
-      \end{subfigure}
-      \begin{subfigure}[t]{0.32\textwidth}
-         \includegraphics[width=1.0\textwidth]{figs/Selection/Veto_Comparison_B2DsPhi_Ds2KPiPi_m345.pdf}
-      \end{subfigure}
-      \caption{\decay{\Bp}{(\decay{\Dsp}{\Kp\pim\pip})\phiz}}
-   \end{subfigure}
-
-   \caption{Invariant mass distributions for subsets of decay products in data (black) and simulation (red). The green region show the regions removed by the vetoes listed in Sec~\ref{sec:kinematicvetos}.}
-   \label{fig:invariantmassvetoes}   
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Significant structures are observed for all three \Dsp decay modes in some combination as detailed in Appendix~\ref{sec:app_sel_vetoes}.
 
 
-In the search for \decay{\Bp}{\Dsp\Kp\Km} decays the increased size of the $m(\Kp\Km)$ phase-space means more of the combinations of final state particles are susceptible to sharp peaking structure from incorrectly reconstructed backgrounds. Those spectra found to have significant peaking structures are additionally vetoed, as shown in Fig.~\ref{fig:invariantmassvetoes_DsKK}.
+% For simplicity the final state particles for each mode are labelled with a number between 1--5 as described in Table~\ref{table:vetolabels}.
 
-\begin{itemize}
-\item Vetoes for the mode \decay{\Bp}{(\decay{\Dsp}{\Kp\Km\pip})\Kp\Km}:
-\begin{itemize}
-\item $|m(\text{1245})- m(\Bs)| > 50\mevcc$
-\item $|m(\text{345})- m(\Dsp)| > 25\mevcc$ and $|m(\text{345})- m(\Dp)| > 25\mevcc$
-\item $|m(\text{135})- m(\Dsp)| > 25\mevcc$
-\item $|m(\text{234})- m(\Dsp)| > 25\mevcc$
-\end{itemize}
-\end{itemize}
+% \begin{table*}[!ht]
+% \centering
+% \begin{tabular}{ l c c c c c c }
+% \hline
+% Decay Mode & 1  & 2 & 3 & 4 & 5 \\
+% \hline
+% \decay{\Bp}{(\decay{\Dsp}{\Kp\Km\pip})\phiz}       & \Kp    & \Km    & \pip  & \Kp  & \Km \\
+% \decay{\Bp}{(\decay{\Dsp}{\pip\pim\pip})\phiz}     & \pip   & \pim   & \pip  & \Kp  & \Km \\
+% \decay{\Bp}{(\decay{\Dsp}{\Kp\pim\pip})\phiz}      & \Kp    & \pim   & \pip  & \Kp  & \Km \\
+% \hline
+% \decay{\Bp}{(\decay{\Dsp}{\Kp\Km\pip})\Kp\Km}      & \Kp    & \Km    & \pip  & \Kp  & \Km \\
+% \hline
+% \end{tabular}
+% \caption{Particle labels used when studying invariant mass vetoes for \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} candidates.}
+% \label{table:vetolabels}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[!h]
-   \centering
-   \begin{subfigure}[t]{1.0\textwidth}
-      \centering
-      \begin{subfigure}[t]{0.32\textwidth}
-         \includegraphics[width=1.0\textwidth]{figs/Selection/Veto_Comparison_B2DsKK_Ds2KKPi_m1245.pdf}
-      \end{subfigure}\\
-      \begin{subfigure}[t]{0.32\textwidth}
-         \includegraphics[width=1.0\textwidth]{figs/Selection/Veto_Comparison_B2DsKK_Ds2KKPi_m345.pdf}
-      \end{subfigure}
-      \begin{subfigure}[t]{0.32\textwidth}
-         \includegraphics[width=1.0\textwidth]{figs/Selection/Veto_Comparison_B2DsKK_Ds2KKPi_m135.pdf}
-      \end{subfigure}
-      \begin{subfigure}[t]{0.32\textwidth}
-         \includegraphics[width=1.0\textwidth]{figs/Selection/Veto_Comparison_B2DsKK_Ds2KKPi_m234.pdf}
-      \end{subfigure}
-   \end{subfigure}
+% \end{table*}
 
-   \caption{Invariant mass distributions for subsets of decay products for \decay{\Bp}{(\decay{\Dsp}{\Kp\Km\pip})\Kp\Km} decays in data (black) and simulation (red). The green region show the regions removed by the vetoes listed in Sec~\ref{sec:kinematicvetos}.}
-   \label{fig:invariantmassvetoes_DsKK}   
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% All combinations of the final state particles that create a neutral or singly-charged candidate are investigated.
+% Significant structures are observed for all three \Dsp decay modes in some combination. 
+
+% The following vetos are applied to remove these incorrectly reconstructed decays.
+% \begin{itemize}
+% \item For the mode \decay{\Bp}{(\decay{\Dsp}{\Kp\Km\pip})\phiz}
+% \begin{itemize}
+% \item $|m(\text{1245})- m(\Bs)| > 50\mevcc$
+% \item $|m(\text{345})- m(\Dsp)| > 25\mevcc$ and $|m(\text{345})- m(\Dp)| > 25\mevcc$
+% \end{itemize}
+
+% \item For the mode \decay{\Bp}{(\decay{\Dsp}{\pip\pim\pip})\phiz}
+% \begin{itemize}
+% \item $|m(\text{145})- m(\Dsp)| > 25\mevcc$ and $|m(\text{145})- m(\Dp)| > 25\mevcc$
+% \item $|m(\text{245})- m(\Dsp)| > 25\mevcc$ and $|m(\text{245})- m(\Dp)| > 25\mevcc$
+% \item $|m(\text{345})- m(\Dsp)| > 25\mevcc$ and $|m(\text{345})- m(\Dp)| > 25\mevcc$
+% \end{itemize}
+% \item For the mode \decay{\Bp}{(\decay{\Dsp}{\Kp\pim\pip})\phiz}
+% \begin{itemize}
+% \item $|m(\text{245})- m(\Dsp)| > 25\mevcc$ and $|m(\text{245})- m(\Dp)| > 25\mevcc$
+% \item $|m(\text{345})- m(\Dsp)| > 25\mevcc$ and $|m(\text{345})- m(\Dp)| > 25\mevcc$
+% \end{itemize}
+% \end{itemize}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{figure}[!h]
+%    \centering
+%    \begin{subfigure}[t]{1.0\textwidth}
+%       \centering
+%       \begin{subfigure}[t]{0.32\textwidth}
+%          \includegraphics[width=1.0\textwidth]{figs/Selection/Veto_Comparison_B2DsPhi_Ds2KKPi_m1245.pdf}
+%       \end{subfigure}
+%       \begin{subfigure}[t]{0.32\textwidth}
+%          \includegraphics[width=1.0\textwidth]{figs/Selection/Veto_Comparison_B2DsPhi_Ds2KKPi_m345.pdf}
+%       \end{subfigure}
+%       \caption{\decay{\Bp}{(\decay{\Dsp}{\Kp\Km\pip})\phiz}}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{1.0\textwidth}
+%       \centering
+%       \begin{subfigure}[t]{0.32\textwidth}
+%          \includegraphics[width=1.0\textwidth]{figs/Selection/Veto_Comparison_B2DsPhi_Ds2PiPiPi_m145.pdf}
+%       \end{subfigure}
+%       \begin{subfigure}[t]{0.32\textwidth}
+%          \includegraphics[width=1.0\textwidth]{figs/Selection/Veto_Comparison_B2DsPhi_Ds2PiPiPi_m245.pdf}
+%       \end{subfigure}
+%       \begin{subfigure}[t]{0.32\textwidth}
+%          \includegraphics[width=1.0\textwidth]{figs/Selection/Veto_Comparison_B2DsPhi_Ds2PiPiPi_m345.pdf}
+%       \end{subfigure}
+%       \caption{\decay{\Bp}{(\decay{\Dsp}{\pip\pim\pip})\phiz}}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{1.0\textwidth}
+%       \centering
+%       \begin{subfigure}[t]{0.32\textwidth}
+%          \includegraphics[width=1.0\textwidth]{figs/Selection/Veto_Comparison_B2DsPhi_Ds2KPiPi_m245.pdf}
+%       \end{subfigure}
+%       \begin{subfigure}[t]{0.32\textwidth}
+%          \includegraphics[width=1.0\textwidth]{figs/Selection/Veto_Comparison_B2DsPhi_Ds2KPiPi_m345.pdf}
+%       \end{subfigure}
+%       \caption{\decay{\Bp}{(\decay{\Dsp}{\Kp\pim\pip})\phiz}}
+%    \end{subfigure}
+
+%    \caption{Invariant mass distributions for subsets of decay products in data (black) and simulation (red). The green region show the regions removed by the vetoes listed in Sec~\ref{sec:kinematicvetos}.}
+%    \label{fig:invariantmassvetoes}   
+% \end{figure}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% In the search for \decay{\Bp}{\Dsp\Kp\Km} decays the increased size of the $m(\Kp\Km)$ phase-space means more of the combinations of final state particles are susceptible to sharp peaking structure from incorrectly reconstructed backgrounds. Those spectra found to have significant peaking structures are additionally vetoed, as shown in Fig.~\ref{fig:invariantmassvetoes_DsKK}.
+
+% \begin{itemize}
+% \item Vetoes for the mode \decay{\Bp}{(\decay{\Dsp}{\Kp\Km\pip})\Kp\Km}:
+% \begin{itemize}
+% \item $|m(\text{1245})- m(\Bs)| > 50\mevcc$
+% \item $|m(\text{345})- m(\Dsp)| > 25\mevcc$ and $|m(\text{345})- m(\Dp)| > 25\mevcc$
+% \item $|m(\text{135})- m(\Dsp)| > 25\mevcc$
+% \item $|m(\text{234})- m(\Dsp)| > 25\mevcc$
+% \end{itemize}
+% \end{itemize}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{figure}[!h]
+%    \centering
+%    \begin{subfigure}[t]{1.0\textwidth}
+%       \centering
+%       \begin{subfigure}[t]{0.32\textwidth}
+%          \includegraphics[width=1.0\textwidth]{figs/Selection/Veto_Comparison_B2DsKK_Ds2KKPi_m1245.pdf}
+%       \end{subfigure}\\
+%       \begin{subfigure}[t]{0.32\textwidth}
+%          \includegraphics[width=1.0\textwidth]{figs/Selection/Veto_Comparison_B2DsKK_Ds2KKPi_m345.pdf}
+%       \end{subfigure}
+%       \begin{subfigure}[t]{0.32\textwidth}
+%          \includegraphics[width=1.0\textwidth]{figs/Selection/Veto_Comparison_B2DsKK_Ds2KKPi_m135.pdf}
+%       \end{subfigure}
+%       \begin{subfigure}[t]{0.32\textwidth}
+%          \includegraphics[width=1.0\textwidth]{figs/Selection/Veto_Comparison_B2DsKK_Ds2KKPi_m234.pdf}
+%       \end{subfigure}
+%    \end{subfigure}
+
+%    \caption{Invariant mass distributions for subsets of decay products for \decay{\Bp}{(\decay{\Dsp}{\Kp\Km\pip})\Kp\Km} decays in data (black) and simulation (red). The green region show the regions removed by the vetoes listed in Sec~\ref{sec:kinematicvetos}.}
+%    \label{fig:invariantmassvetoes_DsKK}   
+% \end{figure}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
 Another set of vetoes rejects decays where the tracks forming the \Dsp candidate originate from an excited charged charm meson decay, for example $\decay{\Dstarp}{(\decay{\Dz}{h^{+}h'^{-}}) \pip}$. By requiring $\Delta m = m(h^{+}h'^{-}\pip)-m(h^{+}h'^{-}) > 150 \mevcc$ decays of this type are efficiently removed. These are applied to both the signal and normalisation modes for all \Dsp decays. 
 
@@ -1869,68 +1890,68 @@ The selection criteria for each of the BDTG classifiers are determined by optimi
 \end{equation}
 with $a=5$, where $\epsilon_{s}$ is the signal efficiency and $N_{\text{BKG}}$ is the number of background candidates determined from fits to data, calculated in the signal region. 
 The signal efficiency is calculated for the relevant mode and MVA requirement values using the data-driven technique in the previous subsection. 
-The optimisation is performed in two dimensions, one for each of the \phiz and \Dsp MVAs. This is performed separately for the three different \Dsp decay modes. The results of the optimisation for each \Dsp decay mode and running period are shown in Fig.~\ref{fig:mvaoptmisation}. 
+The optimisation is performed in two dimensions, one for each of the \phiz and \Dsp MVAs. This is performed separately for the three different \Dsp decay modes. The results of the optimisation can be found in Appendix~\ref{sec:app_mva_optimisation}. 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[!h]
-   \centering
-   \begin{subfigure}[t]{0.4\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds2KKPi_BDTG_punzi_Run1_cont.pdf}
-      \caption{Run I \decay{\Dsp}{\Kp\Km\pip}}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.4\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds2KKPi_BDTG_punzi_Run2_cont.pdf}
-      \caption{Run II \decay{\Dsp}{\Kp\Km\pip}}
-   \end{subfigure}\\
-   \begin{subfigure}[t]{0.4\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds2PiPiPi_BDTG_punzi_Run1_cont.pdf}
-      \caption{Run I \decay{\Dsp}{\pip\pim\pip}}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.4\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds2PiPiPi_BDTG_punzi_Run2_cont.pdf}
-      \caption{Run II \decay{\Dsp}{\pip\pim\pip}}
-   \end{subfigure}\\
-   \begin{subfigure}[t]{0.4\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds2KPiPi_BDTG_punzi_Run1_cont.pdf}
-      \caption{Run I \decay{\Dsp}{\Kp\pim\pip}}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.4\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Ds2KPiPi_BDTG_punzi_Run2_cont.pdf}
-      \caption{Run II \decay{\Dsp}{\Kp\pim\pip}}
-   \end{subfigure}\\
-   \caption{FOM versus MVA requirements.}
-   \label{fig:mvaoptmisation}   
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{figure}[!h]
+%    \centering
+%    \begin{subfigure}[t]{0.4\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds2KKPi_BDTG_punzi_Run1_cont.pdf}
+%       \caption{Run I \decay{\Dsp}{\Kp\Km\pip}}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.4\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds2KKPi_BDTG_punzi_Run2_cont.pdf}
+%       \caption{Run II \decay{\Dsp}{\Kp\Km\pip}}
+%    \end{subfigure}\\
+%    \begin{subfigure}[t]{0.4\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds2PiPiPi_BDTG_punzi_Run1_cont.pdf}
+%       \caption{Run I \decay{\Dsp}{\pip\pim\pip}}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.4\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds2PiPiPi_BDTG_punzi_Run2_cont.pdf}
+%       \caption{Run II \decay{\Dsp}{\pip\pim\pip}}
+%    \end{subfigure}\\
+%    \begin{subfigure}[t]{0.4\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds2KPiPi_BDTG_punzi_Run1_cont.pdf}
+%       \caption{Run I \decay{\Dsp}{\Kp\pim\pip}}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.4\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Ds2KPiPi_BDTG_punzi_Run2_cont.pdf}
+%       \caption{Run II \decay{\Dsp}{\Kp\pim\pip}}
+%    \end{subfigure}\\
+%    \caption{FOM versus MVA requirements.}
+%    \label{fig:mvaoptmisation}   
+% \end{figure}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The optimal values are selected separately for each of the modes and tabulated in Table~\ref{table:mvarequirementvalues}.
+% The optimal values are selected separately for each of the modes and tabulated in Table~\ref{table:mvarequirementvalues}.
 
-\begin{table}[!h]
-\centering
-\begin{tabular}{ l l  c  c  }
+% \begin{table}[!h]
+% \centering
+% \begin{tabular}{ l l  c  c  }
 
-\hline
-Period   & \Dsp decay mode               & \Dsp requirement & \phiz/\Dzb requirement \\ 
-\hline
-Run I    & \decay{\Dsp}{\Kp\Km\pip}      & 0.5 & 0.8 \\
-         & \decay{\Dsp}{\pip\pim\pip}    & 0.3 & 0.8 \\
-         & \decay{\Dsp}{\Kp\pim\pip}     & 0.2 & 0.8 \\ 
-\hline
-Run II   & \decay{\Dsp}{\Kp\Km\pip}      & 0.5 & 0.8 \\
-         & \decay{\Dsp}{\pip\pim\pip}    & 0.2 & 0.8 \\
-         & \decay{\Dsp}{\Kp\pim\pip}     & 0.2 & 0.8 \\                                      
-\hline
-\end{tabular}
-\caption{Optimised MVA cuts for the different \Dsp decay modes and datasets. }
-\label{table:mvarequirementvalues}
+% \hline
+% Period   & \Dsp decay mode               & \Dsp requirement & \phiz/\Dzb requirement \\ 
+% \hline
+% Run I    & \decay{\Dsp}{\Kp\Km\pip}      & 0.5 & 0.8 \\
+%          & \decay{\Dsp}{\pip\pim\pip}    & 0.3 & 0.8 \\
+%          & \decay{\Dsp}{\Kp\pim\pip}     & 0.2 & 0.8 \\ 
+% \hline
+% Run II   & \decay{\Dsp}{\Kp\Km\pip}      & 0.5 & 0.8 \\
+%          & \decay{\Dsp}{\pip\pim\pip}    & 0.2 & 0.8 \\
+%          & \decay{\Dsp}{\Kp\pim\pip}     & 0.2 & 0.8 \\                                      
+% \hline
+% \end{tabular}
+% \caption{Optimised MVA cuts for the different \Dsp decay modes and datasets. }
+% \label{table:mvarequirementvalues}
 
-\end{table}
+% \end{table}
 
 \subsection{Impact parameter requirements}
 \label{sec:selection_IPCHI2}
@@ -1938,101 +1959,102 @@ The data-driven MVAs target the selection of \phiz and \Dsp candidates, removing
 
 The \Bp meson candidate is required to be consistent with originating at the PV by requiring $\chi^2_{\text{IP}} < 10$. This helps to remove background as unrelated combinations of \Dsp and \phiz mesons will not necessarily point back towards the PV.
 Additionally, the opposite requirement is made of the \Dsp meson, $\chi^2_{\text{IP}} > 10$, to reduce charm meson backgrounds where the charm is produced promptly at the PV.
+The distributions of the impact parameter requirements for the signal and normalisation samples can be found in Appendix~\ref{sec:app_sel_IPchi2}.
 %It is possible for \Dsp mesons to be produced promptly at the PV rather than in a \Bp-meson decay and this requirement helps to remove those candidates.
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[!h]
-   \centering
-   \begin{subfigure}[t]{0.32\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Data_MC_Comparison_Var_2_B2DsPhi_Ds2KKPi.pdf}
-      \caption{\decay{\Dsp}{\Kp\Km\pip}}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.32\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Data_MC_Comparison_Var_2_B2DsPhi_Ds2PiPiPi.pdf}
-      \caption{\decay{\Dsp}{\pip\pim\pip}}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.32\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Data_MC_Comparison_Var_2_B2DsPhi_Ds2KPiPi.pdf}
-      \caption{\decay{\Dsp}{\Kp\pim\pip}}
-   \end{subfigure}\\
-   \caption{The \Bp meson $\chi^{2}_{\text{IP}}$ distributions for \decay{\Bp}{\Dsp\phiz} candidates in data (black) and simulation (red) after the MVA selection. Candidates within the range $4900 < m(\Dsp\phiz) < 5900 \mevcc$ are included in these figures. Candidates to the left of the vertical line are retained.}
-   \label{fig:ipchi2dist_signal_B}   
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{figure}[!h]
+%    \centering
+%    \begin{subfigure}[t]{0.32\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Data_MC_Comparison_Var_2_B2DsPhi_Ds2KKPi.pdf}
+%       \caption{\decay{\Dsp}{\Kp\Km\pip}}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.32\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Data_MC_Comparison_Var_2_B2DsPhi_Ds2PiPiPi.pdf}
+%       \caption{\decay{\Dsp}{\pip\pim\pip}}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.32\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Data_MC_Comparison_Var_2_B2DsPhi_Ds2KPiPi.pdf}
+%       \caption{\decay{\Dsp}{\Kp\pim\pip}}
+%    \end{subfigure}\\
+%    \caption{The \Bp meson $\chi^{2}_{\text{IP}}$ distributions for \decay{\Bp}{\Dsp\phiz} candidates in data (black) and simulation (red) after the MVA selection. Candidates within the range $4900 < m(\Dsp\phiz) < 5900 \mevcc$ are included in these figures. Candidates to the left of the vertical line are retained.}
+%    \label{fig:ipchi2dist_signal_B}   
+% \end{figure}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[!h]
-   \centering
-   \begin{subfigure}[t]{0.32\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Data_MC_Comparison_Var_1_B2DsPhi_Ds2KKPi.pdf}
-      \caption{\decay{\Dsp}{\Kp\Km\pip}}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.32\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Data_MC_Comparison_Var_1_B2DsPhi_Ds2PiPiPi.pdf}
-      \caption{\decay{\Dsp}{\pip\pim\pip}}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.32\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Data_MC_Comparison_Var_1_B2DsPhi_Ds2KPiPi.pdf}
-      \caption{\decay{\Dsp}{\Kp\pim\pip}}
-   \end{subfigure}\\
-   \caption{The \Dsp meson $\chi^{2}_{\text{IP}}$ distributions for \decay{\Bp}{\Dsp\phiz} candidates in data (black) and simulation (red) after the MVA selection. Candidates within the range $4900 < m(\Dsp\phiz) < 5900 \mevcc$ are included in these figures. Candidates to the right of the vertical line are retained.}
-   \label{fig:ipchi2dist_signal_D}   
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{figure}[!h]
+%    \centering
+%    \begin{subfigure}[t]{0.32\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Data_MC_Comparison_Var_1_B2DsPhi_Ds2KKPi.pdf}
+%       \caption{\decay{\Dsp}{\Kp\Km\pip}}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.32\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Data_MC_Comparison_Var_1_B2DsPhi_Ds2PiPiPi.pdf}
+%       \caption{\decay{\Dsp}{\pip\pim\pip}}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.32\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Data_MC_Comparison_Var_1_B2DsPhi_Ds2KPiPi.pdf}
+%       \caption{\decay{\Dsp}{\Kp\pim\pip}}
+%    \end{subfigure}\\
+%    \caption{The \Dsp meson $\chi^{2}_{\text{IP}}$ distributions for \decay{\Bp}{\Dsp\phiz} candidates in data (black) and simulation (red) after the MVA selection. Candidates within the range $4900 < m(\Dsp\phiz) < 5900 \mevcc$ are included in these figures. Candidates to the right of the vertical line are retained.}
+%    \label{fig:ipchi2dist_signal_D}   
+% \end{figure}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The distributions for the \Bp and \Dsp meson impact parameter significance is shown in Figs.~\ref{fig:ipchi2dist_signal_B} and~\ref{fig:ipchi2dist_signal_D} respectively for \decay{\Bp}{\Dsp\phiz} candidates. The requirement values are represented by vertical lines. Small peaks can be observed at low \Dsp meson impact parameter significance, corresponding to \Dsp mesons that originated at the PV. 
-As a cross-check, the same distributions are produced for the normalisation channel, \decay{\Bp}{\Dsp\Dzb}. 
-As there are plentiful numbers of events, only those within $20\mevcc$ of the \Bp mass are included. The normalisation sample has a very high purity so this effectively isolates these decays in data. This comparison of data and simulation distributions is shown in Fig.~\ref{fig:ipchi2dist_normalisation}.
+% The distributions for the \Bp and \Dsp meson impact parameter significance is shown in Figs.~\ref{fig:ipchi2dist_signal_B} and~\ref{fig:ipchi2dist_signal_D} respectively for \decay{\Bp}{\Dsp\phiz} candidates. The requirement values are represented by vertical lines. Small peaks can be observed at low \Dsp meson impact parameter significance, corresponding to \Dsp mesons that originated at the PV. 
+% As a cross-check, the same distributions are produced for the normalisation channel, \decay{\Bp}{\Dsp\Dzb}. 
+% As there are plentiful numbers of events, only those within $20\mevcc$ of the \Bp mass are included. The normalisation sample has a very high purity so this effectively isolates these decays in data. This comparison of data and simulation distributions is shown in Fig.~\ref{fig:ipchi2dist_normalisation}.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{figure}[!h]
-   \centering
-   \begin{subfigure}[t]{0.32\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Data_MC_Comparison_Var_1_B2DsD0_Ds2KKPi.pdf}
-      \caption{\decay{\Dsp}{\Kp\Km\pip}}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.32\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Data_MC_Comparison_Var_1_B2DsD0_Ds2PiPiPi.pdf}
-      \caption{\decay{\Dsp}{\pip\pim\pip}}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.32\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Data_MC_Comparison_Var_1_B2DsD0_Ds2KPiPi.pdf}
-      \caption{\decay{\Dsp}{\Kp\pim\pip}}
-   \end{subfigure}\\
-   \begin{subfigure}[t]{0.32\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Data_MC_Comparison_Var_2_B2DsD0_Ds2KKPi.pdf}
-      \caption{\decay{\Dsp}{\Kp\Km\pip}}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.32\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Data_MC_Comparison_Var_2_B2DsD0_Ds2PiPiPi.pdf}
-      \caption{\decay{\Dsp}{\pip\pim\pip}}
-   \end{subfigure}
-   \begin{subfigure}[t]{0.32\textwidth}
-      \centering
-      \includegraphics[width=1.0\textwidth]{figs/Selection/Data_MC_Comparison_Var_2_B2DsD0_Ds2KPiPi.pdf}
-      \caption{\decay{\Dsp}{\Kp\pim\pip}}
-   \end{subfigure}\\
-   \caption{The \Bp and \Dsp meson $\chi^{2}_{\text{IP}}$ distributions for \decay{\Bp}{\Dsp\Dzb} candidates in data (black) and simulation (red). Candidates within the range $|m(\Dsp\phiz) - m(\Bp)| < 20 \mevcc$ are included in these figures, effectively isolating the normalisation events in data.}
-   \label{fig:ipchi2dist_normalisation}   
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{figure}[!h]
+%    \centering
+%    \begin{subfigure}[t]{0.32\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Data_MC_Comparison_Var_1_B2DsD0_Ds2KKPi.pdf}
+%       \caption{\decay{\Dsp}{\Kp\Km\pip}}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.32\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Data_MC_Comparison_Var_1_B2DsD0_Ds2PiPiPi.pdf}
+%       \caption{\decay{\Dsp}{\pip\pim\pip}}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.32\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Data_MC_Comparison_Var_1_B2DsD0_Ds2KPiPi.pdf}
+%       \caption{\decay{\Dsp}{\Kp\pim\pip}}
+%    \end{subfigure}\\
+%    \begin{subfigure}[t]{0.32\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Data_MC_Comparison_Var_2_B2DsD0_Ds2KKPi.pdf}
+%       \caption{\decay{\Dsp}{\Kp\Km\pip}}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.32\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Data_MC_Comparison_Var_2_B2DsD0_Ds2PiPiPi.pdf}
+%       \caption{\decay{\Dsp}{\pip\pim\pip}}
+%    \end{subfigure}
+%    \begin{subfigure}[t]{0.32\textwidth}
+%       \centering
+%       \includegraphics[width=1.0\textwidth]{figs/Selection/Data_MC_Comparison_Var_2_B2DsD0_Ds2KPiPi.pdf}
+%       \caption{\decay{\Dsp}{\Kp\pim\pip}}
+%    \end{subfigure}\\
+%    \caption{The \Bp and \Dsp meson $\chi^{2}_{\text{IP}}$ distributions for \decay{\Bp}{\Dsp\Dzb} candidates in data (black) and simulation (red). Candidates within the range $|m(\Dsp\phiz) - m(\Bp)| < 20 \mevcc$ are included in these figures, effectively isolating the normalisation events in data.}
+%    \label{fig:ipchi2dist_normalisation}   
+% \end{figure}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
-Small shifts are observed in the $\chi^{2}_{\text{IP}}$ distributions. These differences are studied as a source of systematic uncertainty as discussed in Sections~\ref{sec:B2DsKK_systuncertainy} and \ref{sec:B2DsPhi_systuncertainy}.
+% Small shifts are observed in the $\chi^{2}_{\text{IP}}$ distributions. These differences are studied as a source of systematic uncertainty as discussed in Sections~\ref{sec:B2DsKK_systuncertainy} and \ref{sec:B2DsPhi_systuncertainy}.
 
 
 % \section{Multiple candidates}
@@ -2074,31 +2096,37 @@ Small shifts are observed in the $\chi^{2}_{\text{IP}}$ distributions. These dif
 \label{sec:decaytreefitter}
 
 The yields of \Bp meson candidates for the signal and normalisation channels are determined from fits to the \Bp meson invariant mass, the exact details of which will be in Chapters~\ref{ch:B2DsKK} and \ref{ch:B2DsPhi}.
-Two variants of invariant mass are available, the \emph{raw} \Bp meson invariant mass is calculated from the Lorentz sum of the \Dsp and \phiz (or \Dzb) candidates.
-A \emph{refit} \Bp meson invariant mass is also available. This improves the precision of the mass measurements by adding kinematic or topological constraints in a fit to the whole decay chain. 
-%in the vertex fits used to constructed the \Bp candidates from combinations of \Dsp and \phiz or \Dzb candidates. The 4-momentum vectors for the decay products trajectories are extrapolated to the vertex location and the invariant mass calculated from the sum of the decay products 4-vectors. The width of the \Bp meson distribution is dominated by the resolution of the \lhcb detector, as the natural width of the meson itself is $~0.4\times 10^{-3}\ev$.
-%It is possible to reduce the effect of the resolution by adding more constraints in the fit to the decay chain. 
-The mass of the \Dsp  (and \Dzb) meson is constrained to the known value. Additionally, the momentum vector of the \Bp meson is constrained to be parallel to the line between the primary interaction and the \Bp-meson decay vertex. 
-This is implemented with the Decay Tree Fitter algorithm \cite{Hulsbergen:2005pu}.
-%With these constraints applied, the whole decay chain is refitted, and the \Bp meson mass recalculated. 
-For genuine signal and normalisation decays the resolution is improved.
-%the smearing effects that might lead the track momentum or position to be incorrectly measured can be circumvented by including the extra information about intermediate meson masses, or \Bp flight direction. 
-Background candidates have different topologies and will be randomly shifted up or down in invariant mass, leading to a similar combinatorial distribution.    
+Two variants of invariant mass are available, the \emph{raw} \Bp meson invariant mass is calculated from the Lorentz sum of the \Dsp and \phiz (or \Dzb) candidates, or a \emph{refit} \Bp meson invariant mass in which kinematic and topological constraints improve the precision. The mass of the \Dsp (and \Dzb) meson is constrained to the known value. Additionally, the momentum vector of the \Bp meson is constrained to be parallel to the line between the primary interaction and the \Bp-meson decay vertex. 
+This is implemented with the Decay Tree Fitter algorithm \cite{Hulsbergen:2005pu}. 
 
 
-It is possible to recalculate all kinematic distributions for the components of the decay chain with these constraints applied, for example the momentum of the decay products. 
-However, the gain for broad distributions is minimal so the \emph{raw} variables are used in the MVAs. 
-%However, these variables are not used when training the MVA methods even though they may result in a greater discrimination between signal and background. The modes used to train the MVA methods have slightly different topologies, therefore the improvements in the resolution achieved in these modes may not be the same as that seen for the signal and normalisation channel. 
 
-The search for \decay{\Bp}{\Dsp\Kp\Km} decays involves determining the phase-space distribution of candidates in both simulations and data using the two-body masses $m^{2}(\Dsp\Km)$ and $m^{2}(\Kp\Km)$. These are determined using the decay product 4-vectors calculated with the \Bp meson mass constrained in addition to the \Dsp mass and \Bp flight direction. This ensures the candidates are found within the kinematically allowed region of the two dimensional $m^{2}(\Dsp\Km)$ vs. $m^{2}(\Kp\Km)$ space.
+% The yields of \Bp meson candidates for the signal and normalisation channels are determined from fits to the \Bp meson invariant mass, the exact details of which will be in Chapters~\ref{ch:B2DsKK} and \ref{ch:B2DsPhi}.
+% Two variants of invariant mass are available, the \emph{raw} \Bp meson invariant mass is calculated from the Lorentz sum of the \Dsp and \phiz (or \Dzb) candidates.
+% A \emph{refit} \Bp meson invariant mass is also available. This improves the precision of the mass measurements by adding kinematic or topological constraints in a fit to the whole decay chain. 
+% The mass of the \Dsp  (and \Dzb) meson is constrained to the known value. Additionally, the momentum vector of the \Bp meson is constrained to be parallel to the line between the primary interaction and the \Bp-meson decay vertex. 
+% This is implemented with the Decay Tree Fitter algorithm \cite{Hulsbergen:2005pu}. 
+% For genuine signal and normalisation decays the resolution is improved.
+% Background candidates have different topologies and will be randomly shifted up or down in invariant mass, leading to a similar combinatorial distribution.    
 
-In the search for \decay{\Bp}{\Dsp\phiz} decays an angle, $\theta_{K}$, is used to split candidates into two categories. This angle is determined using the \emph{refit} 4-vectors calculated using the \Dsp mass and \Bp flight direction constraints. This improves the separation power as opposed to using the \emph{raw} 4-vectors.  
+
+% It is possible to recalculate all kinematic distributions for the components of the decay chain with these constraints applied, for example the momentum of the decay products. 
+% However, the gain for broad distributions is minimal so the \emph{raw} variables are used in the MVAs. 
+
+% The search for \decay{\Bp}{\Dsp\Kp\Km} decays involves determining the phase-space distribution of candidates in both simulations and data using the two-body masses $m^{2}(\Dsp\Km)$ and $m^{2}(\Kp\Km)$. These are determined using the decay product 4-vectors calculated with the \Bp meson mass constrained in addition to the \Dsp mass and \Bp flight direction. This ensures the candidates are found within the kinematically allowed region of the two dimensional $m^{2}(\Dsp\Km)$ vs. $m^{2}(\Kp\Km)$ space.
+
+% In the search for \decay{\Bp}{\Dsp\phiz} decays an angle, $\theta_{K}$, is used to split candidates into two categories. This angle is determined using the \emph{refit} 4-vectors calculated using the \Dsp mass and \Bp flight direction constraints. This improves the separation power as opposed to using the \emph{raw} 4-vectors.  
+
+
+
 
 
 
 \subsection{\Dsp, \phiz and \Dzb invariant mass distributions}
 
-The \Dsp and \phiz meson invariant mass distributions for signal \decay{\Bp}{\Dsp\phiz} candidates passing the full selection requirements are shown in Fig.~\ref{fig:d_phi_mass_signal}. The same distributions for the normalisation channel \decay{\Bp}{\Dsp\Dzb} are shown in Fig.~\ref{fig:d_phi_mass_normlaisation}. The purity of the \decay{\Dsp}{\pip\pim\pip} and \decay{\Dsp}{\Kp\pim\pip} decays are significantly lower than the \decay{\Dsp}{\Kp\Km\pip} mode as a result of the smaller branching fractions for these modes. 
+The \Dsp and \phiz meson invariant mass distributions for \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Dzb} candidates passing the full selection requirements are shown in Figs.~\ref{fig:d_phi_mass_signal} and~\ref{fig:d_phi_mass_normlaisation} respectively. 
+%The same distributions for the normalisation channel \decay{\Bp}{\Dsp\Dzb} are shown in Fig.~\ref{fig:d_phi_mass_normlaisation}. 
+The purity of the \decay{\Dsp}{\pip\pim\pip} and \decay{\Dsp}{\Kp\pim\pip} decays are significantly lower than the \decay{\Dsp}{\Kp\Km\pip} mode as a result of the smaller branching fractions for these modes. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
