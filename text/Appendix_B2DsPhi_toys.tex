@@ -38,7 +38,7 @@ For an ideal unbiased fit model, the pull of each parameter of interest would be
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 The distributions of the yields, errors and pulls for the signal and normalisation pseudo-experiments are shown in Fig.~\ref{fig:B2DsKK_Pulls}. A fit is performed for each pull distributions using a Gaussian to determine the mean and width. 
-For the signal yield the mean and with are within $3\sigma$ of zero and one respectively. The normalisation yield shows a significant bias in the width. The bias implies the fit model is overestimating the uncertainty $\sigma$ of the yield.
+For the signal yield the mean and width are within $3\sigma$ of zero and one respectively. The normalisation yield shows a significant bias in the width. The bias implies the fit model is overestimating the uncertainty $\sigma$ of the yield.
 If the normalisation yield uncertainty dominates the uncertainty in the branching fraction this could lead to an overestimation of the uncertainty on the final measured branching fraction.
 
 To determine how the normalisation uncertainty propagates to the branching fraction another set of pseudo-experiments are produced.
@@ -47,7 +47,7 @@ This set includes both signal and normalisation decays. To calculated the branch
 \section{Fit validation for the \decay{\Bp}{\Dsp\phiz} fitting framework}
 \label{sec:app_toys_B2DsPhi}
 
-The simultaneous fitting framework is validated by generating pseudo-experiments (also referred to as \emph{toys}). The total fit model PDF is randomly sampled to create a simulation sample with the same number of candidates as the nominal fit. These are then fitted using the same fit model, determining the best estimate and uncertainty of each parameter. The parameter values used to generate the pseudo-experiments are chosen to be the final parameter values as determined in a fit to data. This is known as the plug-in method~\cite{plugin}.
+The simultaneous fitting framework is validated by generating pseudo-experiments. The total fit model PDF is randomly sampled to create a simulation sample with the same number of candidates as the nominal fit. These are then fitted using the same fit model, determining the best estimate and uncertainty of each parameter. The parameter values used to generate the pseudo-experiments are chosen to be the final parameter values as determined in a fit to data. This is known as the plug-in method~\cite{plugin}.
 The fitted value and associated error is used to determine the pull of each parameter of interest. As the errors are determined asymmetrically using \minos the is defined conditionally to incorporate the appropriate error 
 \begin{equation}
   g_{\text{pull}} = \left \{

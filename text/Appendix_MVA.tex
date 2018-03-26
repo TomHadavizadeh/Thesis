@@ -1,4 +1,4 @@
-\chapter{Details of multivariate analyses}
+\chapter{Further details of multivariate analyses}
 \label{ch:appendix_MVAs}
 
 This appendix provides further details of the MVA selections described in Section~\ref{sec:selection_MVA}.
@@ -44,7 +44,7 @@ For \Dsp candidates from \decay{\Bsb}{\Dsp\pim} decays, the \Bsb meson is requir
 
 For the \decay{\Bs}{\jpsi\phiz} candidates, a large fraction are triggered due to the muons from the \jpsi decay. To ensure the sample is reflective of the signal decays the \Bs meson is required to be \texttt{TOS} with respect to the \texttt{L0Hadron} trigger or \texttt{TIS} with respect to \texttt{L0Global}. This effectively excludes events that have been selected solely due to muons initiating the muon hardware trigger. This consequently results in a large decrease in the available statistics.
 
-As shown in Table~\ref{tab:strippingrequirments_phi}, the MVA training mode has tighter particle identification requirements than the signal mode. Particle identification plays a crucial role in the efficacy of the MVA methods, therefore the signal PID requirements for the \phiz meson decay products are tightened accordingly as discussed in Section~\ref{sec:pidrequirements}.
+As shown in Table~\ref{tab:strippingrequirments_phi}, the MVA training mode has tighter particle identification requirements than the signal mode. Particle identification plays a crucial role in the efficacy of the MVA methods, therefore the signal PID requirements for the \phiz meson decay products are tightened accordingly.
 
 Finally, the same misidentified \D and \Lc hadron vetoes as detailed in Section~\ref{sec:pidvetos} are applied to the \decay{\Bsb}{\Dsp\pim} sample. These help to ensure the samples of \Dsp candidates are free from contamination.
 
@@ -69,7 +69,7 @@ where $a$ and $b$ are parameters that can vary freely and $m$ is the observable 
 The \phiz meson mass is close to the threshold for \Kp\Km pair production so this parametrisation has sufficient freedom to successfully  model the increasing background shape.
 The background contribution to all three \Dsp decays are modelled using exponential functions with a single degree of freedom controlling the effective slope
 \begin{equation}
-g(m|c) = e^{-m\times c},
+g(m|c) = e^{-mc},
 \end{equation}
 where $c$ is a freely varying parameter and $m$ is the observable invariant mass.
 The fits to the \phiz and \Dsp meson masses in the \decay{\Bs}{\jpsi\phiz} and \decay{\Bsb}{\Dsp\pim} samples are performed separately for each year of data taking and polarity of the \lhcb dipole magnet. These distributions are shown in Fig.~\ref{fig:mvatrainingsamples} for each of the \phiz and \Dsp decay modes.
@@ -541,7 +541,7 @@ This effect is further studied to determine if it results in any systematic unce
 
 \section{Optimisation}
 \label{sec:app_mva_optimisation}
-The VA optimisation is performed in two dimensions, one for each of the \phiz and \Dsp MVAs. This is performed separately for the three different \Dsp decay modes. The results of the optimisation for each \Dsp decay mode and running period are shown in Fig.~\ref{fig:mvaoptmisation}. 
+The MVA optimisation is performed in two dimensions, one for each of the \phiz and \Dsp MVAs. This is performed separately for the three different \Dsp decay modes. The results of the optimisation for each \Dsp decay mode and running period are shown in Fig.~\ref{fig:mvaoptmisation}. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
    \centering
