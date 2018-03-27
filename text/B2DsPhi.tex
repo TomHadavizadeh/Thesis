@@ -324,7 +324,7 @@ The invariant mass distributions of \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\
 % Again, $\mu$, $\sigma$, $n$, $\alpha$ and $f_{\sigma}$ are adjustable parameters and $m$ is the \B meson invariant mass observable.
 % The tail parameter $\alpha$ is fixed to values determined from maximum likelihood fits to simulated candidates for the signal and normalisation decays. The parameter $n$ is fixed to unity in the fits to both simulation and data to increase the stability of the tails.     
 % The two CB function are allowed have different widths, $\sigma_{1}$ and $\sigma_{2}$, but the ratio $\sigma_{1}/\sigma_{2}$ is fixed from the fits to simulations, as is $f_{\sigma}$ that determines the fractional contribution of the narrower CB function ($\sigma_{1}<\sigma_{2}$). 
-However, an extra constraint is added to the signal and normalisation DCB functions with respect to the previous configuration. As the number of signal candidates is likely to be small, the relative width of the narrower signal and normalisation CB functions, $\sigma_{1}(\Dsp\phi) / \sigma_{1}(\Dsp\Dzb)$, is also fixed to values obtained from the fits to simulations. 
+However, an extra constraint is added with respect to the previous configuration. As the number of signal candidates is likely to be small, the relative width of the narrower signal and normalisation CB functions, $\sigma_{1}(\Dsp\phi) / \sigma_{1}(\Dsp\Dzb)$, is also fixed to values obtained from the fits to simulations. 
 The simulation invariant mass fits and corresponding fixed parameter values can be found in Appendix~\ref{ch:appendix_MCfits}.
 %All fixed parameters are determined separately for the different \Dsp decay modes, and the results of the fits to simulated decays are shown in Fig.~\ref{fig:B2DsPhi_signal_fits}.     
 
@@ -632,7 +632,7 @@ The yields of combinatorial background is allowed to vary freely in each of the 
 \section{Free and constrained parameters}
 
 The fit to \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Dzb} decays contains a total of 54 free parameters. 
-These are divided into four different categories.
+These are divided into four different categories: the parameter of interest; PDF shape parameters; yields; and fractions.
 
 %These are listed in Tab.~\ref{tab:B2DsPhi_free_variables}. 
 
@@ -655,7 +655,7 @@ The parameter of interest (POI) is the branching fraction for \decay{\Bp}{\Dsp\p
 
 %\subsection{Shape parameters}
 The fit included eight parameters governing the shapes of various PDFs.
-This includes: a single combinatorial background slope parameter, $c$; the mean \Bp mass, $\mu$; the partially reconstructed background mass offset, $\delta$; the relative height of the double peaked \decay{\Bp}{\Dssp\phiz}, \decay{\Bp}{\Dssp\Dzb} and \decay{\Bp}{\Dsp\Dstarzb} decays, $\xi$; and the narrower CB width parameter $\sigma_{1}$ (for each \Dsp mode). 
+This includes: a single combinatorial background slope parameter, $c$; the mean \Bp mass, $\mu$; the partially reconstructed background mass offset, $\delta$; the relative height of the double peaked \decay{\Bp}{\Dssp\phiz}, \decay{\Bp}{\Dssp\Dzb} and \decay{\Bp}{\Dsp\Dstarzb} decays, $\xi$; and the narrower CB width parameter $\sigma_{1}$ (with separate widths for each \Dsp mode). 
 % \begin{itemize}
 % \item The combinatorial background PDF is controlled by a single slope parameter $c$ for all categories.
 % \item The mean \Bp mass for the signal and normalisation mode is free to vary in the fit. The same value is used for all \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Dzb} PDFs.
@@ -806,7 +806,7 @@ This parameter is included as a cross check. The normalisation decays have a fla
 
 \section{Fit validation}
 \label{sec:B2DsPhi_fitstrategy}
-The simultaneous fitting framework is validated by generating pseudo-experiments using a similar procedure as described in the search for \decay{\Bp}{\Dsp\Kp\Km} decays. The framework is found to not have any significant bias as described in Appendix~\ref{sec:app_toys_B2DsPhi}.
+The simultaneous fitting framework is validated by generating pseudo-experiments using a similar procedure as described in the search for \decay{\Bp}{\Dsp\Kp\Km} decays. The framework is found to not have any significant bias, as described in Appendix~\ref{sec:app_toys_B2DsPhi}.
 
 
 % The simultaneous fitting framework is validated by generating pseudo-experiments (also referred to as \emph{toys}). The total fit model PDF is randomly sampled to create a simulation sample with the same number of candidates as the nominal fit. These are then fitted using the same fit model, determining the best estimate and uncertainty of each parameter. The parameter values used to generate the pseudo-experiments are chosen to be the final parameter values as determined in a fit to data. This is known as the plug-in method~\cite{plugin}.
@@ -915,45 +915,46 @@ The simultaneous fitting framework is validated by generating pseudo-experiments
 
 
 \section{Normalisation and signal fits}
-
-The result of the simultaneous fit to the signal and normalisation decays is shown in Figs.~\ref{fig:B2DsPhi_Norm_Fit} and \ref{fig:B2DsPhi_Signal_Fit}. These figures show the distribution of candidates passing all selection requirements along with the total PDF model resulting from the minimisation of the log-likelihood. The four \Dsp decay mode categories have been merged into a single distribution. The fits in each different \Ds decay mode category can be found in Appendix~\ref{ch:appendix_fits}.
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
     \centering
-    \begin{subfigure}[t]{1.0\textwidth}
-        \includegraphics[width=1.0\textwidth]{figs/Appendix_FitCategories/canvas_DsD0_merged_both_summed_splitHel_splitKKPi_s21_s21r1_s24_s26.pdf}
+    \begin{subfigure}[t]{0.85\textwidth}
+        %\includegraphics[width=1.0\textwidth]{figs/Appendix_FitCategories/canvas_DsD0_merged_both_summed_splitHel_splitKKPi_s21_s21r1_s24_s26.pdf}
+        \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/B2DsD0_result.pdf}
     \end{subfigure}
     \caption{Invariant mass fit to \decay{\Bp}{\Dsp\Dzb} candidates}
     \label{fig:B2DsPhi_Norm_Fit}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-The high purity of the normalisation mode reconstruction can be seen in Fig.~\ref{fig:B2DsPhi_Norm_Fit}, as the contribution from the combinatorial background shape is very small. Additionally, the double-peaked structure of the partially reconstructed \decay{\Bp}{\Dssp\Dzb} and \decay{\Bp}{\Dsp\Dstarzb} decays is clearly visible. 
-%The decays are split into two $\cos\theta_{K}$ categories, 
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
     \centering
-    \begin{subfigure}[t]{1.0\textwidth}
-        \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/Fig4a.eps}
+    \begin{subfigure}[t]{0.85\textwidth}
+        %\includegraphics[width=1.0\textwidth]{figs/B2DsPhi/Fig4a.eps}
+        \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/B2DsPhi_result_one.pdf}
     \end{subfigure}
-    \begin{subfigure}[t]{1.0\textwidth}
-        \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/Fig4b.eps}
+    \begin{subfigure}[t]{0.85\textwidth}
+        %\includegraphics[width=1.0\textwidth]{figs/B2DsPhi/Fig4b.eps}
+        \includegraphics[width=1.0\textwidth]{figs/B2DsPhi/B2DsPhi_result_two.pdf}
     \end{subfigure}
     \caption{Invariant mass fit to \decay{\Bp}{\Dsp\phiz} candidates}
     \label{fig:B2DsPhi_Signal_Fit}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+The result of the simultaneous fit to the signal and normalisation decays is shown in Figs.~\ref{fig:B2DsPhi_Norm_Fit} and \ref{fig:B2DsPhi_Signal_Fit}. These figures show the distribution of candidates passing all selection requirements along with the total PDF model resulting from the minimisation of the negative log-likelihood. The four \Dsp decay mode categories have been merged into a single distribution. The fit result split into each different \Dsp decay mode category can be found in Appendix~\ref{ch:appendix_fits}.
+
+The high purity of the normalisation mode reconstruction can be seen in Fig.~\ref{fig:B2DsPhi_Norm_Fit}, as the contribution from the combinatorial background shape is very small. Additionally, the double-peaked structure of the partially reconstructed \decay{\Bp}{\Dssp\Dzb} and \decay{\Bp}{\Dsp\Dstarzb} decays is clearly visible. 
+%The decays are split into two $\cos\theta_{K}$ categories, 
+
+
+
 The fit to the signal mode is shown in Fig.~\ref{fig:B2DsPhi_Signal_Fit}. This figure includes the \decay{\Bp}{\Dsp\phiz} candidates in both the $|m(\Kp\Km)| < 10\mevcc$ (\phiz-region) and $10< |m(\Kp\Km)| < 40\mevcc$ (\phiz-sideband) categories. These are further split into the two $\cos\theta_{K}$ categories in an analogous way to the normalisation decays.
 
 
 
-The final values of the parameters as determined by the fit are tabulated in Table~\ref{tab:B2DsPhi_free_variables}, including the branching fraction $\BF(\decay{\Bp}{\Dsp\phiz})$. This parameter includes a correction to account for the efficiencies of the signal and normalisation modes as discussed in Sec.~\ref{sec:B2DsPhi_effcorrections}. 
+The final values of the parameters as determined by the fit are tabulated in Table~\ref{tab:B2DsPhi_free_variables}, including the branching fraction $\BF(\decay{\Bp}{\Dsp\phiz})$. This parameter includes a correction to account for the efficiencies of the signal and normalisation modes as discussed in Sec.~\ref{sec:B2DsPhi_effcorrections}. The yields assigned to the signal decay PDFs are constructed using the branching fraction as detailed in Section~\ref{sec:B2DsPhi_results}. 
+
 
 \begin{longtable}{ l l c }
 \hline
@@ -1326,7 +1327,7 @@ An additional systematic uncertainty is included because these fractions are tak
 The sources of systematic uncertainty are listed in Table~\ref{table:B2DsPhi_systematics} in decreasing order. The total is also included, calculated by summing the contributions in quadrature. Additionally the uncertainty arising from the externally measured branching fractions is included. 
 
 \begin{table}[!ht]
-\begin{center}
+\centering
 \begin{tabular}{ l  c  c}
 
 \hline
@@ -1350,13 +1351,11 @@ Normalisation                               & 8.6\% & $0.1$\\
 \end{tabular}
 \caption{Contributions to the total systematic uncertainty in the search for \decay{\Bp}{\Dsp\phiz} decays. The contribution from the external measurements of the normalisation channel branching fraction is also included.}
 \label{table:B2DsPhi_systematics}
-\end{center}
 \end{table}
 
 
 \section{Results}
 \label{sec:B2DsPhi_results}
-
 
 The fit to $\decay{\Bp}{\Dsp\phiz}$ candidates finds a total yield of $N(\decay{\Bp}{\Dsp\phiz}) = 5.3 \pm 6.7$, summed across all categories and \Dsp meson decay modes. 
 A yield of $N(\decay{\Bp}{\Dsp\Km\Kp}) = 65 \pm 10 $ is found, consistent with the yield obtained from the full $\decay{\Bp}{\Dsp\Kp\Km}$ measurement. 
@@ -1414,7 +1413,7 @@ A visual representation of these measurements are shown in Fig.~\ref{fig:B2DsPhi
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
     \centering
-        \includegraphics[width=0.8\textwidth]{figs/B2DsPhi/Split_Ds_modes.pdf}
+        \includegraphics[width=0.7\textwidth]{figs/B2DsPhi/Split_Ds_modes.pdf}
         \caption{Results split for different \Dsp decay modes. The branching fraction determined from all modes simultaneously is represented by the vertical red line.}
     \label{fig:B2DsPhi_split_Ds_results}   
 \end{figure}
