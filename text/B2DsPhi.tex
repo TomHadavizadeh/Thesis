@@ -11,8 +11,8 @@ The branching fraction $\BF(\decay{\Bp}{\Dsp\phiz})$ is determined by multiplyin
 \section{Fit strategy}
 \label{sec:B2DsPhi_fitstrategy}
 The strategy to search for \decay{\Bp}{\Dsp\phiz} is complicated by \decay{\Bp}{\Dsp\Kp\Km} decays (Chapter~\ref{ch:B2DsKK}) being present as a peaking background to \decay{\Bp}{\Dsp(\decay{\phiz}{\Kp\Km})} decays.
-The ratio of \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Dzb} yields is determined using a simultaneous extended unbinned maximum likelihood fit. Three sets of categories are used, separating the candidates according to \Dsp meson decay mode, invariant mass of the \Kp\Km pair consititing the \phiz meson, $m(\Kp\Km)$, and the cosine of an angle $\cos\theta_{K}$. The details and definitions of these categories are listed in Sec~\ref{sec:B2DsPhi_fit_cats}. 
-The total extended NLL for this fit is created from the sum of each NLL in each of the categories
+The ratio of \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Dzb} yields is determined using a simultaneous extended unbinned maximum likelihood fit. Three sets of categories are used, separating the candidates according to \Dsp meson decay mode, invariant mass of the \Kp\Km pair from the \phiz meson, $m(\Kp\Km)$, and the cosine of the angle $\cos\theta_{K}$. The details and definitions of these categories are listed in Sec~\ref{sec:B2DsPhi_fit_cats}. 
+The total extended negative log likelihood (NLL) for this fit is created from the sum of each NLL in each of the categories
 \begin{equation}
 -\log\mathcal{L}(n_{0}...n_{j},\vec{p}) = \sum_{\alpha} \sum_{\beta} \sum_{\gamma} \left(-\log\mathcal{L^{\alpha,\beta,\gamma}}(n_{0}^{\alpha,\beta,\gamma}...n_{j}^{\alpha,\beta,\gamma},\vec{p}) \right)
 \end{equation} 
@@ -401,7 +401,7 @@ Typically, processes in which a low momentum pion or photon has not been reconst
 
  \begin{description}
 \item \textbf{\decay{\Bp}{(\decay{\Dssp}{\Dsp[\piz/\Pgamma]})\Dzb} and \decay{\Bp}{\Dsp(\decay{\Dstarzb}{\Dzb[\piz/\Pgamma]})}:}
-these modes can both contribute as partially reconstructed backgrounds to the \decay{\Bp}{\Dsp\Dzb} normalisation mode. These are parametrised using the same PDFs as in the search for \decay{\Bp}{\Ds\Kp\Km} decays, already described in Sec.~\ref{sec:B2DsKK_norm_partreco}. The PDFs are shown in Fig.~\ref{fig:B2DsPhi_DsD0_partreco}.
+these modes can both contribute as partially reconstructed backgrounds to the \decay{\Bp}{\Dsp\Dzb} normalisation mode. These are parametrised using the same PDFs as in the search for \decay{\Bp}{\Dsp\Kp\Km} decays, already described in Sec.~\ref{sec:B2DsKK_norm_partreco}. The PDFs are shown in Fig.~\ref{fig:B2DsPhi_DsD0_partreco}.
 \end{description}
 
 % \begin{description}
@@ -453,7 +453,7 @@ The choice of PDF for this component is found to have negligible effect on the d
 \label{sec:B2DsPhi_part_recto_sig}
 %The signal channel invariant mass distribution receives contributions from the partially reconstructed modes considered in the search for \decay{\Bp}{\Dsp\Kp\Km} decays. The PDFs determined are 
 
-All of the background to the \decay{\Bp}{\Dsp\Kp\Km} channel already discussed Section~\ref{sec:B2DsKK_sig_partreco} are relevant again in the search for \decay{\Bp}{\Dsp\phiz} decays. This includes \decay{\Bsb}{\Dsp\Km\Kstarz}, \decay{\Bsb}{\Dssp\Km\Kstarz}, \decay{\Bsb}{\Dsp\Dsm}, \decay{\Bzb}{\Dsp\Dm} and \decay{\Bsb}{\Dssp\Dsm} decays. The PDFs are determined using one-dimensional kernel estimation from samples of simulated decays passing the signal selection. These PDFs are updates to only include candidates in the appropriate range of $m(\Kp\Km)$ and shown in Figure~\ref{fig:B2DsPhi_part_reco_shapes}. The fraction of each background expected in each of the four $m(\Kp\Km)$ and $\cos\theta_{K}$ categories is determined from the relevant simulations samples.
+All of the background to the \decay{\Bp}{\Dsp\Kp\Km} channel already discussed Section~\ref{sec:B2DsKK_sig_partreco} are relevant again in the search for \decay{\Bp}{\Dsp\phiz} decays. This includes \decay{\Bsb}{\Dsp\Km\Kstarz}, \decay{\Bsb}{\Dssp\Km\Kstarz}, \decay{\Bsb}{\Dsp\Dsm}, \decay{\Bzb}{\Dsp\Dm} and \decay{\Bsb}{\Dssp\Dsm} decays. The PDFs are determined using one-dimensional kernel estimation from samples of simulated decays passing the signal selection. These PDFs are updated to only include candidates in the appropriate range of $m(\Kp\Km)$ and shown in Figure~\ref{fig:B2DsPhi_part_reco_shapes}. The fraction of each background expected in each of the four $m(\Kp\Km)$ and $\cos\theta_{K}$ categories is determined from the relevant simulations samples.
 
 The branching fractions the three decays \decay{\Bzb}{\Dsp\Dm}, \decay{\Bsb}{\Dsp\Dsm}, and \decay{\Bsb}{\Dssp\Dsm} are measured to be $(7.2 \pm 0.8 ) \times 10^{-3}$, $(4.4 \pm 0.5 ) \times 10^{-3}$ and $(1.37 \pm 0.16 ) \%$ respectively~\cite{PDG2016}. The relative contributions for these three processes are fixed using these branching fractions, estimates of the relative efficiencies for each mode and the production fraction of \Bsb mesons relative to \Bzb mesons, $f_{s}/f_{d}$. This helps to add stability to the fit.
 
@@ -731,7 +731,7 @@ Another five free parameters control the fractions of events in different catego
 \begin{equation}
 \frac{N(\decay{\Bp}{\Dsp\Dzb})_{|\cos\theta_{K}|>0.4}}{N(\decay{\Bp}{\Dsp\Dzb})_{\text{Total}}}.   
 \end{equation}
-This parameter is included as a cross check. The normalisation decays have a flat distribution in $\cos\theta_{K}$ so the paremeter would be expected to be around $0.6$. 
+This parameter is included as a cross check. The normalisation decays have a flat distribution in $\cos\theta_{K}$ so the parameter would be expected to be around $0.6$. 
 \end{enumerate}
 
 

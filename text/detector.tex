@@ -20,7 +20,7 @@ requires \emph{`the results of its experimental and theoretical work shall be pu
 The choice of the laboratories location followed a similar set of values, picking Geneva, Switzerland owing both to the central European location and neutrality of the host state. 
 
 
-Perhaps currently the most well known accelerator in the complex, \cern is home to the Large Hadron Collider (\lhc). Two beams of hadrons circulate in opposite directions around 27\km rings, colliding at four interaction points. The beam pipes and experimental halls are buried deep underground, providing shielding from cosmic radiation and reducing the cost of acquiring large areas of land. The tunnels traverse the Franco-Swiss border at a depth that varies between 50--175\m at the lowest and highest points respectively.      
+Perhaps currently the most well known accelerator in the complex, \cern is home to the Large Hadron Collider (\lhc). Two beams of hadrons circulate in opposite directions around 27\km rings, colliding at four interaction points. The beam pipes and experimental halls are buried deep underground, providing shielding from cosmic radiation and reducing the cost of acquiring large areas of land. The tunnels traverse the Franco-Swiss border at a depth that varies between 50--175\m at the shallowest and deepest points respectively.      
 
 The tunnel and caverns occupied by the \lhc pre-date the current accelerators and experiments. There were originally constructed for the Large Electron Positron Collider (\lep). This machine begin operation in 1989 and collided electrons and positrons at a collision energy of $\sqrt{s}=209\gev$.  
 
@@ -359,7 +359,7 @@ The straws comprising the tracker are composed of an inner wire surrounded by a 
 
 The double layers of straw tubes as shown in Fig.~\ref{fig:Dec_ot_schematic} make up a module. Vertically, the modules are split in two, with staggered gaps between the two individual straw layers to avoid an uninstrumented region. Each of the modules are read out from the outermost end. 
 The readout boards contain a number of circuits to process the signals and provide the potential difference to the straw wires.
-The analogue signals pass through an amplification circuit before being are processed and cleaned. These then pass into a digitiser creating a digital value of the drift-time.   
+The analogue signals pass through an amplification circuit before being processed and cleaned. These then pass into a digitiser creating a digital value of the drift-time.   
 
 The single hit resolution of 205\mum is determined for the \ot by determining the width of the hit distance residual distribution. This is shown in Fig.~\ref{fig:Dec_ot_resolution}.
 
@@ -393,7 +393,7 @@ The single hit resolution of 205\mum is determined for the \ot by determining th
 \subsection{Ring imaging Cherenkov detectors}
 \label{sec:Dec_RICH}
 The ring imaging Cherenkov detectors (\rich) provide dedicated particle identification, which allows different hadronic species to be distinguished.
-Kaons pions and protons are distinguished when the Cherenkov information is coupled with a momentum measurement. It can also help differentiate leptonic tracks in combination with the calorimeters and muon systems. 
+Kaons, pions and protons are distinguished when the Cherenkov information is coupled with a momentum measurement. It can also help differentiate leptonic tracks in combination with the calorimeters and muon systems. 
 
 Two \rich sub-detectors are needed to cover the track momentum range of \lhcb. The first, \richone, is located between the \velo and \ttracker, before the particles have passed through the magnetic field. This provides discrimination primarily for low momentum tracks between 1--60\gevc. A second sub-detector, \richtwo, is located between the \intr and \ot tracking stations and calorimeters, after the particles have travelled through the magnetic field. This caters for the higher momentum particles in the range 15--100\gevc. 
 
@@ -419,7 +419,7 @@ Although the particles produced in the collisions are all highly energetic and t
 In both \richone and \richtwo the cone of Cherenkov radiation is reflected off spherical and planar mirrors. This not only redirects the radiation onto Hybrid Photon Detectors (HPDs) situated outside of the acceptance but also focusses the radiation into a single ring.    
 The radius of this ring is used to determine the Cherenkov angle $\theta$. 
 The identity of particles is determined by comparing likelihood for a given ring of hits to have been created by various species. 
-This is performed globally for all tracks in an event. All tracks are assumed to be pions as these are most abundant. The hypothesis of each is switched to $e$, $\mu$, $K$ and proton, leaving all other tracks unchanged, and the likelihood recomputed. The species resulting in the minimum value of the global event likelihood is kept. This is repeated until all tracks are set to their preferred hypothesis. 
+This is performed globally for all tracks in an event. All tracks are assumed to be pions as these are most abundant. The hypothesis of each is switched to $e$, $\mu$, $K$ and proton, leaving all other tracks unchanged, and the likelihood recomputed. The species resulting in the maximum value of the global event likelihood is kept. This is repeated until all tracks are set to their preferred hypothesis. 
 The difference in the global event log-likelihood is then used to indicate the species of each track. Each species is determined relative to the pion hypothesis 
 \begin{equation}
 \text{DLL} = \Delta \log{\mathcal{L}(X-\pi)} = \log{\mathcal{L}(X)} - \log{\mathcal{L}(\pi)},
@@ -506,7 +506,7 @@ The performance of the \rich detectors is quantified in terms of the selection e
 
 \subsection{Calorimeters}
 
-The calorimetry system is made of four components described below: the \spd, \presh, \ecal and \hcal.
+The calorimetry system is made of four components described below: the scintillator pad detector (\spd), pre-shower detector (\presh), electromagnetic calorimeter (\ecal) and the hadronic calorimeter (\hcal).
 Primarily, these detectors measure energy deposited by particles. Such functionality is vital for neutral pions or photons that don't interact with the tracking stations. Critical to the triggering of \lhcb, the calorimeters provide fast identification of high transverse energy deposits that indicate hard proton-proton scatter. The four components work together to improve the discrimination of different particle species, in particular between electrons and hadrons. 
 
 
@@ -558,7 +558,7 @@ The resolution of the \ecal in Run I can be parametrised as
 \begin{equation}
 \frac{\sigma_{E}}{E} = \frac{(8.5-9.5)\%}{\sqrt{E}} \oplus 0.8\%,
 \end{equation}
-where the energy $E$ is measured in \gev (from Ref.~\cite{1748-0221-12-07-C07024}). During data taking the \ecal receives a large dose of radiation. This radiation damages the detector modules as well as the light guides and PMTs. The measurement of irradiation can be quantified by looking at the PMT light yields, as shown in Fig.~\ref{fig:Dec_calo_damage}. This can be extrapolated to determine the innermost \ecal modules will remain operational for a total data set corresponding to an integrated luminosity of 13--16\invfb ($\int_{2010}^{2018}\mathcal{L} \approx 10 \invfb $).   
+where the energy $E$ is measured in \gev (from Ref.~\cite{1748-0221-12-07-C07024}). During data taking the \ecal receives a large dose of radiation. This radiation damages the detector modules as well as the light guides and PMTs. The measurement of irradiation can be quantified by looking at the PMT light yields, as shown in Fig.~\ref{fig:Dec_calo_damage}. This can be extrapolated to determine if the innermost \ecal modules will remain operational for a total data set corresponding to an integrated luminosity of 13--16\invfb ($\int_{2010}^{2018}\mathcal{L} \approx 9 \invfb $).   
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

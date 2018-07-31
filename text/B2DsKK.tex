@@ -372,7 +372,7 @@ where $c$ is the effective slope of the function and $m$ is the observable \Bp m
 
 
 The signal  and normalisation mass fits have eleven and nine free parameters respectively. These can vary to find a best fit to the data. These parameters are of three types: parameter of interest, PDF shape parameters and yields.
-The parameters of interest are in the two fits are $N(\decay{\Bp}{\Dsp\Kp\Km})$ and $N(\decay{\Bp}{\Dsp\Dzb})$.
+The parameters of interest in the two fits are $N(\decay{\Bp}{\Dsp\Kp\Km})$ and $N(\decay{\Bp}{\Dsp\Dzb})$.
 The signal and normalisation fits have four and five free parameters that determine the PDF shapes. 
 The yields of each background component are left free in the signal fit. This corresponds to six free parameters for $N_{\text{comb}}$, $N(\decay{\Bsb}{\Dsp\Km\Kstarz})$, $N(\decay{\Bsb}{\Dssp\Km\Kstarz})$, $N(\decay{\Bs}{\Dsp\Dsm})$, $N(\decay{\Bz}{\Dsp\Dm})$, and $N(\decay{\Bs}{\Dssp\Dsm})$. The yields of the combinatorial and partially reconstructed backgrounds are left free in the fit to the normalisation channel. This corresponds to three parameters; $N_{\text{comb}}$, $N(\decay{\Bp}{\Dssp\Dzb})$ and $N(\decay{\Bp}{\Dsp\Dstarzb})$. The relatives contributions of the \decay{\Dssp}{\Dsp\piz} and \decay{\Dssp}{\Dsp\Pgamma} decays are fixed to their ratio of branching fractions (similarly for \Dstarzb). A factor is included to account for the fraction of each PDF that is within the fitted \Bp invariant mass range.
 
@@ -492,7 +492,7 @@ The fitting framework is validated by generating pseudo-experiment datasets and 
 
 \section{Normalisation and signal fits}
 
-The signal and normalisation fits are performed using the model and data set previously described. The results of the two fits are shown in Figs.~\ref{fig:B2DsKK_fit_B2DsD0} and \ref{fig:B2DsKK_fit_B2DsKK}. These figures shown the distribution of \Bp candidates along with the total model PDF constructed with the values of the free parameters determined in the NLL minimisation process. The contributions from each different component in the model are superimposed, stacked upon one another, and detailed in the legends.
+The signal and normalisation fits are performed using the model and data set previously described. The results of the two fits are shown in Figs.~\ref{fig:B2DsKK_fit_B2DsD0} and \ref{fig:B2DsKK_fit_B2DsKK}. These figures show the distribution of \Bp candidates along with the total model PDF constructed with the values of the free parameters determined in the negative log likelihood minimisation process. The contributions from each different component in the model are superimposed, stacked upon one another, and detailed in the legends.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
@@ -592,7 +592,7 @@ The numerical values of the free parameters determined in the fit to the signal 
 
 
 
-Two of the common parameters between the two modes, namely the mean \Bp mass and width, have consistent values between the two fits. The combinatorial slopes vary between the two, likely because of the different background levels in the two datasets. Similarly the mass shifts vary between the two. 
+Two of the common parameters between the two modes, namely the mean \Bp mass and width, have consistent values between the two fits. The combinatorial slopes vary between the two, likely because of the different background levels in the two datasets. Similarly the mass shifts vary between the two, but are consistent within the quoted uncertainties. 
 
 \section{Efficiency corrections}
 \label{sec:B2DsKK_effcorrection}
@@ -625,10 +625,10 @@ The relative veto efficiency shown in Fig.~\ref{fig:B2DsKK_releff_vetoes} accoun
 A vertical band is clear in the centre as a result of the veto for misidentified normalisation decays with \decay{\Dzb}{\Kp\pim}.
 
 \subsubsection{Charmless} 
-Th relative charmless efficiency shown in Fig.\ref{fig:B2DsKK_releff_charmless} accounts for the fraction of decays failing the requirements on the \D meson flight distance requirements aimed at removing charmless and single-charm backgrounds.
+The relative charmless efficiency shown in Fig.\ref{fig:B2DsKK_releff_charmless} accounts for the fraction of decays failing the requirements on the \D meson flight distance requirements aimed at removing charmless and single-charm backgrounds.
 
 \subsubsection{Impact parameter significance} 
-The relative $\chi^{2}_{\text{IP}}$ efficiency shown in Fig.~\ref{fig:B2DsKK_releff_ipchi2} accounts for the fraction of decays that pass the requirements on the \Bp and \Dsp meson impact parameter significance. The distribution shows a strong dependency on phase-space at high $m^{2}(\Kp\Km)$ which may be because the \Dsp mesons are produced collinear with the \Bp direction and fail the minimum impact parameter significance requirement.
+The relative $\chi^{2}_{\text{IP}}$ efficiency shown in Fig.~\ref{fig:B2DsKK_releff_ipchi2} accounts for the fraction of decays that pass the requirements on the \Bp and \Dsp meson impact parameter significance. The distribution shows a strong dependency on the position in phase-space at high $m^{2}(\Kp\Km)$ which may be because the \Dsp mesons are produced collinear with the \Bp direction and fail the minimum impact parameter significance requirement.
 
 \subsubsection{Mass windows} 
 The relative mass requirements efficiency shown in Fig.~\ref{fig:B2DsKK_releff_masswindows} accounts for the fraction of decays that pass the mass windows around the \Dsp (and \Dzb) mass. 
@@ -825,7 +825,7 @@ This transformation preserves the correlations between the different PID variabl
 
 The relative MVA efficiency shown in Fig.\ref{fig:B2DsKK_releff_MVA} is determined from simulations in which the PID distributions have been corrected to account for the variation in the \Dsp and \phiz MVA efficiency across the phase-space. 
 %The corrected PID variables are used to determine the \Dsp and \phiz MVA classifiers and the efficiency of the MVA requirements determined in different positions in the Dalitz plot as shown in Fig.\ref{fig:B2DsKK_releff_MVA}. 
-There is a strong dependence on the position, with decays at low $m^{2}(\Kp\Km)$ values having a larger relative efficiency than those at higher values. The MVA methods were trained using a sample of \decay{\phiz}{\Kp\Km} decays, so the selection favourably selects candidates near the \phiz-meson mass. 
+There is a strong dependence on the position in phase-space, with decays at low $m^{2}(\Kp\Km)$ values having a larger relative efficiency than those at higher values. The MVA methods were trained using a sample of \decay{\phiz}{\Kp\Km} decays, so the selection favourably selects candidates near the \phiz-meson mass. 
 
 A crosschecks is performed to compare these MVA efficiencies and the method described in Sec.~\ref{sec:selection_MVA_eff} that uses the MVA training samples to calculate the efficiency. A good agreement is found.
 

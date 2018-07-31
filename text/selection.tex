@@ -39,7 +39,7 @@ The total integrated luminosity obtained for each year is listed in Table~\ref{t
 \label{sec:mc}
 
 Many aspects of the searches for \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Kp\Km} decays require input from simulation samples. This includes the relative selection efficiencies of the signal and normalisation channels and the determination of the invariant mass distributions of the candidates.
-The samples are generated separately for each of the running periods listed in Table~\ref{tab:lumi} and for both polarities of the \lhcb dipole magnet. The simulation samples for \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Dzb} decays are generated assuming they proceed via pseudo-two-body decays. In contrast, the phase-space dependence of \decay{\Bp}{\Dsp\Kp\Km} decays must be considered when generating these simulations. Samples are generating assuming a flat distribution across the phase-space. 
+The samples are generated separately for each of the running periods listed in Table~\ref{tab:lumi} and for both polarities of the \lhcb dipole magnet. The simulation samples for \decay{\Bp}{\Dsp\phiz} and \decay{\Bp}{\Dsp\Dzb} decays are generated assuming they proceed via pseudo-two-body decays. In contrast, the phase-space dependence of \decay{\Bp}{\Dsp\Kp\Km} decays must be considered when generating these simulations. Samples are generated assuming a flat distribution across the phase-space. 
 Additionally, simulations samples are required for many of the background processes considered in the analyses. These are generated using the same framework and processed using the same reconstruction as the signal modes.
 
 
@@ -96,7 +96,7 @@ The fraction of the \emph{online} reconstructed trigger candidate hits that are 
 Reconstructed objects are classified into categories when considering their relationship to the various decisions made in a given event. 
 These categories are,
 \begin{description}
-\item \textbf{Triggered on Signal:} if the deposited matched to a reconstructed object was sufficient to have initiated a given trigger then this object is said to be \emph{Triggered on Signal} (\texttt{TOS}) with respect to that trigger (Fig.~\ref{fig:TOS}). As such, if the hits that this object caused were removed from the events the trigger would no longer have been initiated.
+\item \textbf{Triggered on Signal:} if the deposit matched to a reconstructed object was sufficient to have initiated a given trigger then this object is said to be \emph{Triggered on Signal} (\texttt{TOS}) with respect to that trigger (Fig.~\ref{fig:TOS}). As such, if the hits that this object caused were removed from the events the trigger would no longer have been initiated.
 \item \textbf{Triggered Independently of Signal:} conversely, if the specific trigger was initiated solely due to other interactions within the same event the object is \emph{Triggered Independently of Signal} (\texttt{TIS}) with respect to that trigger (Fig.~\ref{fig:TIS}). In this case, removal of hits matched to the object would not affect the trigger decision.  It is possible for a candidate to be both \texttt{TIS} and \texttt{TOS} (Fig.~\ref{fig:TOSandTIS}).
 \item \textbf{Triggered on Both:} a third category is possible, \emph{Triggered on Both} (\texttt{TOB}), where both the signal object and another object are required to reach the threshold for a positive trigger decision (Fig.~\ref{fig:TOB}). In this situation neither are sufficient to individually initiate the trigger, but removing either one of them would prevent the a positive trigger decision. Events in this category are not considered in this analysis.
 \end{description}
@@ -130,7 +130,7 @@ These categories are,
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-At the hardware trigger stage, the selected candidates are required to be \texttt{TOS} with respect to the hadronic trigger \texttt{L0Hadron}. This ensures the selected candidates were retained due to corresponding deposits in the hadronic calorimeter. 
+At the hardware trigger stage, the selected candidates are required to be \texttt{TOS} with respect to the hadronic hardware trigger (\texttt{L0Hadron}). This ensures the selected candidates were retained due to corresponding deposits in the hadronic calorimeter. 
 Alternatively, the logical `or' of each of the hardware sub-systems is combined into a global hardware trigger called \texttt{L0Global}.
 Candidates are selected if they are \texttt{TIS} with respect to this combination.
 %Alternatively, candidates are selected if they are \texttt{TIS} with respect to the global hardware trigger \texttt{L0Global}; any of the hardware trigger subsystems can contribute to the \texttt{L0Global} decision. 
@@ -262,7 +262,7 @@ The selection of candidates makes requirements on many different distinguishing 
 \item \textbf{Momentum, \ptot:} the magnitude of the total momentum of the particle.
 \item \textbf{Transverse momentum, \pt:} The component of the total momentum, \ptot, perpendicular to the proton beam axis (the $z$-axis).
 \item \textbf{Decay Time, $\tau$:} the time taken for the candidate to travel from its production vertex to its decay vertex.
-\item \textbf{Decay products' \pt scalar sum, $\sum{|\pt|}$:} the sum of the magnitudes of the transverse momentum of the decay products.
+\item \textbf{Decay products' \pt scalar sum, $\sum{|\pt|}$:} the sum of the magnitudes of the transverse momentum of the decay products with respect to the proton beam axis.
 \item \textbf{Vertex quality, $\chi^{2}_{\text{VTX}}$:} the minimised value of $\chi^{2}$ per degree of freedom, $\chi^{2}/N_{\text{DOF}}$, as determined in the fit to the vertex location.
 \item \textbf{Track quality, $\chi^{2}_{\text{TRK}}$:} the minimised value of $\chi^{2}/N_{\text{DOF}}$ as determined in the fit to the track hits.
 \item \textbf{Impact parameter, $\text{IP}$:} The shortest distance between a given extrapolated track direction and a vertex location, as shown in Fig.~\ref{fig:impact_parameter}. 
@@ -1955,7 +1955,7 @@ The optimisation is performed in two dimensions, one for each of the \phiz and \
 
 \subsection{Impact parameter requirements}
 \label{sec:selection_IPCHI2}
-The data-driven MVAs target the selection of \phiz and \Dsp candidates, removing a significant background contribution. However it is possible to further purify the selection by making requirements on the \Bp candidates formed from the combination of the \Dsp and \phiz mesons. This helps to remove possible backgrounds coming from the incorrect combination of two unrelated mesons. Requirements are places on the impact parameter significance $\chi^{2}_{\text{IP}}$ to help ensure that the different components of the decay chain have a topology consistent with those desired.
+The data-driven MVAs target the selection of \phiz and \Dsp candidates, removing a significant background contribution. However it is possible to further purify the selection by making requirements on the \Bp candidates formed from the combination of the \Dsp and \phiz mesons. This helps to remove possible backgrounds coming from the incorrect combination of two unrelated mesons. Requirements are placed on the impact parameter significance $\chi^{2}_{\text{IP}}$ to help ensure that the different components of the decay chain have a topology consistent with those desired.
 
 The \Bp meson candidate is required to be consistent with originating at the PV by requiring $\chi^2_{\text{IP}} < 10$. This helps to remove background as unrelated combinations of \Dsp and \phiz mesons will not necessarily point back towards the PV.
 Additionally, the opposite requirement is made of the \Dsp meson, $\chi^2_{\text{IP}} > 10$, to reduce charm meson backgrounds where the charm is produced promptly at the PV.
@@ -2168,7 +2168,7 @@ The purity of the \decay{\Dsp}{\pip\pim\pip} and \decay{\Dsp}{\Kp\pim\pip} decay
      \end{subfigure}
      \caption{\decay{\Bp}{(\decay{\Dsp}{\Kp\pim\pip})\phiz}}
    \end{subfigure}
-   \caption{The \Dsp and \phiz invariant mass distributions for signal \decay{\Bp}{\Dsp\phiz} candidates passing the selection requirements. The inner and outer $m(\Kp\Km)$ ranges, as defined in Chapter~\ref{ch:B2DsPhi}, are represented by the blue and red vertical lines respectively. The \Dsp mass cut is not applied when producing the \phiz mass distribution, and vice versa.}
+   \caption{The \phiz (left) and \Dsp (right) invariant mass distributions for signal \decay{\Bp}{\Dsp\phiz} candidates passing the selection requirements. The inner and outer $m(\Kp\Km)$ ranges, as defined in Chapter~\ref{ch:B2DsPhi}, are represented by the blue and red vertical lines respectively. The \Dsp mass cut is not applied when producing the \phiz mass distribution, and vice versa.}
    \label{fig:d_phi_mass_signal}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2211,7 +2211,7 @@ The purity of the \decay{\Dsp}{\pip\pim\pip} and \decay{\Dsp}{\Kp\pim\pip} decay
      \end{subfigure}
      \caption{\decay{\Bp}{(\decay{\Dsp}{\Kp\pim\pip})\Dzb}}
    \end{subfigure}
-   \caption{The \Dsp and \Dzb invariant mass distributions for normalisation \decay{\Bp}{\Dsp\Dzb} candidates passing the selection requirements. The \Dsp mass cut is not applied when producing the \Dzb mass distribution, and vice versa.}
+   \caption{The \Dzb (left) and \Dsp (right) invariant mass distributions for normalisation \decay{\Bp}{\Dsp\Dzb} candidates passing the selection requirements. The \Dsp mass cut is not applied when producing the \Dzb mass distribution, and vice versa.}
    \label{fig:d_phi_mass_normlaisation}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -2265,7 +2265,7 @@ The distribution of \Dsp and \Kp\Km invariant masses for \decay{\Bp}{\Dsp\Kp\Km}
       \end{subfigure}
       \caption{Normalisation \decay{\Bp}{\Dsp\Dzb} decays}
    \end{subfigure}
-   \caption{The \Dsp and \Kp\Km invariant mass distributions for \decay{\Bp}{\Dsp\Kp\Km} and \decay{\Bp}{\Dsp\Dzb} candidates passing the selection requirements. The lower two plots correspond to the data removed by the normalisation channel veto, removed in the region of the depleted bin around 1800\mevcc in the top left figure.}
+   \caption{The \Kp\Km (left) and \Dsp (right) invariant mass distributions for \decay{\Bp}{\Dsp\Kp\Km} and \decay{\Bp}{\Dsp\Dzb} candidates passing the selection requirements. The lower two plots correspond to the data removed by the normalisation channel veto, removed in the region of the depleted bin around 1800\mevcc in the top left figure.}
    \label{fig:d_KK_mass}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
