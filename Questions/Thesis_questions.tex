@@ -1,0 +1,400 @@
+\documentclass[12pt]{article}
+%\documentclass[12pt]{../ociamthesis}
+\usepackage{hyperref}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{amsmath}
+\title{Viva questions\\
+Rare hadronic decays of B mesons at LHCb}
+\author{Tom Hadavizadeh}
+
+\begin{document}
+\maketitle
+
+
+
+\section{Overview of thesis and why I think it is PhD worthy.}
+
+This thesis documents an analysis that began as a simple extension to an existing measurement, but making use of a much larger data set. It evolved into a much more complicated analysis, split into two parts that ultimately supersedes the previous measurement. 
+The thesis revolves around decays of charged B mesons into a final state of a $D_s$ meson and two charged kaons. In the first part, a holistic search is performed encompassing the entire kinematically allowed phase space. The second part restricts the phase space to that around the $\phi(1020)$ meson mass, aiming to isolate any possible contribution from the rare annihilation topology decay $B^{+} \rightarrow D_s^+ \phi$.   
+
+The thesis documents the motivation for studying these modes, both in the search for physics beyond the standard model and by improving the understanding hadronic annihilation topology decays. 
+
+This analysis was one of the earlier Run 1 and Run 2 analyses benefitting from the various improvements in the trigger and PID efficiencies between the two running periods. This posed difficulties, for example in training the multivariate algorithms that select the data, but allows the reach of the search to be far beyond what was achieved before.   
+
+\section{Introduction}
+
+\subsection{Summaries of each particle discovery}
+\begin{itemize}
+\item \textbf{Electron: (J.J. Thompson)} Showed that cathode rays were negatively charged.
+\item \textbf{Proton: (Rutherford)} gold scattering experiment.
+\item \textbf{Neutron}: Chadwick- Alpha source collided with Beryllium. A penetrating radiation was emitted causing protons to be emitted from paraffin.  
+\item \textbf{Charm quark:} discovered as the $J/\psi$ resonance at Stanford Linear Accelerator Center (SLAC) and Brookhaven National Laboratory (BNL). 
+\item \textbf{$\tau$-lepton:}  SLAC $e^+e^-$ collider, discovered anomalous events of $e^+e^-\rightarrow e^\pm\mu^\mp$ which required two extra missing particles.
+\item \textbf{$b$-quark:} discovered at Fermilab E288 experiment. 
+\item \textbf{$W^{\pm}$ and $Z^{0}$ bosons:} discovered by UA1 and UA2 at SPS. 
+\item \textbf{$t$-quark:} discovered by CDF and D0 at Fermilab. The tevatron collided protons and antiprotons. 
+\item \textbf{Higgs boson:} discovered by ATLAS and CMS at LHC.
+\item \textbf{Positron:} Anderson: cosmic rays passed through cloud chamber and lead sheet.
+\end{itemize}
+
+\subsection{What is a unitary product group? What is a generator of a field?}
+A unitary group, $\text{U}(n)$ is the group of $n\times n$ unitary matrices.
+The group $\text{SU}(n)$ is the subset of $n\times n$ matrices with determinant 1. 
+
+\subsection{Why is a Lagrangian useful? What does it mean?}
+The Lagrangian density is related to the action $\mathcal{S}(\phi) =\int \mathcal{L}(\phi,\dot{\phi},t) dt$ and can be used to determine the equations of motion of a system.
+It is useful for systems with conserved quantities: if $\mathcal{L}$ is constant as a function of a given variable, then there is a corresponding conserved quantities of the system. This matched symmetries of the system to conserved quantities, e.g. time-energy, space-momentum, rotation-angular momentum and what masses they have.
+
+The SM Lagrangian contains kinematic terms (related to derivative of fields), Coupling terms (related to products of different fields) and mass terms (related to products of the same field). This dictates which particles interact. 
+
+\subsection{Why is neutron not stable if its make of stable quarks?}
+Neutrons are not stable outside of nuclei. The neutron decays to a proton, electron and neutrino. The down quark changes to an up quark.
+Within a nuclei, the overall content of protons and neutrons determines whether the neutrons will decay. The decays only take place is the overall system of ends up lower in energy. The binding energy required to contain the additional proton resulting from the neutron decay may be too large. 
+
+
+\subsection{What other quantum numbers do fermions have?}
+The quantum numbers of fermions in the standard model dictate the extend to which they interact with the various fundamental forces. These include:
+\begin{itemize}
+\item Electric charge, $Q$
+\item Weak isospin, $T_{3}$
+\item Baryon number, $B$
+\item Lepton number, $L$
+\end{itemize}
+
+Electroweak unification allows the electric charge to be written in terms of the hypercharge and weak isospin, as $Q = Y + T_{3}$. Quarks (antiquarks) have baryon numbers of $+1/3$ ($-1/3$). Leptons (antileptons) have lepton numbers of $+1$ ($-1$).
+
+\subsection{What is an abelian gauge theory?}
+If the symmetry group of a guage theory is commutable, then the theory is abelian ($a*b \neq b*a$). QED is an abelian gauge theory. It has the group $U(1)$ symmetry with a complex number as the gauge group. Non-abelian theories such as QCD have self interactions.  
+
+
+\subsection{Why are particle mass terms excluded?}
+Mass terms appear in the Lagrangian as $-m\bar{\psi}\psi$. It can be shown that  $-m\bar{\psi}\psi = -m(\bar{\psi}_{L}\psi_{R} + \bar{\psi}_{R}\psi_{L})$. However, left- and right-handed belong in different $\text{SU}(2)$ multiplets, and therefore can't couple to one another. The interaction with the higgs field via the vacuum expectation value breaks this condition $-y_{\psi}v^{0}\bar{\psi}\psi$.
+
+\subsection{CP violation- why C and P?}
+Charge conjugation is the action of swapping the charge of a particle (particle to antiparticle). Parity is the mirroring of space (swap one axis). Additionally time inversion swaps the direction of time. The combined effect of swapping all three is invariant under Lorentz invariance. This means particles and anti particles have equal masses and lifetimes. The combined inversion of CP was thought to be a good quantum number, but weak force violates P maximally. It was shown by Cronin and Fitch that CP symmetry was violated in decays of neutral kaons. The short lived kaon decays to two pions $K_{S} \rightarrow \pi \pi$ and the long lived kaon decays to three $K_{L} \rightarrow \pi\pi\pi$. The state $\pi\pi$ ($\pi\pi\pi$) is a CP $+1$ ($-1$) eigenstate. However, after long times, decays to two pions were still observed, implying the $K_{L}$ wasn't an exact eigenstate. 
+
+\subsection{Why is $\pi\pi$ ($\pi\pi\pi$) a CP $+1$ ($-1$) eigenstate?}
+
+For the decay $K^{0} \rightarrow \pi^{0} \pi^{0}$ angular momentum conservation gives us:
+$J^{P}$: $0^{-}\rightarrow0^{-}0^{-}$, therefore $L = 0$. The parity of this decay is therefore $P(\pi^{0}\pi^{0}) = -1 \times -1 \times (-1)^{L} = +1$. The charge conjugation operator gives us $C(\pi^{0}\pi^{0}) = C(\pi^{0}) \times C(\pi^{0}) = +1$ as the $\pi^{0}$ is an eigenstate of $C$. 
+The total effect of $CP$ is therefore $+1$.
+
+
+The decay $K^{0} \rightarrow \pi^{0} \pi^{0}$ is of the form $J^{P}$: $0^{-}\rightarrow0^{-}0^{-}0^{-}$. We must consider the angular momentum between two pions, and between this pair and the third pion. To conserve angular momentum the total must be $\vec{L_{1}} + \vec{L_{2}} = 0$, so they are equal and opposite. The magnitudes are equal. 
+Therefore $P(\pi^{0}\pi^{0}\pi^{0}) = -1 \times -1 \times -1 \times (-1)^{L_{1}} \times (-1)^{L_{2}} = -1$. 
+The $\pi^{0}$ is a $C$ eigenstate, so $C(\pi^{0}\pi^{0}) = C(\pi^{0}) \times C(\pi^{0}) \times C(\pi^{0}) = +1$.
+The total effect is therefore $CP = -1$.
+
+
+ 
+\subsection{Why doesn't the theory prescribe parameter values?}
+
+
+
+
+\subsection{What are the 4 mixing parameters?}
+The CKM matrix is a $3\times3$ matrix, leading to 18 free parameters, 9 magnitudes and 9 phases. The unitary constraint removes 9 degrees of freedom. This can be expressed as 3 angles and 6 phases. Five of the phases can be absorbed into the definitions of the quark fields by renaming $u \rightarrow u e^{-\phi_{u}}$. This is allowed because the physical observable is the current $j = u V_{CKM} v$. This leads one global phase and three angles.
+Useful to use other parametrisations. 
+
+
+\subsection{How do you measure the magnetic moment?}
+
+\subsection{more about precision tests of the SM?}
+\subsection{How does SM meet sakharov conditions?}
+The Sakharov conditions are required in order to generate a net baryon number in the universe.
+
+\begin{enumerate}
+\item Baryon number must be violated in processes (for example proton decay)
+\item The expansion of the universe must not have been in an equilibrium state
+\item Violation of C and CP symmetry (the universe favouring matter over antimatter).
+\end{enumerate}
+
+\url{http://www.slac.stanford.edu/pubs/beamline/26/1/26-1-sather.pdf}
+\subsection{What is a left handed neutrino? Define helicity}
+Helicity is the projection of the spin onto the direction of momentum. 
+
+\begin{equation}
+h = \frac{\vec{S}.\vec{p}}{|\vec{S}| |\vec{p}|}
+\end{equation}
+For massless particles the helicity and chirality are equivalent. For massive particles it is possible to change to a frame in which the particle is now moving backwards, hence the helicity appears to switch. Therefore helicity is a function of the viewpoint, where as chirality is fixed. For massless particles it is not possible to travel faster than the particle. 
+
+\subsection{Something about quantum gravity?}
+The standard model currently has no description of gravity. The Lorentz invariant formulation naturally include special relativity but not general relativity. To make gravity into a quantum field theory, the force requires a mediator called the Graviton. This results in an unrenormalisable theory. Because the force of gravity is so weark, quantum gravitational effects only become apparent near the planck scale. 
+
+
+\subsection{Maybe more about SUSY?}
+
+\section{Motivation}
+\subsection{What is a chiral particle state?}
+Chirality is when something is not the same as it's mirror image. The weak force is a chiral interaction as the W boson only interacts with left-handed particle states and right-handed antiparticle states.  
+
+\subsection{How does helicity suppression work?}
+The mixing of chiral states in heliity states depends on the mass of the particle. For massless particles no mixing occurs, for massive particles the states are more mixed. When angular momentum conservation requires that a particle is produced in the wrong helicity state, the decay rate is suppressed because the helicity state only contains a small component of the allowed W boson chiral state. The fraction that exists is smaller for lighter particles, so these decays are suppressed.
+
+\subsection{Examples of $V_{CKM}$ measurements processes}
+\begin{itemize}
+\item $V_{ud}$: superallowed $0^+ \rightarrow 0^{+}$ nuclear beta decays
+\item $V_{us}$: semileptonic kaon decays $K_{L} \rightarrow \pi e \nu$
+\item $V_{cd}$: semileptonic charm decays $D\rightarrow \ell \nu$
+\item $V_{cs}$: leptonic $D_{s}^+$ decays $D_{s}^{+} \rightarrow \mu^+ \nu$ 
+\item $V_{cb}$: semileptionic $B \rightarrow D \ell \nu$ 
+\item $V_{ub}$: inclusive $B \rightarrow X_{u} \ell \nu$ decays
+\item $V_{td}$: $B_{d}$ oscillations  
+\item $V_{ts}$: $B_{s}$ oscillations 
+\item $V_{tb}$: single top production 
+
+\end{itemize}
+
+
+\subsection{Hints of CP violation in $\Lambda_{b}^{0}$ baryons}
+Evidence has been found for CP violation in $\Lambda_{b}^{0} \rightarrow p \pi^{-} \pi^{+} \pi^{-}$ decays.
+
+\subsection{Different weak phases are needed, Different strong phases are assumed}
+\subsection{Why does confinement occur?}
+Colour charge cannot be isolated. All particles must have no net colour charge. As QCD is non-albeilan, gluons carry colour charge and can self interact. This leads to quarks becoming confined in hadrons. When two quarks are separated energy must be put into the gluon field to extend the range of the interaction. It becomes energetically favourable for the system to produce a quark-antiquark pair in the field, leading to two hadrons. 
+
+The electromagnetic force gets weaker as charges are moved further apart, whilst the strong force grows proportion to the distance.  
+
+
+
+\url{https://gsalam.web.cern.ch/gsalam/repository/talks/2009-Bautzen-lecture2.pdf}
+Properties of QCD: infrared divergence as energy goes to zero; collinear divergence as angle between gluon and quark goes to zero.
+
+Time scale for hadronisation $\frac{1}{\Lambda_{QCD}}$ with $\Lambda_{QCD}\sim 0.2\,\text{GeV}$
+\url{https://www2.physics.ox.ac.uk/sites/default/files/2014-03-31/qcdgrad_rojo_oxford_tt14_3_rge_pdf_19828.pdf}
+
+
+\subsection{Arbitrary length scales?}
+Aribitary length scales are introduced to separate perturbative hard scatter regions from non-perturbative. This is called the factorisation scale. By varying the factorisation scale we get the renormalisation group equation for parton distribution functions.
+
+        Look at A C-S's lecture notes
+\subsection{What is OZI suppression?}
+Strongly occurring decays will be suppressed if the initial and final states can be separated into two separate diagrams by only crossing gluon lines. Can be explained as higher energy gluons having smaller couplings.
+
+Annihilation cannot be mediated by a single gluon since the hadrons are colour singlets. Annihilation cannot be mediated by two gluons as single vector particles cannot decay into two massless vectors. Therefore annihilation must proceed to three gluons, introducing three times the coupling factor.
+
+\subsection{What are the differences between QCD factorization and improved?}
+
+Naive factorisation: leading contributions
+And hard scatter approach: subleading corrections
+\subsection{What are unparticles?}
+The standard model is a scale non-invariant theory as particles exist with discrete masses. Massless particles are effectively scale-invariant as they have no discrete energy scale.
+
+Some theories predict particles where the mass spectrum is continuous or zero, called unparticles. The SM and unparticle sectors could exist simultaneously, with interactions mediated by a heavy exchange particle.  
+
+
+\section{Detector}
+\subsection{Why is VELO lifetime 3 years?}
+One year is given as 2$^{-1}\,$fb accumulated luminosity. It was built to last for Run 1 (3$^{-1}\,$fb) and Run 2 (5.5$^{-1}\,$fb): totals four years of accumulated lumi.
+
+\subsection{What is scintillation light?}
+When a particle passes through a transparent medium causes electrons in the material to become excited and move to a higher energy state. When the electron returns to the ground state a flash of light is emitted.
+
+\subsection{What is a radation/interaction length?}
+The radiation length is defined as the length over which the energy of an incoming electron is degraded by 1/e. Materials with higher atomic number have shorter radiation lengths (interactions are via EM interaction, therefore charge is important). This means ECALs are made out of high-Z materials, with as little as possible before it.
+
+The nuclear interaction length describe how well hadrons propagate through material. The length is proportional to the atomic mass $A^{\frac{1}{3}}$ (just depends on the number of nuclei). Hadronic showers start later than electromagnetic and are more diffuse.
+
+\subsection{What does the ECAL/HCAL resolution parametrisation mean?}
+Terms added in quadrature:
+\begin{equation}
+\frac{\sigma_{E}}{E} = \frac{a}{\sqrt{E}} \oplus b \oplus \frac{c}{E} 
+\end{equation}
+where a is stochastic term from the photon counting, b is a constant term and c is electronics noise. The ECAL is a sampling calorimeter (25 radiation lengths) with a typical resolution of 10\%. Homogeneous calorimeters in which the whole volume creates a signal could achieve a better resolution. 
+
+The HCAL is a sampling calorimeter (3 interaction lengths). High stochastic uncertainty.
+
+
+\subsection{Roughly what trigger thresholds are used?}
+In 2012:
+\begin{itemize}
+\item Muon: $p_{T} > 1.76\,$GeV
+\item DiMuon: $p_{T1} \times p_{T2} > 1.6\,$GeV$^2$
+\item Hadron: $E_{T} > 3.7\,$GeV
+\item Photons: $E_{T} > 3\,$GeV
+\item Electrons: $E_{T} > 3\,$GeV
+\end{itemize}
+
+\subsection{What is a Kalman filter?}
+Kalman filters takeinto account the magnetic field dishomogeneity and material interactions that might induce multiple scattering.
+
+
+\subsection{What is emittance?}
+The emittance is used to characterise a beam of charged particles. It measures the average spread of the particles co ordinates in position and momentum space. 
+The emittance is defined by the width of the beam in real space ($\sigma$) and the measure of how squeezed the beam is ($\beta$). The emittance is constant for a beam with oscillating width and $\beta$ as a result of the magnetic optics.
+\begin{equation}
+\epsilon = \sigma^{2} \beta
+\end{equation}
+\subsection{What is the interaction length of a muon?}
+Muons loose about $2\,\text{MeV}$ per g cm$^{-2}$ 
+
+\section{Event Selection}
+\subsection{What does pythia do?}
+Pythia generates collisions of particles ($pp$, $p\bar{p}$, $e^{+}e^-$,$\mu^{+}\mu^-$). These hard processes require input from PDFs for the hadronic interactions.
+
+Inital/final state radiation
+Beam remnants and multiple interactions
+Hadronisation-> coloured partons are transformed into colourless hadrons
+
+In addition to the $pp$ collisions, other events from beam-gas, proton halos, cosmics and calibration events can be generated (without pythia but in Gauss).
+
+\subsection{What does EVTGEN do?}
+The decay of the hadrons produced by Pythia is delegated to EVTGEN, generator in which the detailed B hadron decay can be specified. This includes models of CP violation and angular correlations and was developed for CLEO and BABAR for B physics.
+
+SHERPA is also included and allows users to force the decay when generating specific MC.
+
+\subsection{What does PHOTOS do?}
+PHOTOS performs precision QED corrections. Photons originating from the final state particles are generated to model energy loss.
+
+\subsection{What is GEANT4?}
+
+The interaction of the generated particles and the detector is modelled with GEANT4. A description of the detector is used to define where each components are, and what materials they are made of. It simulates electromagnetic, hadronic and optical interactions.
+
+\subsection{What are the typical distances travelled by the $B^{+}$ and $D^{0}$ mesons?}
+
+The lifetimes of $B$ and $D$ mesons are:
+\begin{itemize}
+\item $B^{+}$: $(1.638\pm 0.004) \times 10^{-12}\,$s 
+\item $D^{+}$: $(1.040\pm 0.007) \times 10^{-12}\,$s 
+\end{itemize} 
+
+Average flight distance:
+\begin{equation}
+L = v t = (\beta c) (\gamma \tau_{B}) = (\frac{p}{m}) (c\tau)
+\end{equation}
+
+So for $m_{B} = 5279\,$MeV and $m_{D} = 1869\,$MeV at $p = 10\,$GeV, we find 
+
+\begin{itemize}
+\item L($B^{+}$): $0.93\,$mm
+\item L($D^{+}$): $1.70\,$mm 
+\end{itemize}
+
+\subsection{Is $\tau$ the proper time of the particle or in the lab frame?}
+
+The lifetime is defined in the rest frame of the particle. 
+
+\subsection{What P ranges go into figure 4.6?}
+All momentums going into this plot.
+
+\section{Fit to $B^{+} \rightarrow D_{s}^{+} K^{+} K^{-}$ }
+\subsection{What is pole mass?}
+The pole mass is the pole of the propagator and is constant, as opposed to a running mass that is dependent on the energy scale. In QCD the quark propagator has no pole because the quarks are confined, not a problem in perturbative QCD.
+
+
+\subsection{What does Meerkat do?}
+Meerkat is a multidimensional kernel density estimation package. 
+
+\subsection{What improvements would reduce the largest systematic uncertainty?}
+For $B^+ \rightarrow D_{s}^+ K^+ K^-$ the greatest systematic is the MCA relative efficiency. At the time of publishing the meerkat package used to obtain the phasespace dependence of the PID and MVA selection was only available for Run 1. Extrapolating this to Run 2 lead to a systematic, as well at the systematic uncertainties associated to the calibration mode efficiencies used to determine the scaling. Using meerkat optimised for Run 2 would remove all of these systematic sources.
+
+
+\subsection{What values were used to generate the f0(1370)?}
+Mass: $1370\,$MeV, width: 350\,MeV.
+
+\subsection{How were the relative efficiencies for $B\rightarrow D_s D$ modes calculated, and what are they roughly?}
+
+
+\subsection{What are the production fractions $f_{s}$ and $f_{d}$ and how would they change at different energies?}
+
+The fragmentation fractions describe the weakly decaying b-hadron fractions. 
+
+\subsection{Where do $-(\mu - a)(\mu - b)$ etc. equations come from?}
+
+\subsection{What trends are there in the efficiencies split by year?}
+\begin{itemize}
+\item Gen slightly larger in Run II
+\item Reco and Stripping slightly higher in Run II
+\item PID slight increase in Run II
+\end{itemize}
+
+\subsection{Is PID efficiency non-correlation a good assumption?}
+The PID efficiency takes into account the kinematic correlations of the tracks so this correlation refers only to any further effects that would lead to the PID efficiency being wrong. It's likely that this systematic is an overestimation. This could have been improved by using a second calibration sample and comparing the results. 
+
+
+\subsection{How could the background PDF systematic be improved?}
+The largest systematic is from the background PDFs. This could be improved by generating larger samples of the backgrounds, particularly for the fractions of decays expected in each category. Generate samples of $D_s^* \phi$, rather than relying on the normalisation channel. 
+
+Mainly comes from choice of combinatorial shape. Could look at wrong sign decays $K^+K^+$ to justify use of exponential. 
+
+\subsection{How is the significance of the signal calculated?}
+Wilks theorem: set signal size to zero and compute $\sigma = \sqrt{-2(\Delta LL)}$.
+
+\subsection{Why don't individual $D_{s}^{+}$ mode yields match individual branching fractions?}
+
+The fit for yield is a different fit, for branching fraction it uses input from signal and normalisation uncertainty, for yields, just signal. Difference in uncertainties is probably related to how uncertainty correlates to normalisation yield uncertainty.
+
+
+\subsection{How does CLS method work? What are the expected and observed CLS bands? How would systematics be included?}
+
+The CL$_S$ method used the ratio of CL$_{S+B}$ and CL$_{B}$. This aims to reduce spurious exclusions by low sensitivity. This increases the effective p-value when the two distributions become close. 
+
+The observed band finds the upper limit for the given value of branching fraction.
+The bands and median shown the distributions of upper limits obtained for the background only hypothesis as a function of the branching fraction. 
+
+The CLs method is overly conservative in the regions where the experiment has no sensitivity. The FC method can lead to tight limits when the result is unphysical.
+
+\subsection{What is the asymptotic method?}
+This method uses a representative data set called the Asimov data set. Works well for large dataset, i.e. number of background events around 20. 
+
+\subsection{What is the profile likelihood?}
+The profile likelihood is essentially the MINOS method. It's the value of the likelihood at different values of a given parameter. At each point the likelihood is minimised with respect to the other parameters. 
+
+
+\section{From Malcolm}
+\subsection{Differences between $e^{+}e^{-}$ and LHCb (both in your analysis and generally)}
+
+LHCb is a forward spectrometer on a symmetric proton-proton collider. The particles within LHCb's acceptance are highly boosted as LHCb instruments the rapidity region $2<\eta < 5$. This means charm and beauty quarks typically travel a distance of $\mathcal{O}(1\,mm)$ before decaying. 
+
+Previous and existing $e^{+}e^{-}$ colliders use asymmetric beam energies so the particles receive boosts and travel measurable distances before decaying. 
+
+
+\subsection{Future of your analysis, observation with what dataset? Can it be done at Belle2}
+
+The future: definitely a full amplitude analysis with different resonances included and interference. Naievely scaling 
+
+
+\subsection{What is the status of BelleII and LHCb upgrade?}
+
+
+The LHCb upgrade can be separated into two parts:
+\begin{itemize}
+\item Upgrade 1: installing from end of 2018. Upgrade 1a will b taken during Run 3 and Upgrade Ib during Run 4. 
+\item Upgrade II will be ready to take data during Run 5.
+
+\end{itemize}
+
+Upgrade I:
+\begin{itemize}
+\item Fully software trigger 
+\item New pixel VELO
+\item New silicon upstream tracker
+\item new RICH optics and photodetectors
+\item scitillating fibre tracker
+\item new electronics for Muon and calo
+\end{itemize}
+
+
+Upgrade II:
+\begin{itemize}
+\item Velo Pixels with timing. 
+\item UT micro strips
+\item Magnet side stations
+\item Inner/Middle/Outer tracker
+\item RICHs
+\item TORCH
+\item ECAL spatial resolution and timing
+\item Muon $\mu$Rwell
+\end{itemize}
+
+
+Belle II currently in second phase: first collisions and commissioning. In 2019 there will be physics run for full Belle II. 
+
+\end{document}
+
+
+
+
+
+
+
