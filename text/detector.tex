@@ -643,7 +643,7 @@ This type of detector was chosen for the inner region as it is required to be es
 \subsection{Trigger}
 \label{sec:Dec_trigger}
 
-The primary role of the trigger is to reduce the nominal 40\,MHz beam crossing frequency to a rate that can be recorded. The trigger is composed to two parts: a custom hardware trigger called Level 0 (\lone) that operates at the nominal 40\,MHz beam crossing rate; and an asynchronous High Level Trigger (\hlt) running software algorithms at 1\,MHz. These two stages reduce the event rate to around 2\,kHz, exploiting the characteristics of \bquark- and \cquark-hadron decays to preferentially retain signal decays and discard everything else.
+The primary role of the trigger is to reduce the nominal 40\,MHz beam crossing frequency to a rate that can be recorded. The trigger is composed of two parts: a custom hardware trigger called Level 0 (\lone) that operates at the nominal 40\,MHz beam crossing rate; and an asynchronous High Level Trigger (\hlt) running software algorithms at 1\,MHz. These two stages reduce the event rate to around 2\,kHz, exploiting the characteristics of \bquark- and \cquark-hadron decays to preferentially retain signal decays and discard everything else.
 
 \subsubsection{Level 0}
 The \lone trigger takes input from the muon system and calorimeters. These systems feed into a single unit to make a global decision about the event. Although the nominal bunch spacing is 25\ns, the \lone decision is made after 4\mus. During this time the detector signals are stored in a \emph{pipeline} buffer. Half of this 4\mus budget is required for the time-of-flight of the particles and delays in the electronics, leaving the \lone trigger 2\mus to reach a decision about each event.  
@@ -672,7 +672,7 @@ These thresholds are altered when the beam conditions change to maintain a const
 
 The \hlt is a software trigger comprised of \cpp algorithms running on a dedicated processing farm. It is further subdivided into two sections: \hltone and \hlttwo. 
 The first stage, \hltone, reduces the rate of events by looking for tracks displaced from the PV.
-The software algorithm performs a partial pattern recognition identify track candidates and to ensure that \Pgamma or \piz \lone candidates are not associated to tracks. This part of the trigger retains around 43\,kHz of \lone-accepted events.
+The software algorithm performs a partial pattern recognition to identify track candidates and to ensure that \Pgamma or \piz \lone candidates are not associated to tracks. This part of the trigger retains around 43\,kHz of \lone-accepted events.
 The \velo data is unpacked and a tracking algorithm creates vertices with 5 or more tracks.
 Tracks are accepted if they are consistent with originating at one of these vertices. For events selected with the muon \lone lines, the \velo tracks are extrapolated through the dipole field to the muon stations to form muon candidates. 
 The \velo or muon candidates are extrapolated through the magnet to the T-stations (\ot and \intr) with a Kalman filter~\cite{Kalmanone,FRUHWIRTH1987444} to account for multiple scattering.

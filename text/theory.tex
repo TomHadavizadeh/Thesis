@@ -30,7 +30,7 @@ The weak interaction differs remarkably from the electromagnetic and strong inte
 Additionally, there are two types of gauge boson: the charged \Wpm bosons that result in \emph{charged-current} interactions; and the neutral \Z boson, responsible for \emph{neutral-current} interactions. 
 
 Confusingly, the weak interaction is actually stronger than the electromagnetic force, however the large mass of the mediators suppresses the interaction at low energy.
-The \emph{charged-current} weak interaction was originally proposed by E. Fermi to be a four point coupling with strength $G_{\text{F}}$. 
+The \emph{charged-current} weak interaction was originally proposed by E. Fermi to be a four point coupling with strength $G_{\text{F}}$~\cite{Fermi2008}. 
 %This was introduced to account for the missing energy taken away 
 This works well for low energy interactions in which the momentum transfer is much less than the \Wpm boson mass, $|q^{2}|<<m_\Wpm^2$. At higher masses this breaks down, leading to unitarity violation in processes such as \decay{\ep\en}{\Wp\Wm}. This is resolved by adding a \emph{neutral-current} interaction that restores unitarity. 
 
@@ -90,6 +90,7 @@ The matrix can be represented in the Wolfenstein parametrisation using four para
 \begin{equation}
 \left( \begin{array}{c} d' \\ s'  \\ b' \end{array} \right) = \begin{pmatrix} 1 - \lambda^2/2 & \lambda & A\lambda^3(\rho-i\eta) \\ -\lambda & 1-\lambda^2/2 & A\lambda^2  \\ A\lambda^3(1-\rho-i\eta) & -A\lambda^2 & 1 \end{pmatrix} \left( \begin{array}{c} d \\ s  \\ b \end{array} \right).
 \end{equation}
+The parameters $\lambda$, $A$, $\rho$ and $\eta$ are all of order one and can be related to the CKM matrix elements using the relations $\lambda = \Vus$, $A\lambda^2 = \Vcb$, $A\lambda^3(\rho-i\eta) = \Vub$ and $A\lambda^3(1-\rho-i\eta) = \Vtd$.
 This representation is helpful as it dictates that for \CP violation to be present in the SM, $\eta$ must be non-zero. Additionally, the contribution from the imaginary parts is predominately in \Vub and \Vtd (the terms \Vcd and \Vts receive smaller contributions from $\eta$ at $\mathcal{O}(\lambda^{5})$). 
 
 The magnitudes of the CKM matrix elements can be inferred from various processes and have been measured to have the following sizes~\cite{PDG2016}
@@ -107,6 +108,20 @@ The magnitudes of the CKM matrix elements can be inferred from various processes
     \end{pmatrix}.
 \end{equation}
 The values of the diagonal elements are determined to be close to unity, with the elements getting smaller further away from the diagonal.
+
+%%%%% Add description of type of CP violation
+In the standard model \CP violation can manifest itself in three different ways: 
+\begin{enumerate}
+\item \textbf{Direct \CP violation:} the decay rate for matter and antimatter particles can differ, $\Gamma(\decay{A}{f})\neq \Gamma(\decay{\overline{A}}{\overline{f}})$,  
+\item \textbf{Indirect \CP violation in mixing:} the rate of oscillation between a neutral particle to it's antiparticle can differ from the reverse process, $\Gamma(\decay{A^0}{\overline{A}^0})\neq \Gamma(\decay{\overline{A}^0}{A^0})$,
+\item \textbf{Indirect \CP violation from interference and mixing:} Interference can occur between oscillated and non-oscillated neutral particles decaying to the same final state ($\decay{A^0}{f}$ and $\decay{\decay{A^0}{\overline{A}^0}}{f}$), resulting in different decay rates for matter and antimatter particles. 
+\end{enumerate}
+
+The decays described in this thesis are of charged \B mesons, therefore only direct \CP violation is relevant.
+%%%%% Adding description of the unitarity triangle
+
+
+
 
 The first observation of \CP violation occurred in 1964 by V. Fitch and J. Cronin~\cite{PhysRevLett.13.138}.  
 A beam of long-lived neutral kaons was produced and the decay to $2\pi$ was observed. Neutral kaons were known to decay to $2\pi$ and $3\pi$ final states. The $2\pi$ state is a $+1$ eigenstate of the \CP operation, whilst the $3\pi$ is a $-1$ eigenstate. If the long-lived and short-lived neutral kaon eigenstates were also \CP eigenstates then only the $\decay{\KS}{\pi\pi}$ and $\decay{\KL}{\pi\pi\piz}$ decays would be allowed. The observation of \decay{\KL}{\pip\pim} decays demonstrated that the physical kaon states do not conserve \CP symmetry. This \CP asymmetry is explained by the CKM matrix. 
