@@ -31,3 +31,5 @@
 2018.02.18 20:21:25 appendix_fitcategories 154 b2dskk 8584 b2dsphi 12529 detector 6498 introduction 16 originality 137 selection 14178 theory 83 bonus -3941 total 38238
 2018.03.04 15:01:39 appendix_fitcategories 154 b2dskk 8584 b2dsphi 12529 detector 8867 introduction 712 originality 137 selection 14178 theory 595 bonus -3651 total 42105
 2018.03.15 14:01:11 appendix_fitcategories 154 b2dskk 8584 b2dsphi 12529 detector 9053 introduction 3811 originality 137 selection 14821 theory 4036 bonus -8154 total 44971
+2018.08.01 14:36:55 address 196 appendix_b2dsphi_mcfits 428 appendix_b2dsphi_toys 895 appendix_fitcategories 197 appendix_mva 2818 appendix_selection 1419 b2dskk 11334 b2dsphi 13622 detector 9623 introduction 4285 originality 137 preface 410 quote 75 selection 16415 theory 4293 bonus -22779 total 43368
+2018.08.01 14:37:48 address 196 appendix_b2dsphi_mcfits 428 appendix_b2dsphi_toys 895 appendix_fitcategories 197 appendix_mva 2818 appendix_selection 1419 b2dskk 11334 b2dsphi 13622 detector 9623 introduction 4285 originality 137 preface 410 quote 75 selection 16415 theory 4293
