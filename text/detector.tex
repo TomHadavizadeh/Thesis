@@ -661,7 +661,27 @@ If any of these candidates pass corresponding $E_{\text{T}}$ thresholds, then th
 
 The \lone muon trigger selects the two highest \pt muons in each of the four quadrant of the muon system. The event is retained if any of the eight muons' \pt is greater than a threshold, or if any pair has $\pt_{1} \times\ \pt_{2}$ greater than a threshold.
 
-These thresholds are altered when the beam conditions change to maintain a constant \lone output rate.
+These thresholds are altered when the beam conditions change to maintain a constant \lone output rate. The thresholds used during the 2012 data taking period can be found in Table~\ref{tab:Dec_trigger thresholds}.
+
+
+\begin{table}[h]
+    \centering
+      \begin{tabular}{cc}
+         \hline
+         
+         Trigger    & Threshold \\
+         \hline
+         Muon       & $\pt > 1.76\gevc$\\  
+         DiMuon     & $\pt_1\times\pt_2 > 1.6\gevgevcc$\\  
+         Hadron     & $\et > 3.7\gev$\\  
+         Electron   & $\et > 3.0\gev$\\  
+         Photon     & $\et > 3.0\gev$\\  
+         \hline
+      \end{tabular}
+   \caption{Example hardware trigger thresholds used during the 2012 data taking period.}
+   \label{tab:Dec_trigger thresholds}
+\end{table}
+
 % \begin{description}
 % \item \texttt{L0Muon}: Any of the eight muons can fire this trigger if their \pt is greater than a threshold.
 % \item \texttt{L0DiMuon}: Pairs of muons can fire this trigger if the quantity $\pt_{1} \times\ \pt_{2}$ is greater than a threshold.
@@ -680,12 +700,24 @@ The \velo or muon candidates are extrapolated through the magnet to the T-statio
 
 
 
-The second stage, \hlttwo, performs a full event reconstruction, allowing explicit decays to be reconstructed. Many different trigger algorithms are included in \hlttwo, reconstructing a wide range of decays. Additionally, a set of inclusive \bquark-hadron decay lines exist, exploiting the common characteristics of these decays. These \emph{topological} trigger lines make decisions based on 2-, 3- or 4-body combinations of tracks that can form a partially or fully reconstructed \bquark-hadron decay. These tracks are required to pass a minimum distance of closest approach requirement with respect to each other. The invariant mass of these tracks would span a large range in the case of additional non-reconstructed particles, so a quantity called the corrected mass is calculated instead:
+The second stage, \hlttwo, performs a full event reconstruction, allowing explicit decays to be reconstructed. Many different trigger algorithms are included in \hlttwo, reconstructing a wide range of decays. Additionally, a set of inclusive \bquark-hadron decay lines exist, exploiting the common characteristics of these decays. These \emph{topological} trigger lines make decisions based on 2-, 3- or 4-body combinations of tracks that can form a partially or fully reconstructed \bquark-hadron decay~\cite{Williams:2011aza}. These tracks are required to pass a minimum distance of closest approach requirement with respect to each other. The invariant mass of these tracks would span a large range in the case of additional non-reconstructed particles, so a quantity called the corrected mass is calculated instead:
 \begin{equation}
 m_{\text{corr}} = \sqrt{m^{2} + |\pt'_{\text{miss}}|} + |\pt'_{\text{miss}}|,
+\label{eq:hlt_mcorr}
 \end{equation}   
 where $\pt'_{\text{miss}}$ is the missing momentum transverse to the flight direction of the particle, defined by the vector between the PV and 2-, 3-, or 4-body vertex. Requirements are made to $m_{\text{corr}}$ to ensure the vertex is consistent with a \bquark-hadron decay.
-The tracks are required to have a significant impact parameter with respect to the PV. This helps to remove \cquark-hadrons combined with an additional track both originating at the PV.
+The tracks are required to have a significant impact parameter with respect to the PV. This helps to remove \cquark-hadrons combined with an additional track both originating at the PV. Typical distribution of the corrected mass compared to the measured mass are shown for $\decay{\B}{K\pi\pi}$ decays in Fig.~\ref{fig:Dec_hlt_mcorr}. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!h]
+    \centering
+
+    \includegraphics[width=0.6\textwidth]{figs/Detector/InclusiveHlt2Lines.pdf}
+
+    \caption{The invariant mass distributions of $\decay{\B}{K\pi\pi}$ decays using the measured mass (shaded) or corrected mass (line) as defined in Eq.~\ref{eq:hlt_mcorr}, from Ref.~\cite{Williams:2011aza}. This is shown for the 2-body (left) and 3-body (right) inclusive triggers.}
+    \label{fig:Dec_hlt_mcorr}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
