@@ -25,7 +25,7 @@ As before, $j$ represents the index over each contribution to the fit model, and
 The composite extended NLL is minimised with respect to the parameters $\vec{p}$ to find the values for which the data is most likely.
 
 The fit is implemented using the \roofit package within the \root framework. 
-As the yields of candidates is likely to be small (especially in the \Dsp decay modes with smaller branching fractions) the error on the branching fraction is determined asymmetrically using the \minos procedure. This determines the error intervals by finding the positions either side of the minimum that the NLL value increases by one unit. As the NLL distribution may not be symmetric this can lead to different upper and lower uncertainties. However, this calculation is computationally expensive, especially in this large fit with many degrees of freedom.  
+As the yields of candidates is likely to be small (especially in the \Dsp decay modes with smaller branching fractions) the error on the branching fraction is determined asymmetrically using the \minos procedure~\cite{James:1994vla}. This determines the error intervals by finding the positions either side of the minimum that the NLL value increases by one unit. As the NLL distribution may not be symmetric this can lead to different upper and lower uncertainties. However, this calculation is computationally expensive, especially in this large fit with many degrees of freedom.  
 
 
 \subsection{Simultaneous categories}
@@ -37,7 +37,7 @@ The data sample is split into 24 categories (Fig.~\ref{fig:B2DsPhi_simfit}) to g
 \begin{figure}[!h]
     \centering
     \includegraphics[width=0.7\textwidth]{figs/B2DsPhi/simfit_cats.pdf}
-    \caption{The simultaneous fit categories include the \Dsp meson decay mode (left), invariant mass of the bachelor \Kp\Km pair (centre) and helicity angle (right).}
+    \caption{The simultaneous fit categories described in Sec.~\ref{sec:B2DsPhi_fit_cats}, including the \Dsp meson decay mode (left), invariant mass of the bachelor \Kp\Km pair (centre) and helicity angle (right). The category labelled `\Dsp\phiz inner' refers to the invariant mass range $|m(\Kp\Km)-m(\phiz)|<10\mevcc$ and `\Dsp\phiz outer' to $10<|m(\Kp\Km)-m(\phiz)|<40\mevcc$. }
     \label{fig:B2DsPhi_simfit}   
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -235,14 +235,14 @@ The fractions for the \decay{\Bp}{\Dsp\phiz} signal decays as listed in Table~\r
 %%%%%%%%%%%%%%====================
 
 In Section~\ref{sec:B2DsKK_possible_res}, the possible contributions to \decay{\Bp}{\Dsp\Kp\Km} decays in the region of the \phiz-meson mass are discussed. The points considered leave the $f_{0}^{0}(980)$ and $a_{0}^{0}(980)$ resonances as possible contributions. 
-The fraction of decays expected in each $m(\Kp\Km)$ and $\cos\theta_{K}$ category for the different models considered are tabulated in Table~\ref{table:DsKK_rescfracs}. 
+For each contribution, the fractions of each decay expected in the $m(\Kp\Km)$ and $\cos\theta_{K}$ categories are tabulated in Table~\ref{table:DsKK_rescfracs}. 
 %These are calculated by counting the numbers of entries in the corresponding ranges delineated by the vertical lines in Figs.~\ref{fig:DsKK_model_phi1020}-\ref{fig:DsKK_model_a21320}. 
-For reference, the $\phi(1020)$ fractions are included for both the fully simulated decays and those generated with \laurapp. The maximum difference between these fractions is included as a source of systematic uncertainty (Sec.~\ref{sec:B2DsPhi_systuncertainy}).
+For reference, the fractions for the $\phi(1020)$ contribution are included for both the fully simulated decays and those generated with \laurapp. The maximum differences between the fully simulated and \laurapp fractions are included as a source of systematic uncertainty (Sec.~\ref{sec:B2DsPhi_systuncertainy}).
 It is clear that the $\phiz(1020)$ resonance has significantly different fractions in each category for all of the models considered, allowing the component to be distinguished.   
 
 
 
-The fractions of \decay{\Bp}{\Dsp\Kp\Km} decays that have been used in the fit model are fixed to the average of the $f_{0}^{0}(980)$ and $a_{0}^{0}(980)$ resonance fractions, listed in the final row of Table~\ref{table:DsKK_rescfracs}. Uncertainties are assigned that correspond to half the difference of the two values. These uncertainties are propagated to the $\BF(\decay{\Bp}{\Dsp\phiz})$ branching fraction in Sec.~\ref{sec:B2DsPhi_systuncertainy}. 
+The fractions of \decay{\Bp}{\Dsp\Kp\Km} decays that have been used in the fit model are fixed to the average of the $f_{0}^{0}(980)$ and $a_{0}^{0}(980)$ resonance fractions, listed in the final row of Table~\ref{table:DsKK_rescfracs}. Uncertainties are assigned that correspond to half the difference between the $f_{0}^{0}(980)$ and $a_{0}^{0}(980)$ fractions. These uncertainties are propagated to the $\BF(\decay{\Bp}{\Dsp\phiz})$ branching fraction in Sec.~\ref{sec:B2DsPhi_systuncertainy}. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -1182,6 +1182,7 @@ Most of the invariant mass vetoes are relevant to the signal mode, hence why the
 
 
 \subsection{Efficiencies requiring calibration samples}
+\label{sec:B2DsPhi_eff_from_calib}
 
 The efficiencies of the particle identification and MVA requirements are both determined using input from dedicated calibration samples as the distributions are known to be poorly represented in simulations. The method used here differs from that already described in Sec.~\ref{sec:B2DsKK_eff_from_calib} as the \decay{\Bp}{\Dsp\phiz} decay can be assumed to be a pseudo-two-body decay in which phase-space dependent efficiencies are not required. 
 

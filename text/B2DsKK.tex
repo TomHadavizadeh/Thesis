@@ -425,7 +425,7 @@ The yields of each background component are left free in the signal fit. This co
 \section{Fit validation}
 \label{sec:B2DsKK_fitvalidation}
 
-The fitting framework is validated by generating pseudo-experiment datasets and fitting them with the PDF model. The studies detailed in Appendix~\ref{sec:app_toys_B2DsKK}.
+The fitting framework is validated by generating pseudo-experiment datasets and fitting them with the PDF model. The error in the normalisation yield is found to be overestimated by the fit model. When propagated to the final branching fraction, this effect is reduced, therefore no attempt is made to correct it. The validation studies are detailed in Appendix~\ref{sec:app_toys_B2DsKK}.
 
 %The free parameters are treated using the plug-in method~\cite{plugin}; the generated values of all free parameters are \emph{plugged in} from the best fit to data.      
 
@@ -822,12 +822,12 @@ This transformation preserves the correlations between the different PID variabl
 
 
 \subsubsection{MVA efficiency}
-
+\label
 The relative MVA efficiency shown in Fig.\ref{fig:B2DsKK_releff_MVA} is determined from simulations in which the PID distributions have been corrected to account for the variation in the \Dsp and \phiz MVA efficiency across the phase-space. 
 %The corrected PID variables are used to determine the \Dsp and \phiz MVA classifiers and the efficiency of the MVA requirements determined in different positions in the Dalitz plot as shown in Fig.\ref{fig:B2DsKK_releff_MVA}. 
 There is a strong dependence on the position in phase-space, with decays at low $m^{2}(\Kp\Km)$ values having a larger relative efficiency than those at higher values. The MVA methods were trained using a sample of \decay{\phiz}{\Kp\Km} decays, so the selection favourably selects candidates near the \phiz-meson mass. 
 
-A crosschecks is performed to compare these MVA efficiencies and the method described in Sec.~\ref{sec:selection_MVA_eff} that uses the MVA training samples to calculate the efficiency. A good agreement is found.
+A crosschecks is performed to compare these MVA efficiencies and the method described in Sec.~\ref{sec:selection_MVA_eff} that uses the MVA training samples to calculate the efficiency. A good agreement is found, however the possible resulting systematic uncertainty is quantified in Sec.~\ref{sec:B2DsKK_sys_releff}.
 
 
 % The values of the efficiency determined for each mode are compared in Fig.~\ref{fig:B2DsKK_PID_eff_crosscheck} as a function of the $m(\Kp\Km)$ mass. The MVA training modes only exist for two discrete values; $m(\Kp\Km)=m(\phiz)$ and $m(\Kp\Km)=m(\Dzb)$ represented by the red points. These are compared to the \decay{\Bp}{\Dsp\Kp\Km} and \decay{\Bp}{\Ds\Dzb} efficiencies from the corrected simulations in black and blue respectively. A good agreement is found.

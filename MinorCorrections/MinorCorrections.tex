@@ -77,51 +77,49 @@ This document lists the changes that have been made to the thesis as minor corre
 \section{Event selection}
 
 \begin{itemize}
-\item Page 64: {\color{blue} Which normalisation final states are you considering?}
-\item Page 65: {\color{blue} Which samples? Clarify}
+\item Page 64: ...normalisation channel $B^+ \rightarrow D_s^+ \overline{D}^0$ {\color{red}with $\overline{D}^0 \rightarrow K^+K^-$.}
+\item Page 65: {\color{red}All signal and normalisation simulation samples} are generated...
 \item Page 65: ...Samples are {\color{red}generated} assuming...
-\item Page 66: {\color{blue}What are the final states? Clarify}
-\item Page 66: Removed {\color{red}The event selection aims to reduce overall rate of collisions, whilst maximising the signal efficiency.} 
-\item Page 66: {\color{blue}Which triggers are you therefore using in your analysis? clarify.}
-\item Page 66: {\color{blue}Clarify what is meant by hits in final paragraph.} 
-\item Page 67: {\color{blue} Thresholds of what? Energy? Please clarify}
+\item Page 65: ...requiring the {\color{red}$\overline{D}^0$ mesons to decay to the $K^+K^-$ final state and the $D_s^+$ meson to one of $K^+K^-\pi^+$, $K^+\pi^-\pi^+$ or $\pi^+\pi^-\pi^+$.}
+\item Page 66: Removed: {\color{red}The event selection aims to reduce overall rate of collisions, whilst maximising the signal efficiency.} 
+\item Page 66: Added: {\color{red} However, all hardware triggers are implicitly used to select the signal candidates as it is possible for a unrelated interaction to have initiated the trigger. The reconstructed objects are then associated to the trigger decisions to determine if they were responsible.}
+\item Page 66: Added: {\color{red}For a relatively simple trigger candidates, such as the combination of tracks considered in these hadronic decays, at least 70\% of online VELO and IT/OT hits must be in the total set of offline tracking hits. For more complicated composite candidates, for example decays containing electrons with both tracks and calorimeter deposits, the combination of the individual trigger candidates is compared to the set of offline candidates.} 
 \item Page 67: ...if the {\color{red}deposit} matched to a reconstructed...
 \item Page 68: ...hadronic {\color{red}hardware} trigger (\texttt{L0Hadron})...
-\item Page 68: {\color{blue}Define L0Global using logic.}
-\item Page 70: {\color{blue}Check why numbers don't add up}
+\item Page 69: ...hardware sub-systems {\color{red}(Muon, DiMuon, Electron, Photon or Hadron)} is...
+\item Page 70: Corrected totals in Table 4.4.
 \item Page 72: ...products {\color{red}with respect to the proton beam axis}... 
-\item Page 74: {\color{blue}Add figure to show why track chi2 cut is 4}
-\item Page 76: {\color{blue}What is the rough purity of the PIDK cut?}
-\item Page 79: {\color{blue}Reword description of asymmetric sidebands.}
-\item Page 80: {\color{blue}Clarify wht residual yields vary so much in caption}
+\item Page 74: ...track $\chi^{2}/N_{\text{DOF}}$ is required to be below $4.0$ {\color{red}to remove poorly reconstructed tracks}...
+\item Page 76: Added: {\color{red}These requirements have a combined efficiency of between 85-90\%, depending on $D_s^+$ decay mode.}
+\item Page 79: Added: {\color{red} As illustrated in Fig. 4.9, the blue and red regions in the $D^0$ sidebands are wider to the left of the peak than the right. This helps to prevent misidentified $B^+\rightarrow D_s^+ (D^0 \rightarrow K^-\pi^+)$ decays from being included in the sideband sample, visible as an excess of points at high values of $m(K^+K^-)$.}
+\item Page 80: Added to table 4.6 caption: {\color{red} The selection requirements are chosen such that the contribution from charmless and single charm decays are below 2\% of the normalisation yield. The large variation in residual yields therefore reflects reflects the variation in the expected normalisation yields.}
 \item Page 81: {\color{blue}Explain shape in caption}
-\item Page 82: {\color{blue}Clarify the source of peaking structures of invariant masses}
-\item Page 84: {\color{blue}Add introduction to give more context to MVA methods, i.e. more normal to train using MC, but this requires separate PID and MVA optimsation}
-\item Page 88: {\color{blue} Add small amount of detail giving context and justification, i.e. DLL just specific detectors, ProbNN uses all}
-\item Page 90: {\color{blue}Why are pT and $\chi^{2}_{FD}$ used to do efficiencies.}
-\item Page 90: {\color{blue}Add reference to page where efficiencies are discussed.}
-\item Page 91: {\color{blue}Add justification for $a=5$ from Punzi paper.}
+\item Page 82: Added: {\color{red} These result from various signal or background processes in which incorrect tracks have been assigned to the the final state particles.}
+\item Page 84: Clarified introduction to MVA methods.
+\item Page 88: Added: {\color{red}These variables improve the performance over the variables discussed in Section 4.3.2 by using input from all PID sub-detectors and exploiting any correlations.}
+\item Page 90: ... {\color{red}to account for the difference in the kinematics and geometry of the validation and signal modes}...
+\item Page 90: Add reference to pages where efficiencies are discussed.
+\item Page 90: Added: {\color{red} This figure of merit is chosen as it depends only on the signal efficiency rather than the absolute number of expected signal events. The parameter $a$ defines the number of standard deviations corresponding to a one-sided Gaussian test, here chosen to be five to correspond to the significance required for an observation.}
 \item Page 91: ...Requirements are {\color{red}placed} on the impact... 
 \item Page 93: Caption: The {\color{red}$\phi$ (left) and $D_{s}^{+}$ (right)} invariant mass
-\item Page 93: {\color{blue} Much slower rate: explain}
+\item Page 93: ...normalisation channel {\color{red}decreases as the selection is applied, but only reduces to around half of the original size}...
 \item Page 94: Caption: The {\color{red}$D^{0}$ (left) and $D_{s}^{+}$ (right)} invariant mass
 \item Page 95: Caption: The {\color{red}$K^+K^-$ (left) and $D_{s}^{+}$ (right)} invariant mass
+
 
 \end{itemize}
 \section{Mass fit to $B^+ \rightarrow D_s^+ K^+K^-$ candidates}
 
 \begin{itemize}
 \item Page 106: ...The parameters of interest {\color{red}in the two fits are}...
+\item Page 106: Added: {\color{red} The error in the normalisation yield is found to be overestimated by the fit model. When propagated to the final branching fraction, this effect is reduced, therefore no attempt is made to correct it.}
 \item Page 106: ...These figures {\color{red}show} the distribution...
 \item Page 106: ...in the {\color{red}negative log likelihood} minimisation...
 \item Page 108: ...Similarly the mass shifts vary between the two, {\color{red}but are consistent within the quoted uncertainties.}
 \item Page 110: ...{\color{red}The} relative charmless efficiency...
 \item Page 110: ...dependency {\color{red}on the position} in phase-space...
 \item Page 111: ...dependence on the position {\color{red}in phase-space}...
-\item Page 112: {\color{blue} As a function??}
-\item Page 113: {\color{blue} Can you show the agreement?}
-\item Page 116: {\color{blue}Add the extent of this variation} 
-\item Page 119: {\color{blue} Phi could also be annihilation}
+\item Page 113: ... is found, {\color{red}however the possible resulting systematic uncertainty is quantified in Sec.~5.7.1.}
 
 \end{itemize}
 \section{Mass fit to $B^+ \rightarrow D_s^+ \phi$ candidates}
@@ -131,19 +129,23 @@ This document lists the changes that have been made to the thesis as minor corre
 
 \item Page 126: ...pair {\color{red}from} the $\phi$ meson, $m(K^+K^-)$, and the cosine of {\color{red}the} angle $\cos\theta_{K}$...
 \item Page 126: ...The total extended {\color{red}negative log likelihood} (NLL) for...
-\item Page 127: {\color{blue} cite minos}
-\item Page 127: {\color{blue} add description of categories in figure.}
-\item Page 130: {\color{blue} Which fractions? Difference between which fractions? Clarify.}
+\item Page 127: Added reference for MINOS.
+\item Page 127: Added to fig 6.1 caption: {\color{red}The category labelled `$D_s^+\phi$ inner' refers to the invariant mass range $|m(K^+K^-)-m(\phi)|<10\,MeV/c^2$ and `$D_s^+\phi$  outer' to $10<|m(K^+K^-)-m(\phi)|<40\,MeV/c^2$.}
+\item Page 130: ... {\color{red}For each contribution, the fractions of each decay} expected in the...
+\item Page 130: ...The maximum differences {\color{red}between the fully simulated and LAURA++ fractions} are included...
+\item Page 130: ...half the difference  {\color{red}between the $f_{0}^{0}(980)$ and $a_{0}^{0}(980)$ fractions}... 
 \item Page 134: ...These PDFs are {\color{red}updated} to...
 \item Page 139: ...so the {\color{red}parameter} would be expected...
 \item Page 140: {\color{blue} change colour scheme to highlight signal component}
 \item Page 151: ...The {\color{red}significance of} the measured branching fraction, $BF(B^+\rightarrow D_s^+\phi) = (1.2^{+1.6}_{-1.4} \pm 0.8  \pm 0.1)\times 10^{-7}$, is {\color{red}not large enough to constitute evidence} for the $B^+\rightarrow D_s^+\phi$ decay and {\color{red}the branching fraction is consistent with a value of zero}...
+\item {\color{blue} improve summary of toys}
 
 \end{itemize}
 \section{Conclusions}
 
 \begin{itemize}
-\item Add conclusions
+\item {\color{blue}Add conclusions}
+\item Page 119: {\color{blue} Phi could also be annihilation}
 
 \end{itemize}
 \section{Appendix A}
